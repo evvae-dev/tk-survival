@@ -1,0 +1,170 @@
+[
+  {
+    "id": "timeline-7a61895372e5296785bd",
+    "year": 184,
+    "month": null,
+    "precision": "year",
+    "calendar": "lunar",
+    "leapMonth": null,
+    "title": "황건적의 난",
+    "content": "황건적의 난",
+    "regionIds": [],
+    "factionIds": [
+      "yellow-turban"
+    ],
+    "relatedPeople": [],
+    "category": "history",
+    "parentId": null,
+    "source": {
+      "title": "원사서 미확인",
+      "record": null
+    },
+    "verification": "secondary",
+    "section": "5.1. 184년 (광화 7년 ~ 중평 원년) - 황건적의 난",
+    "relatedOfficerIds": [],
+    "officerLinkIssues": [],
+    "officerLinkInferences": []
+  },
+  {
+    "id": "timeline-f5dc77023ab7ac336fcc",
+    "year": 184,
+    "month": null,
+    "precision": "year",
+    "calendar": "lunar",
+    "leapMonth": null,
+    "title": "한 조정이 토벌군의 장수로 주준 · 황보숭 · 노식을 파견",
+    "content": "한 조정이 토벌군의 장수로 주준 · 황보숭 · 노식을 파견.",
+    "regionIds": [],
+    "factionIds": [
+      "han"
+    ],
+    "relatedPeople": [
+      "주준",
+      "황보숭",
+      "노식"
+    ],
+    "category": "history",
+    "parentId": "timeline-7a61895372e5296785bd",
+    "source": {
+      "title": "원사서 미확인",
+      "record": null
+    },
+    "verification": "secondary",
+    "section": "5.1. 184년 (광화 7년 ~ 중평 원년) - 황건적의 난",
+    "relatedOfficerIds": [
+      "rtk14-0387",
+      "rtk14-0279",
+      "rtk14-1000"
+    ],
+    "officerLinkIssues": [],
+    "officerLinkInferences": []
+  },
+  {
+    "id": "timeline-2f7dea7684980f0eb81c",
+    "year": 184,
+    "month": null,
+    "precision": "year",
+    "calendar": "lunar",
+    "leapMonth": null,
+    "title": "주준의 손견 등용",
+    "content": "주준의 손견 등용.",
+    "regionIds": [],
+    "factionIds": [],
+    "relatedPeople": [],
+    "category": "history",
+    "parentId": "timeline-7a61895372e5296785bd",
+    "source": {
+      "title": "원사서 미확인",
+      "record": null
+    },
+    "verification": "secondary",
+    "section": "5.1. 184년 (광화 7년 ~ 중평 원년) - 황건적의 난",
+    "relatedOfficerIds": [],
+    "officerLinkIssues": [],
+    "officerLinkInferences": []
+  },
+  {
+    "id": "timeline-802c23427d48943bd80d",
+    "year": 184,
+    "month": null,
+    "precision": "year",
+    "calendar": "lunar",
+    "leapMonth": null,
+    "title": "동탁의 패전",
+    "content": "동탁의 패전.",
+    "regionIds": [],
+    "factionIds": [],
+    "relatedPeople": [
+      "동탁"
+    ],
+    "category": "history",
+    "parentId": "timeline-7a61895372e5296785bd",
+    "source": {
+      "title": "원사서 미확인",
+      "record": null
+    },
+    "verification": "secondary",
+    "section": "5.1. 184년 (광화 7년 ~ 중평 원년) - 황건적의 난",
+    "relatedOfficerIds": [
+      "rtk14-0736"
+    ],
+    "officerLinkIssues": [],
+    "officerLinkInferences": []
+  },
+  {
+    "id": "timeline-d5ffdbbc9dea6271afef",
+    "year": 184,
+    "month": null,
+    "precision": "year",
+    "calendar": "lunar",
+    "leapMonth": null,
+    "title": "손견의 완 토벌",
+    "content": "손견의 완 토벌. 전국 각지에서 군웅들의 황건적 소탕이 일어나다.",
+    "regionIds": [],
+    "factionIds": [
+      "yellow-turban"
+    ],
+    "relatedPeople": [
+      "손견"
+    ],
+    "category": "history",
+    "parentId": "timeline-7a61895372e5296785bd",
+    "source": {
+      "title": "원사서 미확인",
+      "record": null
+    },
+    "verification": "secondary",
+    "section": "5.1. 184년 (광화 7년 ~ 중평 원년) - 황건적의 난",
+    "relatedOfficerIds": [
+      "rtk14-0551"
+    ],
+    "officerLinkIssues": [],
+    "officerLinkInferences": []
+  },
+  {
+    "id": "timeline-071b84e2b2a7c5142258",
+    "year": 184,
+    "month": null,
+    "precision": "year",
+    "calendar": "lunar",
+    "leapMonth": null,
+    "title": "황건적 궤멸",
+    "content": "황건적 궤멸.",
+    "regionIds": [],
+    "factionIds": [
+      "yellow-turban"
+    ],
+    "relatedPeople": [],
+    "category": "history",
+    "parentId": "timeline-7a61895372e5296785bd",
+    "source": {
+      "title": "원사서 미확인",
+      "record": null
+    },
+    "verification": "secondary",
+    "section": "5.1. 184년 (광화 7년 ~ 중평 원년) - 황건적의 난",
+    "relatedOfficerIds": [],
+    "officerLinkIssues": [],
+    "officerLinkInferences": []
+  }
+]

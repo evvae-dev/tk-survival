@@ -1,0 +1,46 @@
+{
+  "collectedAt": "2026-10-15T12:25:50.530Z",
+  "sources": [
+    {
+      "title": "나무위키 삼국지/연표",
+      "url": "https://namu.wiki/w/삼국지/연표"
+    },
+    {
+      "title": "삼국지14 전체무장 공유 시트",
+      "url": "https://docs.google.com/spreadsheets/u/0/d/1Iq89ZA4E1-lqo4I9pGZdfqI3PUk-L75WEf3FaKmA0ww/htmlview"
+    }
+  ],
+  "timelineCount": 6,
+  "officerCount": 1000,
+  "yearRange": [
+    184,
+    184
+  ],
+  "playableTimelineCount": 6,
+  "headings": [
+    "5.1. 184년 (광화 7년 ~ 중평 원년) - 황건적의 난"
+  ],
+  "tabs": [
+    {
+      "name": "전체무장 능력치/개성",
+      "gid": "0",
+      "officerCount": 1000
+    },
+    {
+      "name": "반에디터_원본",
+      "gid": "22965975",
+      "officerCount": 1000
+    }
+  ],
+  "notes": [
+    "연표의 사실 항목과 하위 설명을 parentId로 연결한다.",
+    "월은 해당 항목이나 상위 항목에 명시한 경우만 기록한다. 앞선 형제 항목의 월을 전파하지 않는다.",
+    "지역과 세력은 본문 명시 어휘만 보수적으로 태그한다. 빈 배열은 미확인이다.",
+    "사서 원문을 대조하지 않았으므로 사서기록은 null이며 확인한 문헌명을 꾸며 넣지 않는다.",
+    "장수의 생몰년, 능력치, 관계는 게임 데이터이며 정사 검증 자료가 아니다.",
+    "반에디터의 이름을 알 수 없는 lp 필드는 사용하지 않는다."
+  ],
+  "collectedTimelineCount": 6,
+  "excludedTimelineCount": 0,
+  "activeScope": "5.1 황건적의 난만 유지"
+}

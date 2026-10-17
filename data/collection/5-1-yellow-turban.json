@@ -1,0 +1,1619 @@
+{
+  "schemaVersion": 1,
+  "id": "chapter-5-1-yellow-turban",
+  "title": "184년 황건적의 난",
+  "status": "collection-complete-with-source-uncertainties",
+  "playable": false,
+  "metadata": {
+    "collectedAt": "2026-10-16T02:37:32.781Z",
+    "collector": {
+      "client": "Gemini CLI",
+      "version": "0.63.0",
+      "model": "gemini-3.8-flash",
+      "successfulFetches": 6
+    },
+    "sources": [
+      {
+        "id": "namu-chronology",
+        "title": "나무위키 삼국지/연표",
+        "url": "https://namu.wiki/w/삼국지/연표",
+        "section": "5.1"
+      },
+      {
+        "id": "namu-yellow-turban",
+        "title": "나무위키 황건적의 난",
+        "url": "https://namu.wiki/w/황건적의 난",
+        "sections": [
+          "4.1",
+          "4.2",
+          "4.3",
+          "4.4",
+          "4.5"
+        ]
+      }
+    ],
+    "referenceFileHashes": {
+      "officers": "3109986966bc329e0d7190d55c693376e62dab2163512206bf6d1d2b20bcaac7",
+      "chronology": "14c27d30975fd84d91a3a65727d9483d3d00282717a332710641d966449818ab"
+    },
+    "scope": {
+      "year": 184,
+      "battleSections": [
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5"
+      ],
+      "exclude": [
+        "독립 탄생·사망 알림",
+        "평가",
+        "기타 창작물",
+        "오두미교·흑산적 링크",
+        "5.2 이후"
+      ]
+    },
+    "decisions": [
+      {
+        "kind": "source-fidelity",
+        "value": "원페이지 서술과 이견을 수정하지 않고 보존. 원사서 추가 대조하지 않음.",
+        "by": "user"
+      },
+      {
+        "kind": "officer-link",
+        "name": "조홍",
+        "officerId": "rtk14-0620",
+        "by": "user"
+      },
+      {
+        "kind": "officer-link",
+        "name": "한충",
+        "officerId": "rtk14-0173",
+        "by": "user"
+      }
+    ],
+    "notes": [
+      "원문·HTML을 보관한 raw 자료가 아니라 한국어로 구조화한 수집 자료다.",
+      "정사 본문을 직접 확인한 것으로 표시하지 않는다.",
+      "원페이지의 장보 관련 두 결말 서술은 각각 보존하며, 사망 효과를 두 번 실행하는 규칙을 만들지 않는다.",
+      "5.2는 수집하지 않았으며 사용자 진행 승인 후 다음 단위를 처리한다."
+    ],
+    "retrievalAudit": [
+      {
+        "tool": "web_fetch",
+        "url": "https://namu.wiki/w/삼국지/연표",
+        "status": "success"
+      },
+      {
+        "tool": "web_fetch",
+        "url": "https://namu.wiki/w/황건적의%20난",
+        "status": "success"
+      },
+      {
+        "tool": "web_fetch",
+        "url": "https://namu.wiki/w/%ED%99%A9%EA%B1%B4%EC%A0%81%EC%9D%98%20%EB%82%9C",
+        "status": "success"
+      },
+      {
+        "tool": "web_fetch",
+        "url": "https://namu.wiki/w/%ED%99%A9%EA%B1%B4%EC%A0%81%EC%9D%98%20%EB%82%9C#s-4",
+        "status": "success"
+      },
+      {
+        "tool": "web_fetch",
+        "url": "https://namu.wiki/w/%ED%99%A9%EA%B1%B4%EC%A0%81%EC%9D%98%20%EB%82%9C#각주",
+        "status": "success"
+      },
+      {
+        "tool": "web_fetch",
+        "url": "https://namu.wiki/raw/%ED%99%A9%EA%B1%B4%EC%A0%81%EC%9D%98%20%EB%82%9C",
+        "status": "success"
+      },
+      {
+        "tool": "google_web_search",
+        "query": "site:namu.wiki \"황건적의 난\" \"노식은 수적 열세에도 불구하고\"",
+        "status": "success"
+      },
+      {
+        "tool": "google_web_search",
+        "query": "site:namu.wiki \"황건적의 난\" \"각주\" \"장보\"",
+        "status": "success"
+      }
+    ]
+  },
+  "eventGroups": [
+    {
+      "id": "campaign-yellow-turban-184",
+      "title": "황건적의 난",
+      "referenceEntryIds": [
+        "timeline-7a61895372e5296785bd",
+        "timeline-f5dc77023ab7ac336fcc",
+        "timeline-2f7dea7684980f0eb81c",
+        "timeline-802c23427d48943bd80d",
+        "timeline-d5ffdbbc9dea6271afef",
+        "timeline-071b84e2b2a7c5142258"
+      ],
+      "eventIds": [
+        "battle-184-daxingshan",
+        "battle-184-qingzhou-city",
+        "battle-184-wan",
+        "battle-184-guangzong",
+        "battle-184-xiaquyang"
+      ],
+      "timelineObservations": [
+        {
+          "referenceEntryId": "timeline-7a61895372e5296785bd",
+          "title": "황건적의 난",
+          "summary": "184년 후한 말기 장각 등이 주도하여 전국적으로 일어난 대규모 반란.",
+          "collectionSourceId": "namu-chronology",
+          "verification": "secondary"
+        },
+        {
+          "referenceEntryId": "timeline-f5dc77023ab7ac336fcc",
+          "title": "한 조정의 토벌군 장수 파견",
+          "summary": "후한 조정이 황건적 토벌군의 장수로 주준, 황보숭, 노식을 파견함.",
+          "collectionSourceId": "namu-chronology",
+          "verification": "secondary"
+        },
+        {
+          "referenceEntryId": "timeline-2f7dea7684980f0eb81c",
+          "title": "주준의 손견 등용",
+          "summary": "토벌군 지휘관 주준이 손견을 군관으로 등용하여 종군시킴.",
+          "collectionSourceId": "namu-chronology",
+          "verification": "secondary"
+        },
+        {
+          "referenceEntryId": "timeline-802c23427d48943bd80d",
+          "title": "동탁의 패전",
+          "summary": "노식의 후임으로 파견된 동탁이 황건적과의 전투에서 패전함.",
+          "collectionSourceId": "namu-chronology",
+          "verification": "secondary"
+        },
+        {
+          "referenceEntryId": "timeline-d5ffdbbc9dea6271afef",
+          "title": "손견의 완 토벌 및 전국 군웅의 소탕",
+          "summary": "손견이 완에서 황건적을 토벌하였으며, 전국 각지에서 군웅들이 황건적 소탕에 참여함.",
+          "collectionSourceId": "namu-chronology",
+          "verification": "secondary"
+        },
+        {
+          "referenceEntryId": "timeline-071b84e2b2a7c5142258",
+          "title": "황건적 궤멸",
+          "summary": "관군과 군웅들의 연이은 진압으로 184년 황건적 본대 세력이 궤멸됨.",
+          "collectionSourceId": "namu-chronology",
+          "verification": "secondary"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "id": "person-rtk14-0925",
+      "name": "유언",
+      "officerId": "rtk14-0925",
+      "linkStatus": "unique-name-match",
+      "candidateOfficerIds": [
+        "rtk14-0925"
+      ]
+    },
+    {
+      "id": "person-rtk14-0472",
+      "name": "추정",
+      "officerId": "rtk14-0472",
+      "linkStatus": "unique-name-match",
+      "candidateOfficerIds": [
+        "rtk14-0472"
+      ]
+    },
+    {
+      "id": "person-rtk14-0952",
+      "name": "유비",
+      "officerId": "rtk14-0952",
+      "linkStatus": "unique-name-match",
+      "candidateOfficerIds": [
+        "rtk14-0952"
+      ]
+    },
+    {
+      "id": "person-rtk14-0147",
+      "name": "관우",
+      "officerId": "rtk14-0147",
+      "linkStatus": "unique-name-match",
+      "candidateOfficerIds": [
+        "rtk14-0147"
+      ]
+    },
+    {
+      "id": "person-rtk14-0656",
+      "name": "장비",
+      "officerId": "rtk14-0656",
+      "linkStatus": "unique-name-match",
+      "candidateOfficerIds": [
+        "rtk14-0656"
+      ]
+    },
+    {
+      "id": "person-rtk14-0690",
+      "name": "정원지",
+      "officerId": "rtk14-0690",
+      "linkStatus": "unique-name-match",
+      "candidateOfficerIds": [
+        "rtk14-0690"
+      ]
+    },
+    {
+      "id": "person-rtk14-0746",
+      "name": "등무",
+      "officerId": "rtk14-0746",
+      "linkStatus": "unique-name-match",
+      "candidateOfficerIds": [
+        "rtk14-0746"
+      ]
+    },
+    {
+      "id": "person-97022813a7df",
+      "name": "공경",
+      "officerId": null,
+      "linkStatus": "unlinked",
+      "candidateOfficerIds": []
+    },
+    {
+      "id": "person-rtk14-0607",
+      "name": "장각",
+      "officerId": "rtk14-0607",
+      "linkStatus": "unique-name-match",
+      "candidateOfficerIds": [
+        "rtk14-0607"
+      ]
+    },
+    {
+      "id": "person-rtk14-0660",
+      "name": "장만성",
+      "officerId": "rtk14-0660",
+      "linkStatus": "unique-name-match",
+      "candidateOfficerIds": [
+        "rtk14-0660"
+      ]
+    },
+    {
+      "id": "person-fb5936f94991",
+      "name": "저공",
+      "officerId": null,
+      "linkStatus": "unlinked",
+      "candidateOfficerIds": []
+    },
+    {
+      "id": "person-53e1806f6d44",
+      "name": "진힐",
+      "officerId": null,
+      "linkStatus": "unlinked",
+      "candidateOfficerIds": []
+    },
+    {
+      "id": "person-rtk14-0620",
+      "name": "조홍",
+      "officerId": "rtk14-0620",
+      "linkStatus": "user-confirmed",
+      "candidateOfficerIds": [
+        "rtk14-0511",
+        "rtk14-0620"
+      ]
+    },
+    {
+      "id": "person-rtk14-0387",
+      "name": "주준",
+      "officerId": "rtk14-0387",
+      "linkStatus": "unique-name-match",
+      "candidateOfficerIds": [
+        "rtk14-0387"
+      ]
+    },
+    {
+      "id": "person-rtk14-0441",
+      "name": "서구",
+      "officerId": "rtk14-0441",
+      "linkStatus": "unique-name-match",
+      "candidateOfficerIds": [
+        "rtk14-0441"
+      ]
+    },
+    {
+      "id": "person-rtk14-0647",
+      "name": "장초",
+      "officerId": "rtk14-0647",
+      "linkStatus": "unique-name-match",
+      "candidateOfficerIds": [
+        "rtk14-0647"
+      ],
+      "linkNote": "이름이 유일한 시트 후보와 연결했다. 본문에서 직책은 미확인이고 인포박스에 별부사마가 기재되어 있다."
+    },
+    {
+      "id": "person-rtk14-0173",
+      "name": "한충",
+      "officerId": "rtk14-0173",
+      "linkStatus": "user-confirmed",
+      "candidateOfficerIds": [
+        "rtk14-0173",
+        "rtk14-0174"
+      ]
+    },
+    {
+      "id": "person-b8fbc382199a",
+      "name": "손하",
+      "officerId": null,
+      "linkStatus": "unlinked",
+      "candidateOfficerIds": [
+        "rtk14-0543"
+      ],
+      "nameChinese": "孫夏",
+      "linkNote": "본문의 황건군 손하(孫夏). 시트 손하 rtk14-0543(170~204)와 동일인 확인이 없어 연결하지 않는다."
+    },
+    {
+      "id": "person-rtk14-0132",
+      "name": "하진",
+      "officerId": "rtk14-0132",
+      "linkStatus": "unique-name-match",
+      "candidateOfficerIds": [
+        "rtk14-0132"
+      ]
+    },
+    {
+      "id": "person-rtk14-1000",
+      "name": "노식",
+      "officerId": "rtk14-1000",
+      "linkStatus": "unique-name-match",
+      "candidateOfficerIds": [
+        "rtk14-1000"
+      ]
+    },
+    {
+      "id": "person-c21585e9a722",
+      "name": "좌풍",
+      "officerId": null,
+      "linkStatus": "unlinked",
+      "candidateOfficerIds": []
+    },
+    {
+      "id": "person-rtk14-0736",
+      "name": "동탁",
+      "officerId": "rtk14-0736",
+      "linkStatus": "unique-name-match",
+      "candidateOfficerIds": [
+        "rtk14-0736"
+      ]
+    },
+    {
+      "id": "person-rtk14-0664",
+      "name": "장량",
+      "officerId": "rtk14-0664",
+      "linkStatus": "unique-name-match",
+      "candidateOfficerIds": [
+        "rtk14-0664"
+      ]
+    },
+    {
+      "id": "person-rtk14-0279",
+      "name": "황보숭",
+      "officerId": "rtk14-0279",
+      "linkStatus": "unique-name-match",
+      "candidateOfficerIds": [
+        "rtk14-0279"
+      ]
+    },
+    {
+      "id": "person-rtk14-0659",
+      "name": "장보",
+      "officerId": "rtk14-0659",
+      "linkStatus": "unique-name-match",
+      "candidateOfficerIds": [
+        "rtk14-0659"
+      ]
+    },
+    {
+      "id": "person-18355a2828c0",
+      "name": "곽전",
+      "officerId": null,
+      "linkStatus": "unlinked",
+      "candidateOfficerIds": []
+    }
+  ],
+  "places": [
+    {
+      "id": "place-daxingshan",
+      "label": "대흥산",
+      "parentRegionId": "zhuo",
+      "kind": "narrative-battlefield",
+      "verification": "secondary",
+      "reportedLocations": [
+        "유주자사부 탁군 대흥산",
+        "대흥산 기슭"
+      ]
+    },
+    {
+      "id": "place-qingzhou-city-novel",
+      "label": "청주성",
+      "parentRegionId": "qingzhou",
+      "kind": "narrative-battlefield",
+      "verification": "secondary",
+      "reportedLocations": [
+        "청주자사부 제국 임치현 (청주성)",
+        "청주성 인근 산지"
+      ]
+    },
+    {
+      "id": "place-wan",
+      "label": "완성",
+      "parentRegionId": "jingzhou",
+      "kind": "city-battlefield",
+      "verification": "secondary",
+      "reportedLocations": [
+        "형주 남양군 완하",
+        "형주 남양군 완성"
+      ]
+    },
+    {
+      "id": "place-guangzong",
+      "label": "광종",
+      "parentRegionId": "jizhou",
+      "kind": "city-battlefield",
+      "verification": "secondary",
+      "reportedLocations": [
+        "기주자사부 안평군 광종현"
+      ]
+    },
+    {
+      "id": "place-xiaquyang",
+      "label": "하곡양",
+      "parentRegionId": "jizhou",
+      "kind": "city-battlefield",
+      "verification": "secondary",
+      "reportedLocations": [
+        "기주자사부 거록군 하곡양현"
+      ]
+    }
+  ],
+  "sourceRecords": [
+    {
+      "id": "source-battle-184-daxingshan",
+      "work": "삼국지연의",
+      "locator": null,
+      "layer": "novel",
+      "record": null,
+      "reviewStatus": "secondary",
+      "verifiedDirectly": false,
+      "collectionSourceId": "namu-yellow-turban",
+      "section": "4.1",
+      "note": "연의 전개라는 원페이지 분류를 수집했다. 원전 회차를 직접 대조하지 않았다.",
+      "secondarySummary": "유언군(유비 의용병)의 승리. 황건적 지휘관 정원지 및 부장 등무 전사. 황건적 대군 와해 및 대규모 투항. 유비 삼형제의 첫 출전이자 첫 승리"
+    },
+    {
+      "id": "source-battle-184-qingzhou-city",
+      "work": "삼국지연의",
+      "locator": null,
+      "layer": "novel",
+      "record": null,
+      "reviewStatus": "secondary",
+      "verifiedDirectly": false,
+      "collectionSourceId": "namu-yellow-turban",
+      "section": "4.2",
+      "note": "연의 전개라는 원페이지 분류를 수집했다. 원전 회차를 직접 대조하지 않았다.",
+      "secondarySummary": "한나라 관군(공경군·추정군·유비 의용병)의 승리. 청주성 포위망 해제 및 침공 황건적 격퇴. 유비의 매복 유인 전술 성공"
+    },
+    {
+      "id": "source-battle-184-wan",
+      "work": "원사서 미확인",
+      "locator": null,
+      "layer": "unverified",
+      "record": null,
+      "reviewStatus": "secondary",
+      "verifiedDirectly": false,
+      "collectionSourceId": "namu-yellow-turban",
+      "section": "4.3",
+      "note": "원페이지에 원사서명·권전명이 명시되지 않아 추정 서명은 채우지 않는다. secondarySummary는 원페이지 요약이며 원사서 직접 기록은 미확인으로 record를 null로 둔다.",
+      "secondarySummary": "한나라 관군(주준, 진힐 등)의 완전한 승리. 남양 황건적 수령(장만성, 조홍, 한충, 손하) 전원 사망. 남양군 완성 수복 및 남양 일대 황건적 소탕 완료. 전 남양태수 저공 전사"
+    },
+    {
+      "id": "source-battle-184-guangzong",
+      "work": "원사서 미확인",
+      "locator": null,
+      "layer": "unverified",
+      "record": null,
+      "reviewStatus": "secondary",
+      "verifiedDirectly": false,
+      "collectionSourceId": "namu-yellow-turban",
+      "section": "4.4",
+      "note": "원페이지에 원사서명·권전명이 명시되지 않아 추정 서명은 채우지 않는다. secondarySummary는 원페이지 요약이며 원사서 직접 기록은 미확인으로 record를 null로 둔다.",
+      "secondarySummary": "한나라 관군(황보숭)의 승리. 황건적 수뇌부(장각 병사 확인, 장량 전사, 장보 패망)의 전멸. 황건적 본대의 몰락 및 후한 행정력 유지 입증. 황보숭의 승전 공로 노식 귀속"
+    },
+    {
+      "id": "source-battle-184-xiaquyang",
+      "work": "원사서 미확인",
+      "locator": null,
+      "layer": "unverified",
+      "record": null,
+      "reviewStatus": "secondary",
+      "verifiedDirectly": false,
+      "collectionSourceId": "namu-yellow-turban",
+      "section": "4.5",
+      "note": "원페이지에 원사서명·권전명이 명시되지 않아 추정 서명은 채우지 않는다. secondarySummary는 원페이지 요약이며 원사서 직접 기록은 미확인으로 record를 null로 둔다.",
+      "secondarySummary": "한나라 관군의 결정적 대승. 지공장군 장보 참수. 황건적 10만여 명 참수 또는 생포. 적 시체로 경관(京觀) 축조. 장보 세력 및 기주 황건적 주력의 최종 박멸"
+    }
+  ],
+  "events": [
+    {
+      "id": "battle-184-daxingshan",
+      "title": "대흥산 전투",
+      "groupId": "campaign-yellow-turban-184",
+      "referenceEntryIds": [],
+      "category": "novel",
+      "historicalDate": {
+        "year": 184,
+        "month": null,
+        "calendar": "lunar",
+        "precision": "approximate",
+        "reportedTiming": "미확인",
+        "dateNote": "원페이지 수집 설명: 페이지 표시 연대는 184년임. 삼국지연의 제1회 서사에서 184년 황건적 봉기 시점에 맞춰 설정된 창작 연대로, 실제 역사 연대와 대응시킨 근사치에 해당함."
+      },
+      "activationWindow": null,
+      "placeIds": [
+        "place-daxingshan"
+      ],
+      "factionIds": [
+        "han",
+        "yellow-turban"
+      ],
+      "participants": [
+        {
+          "personId": "person-rtk14-0925",
+          "role": "지원·발령",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-rtk14-0472",
+          "role": "관군 측 지휘관",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-rtk14-0952",
+          "role": "의용군 지휘",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-rtk14-0147",
+          "role": "선봉",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-rtk14-0656",
+          "role": "선봉",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-rtk14-0690",
+          "role": "황건군 지휘",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-rtk14-0746",
+          "role": "황건군 선봉",
+          "verification": "secondary"
+        }
+      ],
+      "overview": "황건적 장수 정원지가 5만 명의 군사를 이끌고 유주 탁군을 침략하자, 유주자사 유언이 유비에게 500명의 병력을 주어 요격하도록 명함.",
+      "stages": [
+        {
+          "id": "battle-184-daxingshan-stage-1",
+          "order": 1,
+          "title": "유비군의 출진 및 대치",
+          "actorIds": [
+            "person-rtk14-0952",
+            "person-rtk14-0690"
+          ],
+          "unresolvedActorLabels": [],
+          "placeId": "place-daxingshan",
+          "reportedPlace": "대흥산 아래",
+          "action": "유비가 500명의 병력으로 5만 명의 황건적과 대치한 후 적장 정원지에게 나라를 배반한 역적이라 일갈하며 항복을 요구함.",
+          "reportedPrerequisite": "유주자사 유언의 500명 병력 차출 및 요격 명령",
+          "sourceRecordIds": [
+            "source-battle-184-daxingshan"
+          ],
+          "verification": "secondary"
+        },
+        {
+          "id": "battle-184-daxingshan-stage-2",
+          "order": 2,
+          "title": "장비와 등무의 일기토",
+          "actorIds": [
+            "person-rtk14-0746",
+            "person-rtk14-0656"
+          ],
+          "unresolvedActorLabels": [],
+          "placeId": "place-daxingshan",
+          "reportedPlace": "대흥산 진전",
+          "action": "정원지가 부장 등무를 출전시키자 장비가 장팔사모를 들고 돌격하여 등무의 명치를 찔러 낙마시켜 사살함.",
+          "reportedPrerequisite": "유비의 질타에 반응한 정원지의 부장 출진 명령",
+          "sourceRecordIds": [
+            "source-battle-184-daxingshan"
+          ],
+          "verification": "secondary"
+        },
+        {
+          "id": "battle-184-daxingshan-stage-3",
+          "order": 3,
+          "title": "관우의 정원지 사살 및 적군 궤멸",
+          "actorIds": [
+            "person-rtk14-0690",
+            "person-rtk14-0147",
+            "person-rtk14-0952"
+          ],
+          "unresolvedActorLabels": [
+            "황건적 병사들"
+          ],
+          "placeId": "place-daxingshan",
+          "reportedPlace": "대흥산 진전",
+          "action": "정원지가 칼을 들고 돌격하자 관우가 청룡언월도로 마주하여 두 동강으로 베어 죽임. 지휘관을 잃은 황건적이 창을 거꾸로 쥐고 달아나자 유비가 추격하여 무수한 항복을 받아냄.",
+          "reportedPrerequisite": "등무의 전사 및 정원지의 직접 돌격",
+          "sourceRecordIds": [
+            "source-battle-184-daxingshan"
+          ],
+          "verification": "secondary"
+        },
+        {
+          "id": "battle-184-daxingshan-stage-4",
+          "order": 4,
+          "title": "탁군 귀환 및 치하",
+          "actorIds": [
+            "person-rtk14-0952",
+            "person-rtk14-0925"
+          ],
+          "unresolvedActorLabels": [],
+          "placeId": "place-daxingshan",
+          "reportedPlace": "탁군 성내",
+          "action": "유비가 잔당을 격퇴하고 돌아오자 유주자사 유언이 직접 맞이하여 잔치를 열고 감사를 표함.",
+          "reportedPrerequisite": "대흥산 전투의 완승",
+          "sourceRecordIds": [
+            "source-battle-184-daxingshan"
+          ],
+          "verification": "secondary"
+        }
+      ],
+      "reportedOutcomes": [
+        "유언군(유비 의용병)의 승리",
+        "황건적 지휘관 정원지 및 부장 등무 전사",
+        "황건적 대군 와해 및 대규모 투항",
+        "유비 삼형제의 첫 출전이자 첫 승리"
+      ],
+      "sourceRecordIds": [
+        "source-battle-184-daxingshan"
+      ],
+      "sourceObservations": [
+        "전투의 구체적인 발생 월은 본문상 '미확인'",
+        "인포박스 지휘관에 기재된 교위 추정의 세부 역할은 본문상 '미확인'",
+        "정확한 사상자 수는 본문상 '피해 규모 불명'"
+      ],
+      "coverage": "collected-secondary",
+      "playable": false,
+      "gameplayDraft": {
+        "authorship": "game-fiction",
+        "implementationStatus": "not-implemented",
+        "interventions": [
+          {
+            "side": "han",
+            "role": "선봉·호위",
+            "action": "적 선봉과의 교전 또는 아군 보호를 맡는다",
+            "checks": [
+              "무력",
+              "체력",
+              "현장 임무"
+            ],
+            "possibleEffects": [
+              "개별 장수의 생존·부상",
+              "선봉전 결과"
+            ]
+          },
+          {
+            "side": "yellow-turban",
+            "role": "선봉·지휘관",
+            "action": "결투 대신 대형·퇴로를 유지한다",
+            "checks": [
+              "통솔",
+              "지력",
+              "부대 사기"
+            ],
+            "possibleEffects": [
+              "지휘관 생존",
+              "황건군 질서 있는 퇴각"
+            ]
+          },
+          {
+            "side": "civilian",
+            "role": "현지 주민·어린이",
+            "action": "피란·구호·생업·정보 전달 중 가능한 행동을 고른다",
+            "checks": [
+              "나이",
+              "가정",
+              "거주지",
+              "실제 접근 가능성"
+            ],
+            "possibleEffects": [
+              "개인 안전·자금·관계"
+            ]
+          }
+        ],
+        "note": "선택·판정·효과는 게임 창작 후보다. 숫자 임계값·승률·실행 효과와 내부 노드 플로는 아직 확정하거나 구현하지 않았다."
+      }
+    },
+    {
+      "id": "battle-184-qingzhou-city",
+      "title": "청주성 전투",
+      "groupId": "campaign-yellow-turban-184",
+      "referenceEntryIds": [],
+      "category": "novel",
+      "historicalDate": {
+        "year": 184,
+        "month": null,
+        "calendar": "lunar",
+        "precision": "approximate",
+        "reportedTiming": "미확인",
+        "dateNote": "원페이지 수집 설명: 페이지 표시 연대는 184년임. 삼국지연의 서사상 184년 대흥산 전투 직후 이어지는 가공 전투로 역사 연대와 대응시킨 근사 연대임."
+      },
+      "activationWindow": null,
+      "placeIds": [
+        "place-qingzhou-city-novel"
+      ],
+      "factionIds": [
+        "han",
+        "yellow-turban"
+      ],
+      "participants": [
+        {
+          "personId": "person-rtk14-0925",
+          "role": "구원 명령",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-97022813a7df",
+          "role": "성내 수비",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-rtk14-0472",
+          "role": "구원군 지휘",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-rtk14-0952",
+          "role": "구원·유인",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-rtk14-0147",
+          "role": "매복",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-rtk14-0656",
+          "role": "매복",
+          "verification": "secondary"
+        }
+      ],
+      "overview": "황건적이 청주를 침공하여 청주성에서 청주자사 공경이 포위당하자, 구원 요청을 받은 유언의 명령으로 추정과 유비가 출진함.",
+      "stages": [
+        {
+          "id": "battle-184-qingzhou-city-stage-1",
+          "order": 1,
+          "title": "매복 계책 수립",
+          "actorIds": [
+            "person-rtk14-0952",
+            "person-rtk14-0147",
+            "person-rtk14-0656"
+          ],
+          "unresolvedActorLabels": [],
+          "placeId": "place-qingzhou-city-novel",
+          "reportedPlace": "청주성 인근 산지",
+          "action": "유비가 관우와 장비에게 각각 병력 1,000명을 나누어 주어 산 우측에 매복시키고 징소리를 신호로 일제히 협공할 계획을 세움.",
+          "reportedPrerequisite": "유언의 청주 구원 명령 및 현지 도착",
+          "sourceRecordIds": [
+            "source-battle-184-qingzhou-city"
+          ],
+          "verification": "secondary"
+        },
+        {
+          "id": "battle-184-qingzhou-city-stage-2",
+          "order": 2,
+          "title": "유인 작전 및 3면 협공",
+          "actorIds": [
+            "person-rtk14-0952",
+            "person-rtk14-0472",
+            "person-rtk14-0147",
+            "person-rtk14-0656"
+          ],
+          "unresolvedActorLabels": [
+            "적장"
+          ],
+          "placeId": "place-qingzhou-city-novel",
+          "reportedPlace": "청주성 외곽",
+          "action": "이튿날 유비와 추정이 북을 울리며 전진하자 적장이 출격함. 유비군이 후퇴하며 유인한 뒤 신호를 보내자 관우와 장비의 매복군이 기습하고 유비군이 반격하여 세 갈래로 적을 압박함.",
+          "reportedPrerequisite": "사전 매복 배치 및 적군의 유인선 진입",
+          "sourceRecordIds": [
+            "source-battle-184-qingzhou-city"
+          ],
+          "verification": "secondary"
+        },
+        {
+          "id": "battle-184-qingzhou-city-stage-3",
+          "order": 3,
+          "title": "성내 관군의 호응 및 포위 해제",
+          "actorIds": [
+            "person-97022813a7df",
+            "person-rtk14-0952"
+          ],
+          "unresolvedActorLabels": [
+            "황건적 잔당"
+          ],
+          "placeId": "place-qingzhou-city-novel",
+          "reportedPlace": "청주성 성문 앞",
+          "action": "협공을 당한 황건적이 무너져 청주성 앞까지 도망치자, 공경이 성내 군사를 이끌고 출격해 협격함으로써 황건적을 완전 격파함. 공경이 유비에게 음식을 대접하며 사례함.",
+          "reportedPrerequisite": "황건적의 전열 붕괴 및 성 앞 패주",
+          "sourceRecordIds": [
+            "source-battle-184-qingzhou-city"
+          ],
+          "verification": "secondary"
+        }
+      ],
+      "reportedOutcomes": [
+        "한나라 관군(공경군·추정군·유비 의용병)의 승리",
+        "청주성 포위망 해제 및 침공 황건적 격퇴",
+        "유비의 매복 유인 전술 성공"
+      ],
+      "sourceRecordIds": [
+        "source-battle-184-qingzhou-city"
+      ],
+      "sourceObservations": [
+        "전투 발생 월은 본문상 '미확인'",
+        "황건적 적장의 구체적 성명은 본문상 '불명'",
+        "인포박스 병력(유비 5백, 추정 5천)과 본문 서술(관우 1천, 장비 1천 배속) 간의 수치 불일치 미확인",
+        "양측의 정확한 사상자 수는 본문상 '피해 규모 불명'"
+      ],
+      "coverage": "collected-secondary",
+      "playable": false,
+      "gameplayDraft": {
+        "authorship": "game-fiction",
+        "implementationStatus": "not-implemented",
+        "interventions": [
+          {
+            "side": "han",
+            "role": "구원군 지휘·정찰",
+            "action": "유인·매복 신호를 조율한다",
+            "checks": [
+              "통솔",
+              "지력",
+              "현장 정보"
+            ],
+            "possibleEffects": [
+              "협공 성패",
+              "청주성 포위 해제"
+            ]
+          },
+          {
+            "side": "yellow-turban",
+            "role": "공성군 지휘·정찰",
+            "action": "추격을 제한하고 매복을 탐지한다",
+            "checks": [
+              "지력",
+              "통솔",
+              "정찰"
+            ],
+            "possibleEffects": [
+              "매복 피해",
+              "포위 유지 또는 철수"
+            ]
+          },
+          {
+            "side": "civilian",
+            "role": "현지 주민·어린이",
+            "action": "피란·구호·생업·정보 전달 중 가능한 행동을 고른다",
+            "checks": [
+              "나이",
+              "가정",
+              "거주지",
+              "실제 접근 가능성"
+            ],
+            "possibleEffects": [
+              "개인 안전·자금·관계"
+            ]
+          }
+        ],
+        "note": "선택·판정·효과는 게임 창작 후보다. 숫자 임계값·승률·실행 효과와 내부 노드 플로는 아직 확정하거나 구현하지 않았다."
+      },
+      "extractionNotes": {
+        "ambushPositions": "관우에게 1,000명, 장비에게 1,000명을 주어 둘 다 '산 오른쪽'에 숨도록 서술됨(양측 분산 서술 아님).",
+        "troopCounts": "인포박스(유비군 500명, 추정군 5,000명, 황건적 불명)와 본문(관우 1,000명, 장비 1,000명 배치)의 수치 차이가 각각 존재하며 확정되지 않음."
+      }
+    },
+    {
+      "id": "battle-184-wan",
+      "title": "완성 전투",
+      "groupId": "campaign-yellow-turban-184",
+      "referenceEntryIds": [
+        "timeline-d5ffdbbc9dea6271afef"
+      ],
+      "category": "history",
+      "historicalDate": {
+        "year": 184,
+        "month": null,
+        "calendar": "lunar",
+        "precision": "year",
+        "reportedTiming": "3월 ~ 11월",
+        "dateNote": "원페이지 수집 설명: 페이지 표시 연대: 184년 3월부터 11월까지 지속된 실제 역사적 교전 기간."
+      },
+      "activationWindow": null,
+      "placeIds": [
+        "place-wan"
+      ],
+      "factionIds": [
+        "han",
+        "yellow-turban"
+      ],
+      "participants": [
+        {
+          "personId": "person-rtk14-0607",
+          "role": "봉기 배경",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-rtk14-0660",
+          "role": "초기 황건군 수령",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-fb5936f94991",
+          "role": "남양태수",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-53e1806f6d44",
+          "role": "후임 남양태수",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-rtk14-0620",
+          "role": "황건군 수령",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-rtk14-0387",
+          "role": "관군 지휘",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-rtk14-0441",
+          "role": "형주자사",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-rtk14-0647",
+          "role": "관군 측 장수",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-rtk14-0173",
+          "role": "황건군 수령",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-b8fbc382199a",
+          "role": "황건군 수령",
+          "verification": "secondary"
+        }
+      ],
+      "overview": "184년 3월 장각의 거병에 호응하여 장만성이 남양에서 스스로 '신상사'를 칭하며 봉기하여 남양태수 저공을 살해하고 완성을 장악함.",
+      "stages": [
+        {
+          "id": "battle-184-wan-stage-1",
+          "order": 1,
+          "title": "장만성의 봉기 및 남양태수 저공 살해",
+          "actorIds": [
+            "person-rtk14-0660",
+            "person-fb5936f94991"
+          ],
+          "unresolvedActorLabels": [],
+          "placeId": "place-wan",
+          "reportedPlace": "형주 남양군",
+          "action": "장만성이 신상사를 자칭하고 남양군을 침공하여 태수 저공을 살해하고 완하에 주둔함.",
+          "reportedPrerequisite": "184년 3월 장각의 황건적 총봉기 호응",
+          "sourceRecordIds": [
+            "source-battle-184-wan"
+          ],
+          "verification": "secondary"
+        },
+        {
+          "id": "battle-184-wan-stage-2",
+          "order": 2,
+          "title": "진힐의 장만성 사살 및 조홍의 완성 점거",
+          "actorIds": [
+            "person-53e1806f6d44",
+            "person-rtk14-0660",
+            "person-rtk14-0620"
+          ],
+          "unresolvedActorLabels": [],
+          "placeId": "place-wan",
+          "reportedPlace": "남양군 완하 및 완성",
+          "action": "조정에서 파견한 신임 남양태수 진힐이 184년 6월 장만성을 전사시켰으나, 조홍이 이끄는 황건적이 완성을 계속 점거함.",
+          "reportedPrerequisite": "조정의 남양태수 진힐 파견",
+          "sourceRecordIds": [
+            "source-battle-184-wan"
+          ],
+          "verification": "secondary"
+        },
+        {
+          "id": "battle-184-wan-stage-3",
+          "order": 3,
+          "title": "주준 연합군의 완성 포위 및 조홍 전사",
+          "actorIds": [
+            "person-rtk14-0387",
+            "person-rtk14-0441",
+            "person-rtk14-0647",
+            "person-rtk14-0620",
+            "person-rtk14-0173"
+          ],
+          "unresolvedActorLabels": [],
+          "placeId": "place-wan",
+          "reportedPlace": "남양군 완성",
+          "action": "우중랑장 주준, 형주자사 서구, 장초 등이 완성을 공격하여 두 달 간의 공성전 끝에 8월 조홍을 사살함. 이후 한충이 새 수령이 됨.",
+          "reportedPrerequisite": "관군의 연합 공성전 전개",
+          "sourceRecordIds": [
+            "source-battle-184-wan"
+          ],
+          "verification": "secondary"
+        },
+        {
+          "id": "battle-184-wan-stage-4",
+          "order": 4,
+          "title": "위장 포위 해제와 한충의 투항 및 피살",
+          "actorIds": [
+            "person-rtk14-0387",
+            "person-rtk14-0173",
+            "person-53e1806f6d44"
+          ],
+          "unresolvedActorLabels": [],
+          "placeId": "place-wan",
+          "reportedPlace": "완성 외곽",
+          "action": "주준이 고의로 포위를 풀자 한충이 성 밖으로 나왔고, 주준이 기습하여 격파함. 한충이 항복했으나 진힐이 격분하여 사살함.",
+          "reportedPrerequisite": "주준의 유인책(포위 해제) 및 한충군의 출격",
+          "sourceRecordIds": [
+            "source-battle-184-wan"
+          ],
+          "verification": "secondary"
+        },
+        {
+          "id": "battle-184-wan-stage-5",
+          "order": 5,
+          "title": "손하의 저항 및 최종 토벌",
+          "actorIds": [
+            "person-b8fbc382199a",
+            "person-rtk14-0387"
+          ],
+          "unresolvedActorLabels": [],
+          "placeId": "place-wan",
+          "reportedPlace": "남양군 완성",
+          "action": "항복을 거부한 손하가 끝까지 맞섰으나 184년 11월 완성 전투에서 주준에게 패배하여 전사함.",
+          "reportedPrerequisite": "한충 피살 이후 잔당의 결사 항전",
+          "sourceRecordIds": [
+            "source-battle-184-wan"
+          ],
+          "verification": "secondary"
+        }
+      ],
+      "reportedOutcomes": [
+        "한나라 관군(주준, 진힐 등)의 완전한 승리",
+        "남양 황건적 수령(장만성, 조홍, 한충, 손하) 전원 사망",
+        "남양군 완성 수복 및 남양 일대 황건적 소탕 완료",
+        "전 남양태수 저공 전사"
+      ],
+      "sourceRecordIds": [
+        "source-battle-184-wan"
+      ],
+      "sourceObservations": [
+        "본문상 특정 사서의 명칭과 권수·회차가 직접적으로 언급되지 않음",
+        "양측 참여 병력 규모 및 구체적인 전사자 수는 본문상 '미확인'"
+      ],
+      "coverage": "collected-secondary",
+      "playable": false,
+      "gameplayDraft": {
+        "authorship": "game-fiction",
+        "implementationStatus": "not-implemented",
+        "interventions": [
+          {
+            "side": "han",
+            "role": "공성 지휘·참모",
+            "action": "공성·포위 해제 유인·항복 교섭에 관여한다",
+            "checks": [
+              "통솔",
+              "지력",
+              "위임·군량"
+            ],
+            "possibleEffects": [
+              "완성 점유",
+              "포로와 항복자 처리"
+            ]
+          },
+          {
+            "side": "yellow-turban",
+            "role": "수비 지휘·교섭",
+            "action": "수령 교체 뒤 수비·탈출·조건부 항복을 선택한다",
+            "checks": [
+              "통솔",
+              "지력",
+              "협상·민심"
+            ],
+            "possibleEffects": [
+              "황건군 수령 생사",
+              "성내 병력·귀순"
+            ]
+          },
+          {
+            "side": "civilian",
+            "role": "현지 주민·어린이",
+            "action": "피란·구호·생업·정보 전달 중 가능한 행동을 고른다",
+            "checks": [
+              "나이",
+              "가정",
+              "거주지",
+              "실제 접근 가능성"
+            ],
+            "possibleEffects": [
+              "개인 안전·자금·관계"
+            ]
+          }
+        ],
+        "note": "선택·판정·효과는 게임 창작 후보다. 숫자 임계값·승률·실행 효과와 내부 노드 플로는 아직 확정하거나 구현하지 않았다."
+      },
+      "extractionNotes": {
+        "sunJianMention": "4.3 완성 절 본문에는 손견(孫堅)이 언급되는 문장이 전혀 없음. 또한 손중(孫仲)이나 손하(孫河)와 구분·비교하는 서술도 없으며 오직 '황건적 손하(孫夏)' 한자 표기와 주준에게 패배해 사망했다는 사실만 서술됨.",
+        "xuQiuOffice": "형주자사",
+        "zhangChaoOffice": null,
+        "note": "기존 연표의 손견 완 토벌 연결은 보존하지만, 이번 하위절에 없는 손견 참전 장면을 새로 만들어 넣지 않는다."
+      }
+    },
+    {
+      "id": "battle-184-guangzong",
+      "title": "광종 전투",
+      "groupId": "campaign-yellow-turban-184",
+      "referenceEntryIds": [
+        "timeline-802c23427d48943bd80d"
+      ],
+      "category": "history",
+      "historicalDate": {
+        "year": 184,
+        "month": null,
+        "calendar": "lunar",
+        "precision": "year",
+        "reportedTiming": "미확인",
+        "dateNote": "원페이지 수집 설명: 페이지 표시 연대: 184년. 하곡양 전투(10~11월) 이전에 전개된 기주 지역 황건적 주력 결전."
+      },
+      "activationWindow": null,
+      "placeIds": [
+        "place-guangzong"
+      ],
+      "factionIds": [
+        "han",
+        "yellow-turban"
+      ],
+      "participants": [
+        {
+          "personId": "person-rtk14-0132",
+          "role": "개요 표의 관군 측 인물·현장 역할 미확인",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-rtk14-0607",
+          "role": "황건군 지도자",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-rtk14-1000",
+          "role": "초기 관군 지휘",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-c21585e9a722",
+          "role": "감군·지휘관 교체 관련",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-rtk14-0736",
+          "role": "후임 관군 지휘",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-rtk14-0664",
+          "role": "황건군 지휘",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-rtk14-0279",
+          "role": "후임 관군 지휘",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-rtk14-0659",
+          "role": "말미 결말 서술의 인물",
+          "verification": "secondary"
+        }
+      ],
+      "overview": "장각을 비롯한 황건적 주력이 기주 광종에 집결하자 조정에서 북중랑장 노식을 파견하여 토벌을 지시함.",
+      "stages": [
+        {
+          "id": "battle-184-guangzong-stage-1",
+          "order": 1,
+          "title": "노식의 분전과 광종성 포위",
+          "actorIds": [
+            "person-rtk14-1000",
+            "person-rtk14-0607"
+          ],
+          "unresolvedActorLabels": [],
+          "placeId": "place-guangzong",
+          "reportedPlace": "기주 광종현",
+          "action": "북중랑장 노식이 수적 열세 속에서도 분전하여 황건적 주력을 광종성에 포위함.",
+          "reportedPrerequisite": "조정의 노식 파견 및 토벌 명령",
+          "sourceRecordIds": [
+            "source-battle-184-guangzong"
+          ],
+          "verification": "secondary"
+        },
+        {
+          "id": "battle-184-guangzong-stage-2",
+          "order": 2,
+          "title": "좌풍의 모함으로 인한 노식 해임과 동탁의 패전",
+          "actorIds": [
+            "person-c21585e9a722",
+            "person-rtk14-1000",
+            "person-rtk14-0736",
+            "person-rtk14-0664"
+          ],
+          "unresolvedActorLabels": [],
+          "placeId": "place-guangzong",
+          "reportedPlace": "광종현",
+          "action": "환관 좌풍에게 뇌물을 주지 않은 노식이 해임되고 후임으로 온 동중랑장 동탁이 장량에게 패퇴당함.",
+          "reportedPrerequisite": "좌풍의 뇌물 요구 거절 및 관군 지휘관 교체",
+          "sourceRecordIds": [
+            "source-battle-184-guangzong"
+          ],
+          "verification": "secondary"
+        },
+        {
+          "id": "battle-184-guangzong-stage-3",
+          "order": 3,
+          "title": "황보숭 투입 및 야습을 통한 장량 사살",
+          "actorIds": [
+            "person-rtk14-0279",
+            "person-rtk14-0664"
+          ],
+          "unresolvedActorLabels": [],
+          "placeId": "place-guangzong",
+          "reportedPlace": "광종현",
+          "action": "조정이 황보숭을 파견함. 황보숭은 첫 전투에서 패했으나 야습으로 반격하여 장량을 죽임.",
+          "reportedPrerequisite": "조정의 황보숭 임명 및 전열 정비 후 야습 결행",
+          "sourceRecordIds": [
+            "source-battle-184-guangzong"
+          ],
+          "verification": "secondary"
+        },
+        {
+          "id": "battle-184-guangzong-stage-4",
+          "order": 4,
+          "title": "장보의 저항과 수뇌부 전멸",
+          "actorIds": [
+            "person-rtk14-0659",
+            "person-rtk14-0279"
+          ],
+          "unresolvedActorLabels": [],
+          "placeId": "place-guangzong",
+          "reportedPlace": "광종현",
+          "action": "장보가 저항했으나 전세를 뒤집지 못하고 패배하여 처형당함. 황건적 수뇌부가 1년 만에 전멸하고 황보숭은 공을 노식에게 돌림.",
+          "reportedPrerequisite": "장각의 병사 및 장량 전사에 따른 황건적 세력 붕괴",
+          "sourceRecordIds": [
+            "source-battle-184-guangzong"
+          ],
+          "verification": "secondary"
+        }
+      ],
+      "reportedOutcomes": [
+        "한나라 관군(황보숭)의 승리",
+        "황건적 수뇌부(장각 병사 확인, 장량 전사, 장보 패망)의 전멸",
+        "황건적 본대의 몰락 및 후한 행정력 유지 입증",
+        "황보숭의 승전 공로 노식 귀속"
+      ],
+      "sourceRecordIds": [
+        "source-battle-184-guangzong"
+      ],
+      "sourceObservations": [
+        "전투의 정확한 개시 및 종료 월은 본문상 '미확인'",
+        "양측 병력 수치는 본문상 '병력 불명'으로 기록 부재",
+        "장보의 패망 장소에 대해 4.4절(광종 패배 및 처형)과 4.5절(하곡양 포위 후 참수) 간 본문 서술상의 차이 존재"
+      ],
+      "coverage": "collected-secondary",
+      "playable": false,
+      "gameplayDraft": {
+        "authorship": "game-fiction",
+        "implementationStatus": "not-implemented",
+        "interventions": [
+          {
+            "side": "han",
+            "role": "참모·부장",
+            "action": "감군 대응 또는 야습·경계 임무를 맡는다",
+            "checks": [
+              "직책·신뢰",
+              "지력",
+              "통솔"
+            ],
+            "possibleEffects": [
+              "노식 지휘권",
+              "관군 지휘관 교체",
+              "장량 생존·패망"
+            ]
+          },
+          {
+            "side": "yellow-turban",
+            "role": "수비·정찰",
+            "action": "경계를 유지하며 야습에 대응한다",
+            "checks": [
+              "통솔",
+              "정찰",
+              "군량·사기"
+            ],
+            "possibleEffects": [
+              "광종 방어",
+              "지휘관 생존·퇴각"
+            ]
+          },
+          {
+            "side": "civilian",
+            "role": "현지 주민·어린이",
+            "action": "피란·구호·생업·정보 전달 중 가능한 행동을 고른다",
+            "checks": [
+              "나이",
+              "가정",
+              "거주지",
+              "실제 접근 가능성"
+            ],
+            "possibleEffects": [
+              "개인 안전·자금·관계"
+            ]
+          }
+        ],
+        "note": "선택·판정·효과는 게임 창작 후보다. 숫자 임계값·승률·실행 효과와 내부 노드 플로는 아직 확정하거나 구현하지 않았다."
+      },
+      "extractionNotes": {
+        "zhangBaoContext": "장보가 광종에서 죽었다고 장소를 명시하지 않고, 장량 전사 후 장보의 저항과 처형 및 황건적 수뇌부의 전멸 결말 문맥으로 이어 서술됨.",
+        "duplicateDeathConfirmed": "미확인"
+      }
+    },
+    {
+      "id": "battle-184-xiaquyang",
+      "title": "하곡양 전투",
+      "groupId": "campaign-yellow-turban-184",
+      "referenceEntryIds": [],
+      "category": "history",
+      "historicalDate": {
+        "year": 184,
+        "month": null,
+        "calendar": "lunar",
+        "precision": "year",
+        "reportedTiming": "10월 ~ 11월",
+        "dateNote": "원페이지 수집 설명: 페이지 표시 연대: 184년 11월(인포박스 표기) 및 184년 10월(본문 첫 문장 광종 대승 후 북진 서술). 실제 역사 연대 기준 184년 늦가을에 해당함."
+      },
+      "activationWindow": null,
+      "placeIds": [
+        "place-xiaquyang"
+      ],
+      "factionIds": [
+        "han",
+        "yellow-turban"
+      ],
+      "participants": [
+        {
+          "personId": "person-rtk14-0132",
+          "role": "개요 표의 관군 측 인물·현장 역할 미확인",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-rtk14-0659",
+          "role": "황건군 지휘",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-rtk14-0279",
+          "role": "관군 지휘",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-rtk14-0736",
+          "role": "개요 표의 관군 측 인물·현장 역할 미확인",
+          "verification": "secondary"
+        },
+        {
+          "personId": "person-18355a2828c0",
+          "role": "거록태수·관군 합류",
+          "verification": "secondary"
+        }
+      ],
+      "overview": "184년 10월 광종 전투에서 대승을 거둔 좌중랑장 황보숭이 북진하여 장보의 거점인 거록군 하곡양을 포위함.",
+      "stages": [
+        {
+          "id": "battle-184-xiaquyang-stage-1",
+          "order": 1,
+          "title": "황보숭의 북진 및 하곡양 포위",
+          "actorIds": [
+            "person-rtk14-0279",
+            "person-18355a2828c0",
+            "person-rtk14-0659"
+          ],
+          "unresolvedActorLabels": [],
+          "placeId": "place-xiaquyang",
+          "reportedPlace": "기주 거록군 하곡양현",
+          "action": "황보숭이 광종에서 북진하여 하곡양을 포위하고 거록태수 곽전이 합류하여 전열을 강화함.",
+          "reportedPrerequisite": "광종 전투의 대승 및 황보숭의 진격",
+          "sourceRecordIds": [
+            "source-battle-184-xiaquyang"
+          ],
+          "verification": "secondary"
+        },
+        {
+          "id": "battle-184-xiaquyang-stage-2",
+          "order": 2,
+          "title": "하곡양 총공격 및 장보 세력 전멸과 경관 축조",
+          "actorIds": [
+            "person-rtk14-0279",
+            "person-18355a2828c0",
+            "person-rtk14-0659"
+          ],
+          "unresolvedActorLabels": [
+            "황건적 병사들"
+          ],
+          "placeId": "place-xiaquyang",
+          "reportedPlace": "하곡양현",
+          "action": "관군이 장보군을 공격하여 지공장군 장보를 포함한 10만여 명을 참수하거나 생포함. 시체를 쌓고 흙을 덮어 경관(京觀)을 만듦.",
+          "reportedPrerequisite": "하곡양성 포위망 완성 및 총공격 결행",
+          "sourceRecordIds": [
+            "source-battle-184-xiaquyang"
+          ],
+          "verification": "secondary"
+        }
+      ],
+      "reportedOutcomes": [
+        "한나라 관군의 결정적 대승",
+        "지공장군 장보 참수",
+        "황건적 10만여 명 참수 또는 생포",
+        "적 시체로 경관(京觀) 축조",
+        "장보 세력 및 기주 황건적 주력의 최종 박멸"
+      ],
+      "sourceRecordIds": [
+        "source-battle-184-xiaquyang"
+      ],
+      "sourceObservations": [
+        "시기 표기가 인포박스(184년 11월)와 본문 첫 문장(184년 10월) 간 상이함",
+        "인포박스 지휘관/장수에 기재된 하진과 동탁의 실제 전투 단계별 역할은 본문상 '미확인'",
+        "한나라 관군의 구체적인 사상자 수는 '피해 규모 불명'",
+        "황건적 측 장수 중 장보 외 인물은 본문상 '기록없음'"
+      ],
+      "coverage": "collected-secondary",
+      "playable": false,
+      "gameplayDraft": {
+        "authorship": "game-fiction",
+        "implementationStatus": "not-implemented",
+        "interventions": [
+          {
+            "side": "han",
+            "role": "관군 지휘·부장",
+            "action": "곽전군 합류·포위·항복 수용을 조율한다",
+            "checks": [
+              "통솔",
+              "지력",
+              "위임·보급"
+            ],
+            "possibleEffects": [
+              "포위 성패",
+              "장보 생사·포로"
+            ]
+          },
+          {
+            "side": "yellow-turban",
+            "role": "수비 지휘·교섭",
+            "action": "포위 돌파·철수·항복을 결정한다",
+            "checks": [
+              "통솔",
+              "지력",
+              "부대 상태"
+            ],
+            "possibleEffects": [
+              "장보 생존",
+              "잔존 병력·소속"
+            ]
+          },
+          {
+            "side": "civilian",
+            "role": "현지 주민·어린이",
+            "action": "피란·구호·생업·정보 전달 중 가능한 행동을 고른다",
+            "checks": [
+              "나이",
+              "가정",
+              "거주지",
+              "실제 접근 가능성"
+            ],
+            "possibleEffects": [
+              "개인 안전·자금·관계"
+            ]
+          }
+        ],
+        "note": "선택·판정·효과는 게임 창작 후보다. 숫자 임계값·승률·실행 효과와 내부 노드 플로는 아직 확정하거나 구현하지 않았다."
+      },
+      "extractionNotes": {
+        "octoberContext": "184년 10월은 황보숭이 광종 전투에서 대승을 거둔 후 광종에서 북진하여 장보의 하곡양을 포위한 시점.",
+        "novemberContext": "184년 11월은 인포박스에 기재된 하곡양 전투 자체의 교전 및 종결 시기.",
+        "conflictConfirmed": false,
+        "note": "첫 추출의 시기 차이 메모와 재확인 문맥을 함께 보존한다. 원페이지 내용을 수정하지 않는다."
+      }
+    }
+  ],
+  "links": [
+    {
+      "id": "link-novel-daxingshan-qingzhou",
+      "from": "battle-184-daxingshan",
+      "to": "battle-184-qingzhou-city",
+      "kind": "narrativePrecedes",
+      "category": "novel",
+      "status": "candidate",
+      "reason": "원페이지 연의 전개의 구원 출정 순서. 실행 조건은 아직 작성하지 않았다."
+    },
+    {
+      "id": "link-guangzong-xiaquyang",
+      "from": "battle-184-guangzong",
+      "to": "battle-184-xiaquyang",
+      "kind": "aftermath",
+      "category": "history",
+      "status": "candidate",
+      "reason": "광종 전투 이후 황보숭의 북진·하곡양 포위. 전제 변화 시 지연·대체 검토 필요."
+    }
+  ],
+  "openIssues": [
+    {
+      "id": "source-zhangbao-overlap",
+      "status": "preserved-by-user",
+      "eventIds": [
+        "battle-184-guangzong",
+        "battle-184-xiaquyang"
+      ],
+      "detail": "광종 말미와 하곡양의 장보 결말 서술을 별개 근거로 보존. 같은 인물의 실제 사망을 중복 적용하지 않도록 추후 실행 규칙 작성 시 검토."
+    },
+    {
+      "id": "source-qingzhou-troops",
+      "status": "source-uncertain",
+      "eventIds": [
+        "battle-184-qingzhou-city"
+      ],
+      "detail": "인포박스(유비군 500명, 추정군 5,000명, 황건적 불명)와 본문(관우 1,000명, 장비 1,000명 배치)의 수치 차이가 각각 존재하며 확정되지 않음."
+    },
+    {
+      "id": "identity-sun-xia",
+      "status": "unlinked",
+      "eventIds": [
+        "battle-184-wan"
+      ],
+      "detail": "황건군 손하 孫夏는 시트의 동명 손하와 동일인 확인이 없어 별도 인물 ID로 보존."
+    },
+    {
+      "id": "source-bibliography",
+      "status": "unverified",
+      "eventIds": [
+        "battle-184-daxingshan",
+        "battle-184-qingzhou-city",
+        "battle-184-wan",
+        "battle-184-guangzong",
+        "battle-184-xiaquyang"
+      ],
+      "detail": "정사 세 전투는 원페이지에 원사서명이 없어 미확인. 연의 두 전투도 원전 회차 직접 대조는 하지 않음."
+    }
+  ]
+}
