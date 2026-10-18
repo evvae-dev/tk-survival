@@ -10,7 +10,6 @@ import { choiceKey, type GameEvent } from "@/lib/event-engine";
 import { testAbilityDelta } from "@/lib/game-presentation";
 import { useRecordPlayback } from "@/hooks/use-record-playback";
 import PlaybackControls from "./PlaybackControls";
-import { abilityKeys, abilityLabels } from "@/lib/game-presentation";
 import chapter from "@/data/collection/5-1-yellow-turban.json";
 import CharacterPanel, { CharacterDetails } from "./CharacterPanel";
 import SituationMap from "./SituationMap";
@@ -111,10 +110,6 @@ export default function GameDashboard({
       <main className={s.main}>
         <aside className={s.leftSidebar} ref={sidebarRef}>
           <CharacterPanel game={view} onStats={() => setModal("stats")} />
-          {lastDecision?.growth && <div key={game.turn} className={s.growthNotice} data-testid="choice-growth" role="status">
-            {abilityKeys.map(key => { const delta = lastDecision.growth?.stats[key] ?? 0; return delta ? <span key={key} className={delta > 0 ? s.statIncrease : s.statDecrease}>{abilityLabels[key]} {delta > 0 ? '+' : ''}{delta}</span> : null; })}
-            <span className={lastDecision.growth.fame > 0 ? s.statIncrease : s.statDecrease}>명성 {lastDecision.growth.fame > 0 ? '+' : ''}{lastDecision.growth.fame}</span>
-          </div>}
           <section className={`${s.panel} ${s.mapPanel}`}>
             <h2 className={s.panelTitle}>
               정세{" "}
