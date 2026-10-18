@@ -62,7 +62,9 @@ export function resolveChoice(game: Game, key: string, catalog: HistoricalEvent[
   const reward = applyChoiceGrowth(event.state, progress.state, selected.title, check?.success);
   progress.state = reward.state;
   const outcome = check ? `${check.success ? '성공' : '실패'} · ${check.success ? selected.check?.success : selected.check?.failure}` : '';
-  const entry = { year: game.year, month: historical.month, title: `${historical.title} · ${selected.title}`, detail: [outcome, progress.results.join(' ') || selected.description].filter(Boolean).join('\n'), kind: 'fiction' as const, ...(reward.growth ? { growth: reward.growth } : {}), ...(check ? { check } : {}) };
+  const bridge = check ? (check.success ? selected.check?.successNarrative : selected.check?.failureNarrative) : undefined;
+  const resultText = progress.results.join(' ') || (check ? bridge || (check.success ? selected.check?.success : selected.check?.failure) || '' : selected.outcome || selected.description);
+  const entry = { year: game.year, month: historical.month, title: `${historical.title} · ${selected.title}`, detail: [outcome, resultText].filter(Boolean).join('\n'), kind: 'fiction' as const, ...(reward.growth ? { growth: reward.growth } : {}), ...(check ? { check } : {}) };
   let next: Game = { ...progress.state, introChoicePending: false, turn: game.turn + 1, decisions: [...progress.state.decisions, entry].slice(-120), world: { ...progress.state.world, log: [...progress.state.world.log, entry].slice(-120) } };
   if (!progress.node) next = finishEvent(next, historical);
   return { ...next, completed: !progress.node && next.world.flags.chapterFinished === true && catalog.filter(e => e.year === next.year && e.flow).every(e => next.world.appliedEventIds.includes(e.id)) };

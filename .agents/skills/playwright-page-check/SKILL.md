@@ -32,3 +32,5 @@ New-game onboarding now includes an automatic 30–80 ability roulette followed 
 After roulette, verify the non-dismissible awakening transition on desktop/mobile and reduced-motion contexts before the first-choice dialog opens. `check-onboarding.cjs` covers this ordering.
 
 For completed-game chronicles, run `node .agents/skills/playwright-page-check/scripts/check-chronicle.cjs http://localhost:4173 /tmp/tk-chronicle`. It verifies year grouping, progressive reveal, downward scrolling, full view/replay, desktop/390px/320px layout and reduced motion using isolated completed-save fixtures. Synthetic fixture years are for grouping checks only, not new game content.
+
+For story continuity after a checked choice, run `scripts/check-narrative-continuity.cjs`: it performs the Han Zhong negotiation, confirms success prose before the execution threat, and checks legacy-save rendering on PC/mobile.
