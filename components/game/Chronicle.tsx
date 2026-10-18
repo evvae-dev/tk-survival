@@ -25,7 +25,11 @@ export default function Chronicle({ game }: { game: Game }) {
   }, [shown, all, lines.length]);
   useEffect(() => {
     const element = scroller.current;
-    if (element && !all) element.scrollTo({ top: element.scrollHeight, behavior: reduced.current ? 'instant' : 'smooth' });
+    if (element && !all) {
+      const behavior = reduced.current ? 'instant' : 'smooth';
+      element.scrollTo({ top: element.scrollHeight, behavior });
+      Array.from(element.querySelectorAll('[data-testid="chronicle-entry"]')).at(-1)?.scrollIntoView({ block: 'nearest', behavior });
+    }
   }, [shown, all]);
   const visible = all ? lines : lines.slice(0, shown);
   const years = [...new Set(visible.map(line => line.year))];
