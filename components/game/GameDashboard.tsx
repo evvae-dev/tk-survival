@@ -16,6 +16,8 @@ import OfficerRanking from "./OfficerRanking";
 import GameDialog from "./GameDialog";
 import s from "./game.module.css";
 import ChoiceButton from "./ChoiceButton";
+import RecordText from "./RecordText";
+import { narrativeText } from "@/lib/record-presentation";
 import OfficerName, { OfficerText } from "./OfficerName";
 
 const people = new Map(chapter.people.map((person) => [person.id, person]));
@@ -219,11 +221,11 @@ export default function GameDashboard({
                     <li
                       key={`${index}-${entry.title}`}
                       data-testid="history-record"
-                      className={`${entry.kind === "fiction" ? s.importantLog : ""} ${addedRecord && index === game.world.log.length - 1 ? s.newRecord : ""}`}
+                      className={`${entry.check?.success === true ? s.successLog : entry.check?.success === false ? s.failureLog : ""} ${addedRecord && index === game.world.log.length - 1 ? s.newRecord : ""}`}
                     >
                       <span>{dateLabel(entry.year, entry.month)}</span>
                       <h3><OfficerText text={entry.title} /></h3>
-                      <p><OfficerText text={entry.detail} /></p>
+                      <p><RecordText key={`${index}-${entry.detail}`} text={narrativeText(entry.detail)} animate={index === view.world.log.length - 1} speed={playback.speed} /></p>
                     </li>
                   ))
               ) : (

@@ -69,3 +69,13 @@
   .eventPanel>.primaryButton{width:100%}
   .eventPanel .ending{padding:8px 0;min-height:0}
 }
+
+.historyLog li.successLog{border-left-color:#65c995;background:rgba(55,140,95,.15)}
+.historyLog li.failureLog{border-left-color:#ef8787;background:rgba(170,65,65,.12)}
+.successOutcome{color:#74d7a3}
+.officerName{color:inherit;font-weight:700;text-decoration-color:currentColor}
+.officerName:hover,.officerName:focus-visible{color:inherit}
+.officerTooltip>strong{color:inherit}
+.recordText{white-space:pre-line}
+.typingCursor{background:none;border:0;color:var(--text-muted);padding:0;cursor:pointer}
+.choiceArt{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;image-rendering:pixelated;border-radius:5px;margin:0 0 12px}

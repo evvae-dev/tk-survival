@@ -21,9 +21,9 @@ export function useRecordPlayback(game: Game, event: GameEvent | null, advance: 
 
   useEffect(() => {
     if (!automatic || !waiting || paused) return;
-    const timer = setTimeout(step, playbackDelay(speed));
+    const timer = setTimeout(step, Math.max(playbackDelay(speed), ((game.world.log.at(-1)?.detail.length ?? 0) * 22 + 900) * speed));
     return () => clearTimeout(timer);
-  }, [automatic, waiting, paused, speed, step]);
+  }, [automatic, waiting, paused, speed, step, game.world.log]);
 
   useEffect(() => {
     if (!waiting || paused) return;

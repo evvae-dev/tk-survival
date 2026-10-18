@@ -22,10 +22,10 @@ export function getCurrentEvent(game: Game, catalog: HistoricalEvent[] = histori
     const progress = advanceFlow(state, event, state.flowProgress?.eventId === event.id ? state.flowProgress.nodeId : undefined);
     state = progress.state;
     if (progress.results.length) {
-      state = { ...state, world: { ...state.world, log: [...state.world.log, { year: state.year, month: event.month, title: event.title, detail: progress.results.join(' · '), kind: 'fiction' as const }].slice(-120) } };
+      state = { ...state, world: { ...state.world, log: [...state.world.log, { year: state.year, month: event.month, title: event.title, detail: progress.results.join(' '), kind: 'fiction' as const }].slice(-120) } };
       if (stopAfterRecord) return {
         id: event.id, year: event.year, month: event.month, title: event.title,
-        scene: progress.results.join(' · '), choices: [], historical: event,
+        scene: progress.results.join(' '), choices: [], historical: event,
         automatic: true, annual: false, state: progress.node ? state : finishEvent(state, event),
       };
     }
@@ -59,7 +59,7 @@ export function resolveChoice(game: Game, key: string, catalog: HistoricalEvent[
   }
   const progress = advanceFlow(event.state, historical, target);
   const outcome = check ? `${check.success ? '성공' : '실패'} · ${check.success ? selected.check?.success : selected.check?.failure}` : '';
-  const entry = { year: game.year, month: historical.month, title: `${historical.title} · ${selected.title}`, detail: [outcome, progress.results.join(' · ') || selected.description].filter(Boolean).join('\n'), kind: 'fiction' as const, ...(check ? { check } : {}) };
+  const entry = { year: game.year, month: historical.month, title: `${historical.title} · ${selected.title}`, detail: [outcome, progress.results.join(' ') || selected.description].filter(Boolean).join('\n'), kind: 'fiction' as const, ...(check ? { check } : {}) };
   let next: Game = { ...progress.state, turn: game.turn + 1, decisions: [...progress.state.decisions, entry].slice(-120), world: { ...progress.state.world, log: [...progress.state.world.log, entry].slice(-120) } };
   if (!progress.node) next = finishEvent(next, historical);
   return { ...next, completed: !progress.node && next.world.flags.chapterFinished === true && catalog.filter(e => e.year === next.year && e.flow).every(e => next.world.appliedEventIds.includes(e.id)) };

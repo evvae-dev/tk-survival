@@ -7,6 +7,7 @@ import { abilityKeys, abilityLabels } from '@/lib/game-presentation';
 import chapter from '@/data/collection/5-1-yellow-turban.json';
 import officerAbilities from '@/data/reference/officer-abilities.json';
 import s from './game.module.css';
+import { personSegments } from '@/lib/record-presentation';
 
 const cache = new Map<string, Officer>();
 const people = new Map<string, { officerId?: string | null }>();
@@ -14,13 +15,10 @@ for (const officer of officerAbilities) {
   people.set(officer.name, { officerId: people.has(officer.name) ? undefined : officer.id });
 }
 for (const person of chapter.people) if (person.officerId || !people.has(person.name)) people.set(person.name, person);
-const names = [...people.keys()].sort((a, b) => b.length - a.length);
-const namePattern = new RegExp(`(${names.map(name => name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'g');
-
 export function OfficerText({ text }: { text: string }) {
-  return <>{text.split(namePattern).map((part, index) => {
-    const person = people.get(part);
-    return person ? <OfficerName key={index} name={part} officerId={person.officerId ?? undefined} /> : part;
+  return <>{personSegments(text, [...people.keys()]).map((part, index) => {
+    const person = part.person ? people.get(part.person) : undefined;
+    return person?.officerId ? <OfficerName key={index} name={part.text} officerId={person.officerId} /> : part.text;
   })}</>;
 }
 
