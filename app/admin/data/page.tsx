@@ -1,6 +1,6 @@
 'use client';
 import { CHAPTER_ID } from '@/lib/chapter';
-import Link from 'next/link';
+import Link from '@/components/HostedLink';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import type { Officer, TimelineEntry } from '@/lib/reference-data';

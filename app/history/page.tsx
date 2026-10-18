@@ -1,5 +1,5 @@
 "use client";
-import Link from 'next/link';
+import Link from '@/components/HostedLink';
 import {useEffect,useState} from 'react';
 import {dateLabel,factionLabels,regionLabels} from '@/lib/game';
 import {getEffectiveCatalog,useEventCatalogStore} from '@/stores/event-catalog-store';

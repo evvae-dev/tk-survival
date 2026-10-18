@@ -2,7 +2,7 @@
 import AbilityCheckFields from '@/components/event-admin/AbilityCheckFields';
 import { CHAPTER_ID } from '@/lib/chapter';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import Link from 'next/link';
+import Link from '@/components/HostedLink';
 import { ReactFlow, ReactFlowProvider, Background, Controls, MiniMap, Handle, Position, applyNodeChanges, applyEdgeChanges, addEdge, useReactFlow, useUpdateNodeInternals, useNodesInitialized, type NodeProps, type Node, type Edge } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import type { HistoricalEvent } from '@/lib/game';

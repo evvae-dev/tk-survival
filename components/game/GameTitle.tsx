@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import titleScreen from '@/public/title-screen.png';
-import Link from 'next/link';
+import Link from '@/components/HostedLink';
 import { useState } from 'react';
 import s from './game.module.css';
 

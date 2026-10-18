@@ -1,5 +1,5 @@
 'use client';
-import Link from 'next/link';
+import Link from '@/components/HostedLink';
 import { useEffect, useMemo, useState } from 'react';
 import { ReactFlow, Background, Controls, Handle, Position, MarkerType, useReactFlow, type Node, type NodeProps, type Edge } from '@xyflow/react';
 import { getEffectiveCatalog, useEventCatalogStore } from '@/stores/event-catalog-store';

@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import titleScreen from "@/public/title-screen.png";
-import Link from "next/link";
+import Link from "@/components/HostedLink";
 import { useEffect, useRef, useState } from "react";
 import type { Game, Stats } from "@/lib/game";
 import { dateLabel, factionLabel, regionLabels } from "@/lib/game";
