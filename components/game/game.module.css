@@ -162,3 +162,28 @@
   .awakeningTop, .awakeningBottom { animation:eyeFade .3s ease-out both; }
 }
 @keyframes eyeFade { from { opacity:1; } to { opacity:0; } }
+
+.chronicle { padding:28px; }
+.chronicleHeading { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.chronicleHeading h2 { font-size:24px; margin:8px 0 16px; }
+.chronicleHeading button { flex-shrink:0; }
+.chronicleScroll { max-height:60vh; overflow-y:auto; overflow-x:hidden; padding:12px 14px 24px 4px; scrollbar-gutter:stable; }
+.chronicleExpanded { max-height:none; overflow:visible; }
+.chronicleYear { border-left:2px solid #6c6254; padding:0 0 18px 22px; }
+.chronicleYear h3 { color:#e8c68c; font-size:24px; margin:4px 0 20px; }
+.chronicleYear ol { list-style:none; padding:0; margin:0; }
+.chronicleYear li { position:relative; line-height:1.9; margin-bottom:18px; overflow-wrap:anywhere; animation:chronicleAppear .5s ease-out both; }
+.chronicleYear li::before { content:''; position:absolute; width:6px; height:6px; border-radius:50%; background:#c4aa80; left:-26px; top:12px; }
+@keyframes chronicleAppear { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+@media(max-width:768px) { .chronicle { padding:20px; } .chronicleHeading h2 { font-size:20px; } }
+@media(prefers-reduced-motion:reduce) { .chronicleYear li { animation:none; } }
+.chronicle { scroll-margin-top:24px; }
+.chronicleActions { display:flex; gap:12px; flex-wrap:wrap; justify-content:flex-end; }
+/* Completion is a readable scrollable epilogue rather than the fixed play layout. */
+.completedApp .completedCenter { display:block; overflow-y:auto; min-height:0; scroll-padding-top:16px; }
+.completedCenter>.eventPanel { height:auto; min-height:0; margin-bottom:16px; }
+.completedCenter .ending { padding:18px 0; }
+.completedCenter .endingSeal { display:none; }
+.completedCenter .ending h1 { font-size:22px; }
+.completedCenter .chronicle { margin-bottom:24px; }
+@media(max-width:768px) { .completedApp { height:auto; min-height:100dvh; overflow:visible; } .completedApp .main { overflow:visible; } .completedApp .completedCenter { overflow:visible; } }

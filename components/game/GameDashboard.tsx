@@ -15,6 +15,7 @@ import CharacterPanel, { CharacterDetails } from "./CharacterPanel";
 import SituationMap from "./SituationMap";
 import OfficerRanking from "./OfficerRanking";
 import GameDialog from "./GameDialog";
+import Chronicle from "./Chronicle";
 import AwakeningTransition from "./AwakeningTransition";
 import s from "./game.module.css";
 import ChoiceButton from "./ChoiceButton";
@@ -80,7 +81,7 @@ export default function GameDashboard({
   const lastDecision = game.decisions.at(-1);
   const preserved = view.world.factions["yellow-turban"] === "preserved";
   return (
-    <div className={`${s.app} ${playback.waiting && !modal ? s.clickToAdvance : ''}`} data-testid="game-screen">
+    <div className={`${s.app} ${game.completed ? s.completedApp : ""} ${playback.waiting && !modal ? s.clickToAdvance : ''}`} data-testid="game-screen">
       {awakening && <AwakeningTransition onComplete={() => { setAwakening(false); setModal("event"); }} />}
       <header className={s.header} ref={headerRef}>
         <Link href="/" className={s.brand}>
@@ -126,8 +127,8 @@ export default function GameDashboard({
             </button>
           </section>
         </aside>
-        <div className={`${s.centerContent} ${!playback.panelVisible ? s.recordReading : ""}`}>
-          {playback.panelVisible && <section ref={eventRef} className={`${s.panel} ${s.eventPanel}`} aria-live="polite" data-testid="event-panel">
+        <div className={`${s.centerContent} ${game.completed ? s.completedCenter : ""} ${!playback.panelVisible ? s.recordReading : ""}`}>
+          {(playback.panelVisible || game.completed) && <section ref={eventRef} className={`${s.panel} ${s.eventPanel}`} aria-live="polite" data-testid="event-panel">
             {lastDecision?.check && (
               <div
                 data-testid="last-check-result"
@@ -187,7 +188,7 @@ export default function GameDashboard({
               )
             )}
           </section>}
-          <section
+          {game.completed ? <Chronicle game={game} /> : <section
             className={`${s.panel} ${s.historyPanel}`}
             aria-labelledby="log-heading"
           >
@@ -224,7 +225,7 @@ export default function GameDashboard({
                 </li>
               )}
             </ol>
-          </section>
+          </section>}
         </div>
         <aside className={s.rightSidebar}>
           <OfficerRanking year={game.year} world={view.world} />

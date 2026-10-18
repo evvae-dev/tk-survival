@@ -30,3 +30,5 @@ For the compact single-line mobile character row, run `node .agents/skills/playw
 New-game onboarding now includes an automatic 30–80 ability roulette followed by an automatically opened first-choice dialog. Use `scripts/check-onboarding.cjs` to verify this sequence. Other checks can dismiss that first dialog with `dismissInitialChoice` from `scripts/playback-helper.cjs`; test fixtures for later scenes should set `introChoicePending: false`.
 
 After roulette, verify the non-dismissible awakening transition on desktop/mobile and reduced-motion contexts before the first-choice dialog opens. `check-onboarding.cjs` covers this ordering.
+
+For completed-game chronicles, run `node .agents/skills/playwright-page-check/scripts/check-chronicle.cjs http://localhost:4173 /tmp/tk-chronicle`. It verifies year grouping, progressive reveal, downward scrolling, full view/replay, desktop/390px/320px layout and reduced motion using isolated completed-save fixtures. Synthetic fixture years are for grouping checks only, not new game content.
