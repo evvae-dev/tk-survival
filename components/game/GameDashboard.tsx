@@ -15,6 +15,7 @@ import CharacterPanel, { CharacterDetails } from "./CharacterPanel";
 import SituationMap from "./SituationMap";
 import OfficerRanking from "./OfficerRanking";
 import GameDialog from "./GameDialog";
+import AwakeningTransition from "./AwakeningTransition";
 import s from "./game.module.css";
 import ChoiceButton from "./ChoiceButton";
 import RecordText from "./RecordText";
@@ -41,8 +42,9 @@ export default function GameDashboard({
   onReset,
   onStats,
 }: Props) {
-  const [modal, setModal] = useState<Modal>(() => game.introChoicePending ? "event" : null);
-  const playback = useRecordPlayback(game, event, onAdvanceRecord, modal !== null);
+  const [awakening, setAwakening] = useState(() => !!game.introChoicePending);
+  const [modal, setModal] = useState<Modal>(null);
+  const playback = useRecordPlayback(game, event, onAdvanceRecord, modal !== null || awakening);
   const eventRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLElement>(null);
   const sidebarRef = useRef<HTMLElement>(null);
@@ -79,6 +81,7 @@ export default function GameDashboard({
   const preserved = view.world.factions["yellow-turban"] === "preserved";
   return (
     <div className={`${s.app} ${playback.waiting && !modal ? s.clickToAdvance : ''}`} data-testid="game-screen">
+      {awakening && <AwakeningTransition onComplete={() => { setAwakening(false); setModal("event"); }} />}
       <header className={s.header} ref={headerRef}>
         <Link href="/" className={s.brand}>
           <span className={s.desktopBrand}>

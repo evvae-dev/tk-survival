@@ -1,6 +1,10 @@
 async function dismissInitialChoice(page) {
   const pending = await page.evaluate(() => { try { return JSON.parse(localStorage.getItem('tk-survival-game-v1'))?.state?.game?.introChoicePending === true; } catch { return false; } });
   if (!pending) return;
+  if (await page.getByTestId("awakening-transition").count()) {
+    await page.getByTestId("awakening-transition").waitFor({ state: "detached" });
+    await page.getByRole("heading", { name: /갑자기 분위기 황건적/ }).waitFor();
+  }
   const popup = page.locator('dialog[open]').filter({ has: page.getByRole('heading', { name: /갑자기 분위기 황건적/ }) });
   if (!(await popup.isVisible())) return;
   await popup.getByRole('button', { name: '팝업 닫기' }).click();

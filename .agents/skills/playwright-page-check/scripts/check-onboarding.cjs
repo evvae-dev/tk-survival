@@ -10,7 +10,7 @@ const[baseUrl='http://localhost:4173',out='/tmp/tk-onboarding']=process.argv.sli
  await p.screenshot({path:`${out}/${name}-rolling.png`});
  await p.locator('[data-testid="stat-roulette"][data-phase="complete"]').waitFor();
  const numbers=await roulette.locator('[data-locked] strong').allTextContents();assert.equal(numbers.length,5);assert(numbers.every(n=>+n>=30&&+n<=80));await p.screenshot({path:`${out}/${name}-complete.png`});
- await p.getByTestId('game-screen').waitFor();const initial=p.locator('dialog[open]');await initial.getByRole('heading',{name:/갑자기 분위기 황건적/}).waitFor();
+ await p.getByTestId('game-screen').waitFor();const awakening=p.getByTestId('awakening-transition');await awakening.waitFor();await p.keyboard.press('Escape');assert(await awakening.isVisible());await p.screenshot({path:`${out}/${name}-awakening.png`});await awakening.waitFor({state:'detached'});const initial=p.locator('dialog[open]');await initial.getByRole('heading',{name:/갑자기 분위기 황건적/}).waitFor();
  const game=await p.evaluate(()=>JSON.parse(localStorage.getItem('tk-survival-game-v1')).state.game);
  assert.equal(game.region,'unknown');assert.equal(game.birthRegion,'unknown');assert.equal(game.introChoicePending,true);
  assert.deepEqual(Object.values(game.stats),numbers.map(Number));

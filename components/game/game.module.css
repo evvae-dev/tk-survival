@@ -143,3 +143,22 @@
 .rouletteRolling strong{color:var(--yellow)}
 .rouletteStatus{font-size:12px;line-height:1.8;min-height:42px;margin:20px 0 0;color:var(--text-muted)}
 @media(max-width:360px){.rouletteSlots{gap:4px}.rouletteSlots strong{font-size:24px}.rouletteSlots>div{padding:12px 2px}.rouletteSlots small{font-size:8px}}
+
+.awakening { position:fixed; inset:0; width:100%; height:100%; max-width:none; max-height:none; margin:0; padding:0; border:0; background:transparent; overflow:hidden; color:transparent; }
+.awakening::backdrop { background:transparent; }
+.awakeningTop, .awakeningBottom { position:absolute; left:-5%; width:110%; height:52%; background:#050507; animation:eyeOpening 2.6s ease-in-out both; }
+.awakeningTop { top:0; border-radius:0 0 50% 50%; --eye-direction:-1; }
+.awakeningBottom { bottom:0; border-radius:50% 50% 0 0; --eye-direction:1; }
+.awakeningStatus { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+@keyframes eyeOpening {
+  0%, 12% { transform:translateY(0); }
+  25% { transform:translateY(calc(var(--eye-direction) * 24%)); }
+  35% { transform:translateY(0); }
+  51% { transform:translateY(calc(var(--eye-direction) * 52%)); }
+  61% { transform:translateY(0); }
+  100% { transform:translateY(calc(var(--eye-direction) * 105%)); }
+}
+@media(prefers-reduced-motion:reduce) {
+  .awakeningTop, .awakeningBottom { animation:eyeFade .3s ease-out both; }
+}
+@keyframes eyeFade { from { opacity:1; } to { opacity:0; } }
