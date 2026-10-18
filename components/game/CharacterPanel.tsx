@@ -10,6 +10,13 @@ import { abilityKeys, abilityLabels } from "@/lib/game-presentation";
 import StatsRadar from "./StatsRadar";
 import s from "./game.module.css";
 
+function AbilityValues({ game, compact = false }: { game: Game; compact?: boolean }) {
+  return <div className={`${s.abilityValues} ${compact ? s.compactAbilities : ''}`} data-testid={compact ? 'mobile-ability-summary' : undefined}>
+    {abilityKeys.map(key => <div key={key} data-ability={key}><span>{abilityLabels[key]}</span><strong><AnimatedValue value={game.stats[key]} /></strong></div>)}
+    <div data-ability="fame"><span>명성</span><strong><AnimatedValue value={game.fame ?? 0} /></strong></div>
+  </div>;
+}
+
 export function CharacterDetails({ game }: { game: Game }) {
   return (
     <div className={s.characterDetails}>
@@ -42,7 +49,7 @@ export function CharacterDetails({ game }: { game: Game }) {
         </div>
       </div>
       <StatsRadar stats={game.stats} />
-      <div className={s.abilityValues}>{abilityKeys.map(key => <div key={key}><span>{abilityLabels[key]}</span><strong><AnimatedValue value={game.stats[key]} /></strong></div>)}<div><span>명성</span><strong><AnimatedValue value={game.fame ?? 0} /></strong></div></div>
+      <AbilityValues game={game} />
       <p className={s.smallNote}>
         {game.birthYear}년 {regionLabels[game.birthRegion] ?? game.birthRegion}{" "}
         출생
@@ -72,6 +79,7 @@ export default function CharacterPanel({
         <span>{regionLabels[game.region] ?? game.region}</span>
         <button onClick={onStats} aria-label="캐릭터 정보 보기" aria-haspopup="dialog">능력치 ↗</button>
       </div>
+      <AbilityValues game={game} compact />
     </section>
   );
 }

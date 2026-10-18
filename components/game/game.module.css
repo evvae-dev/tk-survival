@@ -108,3 +108,11 @@
   .growthNotice{margin-top:-5px}
 }
 @media(prefers-reduced-motion:reduce){.statIncrease,.statDecrease{animation:none}}
+
+.compactAbilities{display:none}
+@media(max-width:768px){
+  .compactAbilities{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:10px 0 0;padding-top:10px;border-top:1px solid var(--border)}
+  .compactAbilities>div{padding:7px 6px;font-size:12px;align-items:center;gap:4px}
+  .compactAbilities strong{font-size:13px;white-space:nowrap}
+  .compactAbilities .valueDelta{margin-left:3px;font-size:10px}
+}
