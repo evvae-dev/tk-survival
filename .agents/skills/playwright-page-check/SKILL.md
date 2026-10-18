@@ -20,3 +20,5 @@ For a private deployed site, use the supported Sites sign-in flow or an authoriz
 Keep page-check artifacts outside Git. Persist this skill in the project's `.agents/skills` and optionally the current user's `~/.codex/skills` so a future session can discover it. Do not overwrite an existing user skill with the same name.
 
 For this game, run `node .agents/skills/playwright-page-check/scripts/check-tk-survival.cjs http://localhost:4173 /tmp/tk-game-browser`. It verifies game start, visible scene art, three choice images, next-scene changes, desktop/mobile/short-desktop layouts, and browser errors.
+
+For a complete faction/image audit, run `node .agents/skills/playwright-page-check/scripts/audit-tk-images.cjs http://localhost:4173 /tmp/tk-image-audit`. It visits all 20 choice scenes on desktop/mobile/short screens, checks all 56 options, rejects repeated scene/choice images and `상대 없음`, and verifies actual opponent ability values. It uses only isolated test browser saves.

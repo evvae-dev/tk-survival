@@ -13,7 +13,7 @@ export function validCheck(check: FlowCheck): boolean {
   const weights = Object.entries(check.weights ?? {});
   return weights.length > 0 && weights.every(([key, value]) => ['leadership','strength','intelligence','politics','charisma'].includes(key) && Number.isFinite(value) && value >= 0) && weights.some(([, value]) => value > 0);
 }
-export type ChoiceCheck = FlowCheck & { weights: Partial<Stats>; playerScore: number; opponentScore?: number; opponentName?: string; multiplier: number; successRate: number; failureRate: number };
+export type ChoiceCheck = FlowCheck & { weights: Partial<Stats>; playerScore: number; opponentScore?: number; opponentName?: string; opponentStats?: Stats; multiplier: number; successRate: number; failureRate: number };
 export function successRate(value: number): number { return Math.max(0, Math.min(100, Math.round(value * 100) / 100)); }
 export function weightedScore(stats: Stats, weights: Partial<Stats>): number {
   return (Object.entries(weights) as [keyof Stats, number][]).reduce((sum, [key, weight]) => sum + stats[key] * weight, 0);
@@ -28,7 +28,7 @@ export function checkPreview(game: Game, check: FlowCheck, multiplier = Number(p
     ? playerScore / Object.values(weights).reduce((sum, weight) => sum + weight!, 0)
     : 50 + (playerScore - opponentScore) * multiplier;
   const rate = successRate(chance);
-  return { ...check, weights, playerScore, opponentScore, opponentName: opponent?.name, multiplier, successRate: rate, failureRate: successRate(100 - rate) };
+  return { ...check, weights, playerScore, opponentScore, opponentName: opponent?.name, opponentStats: opponent?.stats, multiplier, successRate: rate, failureRate: successRate(100 - rate) };
 }
 export function getChoiceCheck(game: Game, event: HistoricalEvent, node: FlowNode, optionId: string): ChoiceCheck | undefined {
   const edge = event.flow?.edges.find(edge => edge.source === node.id && edge.sourceHandle === optionId);

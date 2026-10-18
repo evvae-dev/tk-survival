@@ -16,10 +16,17 @@ describe('현재 상황의 장면 이미지', () => {
     }
     expect(count).toBe(20);
   });
+  it('황건적과 관군의 대흥산 장면을 아군·적군에 맞게 구분한다', () => {
+    const art = (nodeId: string) => sceneArt({ id: 'battle-184-daxingshan', state: { flowProgress: { eventId: 'battle-184-daxingshan', nodeId } } as Game });
+    expect(art('yellow-plan')?.src).toContain('yellow-face-generals');
+    expect(art('yellow-plan')?.alt).toContain('적인 관우·장비');
+    expect(art('han-plan')?.src).toContain('han-daxing');
+    expect(art('han-plan')?.alt).toContain('아군 관우·장비');
+  });
   it('같은 사건도 피란민·협상·전투 문맥을 구분한다', () => {
     const art = (nodeId: string) => sceneArt({ id: 'battle-184-wan', state: { flowProgress: { eventId: 'battle-184-wan', nodeId } } as Game });
     expect(art('civilian')?.src).toContain('relief');
-    expect(art('surrender')?.src).toContain('negotiate');
-    expect(art('han-plan')?.src).toContain('siege');
+    expect(art('surrender')?.src).toContain('prisoners-protest');
+    expect(art('han-plan')?.src).toContain('han-assault');
   });
 });

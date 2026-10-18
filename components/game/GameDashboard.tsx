@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { popupArtwork } from "@/lib/choice-artwork";
 import { sceneArt } from "@/lib/scene-art";
 import Link from "@/components/HostedLink";
 import { useEffect, useRef, useState } from "react";
@@ -72,6 +73,7 @@ export default function GameDashboard({
       close();
     }
   };
+  const choiceImages = event ? popupArtwork(event) : [];
   const art = event ? sceneArt(event) : null;
   const lastDecision = game.decisions.at(-1);
   const preserved = view.world.factions["yellow-turban"] === "preserved";
@@ -246,6 +248,7 @@ export default function GameDashboard({
             <ChoiceButton
               key={item.id}
               choice={item}
+              artwork={choiceImages[index] ?? null}
               index={index}
               onChoose={() => choice(item.id)}
             />

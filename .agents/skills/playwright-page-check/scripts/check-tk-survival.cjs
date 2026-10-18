@@ -33,10 +33,10 @@ fs.mkdirSync(output, { recursive: true });
    await dialog.getByRole('button',{name:/관군에 붙는다/}).click();
    await page.getByRole('button',{name:'다음 기록',exact:true}).click();
    await page.getByTestId('event-panel').waitFor();
-   await page.waitForFunction(()=>document.querySelector('[data-testid="scene-art"] img')?.getAttribute('src')?.includes('strategy'));
+   await page.waitForFunction(()=>document.querySelector('[data-testid="scene-art"] img')?.getAttribute('src')?.includes('travel-wagons'));
    await page.getByTestId('scene-art').locator('img').evaluate(img=>img.complete && img.naturalWidth>0 ? true : new Promise(resolve=>img.onload=resolve));
    await page.getByTestId('event-panel').screenshot({path:`${output}/${name}-next-scene.png`});
-   results.push({name,sceneSize:box,choiceImages:3,nextScene:'strategy',errors,failed});
+   results.push({name,sceneSize:box,choiceImages:3,nextScene:'travel-wagons',errors,failed});
    assert.equal(errors.length,0,JSON.stringify(errors)); assert.equal(failed.length,0,JSON.stringify(failed));
    await context.close();
   }

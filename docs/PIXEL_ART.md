@@ -1,5 +1,7 @@
 # 3등신 픽셀 아트 기준
 
+이미지 제작 시 [이미지 생성 규칙](IMAGE_GENERATION_RULES.md)을 먼저 적용한다.
+
 기존 `public/title-screen.png`의 색감과 주인공(갈색 머리, 회색 반소매 후드, 청바지, 갈색 배낭)을 유지한다. 모든 후속 캐릭터 생성은 `public/art/characters`의 개별 기준 이미지를 참조한다. 3등신 비율, 선명한 픽셀, 남색 그림자와 따뜻한 호박색 조명을 유지한다.
 
 - `protagonist.png`: 주인공
