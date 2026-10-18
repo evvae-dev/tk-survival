@@ -24,5 +24,5 @@ export const familyEffects: Record<string, Partial<Stats>> = { farmer: { strengt
 export const label = (map: Record<string, string>, id: string) => map[id] ?? id;
 export const factionLabel = (id: string, year: number) => id === "yuan-shao" && year > 202 ? "원씨" : label(factionLabels, id);
 export function applyStats(stats: Stats, delta: Partial<Stats>): Stats { return Object.fromEntries((Object.keys(initialStats) as (keyof Stats)[]).map(key => [key, Math.max(0, Math.min(100, stats[key] + (delta[key] ?? 0)))])) as Stats; }
-export const dateLabel = (year: number, month: number | null) => `${year}년 · ${month === null ? "월 미상" : `음력 ${month}월`}`;
+export const dateLabel = (year: number, month: number | null) => month === null ? `${year}년` : `${year}년 · 음력 ${month}월`;
 

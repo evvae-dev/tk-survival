@@ -16,9 +16,10 @@ import OfficerRanking from "./OfficerRanking";
 import GameDialog from "./GameDialog";
 import s from "./game.module.css";
 import ChoiceButton from "./ChoiceButton";
+import OfficerName, { OfficerText } from "./OfficerName";
 
 const people = new Map(chapter.people.map((person) => [person.id, person]));
-type Modal = "event" | "stats" | "map" | "settings" | "people" | null;
+type Modal = "event" | "stats" | "map" | "settings" | "people" | "source" | null;
 type Props = {
   game: Game;
   view: Game;
@@ -39,6 +40,20 @@ export default function GameDashboard({
 }: Props) {
   const [modal, setModal] = useState<Modal>(null);
   const playback = useRecordPlayback(game, event, onAdvanceRecord, modal !== null);
+  const eventRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
+  const sidebarRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const panel = eventRef.current;
+    if (!panel) return;
+    const measure = () => panel.style.setProperty('--event-top', `${panel.getBoundingClientRect().top + window.scrollY}px`);
+    const observer = new ResizeObserver(measure);
+    if (headerRef.current) observer.observe(headerRef.current);
+    if (sidebarRef.current) observer.observe(sidebarRef.current);
+    measure();
+    window.addEventListener('resize', measure);
+    return () => { observer.disconnect(); window.removeEventListener('resize', measure); };
+  }, [playback.panelVisible]);
   const logRef = useRef<HTMLOListElement>(null);
   const previousLogCount = useRef(game.world.log.length);
   const addedRecord = game.world.log.length > previousLogCount.current;
@@ -58,8 +73,8 @@ export default function GameDashboard({
   const lastDecision = game.decisions.at(-1);
   const preserved = view.world.factions["yellow-turban"] === "preserved";
   return (
-    <div className={s.app} data-testid="game-screen">
-      <header className={s.header}>
+    <div className={`${s.app} ${playback.waiting && !modal ? s.clickToAdvance : ''}`} data-testid="game-screen">
+      <header className={s.header} ref={headerRef}>
         <Link href="/" className={s.brand}>
           <span className={s.desktopBrand}>
             내가 삼국지에 떨어진다면<span className={s.logoPoint}>?!</span>
@@ -70,7 +85,7 @@ export default function GameDashboard({
         </Link>
         <div className={s.currentDate}>
           {game.year}년{" "}
-          <span>{event?.month ? `음력 ${event.month}월` : "월 미상"}</span>
+          {event?.month && <span>음력 {event.month}월</span>}
         </div>
         <div className={s.playbackControls} role="group" aria-label="기록 재생">
           <button aria-pressed={playback.automatic} onClick={playback.toggleAutomatic}>
@@ -81,7 +96,7 @@ export default function GameDashboard({
               x{speed}
             </button>
           ))}
-          <button aria-label="다음 기록" title="클릭할 때마다 다음 기록" disabled={!playback.waiting} onClick={playback.step}>Ⅱ▶</button>
+          <button aria-label="다음 기록" title="화면의 빈 곳을 클릭해도 다음 기록으로 넘어갑니다" disabled={!playback.waiting} onClick={playback.step}>Ⅱ▶</button>
         </div>
         <nav className={s.controls} aria-label="게임 메뉴">
           <button className={s.mobileMapButton} onClick={() => setModal("map")}>
@@ -98,7 +113,7 @@ export default function GameDashboard({
         </nav>
       </header>
       <main className={s.main}>
-        <aside className={s.leftSidebar}>
+        <aside className={s.leftSidebar} ref={sidebarRef}>
           <CharacterPanel game={view} onStats={() => setModal("stats")} />
           <section className={`${s.panel} ${s.mapPanel}`}>
             <h2 className={s.panelTitle}>
@@ -114,7 +129,7 @@ export default function GameDashboard({
           </section>
         </aside>
         <div className={`${s.centerContent} ${!playback.panelVisible ? s.recordReading : ""}`}>
-          {playback.panelVisible && <section className={`${s.panel} ${s.eventPanel}`} aria-live="polite" data-testid="event-panel">
+          {playback.panelVisible && <section ref={eventRef} className={`${s.panel} ${s.eventPanel}`} aria-live="polite" data-testid="event-panel">
             {lastDecision?.check && (
               <div
                 data-testid="last-check-result"
@@ -125,7 +140,7 @@ export default function GameDashboard({
                   {lastDecision.check.success ? "성공" : "실패"} · 확률{" "}
                   {lastDecision.check.chance}%
                 </strong>
-                <p>{lastDecision.detail.split("\n")[0]}</p>
+                <p><OfficerText text={lastDecision.detail.split("\n")[0]} /></p>
               </div>
             )}
             {game.completed ? (
@@ -156,7 +171,7 @@ export default function GameDashboard({
                         ? "연의 기반"
                         : "황건적의 난"}
                     </p>
-                    <span>선택 {game.turn + 1}</span>
+                    {event.historical && <button className={s.sourceButton} onClick={() => setModal('source')}>사건 기록과 출처 ↗</button>}
                   </div>
                   <div className={s.eventArt}>
                     <Image
@@ -172,8 +187,8 @@ export default function GameDashboard({
                     />
                     <span>184 / 黃巾之亂</span>
                   </div>
-                  <h1>{event.title}</h1>
-                  <p className={s.dialogue}>{event.scene}</p>
+                  <h1><OfficerText text={event.title} /></h1>
+                  <p className={s.dialogue}><OfficerText text={event.scene} /></p>
                   <button
                     className={s.primaryButton}
                     disabled={!event.choices.length}
@@ -181,20 +196,6 @@ export default function GameDashboard({
                   >
                     선택하기 <span>→</span>
                   </button>
-                  {event.historical && (
-                    <details className={s.source}>
-                      <summary>사건 기록과 출처</summary>
-                      <p>{event.historical.summary}</p>
-                      <p>{event.historical.source.title}</p>
-                      <p>{event.historical.source.record}</p>
-                      {event.historical.dateNote && (
-                        <p>{event.historical.dateNote}</p>
-                      )}
-                    </details>
-                  )}
-                  <p className={s.smallNote}>
-                    능력 판정·역사 개입·대체 결과는 게임 창작입니다.
-                  </p>
                 </>
               )
             )}
@@ -207,7 +208,7 @@ export default function GameDashboard({
               나의 기록 <span>{game.turn}번의 선택</span>
             </h2>
             {playback.waiting && <p className={s.playbackStatus} role="status">
-              {playback.automatic ? `다음 기록까지 ${3 * playback.speed}초` : "다음 기록 버튼을 눌러 이야기를 이어가세요."}
+              {playback.automatic ? '자동 재생 중 · 화면을 클릭하면 바로 다음 기록' : '화면을 클릭하면 다음 기록으로 넘어갑니다.'}
             </p>}
             <ol className={s.historyLog} ref={logRef} data-testid="history-log">
               {view.world.log.length ? (
@@ -221,8 +222,8 @@ export default function GameDashboard({
                       className={`${entry.kind === "fiction" ? s.importantLog : ""} ${addedRecord && index === game.world.log.length - 1 ? s.newRecord : ""}`}
                     >
                       <span>{dateLabel(entry.year, entry.month)}</span>
-                      <h3>{entry.title}</h3>
-                      <p>{entry.detail}</p>
+                      <h3><OfficerText text={entry.title} /></h3>
+                      <p><OfficerText text={entry.detail} /></p>
                     </li>
                   ))
               ) : (
@@ -244,10 +245,10 @@ export default function GameDashboard({
       </main>
       <GameDialog
         open={modal === "event" && playback.panelVisible}
-        title={event?.title ?? "눈앞의 갈림길"}
+        title={event?.title ? <OfficerText text={event.title} /> : "눈앞의 갈림길"}
         onClose={close}
       >
-        <p className={s.dialogue}>{playback.panelVisible && event?.scene}</p>
+        <p className={s.dialogue}>{playback.panelVisible && event && <OfficerText text={event.scene} />}</p>
         <div className={s.choiceButtons}>
           {playback.panelVisible && event?.choices.map((item, index) => (
             <ChoiceButton
@@ -258,6 +259,14 @@ export default function GameDashboard({
             />
           ))}
         </div>
+      </GameDialog>
+      <GameDialog open={modal === 'source'} title="사건 기록과 출처" onClose={close}>
+        {event?.historical && <div className={s.sourceDetails}>
+          <p><OfficerText text={event.historical.summary} /></p>
+          <h3>{event.historical.source.title}</h3>
+          <p><OfficerText text={event.historical.source.record} /></p>
+          {event.historical.dateNote && <p>{event.historical.dateNote}</p>}
+        </div>}
       </GameDialog>
       <GameDialog
         open={modal === "stats"}
@@ -297,7 +306,7 @@ export default function GameDashboard({
           {Object.entries(view.world.people).map(([id, state]) => (
             <li key={id}>
               <strong>
-                {people.get(id)?.name ?? id}
+                <OfficerName name={people.get(id)?.name ?? id} officerId={people.get(id)?.officerId ?? undefined} />
                 <small>{people.get(id)?.officerId ?? id}</small>
               </strong>
               <span className={state === "dead" ? s.dead : s.alive}>

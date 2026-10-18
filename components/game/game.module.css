@@ -37,3 +37,35 @@
 @keyframes choice-unfold{from{opacity:0;transform:translateY(-12px) scaleY(.96)}to{opacity:1;transform:translateY(0) scaleY(1)}}
 @media(max-width:768px){.playbackControls{order:4;flex-basis:100%;justify-content:center}.playbackControls button{flex:1;padding:8px 5px}.recordReading .historyPanel{height:min(65dvh,600px)}}
 @media(prefers-reduced-motion:reduce){.newRecord,.eventPanel{animation:none}}
+
+.centerContent{grid-template-rows:minmax(0,1fr) minmax(100px,.35fr);gap:12px}
+.eventPanel{container-type:size;display:flex;flex-direction:column;overflow:visible;padding:16px;gap:0}
+.eventHeading{flex:none;margin-bottom:10px}
+.eventHeading .eyebrow{margin:0;text-align:left;line-height:1.4}
+.sourceButton{padding:2px 0;background:transparent;border:0;box-shadow:none;font-size:10px;color:var(--text-muted);white-space:nowrap}
+.sourceButton:hover{background:transparent;color:var(--text)}
+.eventPanel .eventArt{flex:none;height:clamp(48px,20cqh,110px);margin-bottom:12px}
+.eventPanel h1{flex:none;font-size:clamp(17px,5cqh,23px);line-height:1.4;margin:0 0 6px}
+.eventPanel>.dialogue{flex:none;font-size:clamp(13px,3.8cqh,17px);line-height:1.55;margin:6px 0 14px;overflow-wrap:anywhere}
+.eventPanel>.primaryButton{flex:none;align-self:center;margin-top:auto;min-height:40px;padding:9px 22px;font-size:15px}
+.eventPanel .lastCheck{flex:none;padding:8px 10px;margin:0 0 10px;font-size:12px;line-height:1.4}
+.eventPanel .lastCheck p{font-size:12px;line-height:1.4;margin:4px 0 0}
+.sourceDetails{font-size:14px;line-height:1.75;overflow-wrap:anywhere}
+.clickToAdvance{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='15' cy='15' r='13' fill='%231b2029' stroke='%23ffffff' stroke-width='2'/%3E%3Cpath d='M12 8l11 7-11 7z' fill='%23ffffff'/%3E%3C/svg%3E") 15 15,pointer}
+.officerName{color:#74dea3;font-weight:600;cursor:help;display:inline;border-radius:2px;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;text-decoration-color:#74dea366}
+.officerName:hover,.officerName:focus-visible{color:#a3f4c6;text-decoration-color:currentColor;outline:1px solid #74dea388;outline-offset:3px}
+.officerTooltip{position:fixed;z-index:1000;display:flex;flex-direction:column;gap:10px;width:min(288px,calc(100vw - 24px));padding:15px;border:1px solid #74dea366;border-radius:10px;box-shadow:0 10px 30px #0009;background:#1b2029;color:#eef2f7;font-family:var(--font-body);font-size:13px;font-weight:400;line-height:1.5;text-align:left;white-space:normal;cursor:default}
+.officerTooltip>strong{color:#74dea3;font-size:17px;font-weight:700}
+.officerTooltip .officerMeta{color:#b8c2ce;font-size:12px}
+.officerStats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}
+.officerStats>span{display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 2px;border-radius:5px;background:#ffffff09;font-size:11px}
+.officerStats b{color:#a3f4c6;font-size:15px}
+.officerTraits{font-size:12px;color:#d0d8e1}
+.officerTooltip>small{font-size:10px;color:#9ca8b8}
+@container(max-height:440px){.eventArt{display:none}.eventPanel h1{font-size:19px}.eventPanel>.dialogue{font-size:14px}.lastCheck p{display:none}}
+@container(max-height:320px){.eventPanel h1{font-size:17px}.eventPanel>.dialogue{font-size:13px;line-height:1.45;margin:4px 0 10px}.eventHeading{margin-bottom:6px}}
+@media(max-width:768px){
+  .eventPanel{height:calc(100svh - var(--event-top,230px) - 14px);min-height:230px;flex:none;padding:14px}
+  .eventPanel>.primaryButton{width:100%}
+  .eventPanel .ending{padding:8px 0;min-height:0}
+}
