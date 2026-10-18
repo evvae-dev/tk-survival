@@ -9,7 +9,8 @@ import { dateLabel, factionLabel, regionLabels } from "@/lib/game";
 import { choiceKey, type GameEvent } from "@/lib/event-engine";
 import { testAbilityDelta } from "@/lib/game-presentation";
 import { useRecordPlayback } from "@/hooks/use-record-playback";
-import { playbackSpeeds } from "@/lib/record-playback";
+import PlaybackControls from "./PlaybackControls";
+import { abilityKeys, abilityLabels } from "@/lib/game-presentation";
 import chapter from "@/data/collection/5-1-yellow-turban.json";
 import CharacterPanel, { CharacterDetails } from "./CharacterPanel";
 import SituationMap from "./SituationMap";
@@ -92,17 +93,7 @@ export default function GameDashboard({
           {game.year}년{" "}
           {event?.month && <span>음력 {event.month}월</span>}
         </div>
-        <div className={s.playbackControls} role="group" aria-label="기록 재생">
-          <button aria-pressed={playback.automatic} onClick={playback.toggleAutomatic}>
-            자동 {playback.automatic ? "▶" : "Ⅱ"}
-          </button>
-          {playbackSpeeds.map((speed) => (
-            <button key={speed} aria-label={`기록 간격 x${speed}`} aria-pressed={playback.speed === speed} onClick={() => playback.setSpeed(speed)}>
-              x{speed}
-            </button>
-          ))}
-          <button aria-label="다음 기록" title="화면의 빈 곳을 클릭해도 다음 기록으로 넘어갑니다" disabled={!playback.waiting} onClick={playback.step}>Ⅱ▶</button>
-        </div>
+        <PlaybackControls playback={playback} />
         <nav className={s.controls} aria-label="게임 메뉴">
           <button className={s.mobileMapButton} onClick={() => setModal("map")}>
             정세
@@ -120,6 +111,10 @@ export default function GameDashboard({
       <main className={s.main}>
         <aside className={s.leftSidebar} ref={sidebarRef}>
           <CharacterPanel game={view} onStats={() => setModal("stats")} />
+          {lastDecision?.growth && <div key={game.turn} className={s.growthNotice} data-testid="choice-growth" role="status">
+            {abilityKeys.map(key => { const delta = lastDecision.growth?.stats[key] ?? 0; return delta ? <span key={key} className={delta > 0 ? s.statIncrease : s.statDecrease}>{abilityLabels[key]} {delta > 0 ? '+' : ''}{delta}</span> : null; })}
+            <span className={lastDecision.growth.fame > 0 ? s.statIncrease : s.statDecrease}>명성 {lastDecision.growth.fame > 0 ? '+' : ''}{lastDecision.growth.fame}</span>
+          </div>}
           <section className={`${s.panel} ${s.mapPanel}`}>
             <h2 className={s.panelTitle}>
               정세{" "}
@@ -312,6 +307,8 @@ export default function GameDashboard({
         </ul>
       </GameDialog>
       <GameDialog open={modal === "settings"} title="기록 설정" onClose={close}>
+        <h3>재생 속도</h3>
+        <PlaybackControls playback={playback} inSettings onNext={() => { playback.step(); close(); }} />
         <p className={s.smallNote}>
           진행 상황은 이 브라우저에 자동 저장됩니다. 현재 범위는 184년·20세 고정
           테스트입니다.

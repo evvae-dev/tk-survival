@@ -86,3 +86,25 @@
 .eventPanel h1{font-size:23px}
 .eventPanel>.dialogue{font-size:16px;line-height:1.65}
 @media(max-width:768px){.eventPanel{height:auto;min-height:max(480px,calc(100svh - var(--event-top,230px) - 14px));overflow:visible}.eventPanel .eventArt{flex:none;height:clamp(180px,29svh,280px);max-height:none;min-height:180px}.eventPanel h1{font-size:21px}.eventPanel>.dialogue{font-size:16px}.eventPanel>.primaryButton{margin-top:16px}}
+
+.dialog .entryForm{padding:0;background:none;border:0;max-width:none}
+.settingsPlayback{margin:12px 0 20px;gap:6px}
+.settingsPlayback button{flex:1}
+.abilityValues{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:8px 0 16px}
+.abilityValues>div{display:flex;justify-content:space-between;gap:8px;background:var(--surface-raised);padding:9px;border-radius:6px;font-size:12px}
+.valueDelta{display:inline-block;margin-left:5px;font-size:11px;font-weight:700;color:inherit!important}
+.statIncrease{color:#77dfaa!important;animation:increase-flash 1s ease-in-out 2}
+.statDecrease{color:#ff9292!important;animation:decrease-flash 1s ease-in-out 2}
+.growthNotice{display:flex;gap:12px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:10px 12px;font-size:13px;font-weight:700}
+@keyframes increase-flash{0%,100%{background:transparent;text-shadow:none}50%{background:#43bf773b;text-shadow:0 0 10px #4ade80}}
+@keyframes decrease-flash{0%,100%{background:transparent;text-shadow:none}50%{background:#e35b5b3b;text-shadow:0 0 10px #f87171}}
+@media(max-width:768px){
+  .headerPlayback{display:none}
+  .mobileStatus{display:flex;flex-wrap:nowrap;justify-content:space-between;align-items:center;gap:8px;white-space:nowrap}
+  .mobileStatus>strong{min-width:0;max-width:35%;overflow:hidden;text-overflow:ellipsis;font-size:14px;flex:1}
+  .mobileStatus>span{font-size:13px;flex:none}
+  .mobileStatus>button{font-size:13px;padding:8px;flex:none;white-space:nowrap}
+  .settingsPlayback{flex-basis:auto;justify-content:flex-start}
+  .growthNotice{margin-top:-5px}
+}
+@media(prefers-reduced-motion:reduce){.statIncrease,.statDecrease{animation:none}}

@@ -13,11 +13,11 @@ export function useRecordPlayback(game: Game, event: GameEvent | null, advance: 
   const steppedKey = useRef<string | null>(null);
 
   const step = useCallback(() => {
-    if (!waiting || paused || steppedKey.current === key) return;
+    if (!waiting || steppedKey.current === key) return;
     steppedKey.current = key;
     if (event?.automatic) advance(key);
     else setRevealedKey(key);
-  }, [waiting, paused, key, event?.automatic, advance]);
+  }, [waiting, key, event?.automatic, advance]);
 
   useEffect(() => {
     if (!automatic || !waiting || paused) return;

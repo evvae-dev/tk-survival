@@ -23,12 +23,12 @@
   "commonChecks": {
     "relief-check": {
       "kind": "relationship",
-      "success": "주민들을 대피시키고 매력 3을 얻는다.",
+      "success": "주민들을 대피시키고 매력 2를 얻는다.",
       "failure": "사람들을 모으지 못해 소수만 데리고 대피한다."
     },
     "supplies-check": {
       "kind": "strategy",
-      "success": "구호 물자를 확보하고 매력 5를 얻는다.",
+      "success": "구호 물자를 확보하고 매력 2를 얻는다.",
       "failure": "쓸 만한 물자를 찾지 못한다."
     }
   },
@@ -488,7 +488,7 @@
       "checks": {
         "expose-check": {
           "kind": "politics",
-          "success": "노식의 지휘를 유지하고 통솔 10을 얻는다. 야습 준비로 이어진다.",
+          "success": "노식의 지휘를 유지하고 통솔 2를 얻는다. 야습 준비로 이어진다.",
           "failure": "노식을 지키지 못한다. 후속 야습 준비로 이어진다."
         },
         "night-check": {

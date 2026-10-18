@@ -11,7 +11,7 @@ const flag = (key, value = true) => ({ type: 'flag', key, value });
 const stat = (key, value) => ({ type: 'stat', key, value });
 const person = (id, value) => ({ type: 'person', personId: `person-${id}`, value });
 const control = (regionId, value) => ({ type: 'control', regionId, value });
-const reputation = factionId => ({ type: 'reputation', factionId, value: 20 });
+const reputation = factionId => ({ type: 'reputation', factionId, value: 2 });
 const field = (field, value, operator = 'eq') => ({ field, value, operator });
 const win = key => field(`world.flags.${key}`, true);
 const alive = id => field(`world.people.person-${id}`, 'alive');
@@ -71,10 +71,10 @@ function battle(source, index, build) {
     ['hide', '가족과 몸을 숨긴다', '전투는 기본 경과로 진행하고 가족의 안전을 지킨다.', result.baseline]]);
   const refuge = `${source.id}-refugees`;
   g.check('relief-check', 'charisma', 'relief-ok', 'relief-fail');
-  g.result('relief-ok', '이웃의 신뢰를 얻어 피란로를 열었다. 전장 승패는 바꾸지 않았다.', [flag(refuge), stat('charisma', 3)], result.baseline);
+  g.result('relief-ok', '이웃의 신뢰를 얻어 피란로를 열었다. 전장 승패는 바꾸지 않았다.', [flag(refuge), stat('charisma', 2)], result.baseline);
   g.result('relief-fail', '사람들을 모으지 못해 가족과 소규모로 대피했다.', [], result.baseline);
   g.check('supplies-check', 'intelligence', 'supplies-ok', 'supplies-fail');
-  g.result('supplies-ok', '구호 식량을 마련해 주민의 피해를 줄였다.', [flag(refuge), stat('charisma', 5)], result.baseline);
+  g.result('supplies-ok', '구호 식량을 마련해 주민의 피해를 줄였다.', [flag(refuge), stat('charisma', 2)], result.baseline);
   g.result('supplies-fail', '식량을 확보하지 못했다. 부채를 지지 않고 가족을 지켰다.', [], result.baseline);
   const first = result.first ?? 'location';
   events.push({ ...base, id: source.id, sequence: index + 1, title: source.title, summary: source.overview, category: source.category, precision: source.historicalDate.precision, dateNote: source.historicalDate.dateNote, regionIds: [region], relatedPeople: [...new Set(currentPeople.map(p => p.name))], relatedOfficerIds: [...new Set(currentPeople.flatMap(p => p.officerId ? [p.officerId] : []))], source: { title: sourceRecord.work, record: `원사서 미대조 · 2차 자료 요약: ${sourceRecord.secondarySummary}` }, prerequisiteEventIds: [openingId, ...(source.id === 'battle-184-qingzhou-city' ? ['battle-184-daxingshan'] : source.id === 'battle-184-xiaquyang' ? ['battle-184-guangzong'] : [])], connections: [], flow: g.finish(first) });
@@ -166,7 +166,7 @@ battle(chapter.events[3], 3, g => {
     ['prepare', '황보숭의 야습 준비를 돕는다', '노식 교체와 동탁 패배 뒤 후속 야습을 준비한다.', 'night'],
     ['follow', '조정의 명령을 따른다', '수집본의 기본 경과로 진행한다.', baseline]]);
   g.check('expose-check', 'intelligence', 'lu-rescued', 'night');
-  g.result('lu-rescued', '좌풍의 참소를 반박해 노식의 지휘를 유지했다. 동탁으로의 지휘관 교체 경로는 성립하지 않는다. (가상역사)', [flag('luZhiRetained'), stat('leadership', 10), reputation('han')], 'night');
+  g.result('lu-rescued', '좌풍의 참소를 반박해 노식의 지휘를 유지했다. 동탁으로의 지휘관 교체 경로는 성립하지 않는다. (가상역사)', [flag('luZhiRetained'), stat('leadership', 2), reputation('han')], 'night');
   g.choice('night', '광종의 밤, 적의 경계가 느슨해졌다. 누가 포위망과 돌입대를 맡을까?', [
     ['lead', '야습 부대를 직접 지휘한다', '통솔 65 이상: 광종을 점령하고 장량을 포로로 잡는다. 실패하면 황건군이 방어한다.', 'night-check'],
     ['support', '주장의 작전을 지원한다', '장량의 결말은 기본 전투 경과를 따른다.', baseline]]);

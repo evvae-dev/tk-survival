@@ -543,7 +543,7 @@
               {
                 "type": "reputation",
                 "factionId": "han",
-                "value": 20
+                "value": 2
               },
               {
                 "type": "role",
@@ -641,7 +641,7 @@
               {
                 "type": "reputation",
                 "factionId": "yellow-turban",
-                "value": 20
+                "value": 2
               }
             ]
           }
@@ -692,7 +692,7 @@
               {
                 "type": "reputation",
                 "factionId": "yellow-turban",
-                "value": 20
+                "value": 2
               }
             ]
           }
@@ -786,7 +786,7 @@
             "label": "사람 관계 확률 판정",
             "check": {
               "kind": "relationship",
-              "success": "주민들을 대피시키고 매력 3을 얻는다.",
+              "success": "주민들을 대피시키고 매력 2를 얻는다.",
               "failure": "사람들을 모으지 못해 소수만 데리고 대피한다."
             }
           }
@@ -810,7 +810,7 @@
               {
                 "type": "stat",
                 "key": "charisma",
-                "value": 3
+                "value": 2
               }
             ]
           }
@@ -839,7 +839,7 @@
             "label": "전략 확률 판정",
             "check": {
               "kind": "strategy",
-              "success": "구호 물자를 확보하고 매력 5를 얻는다.",
+              "success": "구호 물자를 확보하고 매력 2를 얻는다.",
               "failure": "쓸 만한 물자를 찾지 못한다."
             }
           }
@@ -863,7 +863,7 @@
               {
                 "type": "stat",
                 "key": "charisma",
-                "value": 5
+                "value": 2
               }
             ]
           }
@@ -1370,7 +1370,7 @@
               {
                 "type": "reputation",
                 "factionId": "han",
-                "value": 20
+                "value": 2
               }
             ]
           }
@@ -1468,7 +1468,7 @@
               {
                 "type": "reputation",
                 "factionId": "yellow-turban",
-                "value": 20,
+                "value": 2,
                 "when": {
                   "field": "factionId",
                   "value": "yellow-turban",
@@ -1567,7 +1567,7 @@
             "label": "사람 관계 확률 판정",
             "check": {
               "kind": "relationship",
-              "success": "주민들을 대피시키고 매력 3을 얻는다.",
+              "success": "주민들을 대피시키고 매력 2를 얻는다.",
               "failure": "사람들을 모으지 못해 소수만 데리고 대피한다."
             }
           }
@@ -1591,7 +1591,7 @@
               {
                 "type": "stat",
                 "key": "charisma",
-                "value": 3
+                "value": 2
               }
             ]
           }
@@ -1620,7 +1620,7 @@
             "label": "전략 확률 판정",
             "check": {
               "kind": "strategy",
-              "success": "구호 물자를 확보하고 매력 5를 얻는다.",
+              "success": "구호 물자를 확보하고 매력 2를 얻는다.",
               "failure": "쓸 만한 물자를 찾지 못한다."
             }
           }
@@ -1644,7 +1644,7 @@
               {
                 "type": "stat",
                 "key": "charisma",
-                "value": 5
+                "value": 2
               }
             ]
           }
@@ -2140,7 +2140,7 @@
               {
                 "type": "reputation",
                 "factionId": "han",
-                "value": 20
+                "value": 2
               }
             ]
           }
@@ -2255,7 +2255,7 @@
               {
                 "type": "reputation",
                 "factionId": "han",
-                "value": 20
+                "value": 2
               }
             ]
           }
@@ -2341,7 +2341,7 @@
               {
                 "type": "reputation",
                 "factionId": "yellow-turban",
-                "value": 20
+                "value": 2
               }
             ]
           }
@@ -2402,7 +2402,7 @@
               {
                 "type": "reputation",
                 "factionId": "yellow-turban",
-                "value": 20
+                "value": 2
               }
             ]
           }
@@ -2496,7 +2496,7 @@
             "label": "사람 관계 확률 판정",
             "check": {
               "kind": "relationship",
-              "success": "주민들을 대피시키고 매력 3을 얻는다.",
+              "success": "주민들을 대피시키고 매력 2를 얻는다.",
               "failure": "사람들을 모으지 못해 소수만 데리고 대피한다."
             }
           }
@@ -2520,7 +2520,7 @@
               {
                 "type": "stat",
                 "key": "charisma",
-                "value": 3
+                "value": 2
               }
             ]
           }
@@ -2549,7 +2549,7 @@
             "label": "전략 확률 판정",
             "check": {
               "kind": "strategy",
-              "success": "구호 물자를 확보하고 매력 5를 얻는다.",
+              "success": "구호 물자를 확보하고 매력 2를 얻는다.",
               "failure": "쓸 만한 물자를 찾지 못한다."
             }
           }
@@ -2573,7 +2573,7 @@
               {
                 "type": "stat",
                 "key": "charisma",
-                "value": 5
+                "value": 2
               }
             ]
           }
@@ -3046,7 +3046,7 @@
             "label": "정치 확률 판정",
             "check": {
               "kind": "politics",
-              "success": "노식의 지휘를 유지하고 통솔 10을 얻는다. 야습 준비로 이어진다.",
+              "success": "노식의 지휘를 유지하고 통솔 2를 얻는다. 야습 준비로 이어진다.",
               "failure": "노식을 지키지 못한다. 후속 야습 준비로 이어진다."
             }
           }
@@ -3070,12 +3070,12 @@
               {
                 "type": "stat",
                 "key": "leadership",
-                "value": 10
+                "value": 2
               },
               {
                 "type": "reputation",
                 "factionId": "han",
-                "value": 20
+                "value": 2
               }
             ]
           }
@@ -3151,7 +3151,7 @@
               {
                 "type": "reputation",
                 "factionId": "han",
-                "value": 20
+                "value": 2
               }
             ]
           }
@@ -3249,7 +3249,7 @@
               {
                 "type": "reputation",
                 "factionId": "yellow-turban",
-                "value": 20
+                "value": 2
               }
             ]
           }
@@ -3283,7 +3283,7 @@
               {
                 "type": "reputation",
                 "factionId": "yellow-turban",
-                "value": 20,
+                "value": 2,
                 "when": {
                   "field": "factionId",
                   "value": "yellow-turban",
@@ -3382,7 +3382,7 @@
             "label": "사람 관계 확률 판정",
             "check": {
               "kind": "relationship",
-              "success": "주민들을 대피시키고 매력 3을 얻는다.",
+              "success": "주민들을 대피시키고 매력 2를 얻는다.",
               "failure": "사람들을 모으지 못해 소수만 데리고 대피한다."
             }
           }
@@ -3406,7 +3406,7 @@
               {
                 "type": "stat",
                 "key": "charisma",
-                "value": 3
+                "value": 2
               }
             ]
           }
@@ -3435,7 +3435,7 @@
             "label": "전략 확률 판정",
             "check": {
               "kind": "strategy",
-              "success": "구호 물자를 확보하고 매력 5를 얻는다.",
+              "success": "구호 물자를 확보하고 매력 2를 얻는다.",
               "failure": "쓸 만한 물자를 찾지 못한다."
             }
           }
@@ -3459,7 +3459,7 @@
               {
                 "type": "stat",
                 "key": "charisma",
-                "value": 5
+                "value": 2
               }
             ]
           }
@@ -4002,7 +4002,7 @@
               {
                 "type": "reputation",
                 "factionId": "han",
-                "value": 20
+                "value": 2
               }
             ]
           }
@@ -4036,7 +4036,7 @@
               {
                 "type": "reputation",
                 "factionId": "han",
-                "value": 20
+                "value": 2
               }
             ]
           }
@@ -4117,7 +4117,7 @@
               {
                 "type": "reputation",
                 "factionId": "yellow-turban",
-                "value": 20,
+                "value": 2,
                 "when": {
                   "field": "factionId",
                   "value": "yellow-turban",
@@ -4173,7 +4173,7 @@
               {
                 "type": "reputation",
                 "factionId": "yellow-turban",
-                "value": 20
+                "value": 2
               }
             ]
           }
@@ -4267,7 +4267,7 @@
             "label": "사람 관계 확률 판정",
             "check": {
               "kind": "relationship",
-              "success": "주민들을 대피시키고 매력 3을 얻는다.",
+              "success": "주민들을 대피시키고 매력 2를 얻는다.",
               "failure": "사람들을 모으지 못해 소수만 데리고 대피한다."
             }
           }
@@ -4291,7 +4291,7 @@
               {
                 "type": "stat",
                 "key": "charisma",
-                "value": 3
+                "value": 2
               }
             ]
           }
@@ -4320,7 +4320,7 @@
             "label": "전략 확률 판정",
             "check": {
               "kind": "strategy",
-              "success": "구호 물자를 확보하고 매력 5를 얻는다.",
+              "success": "구호 물자를 확보하고 매력 2를 얻는다.",
               "failure": "쓸 만한 물자를 찾지 못한다."
             }
           }
@@ -4344,7 +4344,7 @@
               {
                 "type": "stat",
                 "key": "charisma",
-                "value": 5
+                "value": 2
               }
             ]
           }

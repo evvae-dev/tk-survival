@@ -2,6 +2,7 @@ import type { Game, HistoricalEvent, Stats, AbilityRoll } from './game';
 import { getChoiceCheck, rollAbility, type ChoiceCheck } from './ability-check';
 import { historicalEvents, sortEvents } from './history';
 import { advanceFlow, applyFlowEffects } from './event-flow';
+import { applyChoiceGrowth } from './choice-growth';
 import { normalizeMembership } from './world';
 
 export type Choice = { id: string; title: string; description: string; outcome?: string; check?: ChoiceCheck; effects: Partial<Stats>; note: string; disabledReason?: string };
@@ -58,8 +59,10 @@ export function resolveChoice(game: Game, key: string, catalog: HistoricalEvent[
     target = historical.flow!.edges.find(edge => edge.source === checkNode.id && edge.sourceHandle === (check!.success ? 'yes' : 'no'))!.target;
   }
   const progress = advanceFlow(event.state, historical, target);
+  const reward = applyChoiceGrowth(event.state, progress.state, selected.title, check?.success);
+  progress.state = reward.state;
   const outcome = check ? `${check.success ? '성공' : '실패'} · ${check.success ? selected.check?.success : selected.check?.failure}` : '';
-  const entry = { year: game.year, month: historical.month, title: `${historical.title} · ${selected.title}`, detail: [outcome, progress.results.join(' ') || selected.description].filter(Boolean).join('\n'), kind: 'fiction' as const, ...(check ? { check } : {}) };
+  const entry = { year: game.year, month: historical.month, title: `${historical.title} · ${selected.title}`, detail: [outcome, progress.results.join(' ') || selected.description].filter(Boolean).join('\n'), kind: 'fiction' as const, ...(reward.growth ? { growth: reward.growth } : {}), ...(check ? { check } : {}) };
   let next: Game = { ...progress.state, turn: game.turn + 1, decisions: [...progress.state.decisions, entry].slice(-120), world: { ...progress.state.world, log: [...progress.state.world.log, entry].slice(-120) } };
   if (!progress.node) next = finishEvent(next, historical);
   return { ...next, completed: !progress.node && next.world.flags.chapterFinished === true && catalog.filter(e => e.year === next.year && e.flow).every(e => next.world.appliedEventIds.includes(e.id)) };

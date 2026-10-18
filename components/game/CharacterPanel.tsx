@@ -5,6 +5,8 @@ import {
   roleLabels,
   type Game,
 } from "@/lib/game";
+import AnimatedValue from "./AnimatedValue";
+import { abilityKeys, abilityLabels } from "@/lib/game-presentation";
 import StatsRadar from "./StatsRadar";
 import s from "./game.module.css";
 
@@ -40,6 +42,7 @@ export function CharacterDetails({ game }: { game: Game }) {
         </div>
       </div>
       <StatsRadar stats={game.stats} />
+      <div className={s.abilityValues}>{abilityKeys.map(key => <div key={key}><span>{abilityLabels[key]}</span><strong><AnimatedValue value={game.stats[key]} /></strong></div>)}<div><span>명성</span><strong><AnimatedValue value={game.fame ?? 0} /></strong></div></div>
       <p className={s.smallNote}>
         {game.birthYear}년 {regionLabels[game.birthRegion] ?? game.birthRegion}{" "}
         출생
@@ -63,14 +66,11 @@ export default function CharacterPanel({
       <div className={s.desktopOnly}>
         <CharacterDetails game={game} />
       </div>
-      <div className={s.mobileStatus}>
-        <div>
-          <strong>{game.name}</strong>
-          <span>
-            {game.age}세 · {regionLabels[game.region] ?? game.region}
-          </span>
-        </div>
-        <button onClick={onStats}>능력치 보기</button>
+      <div className={s.mobileStatus} data-testid="mobile-character-row">
+        <strong title={game.name}>{game.name}</strong>
+        <span>{game.age}세</span>
+        <span>{regionLabels[game.region] ?? game.region}</span>
+        <button onClick={onStats} aria-label="캐릭터 정보 보기" aria-haspopup="dialog">능력치 ↗</button>
       </div>
     </section>
   );

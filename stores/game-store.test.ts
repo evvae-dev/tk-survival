@@ -79,9 +79,10 @@ describe('184년 5.1 실행', () => {
   });
   it('노식 지휘 유지 효과는 재접속 시 중복 적용되지 않으며 하곡양 항복으로 이어진다', () => {
     let game = choose(setup('han', 'central', 60), 'expose');
-    expect(game.stats.leadership).toBe(70);
+    expect(game.stats.leadership).toBe(62);
     game = JSON.parse(JSON.stringify(game));
-    expect(getCurrentEvent(game)!.state.stats.leadership).toBe(70);
+    expect(getCurrentEvent(game)!.state.stats.leadership).toBe(62);
+    game.stats.leadership = 70; // 성공 경로를 확정한다. 성장 보상은 위에서 별도로 검증했다.
     game = choose(game, 'lead');
     game.stats.charisma = 70;
     game = choose(game, 'offer');
@@ -100,7 +101,7 @@ describe('184년 5.1 실행', () => {
     let game = setup('civilian', 'south');
     const charisma = game.stats.charisma;
     game = choose(game, 'supplies');
-    expect(game.stats.charisma).toBe(charisma + 5);
+    expect(game.stats.charisma).toBe(charisma + 2);
     expect(game.world.flags['battle-184-wan-refugees']).toBe(true);
     expect(game.world.flags.wanHanVictory).toBe(true);
   });
@@ -115,7 +116,7 @@ describe('184년 5.1 실행', () => {
     let game = choose(newGame('시험', 184, 'zhuo', 'farmer'), 'civilian');
     const stats = { ...game.stats };
     game = choose(game, 'north');
-    expect(game.stats).toEqual(stats);
+    expect(game.stats).toEqual({ ...stats, intelligence: stats.intelligence + 1 });
     expect(game.stats).not.toHaveProperty("money");
     expect(game.stats).not.toHaveProperty("health");
   });

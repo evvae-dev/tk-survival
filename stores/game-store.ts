@@ -9,14 +9,14 @@ import { createWorld } from "@/lib/world";
 type GameStore = { game: Game | null; startGame: (name: string) => void; changeStats: (delta: Partial<Stats>) => void; nextTurn: (choiceKey: string) => void; advanceRecord: (expectedKey: string) => void; resetGame: () => void };
 const pick = <T,>(items: T[]): T => items[Math.floor(Math.random() * items.length)];
 export function newGame(name: string, year: number, region: string, family: string, catalog?: HistoricalEvent[]): Game {
-  return { name, startYear: year, year, month: null, region, birthRegion: region, birthYear: year - 20, family, age: 20, turn: 0, stats: applyStats(initialStats, familyEffects[family] ?? {}), completed: false, factionId: null, role: "civilian", reputation: family === "gentry" ? { han: 20 } : {}, resolvedEventIds: [], world: createWorld(year,catalog), decisions: [] };
+  return { name, startYear: year, year, month: null, region, birthRegion: region, birthYear: year - 20, family, age: 20, turn: 0, fame: 0, stats: applyStats(initialStats, familyEffects[family] ?? {}), completed: false, factionId: null, role: "civilian", reputation: family === "gentry" ? { han: 20 } : {}, resolvedEventIds: [], world: createWorld(year,catalog), decisions: [] };
 }
 // 이전 연간 성장·역사 상태는 새 5.1 테스트와 호환되지 않는다.
 export function migrateGame(persisted: unknown, version = 0): { game: Game | null } {
   const saved = (persisted as { game?: Game } | null)?.game;
   if (version < 4 || !saved || saved.year !== 184 || !saved.stats) return { game: null };
   const defaults = applyStats(initialStats, familyEffects[saved.family] ?? {});
-  return { game: { ...saved, stats: applyStats({ ...defaults, ...saved.stats }, {}) } };
+  return { game: { ...saved, fame: saved.fame ?? 0, stats: applyStats({ ...defaults, ...saved.stats }, {}) } };
 }
 export const useGameStore = create<GameStore>()(persist((set) => ({
   game: null,

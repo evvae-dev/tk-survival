@@ -22,3 +22,5 @@ Keep page-check artifacts outside Git. Persist this skill in the project's `.age
 For this game, run `node .agents/skills/playwright-page-check/scripts/check-tk-survival.cjs http://localhost:4173 /tmp/tk-game-browser`. It verifies game start, visible scene art, three choice images, next-scene changes, desktop/mobile/short-desktop layouts, and browser errors.
 
 For a complete faction/image audit, run `node .agents/skills/playwright-page-check/scripts/audit-tk-images.cjs http://localhost:4173 /tmp/tk-image-audit`. It visits all 20 choice scenes on desktop/mobile/short screens, checks all 56 options, rejects repeated scene/choice images and `상대 없음`, and verifies actual opponent ability values. It uses only isolated test browser saves.
+
+For name-dialog centering, mobile character/settings layout, and real growth/decrease feedback, run `node .agents/skills/playwright-page-check/scripts/check-layout-growth.cjs http://localhost:4173 /tmp/tk-layout-growth`. Check PC and 390px/320px mobile viewports. Mobile playback controls live in Settings; use `scripts/playback-helper.cjs` to operate the same controls without assuming they are in the header.
