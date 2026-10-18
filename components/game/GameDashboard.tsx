@@ -41,7 +41,7 @@ export default function GameDashboard({
   onReset,
   onStats,
 }: Props) {
-  const [modal, setModal] = useState<Modal>(null);
+  const [modal, setModal] = useState<Modal>(() => game.introChoicePending ? "event" : null);
   const playback = useRecordPlayback(game, event, onAdvanceRecord, modal !== null);
   const eventRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLElement>(null);

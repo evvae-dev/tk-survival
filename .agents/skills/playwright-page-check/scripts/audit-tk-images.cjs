@@ -25,7 +25,7 @@ const results=[];fs.mkdirSync(output,{recursive:true});
    for(let i=0;i<catalog.length;i++) for(const node of catalog[i].flow.nodes.filter(n=>n.type==='choice')){
     const event=catalog[i],key=`${screen}-${event.id}-${node.id}`;
     const save=structuredClone(base),game=save.state.game;
-    game.flowProgress={eventId:event.id,nodeId:node.id};game.completed=false;game.turn=2;
+    game.flowProgress={eventId:event.id,nodeId:node.id};game.completed=false;game.introChoicePending=false;game.turn=2;
     game.factionId=node.id==='yellow-plan'?'yellow-turban':node.id==='civilian'?null:'han';
     game.role=game.factionId?'soldier':'civilian';
     game.world.appliedEventIds=catalog.slice(0,i).map(e=>e.id);game.resolvedEventIds=[...game.world.appliedEventIds];
