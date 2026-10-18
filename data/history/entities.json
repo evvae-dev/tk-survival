@@ -1,0 +1,323 @@
+{
+  "verification": "사건별로 편집한 지역·세력 태그. 관련 인물은 각 사건의 한국어 이름 배열에 기록한다.",
+  "regions": [
+    {
+      "id": "luoyang",
+      "label": "낙양",
+      "aliases": [
+        "낙양"
+      ]
+    },
+    {
+      "id": "changan",
+      "label": "장안",
+      "aliases": [
+        "장안"
+      ]
+    },
+    {
+      "id": "zhuo",
+      "label": "탁군",
+      "aliases": [
+        "탁군"
+      ]
+    },
+    {
+      "id": "chenliu",
+      "label": "진류",
+      "aliases": [
+        "진류"
+      ]
+    },
+    {
+      "id": "chengdu",
+      "label": "성도",
+      "aliases": [
+        "성도"
+      ]
+    },
+    {
+      "id": "jizhou",
+      "label": "기주",
+      "aliases": [
+        "기주"
+      ]
+    },
+    {
+      "id": "qingzhou",
+      "label": "청주",
+      "aliases": [
+        "청주"
+      ]
+    },
+    {
+      "id": "xuzhou",
+      "label": "서주",
+      "aliases": [
+        "서주"
+      ]
+    },
+    {
+      "id": "jingzhou",
+      "label": "형주",
+      "aliases": [
+        "형주"
+      ]
+    },
+    {
+      "id": "yangzhou",
+      "label": "양주·강동",
+      "aliases": [
+        "양주·강동",
+        "강동"
+      ]
+    },
+    {
+      "id": "liangzhou",
+      "label": "서량",
+      "aliases": [
+        "서량"
+      ]
+    },
+    {
+      "id": "hanzhong",
+      "label": "한중",
+      "aliases": [
+        "한중"
+      ]
+    },
+    {
+      "id": "guandu",
+      "label": "관도",
+      "aliases": [
+        "관도"
+      ]
+    },
+    {
+      "id": "chibi",
+      "label": "적벽",
+      "aliases": [
+        "적벽"
+      ]
+    },
+    {
+      "id": "jianye",
+      "label": "건업",
+      "aliases": [
+        "건업"
+      ]
+    },
+    {
+      "id": "shouchun",
+      "label": "수춘",
+      "aliases": [
+        "수춘"
+      ]
+    },
+    {
+      "id": "liaodong",
+      "label": "요동",
+      "aliases": [
+        "요동"
+      ]
+    },
+    {
+      "id": "yizhou",
+      "label": "익주",
+      "aliases": [
+        "익주"
+      ]
+    },
+    {
+      "id": "yuzhou",
+      "label": "예주",
+      "aliases": [
+        "예주"
+      ]
+    },
+    {
+      "id": "yanzhou",
+      "label": "연주",
+      "aliases": [
+        "연주"
+      ]
+    },
+    {
+      "id": "bingzhou",
+      "label": "병주",
+      "aliases": [
+        "병주"
+      ]
+    },
+    {
+      "id": "youzhou",
+      "label": "유주",
+      "aliases": [
+        "유주"
+      ]
+    },
+    {
+      "id": "jiaozhou",
+      "label": "교주",
+      "aliases": [
+        "교주"
+      ]
+    }
+  ],
+  "factions": [
+    {
+      "id": "han",
+      "label": "후한 조정",
+      "aliases": [
+        "후한 조정"
+      ]
+    },
+    {
+      "id": "yellow-turban",
+      "label": "황건",
+      "aliases": [
+        "황건"
+      ]
+    },
+    {
+      "id": "dong-zhuo",
+      "label": "동탁 세력",
+      "aliases": [
+        "동탁 세력"
+      ]
+    },
+    {
+      "id": "coalition",
+      "label": "반동탁 연합",
+      "aliases": [
+        "반동탁 연합"
+      ]
+    },
+    {
+      "id": "cao-cao",
+      "label": "조조 세력",
+      "aliases": [
+        "조조 세력"
+      ]
+    },
+    {
+      "id": "yuan-shao",
+      "label": "원소 세력",
+      "aliases": [
+        "원소 세력"
+      ]
+    },
+    {
+      "id": "yuan-shu",
+      "label": "원술 세력",
+      "aliases": [
+        "원술 세력"
+      ]
+    },
+    {
+      "id": "gongsun-zan",
+      "label": "공손찬 세력",
+      "aliases": [
+        "공손찬 세력"
+      ]
+    },
+    {
+      "id": "liu-biao",
+      "label": "유표 세력",
+      "aliases": [
+        "유표 세력"
+      ]
+    },
+    {
+      "id": "liu-zhang",
+      "label": "유언·유장 세력",
+      "aliases": [
+        "유언·유장 세력"
+      ]
+    },
+    {
+      "id": "zhang-lu",
+      "label": "장로 세력",
+      "aliases": [
+        "장로 세력"
+      ]
+    },
+    {
+      "id": "sun",
+      "label": "손씨 세력",
+      "aliases": [
+        "손씨 세력"
+      ]
+    },
+    {
+      "id": "liu-bei",
+      "label": "유비 세력",
+      "aliases": [
+        "유비 세력"
+      ]
+    },
+    {
+      "id": "wei",
+      "label": "위",
+      "aliases": [
+        "위"
+      ]
+    },
+    {
+      "id": "shu",
+      "label": "촉한",
+      "aliases": [
+        "촉한"
+      ]
+    },
+    {
+      "id": "wu",
+      "label": "오",
+      "aliases": [
+        "오"
+      ]
+    },
+    {
+      "id": "jin",
+      "label": "진",
+      "aliases": [
+        "진"
+      ]
+    },
+    {
+      "id": "sima",
+      "label": "사마씨",
+      "aliases": [
+        "사마씨"
+      ]
+    },
+    {
+      "id": "northern-tribes",
+      "label": "북방 여러 세력",
+      "aliases": [
+        "북방 여러 세력"
+      ]
+    },
+    {
+      "id": "lu-bu",
+      "label": "여포 세력",
+      "aliases": [
+        "여포 세력"
+      ]
+    },
+    {
+      "id": "li-jue",
+      "label": "이각·곽사 세력",
+      "aliases": [
+        "이각·곽사 세력"
+      ]
+    },
+    {
+      "id": "liaodong",
+      "label": "요동 공손씨",
+      "aliases": [
+        "요동 공손씨"
+      ]
+    }
+  ]
+}

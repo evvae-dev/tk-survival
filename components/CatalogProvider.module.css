@@ -1,0 +1,3 @@
+.notice{position:fixed;right:16px;bottom:16px;z-index:60;width:min(400px,calc(100% - 32px));padding:20px;background:var(--surface);border:1px solid var(--primary);border-radius:12px;box-shadow:0 10px 35px #0008;font-size:14px;color:var(--text)}
+.notice p{font-size:13px;line-height:1.7;margin:12px 0;color:var(--text-muted)}
+.notice button{background:var(--primary);color:#fff}

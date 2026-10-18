@@ -1,0 +1,3 @@
+import {NextRequest,NextResponse} from 'next/server';
+import {historicalEvents} from '@/lib/history';
+export function GET(request:NextRequest){const p=request.nextUrl.searchParams;const year=p.get('year');if(year&&(!Number.isInteger(Number(year))||Number(year)<170||Number(year)>280))return NextResponse.json({error:'연도는 170~280년으로 지정하세요.'},{status:400});const q=p.get('q')??'';const events=historicalEvents.filter(e=>(!year||e.year===Number(year))&&(!p.get('region')||e.regionIds.includes(p.get('region')!))&&(!p.get('faction')||e.factionIds.includes(p.get('faction')!))&&(!p.get('category')||e.category===p.get('category'))&&[e.title,e.summary,e.source.record,...e.relatedPeople].join(' ').includes(q));return NextResponse.json({events,total:events.length});}
