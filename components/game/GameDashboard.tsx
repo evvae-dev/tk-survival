@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import titleScreen from "@/public/title-screen.png";
+import { sceneArt } from "@/lib/scene-art";
 import Link from "@/components/HostedLink";
 import { useEffect, useRef, useState } from "react";
 import type { Game, Stats } from "@/lib/game";
@@ -72,6 +72,7 @@ export default function GameDashboard({
       close();
     }
   };
+  const art = event ? sceneArt(event) : null;
   const lastDecision = game.decisions.at(-1);
   const preserved = view.world.factions["yellow-turban"] === "preserved";
   return (
@@ -175,20 +176,9 @@ export default function GameDashboard({
                     </p>
                     {event.historical && <button className={s.sourceButton} onClick={() => setModal('source')}>사건 기록과 출처 ↗</button>}
                   </div>
-                  <div className={s.eventArt}>
-                    <Image
-                      src={
-                        process.env.NEXT_PUBLIC_CACHE_ENABLED === "true"
-                          ? titleScreen
-                          : "/title-screen.png"
-                      }
-                      alt="모닥불 주변에서 대화하는 사람들"
-                      fill
-                      priority
-                      sizes="(max-width: 768px) 90vw, 420px"
-                    />
-                    <span>184 / 黃巾之亂</span>
-                  </div>
+                  {art && <div className={s.eventArt} data-testid="scene-art">
+                    <Image src={art.src} alt={art.alt} fill priority sizes="(max-width: 768px) 90vw, 640px" />
+                  </div>}
                   <h1><OfficerText text={event.title} /></h1>
                   <p className={s.dialogue}><OfficerText text={event.scene} /></p>
                   <button

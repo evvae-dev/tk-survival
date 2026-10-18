@@ -1,0 +1,22 @@
+---
+name: playwright-page-check
+description: Use Playwright to verify a web page in desktop and mobile Chromium, exercise user interactions, check image visibility and layout, capture screenshots, and report browser errors.
+---
+
+# Playwright page check
+
+Use when the user asks to inspect a page, verify a UI change, or check responsive layout with Playwright. Read the target project's AGENTS.md and preview instructions first. Reuse installed Playwright and Chromium; check the project's dependencies and `/opt/codex/cua_node/lib/node_modules/playwright` before installing anything.
+
+1. Identify the intended checkout and page. Start its documented preview command only when needed, keep the process session, and stop only the server you started after verification.
+2. Use a fresh browser context for test saves. Never clear the user's real browser data. Use the user-visible start form and controls for interactive checks.
+3. Run the supplied script with an explicit URL and artifact directory:
+   `node .agents/skills/playwright-page-check/scripts/check-page.cjs http://localhost:4173 /tmp/page-check`
+4. For application-specific steps, create an additional script that uses semantic selectors (`getByRole`, `getByLabel`, stable `data-testid`). Wait for visible UI or loaded images rather than arbitrary long sleeps. Check desktop 1440×1000, mobile 390×844, and a short desktop viewport where relevant.
+5. Assert that intended images have a nonzero natural size and visible bounds, controls work, dialogs scroll, and the document has no horizontal overflow. Capture screenshots after the relevant interaction, not just the landing page. Collect page errors and failed same-origin requests; classify unrelated external font/network failures separately.
+6. Inspect the captured screenshots with `view_image`. Fix actual failures, then repeat the affected checks. Report exactly which scenarios passed and any unverified behavior. A successful build alone is not a browser check.
+
+For a private deployed site, use the supported Sites sign-in flow or an authorized short-lived bypass token. Keep tokens in memory or process stdin; never put them in files, screenshots, source, command-line arguments, logs, or Git. Do not bypass network policy or invent credentials. If private access cannot be established, verify the same built artifact locally and state that production browser access is unverified.
+
+Keep page-check artifacts outside Git. Persist this skill in the project's `.agents/skills` and optionally the current user's `~/.codex/skills` so a future session can discover it. Do not overwrite an existing user skill with the same name.
+
+For this game, run `node .agents/skills/playwright-page-check/scripts/check-tk-survival.cjs http://localhost:4173 /tmp/tk-game-browser`. It verifies game start, visible scene art, three choice images, next-scene changes, desktop/mobile/short-desktop layouts, and browser errors.

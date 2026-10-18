@@ -1,0 +1,25 @@
+import { describe, expect, it } from 'vitest';
+import { existsSync } from 'node:fs';
+import path from 'node:path';
+import { historicalEvents } from './history';
+import type { Game } from './game';
+import { sceneArt } from './scene-art';
+describe('현재 상황의 장면 이미지', () => {
+  it('20개 선택 장면 모두에 존재하는 이미지를 연결한다', () => {
+    let count = 0;
+    for (const event of historicalEvents) for (const node of event.flow?.nodes ?? []) {
+      if (node.type !== 'choice') continue;
+      count++;
+      const art = sceneArt({ id: event.id, state: { flowProgress: { eventId: event.id, nodeId: node.id } } as Game });
+      expect(art, `${event.id}:${node.id}`).not.toBeNull();
+      expect(existsSync(path.join(process.cwd(), 'public', art!.src))).toBe(true);
+    }
+    expect(count).toBe(20);
+  });
+  it('같은 사건도 피란민·협상·전투 문맥을 구분한다', () => {
+    const art = (nodeId: string) => sceneArt({ id: 'battle-184-wan', state: { flowProgress: { eventId: 'battle-184-wan', nodeId } } as Game });
+    expect(art('civilian')?.src).toContain('relief');
+    expect(art('surrender')?.src).toContain('negotiate');
+    expect(art('han-plan')?.src).toContain('siege');
+  });
+});
