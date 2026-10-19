@@ -19,7 +19,7 @@ const results=[];fs.mkdirSync(output,{recursive:true});
    await page.goto(baseUrl,{waitUntil:'domcontentloaded'});
    await page.getByRole('button',{name:'시작하기',exact:true}).click();
    await page.getByRole('textbox',{name:'이 시대에 남길 이름',exact:true}).fill('이미지전체검증');
-   await page.getByRole('button',{name:'이름 넣고 시작'}).click();
+   await page.getByRole('button',{name:'이름 넣고 시작'}).click();await page.getByTestId('stat-roulette').getByRole('button',{name:'시작',exact:true}).click();
    await page.getByTestId('game-screen').waitFor();
    const base=await page.evaluate(()=>JSON.parse(localStorage.getItem('tk-survival-game-v1')));
    for(let i=0;i<catalog.length;i++) for(const node of catalog[i].flow.nodes.filter(n=>n.type==='choice')){

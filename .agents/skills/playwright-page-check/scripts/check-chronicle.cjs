@@ -13,7 +13,7 @@ const logs = outcomes.slice(0, 24).map((e, i) => ({ ...e, year: 184 + Math.floor
   const p = await c.newPage(), errors = []; p.on('pageerror', e => errors.push(e.message));
   await p.goto(url); await p.getByRole('button', { name:'시작하기', exact:true }).click();
   await p.getByRole('textbox', { name:'이 시대에 남길 이름', exact:true }).fill('연대기검증');
-  await p.getByRole('button', { name:'이름 넣고 시작' }).click();
+  await p.getByRole('button', { name:'이름 넣고 시작' }).click();await p.getByTestId('stat-roulette').getByRole('button',{name:'시작',exact:true}).click();
   await p.getByRole('heading', { name:/갑자기 분위기 황건적/ }).last().waitFor();
   await p.evaluate(log => { const save = JSON.parse(localStorage.getItem('tk-survival-game-v1')); Object.assign(save.state.game, { completed:true, introChoicePending:false, flowProgress:undefined, year:186, turn:24 }); save.state.game.world.log=log; localStorage.setItem('tk-survival-game-v1', JSON.stringify(save)); }, logs);
   await p.reload(); await p.getByRole('heading', { name:'연대기검증의 연대기' }).waitFor();

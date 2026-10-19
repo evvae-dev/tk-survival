@@ -3,7 +3,6 @@ async function dismissInitialChoice(page) {
   if (!pending) return;
   if (await page.getByTestId("awakening-transition").count()) {
     await page.getByTestId("awakening-transition").waitFor({ state: "detached" });
-    await page.getByRole("heading", { name: /갑자기 분위기 황건적/ }).waitFor();
   }
   const popup = page.locator('dialog[open]').filter({ has: page.getByRole('heading', { name: /갑자기 분위기 황건적/ }) });
   if (!(await popup.isVisible())) return;

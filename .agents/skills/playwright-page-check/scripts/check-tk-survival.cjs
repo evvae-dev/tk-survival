@@ -17,7 +17,7 @@ fs.mkdirSync(output, { recursive: true });
    await page.goto(baseUrl, {waitUntil:'domcontentloaded'});
    await page.getByRole('button',{name:'시작하기',exact:true}).click();
    await page.getByRole('textbox',{name:'이 시대에 남길 이름',exact:true}).fill('표정검증');
-   await page.getByRole('button',{name:'이름 넣고 시작'}).click();
+   await page.getByRole('button',{name:'이름 넣고 시작'}).click();await page.getByTestId('stat-roulette').getByRole('button',{name:'시작',exact:true}).click();
    await page.getByTestId('event-panel').waitFor();
    await playbackButton(page,'자동 ▶');
    const art=page.getByTestId('scene-art');
