@@ -38,6 +38,7 @@ export default function ChapterFlow() {
     'battle-184-qingzhou-city': { x: 0, y: 490 }, 'battle-184-wan': { x: 420, y: 365 },
     'battle-184-guangzong': { x: 840, y: 240 }, 'battle-184-xiaquyang': { x: 840, y: 490 },
     'chapter-5-1-closing': { x: 420, y: 770 },
+    'chapter-5-1-yellow-conquest': { x: 1260, y: 240 },
   };
   const nodes = useMemo<CardNode[]>(() => event ? (event.flow?.nodes ?? []).map(n => ({ id: n.id, type: 'card', position: n.position, data: { title: n.data.label, kind: nodeNames[n.type], text: n.type === 'check' ? `${n.data.check?.kind} · ${n.data.check?.opponentId ?? '상대 없음'}\n성공: ${n.data.check?.success}\n실패: ${n.data.check?.failure}` : n.type === 'condition' ? `${n.data.condition?.field} ${n.data.condition?.operator} ${JSON.stringify(n.data.condition?.value)}` : n.data.options?.map(o => o.title).join(' / ') ?? n.data.effects?.map(effectText).join(' · ') ?? '' } })) : catalog.map((e, i) => ({ id: e.id, type: 'card', position: positions[e.id] ?? { x: 1260, y: i * 300 }, data: { title: e.title, kind: e.category === 'novel' ? '연의 기반 · 실행 사건' : '역사 계열 · 실행 사건', text: e.id.startsWith('battle-') ? `${e.flow?.nodes.filter(n => n.type === 'choice').length ?? 0}개 선택 지점 · ${e.regionIds.map(id => regionLabels[id] ?? id).join(' · ')}` : e.summary } })), [event, catalog]);
   const edges = useMemo<Edge[]>(() => event ? (event.flow?.edges ?? []).map(e => {
@@ -53,7 +54,7 @@ export default function ChapterFlow() {
   if (!ready) return <p>실행 사건을 불러오고 있습니다…</p>;
   return <main className={s.page}>
     <header className={s.header}><div><p>관리 작업실 / 실행 플로우</p><h1>5.1 황건적의 난</h1><span>게임과 같은 사건 목록·조건·효과를 표시합니다.</span></div><nav><Link href="/admin/events">사건 관리</Link><Link href="/">게임 테스트 ↗</Link></nav></header>
-    <p className={s.notice}>184년·20세 고정 테스트. 수집된 5개 전투에 진영·전선 선택과 결말을 더했습니다. 판정 수치·플레이어 역할·대체 결과는 게임 창작입니다.</p>
+    <p className={s.notice}>184년·20세 고정 테스트. 수집된 5개 전투와 황건 천하통일 가상 원정을 진행합니다. 원정은 동탁군 → 유비군 → 조조군 격파 후 황제 생포·건국, 전투 패배 시 생포·처형으로 끝납니다.</p>
     <div className={s.toolbar}><button onClick={() => open()}>사건 간 연결 ({catalog.length}개)</button><button onClick={() => void rf.fitView({ padding: .15, minZoom: .08, maxZoom: 1 })}>전체 보기</button>{event && <Link href={`/admin/events?event=${encodeURIComponent(event.id)}`}>이 사건의 노드·조건·선택·결과 편집 →</Link>}</div>
     <div className={s.layout}>
       <aside className={s.list}><h2>실행 사건</h2><nav aria-label="실행 사건">{catalog.map(e => <button key={e.id} onClick={() => open(e.id)} className={eventId === e.id ? s.active : ''}><strong>{e.title}</strong></button>)}</nav>{event && <details className={s.nodeNavigation} open><summary>노드 바로가기 ({event.flow?.nodes.length})</summary><nav aria-label="실행 노드">{event.flow?.nodes.map(n => <button key={n.id} data-node-id={n.id} onClick={() => setSelected(n.id)}><small>{nodeNames[n.type]} · {n.id}</small><span>{n.data.label}</span></button>)}</nav></details>}</aside>

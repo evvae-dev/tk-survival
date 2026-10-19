@@ -35,7 +35,7 @@ function decode(value) {
   const database = (await api.get(`/v1/${base}`)).body;
   if (database.databaseEdition !== 'STANDARD') throw new Error('기존 Standard 데이터베이스와 일치하지 않습니다.');
   let events = JSON.parse(fs.readFileSync(path.join(root, 'data/history/events.json'), 'utf8'));
-  if (events.length !== 7 || events.some(event => event.chapterId !== 'chapter-5-1-yellow-turban' || event.year !== 184 || !event.flow)) throw new Error('5.1 실행 사건 7개가 필요합니다.');
+  if (events.length !== 8 || events.some(event => event.chapterId !== 'chapter-5-1-yellow-turban' || event.year !== 184 || !event.flow)) throw new Error('황건 천하통일 원정을 포함한 5.1 실행 사건 8개가 필요합니다.');
   const pointerPath = `${documents}/eventCatalog/current`;
   const pointer = (await api.get(`/v1/${pointerPath}`)).body;
   const previousRevision = pointer.fields.revision.stringValue;

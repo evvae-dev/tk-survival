@@ -3,6 +3,7 @@ const scene = (name: string, alt: string) => ({ src: `/art/scenes/${name}.png`, 
 const action = (name: string, alt: string) => ({ src: `/art/choices/${name}.png`, alt });
 export function sceneArt(event: Pick<GameEvent, 'id' | 'state'>) {
   const node = event.state.flowProgress?.nodeId;
+  if (event.id === 'chapter-5-1-opening' && node === 'yellow-route') return action('yellow', '누런 두건을 쓴 황건군 주인공이 앞으로의 행보를 고민한다');
   if (event.id === 'chapter-5-1-opening') return node === 'front'
     ? action('travel-wagons', '주인공이 세 갈래로 출발하는 짐수레를 보며 탁군·완성·광종 중 어디로 갈지 고민한다')
     : scene('opening', '죽창을 쥔 주인공이 황건적과 관군 사이에서 눈을 크게 뜨고 당황한다');

@@ -4,8 +4,8 @@ import { choiceArt } from './choice-art';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 describe('선택지 이미지 연결', () => {
-  it('5.1의 모든 선택지에 행동별 이미지를 지정한다', () => {
-    const choices = historicalEvents.flatMap(event => event.flow?.nodes.flatMap(node => node.data.options ?? []) ?? []);
+  it('기존 황건적의 난 선택지의 행동별 이미지를 유지한다', () => {
+    const choices = historicalEvents.filter(event => event.id !== 'chapter-5-1-yellow-conquest').flatMap(event => event.flow?.nodes.filter(node => node.id !== 'yellow-route').flatMap(node => node.data.options ?? []) ?? []);
     expect(choices).toHaveLength(56);
     for (const choice of choices) {
       const art = choiceArt(choice);
@@ -13,6 +13,11 @@ describe('선택지 이미지 연결', () => {
       expect(art?.alt).toContain('주인공');
       expect(existsSync(path.join(process.cwd(), 'public', art!.src)), choice.title).toBe(true);
     }
+  });
+  it('새 원정 선택지는 해당 행동 이미지가 준비되기 전까지 텍스트로 표시한다', () => {
+    const choices = historicalEvents.flatMap(event => event.flow?.nodes.filter(node => event.id === 'chapter-5-1-yellow-conquest' || node.id === 'yellow-route').flatMap(node => node.data.options ?? []) ?? []);
+    expect(choices).toHaveLength(9);
+    for (const choice of choices) expect(choiceArt(choice)).toBeNull();
   });
   it('관리자 신규 선택지는 관련 없는 이미지를 임의로 지정하지 않는다', () => {
     expect(choiceArt({ title: '[새로운 행동]' })).toBeNull();

@@ -80,6 +80,8 @@ export default function GameDashboard({
   const art = event ? sceneArt(event) : null;
   const lastDecision = game.decisions.at(-1);
   const preserved = view.world.factions["yellow-turban"] === "preserved";
+  const founded = view.world.flags.yellowEmpireFounded === true;
+  const executed = view.world.flags.playerExecuted === true;
   return (
     <div className={`${s.app} ${game.completed ? s.completedApp : ""} ${playback.waiting && !modal ? s.clickToAdvance : ''}`} data-testid="game-screen">
       {awakening && <AwakeningTransition onComplete={() => { setAwakening(false); setModal("event"); }} />}
@@ -145,16 +147,14 @@ export default function GameDashboard({
             {game.completed ? (
               <div className={s.ending} data-testid="completed-screen">
                 <span className={s.endingSeal}>記</span>
-                <p className={s.eyebrow}>CHAPTER 01 / 기록 완료</p>
+                <p className={s.eyebrow}>{founded || executed ? '가상 시나리오 / ' + (executed ? '패배' : '천하통일') : 'CHAPTER 01 / 기록 완료'}</p>
                 <h1>
-                  {preserved
+                  {executed ? "패배하여 처형당했습니다." : founded ? "황건국을 세워 천하를 통일했습니다." : preserved
                     ? "황건의 거점이 남았습니다."
                     : "토벌군이 전선을 장악했습니다."}
                 </h1>
                 <p>
-                  {game.name}의 {game.turn}번의 판단이
-                  <br />
-                  184년의 전장에 흔적을 남겼습니다.
+                  {executed ? `${game.name}은(는) 전투에서 패해 생포된 뒤 처형당했습니다. 원정은 여기서 끝납니다.` : founded ? '동탁군·유비군·조조군을 차례로 격파하고 황제를 생포했습니다. 황건의 나라가 세워졌습니다.' : <>{game.name}의 {game.turn}번의 판단이<br />184년의 전장에 흔적을 남겼습니다.</>}
                 </p>
                 <button className={s.primaryButton} onClick={onReset}>
                   새로운 인물로 시작 →
@@ -166,7 +166,7 @@ export default function GameDashboard({
                   <div className={s.eventHeading}>
                     <p className={s.eyebrow}>
                       CHAPTER 01 ·{" "}
-                      {event.historical?.category === "novel"
+                      {event.id === 'chapter-5-1-yellow-conquest' ? '황건 천하통일 · 가상 시나리오' : event.historical?.category === "novel"
                         ? "연의 기반"
                         : "황건적의 난"}
                     </p>
@@ -269,7 +269,7 @@ export default function GameDashboard({
         <div className={s.factionSummary}>
           {Object.entries(view.world.factions).map(([id, state]) => (
             <span key={id}>
-              {factionLabel(id, game.year)} ·{" "}
+              {id === 'yellow-turban' && founded ? '황건국' : factionLabel(id, game.year)} ·{" "}
               {state === "preserved"
                 ? "가상역사 존속"
                 : state === "defeated"
@@ -291,6 +291,8 @@ export default function GameDashboard({
         <p className={s.smallNote}>
           포로·피신·항복의 상세 경과는 나의 기록에서 확인할 수 있습니다.
         </p>
+        {view.world.flags.emperorCaptured && <p>황제 · 생포됨</p>}
+        {executed && <p>{game.name} · 생포 후 처형됨</p>}
         <ul className={s.peopleList}>
           {Object.entries(view.world.people).map(([id, state]) => (
             <li key={id}>

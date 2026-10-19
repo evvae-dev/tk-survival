@@ -19,4 +19,4 @@ export function normalizeMembership(game: Game): Game {
     ? { ...game, world, factionId: null, role: 'refugee' }
     : { ...game, world };
 }
-export function currentCourtLabel(world: World): string { return world.control.luoyang === 'han' ? '낙양 · 후한' : '궁정 위치 미확인'; }
+export function currentCourtLabel(world: World): string { return world.flags.yellowEmpireFounded ? '낙양 · 황건국 (황제 생포)' : world.control.luoyang === 'han' ? '낙양 · 후한' : '궁정 위치 미확인'; }

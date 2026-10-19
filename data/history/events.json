@@ -39,7 +39,7 @@
           "type": "end",
           "position": {
             "x": 0,
-            "y": 1700
+            "y": 2040
           },
           "data": {
             "label": "사건 종료"
@@ -147,8 +147,8 @@
           "id": "front",
           "type": "choice",
           "position": {
-            "x": 0,
-            "y": 1020
+            "x": -195,
+            "y": 1360
           },
           "data": {
             "label": "수레 셋에 목적지 셋",
@@ -180,7 +180,7 @@
           "type": "result",
           "position": {
             "x": -390,
-            "y": 1360
+            "y": 1700
           },
           "data": {
             "label": "탁군 도착",
@@ -203,7 +203,7 @@
           "type": "result",
           "position": {
             "x": 0,
-            "y": 1360
+            "y": 1700
           },
           "data": {
             "label": "성문이 닫혔네",
@@ -226,7 +226,7 @@
           "type": "result",
           "position": {
             "x": 390,
-            "y": 1360
+            "y": 1700
           },
           "data": {
             "label": "군대가 너무 많은데",
@@ -243,6 +243,75 @@
               }
             ]
           }
+        },
+        {
+          "id": "yellow-route",
+          "type": "choice",
+          "position": {
+            "x": 0,
+            "y": 1020
+          },
+          "data": {
+            "label": "황건군으로 어디까지 갈 건데?!",
+            "text": "누런 두건을 고쳐 매자 옆 사람이 앞으로 어디서 싸울 거냐고 묻는다. 거점 하나 지키기도 벅찬데 동탁, 유비, 조조를 차례로 꺾고 황제까지 잡자는 얘기가 나온다. 한 번이라도 지면 반란군이라고 잡혀서 처형당한다는데, 내 목숨으로 난이도 조절하는 건 너무한 거 아니야?!",
+            "options": [
+              {
+                "id": "conquest",
+                "title": "[천하통일에 나선다]",
+                "description": "죽창 들고 여기까지 왔는데, 황건의 나라까지 한번 가보자!",
+                "outcome": "동탁군 → 유비군 → 조조군과 차례로 결전한다. 어느 전투든 패하면 생포·처형된다."
+              },
+              {
+                "id": "defend",
+                "title": "[거점부터 지킨다]",
+                "description": "천하통일은 너무 크다, 일단 내가 서 있을 성벽부터 찾자.",
+                "outcome": "나는 원정 대신 거점 방어를 택하고 전선으로 향하는 수레를 찾았다."
+              }
+            ]
+          }
+        },
+        {
+          "id": "begin-conquest",
+          "type": "result",
+          "position": {
+            "x": 195,
+            "y": 1360
+          },
+          "data": {
+            "label": "죽창 원정대 출발",
+            "text": "나는 천하통일 원정에 합류했고 황건군은 동탁군이 막아선 낙양 방면으로 진군했다. 일단 길은 외웠다, 동탁 다음 유비, 그다음 조조다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "yellowConquestStarted",
+                "value": true
+              },
+              {
+                "type": "flag",
+                "key": "campaignStarted",
+                "value": true
+              },
+              {
+                "type": "region",
+                "value": "luoyang"
+              },
+              {
+                "type": "factionStatus",
+                "factionId": "dong-zhuo",
+                "value": "active"
+              },
+              {
+                "type": "factionStatus",
+                "factionId": "liu-bei",
+                "value": "active"
+              },
+              {
+                "type": "factionStatus",
+                "factionId": "cao-cao",
+                "value": "active"
+              }
+            ]
+          }
         }
       ],
       "edges": [
@@ -255,7 +324,7 @@
         {
           "id": "join-yellow-next",
           "source": "join-yellow",
-          "target": "front",
+          "target": "yellow-route",
           "sourceHandle": "next"
         },
         {
@@ -319,6 +388,24 @@
           "sourceHandle": "next"
         },
         {
+          "id": "yellow-route-conquest",
+          "source": "yellow-route",
+          "target": "begin-conquest",
+          "sourceHandle": "conquest"
+        },
+        {
+          "id": "yellow-route-defend",
+          "source": "yellow-route",
+          "target": "front",
+          "sourceHandle": "defend"
+        },
+        {
+          "id": "begin-conquest-next",
+          "source": "begin-conquest",
+          "target": "end",
+          "sourceHandle": "next"
+        },
+        {
           "id": "start-next",
           "source": "start",
           "target": "side",
@@ -339,8 +426,895 @@
       {
         "targetId": "battle-184-guangzong",
         "label": "선택한 전선에 배치 · 다른 전선은 기본 경과"
+      },
+      {
+        "targetId": "chapter-5-1-yellow-conquest",
+        "label": "황건군 합류 → 천하통일 원정 / 전투 패배 시 처형"
       }
     ]
+  },
+  {
+    "chapterId": "chapter-5-1-yellow-turban",
+    "year": 184,
+    "month": null,
+    "precision": "year",
+    "calendar": "lunar",
+    "regionIds": [
+      "luoyang",
+      "zhuo",
+      "chenliu"
+    ],
+    "factionIds": [
+      "yellow-turban",
+      "dong-zhuo",
+      "liu-bei",
+      "cao-cao",
+      "han"
+    ],
+    "category": "history",
+    "relatedPeople": [
+      "동탁",
+      "유비",
+      "조조"
+    ],
+    "relatedOfficerIds": [
+      "rtk14-0736",
+      "rtk14-0952",
+      "rtk14-0521"
+    ],
+    "id": "chapter-5-1-yellow-conquest",
+    "sequence": 0,
+    "title": "[죽창으로 천하통일까지?!]",
+    "summary": "사용자 지정 가상역사: 황건군으로 동탁군 → 유비군 → 조조군을 차례로 격파한다. 세 전투 승리 후 황제를 생포하고 황건의 나라를 세워 천하를 통일한다. 어느 전투든 패배하면 생포·처형으로 즉시 종료한다.",
+    "dateNote": "184년·20세 테스트 안에서 진행하는 가상 원정이다. 실제 역사 연대나 후속 장의 수집 사실을 뜻하지 않는다.",
+    "source": {
+      "title": "사용자 지정 · 가상역사 게임 창작",
+      "record": "동탁군·유비군·조조군의 순차 격파와 황제 생포·황건 건국은 사용자 요청으로 구성한 게임 창작이다. 사서 기록이나 새로 수집한 역사 사건으로 취급하지 않는다."
+    },
+    "prerequisiteEventIds": [
+      "chapter-5-1-opening"
+    ],
+    "connections": [],
+    "flow": {
+      "nodes": [
+        {
+          "id": "start",
+          "type": "start",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "data": {
+            "label": "[죽창으로 천하통일까지?!]"
+          }
+        },
+        {
+          "id": "end",
+          "type": "end",
+          "position": {
+            "x": 0,
+            "y": 4420
+          },
+          "data": {
+            "label": "사건 종료"
+          }
+        },
+        {
+          "id": "route",
+          "type": "condition",
+          "position": {
+            "x": 0,
+            "y": 340
+          },
+          "data": {
+            "label": "황건 천하통일 원정에 합류했는가?",
+            "condition": {
+              "field": "world.flags.yellowConquestStarted",
+              "value": true,
+              "operator": "eq"
+            }
+          }
+        },
+        {
+          "id": "dong-plan",
+          "type": "choice",
+          "position": {
+            "x": 0,
+            "y": 680
+          },
+          "data": {
+            "label": "[첫 상대가 동탁이라고?!]",
+            "text": "낙양으로 향하는 길에서 동탁군이 우리 원정대를 막아섰다. 황건군 지휘관이 내가 낸 작전부터 들어보겠다며 병사들을 모은다. 현대인이라고 군사학 전공은 아닌데, 여기서 지면 포로로 잡혀 처형당한다니 입이라도 열어야 한다.",
+            "options": [
+              {
+                "id": "strategy",
+                "title": "[동탁군의 보급로를 끊는다]",
+                "description": "기병이 세면 밥부터 못 먹게 해보자, 나도 굶으면 아무것도 못 하니까."
+              },
+              {
+                "id": "battle",
+                "title": "[동탁군 앞에서 부대를 지휘한다]",
+                "description": "흩어지면 끝이다, 방패부터 맞추고 같이 밀어보자!"
+              }
+            ]
+          }
+        },
+        {
+          "id": "dong-strategy",
+          "type": "check",
+          "position": {
+            "x": -195,
+            "y": 1020
+          },
+          "data": {
+            "label": "전략 확률 판정",
+            "check": {
+              "kind": "strategy",
+              "opponentId": "rtk14-0736",
+              "success": "동탁군을 격파하고 다음 목표로 진군한다.",
+              "failure": "동탁군에 패배해 생포된 뒤 처형당한다."
+            }
+          }
+        },
+        {
+          "id": "dong-battle",
+          "type": "check",
+          "position": {
+            "x": 195,
+            "y": 1020
+          },
+          "data": {
+            "label": "전투 확률 판정",
+            "check": {
+              "kind": "battle",
+              "opponentId": "rtk14-0736",
+              "success": "동탁군을 격파하고 다음 목표로 진군한다.",
+              "failure": "동탁군에 패배해 생포된 뒤 처형당한다."
+            }
+          }
+        },
+        {
+          "id": "dong-victory",
+          "type": "result",
+          "position": {
+            "x": -195,
+            "y": 1360
+          },
+          "data": {
+            "label": "동탁군 격파",
+            "text": "나는 부대를 움직여 동탁군의 전열을 무너뜨렸고, 동탁군은 무기를 버리고 물러났다. 황건군이 낙양과 장안을 접수했고, 나는 장교가 되어 진격을 막으러 온 유비군을 상대하게 됐다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "dongArmyDefeated",
+                "value": true
+              },
+              {
+                "type": "factionStatus",
+                "factionId": "dong-zhuo",
+                "value": "defeated"
+              },
+              {
+                "type": "control",
+                "regionId": "luoyang",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "changan",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "region",
+                "value": "zhuo"
+              },
+              {
+                "type": "role",
+                "value": "officer"
+              },
+              {
+                "type": "reputation",
+                "factionId": "yellow-turban",
+                "value": 2
+              }
+            ]
+          }
+        },
+        {
+          "id": "dong-execution",
+          "type": "result",
+          "position": {
+            "x": 195,
+            "y": 1360
+          },
+          "data": {
+            "label": "동탁군에 패배, 생포 후 처형",
+            "text": "내 작전은 동탁군에 막혔고, 무너진 대열에서 달아나려다 포로로 붙잡혔다. 나는 반란군으로 처형당했고 천하통일의 꿈도 여기서 끝났다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "playerCaptured",
+                "value": true
+              },
+              {
+                "type": "flag",
+                "key": "playerExecuted",
+                "value": true
+              },
+              {
+                "type": "flag",
+                "key": "dongArmyDefeated",
+                "value": false
+              },
+              {
+                "type": "flag",
+                "key": "chapterFinished",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "liu-plan",
+          "type": "choice",
+          "position": {
+            "x": 0,
+            "y": 1700
+          },
+          "data": {
+            "label": "[동탁 다음은 유관장 세트?!]",
+            "text": "우리가 동탁군을 무너뜨리자 유비군이 황건군의 진격을 막으러 나왔다. 나는 장교가 되어 동탁군에게서 확보한 보급품을 챙기고 탁군 방면으로 부대를 옮겼다. 유비 옆에 관우와 장비까지 서 있는데, 이름을 아는 것과 이기는 법을 아는 건 별개잖아?!",
+            "options": [
+              {
+                "id": "strategy",
+                "title": "[유비군의 진격로에 매복한다]",
+                "description": "저 셋이 한꺼번에 달려오면 답 없다, 좁은 길로 끌어내보자."
+              },
+              {
+                "id": "battle",
+                "title": "[유비군에 맞서 진형을 지휘한다]",
+                "description": "일기토 신청은 못 들은 척하고, 우리 병사들부터 뭉쳐보자!"
+              }
+            ]
+          }
+        },
+        {
+          "id": "liu-strategy",
+          "type": "check",
+          "position": {
+            "x": -195,
+            "y": 2040
+          },
+          "data": {
+            "label": "전략 확률 판정",
+            "check": {
+              "kind": "strategy",
+              "opponentId": "rtk14-0952",
+              "success": "유비군을 격파하고 다음 목표로 진군한다.",
+              "failure": "유비군에 패배해 생포된 뒤 처형당한다."
+            }
+          }
+        },
+        {
+          "id": "liu-battle",
+          "type": "check",
+          "position": {
+            "x": 195,
+            "y": 2040
+          },
+          "data": {
+            "label": "전투 확률 판정",
+            "check": {
+              "kind": "battle",
+              "opponentId": "rtk14-0952",
+              "success": "유비군을 격파하고 다음 목표로 진군한다.",
+              "failure": "유비군에 패배해 생포된 뒤 처형당한다."
+            }
+          }
+        },
+        {
+          "id": "liu-victory",
+          "type": "result",
+          "position": {
+            "x": -195,
+            "y": 2380
+          },
+          "data": {
+            "label": "유비군 격파",
+            "text": "나는 병사들을 모아 유비군의 공격을 막고 반격해 유비군을 물러나게 했다. 황건군이 탁군과 청주를 장악하자 마지막으로 조조군이 우리의 진격로를 막았다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "liuArmyDefeated",
+                "value": true
+              },
+              {
+                "type": "factionStatus",
+                "factionId": "liu-bei",
+                "value": "defeated"
+              },
+              {
+                "type": "control",
+                "regionId": "zhuo",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "qingzhou",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "region",
+                "value": "chenliu"
+              },
+              {
+                "type": "role",
+                "value": "officer"
+              },
+              {
+                "type": "reputation",
+                "factionId": "yellow-turban",
+                "value": 2
+              }
+            ]
+          }
+        },
+        {
+          "id": "liu-execution",
+          "type": "result",
+          "position": {
+            "x": 195,
+            "y": 2380
+          },
+          "data": {
+            "label": "유비군에 패배, 생포 후 처형",
+            "text": "내 작전은 유비군에 막혔고, 무너진 대열에서 달아나려다 포로로 붙잡혔다. 나는 반란군으로 처형당했고 천하통일의 꿈도 여기서 끝났다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "playerCaptured",
+                "value": true
+              },
+              {
+                "type": "flag",
+                "key": "playerExecuted",
+                "value": true
+              },
+              {
+                "type": "flag",
+                "key": "liuArmyDefeated",
+                "value": false
+              },
+              {
+                "type": "flag",
+                "key": "chapterFinished",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "cao-plan",
+          "type": "choice",
+          "position": {
+            "x": 0,
+            "y": 2720
+          },
+          "data": {
+            "label": "[마지막 상대가 조조라니?!]",
+            "text": "유비군을 물리치고 진격하자 조조군이 마지막 길목을 막았다. 나는 청주 쪽 보급을 정리한 뒤 부대를 이끌고 진류 방면으로 향했다. 여기만 넘으면 궁궐로 갈 수 있다는데, 조조가 내 잔꾀를 먼저 읽고 있을 것 같아서 손에 땀이 난다.",
+            "options": [
+              {
+                "id": "strategy",
+                "title": "[조조군의 보급 수레를 유인한다]",
+                "description": "빈 진영을 미끼로 보급대를 떼어내자, 제발 이번에는 속아줘라."
+              },
+              {
+                "id": "battle",
+                "title": "[조조군의 방어선을 돌파한다]",
+                "description": "여기까지 온 병사들이다, 흩어지지 말고 한 곳에 힘을 모으자!"
+              }
+            ]
+          }
+        },
+        {
+          "id": "cao-strategy",
+          "type": "check",
+          "position": {
+            "x": -195,
+            "y": 3060
+          },
+          "data": {
+            "label": "전략 확률 판정",
+            "check": {
+              "kind": "strategy",
+              "opponentId": "rtk14-0521",
+              "success": "조조군을 격파하고 다음 목표로 진군한다.",
+              "failure": "조조군에 패배해 생포된 뒤 처형당한다."
+            }
+          }
+        },
+        {
+          "id": "cao-battle",
+          "type": "check",
+          "position": {
+            "x": 195,
+            "y": 3060
+          },
+          "data": {
+            "label": "전투 확률 판정",
+            "check": {
+              "kind": "battle",
+              "opponentId": "rtk14-0521",
+              "success": "조조군을 격파하고 다음 목표로 진군한다.",
+              "failure": "조조군에 패배해 생포된 뒤 처형당한다."
+            }
+          }
+        },
+        {
+          "id": "cao-victory",
+          "type": "result",
+          "position": {
+            "x": -195,
+            "y": 3400
+          },
+          "data": {
+            "label": "조조군 격파",
+            "text": "나는 조조군의 방어선을 무너뜨렸고, 조조군도 무기를 내려놓았다. 진류와 연주를 확보한 우리는 황제가 남아 있는 낙양 궁궐로 향했다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "caoArmyDefeated",
+                "value": true
+              },
+              {
+                "type": "factionStatus",
+                "factionId": "cao-cao",
+                "value": "defeated"
+              },
+              {
+                "type": "control",
+                "regionId": "chenliu",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "yanzhou",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "region",
+                "value": "luoyang"
+              },
+              {
+                "type": "role",
+                "value": "officer"
+              },
+              {
+                "type": "reputation",
+                "factionId": "yellow-turban",
+                "value": 2
+              }
+            ]
+          }
+        },
+        {
+          "id": "cao-execution",
+          "type": "result",
+          "position": {
+            "x": 195,
+            "y": 3400
+          },
+          "data": {
+            "label": "조조군에 패배, 생포 후 처형",
+            "text": "내 작전은 조조군에 막혔고, 무너진 대열에서 달아나려다 포로로 붙잡혔다. 나는 반란군으로 처형당했고 천하통일의 꿈도 여기서 끝났다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "playerCaptured",
+                "value": true
+              },
+              {
+                "type": "flag",
+                "key": "playerExecuted",
+                "value": true
+              },
+              {
+                "type": "flag",
+                "key": "caoArmyDefeated",
+                "value": false
+              },
+              {
+                "type": "flag",
+                "key": "chapterFinished",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "emperor",
+          "type": "choice",
+          "position": {
+            "x": 0,
+            "y": 3740
+          },
+          "data": {
+            "label": "[이제 황제까지 내 눈앞에?!]",
+            "text": "조조군을 격파한 우리는 낙양 궁궐까지 진군했고, 마지막 수비대도 무기를 내려놓았다. 나는 도주로를 막아두고 황제가 남아 있는 전각 앞에 섰다. 나머지 고을에서도 항복 사절이 도착했다니, 이제 황제를 사로잡고 황건의 나라를 선포할 차례다.",
+            "options": [
+              {
+                "id": "found",
+                "title": "[황제를 생포하고 건국한다]",
+                "description": "두건 하나 잘못 묶었다가 여기까지 왔다, 이제 황건의 나라를 세우자!",
+                "outcome": "황제를 생포하고 황건국을 세워 천하를 통일하며 이야기를 마친다."
+              }
+            ]
+          }
+        },
+        {
+          "id": "founded",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 4080
+          },
+          "data": {
+            "label": "황제 생포, 황건국 건국·천하통일",
+            "text": "나는 황제를 생포하고 항복한 고을들을 황건의 통치 아래 묶었다. 황건국의 건국을 선포하자 궁궐 위로 누런 깃발이 올라갔고, 내 천하통일 원정도 여기서 끝났다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "emperorCaptured",
+                "value": true
+              },
+              {
+                "type": "flag",
+                "key": "yellowEmpireFounded",
+                "value": true
+              },
+              {
+                "type": "flag",
+                "key": "yellowUnification",
+                "value": true
+              },
+              {
+                "type": "flag",
+                "key": "chapterFinished",
+                "value": true
+              },
+              {
+                "type": "factionStatus",
+                "factionId": "han",
+                "value": "defeated"
+              },
+              {
+                "type": "factionStatus",
+                "factionId": "yellow-turban",
+                "value": "preserved"
+              },
+              {
+                "type": "control",
+                "regionId": "luoyang",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "changan",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "zhuo",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "chenliu",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "chengdu",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "jizhou",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "qingzhou",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "xuzhou",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "jingzhou",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "yangzhou",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "liangzhou",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "hanzhong",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "guandu",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "chibi",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "jianye",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "shouchun",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "liaodong",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "yizhou",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "yuzhou",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "yanzhou",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "bingzhou",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "youzhou",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "jiaozhou",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "place-daxingshan",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "place-qingzhou-city-novel",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "place-wan",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "place-guangzong",
+                "value": "yellow-turban"
+              },
+              {
+                "type": "control",
+                "regionId": "place-xiaquyang",
+                "value": "yellow-turban"
+              }
+            ]
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "route-yes",
+          "source": "route",
+          "target": "dong-plan",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "route-no",
+          "source": "route",
+          "target": "end",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "dong-plan-strategy",
+          "source": "dong-plan",
+          "target": "dong-strategy",
+          "sourceHandle": "strategy"
+        },
+        {
+          "id": "dong-plan-battle",
+          "source": "dong-plan",
+          "target": "dong-battle",
+          "sourceHandle": "battle"
+        },
+        {
+          "id": "dong-strategy-yes",
+          "source": "dong-strategy",
+          "target": "dong-victory",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "dong-strategy-no",
+          "source": "dong-strategy",
+          "target": "dong-execution",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "dong-battle-yes",
+          "source": "dong-battle",
+          "target": "dong-victory",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "dong-battle-no",
+          "source": "dong-battle",
+          "target": "dong-execution",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "dong-victory-next",
+          "source": "dong-victory",
+          "target": "liu-plan",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "dong-execution-next",
+          "source": "dong-execution",
+          "target": "end",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "liu-plan-strategy",
+          "source": "liu-plan",
+          "target": "liu-strategy",
+          "sourceHandle": "strategy"
+        },
+        {
+          "id": "liu-plan-battle",
+          "source": "liu-plan",
+          "target": "liu-battle",
+          "sourceHandle": "battle"
+        },
+        {
+          "id": "liu-strategy-yes",
+          "source": "liu-strategy",
+          "target": "liu-victory",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "liu-strategy-no",
+          "source": "liu-strategy",
+          "target": "liu-execution",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "liu-battle-yes",
+          "source": "liu-battle",
+          "target": "liu-victory",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "liu-battle-no",
+          "source": "liu-battle",
+          "target": "liu-execution",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "liu-victory-next",
+          "source": "liu-victory",
+          "target": "cao-plan",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "liu-execution-next",
+          "source": "liu-execution",
+          "target": "end",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "cao-plan-strategy",
+          "source": "cao-plan",
+          "target": "cao-strategy",
+          "sourceHandle": "strategy"
+        },
+        {
+          "id": "cao-plan-battle",
+          "source": "cao-plan",
+          "target": "cao-battle",
+          "sourceHandle": "battle"
+        },
+        {
+          "id": "cao-strategy-yes",
+          "source": "cao-strategy",
+          "target": "cao-victory",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "cao-strategy-no",
+          "source": "cao-strategy",
+          "target": "cao-execution",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "cao-battle-yes",
+          "source": "cao-battle",
+          "target": "cao-victory",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "cao-battle-no",
+          "source": "cao-battle",
+          "target": "cao-execution",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "cao-victory-next",
+          "source": "cao-victory",
+          "target": "emperor",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "cao-execution-next",
+          "source": "cao-execution",
+          "target": "end",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "emperor-found",
+          "source": "emperor",
+          "target": "founded",
+          "sourceHandle": "found"
+        },
+        {
+          "id": "founded-next",
+          "source": "founded",
+          "target": "end",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "start-next",
+          "source": "start",
+          "target": "route",
+          "sourceHandle": "next"
+        }
+      ],
+      "passiveEffects": []
+    }
   },
   {
     "chapterId": "chapter-5-1-yellow-turban",

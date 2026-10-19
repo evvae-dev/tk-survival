@@ -7,6 +7,7 @@ import type { Game } from './game';
 
 function choose(game: Game, option: string) {
   const event = getCurrentEvent(game)!;
+  if (event.state.flowProgress?.nodeId === 'yellow-route' && option !== 'conquest' && option !== 'defend') return choose(choose(game, 'defend'), option);
   const choice = event.choices.find(item => item.id.endsWith(`:${option}`))!;
   return resolveChoice(game, choiceKey(event, choice.id));
 }
@@ -82,7 +83,7 @@ describe('기록을 한 건씩 진행한다', () => {
       game = JSON.parse(JSON.stringify(game));
     }
     expect(game.completed).toBe(true);
-    expect(new Set(game.world.appliedEventIds).size).toBe(7);
-    expect(game.world.appliedEventIds).toHaveLength(7);
+    expect(new Set(game.world.appliedEventIds).size).toBe(8);
+    expect(game.world.appliedEventIds).toHaveLength(8);
   });
 });

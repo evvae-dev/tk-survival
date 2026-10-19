@@ -7,7 +7,7 @@ import { getCurrentEvent, choiceKey, resolveChoice } from './event-engine';
 describe('선택에 맞는 작은 성장', () => {
   it('모든 선택은 행동에 맞는 능력이 있고, 판정 성공은 +2 일반·실패 경험은 +1이다', () => {
     const choices=historicalEvents.flatMap(e=>e.flow?.nodes.flatMap(n=>n.data.options??[])??[]);
-    expect(choices).toHaveLength(56);
+    expect(choices).toHaveLength(65);
     const game=newGame('성장',184,'zhuo','farmer');
     for(const choice of choices){
       const ability=choiceAbility(choice.title);expect(ability,choice.title).toBeDefined();

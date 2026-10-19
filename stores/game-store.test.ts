@@ -15,7 +15,9 @@ function choose(game: Game, option: string): Game {
 function setup(side: string, front: string, ability = 70) {
   let game = newGame('시험', 184, 'zhuo', 'farmer');
   game.stats = { ...game.stats, leadership: ability, strength: ability, intelligence: ability, charisma: ability };
-  return choose(choose(game, side), front);
+  game = choose(game, side);
+  if (side === 'yellow') game = choose(game, 'defend');
+  return choose(game, front);
 }
 function finish(game: Game) {
   for (let i = 0; i < 20 && !game.completed; i++) {
@@ -32,7 +34,7 @@ describe('184년 5.1 실행', () => {
     useGameStore.getState().startGame('새 인물');
     expect(useGameStore.getState().game).toMatchObject({ year: 184, age: 20, factionId: null, role: 'civilian' });
     expect(migrateGame({ game: newGame('옛 인물', 190, 'luoyang', 'farmer') })).toEqual({ game: null });
-    expect(historicalEvents).toHaveLength(7);
+    expect(historicalEvents).toHaveLength(8);
     expect(historicalEvents.every(e => e.year === 184 && e.flow)).toBe(true);
   });
   it('대흥산 패배는 연의 청주 구원전을 취소하며 황건 거점을 남긴다', () => {
@@ -132,8 +134,8 @@ describe('184년 5.1 실행', () => {
   });
   it.each(['han', 'yellow', 'civilian'].flatMap(side => ['north', 'south', 'central'].flatMap(front => [30, 70].map(ability => [side, front, ability] as const))))('%s/%s/능력 %d: 막힘 없이 결말까지 진행한다', (side, front, ability) => {
     const game = finish(setup(side, front, ability));
-    expect(new Set(game.world.appliedEventIds).size).toBe(7);
-    expect(game.world.appliedEventIds).toHaveLength(7);
+    expect(new Set(game.world.appliedEventIds).size).toBe(8);
+    expect(game.world.appliedEventIds).toHaveLength(8);
     expect(game.year).toBe(184);
   });
 });

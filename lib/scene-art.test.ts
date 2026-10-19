@@ -5,16 +5,17 @@ import { historicalEvents } from './history';
 import type { Game } from './game';
 import { sceneArt } from './scene-art';
 describe('현재 상황의 장면 이미지', () => {
-  it('20개 선택 장면 모두에 존재하는 이미지를 연결한다', () => {
+  it('기존 장면과 원정 진입 장면의 이미지를 유지하고 새 전투에는 무관한 이미지를 붙이지 않는다', () => {
     let count = 0;
     for (const event of historicalEvents) for (const node of event.flow?.nodes ?? []) {
       if (node.type !== 'choice') continue;
       count++;
       const art = sceneArt({ id: event.id, state: { flowProgress: { eventId: event.id, nodeId: node.id } } as Game });
+      if (event.id === 'chapter-5-1-yellow-conquest') { expect(art).toBeNull(); continue; }
       expect(art, `${event.id}:${node.id}`).not.toBeNull();
       expect(existsSync(path.join(process.cwd(), 'public', art!.src))).toBe(true);
     }
-    expect(count).toBe(20);
+    expect(count).toBe(25);
   });
   it('황건적과 관군의 대흥산 장면을 아군·적군에 맞게 구분한다', () => {
     const art = (nodeId: string) => sceneArt({ id: 'battle-184-daxingshan', state: { flowProgress: { eventId: 'battle-184-daxingshan', nodeId } } as Game });

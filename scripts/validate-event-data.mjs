@@ -6,7 +6,7 @@ const metadata = read('data/history/catalog-metadata.json');
 const collected = read('data/collection/5-1-yellow-turban.json');
 const people = new Set(collected.people.map(p => p.id));
 const ids = new Set(events.map(e => e.id));
-assert.equal(events.length, 7);
+assert.equal(events.length, 8);
 assert.equal(metadata.eventCount, events.length);
 for (const event of events) {
   assert.equal(event.year, 184);
@@ -18,4 +18,4 @@ for (const event of events) {
   for (const c of event.connections ?? []) assert.ok(ids.has(c.targetId));
   for (const node of event.flow.nodes) for (const effect of node.data.effects ?? []) if (effect.type === 'person') assert.ok(people.has(effect.personId), effect.personId);
 }
-console.log('5.1 사건 7개·인물 ID·의존 연결 검사 통과 (실행 분기는 단위 테스트에서 검사)');
+console.log('5.1 사건 8개·인물 ID·의존 연결 검사 통과 (실행 분기는 단위 테스트에서 검사)');

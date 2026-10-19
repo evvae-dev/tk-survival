@@ -1,5 +1,34 @@
 import type { HistoricalEvent } from './game';
-import { historicalEvents } from './history';
+import { historicalEvents, sortEvents } from './history';
+
+// 기존의 공유 기본 목록에도 원정을 추가한다. 관리자 편집본은 보존한다.
+export function upgradeLegacyCatalog(events: HistoricalEvent[]): HistoricalEvent[] {
+  const conquest = historicalEvents.find(event => event.id === 'chapter-5-1-yellow-conquest')!;
+  if (events.some(event => event.id === conquest.id)) return events;
+  const opening = events.find(event => event.id === 'chapter-5-1-opening');
+  const canonical = historicalEvents.find(event => event.id === 'chapter-5-1-opening')!;
+  if (!opening?.flow || opening.flow.nodes.some(node => node.id === 'yellow-route')) return events;
+  if (!historicalEvents.filter(event => event.id !== conquest.id).every(event => events.some(item => item.id === event.id))) return events;
+  const legacy = structuredClone(canonical);
+  const added = new Set(['yellow-route', 'begin-conquest']);
+  legacy.flow!.nodes = legacy.flow!.nodes.filter(node => !added.has(node.id));
+  legacy.flow!.edges = legacy.flow!.edges.filter(edge => !added.has(edge.source));
+  legacy.flow!.edges.find(edge => edge.source === 'join-yellow')!.target = 'front';
+  legacy.connections = legacy.connections?.filter(connection => connection.targetId !== conquest.id);
+  // Firestore의 필드 순서와 사용자 노드 배치는 내용 비교에서 제외한다.
+  const stable = (value: unknown): string => {
+    if (Array.isArray(value)) return `[${value.map(stable).join(',')}]`;
+    if (value && typeof value === 'object') return `{${Object.entries(value).filter(([key]) => key !== 'position').sort(([a], [b]) => a.localeCompare(b)).map(([key, entry]) => `${JSON.stringify(key)}:${stable(entry)}`).join(',')}}`;
+    return JSON.stringify(value);
+  };
+  if (stable(opening) !== stable(legacy)) return events;
+  const upgraded = structuredClone(canonical);
+  for (const node of upgraded.flow!.nodes) {
+    const previous = opening.flow.nodes.find(item => item.id === node.id);
+    if (previous) node.position = previous.position;
+  }
+  return sortEvents([...events.map(event => event === opening ? upgraded : event), structuredClone(conquest)]);
+}
 
 // 구 공유본을 저장한 브라우저도 새 게시본을 받을 때까지 실행할 수 있게 한다.
 export function upgradeLegacyEvent(event: HistoricalEvent): HistoricalEvent {

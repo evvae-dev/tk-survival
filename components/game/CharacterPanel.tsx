@@ -34,7 +34,7 @@ export function CharacterDetails({ game, animate = false }: { game: Game; animat
         <div>
           <span>소속</span>
           <strong>
-            {game.factionId ? factionLabel(game.factionId, game.year) : "없음"}
+            {game.factionId === 'yellow-turban' && game.world.flags.yellowEmpireFounded ? '황건국' : game.factionId ? factionLabel(game.factionId, game.year) : "없음"}
           </strong>
         </div>
         <div>

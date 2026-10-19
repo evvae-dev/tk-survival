@@ -17,7 +17,7 @@ function setup() {
 describe('공유 사건 자동 반영', () => {
   it('편집하지 않은 구버전 공유 목록을 최신 목록으로 교체한다', async () => {
     const deps = setup();
-    expect(await synchronizeCatalog(deps)).toMatchObject({ kind: 'applied', count: 7 });
+    expect(await synchronizeCatalog(deps)).toMatchObject({ kind: 'applied', count: historicalEvents.length });
     expect(deps.apply).toHaveBeenCalledWith(historicalEvents);
     expect(deps.remember).toHaveBeenCalledWith('new');
   });

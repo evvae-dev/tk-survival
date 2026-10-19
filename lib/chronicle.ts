@@ -12,9 +12,19 @@ const outcomes: Record<string, Record<string, string>> = {
   'chapter-5-1-opening': {
     'join-han': '관군에 신병으로 합류', 'join-yellow': '황건군에 병사로 합류',
     'join-civilian': '군대를 피해 골목으로 빠져나와 주민들과 동행',
+    'begin-conquest': '황건군의 천하통일 원정에 합류하여 동탁군을 상대하러 낙양으로 진군',
     'travel-north': '탁군으로 이동하여 대흥산의 황건군 집결 소식을 접함',
     'travel-south': '완성으로 이동하여 성 안팎의 대치 상황을 확인',
     'travel-central': '광종으로 이동하여 군대의 집결을 확인',
+  },
+  'chapter-5-1-yellow-conquest': {
+    'dong-victory': '동탁군을 격파하고 낙양·장안을 접수하여 황건군 장교가 됨',
+    'liu-victory': '유비군을 격파하고 탁군·청주를 장악',
+    'cao-victory': '조조군을 격파하고 진류·연주를 확보하여 궁궐로 진군',
+    'dong-execution': '동탁군에 패배하여 생포된 뒤 반란군으로 처형됨',
+    'liu-execution': '유비군에 패배하여 생포된 뒤 반란군으로 처형됨',
+    'cao-execution': '조조군에 패배하여 생포된 뒤 반란군으로 처형됨',
+    founded: '황제를 생포하고 황건국을 세워 천하를 통일',
   },
   'battle-184-daxingshan': {
     historical: '관우가 정원지를, 장비가 등무를 쓰러뜨리고 유비군이 대흥산을 넘었다는 소식을 접함',

@@ -1,11 +1,12 @@
 {
-  "edition": "5.1-playable-v1",
+  "edition": "5.1-playable-v2",
   "chapterId": "chapter-5-1-yellow-turban",
-  "eventCount": 7,
+  "eventCount": 8,
   "yearRange": [
     184,
     184
   ],
   "sourceBattleCount": 5,
-  "note": "도입 1·전투 5·결말 1. 판정 수치와 대체 결과는 게임 창작이며 수집본 이견을 교정하지 않는다."
+  "fictionalCampaignCount": 1,
+  "note": "도입 1·전투 5·결말 1·황건 천하통일 가상 원정 1. 판정 수치와 대체 결과는 게임 창작이며 수집본 이견을 교정하지 않는다."
 }

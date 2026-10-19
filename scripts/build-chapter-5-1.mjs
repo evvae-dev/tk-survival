@@ -3,6 +3,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { applyChapterNarrative } from './apply-chapter-narrative.mjs';
 const read = path => JSON.parse(readFileSync(path, 'utf8'));
 const chapter = read('data/collection/5-1-yellow-turban.json');
+const entities = read('data/history/entities.json');
 writeFileSync('data/reference/officer-abilities.json', JSON.stringify(read('data/reference/officers.json').map(({id,name,stats}) => ({id,name,stats}))) + '\n');
 const people = new Map(chapter.people.map(p => [p.id, p]));
 const sources = new Map(chapter.sourceRecords.map(p => [p.id, p]));
@@ -52,8 +53,58 @@ opening.choice('side', '봉기가 퍼지고 있다. 당신은 어느 편에서 �
 const fronts = [['north', 'zhuo', '탁군·청주 전선', '연의의 대흥산·청주 전투'], ['south', 'jingzhou', '남양·완성 전선', '완성의 공방과 항복 협상'], ['central', 'jizhou', '광종·하곡양 전선', '노식의 교체와 황건 본진 토벌']];
 opening.choice('front', '연락책이 세 전선의 소식을 전한다. 어느 지역에서 행동할까? 날짜가 확인되지 않은 전선 사이의 이동은 이번 테스트에서 생략한다.', fronts.map(([id, region, title, description]) => [id, title, `${description}. 이동 경로에 따라 다음 전투가 달라진다.`, `travel-${id}`]));
 for (const [id, region] of fronts) opening.result(`travel-${id}`, '전선의 거점에 자리를 잡았다.', [{ type: 'region', value: region }, flag('campaignStarted')]);
+opening.flow.edges.find(edge => edge.source === 'join-yellow').target = 'yellow-route';
+opening.choice('yellow-route', '황건군의 다음 행보를 정한다.', [
+  ['conquest', '천하통일에 나선다', '동탁군, 유비군, 조조군을 차례로 상대한다. 패배하면 처형된다.', 'begin-conquest'],
+  ['defend', '거점부터 지킨다', '황건적의 난 전선으로 향한다.', 'front'],
+]);
+opening.result('begin-conquest', '황건군의 원정에 합류했다.', [flag('yellowConquestStarted'), flag('campaignStarted'), { type: 'region', value: 'luoyang' },
+  ...['dong-zhuo', 'liu-bei', 'cao-cao'].map(factionId => ({ type: 'factionStatus', factionId, value: 'active' })),
+]);
 const base = { chapterId: chapter.id, year: 184, month: null, precision: 'year', calendar: 'lunar', regionIds: [], factionIds: ['han', 'yellow-turban'], category: 'history', relatedPeople: [], relatedOfficerIds: [] };
 const events = [{ ...base, id: openingId, sequence: 0, title: '황건적의 난 · 진영과 전선', summary: '184년의 봉기를 배경으로 자신의 진영과 활동 전선을 정한다. 성인 테스트 인물·배치·선택은 게임 창작이다.', source: { title: '5.1 수집본 · 게임 창작', record: '수집한 황건적의 난을 바탕으로 만든 참가 도입부. 원사서 기록으로 취급하지 않는다.' }, flow: opening.finish('side'), connections: chapter.events.filter(e => !['battle-184-qingzhou-city', 'battle-184-xiaquyang'].includes(e.id)).map(e => ({ targetId: e.id, label: '선택한 전선에 배치 · 다른 전선은 기본 경과' })) }];
+
+// 사용자가 지정한 완전한 가상역사. 기존 전선을 처리하기 전에 승리/처형으로 끝난다.
+const conquestId = 'chapter-5-1-yellow-conquest';
+const conquest = graph('황건 천하통일 · 가상 시나리오');
+conquest.condition('route', '황건 천하통일 원정에 합류했는가?', win('yellowConquestStarted'), 'dong-plan', 'end');
+const opponents = [
+  ['dong', '동탁', 'dong-zhuo', 'rtk14-0736', 'liu-plan', 'zhuo', ['luoyang', 'changan']],
+  ['liu', '유비', 'liu-bei', 'rtk14-0952', 'cao-plan', 'chenliu', ['zhuo', 'qingzhou']],
+  ['cao', '조조', 'cao-cao', 'rtk14-0521', 'emperor', 'luoyang', ['chenliu', 'yanzhou']],
+];
+for (const [id, name, factionId, officerId, next, region, territories] of opponents) {
+  conquest.choice(`${id}-plan`, `${name}군과의 결전을 앞두고 작전을 정한다.`, [
+    ['strategy', '보급로를 끊는다', '지략으로 적을 무너뜨린다.', `${id}-strategy`],
+    ['battle', '부대를 지휘한다', '통솔과 무력으로 적을 무너뜨린다.', `${id}-battle`],
+  ]);
+  for (const ability of ['strategy', 'battle']) conquest.check(`${id}-${ability}`, ability, `${id}-victory`, `${id}-execution`);
+  conquest.result(`${id}-victory`, `${name}군을 격파했다.`, [flag(`${id}ArmyDefeated`),
+    { type: 'factionStatus', factionId, value: 'defeated' },
+    ...territories.map(territory => control(territory, 'yellow-turban')),
+    { type: 'region', value: region }, { type: 'role', value: 'officer' }, reputation('yellow-turban'),
+  ], next);
+  conquest.result(`${id}-execution`, `${name}군에 패배해 포로로 잡힌 뒤 처형당했다.`, [flag('playerCaptured'), flag('playerExecuted'), flag(`${id}ArmyDefeated`, false), flag('chapterFinished')]);
+}
+conquest.choice('emperor', '황제를 사로잡고 황건의 나라를 세운다.', [
+  ['found', '황제를 생포하고 건국한다', '황건의 천하통일을 완성한다.', 'founded'],
+]);
+const territories = [...new Set([...entities.regions.map(region => region.id), ...chapter.places.map(place => place.id)])];
+conquest.result('founded', '황제를 생포하고 황건의 나라를 세워 천하를 통일했다.', [
+  flag('emperorCaptured'), flag('yellowEmpireFounded'), flag('yellowUnification'), flag('chapterFinished'),
+  { type: 'factionStatus', factionId: 'han', value: 'defeated' },
+  { type: 'factionStatus', factionId: 'yellow-turban', value: 'preserved' },
+  ...territories.map(territory => control(territory, 'yellow-turban')),
+]);
+events.push({ ...base, id: conquestId, sequence: 0, title: '황건 천하통일 · 가상 시나리오',
+  summary: '사용자 지정 가상역사: 황건군으로 동탁군 → 유비군 → 조조군을 차례로 격파한다. 세 전투 승리 후 황제를 생포하고 황건의 나라를 세워 천하를 통일한다. 어느 전투든 패배하면 생포·처형으로 즉시 종료한다.',
+  dateNote: '184년·20세 테스트 안에서 진행하는 가상 원정이다. 실제 역사 연대나 후속 장의 수집 사실을 뜻하지 않는다.',
+  regionIds: ['luoyang', 'zhuo', 'chenliu'], factionIds: ['yellow-turban', 'dong-zhuo', 'liu-bei', 'cao-cao', 'han'],
+  relatedPeople: ['동탁', '유비', '조조'], relatedOfficerIds: opponents.map(opponent => opponent[3]),
+  source: { title: '사용자 지정 · 가상역사 게임 창작', record: '동탁군·유비군·조조군의 순차 격파와 황제 생포·황건 건국은 사용자 요청으로 구성한 게임 창작이다. 사서 기록이나 새로 수집한 역사 사건으로 취급하지 않는다.' },
+  prerequisiteEventIds: [openingId], connections: [], flow: conquest.finish('route'),
+});
+events[0].connections.push({ targetId: conquestId, label: '황건군 합류 → 천하통일 원정 / 전투 패배 시 처형' });
 
 function battle(source, index, build) {
   const g = graph(source.title);
@@ -219,5 +270,5 @@ ending.result('done', '5.1의 선택과 달라진 세계를 기록했다.', [fla
 events.push({ ...base, id: closingId, sequence: 6, title: '황건적의 난 · 달라진 결말', summary: '각 전선의 결과를 모아 황건 주력군의 패망 또는 거점 존속을 판정한다. 개별 인물의 생존은 앞선 선택을 유지한다.', source: { title: '5.1 수집본 · 게임 창작', record: '수집한 기본 결말과 플레이어의 분기를 종합하는 게임 창작 판정.' }, prerequisiteEventIds: chapter.events.map(e => e.id), connections: [], flow: ending.finish('survival') });
 for (const e of events.filter(e => ['battle-184-qingzhou-city', 'battle-184-wan', 'battle-184-xiaquyang'].includes(e.id))) e.connections.push({ targetId: closingId, label: '전선 승패·피란·포로 생존을 최종 결말에 반영' });
 writeFileSync('data/history/events.json', JSON.stringify(applyChapterNarrative(events), null, 2) + '\n');
-writeFileSync('data/history/catalog-metadata.json', JSON.stringify({ edition: '5.1-playable-v1', chapterId: chapter.id, eventCount: events.length, yearRange: [184, 184], sourceBattleCount: 5, note: '도입 1·전투 5·결말 1. 판정 수치와 대체 결과는 게임 창작이며 수집본 이견을 교정하지 않는다.' }, null, 2) + '\n');
+writeFileSync('data/history/catalog-metadata.json', JSON.stringify({ edition: '5.1-playable-v2', chapterId: chapter.id, eventCount: events.length, yearRange: [184, 184], sourceBattleCount: 5, fictionalCampaignCount: 1, note: '도입 1·전투 5·결말 1·황건 천하통일 가상 원정 1. 판정 수치와 대체 결과는 게임 창작이며 수집본 이견을 교정하지 않는다.' }, null, 2) + '\n');
 console.log(`5.1 실행 사건 ${events.length}개 생성`);

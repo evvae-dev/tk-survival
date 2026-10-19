@@ -67,5 +67,6 @@ export function resolveChoice(game: Game, key: string, catalog: HistoricalEvent[
   const entry = { year: game.year, month: historical.month, title: `${historical.title} · ${selected.title}`, detail: [outcome, resultText].filter(Boolean).join('\n'), kind: 'fiction' as const, ...(reward.growth ? { growth: reward.growth } : {}), ...(check ? { check } : {}) };
   let next: Game = { ...progress.state, introChoicePending: false, turn: game.turn + 1, decisions: [...progress.state.decisions, entry].slice(-120), world: { ...progress.state.world, log: [...progress.state.world.log, entry].slice(-120) } };
   if (!progress.node) next = finishEvent(next, historical);
-  return { ...next, completed: !progress.node && next.world.flags.chapterFinished === true && catalog.filter(e => e.year === next.year && e.flow).every(e => next.world.appliedEventIds.includes(e.id)) };
+  const terminalEnding = next.world.flags.playerExecuted === true || next.world.flags.yellowEmpireFounded === true;
+  return { ...next, completed: terminalEnding || (!progress.node && next.world.flags.chapterFinished === true && catalog.filter(e => e.year === next.year && e.flow).every(e => next.world.appliedEventIds.includes(e.id))) };
 }
