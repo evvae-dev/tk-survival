@@ -30,6 +30,14 @@ export default function CatalogProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     let active = true;
     let unsubscribe: (() => void) | undefined;
+    const storage = async (event: StorageEvent) => {
+      if (event.storageArea !== localStorage || event.key !== useEventCatalogStore.persist.getOptions().name) return;
+      // Cancel an older cloud fetch before loading the latest saved edits from another tab.
+      ++syncVersion.current;
+      await useEventCatalogStore.persist.rehydrate();
+      if (active) setMessage('다른 탭에서 저장한 사건을 반영했습니다. 게임 진행은 유지됩니다.');
+    };
+    window.addEventListener('storage', storage);
     async function sync() {
       const version = ++syncVersion.current;
       const current = () => active && version === syncVersion.current;
@@ -64,7 +72,7 @@ export default function CatalogProvider({ children }: { children: ReactNode }) {
       finally { if (active) setReady(true); }
     }
     void bootstrap();
-    return () => { active = false; unsubscribe?.(); };
+    return () => { active = false; unsubscribe?.(); window.removeEventListener('storage', storage); };
   }, []);
   async function action(task: () => Promise<void>) {
     setBusy(true);
