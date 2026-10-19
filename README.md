@@ -14,7 +14,9 @@ npm run build
 
 기본 실행·빌드는 Next.js를 사용하며 Vercel 배포용 `.next` 결과물을 생성합니다. Vercel 프로젝트는 Framework Preset을 `Next.js`, Build Command를 `npm run build`로 설정하고 Output Directory 재정의는 끕니다. Firebase 관리자 기능에는 기존 Firebase 환경변수를 Vercel에도 설정해야 합니다.
 
-ChatGPT Sites의 Cloudflare Workers 배포에는 별도 명령인 `npm run dev:sites`, `npm run build:sites`를 사용합니다. 자세한 내용은 [Sites 배포 문서](docs/SITES_DEPLOYMENT.md)를 확인하세요.
+운영 배포는 GitHub `origin/main` 푸시로 Vercel에서 자동 진행합니다. 확인 주소는 https://tk-survival.vercel.app 입니다. 배포 요청 시 이 경로를 기본으로 사용합니다.
+
+ChatGPT Sites의 Cloudflare Workers 배포는 별도 요청 시에만 사용하며, 별도 명령인 `npm run dev:sites`, `npm run build:sites`를 사용합니다. 자세한 내용은 [Sites 배포 문서](docs/SITES_DEPLOYMENT.md)를 확인하세요.
 
 카카오톡 등 링크 공유에는 Open Graph 제목·설명과 `public/share/game-cover.jpg` 썸네일을 사용합니다. 공유 주소는 `NEXT_PUBLIC_SITE_URL`, Vercel 프로덕션 도메인, 현재 배포 도메인 순으로 결정하며, 모두 없으면 최초 공유 주소를 사용합니다. 커스텀 도메인을 쓸 때는 `NEXT_PUBLIC_SITE_URL`에 `https://`를 포함한 주소를 설정하고 다시 빌드하세요. Vercel의 개별 배포 주소는 고정된 버전이므로 업데이트 공유에는 최신 배포가 연결되는 프로덕션 도메인을 사용하세요.
 

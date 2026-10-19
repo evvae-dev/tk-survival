@@ -23,7 +23,7 @@ function start() {
   return choose(choose(game, 'yellow'), 'conquest');
 }
 function legacyCatalog() {
-  const catalog = structuredClone(historicalEvents.filter(event => event.id !== campaignId));
+  const catalog = structuredClone(historicalEvents.filter(event => event.year === 184 && event.id !== 'chapter-5-1-service' && event.id !== campaignId));
   const opening = catalog.find(event => event.id === 'chapter-5-1-opening')!;
   opening.flow!.nodes = opening.flow!.nodes.filter(node => !['yellow-route', 'begin-conquest'].includes(node.id));
   opening.flow!.edges = opening.flow!.edges.filter(edge => !['yellow-route', 'begin-conquest'].includes(edge.source));
@@ -112,7 +112,7 @@ describe('이전 공유 목록과 진행 저장의 원정 호환성', () => {
     const before = structuredClone(legacy);
     useEventCatalogStore.getState().importCatalog(legacy);
     const effective = getEffectiveCatalog();
-    expect(effective).toHaveLength(8);
+    expect(effective).toHaveLength(historicalEvents.length);
     const updated = effective.find(event => event.id === opening.id)!;
     expect(updated.flow!.nodes.find(node => node.id === 'front')!.position).toEqual({ x: 123, y: 456 });
     expect(updated.flow!.edges.find(edge => edge.source === 'join-yellow')!.target).toBe('yellow-route');

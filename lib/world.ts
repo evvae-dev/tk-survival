@@ -6,7 +6,7 @@ export function blankWorld(): World {
     people: Object.fromEntries(chapter.people.map(person => [person.id, 'alive' as const])),
     flags: {}, factions: { han: 'active', 'yellow-turban': 'active' },
     control: { luoyang: 'han', changan: 'han', zhuo: 'han', chenliu: 'han', chengdu: 'han', ...Object.fromEntries(chapter.places.map(place => [place.id, 'yellow-turban'])) },
-    log: [], appliedEventIds: [],
+    log: [], historyLog: [], appliedEventIds: [],
   };
 }
 export function createWorld(_year: number, _catalog?: HistoricalEvent[]): World { return blankWorld(); }

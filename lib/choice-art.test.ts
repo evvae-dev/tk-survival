@@ -5,7 +5,7 @@ import { existsSync } from 'node:fs';
 import path from 'node:path';
 describe('선택지 이미지 연결', () => {
   it('기존 황건적의 난 선택지의 행동별 이미지를 유지한다', () => {
-    const choices = historicalEvents.filter(event => event.id !== 'chapter-5-1-yellow-conquest').flatMap(event => event.flow?.nodes.filter(node => node.id !== 'yellow-route').flatMap(node => node.data.options ?? []) ?? []);
+    const choices = historicalEvents.filter(event => event.year === 184 && event.id !== 'chapter-5-1-service' && event.id !== 'chapter-5-1-yellow-conquest').flatMap(event => event.flow?.nodes.filter(node => node.id !== 'yellow-route').flatMap(node => node.data.options ?? []) ?? []);
     expect(choices).toHaveLength(56);
     for (const choice of choices) {
       const art = choiceArt(choice);

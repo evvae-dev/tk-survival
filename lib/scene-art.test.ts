@@ -7,7 +7,7 @@ import { sceneArt } from './scene-art';
 describe('현재 상황의 장면 이미지', () => {
   it('원정의 네 장면을 포함한 25개 선택 장면 모두에 존재하는 이미지를 연결한다', () => {
     let count = 0;
-    for (const event of historicalEvents) for (const node of event.flow?.nodes ?? []) {
+    for (const event of historicalEvents.filter(e => e.year === 184 && e.id !== 'chapter-5-1-service')) for (const node of event.flow?.nodes ?? []) {
       if (node.type !== 'choice') continue;
       count++;
       const art = sceneArt({ id: event.id, state: { flowProgress: { eventId: event.id, nodeId: node.id } } as Game });

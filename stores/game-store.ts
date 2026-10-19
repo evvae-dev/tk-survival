@@ -6,6 +6,7 @@ import { getCurrentEvent, resolveChoice } from "@/lib/event-engine";
 import { playbackKey } from '@/lib/record-playback';
 import { rollStartingStats, validStartingStats } from '@/lib/starting-stats';
 import { createWorld } from "@/lib/world";
+import { restoreHistoryRecords } from '@/lib/history-records';
 
 type GameStore = { game: Game | null; startGame: (name: string, stats?: Stats) => void; changeStats: (delta: Partial<Stats>) => void; nextTurn: (choiceKey: string) => void; advanceRecord: (expectedKey: string) => void; resetGame: () => void };
 const pick = <T,>(items: T[]): T => items[Math.floor(Math.random() * items.length)];
@@ -15,9 +16,9 @@ export function newGame(name: string, year: number, region: string, family: stri
 // 이전 연간 성장·역사 상태는 새 5.1 테스트와 호환되지 않는다.
 export function migrateGame(persisted: unknown, version = 0): { game: Game | null } {
   const saved = (persisted as { game?: Game } | null)?.game;
-  if (version < 4 || !saved || saved.year !== 184 || !saved.stats) return { game: null };
+  if (version < 4 || !saved || (!Number.isInteger(saved.year) || saved.year < 184 || saved.year > 188) || !saved.stats) return { game: null };
   const defaults = applyStats(initialStats, familyEffects[saved.family] ?? {});
-  return { game: { ...saved, fame: saved.fame ?? 0, stats: applyStats({ ...defaults, ...saved.stats }, {}) } };
+  return { game: { ...saved, fame: saved.fame ?? 0, world: { ...saved.world, historyLog: restoreHistoryRecords(saved, getEffectiveCatalog()) }, completed: saved.completed && !(saved.year === 184 && !saved.world.flags.playerExecuted && !saved.world.flags.yellowEmpireFounded), stats: applyStats({ ...defaults, ...saved.stats }, {}) } };
 }
 export const useGameStore = create<GameStore>()(persist((set) => ({
   game: null,
@@ -36,4 +37,4 @@ export const useGameStore = create<GameStore>()(persist((set) => ({
     return next?.automatic ? { game: next.state } : {};
   }),
   resetGame: () => set({ game: null }),
-}), { name: "tk-survival-game-v1", version: 6, migrate: migrateGame, partialize: ({ game }) => ({ game }), skipHydration: true }));
+}), { name: "tk-survival-game-v1", version: 7, migrate: migrateGame, partialize: ({ game }) => ({ game }), skipHydration: true }));

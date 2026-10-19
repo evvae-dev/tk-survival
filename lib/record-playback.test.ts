@@ -2,6 +2,7 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import { newGame, useGameStore } from '@/stores/game-store';
 import { useEventCatalogStore } from '@/stores/event-catalog-store';
 import { choiceKey, getCurrentEvent, resolveChoice } from './event-engine';
+import { historicalEvents } from './history';
 import { playbackDelay, playbackKey } from './record-playback';
 import type { Game } from './game';
 
@@ -77,13 +78,13 @@ describe('기록을 한 건씩 진행한다', () => {
   });
   it.each(['han', 'yellow', 'civilian'].flatMap(side => ['north', 'south', 'central'].map(front => [side, front])))('%s/%s 경로는 한 기록씩 재생해도 결말까지 이어진다', (side, front) => {
     let game = choose(choose(newGame('완주 시험', 184, 'zhuo', 'farmer'), side), front);
-    for (let i = 0; i < 40 && !game.completed; i++) {
+    for (let i = 0; i < 150 && !game.completed; i++) {
       const next = getCurrentEvent(game, undefined, true)!;
       game = next.automatic ? next.state : resolveChoice(game, choiceKey(next, next.choices[0].id), undefined, () => 0);
       game = JSON.parse(JSON.stringify(game));
     }
     expect(game.completed).toBe(true);
-    expect(new Set(game.world.appliedEventIds).size).toBe(8);
-    expect(game.world.appliedEventIds).toHaveLength(8);
+    expect(new Set(game.world.appliedEventIds).size).toBe(historicalEvents.length);
+    expect(game.world.appliedEventIds).toHaveLength(historicalEvents.length);
   });
 });

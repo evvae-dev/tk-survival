@@ -1,4 +1,4 @@
-import { CHAPTER_ID } from './chapter';
+import { supportedChapter } from './chapter';
 import { collection, doc, getDoc, getDocs, getDocFromServer, getDocsFromServer, onSnapshot, runTransaction, serverTimestamp, writeBatch } from 'firebase/firestore';
 import type { HistoricalEvent } from './game';
 import { validateEvent, validateDependencies } from './event-flow';
@@ -22,7 +22,7 @@ export function validateCatalog(events: HistoricalEvent[]) {
   if (new Set(events.map(event => event?.id)).size !== events.length) throw new Error('사건 ID가 중복됩니다.');
   for (const event of events) {
     const errors = validateEvent(event);
-    if (event?.chapterId !== CHAPTER_ID) errors.push('현재 목록은 5.1 사건만 지원합니다.');
+    if (!supportedChapter(event?.chapterId)) errors.push('현재 목록은 5.1~5.5 사건을 지원합니다.');
     if (event && !event.flow) errors.push('새 사건은 실행할 플로가 필요합니다.');
     if (errors.length) throw new Error(`${event?.title ?? '사건'}: ${errors.join('\n')}`);
   }

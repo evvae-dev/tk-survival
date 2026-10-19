@@ -1,13 +1,14 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import { newGame, migrateGame, useGameStore } from './game-store';
 import { getCurrentEvent, choiceKey, resolveChoice } from '@/lib/event-engine';
-import { historicalEvents } from '@/lib/history';
+import { historicalEvents as campaignEvents } from '@/lib/history';
 import { applyFlowEffects } from '@/lib/event-flow';
 import { useEventCatalogStore } from './event-catalog-store';
 import type { Game } from '@/lib/game';
 
+const historicalEvents = campaignEvents.filter(e => e.year === 184 && e.id !== 'chapter-5-1-service');
 function choose(game: Game, option: string): Game {
-  const current = getCurrentEvent(game)!;
+  const current = getCurrentEvent(game, historicalEvents)!;
   const selected = current.choices.find(c => c.id.endsWith(`:${option}`) || c.id === option);
   if (!selected) throw new Error(`${current.id}: ${option} 선택 불가 (${current.choices.map(c => c.id)})`);
   return resolveChoice(game, choiceKey(current, selected.id), historicalEvents, () => 0);
@@ -21,7 +22,7 @@ function setup(side: string, front: string, ability = 70) {
 }
 function finish(game: Game) {
   for (let i = 0; i < 20 && !game.completed; i++) {
-    const event = getCurrentEvent(game)!;
+    const event = getCurrentEvent(game, historicalEvents)!;
     const option = event.choices.find(c => /:(follow|done|hide|support)$/.test(c.id)) ?? event.choices[0];
     game = resolveChoice(game, choiceKey(event, option.id), historicalEvents, () => 0);
   }
@@ -39,7 +40,7 @@ describe('184년 5.1 실행', () => {
   });
   it('대흥산 패배는 연의 청주 구원전을 취소하며 황건 거점을 남긴다', () => {
     let game = choose(setup('yellow', 'north'), 'ambush');
-    const next = getCurrentEvent(game)!;
+    const next = getCurrentEvent(game, historicalEvents)!;
     expect(next.id).toBe('chapter-5-1-closing');
     expect(next.state.world.flags.qingzhouRescueBlocked).toBe(true);
     game = finish(game);
@@ -74,7 +75,7 @@ describe('184년 5.1 실행', () => {
   });
   it('광종 방어는 하곡양 후속 공격을 차단한다', () => {
     const game = choose(setup('yellow', 'central'), 'guard');
-    const next = getCurrentEvent(game)!;
+    const next = getCurrentEvent(game, historicalEvents)!;
     expect(next.state.world.flags.xiaquyangAttackBlocked).toBe(true);
     expect(next.state.world.people['person-rtk14-0659']).toBe('alive');
     expect(finish(game).world.control['place-guangzong']).toBe('yellow-turban');
@@ -83,7 +84,7 @@ describe('184년 5.1 실행', () => {
     let game = choose(setup('han', 'central', 60), 'expose');
     expect(game.stats.leadership).toBe(62);
     game = JSON.parse(JSON.stringify(game));
-    expect(getCurrentEvent(game)!.state.stats.leadership).toBe(62);
+    expect(getCurrentEvent(game, historicalEvents)!.state.stats.leadership).toBe(62);
     game.stats.leadership = 70; // 성공 경로를 확정한다. 성장 보상은 위에서 별도로 검증했다.
     game = choose(game, 'lead');
     game.stats.charisma = 70;
@@ -95,7 +96,7 @@ describe('184년 5.1 실행', () => {
   it('이미 사망한 장보의 전투를 열거나 부활시키지 않는다', () => {
     let game = choose(setup('han', 'central'), 'follow');
     game = applyFlowEffects(game, [{ type: 'person', personId: 'person-rtk14-0659', value: 'dead' }]);
-    const next = getCurrentEvent(game)!;
+    const next = getCurrentEvent(game, historicalEvents)!;
     expect(next.state.world.flags.xiaquyangCancelled).toBe(true);
     expect(applyFlowEffects(next.state, [{ type: 'person', personId: 'person-rtk14-0659', value: 'alive' }]).world.people['person-rtk14-0659']).toBe('dead');
   });

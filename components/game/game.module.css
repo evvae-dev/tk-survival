@@ -189,3 +189,27 @@
 .completedCenter .ending h1 { font-size:22px; }
 .completedCenter .chronicle { margin-bottom:24px; }
 @media(max-width:768px) { .completedApp { height:auto; min-height:100dvh; overflow:visible; } .completedApp .main { overflow:visible; } .completedApp .completedCenter { overflow:visible; } }
+
+/* Both record streams stay scrollable; mobile brings the updated stream first. */
+.historyFlow{display:flex;flex-direction:column;flex:1;min-height:0;overflow:hidden}
+.historyFlow .historyLog{flex:1}
+.historyFlow .historyLog li{padding:12px}
+.historyFlow .historyLog h3{font-size:.9rem}
+.historyFlow .historyLog p{font-size:.85rem;line-height:1.65}
+@media(max-width:768px){
+  .main>.leftSidebar{order:0}
+  .main>.centerContent:not(.completedCenter){display:contents}
+  .main>.centerContent>.eventPanel{order:1}
+  .main>.centerContent>.historyPanel{order:2;height:min(56dvh,460px)}
+  .main>.rightSidebar{order:3;min-height:0}
+  .historyFlow{height:min(56dvh,460px);flex:auto}
+  .main[data-record-focus="history"]>.rightSidebar{order:2}
+  .main[data-record-focus="history"]>.centerContent>.historyPanel{order:3}
+  .main>.completedCenter{order:1}
+  .main[data-record-reading="true"]>.centerContent>.eventPanel{order:3}
+  .main[data-record-reading="true"][data-record-focus="personal"]>.centerContent>.historyPanel{order:1}
+  .main[data-record-reading="true"][data-record-focus="personal"]>.rightSidebar{order:2}
+  .main[data-record-reading="true"][data-record-focus="history"]>.rightSidebar{order:1}
+  .main[data-record-reading="true"][data-record-focus="history"]>.centerContent>.historyPanel{order:2}
+  .historyPanel,.rightSidebar{scroll-margin-top:90px}
+}

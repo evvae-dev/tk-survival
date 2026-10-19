@@ -1,5 +1,10 @@
 import { applyStats, type ChoiceGrowth, type Game, type Stats } from './game';
 import { abilityKeys } from './game-presentation';
+import campaignNarrative from '@/data/history/campaign-narrative.json';
+
+const campaignAbilities = new Map<string, keyof Stats>(Object.values(campaignNarrative).map(story => [story.action,
+  ({ relationship: 'charisma', politics: 'politics', strategy: 'intelligence', battle: 'leadership' } as Record<string, keyof Stats>)[story.checkKind],
+]));
 
 const groups: Record<keyof Stats, string[]> = {
   strength: ['냅다 도망친다','등무와 맞붙는다','성문까지 길을 뚫는다','돌격대를 이끈다','성벽에서 버틴다','포위선을 돌파한다','성벽에서 맞선다','죽부터 먹는다'],
@@ -10,6 +15,9 @@ const groups: Record<keyof Stats, string[]> = {
 };
 export function choiceAbility(title: string): keyof Stats | undefined {
   const action = title.replace(/^\[|\]$/g, '');
+  if (campaignAbilities.has(action)) return campaignAbilities.get(action);
+  if (action.endsWith(' 휘하에 지원한다') || ['지금 소속을 따른다', '소속을 떠난다'].includes(action)) return 'charisma';
+  if (action.endsWith('로 향한다') || ['재야로 길을 나선다', '무리하지 않고 지켜본다'].includes(action)) return 'intelligence';
   return abilityKeys.find(key => groups[key].includes(action));
 }
 export function applyChoiceGrowth(before: Game, after: Game, title: string, success?: boolean): { state: Game; growth?: ChoiceGrowth } {

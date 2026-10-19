@@ -1,12 +1,12 @@
 {
-  "edition": "5.1-playable-v2",
-  "chapterId": "chapter-5-1-yellow-turban",
-  "eventCount": 8,
+  "edition": "5.1-5.5-service-v1",
+  "eventCount": 28,
   "yearRange": [
     184,
-    184
+    188
   ],
   "sourceBattleCount": 5,
   "fictionalCampaignCount": 1,
-  "note": "도입 1·전투 5·결말 1·황건 천하통일 가상 원정 1. 판정 수치와 대체 결과는 게임 창작이며 수집본 이견을 교정하지 않는다."
+  "collectionFile": "data/collection/5-2-to-5-5.json",
+  "note": "5.1 기존 전선·원정 유지, 군주 합류·재야 이동 4개, 5.2~5.5 수집 사건 16개. 연표의 장 배치와 실제 연대 이견은 dateNote와 수집본에 보존."
 }

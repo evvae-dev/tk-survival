@@ -1,6 +1,7 @@
 // 수집 사실은 collection에 보존하고, 이 파일의 판정·대체 결과는 게임 창작으로 관리한다.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { applyChapterNarrative } from './apply-chapter-narrative.mjs';
+import { extendCampaign } from './campaign-flows.mjs';
 const read = path => JSON.parse(readFileSync(path, 'utf8'));
 const chapter = read('data/collection/5-1-yellow-turban.json');
 const entities = read('data/history/entities.json');
@@ -269,6 +270,8 @@ ending.choice('record', '전장의 결과와 인물들의 생존이 정해졌다
 ending.result('done', '5.1의 선택과 달라진 세계를 기록했다.', [flag('chapterFinished')]);
 events.push({ ...base, id: closingId, sequence: 6, title: '황건적의 난 · 달라진 결말', summary: '각 전선의 결과를 모아 황건 주력군의 패망 또는 거점 존속을 판정한다. 개별 인물의 생존은 앞선 선택을 유지한다.', source: { title: '5.1 수집본 · 게임 창작', record: '수집한 기본 결말과 플레이어의 분기를 종합하는 게임 창작 판정.' }, prerequisiteEventIds: chapter.events.map(e => e.id), connections: [], flow: ending.finish('survival') });
 for (const e of events.filter(e => ['battle-184-qingzhou-city', 'battle-184-wan', 'battle-184-xiaquyang'].includes(e.id))) e.connections.push({ targetId: closingId, label: '전선 승패·피란·포로 생존을 최종 결말에 반영' });
-writeFileSync('data/history/events.json', JSON.stringify(applyChapterNarrative(events), null, 2) + '\n');
-writeFileSync('data/history/catalog-metadata.json', JSON.stringify({ edition: '5.1-playable-v2', chapterId: chapter.id, eventCount: events.length, yearRange: [184, 184], sourceBattleCount: 5, fictionalCampaignCount: 1, note: '도입 1·전투 5·결말 1·황건 천하통일 가상 원정 1. 판정 수치와 대체 결과는 게임 창작이며 수집본 이견을 교정하지 않는다.' }, null, 2) + '\n');
+const campaign = extendCampaign(applyChapterNarrative(events));
+writeFileSync('data/history/events.json', JSON.stringify(campaign, null, 2) + '\n');
 console.log(`5.1 실행 사건 ${events.length}개 생성`);
+writeFileSync('data/history/catalog-metadata.json', JSON.stringify({ edition: '5.1-5.5-service-v1', eventCount: campaign.length, yearRange: [184, 188], sourceBattleCount: 5, fictionalCampaignCount: 1, collectionFile: 'data/collection/5-2-to-5-5.json', note: '5.1 기존 전선·원정 유지, 군주 합류·재야 이동 4개, 5.2~5.5 수집 사건 16개. 연표의 장 배치와 실제 연대 이견은 dateNote와 수집본에 보존.' }, null, 2) + '\n');
+console.log(`5.5까지 실행 사건 ${campaign.length}개 생성`);

@@ -7,6 +7,7 @@ import '@xyflow/react/dist/style.css';
 import { collectedChapter as chapter, collectionPeople, collectionPlaces, collectionSources, type CollectedEvent } from '@/lib/collected-chapter';
 import s from './page.module.css';
 import ChapterFlow from '@/components/event-admin/ChapterFlow';
+import CampaignSources from '@/components/event-admin/CampaignSources';
 
 type CardData = { title: string; caption: string; detail: string; kind: 'history' | 'novel' | 'stage' | 'outcome' | 'intervention'; input?: Position; output?: Position };
 type CardNode = Node<CardData, 'card'>;
@@ -65,8 +66,8 @@ function eventGraph(event: CollectedEvent, showInterventions: boolean, selected:
 }
 
 export default function Page() {
-  const [source, setSource] = useState(false);
-  return <><div style={{padding:'12px 24px',display:'flex',gap:12}}><button aria-pressed={!source} onClick={()=>setSource(false)}>게임 실행 플로우</button><button aria-pressed={source} onClick={()=>setSource(true)}>수집 원자료 전개</button></div><ReactFlowProvider key={String(source)}>{source?<CollectionViewer/>:<ChapterFlow/>}</ReactFlowProvider></>;
+  const [source, setSource] = useState<'runtime' | '5.1' | 'campaign'>('runtime');
+  return <><div style={{padding:'12px 24px',display:'flex',gap:12,flexWrap:'wrap'}}><button aria-pressed={source === 'runtime'} onClick={()=>setSource('runtime')}>게임 실행 플로우</button><button aria-pressed={source === '5.1'} onClick={()=>setSource('5.1')}>5.1 수집 원자료</button><button aria-pressed={source === 'campaign'} onClick={()=>setSource('campaign')}>5.2~5.5 수집 원자료</button></div><ReactFlowProvider key={source}>{source === '5.1'?<CollectionViewer/>:source === 'campaign'?<CampaignSources/>:<ChapterFlow/>}</ReactFlowProvider></>;
 }
 
 function CollectionViewer() {

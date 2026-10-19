@@ -29,13 +29,13 @@ function upgradeKnownProse(event: HistoricalEvent): HistoricalEvent {
 }
 
 // 기존의 공유 기본 목록에도 원정을 추가한다. 관리자 편집본은 보존한다.
-export function upgradeLegacyCatalog(events: HistoricalEvent[]): HistoricalEvent[] {
+function upgradeConquestCatalog(events: HistoricalEvent[]): HistoricalEvent[] {
   const conquest = historicalEvents.find(event => event.id === 'chapter-5-1-yellow-conquest')!;
   if (events.some(event => event.id === conquest.id)) return events;
   const opening = events.find(event => event.id === 'chapter-5-1-opening');
   const canonical = historicalEvents.find(event => event.id === 'chapter-5-1-opening')!;
   if (!opening?.flow || opening.flow.nodes.some(node => ['yellow-route', 'begin-conquest'].includes(node.id))) return events;
-  if (!historicalEvents.filter(event => event.id !== conquest.id).every(event => events.some(item => item.id === event.id))) return events;
+  if (!historicalEvents.filter(event => event.chapterId === 'chapter-5-1-yellow-turban' && event.id !== conquest.id && event.id !== 'chapter-5-1-service').every(event => events.some(item => item.id === event.id))) return events;
   const added = new Set(['yellow-route', 'begin-conquest']);
   const join = opening.flow.edges.filter(edge => edge.source === 'join-yellow');
   const end = opening.flow.nodes.find(node => node.type === 'end');
@@ -92,4 +92,25 @@ export function upgradeLegacyEvent(event: HistoricalEvent): HistoricalEvent {
     }
   }
   return next;
+}
+
+
+// An older full 5.1 catalog has no recruitment event. Add new definitions while
+// preserving every existing edited field; explicit deletions always win.
+export function upgradeLegacyCatalog(events: HistoricalEvent[], deletedIds: string[] = []): HistoricalEvent[] {
+  const upgraded = deletedIds.includes('chapter-5-1-yellow-conquest') ? events : upgradeConquestCatalog(events);
+  if (upgraded.some(e => e.id === 'chapter-5-1-service' || e.year > 184)) return upgraded;
+  if (!['chapter-5-1-opening', 'chapter-5-1-closing'].every(id => upgraded.some(e => e.id === id))) return upgraded;
+  const added = historicalEvents.filter(e => (e.year > 184 || e.id === 'chapter-5-1-service') && !deletedIds.includes(e.id) && !upgraded.some(old => old.id === e.id));
+  if (!added.length) return upgraded;
+  const closing = upgraded.find(e => e.id === 'chapter-5-1-closing')!;
+  const next = structuredClone(closing);
+  const canonical = historicalEvents.find(e => e.id === closing.id)!;
+  next.connections = [...(next.connections ?? []), ...(canonical.connections ?? []).filter(c => added.some(e => e.id === c.targetId) && !next.connections?.some(old => old.targetId === c.targetId))];
+  const option = next.flow?.nodes.find(n => n.id === 'record')?.data.options?.find(o => o.id === 'done');
+  const oldDescription = legacyProse.find(p => p.eventId === closing.id && p.nodeId === 'record' && p.optionId === 'done' && p.field === 'description');
+  if (option && (option.description === '이제 좀 살 만해졌나 싶지만, 일단 오늘 있었던 일부터 기억해 두자.' || option.description.includes('184년 테스트') || option.description === oldDescription?.before)) {
+    option.description = canonical.flow!.nodes.find(n => n.id === 'record')!.data.options!.find(o => o.id === 'done')!.description;
+  }
+  return sortEvents([...upgraded.map(e => e === closing ? next : e), ...structuredClone(added)]);
 }

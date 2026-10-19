@@ -6,6 +6,8 @@ const conquestArtwork = JSON.parse(readFileSync(new URL('../data/history/conques
 export function applyChapterNarrative(catalog) {
   const events = structuredClone(catalog);
   for (const event of events) {
+    // Follow-up chapters and recruitment are authored in campaign-narrative / campaign-flows.
+    if (event.chapterId !== 'chapter-5-1-yellow-turban' || event.id === 'chapter-5-1-service') continue;
     const story = narrative.events[event.id];
     if (!story || !event.flow) throw new Error(`5.1 문구 정의가 없습니다: ${event.id}`);
     const render = text => text.replaceAll('{place}', story.place ?? '마을');
@@ -41,6 +43,11 @@ export function applyChapterNarrative(catalog) {
         node.data.label = `${({battle:'전투',duel:'일기토',strategy:'전략',politics:'정치',relationship:'사람 관계',custom:'복합'})[wording.kind]} 확률 판정`;
       }
     }
+  }
+  const close = events.find(e => e.id === 'chapter-5-1-closing');
+  if (events.some(e => e.id === 'chapter-5-1-service')) {
+    const done = close?.flow?.nodes.find(n => n.id === 'record')?.data.options?.find(o => o.id === 'done');
+    if (done) done.description = '함께한 사람들을 떠올리고 다음 길을 정하자.';
   }
   return events;
 }

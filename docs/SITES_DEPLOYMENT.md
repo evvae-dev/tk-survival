@@ -1,5 +1,7 @@
 # 플레이 사이트 배포
 
+- 2026-10-19 사용자 지정: 운영 배포는 GitHub `origin/main` 푸시 → Vercel 자동 배포를 사용한다. 운영 확인 주소는 https://tk-survival.vercel.app 이다. 아래 Sites 경로는 별도 요청이 있을 때만 사용한다.
+
 - 원본 저장소의 게임과 API를 Vinext 및 Cloudflare Workers용 배포 사본으로 구성한다.
 - 사이트 식별자는 `.openai/hosting.json`에 저장한다. 동일 사이트를 갱신할 때 해당 식별자를 유지한다.
 - 배포 런타임에서 `next/link` 이동 오류가 재현되어, 배포 사본은 `HostedLink`로 일반 페이지 이동을 사용한다. 게임 진행과 편집 내용은 기존 브라우저 저장소에 유지된다.

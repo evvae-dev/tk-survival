@@ -3,7 +3,7 @@ import Image from "next/image";
 import { popupArtwork } from "@/lib/choice-artwork";
 import { sceneArt } from "@/lib/scene-art";
 import Link from "@/components/HostedLink";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { Game, Stats } from "@/lib/game";
 import { dateLabel, factionLabel, regionLabels } from "@/lib/game";
 import { choiceKey, type GameEvent } from "@/lib/event-engine";
@@ -13,7 +13,9 @@ import PlaybackControls from "./PlaybackControls";
 import chapter from "@/data/collection/5-1-yellow-turban.json";
 import CharacterPanel, { CharacterDetails } from "./CharacterPanel";
 import SituationMap from "./SituationMap";
-import OfficerRanking from "./OfficerRanking";
+import HistoryFlow from "./HistoryFlow";
+import { useRecordFocus } from "@/hooks/use-record-focus";
+import { visibleHistoryRecords } from '@/lib/history-records';
 import GameDialog from "./GameDialog";
 import Chronicle from "./Chronicle";
 import AwakeningTransition from "./AwakeningTransition";
@@ -46,6 +48,9 @@ export default function GameDashboard({
   const [awakening, setAwakening] = useState(() => !!game.introChoicePending);
   const [modal, setModal] = useState<Modal>(null);
   const playback = useRecordPlayback(game, event, onAdvanceRecord, modal !== null || awakening);
+  const personalEntries = useMemo(() => view.world.log.filter(entry => entry.kind !== 'history'), [view.world.log]);
+  const historyEntries = useMemo(() => visibleHistoryRecords(view.world), [view.world.historyLog, view.world.log]);
+  const recordFocus = useRecordFocus(personalEntries, historyEntries, playback.speed, modal !== null || awakening);
   const eventRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLElement>(null);
   const sidebarRef = useRef<HTMLElement>(null);
@@ -61,14 +66,23 @@ export default function GameDashboard({
     return () => { observer.disconnect(); window.removeEventListener('resize', measure); };
   }, [playback.panelVisible]);
   const logRef = useRef<HTMLOListElement>(null);
-  const previousLogCount = useRef(game.world.log.length);
-  const addedRecord = game.world.log.length > previousLogCount.current;
+  const historyRef = useRef<HTMLElement>(null);
+  const hasRecordFocus = useRef(false);
   useEffect(() => {
-    if (game.world.log.length > previousLogCount.current) {
+    if (modal || awakening || !window.matchMedia('(max-width:768px)').matches) return;
+    if (!recordFocus.reading && !hasRecordFocus.current) return;
+    hasRecordFocus.current = true;
+    const panel = recordFocus.panel === 'history' ? historyRef.current : logRef.current?.closest('section');
+    panel?.scrollIntoView({ block: 'start', behavior: window.matchMedia('(prefers-reduced-motion:reduce)').matches ? 'instant' : 'smooth' });
+  }, [recordFocus.panel, recordFocus.reading, modal, awakening]);
+  const previousLogCount = useRef(personalEntries.length);
+  const addedRecord = personalEntries.length > previousLogCount.current;
+  useEffect(() => {
+    if (personalEntries.length > previousLogCount.current) {
       logRef.current?.scrollTo({ top: 0, behavior: "smooth" });
     }
-    previousLogCount.current = game.world.log.length;
-  }, [game.world.log.length]);
+    previousLogCount.current = personalEntries.length;
+  }, [personalEntries.length]);
   const close = () => setModal(null);
   const choice = (id: string) => {
     if (event) {
@@ -113,7 +127,7 @@ export default function GameDashboard({
           <button onClick={() => setModal("settings")}>설정</button>
         </nav>
       </header>
-      <main className={s.main}>
+      <main className={s.main} data-record-focus={recordFocus.panel} data-record-reading={recordFocus.reading}>
         <aside className={s.leftSidebar} ref={sidebarRef}>
           <CharacterPanel game={view} onStats={() => setModal("stats")} />
           <section className={`${s.panel} ${s.mapPanel}`}>
@@ -147,14 +161,14 @@ export default function GameDashboard({
             {game.completed ? (
               <div className={s.ending} data-testid="completed-screen">
                 <span className={s.endingSeal}>記</span>
-                <p className={s.eyebrow}>{founded || executed ? '가상 시나리오 / ' + (executed ? '패배' : '천하통일') : 'CHAPTER 01 / 기록 완료'}</p>
+                <p className={s.eyebrow}>{founded || executed ? '가상 시나리오 / ' + (executed ? '패배' : '천하통일') : `${game.year}년 / 기록 완료`}</p>
                 <h1>
                   {executed ? "패배하여 처형당했습니다." : founded ? "황건국을 세워 천하를 통일했습니다." : preserved
                     ? "황건의 거점이 남았습니다."
-                    : "토벌군이 전선을 장악했습니다."}
+                    : "난세에서 이어 온 발걸음입니다."}
                 </h1>
                 <p>
-                  {executed ? `${game.name}은(는) 전투에서 패해 생포된 뒤 처형당했습니다. 원정은 여기서 끝납니다.` : founded ? '동탁군·유비군·조조군을 차례로 격파하고 황제를 생포했습니다. 황건의 나라가 세워졌습니다.' : <>{game.name}의 {game.turn}번의 판단이<br />184년의 전장에 흔적을 남겼습니다.</>}
+                  {executed ? `${game.name}은(는) 전투에서 패해 생포된 뒤 처형당했습니다. 원정은 여기서 끝납니다.` : founded ? '동탁군·유비군·조조군을 차례로 격파하고 황제를 생포했습니다. 황건의 나라가 세워졌습니다.' : <>{game.name}의 {game.turn}번의 판단이<br />{game.year}년까지의 여정에 흔적을 남겼습니다.</>}
                 </p>
                 <button className={s.primaryButton} onClick={onReset}>
                   새로운 인물로 시작 →
@@ -165,10 +179,10 @@ export default function GameDashboard({
                 <>
                   <div className={s.eventHeading}>
                     <p className={s.eyebrow}>
-                      CHAPTER 01 ·{" "}
+                      {event.historical?.chapterId?.replace("chapter-", "").replace("-yellow-turban", "").replaceAll("-", ".") ?? "기록"} ·{" "}
                       {event.id === 'chapter-5-1-yellow-conquest' ? '황건 천하통일 · 가상 시나리오' : event.historical?.category === "novel"
                         ? "연의 기반"
-                        : "황건적의 난"}
+                        : event.year === 184 ? "황건적의 난" : `${event.year}년의 여정`}
                     </p>
                     {event.historical && <button className={s.sourceButton} onClick={() => setModal('source')}>사건 기록과 출처 ↗</button>}
                   </div>
@@ -199,19 +213,19 @@ export default function GameDashboard({
               {playback.automatic ? '자동 재생 중 · 화면을 클릭하면 바로 다음 기록' : '화면을 클릭하면 다음 기록으로 넘어갑니다.'}
             </p>}
             <ol className={s.historyLog} ref={logRef} data-testid="history-log">
-              {view.world.log.length ? (
-                view.world.log
+              {personalEntries.length ? (
+                personalEntries
                   .map((entry, index) => ({ entry, index }))
                   .reverse()
                   .map(({ entry, index }) => (
                     <li
                       key={`${index}-${entry.title}`}
                       data-testid="history-record"
-                      className={`${entry.check?.success === true ? s.successLog : entry.check?.success === false ? s.failureLog : ""} ${addedRecord && index === game.world.log.length - 1 ? s.newRecord : ""}`}
+                      className={`${entry.check?.success === true ? s.successLog : entry.check?.success === false ? s.failureLog : ""} ${addedRecord && index === personalEntries.length - 1 ? s.newRecord : ""}`}
                     >
                       <span>{dateLabel(entry.year, entry.month)}</span>
                       <h3><OfficerText text={entry.title} /></h3>
-                      <p><RecordText key={`${index}-${entry.detail}`} text={narrativeText(entry.detail)} animate={index === view.world.log.length - 1} speed={playback.speed} /></p>
+                      <p><RecordText key={`${index}-${entry.detail}`} text={narrativeText(entry.detail)} animate={index === personalEntries.length - 1} speed={playback.speed} /></p>
                     </li>
                   ))
               ) : (
@@ -219,16 +233,16 @@ export default function GameDashboard({
                   <span>184년 · 이야기의 시작</span>
                   <h3>{game.name}, 난세에 들어서다.</h3>
                   <p>
-                    낯선 말발굽 소리에 손이 굳는다. 손바닥에는 거친 죽창의
-                    감촉이 남아 있다.
+                    분명 평범한 하루였는데 눈앞에는 낯선 군대가 보인다.
+                    일단 살아남을 길부터 찾아야겠다.
                   </p>
                 </li>
               )}
             </ol>
           </section>}
         </div>
-        <aside className={s.rightSidebar}>
-          <OfficerRanking year={game.year} world={view.world} />
+        <aside className={s.rightSidebar} ref={historyRef}>
+          <HistoryFlow entries={historyEntries} speed={playback.speed} />
         </aside>
       </main>
       <GameDialog
@@ -311,8 +325,7 @@ export default function GameDashboard({
         <h3>재생 속도</h3>
         <PlaybackControls playback={playback} inSettings onNext={() => { playback.step(); close(); }} />
         <p className={s.smallNote}>
-          진행 상황은 이 브라우저에 자동 저장됩니다. 현재 범위는 184년·20세 고정
-          테스트입니다.
+          진행 상황은 이 브라우저에 자동 저장됩니다. 현재 여정은 184년부터 188년까지 이어집니다.
         </p>
         <nav className={s.settingsLinks}>
           <Link href="/history">사건 기록 탐색 ↗</Link>

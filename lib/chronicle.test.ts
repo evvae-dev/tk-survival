@@ -5,7 +5,7 @@ import type { RecordEntry } from './game';
 const entry = (detail: string, year = 184, month: number | null = null): RecordEntry => ({ year, month, detail, title: '전투', kind: 'fiction' });
 describe('연대기 결과 요약', () => {
   it('모든 5.1 결과를 실제 결과에 대응하는 짧은 연대기 문장으로 요약한다', () => {
-    for (const event of historicalEvents.filter(event => event.chapterId === 'chapter-5-1-yellow-turban')) {
+    for (const event of historicalEvents.filter(event => event.chapterId === 'chapter-5-1-yellow-turban' && event.id !== 'chapter-5-1-service')) {
       for (const node of event.flow?.nodes.filter(node => node.type === 'result') ?? []) {
         const text = node.data.text || node.data.label;
         const lines = chronicleLines(entry(text));
