@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vinext dev",
-    "build": "vinext build",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
+    "dev:sites": "vinext dev",
+    "build:sites": "vinext build",
     "typecheck": "tsc --noEmit",
     "test": "vitest run"
   },

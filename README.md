@@ -12,6 +12,10 @@ npm test
 npm run build
 ```
 
+기본 실행·빌드는 Next.js를 사용하며 Vercel 배포용 `.next` 결과물을 생성합니다. Vercel 프로젝트는 Framework Preset을 `Next.js`, Build Command를 `npm run build`로 설정하고 Output Directory 재정의는 끕니다. Firebase 관리자 기능에는 기존 Firebase 환경변수를 Vercel에도 설정해야 합니다.
+
+ChatGPT Sites의 Cloudflare Workers 배포에는 별도 명령인 `npm run dev:sites`, `npm run build:sites`를 사용합니다. 자세한 내용은 [Sites 배포 문서](docs/SITES_DEPLOYMENT.md)를 확인하세요.
+
 Next.js App Router, TypeScript, React, Tailwind CSS, Zustand persist, Firebase를 사용합니다. 일반 글꼴은 서울한강체, 대사는 궁서체입니다.
 
 ## 화면과 데이터
