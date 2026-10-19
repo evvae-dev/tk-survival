@@ -6,6 +6,7 @@ import type { Game } from './game';
 import { historicalEvents } from './history';
 import { currentCourtLabel } from './world';
 import { upgradeLegacyCatalog } from './catalog-upgrade';
+import { validateEvent } from './event-flow';
 
 const campaignId = 'chapter-5-1-yellow-conquest';
 const stages = ['dong', 'liu', 'cao'] as const;
@@ -119,10 +120,40 @@ describe('이전 공유 목록과 진행 저장의 원정 호환성', () => {
     const saved = { ...newGame('이전 진행', 184, 'unknown', 'farmer'), factionId: 'yellow-turban', flowProgress: { eventId: opening.id, nodeId: 'front' } };
     expect(getCurrentEvent(saved, effective)!.state.flowProgress?.nodeId).toBe('front');
   });
-  it('관리자 편집본과 의도적인 원정 삭제는 자동으로 덮어쓰지 않는다', () => {
+  it('도입 문구를 편집한 구 공유본에도 원정을 추가하며 기존 내용을 보존한다', () => {
     const legacy = legacyCatalog();
-    legacy.find(event => event.id === 'chapter-5-1-opening')!.flow!.nodes.find(node => node.id === 'side')!.data.text = '관리자가 편집한 도입부';
-    expect(upgradeLegacyCatalog(legacy)).toBe(legacy);
+    const opening = legacy.find(event => event.id === 'chapter-5-1-opening')!;
+    opening.title = '관리자가 바꾼 사건 제목';
+    opening.flow!.nodes.find(node => node.id === 'side')!.data.text = '관리자가 편집한 도입부';
+    const before = structuredClone(legacy);
+    useEventCatalogStore.getState().importCatalog(legacy);
+    const effective = getEffectiveCatalog();
+    const updated = effective.find(event => event.id === opening.id)!;
+    expect(effective.some(event => event.id === campaignId)).toBe(true);
+    expect(updated.title).toBe(opening.title);
+    for (const node of opening.flow!.nodes) expect(updated.flow!.nodes.find(item => item.id === node.id)).toEqual(node);
+    for (const event of effective) expect(validateEvent(event)).toEqual([]);
+    expect(legacy).toEqual(before);
+    const game = choose(newGame('편집본 원정',184,'unknown','farmer'), 'yellow');
+    const scene = getCurrentEvent(game, effective)!;
+    expect(scene.state.flowProgress?.nodeId).toBe('yellow-route');
+    const selected = scene.choices.find(choice => choice.id.endsWith(':conquest'))!;
+    const next = resolveChoice(game,choiceKey(scene,selected.id),effective);
+    expect(getCurrentEvent(next,effective)?.id).toBe(campaignId);
+  });
+  it('기존의 황건 합류 후 연결을 거점 방어 경로로 보존한다', () => {
+    const legacy = legacyCatalog();
+    const opening = legacy.find(event => event.id === 'chapter-5-1-opening')!;
+    opening.flow!.nodes.find(node => node.id === 'front')!.id = 'custom-front';
+    for (const edge of opening.flow!.edges) {
+      if (edge.source === 'front') edge.source = 'custom-front';
+      if (edge.target === 'front') edge.target = 'custom-front';
+    }
+    const upgraded = upgradeLegacyCatalog(legacy).find(event => event.id === opening.id)!;
+    expect(upgraded.flow!.edges.find(edge => edge.source === 'yellow-route' && edge.sourceHandle === 'defend')!.target).toBe('custom-front');
+    expect(validateEvent(upgraded)).toEqual([]);
+  });
+  it('새 목록에서 의도적으로 원정을 삭제한 경우 되살리지 않는다', () => {
     useEventCatalogStore.getState().deleteEvent(campaignId);
     expect(getEffectiveCatalog().some(event => event.id === campaignId)).toBe(false);
   });
