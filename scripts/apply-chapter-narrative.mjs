@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
 
 const narrative = JSON.parse(readFileSync(new URL('../data/history/narrative-5-1.json', import.meta.url), 'utf8'));
+const conquestArtwork = JSON.parse(readFileSync(new URL('../data/history/conquest-artwork.json', import.meta.url), 'utf8'));
 
 export function applyChapterNarrative(catalog) {
   const events = structuredClone(catalog);
@@ -16,10 +17,13 @@ export function applyChapterNarrative(catalog) {
         if (!scene) throw new Error(`선택 상황문이 없습니다: ${event.id}/${node.id}`);
         node.data.label = scene.label;
         node.data.text = render(scene.text);
+        if (event.id === 'chapter-5-1-yellow-conquest' && node.data.artwork === undefined && conquestArtwork.scenes[node.id]) node.data.artwork = structuredClone(conquestArtwork.scenes[node.id]);
         for (const option of node.data.options ?? []) {
           const wording = scene.options[option.id];
           if (!wording) throw new Error(`선택 문구가 없습니다: ${event.id}/${node.id}/${option.id}`);
           [option.title, option.description] = wording;
+          const artwork = conquestArtwork.choices[option.title.replace(/^\[|\]$/g, '')];
+          if (option.artwork === undefined && artwork) option.artwork = structuredClone(artwork);
           if (wording[2]) option.outcome = wording[2];
           else delete option.outcome;
         }

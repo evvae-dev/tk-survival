@@ -4,8 +4,9 @@ import { historicalEvents, sortEvents } from './history';
 import { advanceFlow, applyFlowEffects } from './event-flow';
 import { applyChoiceGrowth } from './choice-growth';
 import { normalizeMembership } from './world';
+import type { Artwork } from './artwork';
 
-export type Choice = { id: string; title: string; description: string; outcome?: string; check?: ChoiceCheck; effects: Partial<Stats>; note: string; disabledReason?: string };
+export type Choice = { id: string; title: string; description: string; outcome?: string; artwork?: Artwork | null; check?: ChoiceCheck; effects: Partial<Stats>; note: string; disabledReason?: string };
 export type GameEvent = { id: string; year: number; month: number | null; title: string; scene: string; choices: Choice[]; historical?: HistoricalEvent; automatic?: boolean; annual: boolean; state: Game };
 function finishEvent(state: Game, event: HistoricalEvent): Game {
   const next = applyFlowEffects(state, event.flow!.passiveEffects);

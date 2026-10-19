@@ -5,13 +5,12 @@ import { historicalEvents } from './history';
 import type { Game } from './game';
 import { sceneArt } from './scene-art';
 describe('현재 상황의 장면 이미지', () => {
-  it('기존 장면과 원정 진입 장면의 이미지를 유지하고 새 전투에는 무관한 이미지를 붙이지 않는다', () => {
+  it('원정의 네 장면을 포함한 25개 선택 장면 모두에 존재하는 이미지를 연결한다', () => {
     let count = 0;
     for (const event of historicalEvents) for (const node of event.flow?.nodes ?? []) {
       if (node.type !== 'choice') continue;
       count++;
       const art = sceneArt({ id: event.id, state: { flowProgress: { eventId: event.id, nodeId: node.id } } as Game });
-      if (event.id === 'chapter-5-1-yellow-conquest') { expect(art).toBeNull(); continue; }
       expect(art, `${event.id}:${node.id}`).not.toBeNull();
       expect(existsSync(path.join(process.cwd(), 'public', art!.src))).toBe(true);
     }

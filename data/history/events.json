@@ -259,12 +259,20 @@
                 "id": "conquest",
                 "title": "[천하통일에 나선다]",
                 "description": "죽창 들고 여기까지 왔는데, 황건의 나라까지 한번 가보자!",
+                "artwork": {
+                  "src": "/art/choices/conquest-march.png",
+                  "alt": "누런 두건의 주인공이 황건군 원정대와 함께 도성으로 진군한다"
+                },
                 "outcome": "동탁군 → 유비군 → 조조군과 차례로 결전한다. 어느 전투든 패하면 생포·처형된다."
               },
               {
                 "id": "defend",
                 "title": "[거점부터 지킨다]",
                 "description": "천하통일은 너무 크다, 일단 내가 서 있을 성벽부터 찾자.",
+                "artwork": {
+                  "src": "/art/choices/yellow-supplies.png",
+                  "alt": "누런 두건의 주인공이 원정 대신 황건군 거점의 보급과 수비를 정리한다"
+                },
                 "outcome": "나는 원정 대신 거점 방어를 택하고 전선으로 향하는 수레를 찾았다."
               }
             ]
@@ -529,14 +537,26 @@
               {
                 "id": "strategy",
                 "title": "[동탁군의 보급로를 끊는다]",
-                "description": "기병이 세면 밥부터 못 먹게 해보자, 나도 굶으면 아무것도 못 하니까."
+                "description": "기병이 세면 밥부터 못 먹게 해보자, 나도 굶으면 아무것도 못 하니까.",
+                "artwork": {
+                  "src": "/art/choices/conquest-dong-strategy.png",
+                  "alt": "황건군 주인공이 숨은 동료들에게 신호를 보내 적 동탁군의 군량 수레와 보급로를 차단한다"
+                }
               },
               {
                 "id": "battle",
                 "title": "[동탁군 앞에서 부대를 지휘한다]",
-                "description": "흩어지면 끝이다, 방패부터 맞추고 같이 밀어보자!"
+                "description": "흩어지면 끝이다, 방패부터 맞추고 같이 밀어보자!",
+                "artwork": {
+                  "src": "/art/choices/conquest-dong-battle.png",
+                  "alt": "황건군 주인공이 방패 대열을 지휘하여 적 동탁군의 진격에 맞선다"
+                }
               }
-            ]
+            ],
+            "artwork": {
+              "src": "/art/scenes/conquest-dong-plan.png",
+              "alt": "황건군 주인공이 낙양 길목을 막아선 적 동탁군을 보며 작전을 고민한다"
+            }
           }
         },
         {
@@ -668,14 +688,26 @@
               {
                 "id": "strategy",
                 "title": "[유비군의 진격로에 매복한다]",
-                "description": "저 셋이 한꺼번에 달려오면 답 없다, 좁은 길로 끌어내보자."
+                "description": "저 셋이 한꺼번에 달려오면 답 없다, 좁은 길로 끌어내보자.",
+                "artwork": {
+                  "src": "/art/choices/conquest-liu-strategy.png",
+                  "alt": "황건군 주인공이 좁은 숲길에 숨어 적 유비·관우·장비가 이끄는 군대를 유인한다"
+                }
               },
               {
                 "id": "battle",
                 "title": "[유비군에 맞서 진형을 지휘한다]",
-                "description": "일기토 신청은 못 들은 척하고, 우리 병사들부터 뭉쳐보자!"
+                "description": "일기토 신청은 못 들은 척하고, 우리 병사들부터 뭉쳐보자!",
+                "artwork": {
+                  "src": "/art/choices/conquest-liu-battle.png",
+                  "alt": "황건군 주인공이 아군 방패 진형을 정비하며 적 유비·관우·장비의 공격을 막는다"
+                }
               }
-            ]
+            ],
+            "artwork": {
+              "src": "/art/choices/yellow-face-generals.png",
+              "alt": "황건군 주인공이 유비군의 관우·장비와 마주하고 다음 작전을 고민한다"
+            }
           }
         },
         {
@@ -807,14 +839,26 @@
               {
                 "id": "strategy",
                 "title": "[조조군의 보급 수레를 유인한다]",
-                "description": "빈 진영을 미끼로 보급대를 떼어내자, 제발 이번에는 속아줘라."
+                "description": "빈 진영을 미끼로 보급대를 떼어내자, 제발 이번에는 속아줘라.",
+                "artwork": {
+                  "src": "/art/choices/conquest-cao-strategy.png",
+                  "alt": "황건군 주인공이 빈 진영을 미끼로 적 조조군의 보급 수레를 유인한다"
+                }
               },
               {
                 "id": "battle",
                 "title": "[조조군의 방어선을 돌파한다]",
-                "description": "여기까지 온 병사들이다, 흩어지지 말고 한 곳에 힘을 모으자!"
+                "description": "여기까지 온 병사들이다, 흩어지지 말고 한 곳에 힘을 모으자!",
+                "artwork": {
+                  "src": "/art/choices/conquest-cao-battle.png",
+                  "alt": "황건군 주인공이 밀집한 아군 부대를 이끌고 적 조조군의 방어선을 돌파한다"
+                }
               }
-            ]
+            ],
+            "artwork": {
+              "src": "/art/scenes/conquest-cao-plan.png",
+              "alt": "황건군 주인공이 마지막 진격로를 막은 적 조조군과 대치한다"
+            }
           }
         },
         {
@@ -947,9 +991,17 @@
                 "id": "found",
                 "title": "[황제를 생포하고 건국한다]",
                 "description": "두건 하나 잘못 묶었다가 여기까지 왔다, 이제 황건의 나라를 세우자!",
+                "artwork": {
+                  "src": "/art/choices/conquest-found.png",
+                  "alt": "황건군 주인공이 생포한 황제에게서 옥새를 넘겨받고 황건국의 깃발을 올린다"
+                },
                 "outcome": "황제를 생포하고 황건국을 세워 천하를 통일하며 이야기를 마친다."
               }
-            ]
+            ],
+            "artwork": {
+              "src": "/art/scenes/conquest-emperor.png",
+              "alt": "황건군 주인공이 무기를 내려놓은 궁궐 수비대 너머 황제가 남은 전각을 바라본다"
+            }
           }
         },
         {

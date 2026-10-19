@@ -25,6 +25,14 @@ describe('선택 팝업의 중복 이미지 생략', () => {
     expect(images[1]?.src).toContain('yellow-retreat');
     expect(images[2]?.src).toContain('yellow-formation');
   });
+  it('황건 원정의 선택 팝업마다 상황 카드와 다른 행동 이미지를 표시한다', () => {
+    for (const nodeId of ['dong-plan','liu-plan','cao-plan','emperor']) {
+      const event = eventAt('chapter-5-1-yellow-conquest',nodeId);
+      const images = popupArtwork(event);
+      expect(images.every(Boolean),nodeId).toBe(true);
+      expect(new Set(images.map(image=>image!.src)).size).toBe(event.choices.length);
+    }
+  });
   it('모든 팝업은 텍스트 전용이거나 서로 다른 이미지로 구성한다', () => {
     for (const event of historicalEvents) for (const node of event.flow?.nodes ?? []) {
       if(node.type !== 'choice') continue;

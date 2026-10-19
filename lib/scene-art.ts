@@ -1,8 +1,18 @@
 import type { GameEvent } from './event-engine';
+import conquestArtwork from '@/data/history/conquest-artwork.json';
+import type { Artwork } from './artwork';
 const scene = (name: string, alt: string) => ({ src: `/art/scenes/${name}.png`, alt });
 const action = (name: string, alt: string) => ({ src: `/art/choices/${name}.png`, alt });
-export function sceneArt(event: Pick<GameEvent, 'id' | 'state'>) {
+export function sceneArt(event: Pick<GameEvent, 'id' | 'state' | 'historical'>): Artwork | null {
   const node = event.state.flowProgress?.nodeId;
+  const configured = event.historical?.flow?.nodes.find(item => item.id === node)?.data.artwork;
+  return sceneArtwork(event.id, node, configured);
+}
+
+export function sceneArtwork(id: string, node?: string, artwork?: Artwork | null): Artwork | null {
+  if (artwork !== undefined) return artwork;
+  if (id === 'chapter-5-1-yellow-conquest') return (conquestArtwork.scenes as Record<string, Artwork>)[node ?? ''] ?? null;
+  const event = { id };
   if (event.id === 'chapter-5-1-opening' && node === 'yellow-route') return action('yellow', '누런 두건을 쓴 황건군 주인공이 앞으로의 행보를 고민한다');
   if (event.id === 'chapter-5-1-opening') return node === 'front'
     ? action('travel-wagons', '주인공이 세 갈래로 출발하는 짐수레를 보며 탁군·완성·광종 중 어디로 갈지 고민한다')

@@ -1,5 +1,7 @@
 import type { Choice } from './event-engine';
-export type ChoiceArt = { src: string; alt: string };
+import conquestArtwork from '@/data/history/conquest-artwork.json';
+import type { Artwork } from './artwork';
+export type ChoiceArt = Artwork;
 // Deliberate title mapping: the same option ID (e.g. follow) may mean a different action.
 const scenes: Record<string, [string, string]> = {
   '관군에 붙는다': ['han', '관군 병사들에게 다가가는 주인공'],
@@ -12,8 +14,11 @@ const scenes: Record<string, [string, string]> = {
   '완성으로 간다': ['travel-wagons', '주인공이 세 갈래 길에서 완성으로 떠나는 수레를 고른다'],
   '광종으로 간다': ['travel-wagons', '주인공이 세 갈래 길에서 광종으로 떠나는 수레를 고른다'],
 };
-export function choiceArt(choice: Pick<Choice, 'title'>) {
+export function choiceArt(choice: Pick<Choice, 'title' | 'artwork'>): ChoiceArt | null {
+  if (choice.artwork !== undefined) return choice.artwork;
   const title = choice.title.replace(/^\[|\]$/g, '');
+  const conquest = (conquestArtwork.choices as Record<string, Artwork>)[title];
+  if (conquest) return conquest;
   const scene = scenes[title];
   return scene ? { src: `/art/choices/${scene[0]}.png`, alt: scene[1] } : null;
 }
