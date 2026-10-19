@@ -53,6 +53,10 @@
     "황제를 생포하고 건국한다": {
       "src": "/art/choices/conquest-found.png",
       "alt": "황건군 주인공이 생포한 황제에게서 옥새를 넘겨받고 황건국의 깃발을 올린다"
+    },
+    "황궁으로 가는 부대를 따라간다": {
+      "src": "/art/choices/conquest-march.png",
+      "alt": "누런 두건의 주인공이 황건군 원정대와 함께 도성으로 진군한다"
     }
   }
 }

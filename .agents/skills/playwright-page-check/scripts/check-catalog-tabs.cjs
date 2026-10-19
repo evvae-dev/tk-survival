@@ -3,8 +3,8 @@ const assert = require('node:assert/strict');
 const { launchBrowser } = require('./check-page.cjs');
 const [url = 'http://localhost:3002', out = '/tmp/tk-catalog-tabs', mode = 'fixed'] = process.argv.slice(2);
 fs.mkdirSync(out, { recursive: true });
-const oldTitle = '[천하통일에 나선다]';
-const newTitle = '[황궁으로 가는 부대를 따라간다]';
+const oldTitle = mode === 'before' ? '[천하통일에 나선다]' : '[황궁으로 가는 부대를 따라간다]';
+const newTitle = mode === 'before' ? '[황궁으로 가는 부대를 따라간다]' : '[황궁 행군대를 조용히 따라간다]';
 async function openChoices(page) {
   for (let step = 0; step < 100; step++) {
     const dialog = page.locator('dialog[open]');
@@ -24,6 +24,20 @@ async function openChoices(page) {
   try {
     for (const [name, width, height] of (mode === 'before' ? [['desktop',1440,1000]] : [['desktop',1440,1000],['mobile',390,844],['short',1440,720]])) {
       const context = await browser.newContext({ viewport: {width,height}, reducedMotion:'reduce' });
+      if (mode === 'legacy') {
+        const events = JSON.parse(fs.readFileSync('data/history/events.json','utf8'));
+        const rules = JSON.parse(fs.readFileSync('data/history/legacy-narrative-5-1.json','utf8'));
+        for (const rule of rules) {
+          const node = events.find(e=>e.id===rule.eventId).flow.nodes.find(n=>n.id===rule.nodeId);
+          const target = rule.optionId ? node.data.options.find(o=>o.id===rule.optionId) : node.data;
+          target[rule.field] = rule.before;
+        }
+        await context.addInitScript(events => {
+          if (localStorage.getItem('tk-prose-seeded')) return;
+          localStorage.setItem('tk-survival-event-catalog-5.1-v1',JSON.stringify({state:{overrides:Object.fromEntries(events.map(e=>[e.id,e])),deletedIds:[]},version:0}));
+          localStorage.setItem('tk-prose-seeded','1');
+        },events);
+      }
       const game = await context.newPage();
       const admin = await context.newPage();
       const errors = [], failed = [];
@@ -40,7 +54,13 @@ async function openChoices(page) {
       await game.getByTestId('awakening-transition').waitFor({state:'detached'});
       await (await openChoices(game)).getByRole('button',{name:/황건적 코스프레/}).click();
       const route = await openChoices(game);
-      await route.getByRole('button',{name:/천하통일에 나선다/}).waitFor();
+      await route.getByRole('button').filter({hasText:oldTitle}).waitFor();
+      if (mode !== 'before') {
+        const text = await route.locator('p').first().textContent();
+        assert(text.includes('얼떨결에'));assert(!/동탁|유비|조조|통일/.test(text));
+        await route.getByRole('button').filter({hasText:oldTitle}).locator('img').evaluate(img=>img.complete&&img.naturalWidth>0?true:new Promise(resolve=>img.onload=resolve));
+        await game.screenshot({path:`${out}/${name}-default-prose.png`});
+      }
       const before = await game.evaluate(() => JSON.parse(localStorage.getItem('tk-survival-game-v1')).state.game);
       await admin.goto(`${url}/admin/events?event=chapter-5-1-opening`);
       await admin.getByLabel('사건 ID',{exact:true}).waitFor();
@@ -57,22 +77,22 @@ async function openChoices(page) {
       assert.equal(savedTitle,newTitle);
       if (mode === 'before') {
         await game.waitForTimeout(700);
-        assert(await route.getByRole('button',{name:/천하통일에 나선다/}).isVisible());
-        assert.equal(await route.getByRole('button',{name:/황궁으로 가는 부대를 따라간다/}).count(),0);
+        assert(await route.getByRole('button').filter({hasText:oldTitle}).isVisible());
+        assert.equal(await route.getByRole('button').filter({hasText:newTitle}).count(),0);
         reports.push({name,savedTitle,existingGameTab:'stale'});
       } else {
-        await route.getByRole('button',{name:/황궁으로 가는 부대를 따라간다/}).waitFor();
-        assert.equal(await route.getByRole('button',{name:/천하통일에 나선다/}).count(),0);
+        await route.getByRole('button').filter({hasText:newTitle}).waitFor();
+        assert.equal(await route.getByRole('button').filter({hasText:oldTitle}).count(),0);
         const after = await game.evaluate(() => JSON.parse(localStorage.getItem('tk-survival-game-v1')).state.game);
         assert.deepEqual(after,before,'catalog changes preserve game progress');
-        const img = route.getByRole('button',{name:/황궁으로 가는 부대를 따라간다/}).locator('img');
+        const img = route.getByRole('button').filter({hasText:newTitle}).locator('img');
         await img.evaluate(img=>img.complete&&img.naturalWidth>0?true:new Promise(resolve=>img.onload=resolve));
         await game.screenshot({path:`${out}/${name}-game-updated.png`});
         await admin.reload();
         await admin.locator('[data-id="yellow-route"] strong').click();
         assert.equal(await admin.getByLabel('선택 제목',{exact:true}).first().inputValue(),newTitle);
         await game.reload();await game.getByTestId('event-panel').waitFor();
-        await (await openChoices(game)).getByRole('button',{name:/황궁으로 가는 부대를 따라간다/}).waitFor();
+        await (await openChoices(game)).getByRole('button').filter({hasText:newTitle}).waitFor();
         assert.equal(await game.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false);
         reports.push({name,savedTitle,existingGameTab:'updated',reload:'preserved',gameProgress:'unchanged'});
       }

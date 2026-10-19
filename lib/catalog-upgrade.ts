@@ -1,5 +1,32 @@
 import type { HistoricalEvent } from './game';
 import { historicalEvents, sortEvents } from './history';
+import legacyProse from '@/data/history/legacy-narrative-5-1.json';
+
+// Refresh only exact former defaults. Each field keeps independent administrator edits.
+function upgradeKnownProse(event: HistoricalEvent): HistoricalEvent {
+  const canonical = historicalEvents.find(item => item.id === event.id);
+  if (!event.flow || !canonical?.flow) return event;
+  let next: HistoricalEvent | undefined;
+  for (const rule of legacyProse.filter(rule => rule.eventId === event.id)) {
+    const node = event.flow.nodes.find(node => node.id === rule.nodeId);
+    const current = canonical.flow.nodes.find(node => node.id === rule.nodeId);
+    if (!node || !current) continue;
+    if (rule.optionId && ['title', 'description', 'outcome'].includes(rule.field)) {
+      const field = rule.field as 'title' | 'description' | 'outcome';
+      const option = node.data.options?.find(option => option.id === rule.optionId);
+      const value = current.data.options?.find(option => option.id === rule.optionId)?.[field];
+      if (!option || option[field] !== rule.before || typeof value !== 'string' || value === rule.before) continue;
+      next ??= structuredClone(event);
+      next.flow!.nodes.find(node => node.id === rule.nodeId)!.data.options!.find(option => option.id === rule.optionId)![field] = value;
+    } else if (!rule.optionId && (rule.field === 'label' || rule.field === 'text')) {
+      const value = current.data[rule.field];
+      if (node.data[rule.field] !== rule.before || typeof value !== 'string' || value === rule.before) continue;
+      next ??= structuredClone(event);
+      next.flow!.nodes.find(node => node.id === rule.nodeId)!.data[rule.field] = value;
+    }
+  }
+  return next ?? event;
+}
 
 // 기존의 공유 기본 목록에도 원정을 추가한다. 관리자 편집본은 보존한다.
 export function upgradeLegacyCatalog(events: HistoricalEvent[]): HistoricalEvent[] {
@@ -33,6 +60,7 @@ export function upgradeLegacyCatalog(events: HistoricalEvent[]): HistoricalEvent
 
 // 구 공유본을 저장한 브라우저도 새 게시본을 받을 때까지 실행할 수 있게 한다.
 export function upgradeLegacyEvent(event: HistoricalEvent): HistoricalEvent {
+  event = upgradeKnownProse(event);
   const canonical = historicalEvents.find(item => item.id === event.id);
   const legacy = event.flow?.nodes.some(node => node.type === 'condition' && canonical?.flow?.nodes.find(item => item.id === node.id)?.type === 'check')
     || JSON.stringify(event.flow).includes('"key":"health"') || JSON.stringify(event.flow).includes('"key":"money"');

@@ -12,7 +12,7 @@ const outcomes: Record<string, Record<string, string>> = {
   'chapter-5-1-opening': {
     'join-han': '관군에 신병으로 합류', 'join-yellow': '황건군에 병사로 합류',
     'join-civilian': '군대를 피해 골목으로 빠져나와 주민들과 동행',
-    'begin-conquest': '황건군의 천하통일 원정에 합류하여 동탁군을 상대하러 낙양으로 진군',
+    'begin-conquest': '황궁으로 향하는 황건군 무리를 얼떨결에 따라가다 낙양 길목의 동탁군과 마주침',
     'travel-north': '탁군으로 이동하여 대흥산의 황건군 집결 소식을 접함',
     'travel-south': '완성으로 이동하여 성 안팎의 대치 상황을 확인',
     'travel-central': '광종으로 이동하여 군대의 집결을 확인',
