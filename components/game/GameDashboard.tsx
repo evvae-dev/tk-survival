@@ -82,7 +82,7 @@ export default function GameDashboard({
   const preserved = view.world.factions["yellow-turban"] === "preserved";
   return (
     <div className={`${s.app} ${game.completed ? s.completedApp : ""} ${playback.waiting && !modal ? s.clickToAdvance : ''}`} data-testid="game-screen">
-      {awakening && <AwakeningTransition onComplete={() => { setAwakening(false); setModal("event"); }} />}
+      {awakening && <AwakeningTransition onComplete={() => setAwakening(false)} />}
       <header className={s.header} ref={headerRef}>
         <Link href="/" className={s.brand}>
           <span className={s.desktopBrand}>
