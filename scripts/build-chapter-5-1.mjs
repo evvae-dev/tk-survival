@@ -44,13 +44,21 @@ function graph(title) {
 const openingId = 'chapter-5-1-opening';
 const closingId = 'chapter-5-1-closing';
 const opening = graph('184년, 황건의 봉기');
-for (const [id, faction, role] of [['han', 'han', 'soldier'], ['yellow', 'yellow-turban', 'soldier'], ['civilian', null, 'civilian']]) {
-  opening.result(`join-${id}`, faction ? `${faction === 'han' ? '관군' : '황건군'}의 연락망에 들어갔다.` : '가족과 이웃을 지키는 주민의 길을 택했다.', [{ type: 'faction', value: faction }, { type: 'role', value: role }], 'front');
+for (const [id, faction, role] of [['han', 'han', 'civilian'], ['yellow', 'yellow-turban', 'soldier'], ['civilian', null, 'civilian']]) {
+  opening.result(`join-${id}`, faction ? `${faction === 'han' ? '관군' : '황건군'}의 연락망에 들어갔다.` : '가족과 이웃을 지키는 주민의 길을 택했다.', [{ type: 'faction', value: faction }, { type: 'role', value: role }], id === 'han' ? 'han-company' : 'front');
 }
 opening.choice('side', '봉기가 퍼지고 있다. 당신은 어느 편에서 이 난세를 겪겠는가?', [
   ['han', '관군에 합류한다', '조정군의 토벌에 참여한다. 출신 가정의 능력과 자금이 판정에 쓰인다.', 'join-han'],
   ['yellow', '황건군에 합류한다', '봉기군의 생존과 거점 방어를 돕는다.', 'join-yellow'],
   ['civilian', '주민으로 남는다', '피란·군량·중재로 주민과 포로의 운명을 바꾼다.', 'join-civilian']]);
+opening.choice('han-company', '관군의 연락책이 내가 어느 일행과 움직일지 묻는다. 유비 일행은 북쪽으로 가고 조조 부대는 후방 연락을 맡길 사람을 찾는다. 어느 쪽도 아직 내 정식 소속은 아니다.', [
+ ['liu','[유비 일행과 동행한다]','북쪽으로 가는 일행의 연락을 맡아 보자.','company-liu'],
+ ['cao','[조조 부대의 연락을 맡는다]','후방 연락부터 맡아 얼굴을 익히자.','company-cao'],
+ ['regular','[일반 관군과 움직인다]','특정 군주보다 가까운 관군에 붙자.','company-regular'],
+]);
+opening.result('company-liu','나는 유비 일행의 연락을 나르며 북쪽 길을 함께 걸었다. 아직 군적에 오른 병사는 아니지만 일행은 내 얼굴을 익혔다.',[flag('chapter51AccompaniedLiuBei'),flag('chapter51AccompaniedCaoCao',false)],'travel-north');
+opening.result('company-cao','나는 조조 부대의 후방 연락을 맡아 서신을 옮겼다. 연락책에게 임무를 마쳤다는 확인을 받고 관군의 중앙 전선 거점으로 향했다.',[flag('chapter51AccompaniedCaoCao'),flag('chapter51AccompaniedLiuBei',false)],'travel-central');
+opening.result('company-regular','나는 가까운 관군의 연락책을 따라 움직였다. 특정 군주의 일행에 들지는 않은 채 전선을 골랐다.',[flag('chapter51AccompaniedCaoCao',false),flag('chapter51AccompaniedLiuBei',false)],'front');
 const fronts = [['north', 'zhuo', '탁군·청주 전선', '연의의 대흥산·청주 전투'], ['south', 'jingzhou', '남양·완성 전선', '완성의 공방과 항복 협상'], ['central', 'jizhou', '광종·하곡양 전선', '노식의 교체와 황건 본진 토벌']];
 opening.choice('front', '연락책이 세 전선의 소식을 전한다. 어느 지역에서 행동할까? 날짜가 확인되지 않은 전선 사이의 이동은 이번 테스트에서 생략한다.', fronts.map(([id, region, title, description]) => [id, title, `${description}. 이동 경로에 따라 다음 전투가 달라진다.`, `travel-${id}`]));
 for (const [id, region] of fronts) opening.result(`travel-${id}`, '전선의 거점에 자리를 잡았다.', [{ type: 'region', value: region }, flag('campaignStarted')]);
@@ -63,7 +71,7 @@ opening.result('begin-conquest', '황건군의 원정에 합류했다.', [flag('
   ...['dong-zhuo', 'liu-bei', 'cao-cao'].map(factionId => ({ type: 'factionStatus', factionId, value: 'active' })),
 ]);
 const base = { chapterId: chapter.id, year: 184, month: null, precision: 'year', calendar: 'lunar', regionIds: [], factionIds: ['han', 'yellow-turban'], category: 'history', relatedPeople: [], relatedOfficerIds: [] };
-const events = [{ ...base, id: openingId, sequence: 0, title: '황건적의 난 · 진영과 전선', summary: '184년의 봉기를 배경으로 자신의 진영과 활동 전선을 정한다. 성인 테스트 인물·배치·선택은 게임 창작이다.', source: { title: '5.1 수집본 · 게임 창작', record: '수집한 황건적의 난을 바탕으로 만든 참가 도입부. 원사서 기록으로 취급하지 않는다.' }, flow: opening.finish('side'), connections: chapter.events.filter(e => !['battle-184-qingzhou-city', 'battle-184-xiaquyang'].includes(e.id)).map(e => ({ targetId: e.id, label: '선택한 전선에 배치 · 다른 전선은 기본 경과' })) }];
+const events = [{ ...base, id: openingId, sequence: 0, title: '황건적의 난 · 진영과 전선', summary: '184년의 봉기를 배경으로 자신의 진영과 활동 전선을 정한다. 성인 테스트 인물·배치·선택은 게임 창작이다.', source: { title: '황건적의 난 · 게임 창작', record: '수집한 황건적의 난을 바탕으로 만든 참가 도입부. 원사서 기록으로 취급하지 않는다.' }, flow: opening.finish('side'), connections: chapter.events.filter(e => !['battle-184-qingzhou-city', 'battle-184-xiaquyang'].includes(e.id)).map(e => ({ targetId: e.id, label: '선택한 전선에 배치 · 다른 전선은 기본 경과' })) }];
 
 // 사용자가 지정한 완전한 가상역사. 기존 전선을 처리하기 전에 승리/처형으로 끝난다.
 const conquestId = 'chapter-5-1-yellow-conquest';
@@ -129,7 +137,7 @@ function battle(source, index, build) {
   g.result('supplies-ok', '구호 식량을 마련해 주민의 피해를 줄였다.', [flag(refuge), stat('charisma', 2)], result.baseline);
   g.result('supplies-fail', '식량을 확보하지 못했다. 부채를 지지 않고 가족을 지켰다.', [], result.baseline);
   const first = result.first ?? 'location';
-  events.push({ ...base, id: source.id, sequence: index + 1, title: source.title, summary: source.overview, category: source.category, precision: source.historicalDate.precision, dateNote: source.historicalDate.dateNote, regionIds: [region], relatedPeople: [...new Set(currentPeople.map(p => p.name))], relatedOfficerIds: [...new Set(currentPeople.flatMap(p => p.officerId ? [p.officerId] : []))], source: { title: sourceRecord.work, record: `원사서 미대조 · 2차 자료 요약: ${sourceRecord.secondarySummary}` }, prerequisiteEventIds: [openingId, ...(source.id === 'battle-184-qingzhou-city' ? ['battle-184-daxingshan'] : source.id === 'battle-184-xiaquyang' ? ['battle-184-guangzong'] : [])], connections: [], flow: g.finish(first) });
+  events.push({ ...base, id: source.id, sequence: index + 1, title: source.title, summary: source.overview, category: source.category, precision: source.historicalDate.precision, dateNote: source.historicalDate.dateNote, regionIds: [region], relatedPeople: [...new Set(currentPeople.map(p => p.name))], relatedOfficerIds: [...new Set(currentPeople.flatMap(p => p.officerId ? [p.officerId] : []))], source: { title: sourceRecord.work, record: sourceRecord.secondarySummary }, prerequisiteEventIds: [openingId, ...(source.id === 'battle-184-qingzhou-city' ? ['battle-184-daxingshan'] : source.id === 'battle-184-xiaquyang' ? ['battle-184-guangzong'] : [])], connections: [], flow: g.finish(first) });
 }
 
 battle(chapter.events[0], 0, g => {
@@ -268,10 +276,33 @@ ending.result('preserved', '주요 전선 가운데 황건군이 보존한 거�
 ending.result('defeated', '토벌군이 주요 전선을 장악했다. 살아남은 포로와 피란민의 운명은 개별 분기 결과대로 남긴다.', [{ type: 'factionStatus', factionId: 'yellow-turban', value: 'defeated' }], 'record');
 ending.choice('record', '전장의 결과와 인물들의 생존이 정해졌다. 당신의 선택을 기록한다.', [['done', '5.1의 결과를 확인한다', '다음 장은 아직 수집하지 않았다. 184년 테스트를 마친다.', 'done']]);
 ending.result('done', '5.1의 선택과 달라진 세계를 기록했다.', [flag('chapterFinished')]);
-events.push({ ...base, id: closingId, sequence: 6, title: '황건적의 난 · 달라진 결말', summary: '각 전선의 결과를 모아 황건 주력군의 패망 또는 거점 존속을 판정한다. 개별 인물의 생존은 앞선 선택을 유지한다.', source: { title: '5.1 수집본 · 게임 창작', record: '수집한 기본 결말과 플레이어의 분기를 종합하는 게임 창작 판정.' }, prerequisiteEventIds: chapter.events.map(e => e.id), connections: [], flow: ending.finish('survival') });
+events.push({ ...base, id: closingId, sequence: 6, title: '황건적의 난 · 달라진 결말', summary: '각 전선의 결과를 모아 황건 주력군의 패망 또는 거점 존속을 판정한다. 개별 인물의 생존은 앞선 선택을 유지한다.', source: { title: '황건적의 난 · 게임 창작', record: '수집한 기본 결말과 플레이어의 분기를 종합하는 게임 창작 판정.' }, prerequisiteEventIds: chapter.events.map(e => e.id), connections: [], flow: ending.finish('survival') });
 for (const e of events.filter(e => ['battle-184-qingzhou-city', 'battle-184-wan', 'battle-184-xiaquyang'].includes(e.id))) e.connections.push({ targetId: closingId, label: '전선 승패·피란·포로 생존을 최종 결말에 반영' });
-const campaign = extendCampaign(applyChapterNarrative(events));
+const authored = applyChapterNarrative(events);
+const backgrounds = {
+ 'battle-184-daxingshan':'정원지가 황건군 5만 명을 이끌고 탁군을 침략했다. 유주자사 유언은 유비에게 병력 500명을 주어 맞서도록 했다.',
+ 'battle-184-qingzhou-city':'청주성이 황건군의 포위에 놓였다. 공경은 성 안에서 버티고 있고 유비 일행은 구원할 길을 찾고 있다.',
+ 'battle-184-guangzong':'노식의 관군이 광종의 황건군을 포위하고 있다. 조정의 감찰과 지휘관 교체 문제가 군영의 새 갈등으로 떠올랐다.',
+ 'battle-184-xiaquyang':'광종을 지나 북상하는 관군이 하곡양의 황건군과 맞서려 한다. 장보의 병력이 이곳에 남아 있다.',
+};
+for (const event of authored) {
+ if (!event.id.startsWith('battle-')) continue;
+ const flow = event.flow;
+ for (const node of flow.nodes) {
+  if (['historical','normal-history','retained-history'].includes(node.id) && node.type === 'result') node.data.recordType = 'outcome';
+  if (node.id === 'wan-background') node.data.recordType = 'background';
+  if (['blocked','already-dead'].includes(node.id)) node.data.recordType = 'news';
+ }
+ if (backgrounds[event.id]) {
+  // Entry after cancellation checks: a cancelled battle never introduces a local scene.
+  const arrival = flow.edges.find(edge => edge.source === 'location' && edge.sourceHandle === 'yes');
+  const target = arrival.target; arrival.target = 'battle-background';
+  flow.nodes.push({id:'battle-background',type:'result',position:{x:-420,y:600},data:{label:'전선의 사정',text:backgrounds[event.id],effects:[],recordType:'background'}});
+  flow.edges.push({id:'battle-background:next',source:'battle-background',target,sourceHandle:'next'});
+ }
+}
+const campaign = extendCampaign(authored);
 writeFileSync('data/history/events.json', JSON.stringify(campaign, null, 2) + '\n');
 console.log(`5.1 실행 사건 ${events.length}개 생성`);
-writeFileSync('data/history/catalog-metadata.json', JSON.stringify({ edition: '5.1-5.5-service-v1', eventCount: campaign.length, yearRange: [184, 188], sourceBattleCount: 5, fictionalCampaignCount: 1, collectionFile: 'data/collection/5-2-to-5-5.json', note: '5.1 기존 전선·원정 유지, 군주 합류·재야 이동 4개, 5.2~5.5 수집 사건 16개. 연표의 장 배치와 실제 연대 이견은 dateNote와 수집본에 보존.' }, null, 2) + '\n');
+writeFileSync('data/history/catalog-metadata.json', JSON.stringify({ edition: '5.1-5.5-records-v2', eventCount: campaign.length, yearRange: [184, 188], sourceBattleCount: 5, fictionalCampaignCount: 1, collectionFile: 'data/collection/5-2-to-5-5.json', note: '5.1 기존 전선·원정 유지, 군주 합류·재야 이동 4개, 5.2~5.5 수집 사건 16개. 연표의 장 배치와 실제 연대 이견은 dateNote와 수집본에 보존.' }, null, 2) + '\n');
 console.log(`5.5까지 실행 사건 ${campaign.length}개 생성`);

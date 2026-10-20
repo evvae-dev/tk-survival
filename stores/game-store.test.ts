@@ -18,6 +18,7 @@ function setup(side: string, front: string, ability = 70) {
   game.stats = { ...game.stats, leadership: ability, strength: ability, intelligence: ability, charisma: ability };
   game = choose(game, side);
   if (side === 'yellow') game = choose(game, 'defend');
+  if (side === 'han') game = choose(game, 'regular');
   return choose(game, front);
 }
 function finish(game: Game) {

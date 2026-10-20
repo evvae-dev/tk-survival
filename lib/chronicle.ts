@@ -10,7 +10,7 @@ const shared: Record<string, string> = {
 };
 const outcomes: Record<string, Record<string, string>> = {
   'chapter-5-1-opening': {
-    'join-han': '관군에 신병으로 합류', 'join-yellow': '황건군에 병사로 합류',
+    'company-liu':'유비 일행의 북쪽 연락 임무에 동행', 'company-cao':'조조 부대의 후방 연락 임무를 마치고 중앙 전선으로 이동', 'company-regular':'특정 군주 없이 일반 관군과 이동', 'join-han': '관군 측의 연락망에 들어감', 'join-yellow': '황건군에 병사로 합류',
     'join-civilian': '군대를 피해 골목으로 빠져나와 주민들과 동행',
     'begin-conquest': '황궁으로 향하는 황건군 무리를 얼떨결에 따라가다 낙양 길목의 동탁군과 마주침',
     'travel-north': '탁군으로 이동하여 대흥산의 황건군 집결 소식을 접함',
@@ -80,7 +80,9 @@ export function chronicleLines(entry: RecordEntry, catalog: HistoricalEvent[] = 
   for (const event of catalog) for (const node of event.flow?.nodes ?? []) {
     if (node.type !== 'result') continue;
     const source = node.data.text || node.data.label;
-    const summary = outcomes[event.id]?.[node.id] ?? shared[node.id];
+    const canonical = historicalEvents.find(item => item.id === event.id)?.flow?.nodes.find(item => item.id === node.id);
+    const knownText = source === (canonical?.data.text || canonical?.data.label);
+    const summary = knownText ? outcomes[event.id]?.[node.id] ?? shared[node.id] ?? (node.data.recordType === 'background' ? `${event.title}의 배경 소식을 접함` : undefined) : undefined;
     if (!source || !summary) continue;
     const at = entry.detail.indexOf(source);
     if (at !== -1) lines.push({ at, text: summary });

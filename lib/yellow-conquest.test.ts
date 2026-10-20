@@ -93,7 +93,7 @@ describe('황건 천하통일 가상 원정', () => {
   );
   it.each(['han', 'civilian'])('%s 진영에는 황건 원정 진입 선택이 나타나지 않는다', side => {
     const game = choose(newGame('다른 진영', 184, 'unknown', 'farmer'), side);
-    expect(getCurrentEvent(game)!.state.flowProgress?.nodeId).toBe('front');
+    expect(getCurrentEvent(game)!.state.flowProgress?.nodeId).toBe(side === 'han' ? 'han-company' : 'front');
     expect(game.world.flags.yellowConquestStarted).toBeUndefined();
   });
   it('황건 거점 방어를 택하면 기존 전선을 진행한다', () => {

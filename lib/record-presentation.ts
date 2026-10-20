@@ -7,6 +7,7 @@ const bridgeChecks = Object.values(narrative.events).flatMap(event => Object.val
 
 // Hide mechanical headings only when there is actual result prose to read.
 export function narrativeText(text: string) {
+  text = text.replaceAll('원사서 미대조 · 2차 자료 요약: ', '').replaceAll('수집본 기본 경과: ', '').replaceAll('연의 기본 경과: ', '');
   const lines = text.split(/\n+/).filter(Boolean);
   const outcome = lines.find(line => /^(성공|실패) · /.test(line));
   const body = lines.filter(line => !/^(성공|실패) · /.test(line)).join('\n\n').trim();

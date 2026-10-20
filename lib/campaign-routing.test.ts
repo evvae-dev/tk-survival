@@ -14,6 +14,7 @@ function atService(region = 'jizhou', charisma = 60) {
   game.stats.charisma = charisma;
   game.world.appliedEventIds = historicalEvents.filter(e => e.year === 184 && e.id !== service.id).map(e => e.id);
   game.world.flags.chapterFinished = true;
+  game.world.flags.chapter51AccompaniedCaoCao = true;
   return game;
 }
 function choose(game: Game, option: string, roll = 0, catalog = historicalEvents) {
@@ -27,6 +28,8 @@ beforeEach(() => useEventCatalogStore.getState().restoreDefaults());
 describe('매력 합류와 소속별 경로', () => {
   it.each(['cao-cao', 'liu-bei'])('%s 지원 성공은 소속과 말단 병사 역할을 저장하며 재전송하지 않는다', faction => {
     const game = atService('jizhou', 75);
+    game.world.flags.chapter51AccompaniedCaoCao = faction === 'cao-cao';
+    game.world.flags.chapter51AccompaniedLiuBei = faction === 'liu-bei';
     const event = getCurrentEvent(game)!;
     const selected = event.choices.find(c => c.id.endsWith(`join-${faction}`))!;
     expect(selected.check?.successRate).toBe(75);
@@ -71,6 +74,7 @@ describe('매력 합류와 소속별 경로', () => {
   it.each([['dong-zhuo', 'liangzhou'], ['gongsun-zan', 'zhuo'], ['sun', 'jingzhou']])('후속 장에서도 %s에 상황에 맞게 지원한다', (faction, region) => {
     const event = historicalEvents.find(e => e.id === 'chapter-5-2-service')!;
     const game = newGame('후속 합류', 185, region, 'farmer');
+    game.world.flags[`contact-${faction}-185`] = true;
     const next = choose(game, `join-${faction}`, 0, [event]);
     expect(next.factionId).toBe(faction);
     expect(next.decisions.at(-1)?.check?.weights).toEqual({ charisma: 1 });

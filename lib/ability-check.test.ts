@@ -67,7 +67,7 @@ describe('A·B 능력 비교 판정', () => {
   });
   it('미리보기는 추첨하지 않고 선택할 때 한 번만 추첨·저장한다', () => {
     let game = makeGame();
-    for (const option of ['side:han', 'front:north']) {
+    for (const option of ['side:han', 'han-company:regular', 'front:north']) {
       const event = getCurrentEvent(game)!;
       game = resolveChoice(game, choiceKey(event, option));
     }

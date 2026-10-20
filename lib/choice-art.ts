@@ -4,6 +4,9 @@ import type { Artwork } from './artwork';
 export type ChoiceArt = Artwork;
 // Deliberate title mapping: the same option ID (e.g. follow) may mean a different action.
 const scenes: Record<string, [string, string]> = {
+  '유비 일행과 동행한다': ['follow', '유비 일행을 따라 연락 임무에 나서는 주인공'],
+  '조조 부대의 연락을 맡는다': ['official', '연락 임무를 받기 위해 관군 연락책을 만나는 주인공'],
+  '일반 관군과 움직인다': ['han', '관군의 연락책을 따라 움직이는 주인공'],
   '관군에 붙는다': ['han', '관군 병사들에게 다가가는 주인공'],
   '황건적 코스프레': ['yellow', '누런 두건으로 황건적 사이에 섞이는 주인공'],
   '냅다 도망친다': ['run', '골목으로 달아나는 주인공'],

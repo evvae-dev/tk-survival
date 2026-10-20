@@ -5,7 +5,7 @@ import { historicalEvents } from './history';
 import type { Game } from './game';
 import { sceneArt } from './scene-art';
 describe('현재 상황의 장면 이미지', () => {
-  it('원정의 네 장면을 포함한 25개 선택 장면 모두에 존재하는 이미지를 연결한다', () => {
+  it('원정의 네 장면을 포함한 26개 선택 장면 모두에 존재하는 이미지를 연결한다', () => {
     let count = 0;
     for (const event of historicalEvents.filter(e => e.year === 184 && e.id !== 'chapter-5-1-service')) for (const node of event.flow?.nodes ?? []) {
       if (node.type !== 'choice') continue;
@@ -14,7 +14,7 @@ describe('현재 상황의 장면 이미지', () => {
       expect(art, `${event.id}:${node.id}`).not.toBeNull();
       expect(existsSync(path.join(process.cwd(), 'public', art!.src))).toBe(true);
     }
-    expect(count).toBe(25);
+    expect(count).toBe(26);
   });
   it('황건적과 관군의 대흥산 장면을 아군·적군에 맞게 구분한다', () => {
     const art = (nodeId: string) => sceneArt({ id: 'battle-184-daxingshan', state: { flowProgress: { eventId: 'battle-184-daxingshan', nodeId } } as Game });

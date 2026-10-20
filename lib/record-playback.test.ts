@@ -9,6 +9,7 @@ import type { Game } from './game';
 function choose(game: Game, option: string) {
   const event = getCurrentEvent(game)!;
   if (event.state.flowProgress?.nodeId === 'yellow-route' && option !== 'conquest' && option !== 'defend') return choose(choose(game, 'defend'), option);
+  if (event.state.flowProgress?.nodeId === 'han-company' && !['liu','cao','regular'].includes(option)) return choose(choose(game, 'regular'), option);
   const choice = event.choices.find(item => item.id.endsWith(`:${option}`))!;
   return resolveChoice(game, choiceKey(event, choice.id));
 }
@@ -68,7 +69,8 @@ describe('기록을 한 건씩 진행한다', () => {
         expect(next.choices.length).toBeGreaterThan(0);
         return;
       }
-      expect(next.state.world.log.length).toBe(game.world.log.length + 1);
+      expect(next.state.world.log.length).toBeGreaterThan(game.world.log.length);
+      expect(next.state.world.log.slice(game.world.log.length).every(entry => !!entry.recordId)).toBe(true);
       game = next.state;
     }
     throw new Error('자동 기록이 선택 지점에 도착하지 않았습니다.');

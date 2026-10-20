@@ -28,3 +28,14 @@ export function restoreHistoryRecords(game: Game, catalog: HistoricalEvent[]): R
     return record ? [record] : [];
   });
 }
+
+export function unifiedRecords(world: World): RecordEntry[] {
+ const ids = new Set(world.log.flatMap(entry => entry.eventId ? [entry.eventId] : []));
+ const seen = new Set<string>();
+ const recovered = (world.historyLog ?? []).filter(entry => !(entry.eventId && ids.has(entry.eventId)) && !world.log.some(log => log.title === entry.title || log.title.startsWith(`${entry.title} · `)));
+ return [...recovered, ...world.log].filter(entry => {
+  if (!entry.recordId) return true;
+  if (seen.has(entry.recordId)) return false;
+  seen.add(entry.recordId); return true;
+ });
+}

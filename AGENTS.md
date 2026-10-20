@@ -13,3 +13,15 @@
 
 - 선택 결과는 의도와 구분하여 행동·상대 반응·성패·상태 변화·다음 상황의 인과를 명시한다. 결과 노드 없이 다음 선택으로 연결되는 경로도 검수한다. 구체 기준은 이벤트 작성 지침의 ‘선택 결과와 다음 장면의 인과 연결’을 따른다.
 - 새 사건·가상 시나리오·분기를 추가하면 게임과 관리자가 함께 사용하는 사건 목록·실행 플로우에 반드시 등록한다. `/admin/events`에서 사건과 내부 노드·조건·선택지·효과·연결을 조회·수정·저장할 수 있어야 하며, `/admin/collection`의 실행 플로우에도 표시한다. 이전 공유 목록·로컬 편집본에서 새 항목이 누락되지 않는지 확인하고 기존 편집 내용은 보존한다. 관리자에서 편집·저장·새로고침·게임 반영까지 검증한 뒤 완료로 보고한다. 상세 기준은 [이벤트 작성 지침의 관리자 등록·편집 보장](docs/EVENT_WRITING_GUIDE.md#관리자-등록편집-보장-2026-10-19-추가)을 따른다.
+
+- 2026-10-20 최신 실행·기록 기준은 [기록·동행 개편 계약](docs/RECORD_AND_CAMPAIGN_REWORK.md)이다. 이전의 두 기록 패널·지역만으로 군주 지원·공통 help/observe 설명을 대체한다. 기록은 한 패널의 발생 순서이며, 배경/실제 결말/소식은 flow result의 명시적 recordType으로 저장한다. 실제 군주 동행·접촉 증거 없이는 지원을 열지 않는다. 후속 사건은 사건별 행동과 성패별 후속 선택을 갖춘다.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

@@ -1,7 +1,36 @@
 import type { HistoricalEvent } from './game';
 import { historicalEvents, sortEvents } from './history';
+import legacyCampaign from '@/data/history/legacy-campaign-v1.json';
 import legacyProse from '@/data/history/legacy-narrative-5-1.json';
 
+function refreshDefaults(current: unknown, before: unknown, after: unknown, allowAdd = true): unknown {
+ if (JSON.stringify(current) === JSON.stringify(before)) return structuredClone(after);
+ if (Array.isArray(current) && Array.isArray(before) && Array.isArray(after)) {
+  if (current.every(value => value && typeof value === 'object' && 'id' in value) && before.every(value => value && typeof value === 'object' && 'id' in value)) {
+   const migrated = current.map(value => { const old = before.find(item => item.id === value.id); const next = after.find(item => item.id === value.id); return old && next ? refreshDefaults(value,old,next,allowAdd) : value; });
+   // New graph items may only splice into untouched default edges. Existing deletions stay deleted.
+   const safe = before.filter(item => item.source && after.some(next => next.id === item.id && JSON.stringify(next) !== JSON.stringify(item))).every(item => current.some(value => value.id === item.id && JSON.stringify(value) === JSON.stringify(item)));
+   return safe && allowAdd ? [...migrated,...after.filter(item => !before.some(old => old.id === item.id) && !current.some(value => value.id === item.id))] : migrated;
+  }
+  return current;
+ }
+ if (current && before && after && typeof current === 'object' && typeof before === 'object' && typeof after === 'object' && !Array.isArray(current)) {
+  const result = {...current} as Record<string,unknown>;
+  for (const key of Object.keys(after)) result[key] = refreshDefaults((current as Record<string,unknown>)[key],(before as Record<string,unknown>)[key],(after as Record<string,unknown>)[key],allowAdd);
+  return result;
+ }
+ return current;
+}
+function upgradeCampaign(event: HistoricalEvent): HistoricalEvent {
+ const before = legacyCampaign.find(item => item.id === event.id);
+ const after = historicalEvents.find(item => item.id === event.id);
+ const changedEdges = before?.flow?.edges.filter(edge => after?.flow?.edges.some(next => next.id === edge.id && JSON.stringify(next) !== JSON.stringify(edge))) ?? [];
+ const safe = changedEdges.every(edge => event.flow?.edges.some(current => current.id === edge.id && JSON.stringify(current) === JSON.stringify(edge)));
+ if (!before || !after) return event;
+ const refreshed = refreshDefaults(event,before,after,safe) as HistoricalEvent;
+ if (!safe && refreshed.flow && event.flow) refreshed.flow.edges = structuredClone(event.flow.edges);
+ return refreshed;
+}
 // Refresh only exact former defaults. Each field keeps independent administrator edits.
 function upgradeKnownProse(event: HistoricalEvent): HistoricalEvent {
   const canonical = historicalEvents.find(item => item.id === event.id);
@@ -60,7 +89,7 @@ function upgradeConquestCatalog(events: HistoricalEvent[]): HistoricalEvent[] {
 
 // 구 공유본을 저장한 브라우저도 새 게시본을 받을 때까지 실행할 수 있게 한다.
 export function upgradeLegacyEvent(event: HistoricalEvent): HistoricalEvent {
-  event = upgradeKnownProse(event);
+  event = upgradeKnownProse(upgradeCampaign(event));
   const canonical = historicalEvents.find(item => item.id === event.id);
   const legacy = event.flow?.nodes.some(node => node.type === 'condition' && canonical?.flow?.nodes.find(item => item.id === node.id)?.type === 'check')
     || JSON.stringify(event.flow).includes('"key":"health"') || JSON.stringify(event.flow).includes('"key":"money"');
@@ -98,7 +127,8 @@ export function upgradeLegacyEvent(event: HistoricalEvent): HistoricalEvent {
 // An older full 5.1 catalog has no recruitment event. Add new definitions while
 // preserving every existing edited field; explicit deletions always win.
 export function upgradeLegacyCatalog(events: HistoricalEvent[], deletedIds: string[] = []): HistoricalEvent[] {
-  const upgraded = deletedIds.includes('chapter-5-1-yellow-conquest') ? events : upgradeConquestCatalog(events);
+  const refreshed = events.filter(event => !deletedIds.includes(event.id)).map(upgradeLegacyEvent);
+  const upgraded = deletedIds.includes('chapter-5-1-yellow-conquest') ? refreshed : upgradeConquestCatalog(refreshed);
   if (upgraded.some(e => e.id === 'chapter-5-1-service' || e.year > 184)) return upgraded;
   if (!['chapter-5-1-opening', 'chapter-5-1-closing'].every(id => upgraded.some(e => e.id === id))) return upgraded;
   const added = historicalEvents.filter(e => (e.year > 184 || e.id === 'chapter-5-1-service') && !deletedIds.includes(e.id) && !upgraded.some(old => old.id === e.id));

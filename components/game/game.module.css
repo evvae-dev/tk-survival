@@ -190,26 +190,34 @@
 .completedCenter .chronicle { margin-bottom:24px; }
 @media(max-width:768px) { .completedApp { height:auto; min-height:100dvh; overflow:visible; } .completedApp .main { overflow:visible; } .completedApp .completedCenter { overflow:visible; } }
 
-/* Both record streams stay scrollable; mobile brings the updated stream first. */
+/* A single record panel fills the desktop right column. */
 .historyFlow{display:flex;flex-direction:column;flex:1;min-height:0;overflow:hidden}
-.historyFlow .historyLog{flex:1}
+.historyFlow .historyLog{flex:1;min-height:0}
 .historyFlow .historyLog li{padding:12px}
-.historyFlow .historyLog h3{font-size:.9rem}
-.historyFlow .historyLog p{font-size:.85rem;line-height:1.65}
+.historyFlow .historyLog h3{font-size:.95rem}
+.historyFlow .historyLog p{font-size:.95rem;line-height:1.65}
+.centerContent{grid-template-rows:minmax(0,1fr)}
+@media(min-width:1001px){.main{grid-template-columns:230px minmax(320px,1fr) minmax(380px,1.1fr)}.rightSidebar{align-self:stretch}.historyFlow{height:100%;flex:1}.historyFlow .historyLog{overflow-y:auto}}
+@media(min-width:769px) and (max-width:1000px){.main{grid-template-columns:100px minmax(240px,1fr) minmax(270px,1fr);gap:10px}.historyFlow{height:100%;flex:1}.historyFlow .historyLog{overflow-y:auto}.desktopBrand{display:none}.brand .mobileBrand{display:inline}}
 @media(max-width:768px){
-  .main>.leftSidebar{order:0}
-  .main>.centerContent:not(.completedCenter){display:contents}
-  .main>.centerContent>.eventPanel{order:1}
-  .main>.centerContent>.historyPanel{order:2;height:min(56dvh,460px)}
-  .main>.rightSidebar{order:3;min-height:0}
-  .historyFlow{height:min(56dvh,460px);flex:auto}
-  .main[data-record-focus="history"]>.rightSidebar{order:2}
-  .main[data-record-focus="history"]>.centerContent>.historyPanel{order:3}
-  .main>.completedCenter{order:1}
-  .main[data-record-reading="true"]>.centerContent>.eventPanel{order:3}
-  .main[data-record-reading="true"][data-record-focus="personal"]>.centerContent>.historyPanel{order:1}
-  .main[data-record-reading="true"][data-record-focus="personal"]>.rightSidebar{order:2}
-  .main[data-record-reading="true"][data-record-focus="history"]>.rightSidebar{order:1}
-  .main[data-record-reading="true"][data-record-focus="history"]>.centerContent>.historyPanel{order:2}
-  .historyPanel,.rightSidebar{scroll-margin-top:90px}
+ .main>.leftSidebar{order:0}
+ .main>.centerContent:not(.completedCenter){display:contents}
+ .main>.centerContent>.eventPanel,.main>.completedCenter{order:1}
+ .main>.rightSidebar{order:2;display:flex;width:100%;min-height:0;overflow:visible}
+ .eventPanel{min-height:0}
+ .historyFlow{width:100%;height:auto;max-height:65dvh;min-height:180px;flex:auto;box-sizing:border-box}
+ .historyFlow .historyLog{overflow-y:auto}
+ .rightSidebar{scroll-margin-top:90px}
+}
+@media(min-width:769px) and (max-width:1000px){
+ .main{grid-template-columns:minmax(0,1fr) minmax(300px,1.05fr);grid-template-rows:auto minmax(0,1fr)}
+ .leftSidebar{grid-column:1/-1;overflow:visible}
+ .leftSidebar .desktopOnly,.leftSidebar .mapPanel,.headerPlayback{display:none}
+ .leftSidebar .characterPanel{padding:10px 14px}
+ .mobileStatus{display:flex;align-items:center;gap:12px;white-space:nowrap}
+ .mobileStatus>strong{min-width:0;flex:1;overflow:hidden;text-overflow:ellipsis;font-size:14px}
+ .mobileStatus>span{font-size:13px}
+ .mobileStatus>.characterInfoIcon{display:inline-flex;align-items:center;justify-content:center;padding:6px}
+ .mobileMapButton{display:block}
+ .historyFlow{height:100%}
 }

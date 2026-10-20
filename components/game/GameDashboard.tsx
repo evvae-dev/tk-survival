@@ -5,7 +5,7 @@ import { sceneArt } from "@/lib/scene-art";
 import Link from "@/components/HostedLink";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { Game, Stats } from "@/lib/game";
-import { dateLabel, factionLabel, regionLabels } from "@/lib/game";
+import { factionLabel, regionLabels } from "@/lib/game";
 import { choiceKey, type GameEvent } from "@/lib/event-engine";
 import { testAbilityDelta } from "@/lib/game-presentation";
 import { useRecordPlayback } from "@/hooks/use-record-playback";
@@ -14,15 +14,13 @@ import chapter from "@/data/collection/5-1-yellow-turban.json";
 import CharacterPanel, { CharacterDetails } from "./CharacterPanel";
 import SituationMap from "./SituationMap";
 import HistoryFlow from "./HistoryFlow";
-import { useRecordFocus } from "@/hooks/use-record-focus";
-import { visibleHistoryRecords } from '@/lib/history-records';
+
+import { unifiedRecords } from '@/lib/history-records';
 import GameDialog from "./GameDialog";
 import Chronicle from "./Chronicle";
 import AwakeningTransition from "./AwakeningTransition";
 import s from "./game.module.css";
 import ChoiceButton from "./ChoiceButton";
-import RecordText from "./RecordText";
-import { narrativeText } from "@/lib/record-presentation";
 import OfficerName, { OfficerText } from "./OfficerName";
 
 const people = new Map(chapter.people.map((person) => [person.id, person]));
@@ -48,9 +46,8 @@ export default function GameDashboard({
   const [awakening, setAwakening] = useState(() => !!game.introChoicePending);
   const [modal, setModal] = useState<Modal>(null);
   const playback = useRecordPlayback(game, event, onAdvanceRecord, modal !== null || awakening);
-  const personalEntries = useMemo(() => view.world.log.filter(entry => entry.kind !== 'history'), [view.world.log]);
-  const historyEntries = useMemo(() => visibleHistoryRecords(view.world), [view.world.historyLog, view.world.log]);
-  const recordFocus = useRecordFocus(personalEntries, historyEntries, playback.speed, modal !== null || awakening);
+  const historyEntries = useMemo(() => unifiedRecords(view.world), [view.world.historyLog, view.world.log]);
+
   const eventRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLElement>(null);
   const sidebarRef = useRef<HTMLElement>(null);
@@ -65,24 +62,6 @@ export default function GameDashboard({
     window.addEventListener('resize', measure);
     return () => { observer.disconnect(); window.removeEventListener('resize', measure); };
   }, [playback.panelVisible]);
-  const logRef = useRef<HTMLOListElement>(null);
-  const historyRef = useRef<HTMLElement>(null);
-  const hasRecordFocus = useRef(false);
-  useEffect(() => {
-    if (modal || awakening || !window.matchMedia('(max-width:768px)').matches) return;
-    if (!recordFocus.reading && !hasRecordFocus.current) return;
-    hasRecordFocus.current = true;
-    const panel = recordFocus.panel === 'history' ? historyRef.current : logRef.current?.closest('section');
-    panel?.scrollIntoView({ block: 'start', behavior: window.matchMedia('(prefers-reduced-motion:reduce)').matches ? 'instant' : 'smooth' });
-  }, [recordFocus.panel, recordFocus.reading, modal, awakening]);
-  const previousLogCount = useRef(personalEntries.length);
-  const addedRecord = personalEntries.length > previousLogCount.current;
-  useEffect(() => {
-    if (personalEntries.length > previousLogCount.current) {
-      logRef.current?.scrollTo({ top: 0, behavior: "smooth" });
-    }
-    previousLogCount.current = personalEntries.length;
-  }, [personalEntries.length]);
   const close = () => setModal(null);
   const choice = (id: string) => {
     if (event) {
@@ -127,7 +106,7 @@ export default function GameDashboard({
           <button onClick={() => setModal("settings")}>설정</button>
         </nav>
       </header>
-      <main className={s.main} data-record-focus={recordFocus.panel} data-record-reading={recordFocus.reading}>
+      <main className={s.main}>
         <aside className={s.leftSidebar} ref={sidebarRef}>
           <CharacterPanel game={view} onStats={() => setModal("stats")} />
           <section className={`${s.panel} ${s.mapPanel}`}>
@@ -202,47 +181,10 @@ export default function GameDashboard({
               )
             )}
           </section>}
-          {game.completed ? <Chronicle game={game} /> : <section
-            className={`${s.panel} ${s.historyPanel}`}
-            aria-labelledby="log-heading"
-          >
-            <h2 className={s.panelTitle} id="log-heading">
-              나의 기록 <span>{game.turn}번의 선택</span>
-            </h2>
-            {playback.waiting && <p className={s.playbackStatus} role="status">
-              {playback.automatic ? '자동 재생 중 · 화면을 클릭하면 바로 다음 기록' : '화면을 클릭하면 다음 기록으로 넘어갑니다.'}
-            </p>}
-            <ol className={s.historyLog} ref={logRef} data-testid="history-log">
-              {personalEntries.length ? (
-                personalEntries
-                  .map((entry, index) => ({ entry, index }))
-                  .reverse()
-                  .map(({ entry, index }) => (
-                    <li
-                      key={`${index}-${entry.title}`}
-                      data-testid="history-record"
-                      className={`${entry.check?.success === true ? s.successLog : entry.check?.success === false ? s.failureLog : ""} ${addedRecord && index === personalEntries.length - 1 ? s.newRecord : ""}`}
-                    >
-                      <span>{dateLabel(entry.year, entry.month)}</span>
-                      <h3><OfficerText text={entry.title} /></h3>
-                      <p><RecordText key={`${index}-${entry.detail}`} text={narrativeText(entry.detail)} animate={index === personalEntries.length - 1} speed={playback.speed} /></p>
-                    </li>
-                  ))
-              ) : (
-                <li>
-                  <span>184년 · 이야기의 시작</span>
-                  <h3>{game.name}, 난세에 들어서다.</h3>
-                  <p>
-                    분명 평범한 하루였는데 눈앞에는 낯선 군대가 보인다.
-                    일단 살아남을 길부터 찾아야겠다.
-                  </p>
-                </li>
-              )}
-            </ol>
-          </section>}
+          {game.completed && <Chronicle game={game} />}
         </div>
-        <aside className={s.rightSidebar} ref={historyRef}>
-          <HistoryFlow entries={historyEntries} speed={playback.speed} />
+        <aside className={s.rightSidebar}>
+          <HistoryFlow entries={historyEntries} speed={playback.speed} reading={playback.waiting && !modal && !awakening} />
         </aside>
       </main>
       <GameDialog
@@ -265,10 +207,10 @@ export default function GameDashboard({
       </GameDialog>
       <GameDialog open={modal === 'source'} title="사건 기록과 출처" onClose={close}>
         {event?.historical && <div className={s.sourceDetails}>
-          <p><OfficerText text={event.historical.summary} /></p>
-          <h3>{event.historical.source.title}</h3>
-          <p><OfficerText text={event.historical.source.record} /></p>
-          {event.historical.dateNote && <p>{event.historical.dateNote}</p>}
+          {historyEntries.filter(entry => entry.eventId === event.historical!.id && entry.recordType && entry.recordType !== 'personal').map((entry,index) => <p key={entry.recordId ?? index}><OfficerText text={entry.detail} /></p>)}
+          <p>{event.historical.category === 'novel' ? '연의' : event.historical.id.includes('service') || event.historical.id.includes('conquest') ? '게임 창작' : '역사 계열'}</p><h3>{event.historical.source.title.replace(' (2차 자료 요약·원사서 미대조)', '')}</h3>
+
+
         </div>}
       </GameDialog>
       <GameDialog
