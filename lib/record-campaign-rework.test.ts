@@ -44,9 +44,9 @@ describe('동행 증거와 단일 기록',()=>{
   const event=historicalEvents.find(event=>event.id==='event-185-wang-fen')!;
   const game=newGame('기록',185,'jizhou','farmer');
   const current=getCurrentEvent(game,[event])!;
-  expect(current.state.world.log.map(entry=>entry.recordType)).toEqual(['background']);
+  expect(current.state.world.log.map(entry=>entry.recordType)).toEqual(['personal','background']);
   const next=pick(current.state,'help',[event]);
-  expect(next.world.log.map(entry=>entry.recordType)).toEqual(['background','personal']);
+  expect(next.world.log.map(entry=>entry.recordType)).toEqual(['personal','background','personal']);
   const done=pick(next,'continue',[event]);
   expect(done.world.log.at(-1)?.recordType).toBe('outcome');
   const records=unifiedRecords(JSON.parse(JSON.stringify(done.world)));

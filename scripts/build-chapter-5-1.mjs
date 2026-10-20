@@ -279,6 +279,8 @@ ending.result('done', '5.1의 선택과 달라진 세계를 기록했다.', [fla
 events.push({ ...base, id: closingId, sequence: 6, title: '황건적의 난 · 달라진 결말', summary: '각 전선의 결과를 모아 황건 주력군의 패망 또는 거점 존속을 판정한다. 개별 인물의 생존은 앞선 선택을 유지한다.', source: { title: '황건적의 난 · 게임 창작', record: '수집한 기본 결말과 플레이어의 분기를 종합하는 게임 창작 판정.' }, prerequisiteEventIds: chapter.events.map(e => e.id), connections: [], flow: ending.finish('survival') });
 for (const e of events.filter(e => ['battle-184-qingzhou-city', 'battle-184-wan', 'battle-184-xiaquyang'].includes(e.id))) e.connections.push({ targetId: closingId, label: '전선 승패·피란·포로 생존을 최종 결말에 반영' });
 const authored = applyChapterNarrative(events);
+const playerNarrative = read('data/history/narrative-5-1.json');
+for (const event of authored) if (playerNarrative.events[event.id]?.historicalSummary) event.source.record = playerNarrative.events[event.id].historicalSummary;
 const backgrounds = {
  'battle-184-daxingshan':'정원지가 황건군 5만 명을 이끌고 탁군을 침략했다. 유주자사 유언은 유비에게 병력 500명을 주어 맞서도록 했다.',
  'battle-184-qingzhou-city':'청주성이 황건군의 포위에 놓였다. 공경은 성 안에서 버티고 있고 유비 일행은 구원할 길을 찾고 있다.',

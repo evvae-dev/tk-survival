@@ -50,7 +50,7 @@ describe('매력 합류와 소속별 경로', () => {
     game = choose(game, 'liangzhou');
     expect(game.region).toBe('liangzhou');
     const next = getCurrentEvent(game, undefined, true)!;
-    expect(next.id).toBe('chapter-transition');
+    expect(next.id).toBe('event-185-liang-outbreak');
     expect(next.state).toMatchObject({ year: 185, age: 21, factionId: null, region: 'liangzhou' });
     expect(next.state.world.appliedEventIds).toContain(service.id);
   });
@@ -63,13 +63,13 @@ describe('매력 합류와 소속별 경로', () => {
     game.age = 12;
     expect(getCurrentEvent(game)!.choices).toHaveLength(1);
   });
-  it('소속 유지는 재야 이동으로 바뀌지 않고 이탈은 실제 소속을 해제한다', () => {
+  it('정식 소속은 연례 선택이나 가짜 업무 없이 유지한다', () => {
     const game = atService(); game.factionId = 'liu-bei'; game.role = 'soldier';
-    const stayed = choose(game, 'stay');
-    expect(stayed).toMatchObject({ factionId: 'liu-bei', role: 'soldier', region: 'zhuo' });
-    const left = choose(game, 'leave');
-    expect(left).toMatchObject({ factionId: null, role: 'civilian' });
-    expect(getCurrentEvent(left)?.state.flowProgress?.nodeId).toBe('offers');
+    const continued = getCurrentEvent(game,[service],true)!;
+    expect(continued.state).toMatchObject({factionId:'liu-bei',role:'soldier',region:'jizhou'});
+    expect(continued.state.world.appliedEventIds).toContain(service.id);
+    expect(continued.state.world.log).toEqual([]);
+    expect(continued.choices.map(choice=>choice.id)).toEqual(['finish']);
   });
   it.each([['dong-zhuo', 'liangzhou'], ['gongsun-zan', 'zhuo'], ['sun', 'jingzhou']])('후속 장에서도 %s에 상황에 맞게 지원한다', (faction, region) => {
     const event = historicalEvents.find(e => e.id === 'chapter-5-2-service')!;
@@ -83,9 +83,10 @@ describe('매력 합류와 소속별 경로', () => {
     const event = historicalEvents.find(e => e.id === 'event-186-meiyang')!;
     const game = newGame('유비의 병사', 186, 'zhuo', 'farmer'); game.factionId = 'liu-bei';
     const current = getCurrentEvent(game, [event], true)!;
-    expect(current.automatic).toBe(true);
+    expect(current.automatic).not.toBe(true);
     expect(current.state.region).toBe('zhuo');
-    expect(current.state.world.historyLog).toHaveLength(1);
+    expect(current.state.world.log).toEqual([]);
+    expect(current.state.world.historyLog).toHaveLength(0);
     expect(current.state.world.appliedEventIds).toContain(event.id);
   });
 });

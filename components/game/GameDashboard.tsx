@@ -88,7 +88,7 @@ export default function GameDashboard({
           </span>
         </Link>
         <div className={s.currentDate}>
-          {game.year}년{" "}
+          {view.year}년{" "}
           {event?.month && <span>음력 {event.month}월</span>}
         </div>
         <PlaybackControls playback={playback} />
@@ -140,14 +140,14 @@ export default function GameDashboard({
             {game.completed ? (
               <div className={s.ending} data-testid="completed-screen">
                 <span className={s.endingSeal}>記</span>
-                <p className={s.eyebrow}>{founded || executed ? '가상 시나리오 / ' + (executed ? '패배' : '천하통일') : `${game.year}년 / 기록 완료`}</p>
+                <p className={s.eyebrow}>{founded || executed ? '가상 시나리오 / ' + (executed ? '패배' : '천하통일') : `${view.year}년 / 기록 완료`}</p>
                 <h1>
                   {executed ? "패배하여 처형당했습니다." : founded ? "황건국을 세워 천하를 통일했습니다." : preserved
                     ? "황건의 거점이 남았습니다."
                     : "난세에서 이어 온 발걸음입니다."}
                 </h1>
                 <p>
-                  {executed ? `${game.name}은(는) 전투에서 패해 생포된 뒤 처형당했습니다. 원정은 여기서 끝납니다.` : founded ? '동탁군·유비군·조조군을 차례로 격파하고 황제를 생포했습니다. 황건의 나라가 세워졌습니다.' : <>{game.name}의 {game.turn}번의 판단이<br />{game.year}년까지의 여정에 흔적을 남겼습니다.</>}
+                  {executed ? `${game.name}은(는) 전투에서 패해 생포된 뒤 처형당했습니다. 원정은 여기서 끝납니다.` : founded ? '동탁군·유비군·조조군을 차례로 격파하고 황제를 생포했습니다. 황건의 나라가 세워졌습니다.' : <>{game.name}의 {game.turn}번의 판단이<br />{view.year}년까지의 여정에 흔적을 남겼습니다.</>}
                 </p>
                 <button className={s.primaryButton} onClick={onReset}>
                   새로운 인물로 시작 →
@@ -208,7 +208,7 @@ export default function GameDashboard({
       <GameDialog open={modal === 'source'} title="사건 기록과 출처" onClose={close}>
         {event?.historical && <div className={s.sourceDetails}>
           {historyEntries.filter(entry => entry.eventId === event.historical!.id && entry.recordType && entry.recordType !== 'personal').map((entry,index) => <p key={entry.recordId ?? index}><OfficerText text={entry.detail} /></p>)}
-          <p>{event.historical.category === 'novel' ? '연의' : event.historical.id.includes('service') || event.historical.id.includes('conquest') ? '게임 창작' : '역사 계열'}</p><h3>{event.historical.source.title.replace(' (2차 자료 요약·원사서 미대조)', '')}</h3>
+          <p>{event.historical.category === 'novel' ? '연의' : event.historical.id.startsWith('chapter-') ? '게임 창작' : '역사 계열'}</p><h3>{event.historical.source.title.replace(' (2차 자료 요약·원사서 미대조)', '')}</h3>
 
 
         </div>}
@@ -225,7 +225,7 @@ export default function GameDashboard({
         <div className={s.factionSummary}>
           {Object.entries(view.world.factions).map(([id, state]) => (
             <span key={id}>
-              {id === 'yellow-turban' && founded ? '황건국' : factionLabel(id, game.year)} ·{" "}
+              {id === 'yellow-turban' && founded ? '황건국' : factionLabel(id, view.year)} ·{" "}
               {state === "preserved"
                 ? "가상역사 존속"
                 : state === "defeated"

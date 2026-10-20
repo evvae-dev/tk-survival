@@ -23,7 +23,7 @@ export function choiceAbility(title: string): keyof Stats | undefined {
   if (/명부|수신처|연락 순서|인원을 확인|군장을 맞춘다/.test(action)) return 'politics';
   if (/주민에게|피란민에게|주민과 연락/.test(action)) return 'charisma';
   if (action === '맡은 거점에서 대기한다' || action === '현지에서 연락을 기다린다') return 'intelligence';
-  if (action.endsWith(' 휘하에 지원한다') || ['지금 소속을 따른다', '소속을 떠난다'].includes(action)) return 'charisma';
+  if (action.endsWith(' 휘하에 지원한다') || ['지금 소속을 따른다', '소속을 떠난다', '일행과 계속 간다', '맡은 일을 마치고 재야로 남는다'].includes(action)) return 'charisma';
   if (action.endsWith('로 향한다') || ['재야로 길을 나선다', '무리하지 않고 지켜본다'].includes(action)) return 'intelligence';
   return abilityKeys.find(key => groups[key].includes(action));
 }

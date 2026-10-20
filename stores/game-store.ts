@@ -19,6 +19,7 @@ export function migrateGame(persisted: unknown, version = 0): { game: Game | nul
   if (version < 4 || !saved || (!Number.isInteger(saved.year) || saved.year < 184 || saved.year > 188) || !saved.stats) return { game: null };
   const evidence = JSON.stringify(saved.decisions.map(entry => [entry.recordId, entry.title]));
   const flags = { ...saved.world.flags };
+  if (version < 9 && saved.flowProgress?.eventId.endsWith('-service') && /^(stay-or-leave|stay-|follow-|duty-|people-)/.test(saved.flowProgress.nodeId)) flags.legacyAnnualServicePending = true;
   if (evidence.includes('han-company:cao') || evidence.includes('[조조 부대의 연락을 맡는다]')) { flags.chapter51AccompaniedCaoCao = true; flags.chapter51AccompaniedLiuBei = false; }
   else if (evidence.includes('han-company:regular') || evidence.includes('[일반 관군과 움직인다]')) { flags.chapter51AccompaniedCaoCao = false; flags.chapter51AccompaniedLiuBei = false; }
   else if (evidence.includes('han-company:liu') || evidence.includes('[유비 일행과 동행한다]') || saved.decisions.some(entry => ['battle-184-daxingshan','battle-184-qingzhou-city'].includes(entry.eventId ?? '') && (entry.recordId?.includes('han-plan:') || /신호|관우|장비/.test(entry.title)))) flags.chapter51AccompaniedLiuBei = true;
@@ -42,4 +43,4 @@ export const useGameStore = create<GameStore>()(persist((set) => ({
     return next?.automatic ? { game: next.state } : {};
   }),
   resetGame: () => set({ game: null }),
-}), { name: "tk-survival-game-v1", version: 8, migrate: migrateGame, partialize: ({ game }) => ({ game }), skipHydration: true }));
+}), { name: "tk-survival-game-v1", version: 9, migrate: migrateGame, partialize: ({ game }) => ({ game }), skipHydration: true }));

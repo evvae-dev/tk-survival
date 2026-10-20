@@ -1,12 +1,13 @@
 'use client';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Game } from '@/lib/game';
+import { unifiedRecords } from '@/lib/history-records';
 import { buildChronicle } from '@/lib/chronicle';
 import { OfficerText } from './OfficerName';
 import s from './game.module.css';
 
 export default function Chronicle({ game }: { game: Game }) {
-  const lines = useMemo(() => buildChronicle(game.world.log.filter(entry => entry.recordType !== 'background')), [game.world.log]);
+  const lines = useMemo(() => buildChronicle(unifiedRecords(game.world).filter(entry => entry.recordType !== 'background')), [game.world.log]);
   const [shown, setShown] = useState(0);
   const [all, setAll] = useState(false);
   const section = useRef<HTMLElement>(null);

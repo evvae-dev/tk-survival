@@ -1,0 +1,23 @@
+const fs=require('fs'),assert=require('assert/strict');
+const {launchBrowser}=require('./check-page.cjs');
+const [base='http://127.0.0.1:4173',fixture='/tmp/tk-continuity/dong-journey.json',out='/tmp/tk-continuity-admin']=process.argv.slice(2);
+fs.mkdirSync(out,{recursive:true});
+(async()=>{const browser=await launchBrowser();try{
+ const c=await browser.newContext({viewport:{width:1440,height:1000},reducedMotion:'reduce'}),p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(e.message));
+ await p.goto(`${base}/admin/events?event=chapter-5-5-closing`);
+ await p.locator('[data-id="dong-zhuo-known"] strong').click();
+ const text='나는 동탁군과 {region}에 남아 확인하지 못한 길의 소식을 기다렸다. 관리자 연결 검증을 마쳤다.';
+ await p.getByLabel('결과 대사',{exact:true}).fill(text);
+ const silent=p.getByRole('checkbox',{name:'기록 없이 세계 효과만 적용'});
+ await silent.check();await p.getByRole('button',{name:'흐름 저장 · 게임 반영',exact:true}).click();
+ await p.reload();await p.locator('[data-id="dong-zhuo-known"] strong').click();assert.equal(await silent.isChecked(),true);
+ await silent.uncheck();await p.getByRole('button',{name:'흐름 저장 · 게임 반영',exact:true}).click();
+ await p.reload();await p.locator('[data-id="dong-zhuo-known"] strong').click();assert.equal(await p.getByLabel('결과 대사',{exact:true}).inputValue(),text);assert.equal(await silent.isChecked(),false);
+ await p.screenshot({path:`${out}/admin-edit.png`});
+ const {game}=JSON.parse(fs.readFileSync(fixture));game.completed=false;game.flowProgress={eventId:'chapter-5-5-closing',nodeId:'start'};game.world.appliedEventIds=game.world.appliedEventIds.filter(id=>id!=='chapter-5-5-closing');game.resolvedEventIds=game.resolvedEventIds.filter(id=>id!=='chapter-5-5-closing');game.world.log=game.world.log.filter(entry=>entry.eventId!=='chapter-5-5-closing');game.world.historyLog=game.world.historyLog.filter(entry=>entry.eventId!=='chapter-5-5-closing');
+ await p.evaluate(game=>localStorage.setItem('tk-survival-game-v1',JSON.stringify({version:9,state:{game}})),game);await p.goto(base);await p.getByTestId('game-screen').waitFor();
+ const result=p.getByTestId('history-record').filter({hasText:'관리자 연결 검증을 마쳤다.'});await result.waitFor();const actual=await result.textContent();assert(actual.includes('서방의 양주'));assert(!actual.includes('{region}'));assert.equal(await result.locator('h3').count(),0);
+ await p.reload();await result.waitFor();assert.equal(await result.count(),1);assert.deepEqual(errors,[]);
+ await p.screenshot({path:`${out}/game-custom-ending.png`});
+ fs.writeFileSync(`${out}/results.json`,JSON.stringify({savedText:true,silentCheckboxPersistence:true,regionSubstitution:true,gameReflection:true,noDuplicateOnReload:true,errors},null,2));console.log('Admin continuity save/reload/game reflection passed');await c.close();
+}finally{await browser.close();}})().catch(e=>{console.error(e);process.exit(1)});

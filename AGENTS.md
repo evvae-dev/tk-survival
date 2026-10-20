@@ -25,3 +25,5 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+- 2026-10-20 후속 최신 기준은 [사건 연속성 계약](docs/CAMPAIGN_CONTINUITY.md)이다. 연례 소속 유지·가짜 명부 업무·새해 기록을 생성하지 않는다. 정식 소속을 유지하며 관련 사건으로 자동 진행하고, 무관한 외지 사건은 의존 조건과 세계 효과만 조용히 처리한다. 사실 기록은 제목 없이도 주체·대상·장소·결과가 이해되는 완결형 문장으로 쓴다. 5.5 끝에는 현재 소속·위치·실제 마지막 활동의 범위만 정리한다.

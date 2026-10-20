@@ -52,12 +52,10 @@ export function getCurrentEvent(game: Game, catalog: HistoricalEvent[] = histori
   const upcoming = ordered.find(event => event.flow && event.year > state.year && !state.world.appliedEventIds.includes(event.id));
   if (upcoming) {
     const previousYear = state.year;
-    const detail = '함께 지내기로 한 사람들과 길을 이어 갔다. 새해에도 내 선택과 인연은 그대로 남아 있다.';
-    state = { ...state, year: upcoming.year, month: null, age: state.age + upcoming.year - previousYear, world: { ...state.world, log: [...state.world.log, { year: upcoming.year, month: null, title: `${upcoming.year}년, 이어지는 발걸음`, detail, kind: 'action' }] } };
-    if (stopAfterRecord) return { id: 'chapter-transition', year: state.year, month: null, title: `${state.year}년`, scene: detail, choices: [], automatic: true, annual: false, state };
-    return getCurrentEvent(state, catalog);
+    state = { ...state, year: upcoming.year, month: null, age: state.age + upcoming.year - previousYear };
+    return getCurrentEvent(state, catalog, stopAfterRecord);
   }
-  return { id: 'chapter-end', year: state.year, month: null, title: '지금까지의 여정', scene: '현재 사건 목록의 진행을 마쳤습니다.', annual: false, state, choices: [{ id: 'finish', title: '[지난 기록을 돌아본다]', description: '함께한 사람들과 지금까지의 일을 돌아보자.', effects: {}, note: '' }] };
+  return { id: 'chapter-end', year: state.year, month: null, title: '지금까지의 여정', scene: state.world.log.findLast(entry => entry.eventId === 'chapter-5-5-closing')?.detail ?? '나는 지금 머무는 곳에서 지나온 선택을 돌아봤다. 함께 남은 사람들과 아직 해결되지 않은 일들이 내 다음 길에 남아 있다.', annual: false, state, choices: [{ id: 'finish', title: '[지난 기록을 돌아본다]', description: '함께한 사람들과 지금까지의 일을 돌아보자.', effects: {}, note: '' }] };
 }
 export function choiceKey(event: GameEvent, choiceId: string): string { return `${event.year}:${event.id}:${choiceId}`; }
 export function resolveChoice(game: Game, key: string, catalog: HistoricalEvent[] = historicalEvents, random: () => number = Math.random): Game {

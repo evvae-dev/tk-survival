@@ -28,7 +28,7 @@ for (const card of collection.events) {
     assert.ok(event?.flow && prose[card.id]);
     assert.equal(event.chapterId, `chapter-5-${card.chapter}`);
     assert.equal(event.year, card.chapterYear);
-    assert.ok(event.flow.nodes.some(n => n.id === 'report' && n.data.text === card.reportedOutcome));
+    assert.ok(event.flow.nodes.some(n => n.id === 'report' && n.data.text === prose[card.id].historicalOutcome));
   }
 }
 for (const chapter of [1, 2, 3, 4]) {

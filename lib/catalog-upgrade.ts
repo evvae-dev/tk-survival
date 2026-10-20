@@ -1,6 +1,7 @@
 import type { HistoricalEvent } from './game';
 import { historicalEvents, sortEvents } from './history';
 import legacyCampaign from '@/data/history/legacy-campaign-v1.json';
+import legacyCampaignV2 from '@/data/history/legacy-campaign-v2.json';
 import legacyProse from '@/data/history/legacy-narrative-5-1.json';
 
 function refreshDefaults(current: unknown, before: unknown, after: unknown, allowAdd = true): unknown {
@@ -16,20 +17,36 @@ function refreshDefaults(current: unknown, before: unknown, after: unknown, allo
  }
  if (current && before && after && typeof current === 'object' && typeof before === 'object' && typeof after === 'object' && !Array.isArray(current)) {
   const result = {...current} as Record<string,unknown>;
-  for (const key of Object.keys(after)) result[key] = refreshDefaults((current as Record<string,unknown>)[key],(before as Record<string,unknown>)[key],(after as Record<string,unknown>)[key],allowAdd);
+  for (const key of Object.keys(after)) {
+   if (key === 'silent' && (current as Record<string,unknown>).text !== (before as Record<string,unknown>).text) continue;
+   result[key] = refreshDefaults((current as Record<string,unknown>)[key],(before as Record<string,unknown>)[key],(after as Record<string,unknown>)[key],allowAdd);
+  }
   return result;
  }
  return current;
 }
-function upgradeCampaign(event: HistoricalEvent): HistoricalEvent {
- const before = legacyCampaign.find(item => item.id === event.id);
- const after = historicalEvents.find(item => item.id === event.id);
- const changedEdges = before?.flow?.edges.filter(edge => after?.flow?.edges.some(next => next.id === edge.id && JSON.stringify(next) !== JSON.stringify(edge))) ?? [];
- const safe = changedEdges.every(edge => event.flow?.edges.some(current => current.id === edge.id && JSON.stringify(current) === JSON.stringify(edge)));
+function migrateAgainst(event: HistoricalEvent, previous: HistoricalEvent[], target: HistoricalEvent[]): HistoricalEvent {
+ const before = previous.find(item => item.id === event.id);
+ const after = target.find(item => item.id === event.id);
  if (!before || !after) return event;
+ const changedEdges = before.flow?.edges.filter(edge => after.flow?.edges.some(next => next.id === edge.id && JSON.stringify(next) !== JSON.stringify(edge))) ?? [];
+ const safe = changedEdges.every(edge => event.flow?.edges.some(current => current.id === edge.id && JSON.stringify(current) === JSON.stringify(edge)));
  const refreshed = refreshDefaults(event,before,after,safe) as HistoricalEvent;
- if (!safe && refreshed.flow && event.flow) refreshed.flow.edges = structuredClone(event.flow.edges);
+ if (!safe && refreshed.flow && event.flow) {
+  // Keep graph topology atomic when any insertion edge was edited or deleted.
+  const updates = refreshed.flow.nodes;
+  refreshed.flow = {...event.flow,edges:structuredClone(event.flow.edges),nodes:event.flow.nodes.map(node=>{
+   const update=updates.find(item=>item.id===node.id);
+   if(!update || update.type!==node.type)return structuredClone(node);
+   const data={...update.data};
+   if(node.data.options)data.options=node.data.options.map(option=>({...option,...update.data.options?.find(item=>item.id===option.id)}));
+   return {...node,data};
+  })};
+ }
  return refreshed;
+}
+function upgradeCampaign(event: HistoricalEvent): HistoricalEvent {
+ return migrateAgainst(migrateAgainst(event,legacyCampaign as HistoricalEvent[],legacyCampaignV2 as HistoricalEvent[]),legacyCampaignV2 as HistoricalEvent[],historicalEvents);
 }
 // Refresh only exact former defaults. Each field keeps independent administrator edits.
 function upgradeKnownProse(event: HistoricalEvent): HistoricalEvent {
@@ -129,7 +146,12 @@ export function upgradeLegacyEvent(event: HistoricalEvent): HistoricalEvent {
 export function upgradeLegacyCatalog(events: HistoricalEvent[], deletedIds: string[] = []): HistoricalEvent[] {
   const refreshed = events.filter(event => !deletedIds.includes(event.id)).map(upgradeLegacyEvent);
   const upgraded = deletedIds.includes('chapter-5-1-yellow-conquest') ? refreshed : upgradeConquestCatalog(refreshed);
-  if (upgraded.some(e => e.id === 'chapter-5-1-service' || e.year > 184)) return upgraded;
+  if (upgraded.some(e => e.id === 'chapter-5-1-service' || e.year > 184)) {
+    const closingId = 'chapter-5-5-closing';
+    const recognized = upgraded.some(event => legacyCampaignV2.some(old => old.id === event.id));
+    return recognized && !deletedIds.includes(closingId) && !upgraded.some(event=>event.id===closingId)
+      ? sortEvents([...upgraded,structuredClone(historicalEvents.find(event=>event.id===closingId)!)]) : upgraded;
+  }
   if (!['chapter-5-1-opening', 'chapter-5-1-closing'].every(id => upgraded.some(e => e.id === id))) return upgraded;
   const added = historicalEvents.filter(e => (e.year > 184 || e.id === 'chapter-5-1-service') && !deletedIds.includes(e.id) && !upgraded.some(old => old.id === e.id));
   if (!added.length) return upgraded;

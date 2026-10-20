@@ -1,0 +1,1459 @@
+{
+  "game": {
+    "name": "서방여정검증",
+    "startYear": 184,
+    "year": 188,
+    "month": null,
+    "region": "liangzhou",
+    "birthRegion": "unknown",
+    "birthYear": 164,
+    "family": "farmer",
+    "age": 24,
+    "turn": 20,
+    "fame": 22,
+    "stats": {
+      "leadership": 72,
+      "strength": 71,
+      "intelligence": 80,
+      "politics": 70,
+      "charisma": 100
+    },
+    "completed": true,
+    "factionId": "dong-zhuo",
+    "role": "soldier",
+    "reputation": {
+      "han": 5,
+      "dong-zhuo": 7
+    },
+    "resolvedEventIds": [
+      "chapter-5-1-opening",
+      "chapter-5-1-yellow-conquest",
+      "battle-184-daxingshan",
+      "battle-184-qingzhou-city",
+      "battle-184-wan",
+      "battle-184-guangzong",
+      "battle-184-xiaquyang",
+      "chapter-5-1-closing",
+      "chapter-5-1-service",
+      "event-185-wang-fen",
+      "event-185-liang-outbreak",
+      "event-185-gongsun-command",
+      "event-185-zhang-xiu",
+      "chapter-5-2-service",
+      "event-186-meiyang",
+      "event-186-he-qi",
+      "chapter-5-3-service",
+      "event-187-han-sui-claim",
+      "event-187-tao-qian",
+      "event-187-zhang-rebellion",
+      "event-187-liu-bei-service",
+      "event-187-ou-xing",
+      "chapter-5-4-service",
+      "event-188-zhang-yan",
+      "event-188-ma-xiang",
+      "event-188-liu-yan",
+      "event-188-xiyuan",
+      "event-188-youzhou-settlement"
+    ],
+    "world": {
+      "people": {
+        "person-rtk14-0925": "alive",
+        "person-rtk14-0472": "alive",
+        "person-rtk14-0952": "alive",
+        "person-rtk14-0147": "alive",
+        "person-rtk14-0656": "alive",
+        "person-rtk14-0690": "dead",
+        "person-rtk14-0746": "dead",
+        "person-97022813a7df": "alive",
+        "person-rtk14-0607": "alive",
+        "person-rtk14-0660": "dead",
+        "person-fb5936f94991": "dead",
+        "person-53e1806f6d44": "alive",
+        "person-rtk14-0620": "dead",
+        "person-rtk14-0387": "alive",
+        "person-rtk14-0441": "alive",
+        "person-rtk14-0647": "alive",
+        "person-rtk14-0173": "dead",
+        "person-b8fbc382199a": "dead",
+        "person-rtk14-0132": "alive",
+        "person-rtk14-1000": "alive",
+        "person-c21585e9a722": "alive",
+        "person-rtk14-0736": "alive",
+        "person-rtk14-0664": "dead",
+        "person-rtk14-0279": "alive",
+        "person-rtk14-0659": "dead",
+        "person-18355a2828c0": "alive"
+      },
+      "flags": {
+        "chapter51AccompaniedLiuBei": true,
+        "chapter51AccompaniedCaoCao": false,
+        "campaignStarted": true,
+        "daxingshanHanVictory": true,
+        "qingzhouRelieved": true,
+        "wanHanVictory": true,
+        "guangzongHanVictory": true,
+        "xiaquyangHanVictory": true,
+        "chapterFinished": false,
+        "event-185-liang-outbreak-failed": true,
+        "event-185-liang-outbreak-reported": true,
+        "event-185-zhang-xiu-failed": true,
+        "event-185-zhang-xiu-reported": true,
+        "contact-dong-zhuo-186": true,
+        "contact-sun-186": true,
+        "event-186-meiyang-failed": true,
+        "event-186-meiyang-reported": true,
+        "contact-dong-zhuo-187": true,
+        "event-187-han-sui-claim-helped": true,
+        "event-187-han-sui-claim-reported": true
+      },
+      "factions": {
+        "han": "active",
+        "yellow-turban": "defeated",
+        "dong-zhuo": "active"
+      },
+      "control": {
+        "luoyang": "han",
+        "changan": "han",
+        "zhuo": "han",
+        "chenliu": "han",
+        "chengdu": "han",
+        "place-daxingshan": "han",
+        "place-qingzhou-city-novel": "han",
+        "place-wan": "han",
+        "place-guangzong": "han",
+        "place-xiaquyang": "han"
+      },
+      "log": [
+        {
+          "recordType": "personal",
+          "recordId": "184:chapter-5-1-opening:side:han",
+          "eventId": "chapter-5-1-opening",
+          "year": 184,
+          "month": null,
+          "title": "[갑자기 분위기 황건적?!] · [관군에 붙는다]",
+          "detail": "관군 연락책이 내 말을 듣더니 방패 하나를 빌려줬다. 아직 누구의 병사가 된 건 아니지만, 적어도 누런 두건으로 오해받을 일은 줄었겠지.",
+          "kind": "fiction",
+          "growth": {
+            "stats": {
+              "charisma": 1
+            },
+            "fame": 1
+          }
+        },
+        {
+          "recordType": "personal",
+          "recordId": "184:chapter-5-1-opening:han-company:liu",
+          "eventId": "chapter-5-1-opening",
+          "year": 184,
+          "month": null,
+          "title": "[갑자기 분위기 황건적?!] · [유비 일행과 동행한다]",
+          "detail": "나는 유비 일행의 연락을 나르며 북쪽 길을 함께 걸었다. 아직 군적에 오른 병사는 아니지만 일행은 내 얼굴을 익혔다. 탁군에 도착하자마자 대흥산에 황건군이 모였다는 소리를 들었다. 안전한 동네 고르기는 벌써 틀린 것 같다.",
+          "kind": "fiction",
+          "growth": {
+            "stats": {
+              "charisma": 1
+            },
+            "fame": 1
+          }
+        },
+        {
+          "eventId": "battle-184-daxingshan",
+          "recordId": "battle-184-daxingshan:battle-background",
+          "recordType": "background",
+          "year": 184,
+          "month": null,
+          "title": "[관우랑 장비가 왜 여기서 나와?!]",
+          "detail": "정원지가 황건군 5만 명을 이끌고 탁군을 침략했다. 유주자사 유언은 유비에게 병력 500명을 주어 맞서도록 했다.",
+          "kind": "history"
+        },
+        {
+          "recordType": "personal",
+          "recordId": "184:battle-184-daxingshan:han-plan:follow",
+          "eventId": "battle-184-daxingshan",
+          "year": 184,
+          "month": null,
+          "title": "[관우랑 장비가 왜 여기서 나와?!] · [유비군을 따라간다]",
+          "detail": "나는 유비군의 지시대로 방패를 들고 전열을 따라 움직였다.",
+          "kind": "fiction",
+          "growth": {
+            "stats": {
+              "leadership": 1
+            },
+            "fame": 1
+          }
+        },
+        {
+          "eventId": "battle-184-daxingshan",
+          "recordId": "battle-184-daxingshan:historical",
+          "recordType": "outcome",
+          "year": 184,
+          "month": null,
+          "title": "[관우랑 장비가 왜 여기서 나와?!]",
+          "detail": "유언군(유비 의용병)의 승리. 황건적 지휘관 정원지 및 부장 등무 전사. 황건적 대군 와해 및 대규모 투항. 유비 삼형제의 첫 출전이자 첫 승리.",
+          "kind": "history"
+        },
+        {
+          "eventId": "battle-184-qingzhou-city",
+          "recordId": "battle-184-qingzhou-city:march",
+          "recordType": "personal",
+          "year": 184,
+          "month": null,
+          "title": "[도망가는 척이라고는 안 했잖아?!]",
+          "detail": "탁군에서 부대를 따라 걸었더니 청주성이다. 발은 아픈데 눈앞에는 또 포위군이다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "battle-184-qingzhou-city",
+          "recordId": "battle-184-qingzhou-city:battle-background",
+          "recordType": "background",
+          "year": 184,
+          "month": null,
+          "title": "[도망가는 척이라고는 안 했잖아?!]",
+          "detail": "청주성이 황건군의 포위에 놓였다. 공경은 성 안에서 버티고 있고 유비 일행은 구원할 길을 찾고 있다.",
+          "kind": "history"
+        },
+        {
+          "recordType": "personal",
+          "recordId": "184:battle-184-qingzhou-city:han-plan:follow",
+          "eventId": "battle-184-qingzhou-city",
+          "year": 184,
+          "month": null,
+          "title": "[도망가는 척이라고는 안 했잖아?!] · [유비를 따라 물러난다]",
+          "detail": "나는 유비를 따라 물러나며 추격하는 적을 매복이 있는 쪽으로 유인했다.",
+          "kind": "fiction",
+          "growth": {
+            "stats": {
+              "intelligence": 1
+            },
+            "fame": 1
+          }
+        },
+        {
+          "eventId": "battle-184-qingzhou-city",
+          "recordId": "battle-184-qingzhou-city:historical",
+          "recordType": "outcome",
+          "year": 184,
+          "month": null,
+          "title": "[도망가는 척이라고는 안 했잖아?!]",
+          "detail": "한나라 관군(공경군·추정군·유비 의용병)의 승리. 청주성 포위망 해제 및 침공 황건적 격퇴. 유비의 매복 유인 전술 성공.",
+          "kind": "history"
+        },
+        {
+          "eventId": "battle-184-wan",
+          "recordId": "battle-184-wan:wan-background",
+          "recordType": "background",
+          "year": 184,
+          "month": null,
+          "title": "[항복한다는데 칼은 왜 뽑아요?!]",
+          "detail": "저공이 죽고 진힐이 장만성을 격파했다는 소식을 들었다. 이제 조홍이 완성을 지킨다는데 이름 외우기도 전에 싸움이 또 시작이다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "battle-184-wan",
+          "recordId": "battle-184-wan:historical",
+          "recordType": "outcome",
+          "year": 184,
+          "month": null,
+          "title": "[항복한다는데 칼은 왜 뽑아요?!]",
+          "detail": "한나라 관군(주준, 진힐 등)의 완전한 승리. 남양 황건적 수령(장만성, 조홍, 한충, 손하) 전원 사망. 남양군 완성 수복 및 남양 일대 황건적 소탕 완료. 전 남양태수 저공 전사.",
+          "kind": "history"
+        },
+        {
+          "eventId": "battle-184-guangzong",
+          "recordId": "battle-184-guangzong:normal-history",
+          "recordType": "outcome",
+          "year": 184,
+          "month": null,
+          "title": "[잠깐, 장군이 또 바뀐다고?!]",
+          "detail": "노식의 교체와 동탁의 패배 뒤 황보숭이 광종을 공격해 승리했다. 장량이 전사하고 광종의 황건군 거점이 함락됐다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "battle-184-xiaquyang",
+          "recordId": "battle-184-xiaquyang:historical",
+          "recordType": "outcome",
+          "year": 184,
+          "month": null,
+          "title": "[이 성문만 넘으면 끝이라며?!]",
+          "detail": "한나라 관군의 결정적 대승. 지공장군 장보 참수. 황건적 10만여 명 참수 또는 생포. 적 시체로 경관(京觀) 축조. 장보 세력 및 기주 황건적 주력의 최종 박멸.",
+          "kind": "history"
+        },
+        {
+          "eventId": "chapter-5-1-closing",
+          "recordId": "chapter-5-1-closing:defeated",
+          "recordType": "personal",
+          "year": 184,
+          "month": null,
+          "title": "[살아남았는데 집은 어디지?!]",
+          "detail": "관군이 주요 길목을 장악했다는 소식을 들었다. 그래도 내 옆에는 돌아갈 곳 없는 사람들이 아직 앉아 있다.",
+          "kind": "history"
+        },
+        {
+          "recordType": "personal",
+          "recordId": "184:chapter-5-1-closing:record:done",
+          "eventId": "chapter-5-1-closing",
+          "year": 184,
+          "month": null,
+          "title": "[살아남았는데 집은 어디지?!] · [죽부터 먹는다]",
+          "detail": "죽을 다 먹고 오늘 같이 움직인 사람들 이름을 되짚었다. 거창한 건 몰라도 내 손으로 바꾼 일 몇 개는 확실히 기억난다.",
+          "kind": "fiction",
+          "growth": {
+            "stats": {
+              "strength": 1
+            },
+            "fame": 1
+          }
+        },
+        {
+          "recordType": "personal",
+          "recordId": "184:chapter-5-1-service:offers:join-liu-bei",
+          "eventId": "chapter-5-1-service",
+          "year": 184,
+          "month": null,
+          "title": "[이제 누구 밑에서 일하지?!] · [유비 휘하에 지원한다]",
+          "detail": "실패 · 유비 측이 지원을 거절한다.\n유비 측 연락책은 지금 나를 받아들일 수 없다고 했다. 나는 합류하지 못한 채 짐을 챙겨 다른 길을 찾았다.",
+          "kind": "fiction",
+          "growth": {
+            "stats": {
+              "charisma": 1
+            },
+            "fame": 1
+          },
+          "check": {
+            "weights": {
+              "charisma": 1
+            },
+            "playerScore": 0,
+            "multiplier": 1.5,
+            "chance": 0,
+            "roll": 99,
+            "success": false
+          }
+        },
+        {
+          "recordType": "personal",
+          "recordId": "184:chapter-5-1-service:travel:liangzhou",
+          "eventId": "chapter-5-1-service",
+          "year": 184,
+          "month": null,
+          "title": "[이제 누구 밑에서 일하지?!] · [서방의 양주로 향한다]",
+          "detail": "나는 서방의 양주로 향하는 길에 올랐다. 새 고장에서는 어느 군주의 명령도 받지 않고 사람들과 소식을 찾아보기로 했다.",
+          "kind": "fiction",
+          "growth": {
+            "stats": {
+              "intelligence": 1
+            },
+            "fame": 1
+          }
+        },
+        {
+          "year": 185,
+          "month": null,
+          "title": "185년, 이어지는 발걸음",
+          "detail": "함께 지내기로 한 사람들과 길을 이어 갔다. 새해에도 내 선택과 인연은 그대로 남아 있다.",
+          "kind": "action"
+        },
+        {
+          "eventId": "event-185-wang-fen",
+          "recordId": "event-185-wang-fen:remote-news",
+          "recordType": "news",
+          "year": 185,
+          "month": null,
+          "title": "[왕분의 영제 폐위 모의?!]",
+          "detail": "폐위 모의가 실패했다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-185-liang-outbreak",
+          "recordId": "event-185-liang-outbreak:background",
+          "recordType": "background",
+          "year": 185,
+          "month": null,
+          "title": "[양주의 난 · 서방의 봉기?!]",
+          "detail": "서방의 봉기가 장안을 위협했다.",
+          "kind": "history"
+        },
+        {
+          "recordType": "personal",
+          "recordId": "185:event-185-liang-outbreak:scene:alternate",
+          "eventId": "event-185-liang-outbreak",
+          "year": 185,
+          "month": null,
+          "title": "[양주의 난 · 서방의 봉기?!] · [주민들에게 피란 순서를 설명한다]",
+          "detail": "실패 · 상대의 확인을 받지 못한다.\n주민들이 말을 듣지 않고 한꺼번에 몰렸다. 큰 무리를 이끌지 못해 가까운 사람들부터 불렀다.",
+          "kind": "fiction",
+          "growth": {
+            "stats": {
+              "charisma": 1
+            },
+            "fame": 1
+          },
+          "check": {
+            "weights": {
+              "charisma": 1
+            },
+            "playerScore": 1,
+            "multiplier": 1.5,
+            "chance": 1,
+            "roll": 99,
+            "success": false
+          }
+        },
+        {
+          "recordType": "personal",
+          "recordId": "185:event-185-liang-outbreak:next-scene:recover",
+          "eventId": "event-185-liang-outbreak",
+          "year": 185,
+          "month": null,
+          "title": "[양주의 난 · 서방의 봉기?!] · [몇 사람씩 우회시킨다]",
+          "detail": "나는 곁에 남은 주민들에게 한꺼번에 나서지 말고 몇 사람씩 우회하자고 알렸다. 주민들은 서로 이름을 부르며 무리를 나누어 길을 돌았다.",
+          "kind": "fiction",
+          "growth": {
+            "stats": {
+              "intelligence": 1
+            },
+            "fame": 1
+          }
+        },
+        {
+          "eventId": "event-185-liang-outbreak",
+          "recordId": "event-185-liang-outbreak:report",
+          "recordType": "outcome",
+          "year": 185,
+          "month": null,
+          "title": "[양주의 난 · 서방의 봉기?!]",
+          "detail": "관군이 즉시 진압하지 못해 토벌군을 재편했다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-185-gongsun-command",
+          "recordId": "event-185-gongsun-command:remote-news",
+          "recordType": "news",
+          "year": 185,
+          "month": null,
+          "title": "[공손찬이 뽑혔다고?!]",
+          "detail": "공손찬의 선발과 장순의 불만이 이후 북방 정세의 배경이 됐다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-185-zhang-xiu",
+          "recordId": "event-185-zhang-xiu:background",
+          "recordType": "background",
+          "year": 185,
+          "month": null,
+          "title": "[장수의 국승 토벌?!]",
+          "detail": "국승이 조려 현장 유준을 죽였다.",
+          "kind": "history"
+        },
+        {
+          "recordType": "personal",
+          "recordId": "185:event-185-zhang-xiu:scene:alternate",
+          "eventId": "event-185-zhang-xiu",
+          "year": 185,
+          "month": null,
+          "title": "[장수의 국승 토벌?!] · [현청 주변 길목을 감시한다]",
+          "detail": "실패 · 상대의 확인을 받지 못한다.\n골목의 움직임을 확인하기 전에 무리가 몰려왔다. 나는 주민들에게 큰길에서 물러나라고 외쳤다.",
+          "kind": "fiction",
+          "growth": {
+            "stats": {
+              "intelligence": 1
+            },
+            "fame": 1
+          },
+          "check": {
+            "weights": {
+              "intelligence": 1
+            },
+            "playerScore": 73,
+            "multiplier": 1.5,
+            "chance": 73,
+            "roll": 99,
+            "success": false
+          }
+        },
+        {
+          "recordType": "personal",
+          "recordId": "185:event-185-zhang-xiu:next-scene:recover",
+          "eventId": "event-185-zhang-xiu",
+          "year": 185,
+          "month": null,
+          "title": "[장수의 국승 토벌?!] · [위험 구역 밖에서 기다린다]",
+          "detail": "나는 위험 구역 밖에서 기다렸다. 경계병도 확인되지 않은 골목은 아직 위험하다며 주민들을 멈춰 세웠다.",
+          "kind": "fiction",
+          "growth": {
+            "stats": {
+              "intelligence": 1
+            },
+            "fame": 1
+          }
+        },
+        {
+          "eventId": "event-185-zhang-xiu",
+          "recordId": "event-185-zhang-xiu:report",
+          "recordType": "outcome",
+          "year": 185,
+          "month": null,
+          "title": "[장수의 국승 토벌?!]",
+          "detail": "장수가 현장의 원수를 갚아 명성을 얻었다.",
+          "kind": "history"
+        },
+        {
+          "recordType": "personal",
+          "recordId": "185:chapter-5-2-service:offers:travel",
+          "eventId": "chapter-5-2-service",
+          "year": 185,
+          "month": null,
+          "title": "[이제 누구 밑에서 일하지?!] · [재야로 길을 나선다]",
+          "detail": "아직 누구 밑으로 들어갈지 정하지 말자.",
+          "kind": "fiction",
+          "growth": {
+            "stats": {
+              "intelligence": 1
+            },
+            "fame": 1
+          }
+        },
+        {
+          "recordType": "personal",
+          "recordId": "185:chapter-5-2-service:travel:liangzhou",
+          "eventId": "chapter-5-2-service",
+          "year": 185,
+          "month": null,
+          "title": "[이제 누구 밑에서 일하지?!] · [서방 전선로 향한다]",
+          "detail": "나는 서방 전선로 향하는 길에 올랐다. 새 고장에서는 어느 군주의 명령도 받지 않고 사람들과 소식을 찾아보기로 했다.",
+          "kind": "fiction",
+          "growth": {
+            "stats": {
+              "intelligence": 1
+            },
+            "fame": 1
+          }
+        },
+        {
+          "year": 186,
+          "month": null,
+          "title": "186년, 이어지는 발걸음",
+          "detail": "함께 지내기로 한 사람들과 길을 이어 갔다. 새해에도 내 선택과 인연은 그대로 남아 있다.",
+          "kind": "action"
+        },
+        {
+          "eventId": "event-186-meiyang",
+          "recordId": "event-186-meiyang:background",
+          "recordType": "background",
+          "year": 186,
+          "month": null,
+          "title": "[미양 전투와 토벌군의 추격?!]",
+          "detail": "장온이 서방 토벌군을 이끌었다.",
+          "kind": "history"
+        },
+        {
+          "recordType": "personal",
+          "recordId": "186:event-186-meiyang:scene:alternate",
+          "eventId": "event-186-meiyang",
+          "year": 186,
+          "month": null,
+          "title": "[미양 전투와 토벌군의 추격?!] · [수송대의 후미를 정렬한다]",
+          "detail": "실패 · 상대의 확인을 받지 못한다.\n뒤처진 수레를 한 줄로 모으지 못했다. 담당자는 흩어진 수레를 기다리며 수송대를 멈췄다.",
+          "kind": "fiction",
+          "growth": {
+            "stats": {
+              "leadership": 1
+            },
+            "fame": 1
+          },
+          "check": {
+            "weights": {
+              "leadership": 1.5,
+              "strength": 1
+            },
+            "playerScore": 177.5,
+            "multiplier": 1.5,
+            "chance": 71,
+            "roll": 99,
+            "success": false
+          }
+        },
+        {
+          "recordType": "personal",
+          "recordId": "186:event-186-meiyang:next-scene:recover",
+          "eventId": "event-186-meiyang",
+          "year": 186,
+          "month": null,
+          "title": "[미양 전투와 토벌군의 추격?!] · [잔류 수송대에 합류한다]",
+          "detail": "나는 잔류 수송대에 합류했다. 남은 수레들은 멈춘 자리에서 인원을 맞추고 본대 연락을 기다렸다.",
+          "kind": "fiction",
+          "growth": {
+            "stats": {
+              "intelligence": 1
+            },
+            "fame": 1
+          }
+        },
+        {
+          "eventId": "event-186-meiyang",
+          "recordId": "event-186-meiyang:report",
+          "recordType": "outcome",
+          "year": 186,
+          "month": null,
+          "title": "[미양 전투와 토벌군의 추격?!]",
+          "detail": "반란군의 장안 방면 진출은 저지됐지만 서방의 반란은 남았다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-186-he-qi",
+          "recordId": "event-186-he-qi:remote-news",
+          "recordType": "news",
+          "year": 186,
+          "month": null,
+          "title": "[하제의 현성 방어와 지방 진압?!]",
+          "detail": "현성 공격을 물리치고 지방의 저항을 평정했다.",
+          "kind": "history"
+        },
+        {
+          "recordType": "personal",
+          "recordId": "186:chapter-5-3-service:offers:join-dong-zhuo",
+          "eventId": "chapter-5-3-service",
+          "year": 186,
+          "month": null,
+          "title": "[이제 누구 밑에서 일하지?!] · [동탁 휘하에 지원한다]",
+          "detail": "성공 · 동탁 측이 지원을 받아들인다.\n동탁 측 연락책이 내 말을 듣고 부대에 들어와도 좋다고 했다. 나는 말단 병사로 합류해 일행의 다음 길에 함께하기로 했다.",
+          "kind": "fiction",
+          "growth": {
+            "stats": {},
+            "fame": 2
+          },
+          "check": {
+            "weights": {
+              "charisma": 1
+            },
+            "playerScore": 100,
+            "multiplier": 1.5,
+            "chance": 100,
+            "roll": 0,
+            "success": true
+          }
+        },
+        {
+          "year": 187,
+          "month": null,
+          "title": "187년, 이어지는 발걸음",
+          "detail": "함께 지내기로 한 사람들과 길을 이어 갔다. 새해에도 내 선택과 인연은 그대로 남아 있다.",
+          "kind": "action"
+        },
+        {
+          "eventId": "event-187-han-sui-claim",
+          "recordId": "event-187-han-sui-claim:background",
+          "recordType": "background",
+          "year": 187,
+          "month": null,
+          "title": "[한수가 투항했다고?!]",
+          "detail": "연표에는 187년 한수의 투항이 적혀 있다.",
+          "kind": "history"
+        },
+        {
+          "recordType": "personal",
+          "recordId": "187:event-187-han-sui-claim:scene:alternate",
+          "eventId": "event-187-han-sui-claim",
+          "year": 187,
+          "month": null,
+          "title": "[한수가 투항했다고?!] · [연락책에게 소문의 출처를 묻는다]",
+          "detail": "성공 · 상대의 확인을 받는다.\n연락책에게 누가 전한 소식인지 물었다. 연락책이 확인한 범위를 짚어 주어 과장된 말을 걸러냈다.",
+          "kind": "fiction",
+          "growth": {
+            "stats": {},
+            "fame": 2
+          },
+          "check": {
+            "weights": {
+              "charisma": 1
+            },
+            "playerScore": 100,
+            "multiplier": 1.5,
+            "chance": 100,
+            "roll": 99,
+            "success": true
+          }
+        },
+        {
+          "recordType": "personal",
+          "recordId": "187:event-187-han-sui-claim:next-scene:continue",
+          "eventId": "event-187-han-sui-claim",
+          "year": 187,
+          "month": null,
+          "title": "[한수가 투항했다고?!] · [확인한 내용만 옮긴다]",
+          "detail": "나는 확인한 내용만 옮겼다. 연락책은 내가 확인한 문구만 받아 적고 해산 명령과는 구별했다.",
+          "kind": "fiction",
+          "growth": {
+            "stats": {
+              "intelligence": 1
+            },
+            "fame": 1
+          }
+        },
+        {
+          "eventId": "event-187-han-sui-claim",
+          "recordId": "event-187-han-sui-claim:report",
+          "recordType": "outcome",
+          "year": 187,
+          "month": null,
+          "title": "[한수가 투항했다고?!]",
+          "detail": "한수가 조정에 투항했다는 소식이 전해졌다. 현지 병력의 해산 여부는 확인되지 않았다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-187-tao-qian",
+          "recordId": "event-187-tao-qian:remote-news",
+          "recordType": "news",
+          "year": 187,
+          "month": null,
+          "title": "[도겸의 황건 잔당 진압?!]",
+          "detail": "도겸의 서주 기반이 강화됐다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-187-zhang-rebellion",
+          "recordId": "event-187-zhang-rebellion:remote-news",
+          "recordType": "news",
+          "year": 187,
+          "month": null,
+          "title": "[장거·장순의 난?!]",
+          "detail": "봉기가 여러 지역으로 확산돼 후속 진압이 필요해졌다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-187-liu-bei-service",
+          "recordId": "event-187-liu-bei-service:remote-news",
+          "recordType": "news",
+          "year": 187,
+          "month": null,
+          "title": "[유비의 안희 부임과 관직 이탈?!]",
+          "detail": "유비의 일행은 관직에 정착하지 못하고 이동했다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-187-ou-xing",
+          "recordId": "event-187-ou-xing:remote-news",
+          "recordType": "news",
+          "year": 187,
+          "month": null,
+          "title": "[우성의 난과 손견의 진압?!]",
+          "detail": "손견이 진압 공로를 인정받았다.",
+          "kind": "history"
+        },
+        {
+          "recordType": "personal",
+          "recordId": "187:chapter-5-4-service:stay-or-leave:stay",
+          "eventId": "chapter-5-4-service",
+          "year": 187,
+          "month": null,
+          "title": "[이제 누구 밑에서 일하지?!] · [지금 소속을 따른다]",
+          "detail": "나는 동탁의 일행과 계속 함께하기로 했다. 다음 활동지로 가는 길도 일행과 같이 나섰다.",
+          "kind": "fiction",
+          "growth": {
+            "stats": {},
+            "fame": 1
+          }
+        },
+        {
+          "recordType": "personal",
+          "recordId": "187:chapter-5-4-service:duty-dong-zhuo:wait",
+          "eventId": "chapter-5-4-service",
+          "year": 187,
+          "month": null,
+          "title": "[이제 누구 밑에서 일하지?!] · [맡은 거점에서 대기한다]",
+          "detail": "나는 연락책에게 내가 남을 곳을 알리고 거점에서 기다렸다. 연락책은 다음 임무가 오면 그곳으로 부르겠다고 했다.",
+          "kind": "fiction",
+          "growth": {
+            "stats": {
+              "intelligence": 1
+            },
+            "fame": 1
+          }
+        },
+        {
+          "year": 188,
+          "month": null,
+          "title": "188년, 이어지는 발걸음",
+          "detail": "함께 지내기로 한 사람들과 길을 이어 갔다. 새해에도 내 선택과 인연은 그대로 남아 있다.",
+          "kind": "action"
+        },
+        {
+          "eventId": "event-188-zhang-yan",
+          "recordId": "event-188-zhang-yan:remote-news",
+          "recordType": "news",
+          "year": 188,
+          "month": null,
+          "title": "[장연의 조정 귀순과 자치?!]",
+          "detail": "장연의 세력 기반을 유지한 귀순이 이루어졌다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-188-ma-xiang",
+          "recordId": "event-188-ma-xiang:remote-news",
+          "recordType": "news",
+          "year": 188,
+          "month": null,
+          "title": "[마상·조지의 난과 가룡의 진압?!]",
+          "detail": "가룡이 진압한 뒤 유언의 익주 부임이 이어졌다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-188-liu-yan",
+          "recordId": "event-188-liu-yan:remote-news",
+          "recordType": "news",
+          "year": 188,
+          "month": null,
+          "title": "[유언의 익주 부임?!]",
+          "detail": "유언이 익주에서 세력 기반을 다졌다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-188-xiyuan",
+          "recordId": "event-188-xiyuan:remote-news",
+          "recordType": "news",
+          "year": 188,
+          "month": null,
+          "title": "[서원팔교위 설치?!]",
+          "detail": "황제 직속 서원군의 지휘 체계가 설치됐다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-188-youzhou-settlement",
+          "recordId": "event-188-youzhou-settlement:remote-news",
+          "recordType": "news",
+          "year": 188,
+          "month": null,
+          "title": "[유우의 유주 회유와 진압?!]",
+          "detail": "반란군 연합이 약해지고 지도부가 달아났다.",
+          "kind": "history"
+        }
+      ],
+      "historyLog": [
+        {
+          "eventId": "chapter-5-1-opening",
+          "year": 184,
+          "month": null,
+          "title": "[갑자기 분위기 황건적?!]",
+          "detail": "관군 연락책이 내 말을 듣더니 방패 하나를 빌려줬다. 아직 누구의 병사가 된 건 아니지만, 적어도 누런 두건으로 오해받을 일은 줄었겠지.\n나는 유비 일행의 연락을 나르며 북쪽 길을 함께 걸었다. 아직 군적에 오른 병사는 아니지만 일행은 내 얼굴을 익혔다. 탁군에 도착하자마자 대흥산에 황건군이 모였다는 소리를 들었다. 안전한 동네 고르기는 벌써 틀린 것 같다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "battle-184-daxingshan",
+          "year": 184,
+          "month": null,
+          "title": "[관우랑 장비가 왜 여기서 나와?!]",
+          "detail": "정원지가 황건군 5만 명을 이끌고 탁군을 침략했다. 유주자사 유언은 유비에게 병력 500명을 주어 맞서도록 했다.\n나는 유비군의 지시대로 방패를 들고 전열을 따라 움직였다.\n유언군(유비 의용병)의 승리. 황건적 지휘관 정원지 및 부장 등무 전사. 황건적 대군 와해 및 대규모 투항. 유비 삼형제의 첫 출전이자 첫 승리.",
+          "kind": "history"
+        },
+        {
+          "eventId": "battle-184-qingzhou-city",
+          "year": 184,
+          "month": null,
+          "title": "[도망가는 척이라고는 안 했잖아?!]",
+          "detail": "탁군에서 부대를 따라 걸었더니 청주성이다. 발은 아픈데 눈앞에는 또 포위군이다.\n청주성이 황건군의 포위에 놓였다. 공경은 성 안에서 버티고 있고 유비 일행은 구원할 길을 찾고 있다.\n나는 유비를 따라 물러나며 추격하는 적을 매복이 있는 쪽으로 유인했다.\n한나라 관군(공경군·추정군·유비 의용병)의 승리. 청주성 포위망 해제 및 침공 황건적 격퇴. 유비의 매복 유인 전술 성공.",
+          "kind": "history"
+        },
+        {
+          "eventId": "battle-184-wan",
+          "year": 184,
+          "month": null,
+          "title": "[항복한다는데 칼은 왜 뽑아요?!]",
+          "detail": "저공이 죽고 진힐이 장만성을 격파했다는 소식을 들었다. 이제 조홍이 완성을 지킨다는데 이름 외우기도 전에 싸움이 또 시작이다.\n한나라 관군(주준, 진힐 등)의 완전한 승리. 남양 황건적 수령(장만성, 조홍, 한충, 손하) 전원 사망. 남양군 완성 수복 및 남양 일대 황건적 소탕 완료. 전 남양태수 저공 전사.",
+          "kind": "history"
+        },
+        {
+          "eventId": "battle-184-guangzong",
+          "year": 184,
+          "month": null,
+          "title": "[잠깐, 장군이 또 바뀐다고?!]",
+          "detail": "노식의 교체와 동탁의 패배 뒤 황보숭이 광종을 공격해 승리했다. 장량이 전사하고 광종의 황건군 거점이 함락됐다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "battle-184-xiaquyang",
+          "year": 184,
+          "month": null,
+          "title": "[이 성문만 넘으면 끝이라며?!]",
+          "detail": "한나라 관군의 결정적 대승. 지공장군 장보 참수. 황건적 10만여 명 참수 또는 생포. 적 시체로 경관(京觀) 축조. 장보 세력 및 기주 황건적 주력의 최종 박멸.",
+          "kind": "history"
+        },
+        {
+          "eventId": "chapter-5-1-closing",
+          "year": 184,
+          "month": null,
+          "title": "[살아남았는데 집은 어디지?!]",
+          "detail": "관군이 주요 길목을 장악했다는 소식을 들었다. 그래도 내 옆에는 돌아갈 곳 없는 사람들이 아직 앉아 있다.\n죽을 다 먹고 오늘 같이 움직인 사람들 이름을 되짚었다. 거창한 건 몰라도 내 손으로 바꾼 일 몇 개는 확실히 기억난다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "chapter-5-1-service",
+          "year": 184,
+          "month": null,
+          "title": "[이제 누구 밑에서 일하지?!]",
+          "detail": "실패 · 유비 측이 지원을 거절한다.\n유비 측 연락책은 지금 나를 받아들일 수 없다고 했다. 나는 합류하지 못한 채 짐을 챙겨 다른 길을 찾았다.\n나는 서방의 양주로 향하는 길에 올랐다. 새 고장에서는 어느 군주의 명령도 받지 않고 사람들과 소식을 찾아보기로 했다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-185-wang-fen",
+          "year": 185,
+          "month": null,
+          "title": "[왕분의 영제 폐위 모의?!]",
+          "detail": "폐위 모의가 실패했다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-185-liang-outbreak",
+          "year": 185,
+          "month": null,
+          "title": "[양주의 난 · 서방의 봉기?!]",
+          "detail": "서방의 봉기가 장안을 위협했다.\n실패 · 상대의 확인을 받지 못한다.\n주민들이 말을 듣지 않고 한꺼번에 몰렸다. 큰 무리를 이끌지 못해 가까운 사람들부터 불렀다.\n나는 곁에 남은 주민들에게 한꺼번에 나서지 말고 몇 사람씩 우회하자고 알렸다. 주민들은 서로 이름을 부르며 무리를 나누어 길을 돌았다.\n관군이 즉시 진압하지 못해 토벌군을 재편했다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-185-gongsun-command",
+          "year": 185,
+          "month": null,
+          "title": "[공손찬이 뽑혔다고?!]",
+          "detail": "공손찬의 선발과 장순의 불만이 이후 북방 정세의 배경이 됐다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-185-zhang-xiu",
+          "year": 185,
+          "month": null,
+          "title": "[장수의 국승 토벌?!]",
+          "detail": "국승이 조려 현장 유준을 죽였다.\n실패 · 상대의 확인을 받지 못한다.\n골목의 움직임을 확인하기 전에 무리가 몰려왔다. 나는 주민들에게 큰길에서 물러나라고 외쳤다.\n나는 위험 구역 밖에서 기다렸다. 경계병도 확인되지 않은 골목은 아직 위험하다며 주민들을 멈춰 세웠다.\n장수가 현장의 원수를 갚아 명성을 얻었다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "chapter-5-2-service",
+          "year": 185,
+          "month": null,
+          "title": "[이제 누구 밑에서 일하지?!]",
+          "detail": "아직 누구 밑으로 들어갈지 정하지 말자.\n나는 서방 전선로 향하는 길에 올랐다. 새 고장에서는 어느 군주의 명령도 받지 않고 사람들과 소식을 찾아보기로 했다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-186-meiyang",
+          "year": 186,
+          "month": null,
+          "title": "[미양 전투와 토벌군의 추격?!]",
+          "detail": "장온이 서방 토벌군을 이끌었다.\n실패 · 상대의 확인을 받지 못한다.\n뒤처진 수레를 한 줄로 모으지 못했다. 담당자는 흩어진 수레를 기다리며 수송대를 멈췄다.\n나는 잔류 수송대에 합류했다. 남은 수레들은 멈춘 자리에서 인원을 맞추고 본대 연락을 기다렸다.\n반란군의 장안 방면 진출은 저지됐지만 서방의 반란은 남았다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-186-he-qi",
+          "year": 186,
+          "month": null,
+          "title": "[하제의 현성 방어와 지방 진압?!]",
+          "detail": "현성 공격을 물리치고 지방의 저항을 평정했다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "chapter-5-3-service",
+          "year": 186,
+          "month": null,
+          "title": "[이제 누구 밑에서 일하지?!]",
+          "detail": "성공 · 동탁 측이 지원을 받아들인다.\n동탁 측 연락책이 내 말을 듣고 부대에 들어와도 좋다고 했다. 나는 말단 병사로 합류해 일행의 다음 길에 함께하기로 했다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-187-han-sui-claim",
+          "year": 187,
+          "month": null,
+          "title": "[한수가 투항했다고?!]",
+          "detail": "연표에는 187년 한수의 투항이 적혀 있다.\n성공 · 상대의 확인을 받는다.\n연락책에게 누가 전한 소식인지 물었다. 연락책이 확인한 범위를 짚어 주어 과장된 말을 걸러냈다.\n나는 확인한 내용만 옮겼다. 연락책은 내가 확인한 문구만 받아 적고 해산 명령과는 구별했다.\n한수가 조정에 투항했다는 소식이 전해졌다. 현지 병력의 해산 여부는 확인되지 않았다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-187-tao-qian",
+          "year": 187,
+          "month": null,
+          "title": "[도겸의 황건 잔당 진압?!]",
+          "detail": "도겸의 서주 기반이 강화됐다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-187-zhang-rebellion",
+          "year": 187,
+          "month": null,
+          "title": "[장거·장순의 난?!]",
+          "detail": "봉기가 여러 지역으로 확산돼 후속 진압이 필요해졌다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-187-liu-bei-service",
+          "year": 187,
+          "month": null,
+          "title": "[유비의 안희 부임과 관직 이탈?!]",
+          "detail": "유비의 일행은 관직에 정착하지 못하고 이동했다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-187-ou-xing",
+          "year": 187,
+          "month": null,
+          "title": "[우성의 난과 손견의 진압?!]",
+          "detail": "손견이 진압 공로를 인정받았다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "chapter-5-4-service",
+          "year": 187,
+          "month": null,
+          "title": "[이제 누구 밑에서 일하지?!]",
+          "detail": "나는 동탁의 일행과 계속 함께하기로 했다. 다음 활동지로 가는 길도 일행과 같이 나섰다.\n나는 연락책에게 내가 남을 곳을 알리고 거점에서 기다렸다. 연락책은 다음 임무가 오면 그곳으로 부르겠다고 했다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-188-zhang-yan",
+          "year": 188,
+          "month": null,
+          "title": "[장연의 조정 귀순과 자치?!]",
+          "detail": "장연의 세력 기반을 유지한 귀순이 이루어졌다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-188-ma-xiang",
+          "year": 188,
+          "month": null,
+          "title": "[마상·조지의 난과 가룡의 진압?!]",
+          "detail": "가룡이 진압한 뒤 유언의 익주 부임이 이어졌다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-188-liu-yan",
+          "year": 188,
+          "month": null,
+          "title": "[유언의 익주 부임?!]",
+          "detail": "유언이 익주에서 세력 기반을 다졌다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-188-xiyuan",
+          "year": 188,
+          "month": null,
+          "title": "[서원팔교위 설치?!]",
+          "detail": "황제 직속 서원군의 지휘 체계가 설치됐다.",
+          "kind": "history"
+        },
+        {
+          "eventId": "event-188-youzhou-settlement",
+          "year": 188,
+          "month": null,
+          "title": "[유우의 유주 회유와 진압?!]",
+          "detail": "반란군 연합이 약해지고 지도부가 달아났다.",
+          "kind": "history"
+        }
+      ],
+      "appliedEventIds": [
+        "chapter-5-1-opening",
+        "chapter-5-1-yellow-conquest",
+        "battle-184-daxingshan",
+        "battle-184-qingzhou-city",
+        "battle-184-wan",
+        "battle-184-guangzong",
+        "battle-184-xiaquyang",
+        "chapter-5-1-closing",
+        "chapter-5-1-service",
+        "event-185-wang-fen",
+        "event-185-liang-outbreak",
+        "event-185-gongsun-command",
+        "event-185-zhang-xiu",
+        "chapter-5-2-service",
+        "event-186-meiyang",
+        "event-186-he-qi",
+        "chapter-5-3-service",
+        "event-187-han-sui-claim",
+        "event-187-tao-qian",
+        "event-187-zhang-rebellion",
+        "event-187-liu-bei-service",
+        "event-187-ou-xing",
+        "chapter-5-4-service",
+        "event-188-zhang-yan",
+        "event-188-ma-xiang",
+        "event-188-liu-yan",
+        "event-188-xiyuan",
+        "event-188-youzhou-settlement"
+      ]
+    },
+    "decisions": [
+      {
+        "recordType": "personal",
+        "recordId": "184:chapter-5-1-opening:side:han",
+        "eventId": "chapter-5-1-opening",
+        "year": 184,
+        "month": null,
+        "title": "[갑자기 분위기 황건적?!] · [관군에 붙는다]",
+        "detail": "관군 연락책이 내 말을 듣더니 방패 하나를 빌려줬다. 아직 누구의 병사가 된 건 아니지만, 적어도 누런 두건으로 오해받을 일은 줄었겠지.",
+        "kind": "fiction",
+        "growth": {
+          "stats": {
+            "charisma": 1
+          },
+          "fame": 1
+        }
+      },
+      {
+        "recordType": "personal",
+        "recordId": "184:chapter-5-1-opening:han-company:liu",
+        "eventId": "chapter-5-1-opening",
+        "year": 184,
+        "month": null,
+        "title": "[갑자기 분위기 황건적?!] · [유비 일행과 동행한다]",
+        "detail": "나는 유비 일행의 연락을 나르며 북쪽 길을 함께 걸었다. 아직 군적에 오른 병사는 아니지만 일행은 내 얼굴을 익혔다. 탁군에 도착하자마자 대흥산에 황건군이 모였다는 소리를 들었다. 안전한 동네 고르기는 벌써 틀린 것 같다.",
+        "kind": "fiction",
+        "growth": {
+          "stats": {
+            "charisma": 1
+          },
+          "fame": 1
+        }
+      },
+      {
+        "recordType": "personal",
+        "recordId": "184:battle-184-daxingshan:han-plan:follow",
+        "eventId": "battle-184-daxingshan",
+        "year": 184,
+        "month": null,
+        "title": "[관우랑 장비가 왜 여기서 나와?!] · [유비군을 따라간다]",
+        "detail": "나는 유비군의 지시대로 방패를 들고 전열을 따라 움직였다.",
+        "kind": "fiction",
+        "growth": {
+          "stats": {
+            "leadership": 1
+          },
+          "fame": 1
+        }
+      },
+      {
+        "recordType": "personal",
+        "recordId": "184:battle-184-qingzhou-city:han-plan:follow",
+        "eventId": "battle-184-qingzhou-city",
+        "year": 184,
+        "month": null,
+        "title": "[도망가는 척이라고는 안 했잖아?!] · [유비를 따라 물러난다]",
+        "detail": "나는 유비를 따라 물러나며 추격하는 적을 매복이 있는 쪽으로 유인했다.",
+        "kind": "fiction",
+        "growth": {
+          "stats": {
+            "intelligence": 1
+          },
+          "fame": 1
+        }
+      },
+      {
+        "recordType": "personal",
+        "recordId": "184:chapter-5-1-closing:record:done",
+        "eventId": "chapter-5-1-closing",
+        "year": 184,
+        "month": null,
+        "title": "[살아남았는데 집은 어디지?!] · [죽부터 먹는다]",
+        "detail": "죽을 다 먹고 오늘 같이 움직인 사람들 이름을 되짚었다. 거창한 건 몰라도 내 손으로 바꾼 일 몇 개는 확실히 기억난다.",
+        "kind": "fiction",
+        "growth": {
+          "stats": {
+            "strength": 1
+          },
+          "fame": 1
+        }
+      },
+      {
+        "recordType": "personal",
+        "recordId": "184:chapter-5-1-service:offers:join-liu-bei",
+        "eventId": "chapter-5-1-service",
+        "year": 184,
+        "month": null,
+        "title": "[이제 누구 밑에서 일하지?!] · [유비 휘하에 지원한다]",
+        "detail": "실패 · 유비 측이 지원을 거절한다.\n유비 측 연락책은 지금 나를 받아들일 수 없다고 했다. 나는 합류하지 못한 채 짐을 챙겨 다른 길을 찾았다.",
+        "kind": "fiction",
+        "growth": {
+          "stats": {
+            "charisma": 1
+          },
+          "fame": 1
+        },
+        "check": {
+          "weights": {
+            "charisma": 1
+          },
+          "playerScore": 0,
+          "multiplier": 1.5,
+          "chance": 0,
+          "roll": 99,
+          "success": false
+        }
+      },
+      {
+        "recordType": "personal",
+        "recordId": "184:chapter-5-1-service:travel:liangzhou",
+        "eventId": "chapter-5-1-service",
+        "year": 184,
+        "month": null,
+        "title": "[이제 누구 밑에서 일하지?!] · [서방의 양주로 향한다]",
+        "detail": "나는 서방의 양주로 향하는 길에 올랐다. 새 고장에서는 어느 군주의 명령도 받지 않고 사람들과 소식을 찾아보기로 했다.",
+        "kind": "fiction",
+        "growth": {
+          "stats": {
+            "intelligence": 1
+          },
+          "fame": 1
+        }
+      },
+      {
+        "recordType": "personal",
+        "recordId": "185:event-185-liang-outbreak:scene:alternate",
+        "eventId": "event-185-liang-outbreak",
+        "year": 185,
+        "month": null,
+        "title": "[양주의 난 · 서방의 봉기?!] · [주민들에게 피란 순서를 설명한다]",
+        "detail": "실패 · 상대의 확인을 받지 못한다.\n주민들이 말을 듣지 않고 한꺼번에 몰렸다. 큰 무리를 이끌지 못해 가까운 사람들부터 불렀다.",
+        "kind": "fiction",
+        "growth": {
+          "stats": {
+            "charisma": 1
+          },
+          "fame": 1
+        },
+        "check": {
+          "weights": {
+            "charisma": 1
+          },
+          "playerScore": 1,
+          "multiplier": 1.5,
+          "chance": 1,
+          "roll": 99,
+          "success": false
+        }
+      },
+      {
+        "recordType": "personal",
+        "recordId": "185:event-185-liang-outbreak:next-scene:recover",
+        "eventId": "event-185-liang-outbreak",
+        "year": 185,
+        "month": null,
+        "title": "[양주의 난 · 서방의 봉기?!] · [몇 사람씩 우회시킨다]",
+        "detail": "나는 곁에 남은 주민들에게 한꺼번에 나서지 말고 몇 사람씩 우회하자고 알렸다. 주민들은 서로 이름을 부르며 무리를 나누어 길을 돌았다.",
+        "kind": "fiction",
+        "growth": {
+          "stats": {
+            "intelligence": 1
+          },
+          "fame": 1
+        }
+      },
+      {
+        "recordType": "personal",
+        "recordId": "185:event-185-zhang-xiu:scene:alternate",
+        "eventId": "event-185-zhang-xiu",
+        "year": 185,
+        "month": null,
+        "title": "[장수의 국승 토벌?!] · [현청 주변 길목을 감시한다]",
+        "detail": "실패 · 상대의 확인을 받지 못한다.\n골목의 움직임을 확인하기 전에 무리가 몰려왔다. 나는 주민들에게 큰길에서 물러나라고 외쳤다.",
+        "kind": "fiction",
+        "growth": {
+          "stats": {
+            "intelligence": 1
+          },
+          "fame": 1
+        },
+        "check": {
+          "weights": {
+            "intelligence": 1
+          },
+          "playerScore": 73,
+          "multiplier": 1.5,
+          "chance": 73,
+          "roll": 99,
+          "success": false
+        }
+      },
+      {
+        "recordType": "personal",
+        "recordId": "185:event-185-zhang-xiu:next-scene:recover",
+        "eventId": "event-185-zhang-xiu",
+        "year": 185,
+        "month": null,
+        "title": "[장수의 국승 토벌?!] · [위험 구역 밖에서 기다린다]",
+        "detail": "나는 위험 구역 밖에서 기다렸다. 경계병도 확인되지 않은 골목은 아직 위험하다며 주민들을 멈춰 세웠다.",
+        "kind": "fiction",
+        "growth": {
+          "stats": {
+            "intelligence": 1
+          },
+          "fame": 1
+        }
+      },
+      {
+        "recordType": "personal",
+        "recordId": "185:chapter-5-2-service:offers:travel",
+        "eventId": "chapter-5-2-service",
+        "year": 185,
+        "month": null,
+        "title": "[이제 누구 밑에서 일하지?!] · [재야로 길을 나선다]",
+        "detail": "아직 누구 밑으로 들어갈지 정하지 말자.",
+        "kind": "fiction",
+        "growth": {
+          "stats": {
+            "intelligence": 1
+          },
+          "fame": 1
+        }
+      },
+      {
+        "recordType": "personal",
+        "recordId": "185:chapter-5-2-service:travel:liangzhou",
+        "eventId": "chapter-5-2-service",
+        "year": 185,
+        "month": null,
+        "title": "[이제 누구 밑에서 일하지?!] · [서방 전선로 향한다]",
+        "detail": "나는 서방 전선로 향하는 길에 올랐다. 새 고장에서는 어느 군주의 명령도 받지 않고 사람들과 소식을 찾아보기로 했다.",
+        "kind": "fiction",
+        "growth": {
+          "stats": {
+            "intelligence": 1
+          },
+          "fame": 1
+        }
+      },
+      {
+        "recordType": "personal",
+        "recordId": "186:event-186-meiyang:scene:alternate",
+        "eventId": "event-186-meiyang",
+        "year": 186,
+        "month": null,
+        "title": "[미양 전투와 토벌군의 추격?!] · [수송대의 후미를 정렬한다]",
+        "detail": "실패 · 상대의 확인을 받지 못한다.\n뒤처진 수레를 한 줄로 모으지 못했다. 담당자는 흩어진 수레를 기다리며 수송대를 멈췄다.",
+        "kind": "fiction",
+        "growth": {
+          "stats": {
+            "leadership": 1
+          },
+          "fame": 1
+        },
+        "check": {
+          "weights": {
+            "leadership": 1.5,
+            "strength": 1
+          },
+          "playerScore": 177.5,
+          "multiplier": 1.5,
+          "chance": 71,
+          "roll": 99,
+          "success": false
+        }
+      },
+      {
+        "recordType": "personal",
+        "recordId": "186:event-186-meiyang:next-scene:recover",
+        "eventId": "event-186-meiyang",
+        "year": 186,
+        "month": null,
+        "title": "[미양 전투와 토벌군의 추격?!] · [잔류 수송대에 합류한다]",
+        "detail": "나는 잔류 수송대에 합류했다. 남은 수레들은 멈춘 자리에서 인원을 맞추고 본대 연락을 기다렸다.",
+        "kind": "fiction",
+        "growth": {
+          "stats": {
+            "intelligence": 1
+          },
+          "fame": 1
+        }
+      },
+      {
+        "recordType": "personal",
+        "recordId": "186:chapter-5-3-service:offers:join-dong-zhuo",
+        "eventId": "chapter-5-3-service",
+        "year": 186,
+        "month": null,
+        "title": "[이제 누구 밑에서 일하지?!] · [동탁 휘하에 지원한다]",
+        "detail": "성공 · 동탁 측이 지원을 받아들인다.\n동탁 측 연락책이 내 말을 듣고 부대에 들어와도 좋다고 했다. 나는 말단 병사로 합류해 일행의 다음 길에 함께하기로 했다.",
+        "kind": "fiction",
+        "growth": {
+          "stats": {},
+          "fame": 2
+        },
+        "check": {
+          "weights": {
+            "charisma": 1
+          },
+          "playerScore": 100,
+          "multiplier": 1.5,
+          "chance": 100,
+          "roll": 0,
+          "success": true
+        }
+      },
+      {
+        "recordType": "personal",
+        "recordId": "187:event-187-han-sui-claim:scene:alternate",
+        "eventId": "event-187-han-sui-claim",
+        "year": 187,
+        "month": null,
+        "title": "[한수가 투항했다고?!] · [연락책에게 소문의 출처를 묻는다]",
+        "detail": "성공 · 상대의 확인을 받는다.\n연락책에게 누가 전한 소식인지 물었다. 연락책이 확인한 범위를 짚어 주어 과장된 말을 걸러냈다.",
+        "kind": "fiction",
+        "growth": {
+          "stats": {},
+          "fame": 2
+        },
+        "check": {
+          "weights": {
+            "charisma": 1
+          },
+          "playerScore": 100,
+          "multiplier": 1.5,
+          "chance": 100,
+          "roll": 99,
+          "success": true
+        }
+      },
+      {
+        "recordType": "personal",
+        "recordId": "187:event-187-han-sui-claim:next-scene:continue",
+        "eventId": "event-187-han-sui-claim",
+        "year": 187,
+        "month": null,
+        "title": "[한수가 투항했다고?!] · [확인한 내용만 옮긴다]",
+        "detail": "나는 확인한 내용만 옮겼다. 연락책은 내가 확인한 문구만 받아 적고 해산 명령과는 구별했다.",
+        "kind": "fiction",
+        "growth": {
+          "stats": {
+            "intelligence": 1
+          },
+          "fame": 1
+        }
+      },
+      {
+        "recordType": "personal",
+        "recordId": "187:chapter-5-4-service:stay-or-leave:stay",
+        "eventId": "chapter-5-4-service",
+        "year": 187,
+        "month": null,
+        "title": "[이제 누구 밑에서 일하지?!] · [지금 소속을 따른다]",
+        "detail": "나는 동탁의 일행과 계속 함께하기로 했다. 다음 활동지로 가는 길도 일행과 같이 나섰다.",
+        "kind": "fiction",
+        "growth": {
+          "stats": {},
+          "fame": 1
+        }
+      },
+      {
+        "recordType": "personal",
+        "recordId": "187:chapter-5-4-service:duty-dong-zhuo:wait",
+        "eventId": "chapter-5-4-service",
+        "year": 187,
+        "month": null,
+        "title": "[이제 누구 밑에서 일하지?!] · [맡은 거점에서 대기한다]",
+        "detail": "나는 연락책에게 내가 남을 곳을 알리고 거점에서 기다렸다. 연락책은 다음 임무가 오면 그곳으로 부르겠다고 했다.",
+        "kind": "fiction",
+        "growth": {
+          "stats": {
+            "intelligence": 1
+          },
+          "fame": 1
+        }
+      }
+    ],
+    "introChoicePending": false
+  }
+}
