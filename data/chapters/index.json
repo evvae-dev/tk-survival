@@ -21,6 +21,13 @@
       "title": "하진 피살과 동탁의 입경",
       "source": "docs/romance-three-kingdoms/chapters/003.md",
       "status": "complete"
+    },
+    {
+      "id": "chapter-004",
+      "order": 4,
+      "title": "황제 폐립과 조조의 도피·거병",
+      "source": "docs/romance-three-kingdoms/chapters/004.md",
+      "status": "complete"
     }
   ]
 }

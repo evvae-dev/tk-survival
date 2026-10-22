@@ -34,6 +34,8 @@ type Props = {
   onAdvanceRecord: (key: string) => void;
   onReset: () => void;
   onStats: (delta: Partial<Stats>) => void;
+  onContinue?: () => void;
+  continuationTitle?: string;
 };
 export default function GameDashboard({
   game,
@@ -43,6 +45,8 @@ export default function GameDashboard({
   onAdvanceRecord,
   onReset,
   onStats,
+  onContinue,
+  continuationTitle,
 }: Props) {
   const [awakening, setAwakening] = useState(() => !!game.introChoicePending);
   const [modal, setModal] = useState<Modal>(null);
@@ -152,6 +156,7 @@ export default function GameDashboard({
                 <p>
                   {died ? `${game.name}의 이야기는 낙양 길목의 일기토에서 끝났습니다. 이후 사건은 이 플레이에서 진행되지 않습니다.` : executed ? `${game.name}은(는) 전투에서 패해 생포된 뒤 처형당했습니다. 원정은 여기서 끝납니다.` : founded ? '동탁군·유비군·조조군을 차례로 격파하고 황제를 생포했습니다. 황건의 나라가 세워졌습니다.' : <>{game.name}의 {game.turn}번의 판단이<br />{view.year}년까지의 여정에 흔적을 남겼습니다.</>}
                 </p>
+                {continuationTitle && onContinue && <button className={s.primaryButton} onClick={onContinue}>{continuationTitle} 이어하기 →</button>}
                 <button className={s.primaryButton} onClick={onReset}>
                   새로운 인물로 시작 →
                 </button>

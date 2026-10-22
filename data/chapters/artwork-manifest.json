@@ -43,6 +43,18 @@
     {
       "path": "public/art/scenes/r003-refuge.png",
       "sha256": "13e811eadf39e73afc01023c0e1effb839679825a4e6ba808dc665e180ea46c6"
+    },
+    {
+      "path": "public/art/scenes/r004-petition.png",
+      "sha256": "cdbc742ba3272633e9469a7f56af832b9e24a38db3847ec91b40c0d8313b837c"
+    },
+    {
+      "path": "public/art/scenes/r004-mirror.png",
+      "sha256": "df7acb360b4858b9606d209e51400794c59493869429b393795a5d02631b8bf8"
+    },
+    {
+      "path": "public/art/scenes/r004-pig.png",
+      "sha256": "d2635b58f5878d3f04b54610084fd0574d65c24397c44c3ab6be2e5f311b35ba"
     }
   ],
   "generationRules": "docs/IMAGE_GENERATION_RULES.md",

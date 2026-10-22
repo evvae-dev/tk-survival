@@ -13,4 +13,6 @@ npm run start -- --hostname 127.0.0.1 --port 4173
 node .agents/skills/playwright-page-check/scripts/check-story-chapters.cjs http://127.0.0.1:4173 001 /tmp/tk-story-browser-001
 ```
 
-`002`, `003`도 같은 방식으로 검증한다. A/B/C 성공·실패의 실제 엔진 상태를 모아 조건별 장면을 방문하고 이미지·PC/모바일·짧은 화면·관리자 편집·저장·복원·게임 반영을 확인한다. 캡처와 실제 테스트 결과는 `docs/development/rebuild-chapters-1-3.md`에 기록한다.
+`002`, `003`, `004`도 같은 방식으로 검증한다. A/B/C 성공·실패의 실제 엔진 상태를 모아 조건별 장면을 방문하고 이미지·PC/모바일·짧은 화면·관리자 편집·저장·복원·게임 반영을 확인한다. 캡처와 실제 테스트 결과는 `docs/development/rebuild-chapters-1-3.md`에 기록한다.
+
+완료 저장의 새 화 이어하기는 `continuationEvent`와 `continueStory`를 사용한다. 완료 상태를 자동으로 바꾸지 않으며 과거 완료 챕터 뒤의 신규 사건이 있을 때만 버튼을 연다. 전사·처형·통일 엔딩은 제외한다.

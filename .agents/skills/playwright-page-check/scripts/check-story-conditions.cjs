@@ -4,7 +4,7 @@ const events=JSON.parse(fs.readFileSync('data/history/events.json','utf8'));
 const states=JSON.parse(fs.readFileSync('/tmp/tk-story-fixtures/c-success.json','utf8')).states;
 fs.mkdirSync(out,{recursive:true});
 (async()=>{const browser=await launchBrowser();const reports=[];try{
- for(const chapter of ['001','002','003']){
+ for(const chapter of (process.argv[4]?process.argv[4].split(','):['001','002','003'])){
   const e=events.find(e=>e.chapterId===`chapter-${chapter}`);
   const context=await browser.newContext({viewport:{width:1440,height:1000},reducedMotion:'reduce'});const page=await context.newPage();const errors=[];page.on('pageerror',err=>errors.push(err.message));
   console.log('검증 시작',chapter);await page.goto(`${url}/admin/events?event=${e.id}`);await page.getByLabel('사건 ID',{exact:true}).waitFor();

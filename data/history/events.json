@@ -13175,7 +13175,12 @@
     "prerequisiteEventIds": [
       "r003-07"
     ],
-    "connections": [],
+    "connections": [
+      {
+        "targetId": "r004-01",
+        "label": "다음 챕터"
+      }
+    ],
     "year": 189,
     "month": null,
     "precision": "year",
@@ -14257,6 +14262,5346 @@
           "id": "outcome-if-1-no",
           "source": "outcome-if-1",
           "target": "outcome-2",
+          "sourceHandle": "no"
+        }
+      ],
+      "passiveEffects": []
+    }
+  },
+  {
+    "id": "r004-01",
+    "chapterId": "chapter-004",
+    "sequence": 1,
+    "prerequisiteEventIds": [
+      "r003-08"
+    ],
+    "connections": [
+      {
+        "targetId": "r004-02",
+        "label": "다음 장면"
+      }
+    ],
+    "year": 189,
+    "month": null,
+    "precision": "year",
+    "calendar": "lunar",
+    "title": "[원소 탈출, 동아줄은 밖에 있다]",
+    "summary": "원소는 동탁의 폐립에 항변한 뒤 수도를 떠났다. 동탁은 원씨 가문의 영향력을 고려해 추격 대신 회유할 여지를 남겼다.",
+    "regionIds": [
+      "luoyang"
+    ],
+    "factionIds": [
+      "han",
+      "dong-zhuo",
+      "cao-cao"
+    ],
+    "relatedPeople": [
+      "원소",
+      "동탁"
+    ],
+    "relatedOfficerIds": [
+      "rtk14-0035",
+      "rtk14-0736"
+    ],
+    "category": "novel",
+    "source": {
+      "title": "삼국지연의 제4회 사건 문서",
+      "record": "원소는 동탁의 폐립에 항변한 뒤 수도를 떠났다. 동탁은 원씨 가문의 영향력을 고려해 추격 대신 회유할 여지를 남겼다."
+    },
+    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작.",
+    "flow": {
+      "nodes": [
+        {
+          "id": "start",
+          "type": "start",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "data": {
+            "label": "황제 폐립과 조조의 도피·거병"
+          }
+        },
+        {
+          "id": "end",
+          "type": "end",
+          "position": {
+            "x": 0,
+            "y": 2720
+          },
+          "data": {
+            "label": "다음 사건"
+          }
+        },
+        {
+          "id": "entry",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 340
+          },
+          "data": {
+            "label": "현장 도착",
+            "text": "나는 군영 연락을 알아보려고 낙양의 역참으로 돌아왔다. 연회장 쪽에서 원소가 동탁에게 맞섰다는 말이 퍼지자 성문 검문이 바빠졌다.",
+            "effects": [
+              {
+                "type": "region",
+                "value": "luoyang"
+              }
+            ],
+            "silent": false
+          }
+        },
+        {
+          "id": "background",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 680
+          },
+          "data": {
+            "label": "사건 배경",
+            "text": "동탁은 폐립 논의를 다시 밀어붙였다. 원소는 칼을 짚고 반대했고 신하들은 두 사람 사이에서 입을 다물었다.",
+            "recordType": "background",
+            "effects": []
+          }
+        },
+        {
+          "id": "scene",
+          "type": "choice",
+          "position": {
+            "x": 0,
+            "y": 1020
+          },
+          "data": {
+            "label": "원소 탈출, 동아줄은 밖에 있다",
+            "text": "원소가 칼을 빼고도 살아서 나가는 장면은 알고 있었다. 문제는 그를 따라 움직이는 사람까지 무사하다는 보장이 없다는 거다. 출입 문서 하나를 잘못 만지면 도주 공범으로 찍힌다. 지금 붙잡을 건 원소의 소매일까, 성문이 닫히기 전의 몇 분일까?",
+            "artwork": {
+              "src": "/art/choices/official.png",
+              "alt": "권력 다툼 속에서 문서를 확인하는 주인공"
+            },
+            "options": [
+              {
+                "id": "a",
+                "title": "[추격 명부의 가족·수행원 항목을 따로 떼어 낸다]",
+                "description": "연좌될 사람부터 분리하자. 문서를 건드린 흔적이 남으면 내가 대신 잡힐 수 있다.",
+                "artwork": {
+                  "src": "/art/choices/official.png",
+                  "alt": "확인할 문서와 증언을 담당자에게 전달하는 주인공"
+                }
+              },
+              {
+                "id": "b",
+                "title": "[원소 측 전령에게 외곽 숙소를 알려 준다]",
+                "description": "대놓고 가신을 자처하기보다 쓸 만한 길 하나를 알려 주자.",
+                "artwork": {
+                  "src": "/art/choices/official.png",
+                  "alt": "원소 측 전령에게 외곽 숙소를 알려 준다"
+                }
+              },
+              {
+                "id": "c",
+                "title": "[성문 행렬에서 빠져 숙소로 돌아간다]",
+                "description": "권력자의 탈출 행렬 맨 끝에 서는 것도 위험하다.",
+                "outcome": "추격 명단에 직접 관여하지 않음",
+                "artwork": {
+                  "src": "/art/choices/travel-wagons.png",
+                  "alt": "충돌 현장을 벗어나 수레와 숙소 쪽으로 이동하는 주인공"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "scene-a-check",
+          "type": "check",
+          "position": {
+            "x": -420,
+            "y": 1360
+          },
+          "data": {
+            "label": "추격 명부의 가족·수행원 항목을 따로 떼어 낸다 판정",
+            "check": {
+              "kind": "politics",
+              "success": "원씨 일족 일부의 피신 준비",
+              "failure": "문서 조작 의심·피신 준비 실패",
+              "successNarrative": "나는 수행원과 가족 명단의 소속 확인을 요구해 추격 문서에서 분리했다. 서리가 재확인을 맡으면서 일부 일족이 성문을 빠져나갈 시간을 얻었다.",
+              "failureNarrative": "나는 명단의 빈칸을 지적했지만 서리는 도주를 돕느냐며 문서를 거뒀다. 이름을 더 남기기 전에 역참 뒤편으로 물러났다."
+            }
+          }
+        },
+        {
+          "id": "scene-a-ok",
+          "type": "result",
+          "position": {
+            "x": -630,
+            "y": 1700
+          },
+          "data": {
+            "label": "scene-a-ok",
+            "text": "나는 수행원과 가족 명단의 소속 확인을 요구해 추격 문서에서 분리했다. 서리가 재확인을 맡으면서 일부 일족이 성문을 빠져나갈 시간을 얻었다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "yuanFamilyReady",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "scene-a-fail",
+          "type": "result",
+          "position": {
+            "x": -210,
+            "y": 1700
+          },
+          "data": {
+            "label": "scene-a-fail",
+            "text": "나는 명단의 빈칸을 지적했지만 서리는 도주를 돕느냐며 문서를 거뒀다. 이름을 더 남기기 전에 역참 뒤편으로 물러났다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "scene-b-check",
+          "type": "check",
+          "position": {
+            "x": 0,
+            "y": 1360
+          },
+          "data": {
+            "label": "원소 측 전령에게 외곽 숙소를 알려 준다 판정",
+            "check": {
+              "kind": "relationship",
+              "success": "원소 측 연락 통로 확보",
+              "failure": "접촉 거절",
+              "successNarrative": "나는 원소 측 전령에게 검문이 덜한 숙소 위치를 전했다. 전령은 실제 길을 확인한 뒤 내 이름을 연락 명부에 적었다.",
+              "failureNarrative": "나는 숙소를 알려 주려 했지만 전령은 신원을 확인할 수 없다며 떠났다. 원소를 직접 만날 기회는 얻지 못했다."
+            }
+          }
+        },
+        {
+          "id": "scene-b-ok",
+          "type": "result",
+          "position": {
+            "x": 210,
+            "y": 1700
+          },
+          "data": {
+            "label": "scene-b-ok",
+            "text": "나는 원소 측 전령에게 검문이 덜한 숙소 위치를 전했다. 전령은 실제 길을 확인한 뒤 내 이름을 연락 명부에 적었다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "metYuanShao",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "scene-b-fail",
+          "type": "result",
+          "position": {
+            "x": 630,
+            "y": 1700
+          },
+          "data": {
+            "label": "scene-b-fail",
+            "text": "나는 숙소를 알려 주려 했지만 전령은 신원을 확인할 수 없다며 떠났다. 원소를 직접 만날 기회는 얻지 못했다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "scene-c",
+          "type": "result",
+          "position": {
+            "x": 420,
+            "y": 1360
+          },
+          "data": {
+            "label": "scene-c",
+            "text": "나는 성문 쪽 행렬을 떠나 숙소로 돌아갔다. 원소가 수도를 빠져나갔다는 소식은 다음 전령에게 들었다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "after",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 2040
+          },
+          "data": {
+            "label": "사건 종료 표식",
+            "silent": true,
+            "effects": [
+              {
+                "type": "flag",
+                "key": "r004-01-complete",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "outcome-0",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 2380
+          },
+          "data": {
+            "label": "실제 결말",
+            "text": "원소는 수도를 떠났고 동탁은 원씨 가문의 영향력을 고려해 회유를 택했다. 수도 밖에 반동탁 세력이 모일 여지가 생겼다.",
+            "recordType": "outcome",
+            "effects": []
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "start-next",
+          "source": "start",
+          "target": "entry",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "entry-next",
+          "source": "entry",
+          "target": "background",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "background-next",
+          "source": "background",
+          "target": "scene",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-a",
+          "source": "scene",
+          "target": "scene-a-check",
+          "sourceHandle": "a"
+        },
+        {
+          "id": "scene-a-ok-next",
+          "source": "scene-a-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-a-fail-next",
+          "source": "scene-a-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-a-check-yes",
+          "source": "scene-a-check",
+          "target": "scene-a-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "scene-a-check-no",
+          "source": "scene-a-check",
+          "target": "scene-a-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "scene-b",
+          "source": "scene",
+          "target": "scene-b-check",
+          "sourceHandle": "b"
+        },
+        {
+          "id": "scene-b-ok-next",
+          "source": "scene-b-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-b-fail-next",
+          "source": "scene-b-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-b-check-yes",
+          "source": "scene-b-check",
+          "target": "scene-b-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "scene-b-check-no",
+          "source": "scene-b-check",
+          "target": "scene-b-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "scene-c-next",
+          "source": "scene-c",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-c",
+          "source": "scene",
+          "target": "scene-c",
+          "sourceHandle": "c"
+        },
+        {
+          "id": "outcome-0-next",
+          "source": "outcome-0",
+          "target": "end",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "after-next",
+          "source": "after",
+          "target": "outcome-0",
+          "sourceHandle": "next"
+        }
+      ],
+      "passiveEffects": []
+    }
+  },
+  {
+    "id": "r004-02",
+    "chapterId": "chapter-004",
+    "sequence": 2,
+    "prerequisiteEventIds": [
+      "r004-01"
+    ],
+    "connections": [
+      {
+        "targetId": "r004-03",
+        "label": "다음 장면"
+      }
+    ],
+    "year": 189,
+    "month": null,
+    "precision": "year",
+    "calendar": "lunar",
+    "title": "[황제 교체가 결재 한 번이라고?]",
+    "summary": "동탁은 유변을 홍농왕으로 낮추고 유협을 황제로 세웠다. 폐립에 간언한 정관을 죽여 신하들을 위협했다.",
+    "regionIds": [
+      "luoyang"
+    ],
+    "factionIds": [
+      "han",
+      "dong-zhuo",
+      "cao-cao"
+    ],
+    "relatedPeople": [
+      "동탁",
+      "정관",
+      "유변",
+      "유협",
+      "왕윤"
+    ],
+    "relatedOfficerIds": [
+      "rtk14-0042",
+      "rtk14-0736"
+    ],
+    "category": "novel",
+    "source": {
+      "title": "삼국지연의 제4회 사건 문서",
+      "record": "동탁은 유변을 홍농왕으로 낮추고 유협을 황제로 세웠다. 폐립에 간언한 정관을 죽여 신하들을 위협했다."
+    },
+    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작.",
+    "flow": {
+      "nodes": [
+        {
+          "id": "start",
+          "type": "start",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "data": {
+            "label": "황제 폐립과 조조의 도피·거병"
+          }
+        },
+        {
+          "id": "end",
+          "type": "end",
+          "position": {
+            "x": 0,
+            "y": 3400
+          },
+          "data": {
+            "label": "다음 사건"
+          }
+        },
+        {
+          "id": "entry",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 340
+          },
+          "data": {
+            "label": "현장 도착",
+            "text": null,
+            "effects": [
+              {
+                "type": "region",
+                "value": "luoyang"
+              }
+            ],
+            "silent": true
+          }
+        },
+        {
+          "id": "background",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 680
+          },
+          "data": {
+            "label": "사건 배경",
+            "text": "동탁은 대신들에게 황제를 바꾸겠다는 뜻을 밝혔다. 간언하려는 정관 앞에 무장 병사들이 섰다.",
+            "recordType": "background",
+            "effects": []
+          }
+        },
+        {
+          "id": "when-0",
+          "type": "condition",
+          "position": {
+            "x": 0,
+            "y": 1020
+          },
+          "data": {
+            "label": "앞선 선택 반영",
+            "condition": {
+              "field": "world.flags.dongSupremacyBlocked",
+              "operator": "eq",
+              "value": true
+            }
+          }
+        },
+        {
+          "id": "counterweight",
+          "type": "choice",
+          "position": {
+            "x": -210,
+            "y": 1360
+          },
+          "data": {
+            "label": "황제 교체가 결재 한 번이라고?",
+            "text": "하진이나 정원의 독립 병력이 남아 동탁의 군권 독점은 막힌 상태였다. 그가 다시 폐립을 꺼내자 대신들이 이번에는 바깥 군영의 눈치를 함께 살폈다. 반대할 힘이 있는 것과 제때 뜻을 모으는 것은 달랐다. 병력과 청원을 연결한다면 이번 선포 자체를 멈출 수 있을까?",
+            "artwork": {
+              "src": "/art/scenes/r004-petition.png",
+              "alt": "폐립 재심 청원을 내밀며 서리의 반응을 기다리는 주인공"
+            },
+            "options": [
+              {
+                "id": "a",
+                "title": "[살아남은 반대 군영과 재심 청원을 연결한다]",
+                "description": "하진이나 정원의 병력이 남았다. 혼자 상소할 때와 판이 다르다.",
+                "artwork": {
+                  "src": "/art/choices/strategy.png",
+                  "alt": "살아남은 반대 군영과 재심 청원을 연결한다"
+                }
+              },
+              {
+                "id": "b",
+                "title": "[왕윤 측 서리에게 군영 연락을 전한다]",
+                "description": "살아남은 반대 세력이 있다는 사실부터 정확히 전하자.",
+                "artwork": {
+                  "src": "/art/choices/official.png",
+                  "alt": "왕윤 측 서리에게 군영 연락을 전한다"
+                }
+              },
+              {
+                "id": "c",
+                "title": "[두 군영의 경비선 밖으로 물러난다]",
+                "description": "서로 칼을 쥔 채 눈치를 볼 때 가운데 서 있지는 말자.",
+                "outcome": "충돌 위험 회피",
+                "artwork": {
+                  "src": "/art/choices/hide.png",
+                  "alt": "두 군영의 경비선 밖으로 물러난다"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "counterweight-a-check",
+          "type": "check",
+          "position": {
+            "x": -1050,
+            "y": 1700
+          },
+          "data": {
+            "label": "살아남은 반대 군영과 재심 청원을 연결한다 판정",
+            "check": {
+              "kind": "politics",
+              "success": "폐립 보류·유변 재위 유지",
+              "failure": "조율 실패·폐립 강행",
+              "successNarrative": "나는 반대 군영의 재심 요청과 대신들의 청원을 같은 날 접수시켰다. 독립 병력의 움직임을 확인한 동탁은 이번 폐립 선포를 보류했다.",
+              "failureNarrative": "나는 공동 청원을 연결하려 했지만 서명이 모이기 전에 동탁이 회의를 강행했다. 반대 군영이 남았어도 그날의 선포를 막지는 못했다."
+            }
+          }
+        },
+        {
+          "id": "counterweight-a-ok",
+          "type": "result",
+          "position": {
+            "x": -1470,
+            "y": 2040
+          },
+          "data": {
+            "label": "counterweight-a-ok",
+            "text": "나는 반대 군영의 재심 요청과 대신들의 청원을 같은 날 접수시켰다. 독립 병력의 움직임을 확인한 동탁은 이번 폐립 선포를 보류했다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "depositionBlocked",
+                "value": true
+              },
+              {
+                "type": "flag",
+                "key": "dingGuanSpared",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "counterweight-a-fail",
+          "type": "result",
+          "position": {
+            "x": -1050,
+            "y": 2040
+          },
+          "data": {
+            "label": "counterweight-a-fail",
+            "text": "나는 공동 청원을 연결하려 했지만 서명이 모이기 전에 동탁이 회의를 강행했다. 반대 군영이 남았어도 그날의 선포를 막지는 못했다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "counterweight-b-check",
+          "type": "check",
+          "position": {
+            "x": -630,
+            "y": 1700
+          },
+          "data": {
+            "label": "왕윤 측 서리에게 군영 연락을 전한다 판정",
+            "check": {
+              "kind": "relationship",
+              "success": "왕윤 측 접촉",
+              "failure": "접촉 실패·폐립 저지 못함",
+              "successNarrative": "나는 왕윤 측 서리에게 독립 군영의 연락처를 전했다. 서리는 내 이름과 전달 경로를 남겼지만 당장의 공동 청원까지 성사시키지는 못했다.",
+              "failureNarrative": "나는 서리에게 연락을 전하려 했지만 회의장 검문에 막혔다. 군영의 서명을 받지 못한 채 나왔다."
+            }
+          }
+        },
+        {
+          "id": "counterweight-b-ok",
+          "type": "result",
+          "position": {
+            "x": -630,
+            "y": 2040
+          },
+          "data": {
+            "label": "counterweight-b-ok",
+            "text": "나는 왕윤 측 서리에게 독립 군영의 연락처를 전했다. 서리는 내 이름과 전달 경로를 남겼지만 당장의 공동 청원까지 성사시키지는 못했다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "metWangYun",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "counterweight-b-fail",
+          "type": "result",
+          "position": {
+            "x": -210,
+            "y": 2040
+          },
+          "data": {
+            "label": "counterweight-b-fail",
+            "text": "나는 서리에게 연락을 전하려 했지만 회의장 검문에 막혔다. 군영의 서명을 받지 못한 채 나왔다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "counterweight-c",
+          "type": "result",
+          "position": {
+            "x": -210,
+            "y": 1700
+          },
+          "data": {
+            "label": "counterweight-c",
+            "text": "나는 무장 병력이 서 있는 길에서 벗어났다. 회의 결과는 공고를 기다려 확인했다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "scene",
+          "type": "choice",
+          "position": {
+            "x": 210,
+            "y": 1360
+          },
+          "data": {
+            "label": "황제 교체가 결재 한 번이라고?",
+            "text": "정관이 앞으로 나서자 경비병의 손이 칼자루로 갔다. 역사책에선 한 줄이던 반대 발언이 눈앞에서는 목숨을 거는 일이었다. 동탁을 누를 군대가 없는 이 자리에서 폐립을 통째로 막겠다고 외칠 수는 없었다. 우선 저 사람을 회의장 밖으로 빼낼 명분부터 만들까?",
+            "artwork": {
+              "src": "/art/scenes/r004-petition.png",
+              "alt": "폐립 재심 청원을 내밀며 서리의 반응을 기다리는 주인공"
+            },
+            "options": [
+              {
+                "id": "a",
+                "title": "[정관의 발언을 문서 심의로 돌려 달라고 한다]",
+                "description": "당장 판을 뒤집을 병력은 없다. 체포 전에 절차라도 끼워 넣자.",
+                "artwork": {
+                  "src": "/art/choices/strategy.png",
+                  "alt": "정관의 발언을 문서 심의로 돌려 달라고 한다"
+                }
+              },
+              {
+                "id": "b",
+                "title": "[왕윤 측 서리에게 회의 경과를 전한다]",
+                "description": "왕윤이 누구를 믿는지부터 배워야 한다. 아는 척으로 바로 안방에 들어갈 수는 없다.",
+                "artwork": {
+                  "src": "/art/choices/official.png",
+                  "alt": "왕윤 측 서리에게 회의 경과를 전한다"
+                }
+              },
+              {
+                "id": "c",
+                "title": "[병사들의 동선에서 비켜선다]",
+                "description": "황제 자리도 뒤집는 사람 앞에서 내 목숨값을 시험하지 말자.",
+                "outcome": "회의장 충돌 회피",
+                "artwork": {
+                  "src": "/art/choices/hide.png",
+                  "alt": "병사들의 동선에서 비켜선다"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "scene-a-check",
+          "type": "check",
+          "position": {
+            "x": 210,
+            "y": 1700
+          },
+          "data": {
+            "label": "정관의 발언을 문서 심의로 돌려 달라고 한다 판정",
+            "check": {
+              "kind": "politics",
+              "success": "정관 처형 저지·폐립은 진행",
+              "failure": "정관 처형·폐립 강행",
+              "successNarrative": "나는 정관의 발언을 상소로 접수하자고 서리에게 요청했다. 정관은 신원 확인을 이유로 먼저 별실에 옮겨져 그날의 처형을 피했지만 폐립 선포는 강행됐다.",
+              "failureNarrative": "나는 상소 접수를 청했지만 병사들이 정관을 끌어내는 쪽이 더 빨랐다. 뒤로 밀려난 채 형 집행 소식을 들었다."
+            }
+          }
+        },
+        {
+          "id": "scene-a-ok",
+          "type": "result",
+          "position": {
+            "x": 210,
+            "y": 2040
+          },
+          "data": {
+            "label": "scene-a-ok",
+            "text": "나는 정관의 발언을 상소로 접수하자고 서리에게 요청했다. 정관은 신원 확인을 이유로 먼저 별실에 옮겨져 그날의 처형을 피했지만 폐립 선포는 강행됐다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "dingGuanSpared",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "scene-a-fail",
+          "type": "result",
+          "position": {
+            "x": 630,
+            "y": 2040
+          },
+          "data": {
+            "label": "scene-a-fail",
+            "text": "나는 상소 접수를 청했지만 병사들이 정관을 끌어내는 쪽이 더 빨랐다. 뒤로 밀려난 채 형 집행 소식을 들었다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "scene-b-check",
+          "type": "check",
+          "position": {
+            "x": 630,
+            "y": 1700
+          },
+          "data": {
+            "label": "왕윤 측 서리에게 회의 경과를 전한다 판정",
+            "check": {
+              "kind": "relationship",
+              "success": "왕윤 측 접촉",
+              "failure": "왕윤 측 접촉 실패",
+              "successNarrative": "나는 확인한 발언과 경비 배치를 왕윤 측 서리에게 전했다. 그는 내 신원을 적고 다음 연락을 받을 장소를 알려 줬다.",
+              "failureNarrative": "나는 서리에게 말을 걸었지만 회의 직후에는 누구도 들일 수 없다는 답을 받았다. 연락 장소를 얻지 못하고 나왔다."
+            }
+          }
+        },
+        {
+          "id": "scene-b-ok",
+          "type": "result",
+          "position": {
+            "x": 1050,
+            "y": 2040
+          },
+          "data": {
+            "label": "scene-b-ok",
+            "text": "나는 확인한 발언과 경비 배치를 왕윤 측 서리에게 전했다. 그는 내 신원을 적고 다음 연락을 받을 장소를 알려 줬다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "metWangYun",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "scene-b-fail",
+          "type": "result",
+          "position": {
+            "x": 1470,
+            "y": 2040
+          },
+          "data": {
+            "label": "scene-b-fail",
+            "text": "나는 서리에게 말을 걸었지만 회의 직후에는 누구도 들일 수 없다는 답을 받았다. 연락 장소를 얻지 못하고 나왔다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "scene-c",
+          "type": "result",
+          "position": {
+            "x": 1050,
+            "y": 1700
+          },
+          "data": {
+            "label": "scene-c",
+            "text": "나는 기둥 뒤로 물러나 회의장을 비웠다. 바뀐 황제의 이름은 밖에 붙은 공고로 확인했다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "after",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 2380
+          },
+          "data": {
+            "label": "사건 종료 표식",
+            "silent": true,
+            "effects": [
+              {
+                "type": "flag",
+                "key": "r004-02-complete",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "outcome-0",
+          "type": "result",
+          "position": {
+            "x": -210,
+            "y": 3060
+          },
+          "data": {
+            "label": "실제 결말",
+            "text": "반대 군영과 대신들이 재심을 요구해 동탁은 폐립 선포를 보류했다. 유변은 황제 자리를 유지했고 유협은 진류왕으로 남았다.",
+            "recordType": "outcome",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "emperorBian",
+                "value": true
+              },
+              {
+                "type": "flag",
+                "key": "emperorXian",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "outcome-if-0",
+          "type": "condition",
+          "position": {
+            "x": 0,
+            "y": 2720
+          },
+          "data": {
+            "label": "변경된 역사 확인",
+            "condition": {
+              "field": "world.flags.depositionBlocked",
+              "operator": "eq",
+              "value": true
+            }
+          }
+        },
+        {
+          "id": "outcome-1",
+          "type": "result",
+          "position": {
+            "x": 210,
+            "y": 3060
+          },
+          "data": {
+            "label": "실제 결말",
+            "text": "동탁은 유변을 홍농왕으로 낮추고 유협을 황제로 세웠다. 정관의 생사는 현장의 개입에 따라 달라졌으나 다른 대신들은 군사적 위협 속에서 물러났다.",
+            "recordType": "outcome",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "emperorBian",
+                "value": false
+              },
+              {
+                "type": "flag",
+                "key": "emperorXian",
+                "value": true
+              }
+            ]
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "start-next",
+          "source": "start",
+          "target": "entry",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "entry-next",
+          "source": "entry",
+          "target": "background",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "background-next",
+          "source": "background",
+          "target": "when-0",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "when-0-yes",
+          "source": "when-0",
+          "target": "counterweight",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "counterweight-a",
+          "source": "counterweight",
+          "target": "counterweight-a-check",
+          "sourceHandle": "a"
+        },
+        {
+          "id": "counterweight-a-ok-next",
+          "source": "counterweight-a-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "counterweight-a-fail-next",
+          "source": "counterweight-a-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "counterweight-a-check-yes",
+          "source": "counterweight-a-check",
+          "target": "counterweight-a-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "counterweight-a-check-no",
+          "source": "counterweight-a-check",
+          "target": "counterweight-a-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "counterweight-b",
+          "source": "counterweight",
+          "target": "counterweight-b-check",
+          "sourceHandle": "b"
+        },
+        {
+          "id": "counterweight-b-ok-next",
+          "source": "counterweight-b-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "counterweight-b-fail-next",
+          "source": "counterweight-b-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "counterweight-b-check-yes",
+          "source": "counterweight-b-check",
+          "target": "counterweight-b-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "counterweight-b-check-no",
+          "source": "counterweight-b-check",
+          "target": "counterweight-b-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "counterweight-c-next",
+          "source": "counterweight-c",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "counterweight-c",
+          "source": "counterweight",
+          "target": "counterweight-c",
+          "sourceHandle": "c"
+        },
+        {
+          "id": "when-0-no",
+          "source": "when-0",
+          "target": "scene",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "scene-a",
+          "source": "scene",
+          "target": "scene-a-check",
+          "sourceHandle": "a"
+        },
+        {
+          "id": "scene-a-ok-next",
+          "source": "scene-a-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-a-fail-next",
+          "source": "scene-a-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-a-check-yes",
+          "source": "scene-a-check",
+          "target": "scene-a-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "scene-a-check-no",
+          "source": "scene-a-check",
+          "target": "scene-a-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "scene-b",
+          "source": "scene",
+          "target": "scene-b-check",
+          "sourceHandle": "b"
+        },
+        {
+          "id": "scene-b-ok-next",
+          "source": "scene-b-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-b-fail-next",
+          "source": "scene-b-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-b-check-yes",
+          "source": "scene-b-check",
+          "target": "scene-b-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "scene-b-check-no",
+          "source": "scene-b-check",
+          "target": "scene-b-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "scene-c-next",
+          "source": "scene-c",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-c",
+          "source": "scene",
+          "target": "scene-c",
+          "sourceHandle": "c"
+        },
+        {
+          "id": "outcome-0-next",
+          "source": "outcome-0",
+          "target": "end",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "after-next",
+          "source": "after",
+          "target": "outcome-if-0",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "outcome-if-0-yes",
+          "source": "outcome-if-0",
+          "target": "outcome-0",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "outcome-1-next",
+          "source": "outcome-1",
+          "target": "end",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "outcome-if-0-no",
+          "source": "outcome-if-0",
+          "target": "outcome-1",
+          "sourceHandle": "no"
+        }
+      ],
+      "passiveEffects": []
+    }
+  },
+  {
+    "id": "r004-03",
+    "chapterId": "chapter-004",
+    "sequence": 3,
+    "prerequisiteEventIds": [
+      "r004-02"
+    ],
+    "connections": [
+      {
+        "targetId": "r004-04",
+        "label": "다음 장면"
+      }
+    ],
+    "year": 189,
+    "month": null,
+    "precision": "year",
+    "calendar": "lunar",
+    "title": "[그 술상, 독살 이벤트잖아]",
+    "summary": "동탁의 명을 받은 이유는 폐제 유변과 하태후·당비를 죽였다. 동탁군의 약탈로 궁중과 민간의 공포가 커졌다.",
+    "regionIds": [
+      "luoyang"
+    ],
+    "factionIds": [
+      "han",
+      "dong-zhuo",
+      "cao-cao"
+    ],
+    "relatedPeople": [
+      "동탁",
+      "이유",
+      "유변",
+      "하태후",
+      "당비",
+      "왕윤"
+    ],
+    "relatedOfficerIds": [
+      "rtk14-0042",
+      "rtk14-0736",
+      "rtk14-0907"
+    ],
+    "category": "novel",
+    "source": {
+      "title": "삼국지연의 제4회 사건 문서",
+      "record": "동탁의 명을 받은 이유는 폐제 유변과 하태후·당비를 죽였다. 동탁군의 약탈로 궁중과 민간의 공포가 커졌다."
+    },
+    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작.",
+    "flow": {
+      "nodes": [
+        {
+          "id": "start",
+          "type": "start",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "data": {
+            "label": "황제 폐립과 조조의 도피·거병"
+          }
+        },
+        {
+          "id": "end",
+          "type": "end",
+          "position": {
+            "x": 0,
+            "y": 3740
+          },
+          "data": {
+            "label": "다음 사건"
+          }
+        },
+        {
+          "id": "entry",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 340
+          },
+          "data": {
+            "label": "현장 도착",
+            "text": null,
+            "effects": [
+              {
+                "type": "region",
+                "value": "luoyang"
+              }
+            ],
+            "silent": true
+          }
+        },
+        {
+          "id": "background",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 680
+          },
+          "data": {
+            "label": "사건 배경",
+            "text": "동탁 측은 왕실의 거처와 시중드는 사람들을 통제했다. 수도의 골목에서는 동탁군의 약탈을 피해 달아나는 사람들이 늘었다.",
+            "recordType": "background",
+            "effects": []
+          }
+        },
+        {
+          "id": "when-0",
+          "type": "condition",
+          "position": {
+            "x": 0,
+            "y": 1020
+          },
+          "data": {
+            "label": "앞선 선택 반영",
+            "condition": {
+              "field": "world.flags.depositionBlocked",
+              "operator": "eq",
+              "value": true
+            }
+          }
+        },
+        {
+          "id": "reigning",
+          "type": "choice",
+          "position": {
+            "x": -210,
+            "y": 1360
+          },
+          "data": {
+            "label": "그 술상, 독살 이벤트잖아",
+            "text": "폐립이 보류돼 유변은 여전히 황제였다. 그렇다고 동탁군의 약탈이나 왕실 거처에 대한 압박까지 멈춘 것은 아니었다. 이제 내가 알던 폐제 독살 장면을 그대로 기다리는 건 위험한 착각이었다. 왕실 호위를 굳힐까, 눈앞의 피해를 먼저 전할까?",
+            "artwork": {
+              "src": "/art/choices/official.png",
+              "alt": "권력 다툼 속에서 문서를 확인하는 주인공"
+            },
+            "options": [
+              {
+                "id": "a",
+                "title": "[왕실 거처의 식량 검수와 호위를 분리시킨다]",
+                "description": "폐립은 막았지만 보복까지 끝난 건 아니다. 한쪽이 식사와 경비를 모두 쥐지 못하게 하자.",
+                "artwork": {
+                  "src": "/art/choices/official.png",
+                  "alt": "확인할 문서와 증언을 담당자에게 전달하는 주인공"
+                }
+              },
+              {
+                "id": "b",
+                "title": "[왕윤 측 연락처에 민가 약탈을 알린다]",
+                "description": "황제 곁만 지켜서는 밖의 사람을 못 살린다. 현장에서 확인한 피해만 전하자.",
+                "artwork": {
+                  "src": "/art/choices/official.png",
+                  "alt": "왕윤 측 연락처에 민가 약탈을 알린다"
+                }
+              },
+              {
+                "id": "c",
+                "title": "[약탈 동선을 피해 피란민과 이동한다]",
+                "description": "누가 황제든 지금 골목의 칼은 진짜다.",
+                "outcome": "약탈 현장에서 피신",
+                "artwork": {
+                  "src": "/art/choices/travel-wagons.png",
+                  "alt": "충돌 현장을 벗어나 수레와 숙소 쪽으로 이동하는 주인공"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "reigning-a-check",
+          "type": "check",
+          "position": {
+            "x": -1050,
+            "y": 1700
+          },
+          "data": {
+            "label": "왕실 거처의 식량 검수와 호위를 분리시킨다 판정",
+            "check": {
+              "kind": "politics",
+              "success": "왕실 신변 확인·별도 호위",
+              "failure": "신변 보장 실패·추가 위협은 남음",
+              "successNarrative": "나는 왕실 식량 담당과 외곽 호위가 서로 기록을 대조하도록 청했다. 별도 확인 절차가 받아들여져 동탁 측의 은밀한 처분 명령은 실행되지 못했다.",
+              "failureNarrative": "나는 담당을 나누자고 청했지만 왕실 출입 명단에서 밀려났다. 더 접근하지 못한 채 외곽으로 돌아왔다."
+            }
+          }
+        },
+        {
+          "id": "reigning-a-ok",
+          "type": "result",
+          "position": {
+            "x": -1470,
+            "y": 2040
+          },
+          "data": {
+            "label": "reigning-a-ok",
+            "text": "나는 왕실 식량 담당과 외곽 호위가 서로 기록을 대조하도록 청했다. 별도 확인 절차가 받아들여져 동탁 측의 은밀한 처분 명령은 실행되지 못했다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "royalFamilySaved",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "reigning-a-fail",
+          "type": "result",
+          "position": {
+            "x": -1050,
+            "y": 2040
+          },
+          "data": {
+            "label": "reigning-a-fail",
+            "text": "나는 담당을 나누자고 청했지만 왕실 출입 명단에서 밀려났다. 더 접근하지 못한 채 외곽으로 돌아왔다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "reigning-b-check",
+          "type": "check",
+          "position": {
+            "x": -630,
+            "y": 1700
+          },
+          "data": {
+            "label": "왕윤 측 연락처에 민가 약탈을 알린다 판정",
+            "check": {
+              "kind": "relationship",
+              "success": "왕윤 연락·약탈 피해 보고",
+              "failure": "연락 실패",
+              "successNarrative": "나는 왕윤 측 서리에게 약탈당한 집과 병사들의 이동을 전했다. 서리는 피해 확인을 맡을 사람을 보내고 내 연락처를 남겼다.",
+              "failureNarrative": "나는 보고를 청했지만 서리를 만나지 못했다. 피해자들에게도 구호가 온다고 약속하지 않고 물러났다."
+            }
+          }
+        },
+        {
+          "id": "reigning-b-ok",
+          "type": "result",
+          "position": {
+            "x": -630,
+            "y": 2040
+          },
+          "data": {
+            "label": "reigning-b-ok",
+            "text": "나는 왕윤 측 서리에게 약탈당한 집과 병사들의 이동을 전했다. 서리는 피해 확인을 맡을 사람을 보내고 내 연락처를 남겼다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "metWangYun",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "reigning-b-fail",
+          "type": "result",
+          "position": {
+            "x": -210,
+            "y": 2040
+          },
+          "data": {
+            "label": "reigning-b-fail",
+            "text": "나는 보고를 청했지만 서리를 만나지 못했다. 피해자들에게도 구호가 온다고 약속하지 않고 물러났다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "reigning-c",
+          "type": "result",
+          "position": {
+            "x": -210,
+            "y": 1700
+          },
+          "data": {
+            "label": "reigning-c",
+            "text": "나는 군사들이 몰린 골목을 피해 피란 수레 쪽으로 갔다. 궁중 소문과 거리를 두고 빈 숙소를 찾았다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "scene",
+          "type": "choice",
+          "position": {
+            "x": 210,
+            "y": 1360
+          },
+          "data": {
+            "label": "그 술상, 독살 이벤트잖아",
+            "text": "궁 안으로 술과 식기를 들여보내는 인부들이 보였다. 폐위된 유변과 하태후, 당비에게 닿는 음식이라면 내가 아는 다음 장면은 너무 분명했다. 하지만 독이 있다고 단정하며 뛰어들면 밀고자 이름만 남는다. 음식과 명령서를 따로 확인하게 만들 수 있을까?",
+            "artwork": {
+              "src": "/art/choices/official.png",
+              "alt": "권력 다툼 속에서 문서를 확인하는 주인공"
+            },
+            "options": [
+              {
+                "id": "a",
+                "title": "[왕윤 측에 식사 명령서와 봉인 대조를 청한다]",
+                "description": "독살을 예언하는 대신 수신자와 봉인을 대조하자. 이유가 눈치채면 나도 처분 대상이다.",
+                "artwork": {
+                  "src": "/art/choices/official.png",
+                  "alt": "확인할 문서와 증언을 담당자에게 전달하는 주인공"
+                }
+              },
+              {
+                "id": "b",
+                "title": "[왕윤 측 연락처에 민가 약탈을 알린다]",
+                "description": "황제 곁만 지켜서는 밖의 사람을 못 살린다. 현장에서 확인한 피해만 전하자.",
+                "artwork": {
+                  "src": "/art/choices/official.png",
+                  "alt": "왕윤 측 연락처에 민가 약탈을 알린다"
+                }
+              },
+              {
+                "id": "c",
+                "title": "[약탈 동선을 피해 피란민과 이동한다]",
+                "description": "누가 황제든 지금 골목의 칼은 진짜다.",
+                "outcome": "약탈 현장에서 피신",
+                "artwork": {
+                  "src": "/art/choices/travel-wagons.png",
+                  "alt": "충돌 현장을 벗어나 수레와 숙소 쪽으로 이동하는 주인공"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "scene-a-check",
+          "type": "check",
+          "position": {
+            "x": 210,
+            "y": 1700
+          },
+          "data": {
+            "label": "왕윤 측에 식사 명령서와 봉인 대조를 청한다 판정",
+            "check": {
+              "kind": "politics",
+              "success": "폐제 일가 생존·감시와 위협은 계속",
+              "failure": "발각·접근 차단·폐제 일가 피살",
+              "successNarrative": "나는 왕실 식사의 명령서와 봉인을 따로 확인해 달라고 청했다. 왕윤 측 서리가 다른 호위까지 불러 명령의 출처를 묻자 이유는 그 자리에서 처분을 집행하지 못했고 세 사람은 별도 감시 아래 옮겨졌다.",
+              "failureNarrative": "나는 봉인 대조를 요청했지만 출입을 맡은 병사에게 쫓겨났다. 그날 뒤늦게 세 사람이 이유의 손에 죽었다는 소식을 들었다."
+            }
+          }
+        },
+        {
+          "id": "scene-a-ok",
+          "type": "result",
+          "position": {
+            "x": 210,
+            "y": 2040
+          },
+          "data": {
+            "label": "scene-a-ok",
+            "text": "나는 왕실 식사의 명령서와 봉인을 따로 확인해 달라고 청했다. 왕윤 측 서리가 다른 호위까지 불러 명령의 출처를 묻자 이유는 그 자리에서 처분을 집행하지 못했고 세 사람은 별도 감시 아래 옮겨졌다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "royalFamilySaved",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "scene-a-fail",
+          "type": "result",
+          "position": {
+            "x": 630,
+            "y": 2040
+          },
+          "data": {
+            "label": "scene-a-fail",
+            "text": "나는 봉인 대조를 요청했지만 출입을 맡은 병사에게 쫓겨났다. 그날 뒤늦게 세 사람이 이유의 손에 죽었다는 소식을 들었다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "scene-b-check",
+          "type": "check",
+          "position": {
+            "x": 630,
+            "y": 1700
+          },
+          "data": {
+            "label": "왕윤 측 연락처에 민가 약탈을 알린다 판정",
+            "check": {
+              "kind": "relationship",
+              "success": "왕윤 연락·약탈 피해 보고",
+              "failure": "연락 실패",
+              "successNarrative": "나는 왕윤 측 서리에게 약탈당한 집과 병사들의 이동을 전했다. 서리는 피해 확인을 맡을 사람을 보내고 내 연락처를 남겼다.",
+              "failureNarrative": "나는 보고를 청했지만 서리를 만나지 못했다. 피해자들에게도 구호가 온다고 약속하지 않고 물러났다."
+            }
+          }
+        },
+        {
+          "id": "scene-b-ok",
+          "type": "result",
+          "position": {
+            "x": 1050,
+            "y": 2040
+          },
+          "data": {
+            "label": "scene-b-ok",
+            "text": "나는 왕윤 측 서리에게 약탈당한 집과 병사들의 이동을 전했다. 서리는 피해 확인을 맡을 사람을 보내고 내 연락처를 남겼다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "metWangYun",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "scene-b-fail",
+          "type": "result",
+          "position": {
+            "x": 1470,
+            "y": 2040
+          },
+          "data": {
+            "label": "scene-b-fail",
+            "text": "나는 보고를 청했지만 서리를 만나지 못했다. 피해자들에게도 구호가 온다고 약속하지 않고 물러났다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "scene-c",
+          "type": "result",
+          "position": {
+            "x": 1050,
+            "y": 1700
+          },
+          "data": {
+            "label": "scene-c",
+            "text": "나는 군사들이 몰린 골목을 피해 피란 수레 쪽으로 갔다. 궁중 소문과 거리를 두고 빈 숙소를 찾았다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "after",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 2380
+          },
+          "data": {
+            "label": "사건 종료 표식",
+            "silent": true,
+            "effects": [
+              {
+                "type": "flag",
+                "key": "r004-03-complete",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "outcome-0",
+          "type": "result",
+          "position": {
+            "x": -210,
+            "y": 3060
+          },
+          "data": {
+            "label": "실제 결말",
+            "text": "유변은 황제 자리를 유지했지만 왕실과 동탁 측의 대치는 이어졌다. 폐제 일가의 독살은 이 경로에서 발생하지 않았고 민간의 약탈 피해는 남았다.",
+            "recordType": "outcome",
+            "effects": []
+          }
+        },
+        {
+          "id": "outcome-if-0",
+          "type": "condition",
+          "position": {
+            "x": 0,
+            "y": 2720
+          },
+          "data": {
+            "label": "변경된 역사 확인",
+            "condition": {
+              "field": "world.flags.depositionBlocked",
+              "operator": "eq",
+              "value": true
+            }
+          }
+        },
+        {
+          "id": "outcome-1",
+          "type": "result",
+          "position": {
+            "x": -210,
+            "y": 3400
+          },
+          "data": {
+            "label": "실제 결말",
+            "text": "식사 명령을 교차 확인한 호위들이 왕실 일가를 별도 감시 아래 옮겼다. 유변과 하태후·당비는 살아남았으나 자유와 복위를 보장받은 것은 아니었다.",
+            "recordType": "outcome",
+            "effects": []
+          }
+        },
+        {
+          "id": "outcome-if-1",
+          "type": "condition",
+          "position": {
+            "x": 210,
+            "y": 3060
+          },
+          "data": {
+            "label": "변경된 역사 확인",
+            "condition": {
+              "field": "world.flags.royalFamilySaved",
+              "operator": "eq",
+              "value": true
+            }
+          }
+        },
+        {
+          "id": "outcome-2",
+          "type": "result",
+          "position": {
+            "x": 210,
+            "y": 3400
+          },
+          "data": {
+            "label": "실제 결말",
+            "text": "이유는 동탁의 명을 받아 홍농왕 유변과 하태후·당비를 죽였다. 동탁군의 약탈까지 겹쳐 낙양의 공포가 커졌다.",
+            "recordType": "outcome",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "royalFamilyKilled",
+                "value": true
+              }
+            ]
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "start-next",
+          "source": "start",
+          "target": "entry",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "entry-next",
+          "source": "entry",
+          "target": "background",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "background-next",
+          "source": "background",
+          "target": "when-0",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "when-0-yes",
+          "source": "when-0",
+          "target": "reigning",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "reigning-a",
+          "source": "reigning",
+          "target": "reigning-a-check",
+          "sourceHandle": "a"
+        },
+        {
+          "id": "reigning-a-ok-next",
+          "source": "reigning-a-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "reigning-a-fail-next",
+          "source": "reigning-a-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "reigning-a-check-yes",
+          "source": "reigning-a-check",
+          "target": "reigning-a-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "reigning-a-check-no",
+          "source": "reigning-a-check",
+          "target": "reigning-a-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "reigning-b",
+          "source": "reigning",
+          "target": "reigning-b-check",
+          "sourceHandle": "b"
+        },
+        {
+          "id": "reigning-b-ok-next",
+          "source": "reigning-b-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "reigning-b-fail-next",
+          "source": "reigning-b-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "reigning-b-check-yes",
+          "source": "reigning-b-check",
+          "target": "reigning-b-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "reigning-b-check-no",
+          "source": "reigning-b-check",
+          "target": "reigning-b-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "reigning-c-next",
+          "source": "reigning-c",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "reigning-c",
+          "source": "reigning",
+          "target": "reigning-c",
+          "sourceHandle": "c"
+        },
+        {
+          "id": "when-0-no",
+          "source": "when-0",
+          "target": "scene",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "scene-a",
+          "source": "scene",
+          "target": "scene-a-check",
+          "sourceHandle": "a"
+        },
+        {
+          "id": "scene-a-ok-next",
+          "source": "scene-a-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-a-fail-next",
+          "source": "scene-a-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-a-check-yes",
+          "source": "scene-a-check",
+          "target": "scene-a-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "scene-a-check-no",
+          "source": "scene-a-check",
+          "target": "scene-a-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "scene-b",
+          "source": "scene",
+          "target": "scene-b-check",
+          "sourceHandle": "b"
+        },
+        {
+          "id": "scene-b-ok-next",
+          "source": "scene-b-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-b-fail-next",
+          "source": "scene-b-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-b-check-yes",
+          "source": "scene-b-check",
+          "target": "scene-b-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "scene-b-check-no",
+          "source": "scene-b-check",
+          "target": "scene-b-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "scene-c-next",
+          "source": "scene-c",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-c",
+          "source": "scene",
+          "target": "scene-c",
+          "sourceHandle": "c"
+        },
+        {
+          "id": "outcome-0-next",
+          "source": "outcome-0",
+          "target": "end",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "after-next",
+          "source": "after",
+          "target": "outcome-if-0",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "outcome-if-0-yes",
+          "source": "outcome-if-0",
+          "target": "outcome-0",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "outcome-1-next",
+          "source": "outcome-1",
+          "target": "end",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "outcome-if-0-no",
+          "source": "outcome-if-0",
+          "target": "outcome-if-1",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "outcome-if-1-yes",
+          "source": "outcome-if-1",
+          "target": "outcome-1",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "outcome-2-next",
+          "source": "outcome-2",
+          "target": "end",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "outcome-if-1-no",
+          "source": "outcome-if-1",
+          "target": "outcome-2",
+          "sourceHandle": "no"
+        }
+      ],
+      "passiveEffects": []
+    }
+  },
+  {
+    "id": "r004-04",
+    "chapterId": "chapter-004",
+    "sequence": 4,
+    "prerequisiteEventIds": [
+      "r004-03"
+    ],
+    "connections": [
+      {
+        "targetId": "r004-05",
+        "label": "다음 장면"
+      }
+    ],
+    "year": 189,
+    "month": null,
+    "precision": "year",
+    "calendar": "lunar",
+    "title": "[암살 퀘스트에 거울이 왜 있어]",
+    "summary": "왕윤의 모임에서 조조는 동탁 암살을 자원했다. 왕윤에게 빌린 칠성보도를 들고 동탁에게 접근할 계획을 세웠다.",
+    "regionIds": [
+      "luoyang"
+    ],
+    "factionIds": [
+      "han",
+      "dong-zhuo",
+      "cao-cao"
+    ],
+    "relatedPeople": [
+      "왕윤",
+      "조조",
+      "동탁"
+    ],
+    "relatedOfficerIds": [
+      "rtk14-0042",
+      "rtk14-0521",
+      "rtk14-0736"
+    ],
+    "category": "novel",
+    "source": {
+      "title": "삼국지연의 제4회 사건 문서",
+      "record": "왕윤의 모임에서 조조는 동탁 암살을 자원했다. 왕윤에게 빌린 칠성보도를 들고 동탁에게 접근할 계획을 세웠다."
+    },
+    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작.",
+    "flow": {
+      "nodes": [
+        {
+          "id": "start",
+          "type": "start",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "data": {
+            "label": "황제 폐립과 조조의 도피·거병"
+          }
+        },
+        {
+          "id": "end",
+          "type": "end",
+          "position": {
+            "x": 0,
+            "y": 3060
+          },
+          "data": {
+            "label": "다음 사건"
+          }
+        },
+        {
+          "id": "entry",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 1020
+          },
+          "data": {
+            "label": "현장 도착",
+            "text": null,
+            "effects": [
+              {
+                "type": "region",
+                "value": "luoyang"
+              }
+            ],
+            "silent": true
+          }
+        },
+        {
+          "id": "alive-0",
+          "type": "condition",
+          "position": {
+            "x": 0,
+            "y": 340
+          },
+          "data": {
+            "label": "필수 인물 생존",
+            "condition": {
+              "field": "world.people.rtk14-0521",
+              "operator": "neq",
+              "value": "dead"
+            }
+          }
+        },
+        {
+          "id": "alive-1",
+          "type": "condition",
+          "position": {
+            "x": 0,
+            "y": 680
+          },
+          "data": {
+            "label": "필수 인물 생존",
+            "condition": {
+              "field": "world.people.rtk14-0736",
+              "operator": "neq",
+              "value": "dead"
+            }
+          }
+        },
+        {
+          "id": "background",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 1360
+          },
+          "data": {
+            "label": "사건 배경",
+            "text": "왕윤 측에서 동탁을 제거할 방법을 찾고 있었다. 조조는 자신에게 남은 출입 기회를 이용하겠다고 나섰다.",
+            "recordType": "background",
+            "effects": []
+          }
+        },
+        {
+          "id": "scene",
+          "type": "choice",
+          "position": {
+            "x": 0,
+            "y": 1700
+          },
+          "data": {
+            "label": "암살 퀘스트에 거울이 왜 있어",
+            "text": "왕윤의 서리들이 칠성보도를 싸서 옮기는 걸 봤다. 저 칼보다 동탁 방 안의 거울이 더 큰 변수라는 걸 아는 사람은 나뿐일 것이다. 문턱도 못 넘는 내가 조조를 붙잡고 미래를 줄줄 외울 수는 없었다. 그래도 반사되는 자리 하나를 확인하라는 말은 전할 수 있지 않을까?",
+            "artwork": {
+              "src": "/art/scenes/r004-mirror.png",
+              "alt": "조조 측 연락책에게 반사면의 위험을 설명하는 주인공"
+            },
+            "options": [
+              {
+                "id": "a",
+                "title": "[조조 측에 방 안의 반사면을 먼저 살피라고 전한다]",
+                "description": "거울을 봤다고 꾸미지 말고 등 뒤가 비치는지 확인하라고 하자. 암살 계획을 아는 놈으로 의심받을 수 있다.",
+                "artwork": {
+                  "src": "/art/scenes/r004-mirror.png",
+                  "alt": "반사면부터 살피라고 전하려는 주인공"
+                }
+              },
+              {
+                "id": "b",
+                "title": "[조조 측 서리에게 전달 일을 청한다]",
+                "description": "조조 밑에 들어가려면 얼굴부터 익혀야 한다. 위험한 칼 대신 봉한 편지를 맡자.",
+                "artwork": {
+                  "src": "/art/choices/official.png",
+                  "alt": "조조 측 서리에게 전달 일을 청한다"
+                }
+              },
+              {
+                "id": "c",
+                "title": "[보도가 향하는 저택에서 멀어진다]",
+                "description": "원작을 알수록 그 방에 가기 싫다.",
+                "outcome": "암살 준비에 관여하지 않음",
+                "artwork": {
+                  "src": "/art/choices/travel-wagons.png",
+                  "alt": "충돌 현장을 벗어나 수레와 숙소 쪽으로 이동하는 주인공"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "scene-a-check",
+          "type": "check",
+          "position": {
+            "x": -420,
+            "y": 2040
+          },
+          "data": {
+            "label": "조조 측에 방 안의 반사면을 먼저 살피라고 전한다 판정",
+            "check": {
+              "kind": "strategy",
+              "success": "조조의 거울 경계·암살 방식 재검토",
+              "failure": "암살 계획 탐문 의심·경고 미전달",
+              "successNarrative": "나는 물건을 옮기는 연락책에게 동탁의 등 뒤가 비치는 자리부터 확인하라고 전했다. 조조는 전달된 주의를 듣고 칼을 뽑기 전에 방 배치를 살피기로 했다.",
+              "failureNarrative": "나는 경계를 전하려 했지만 연락책은 보도 이야기를 어디서 들었느냐며 다그쳤다. 더 말하지 못하고 문밖으로 물러났다."
+            }
+          }
+        },
+        {
+          "id": "scene-a-ok",
+          "type": "result",
+          "position": {
+            "x": -630,
+            "y": 2380
+          },
+          "data": {
+            "label": "scene-a-ok",
+            "text": "나는 물건을 옮기는 연락책에게 동탁의 등 뒤가 비치는 자리부터 확인하라고 전했다. 조조는 전달된 주의를 듣고 칼을 뽑기 전에 방 배치를 살피기로 했다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "mirrorWarned",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "scene-a-fail",
+          "type": "result",
+          "position": {
+            "x": -210,
+            "y": 2380
+          },
+          "data": {
+            "label": "scene-a-fail",
+            "text": "나는 경계를 전하려 했지만 연락책은 보도 이야기를 어디서 들었느냐며 다그쳤다. 더 말하지 못하고 문밖으로 물러났다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "scene-b-check",
+          "type": "check",
+          "position": {
+            "x": 0,
+            "y": 2040
+          },
+          "data": {
+            "label": "조조 측 서리에게 전달 일을 청한다 판정",
+            "check": {
+              "kind": "relationship",
+              "success": "조조 측 접촉",
+              "failure": "조조 측 접촉 거절",
+              "successNarrative": "나는 조조 측 서리에게 작은 전달 일을 맡고 싶다고 청했다. 서리는 내 소속을 확인한 뒤 답장을 받을 장소를 알려 줬다.",
+              "failureNarrative": "나는 전달 일을 청했지만 서리는 지금은 외부인을 쓰지 않는다고 했다. 봉한 편지는 건드리지 않고 나왔다."
+            }
+          }
+        },
+        {
+          "id": "scene-b-ok",
+          "type": "result",
+          "position": {
+            "x": 210,
+            "y": 2380
+          },
+          "data": {
+            "label": "scene-b-ok",
+            "text": "나는 조조 측 서리에게 작은 전달 일을 맡고 싶다고 청했다. 서리는 내 소속을 확인한 뒤 답장을 받을 장소를 알려 줬다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "metCaoContact",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "scene-b-fail",
+          "type": "result",
+          "position": {
+            "x": 630,
+            "y": 2380
+          },
+          "data": {
+            "label": "scene-b-fail",
+            "text": "나는 전달 일을 청했지만 서리는 지금은 외부인을 쓰지 않는다고 했다. 봉한 편지는 건드리지 않고 나왔다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "scene-c",
+          "type": "result",
+          "position": {
+            "x": 420,
+            "y": 2040
+          },
+          "data": {
+            "label": "scene-c",
+            "text": "나는 칼을 옮기는 행렬과 반대 골목으로 걸었다. 저택 검문이 늘기 전에 숙소로 돌아갔다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "after",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 2720
+          },
+          "data": {
+            "label": "사건 종료 표식",
+            "silent": true,
+            "effects": [
+              {
+                "type": "flag",
+                "key": "r004-04-complete",
+                "value": true
+              }
+            ]
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "start-next",
+          "source": "start",
+          "target": "alive-0",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "alive-0-yes",
+          "source": "alive-0",
+          "target": "alive-1",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "alive-0-no",
+          "source": "alive-0",
+          "target": "end",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "alive-1-yes",
+          "source": "alive-1",
+          "target": "entry",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "alive-1-no",
+          "source": "alive-1",
+          "target": "end",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "entry-next",
+          "source": "entry",
+          "target": "background",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "background-next",
+          "source": "background",
+          "target": "scene",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-a",
+          "source": "scene",
+          "target": "scene-a-check",
+          "sourceHandle": "a"
+        },
+        {
+          "id": "scene-a-ok-next",
+          "source": "scene-a-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-a-fail-next",
+          "source": "scene-a-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-a-check-yes",
+          "source": "scene-a-check",
+          "target": "scene-a-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "scene-a-check-no",
+          "source": "scene-a-check",
+          "target": "scene-a-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "scene-b",
+          "source": "scene",
+          "target": "scene-b-check",
+          "sourceHandle": "b"
+        },
+        {
+          "id": "scene-b-ok-next",
+          "source": "scene-b-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-b-fail-next",
+          "source": "scene-b-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-b-check-yes",
+          "source": "scene-b-check",
+          "target": "scene-b-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "scene-b-check-no",
+          "source": "scene-b-check",
+          "target": "scene-b-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "scene-c-next",
+          "source": "scene-c",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-c",
+          "source": "scene",
+          "target": "scene-c",
+          "sourceHandle": "c"
+        },
+        {
+          "id": "after-next",
+          "source": "after",
+          "target": "end",
+          "sourceHandle": "next"
+        }
+      ],
+      "passiveEffects": []
+    }
+  },
+  {
+    "id": "r004-05",
+    "chapterId": "chapter-004",
+    "sequence": 5,
+    "prerequisiteEventIds": [
+      "r004-04"
+    ],
+    "connections": [
+      {
+        "targetId": "r004-06",
+        "label": "다음 장면"
+      }
+    ],
+    "year": 189,
+    "month": null,
+    "precision": "year",
+    "calendar": "lunar",
+    "title": "[헌상품입니다, 체포영장 말고요]",
+    "summary": "조조는 거울 때문에 암살이 발각될 위기에 놓이자 칼을 헌상하는 척했다. 말을 시험한다는 구실로 달아났고 동탁은 뒤늦게 체포령을 내렸다.",
+    "regionIds": [
+      "luoyang"
+    ],
+    "factionIds": [
+      "han",
+      "dong-zhuo",
+      "cao-cao"
+    ],
+    "relatedPeople": [
+      "동탁",
+      "조조"
+    ],
+    "relatedOfficerIds": [
+      "rtk14-0521",
+      "rtk14-0736"
+    ],
+    "category": "novel",
+    "source": {
+      "title": "삼국지연의 제4회 사건 문서",
+      "record": "조조는 거울 때문에 암살이 발각될 위기에 놓이자 칼을 헌상하는 척했다. 말을 시험한다는 구실로 달아났고 동탁은 뒤늦게 체포령을 내렸다."
+    },
+    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작.",
+    "flow": {
+      "nodes": [
+        {
+          "id": "start",
+          "type": "start",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "data": {
+            "label": "황제 폐립과 조조의 도피·거병"
+          }
+        },
+        {
+          "id": "end",
+          "type": "end",
+          "position": {
+            "x": 0,
+            "y": 4080
+          },
+          "data": {
+            "label": "다음 사건"
+          }
+        },
+        {
+          "id": "entry",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 1020
+          },
+          "data": {
+            "label": "현장 도착",
+            "text": null,
+            "effects": [
+              {
+                "type": "region",
+                "value": "luoyang"
+              }
+            ],
+            "silent": true
+          }
+        },
+        {
+          "id": "alive-0",
+          "type": "condition",
+          "position": {
+            "x": 0,
+            "y": 340
+          },
+          "data": {
+            "label": "필수 인물 생존",
+            "condition": {
+              "field": "world.people.rtk14-0521",
+              "operator": "neq",
+              "value": "dead"
+            }
+          }
+        },
+        {
+          "id": "alive-1",
+          "type": "condition",
+          "position": {
+            "x": 0,
+            "y": 680
+          },
+          "data": {
+            "label": "필수 인물 생존",
+            "condition": {
+              "field": "world.people.rtk14-0736",
+              "operator": "neq",
+              "value": "dead"
+            }
+          }
+        },
+        {
+          "id": "background",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 1360
+          },
+          "data": {
+            "label": "사건 배경",
+            "text": "조조는 동탁의 저택으로 들어갔고 여포가 잠시 자리를 비웠다. 성문에는 출입 문서를 확인하는 서리들이 서 있었다.",
+            "recordType": "background",
+            "effects": []
+          }
+        },
+        {
+          "id": "when-0",
+          "type": "condition",
+          "position": {
+            "x": 0,
+            "y": 1700
+          },
+          "data": {
+            "label": "앞선 선택 반영",
+            "condition": {
+              "field": "world.flags.mirrorWarned",
+              "operator": "eq",
+              "value": true
+            }
+          }
+        },
+        {
+          "id": "mirror",
+          "type": "choice",
+          "position": {
+            "x": -210,
+            "y": 2040
+          },
+          "data": {
+            "label": "헌상품입니다, 체포영장 말고요",
+            "text": "경고를 들은 조조가 방 안의 거울을 먼저 확인했다는 전갈이 왔다. 그는 칼을 뽑는 대신 헌상으로 계획을 접고 말을 시험하겠다며 나왔다. 동탁은 수상하게 여기기 시작했고 체포령이 늦게라도 따라올 것이다. 칼날을 피한 뒤에도 성문은 넘어야 했다.",
+            "artwork": {
+              "src": "/art/scenes/r002-gate.png",
+              "alt": "낙양 성문 밖에서 수배 전령과 출입을 살피는 주인공"
+            },
+            "options": [
+              {
+                "id": "a",
+                "title": "[출발 허가와 수배 문서의 결재 순서를 바꾼다]",
+                "description": "먼저 접수된 시험 승마 문서를 내보내자. 고의 지연이 들키면 조조의 공범이 된다.",
+                "artwork": {
+                  "src": "/art/choices/official.png",
+                  "alt": "확인할 문서와 증언을 담당자에게 전달하는 주인공"
+                }
+              },
+              {
+                "id": "b",
+                "title": "[조조 측 연락책에게 검문 위치를 전한다]",
+                "description": "도망 중인 사람에게 충성 맹세보다 쓸모 있는 건 닫힌 문 정보다.",
+                "artwork": {
+                  "src": "/art/choices/official.png",
+                  "alt": "조조 측 연락책에게 검문 위치를 전한다"
+                }
+              },
+              {
+                "id": "c",
+                "title": "[수배 문서에 손대지 않고 길을 비운다]",
+                "description": "유명인의 체포령에 내 이름을 덧붙이고 싶진 않다.",
+                "outcome": "추격 공범 혐의 회피",
+                "artwork": {
+                  "src": "/art/choices/travel-wagons.png",
+                  "alt": "충돌 현장을 벗어나 수레와 숙소 쪽으로 이동하는 주인공"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "mirror-a-check",
+          "type": "check",
+          "position": {
+            "x": -1050,
+            "y": 2380
+          },
+          "data": {
+            "label": "출발 허가와 수배 문서의 결재 순서를 바꾼다 판정",
+            "check": {
+              "kind": "politics",
+              "success": "조조 성문 탈출·추격 지연",
+              "failure": "추격 지연 실패",
+              "successNarrative": "나는 먼저 접수된 승마 허가를 대조해 달라고 요구했다. 서리가 허가부터 확인하는 사이 조조는 성문을 빠져나갔고 뒤늦게 도착한 체포령은 그를 놓쳤다.",
+              "failureNarrative": "나는 허가 문서를 먼저 보자고 했지만 경비병이 수배 전령에게 길을 터 줬다. 조조는 도주했으나 검문선에는 그의 이름이 먼저 퍼졌다."
+            }
+          }
+        },
+        {
+          "id": "mirror-a-ok",
+          "type": "result",
+          "position": {
+            "x": -1470,
+            "y": 2720
+          },
+          "data": {
+            "label": "mirror-a-ok",
+            "text": "나는 먼저 접수된 승마 허가를 대조해 달라고 요구했다. 서리가 허가부터 확인하는 사이 조조는 성문을 빠져나갔고 뒤늦게 도착한 체포령은 그를 놓쳤다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "caoEscapeLead",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "mirror-a-fail",
+          "type": "result",
+          "position": {
+            "x": -1050,
+            "y": 2720
+          },
+          "data": {
+            "label": "mirror-a-fail",
+            "text": "나는 허가 문서를 먼저 보자고 했지만 경비병이 수배 전령에게 길을 터 줬다. 조조는 도주했으나 검문선에는 그의 이름이 먼저 퍼졌다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "mirror-b-check",
+          "type": "check",
+          "position": {
+            "x": -630,
+            "y": 2380
+          },
+          "data": {
+            "label": "조조 측 연락책에게 검문 위치를 전한다 판정",
+            "check": {
+              "kind": "relationship",
+              "success": "조조 연락선·검문 정보",
+              "failure": "연락 실패",
+              "successNarrative": "나는 확인한 검문 위치를 조조 측 연락책에게 전했다. 연락책은 우회로를 확인하겠다며 내 연락처를 챙겼다.",
+              "failureNarrative": "나는 연락책을 찾았지만 저택 경비가 먼저 길을 끊었다. 조조의 행선지를 모른 채 군중 뒤로 빠졌다."
+            }
+          }
+        },
+        {
+          "id": "mirror-b-ok",
+          "type": "result",
+          "position": {
+            "x": -630,
+            "y": 2720
+          },
+          "data": {
+            "label": "mirror-b-ok",
+            "text": "나는 확인한 검문 위치를 조조 측 연락책에게 전했다. 연락책은 우회로를 확인하겠다며 내 연락처를 챙겼다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "metCaoContact",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "mirror-b-fail",
+          "type": "result",
+          "position": {
+            "x": -210,
+            "y": 2720
+          },
+          "data": {
+            "label": "mirror-b-fail",
+            "text": "나는 연락책을 찾았지만 저택 경비가 먼저 길을 끊었다. 조조의 행선지를 모른 채 군중 뒤로 빠졌다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "mirror-c",
+          "type": "result",
+          "position": {
+            "x": -210,
+            "y": 2380
+          },
+          "data": {
+            "label": "mirror-c",
+            "text": "나는 역참에서 나오자마자 수배 행렬의 길을 비켰다. 조조가 동쪽으로 달아났다는 말만 확인했다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "scene",
+          "type": "choice",
+          "position": {
+            "x": 210,
+            "y": 2040
+          },
+          "data": {
+            "label": "헌상품입니다, 체포영장 말고요",
+            "text": "저택에서 나온 연락책이 조조가 보도를 바쳤다고 떠들었다. 죽일 칼을 선물로 바꾼 순발력은 명불허전인데, 뒤늦은 체포령은 곧 내려온다. 나는 역참에서 출발 문서가 결재를 기다리는 걸 봤다. 지금 손댈 수 있는 건 암살이 아니라 도주할 몇 분이었다.",
+            "artwork": {
+              "src": "/art/scenes/r002-gate.png",
+              "alt": "낙양 성문 밖에서 수배 전령과 출입을 살피는 주인공"
+            },
+            "options": [
+              {
+                "id": "a",
+                "title": "[출발 허가와 수배 문서의 결재 순서를 바꾼다]",
+                "description": "먼저 접수된 시험 승마 문서를 내보내자. 고의 지연이 들키면 조조의 공범이 된다.",
+                "artwork": {
+                  "src": "/art/choices/official.png",
+                  "alt": "확인할 문서와 증언을 담당자에게 전달하는 주인공"
+                }
+              },
+              {
+                "id": "b",
+                "title": "[조조 측 연락책에게 검문 위치를 전한다]",
+                "description": "도망 중인 사람에게 충성 맹세보다 쓸모 있는 건 닫힌 문 정보다.",
+                "artwork": {
+                  "src": "/art/choices/official.png",
+                  "alt": "조조 측 연락책에게 검문 위치를 전한다"
+                }
+              },
+              {
+                "id": "c",
+                "title": "[수배 문서에 손대지 않고 길을 비운다]",
+                "description": "유명인의 체포령에 내 이름을 덧붙이고 싶진 않다.",
+                "outcome": "추격 공범 혐의 회피",
+                "artwork": {
+                  "src": "/art/choices/travel-wagons.png",
+                  "alt": "충돌 현장을 벗어나 수레와 숙소 쪽으로 이동하는 주인공"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "scene-a-check",
+          "type": "check",
+          "position": {
+            "x": 210,
+            "y": 2380
+          },
+          "data": {
+            "label": "출발 허가와 수배 문서의 결재 순서를 바꾼다 판정",
+            "check": {
+              "kind": "politics",
+              "success": "조조 성문 탈출·추격 지연",
+              "failure": "추격 지연 실패",
+              "successNarrative": "나는 먼저 접수된 승마 허가를 대조해 달라고 요구했다. 서리가 허가부터 확인하는 사이 조조는 성문을 빠져나갔고 뒤늦게 도착한 체포령은 그를 놓쳤다.",
+              "failureNarrative": "나는 허가 문서를 먼저 보자고 했지만 경비병이 수배 전령에게 길을 터 줬다. 조조는 도주했으나 검문선에는 그의 이름이 먼저 퍼졌다."
+            }
+          }
+        },
+        {
+          "id": "scene-a-ok",
+          "type": "result",
+          "position": {
+            "x": 210,
+            "y": 2720
+          },
+          "data": {
+            "label": "scene-a-ok",
+            "text": "나는 먼저 접수된 승마 허가를 대조해 달라고 요구했다. 서리가 허가부터 확인하는 사이 조조는 성문을 빠져나갔고 뒤늦게 도착한 체포령은 그를 놓쳤다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "caoEscapeLead",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "scene-a-fail",
+          "type": "result",
+          "position": {
+            "x": 630,
+            "y": 2720
+          },
+          "data": {
+            "label": "scene-a-fail",
+            "text": "나는 허가 문서를 먼저 보자고 했지만 경비병이 수배 전령에게 길을 터 줬다. 조조는 도주했으나 검문선에는 그의 이름이 먼저 퍼졌다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "scene-b-check",
+          "type": "check",
+          "position": {
+            "x": 630,
+            "y": 2380
+          },
+          "data": {
+            "label": "조조 측 연락책에게 검문 위치를 전한다 판정",
+            "check": {
+              "kind": "relationship",
+              "success": "조조 연락선·검문 정보",
+              "failure": "연락 실패",
+              "successNarrative": "나는 확인한 검문 위치를 조조 측 연락책에게 전했다. 연락책은 우회로를 확인하겠다며 내 연락처를 챙겼다.",
+              "failureNarrative": "나는 연락책을 찾았지만 저택 경비가 먼저 길을 끊었다. 조조의 행선지를 모른 채 군중 뒤로 빠졌다."
+            }
+          }
+        },
+        {
+          "id": "scene-b-ok",
+          "type": "result",
+          "position": {
+            "x": 1050,
+            "y": 2720
+          },
+          "data": {
+            "label": "scene-b-ok",
+            "text": "나는 확인한 검문 위치를 조조 측 연락책에게 전했다. 연락책은 우회로를 확인하겠다며 내 연락처를 챙겼다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "metCaoContact",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "scene-b-fail",
+          "type": "result",
+          "position": {
+            "x": 1470,
+            "y": 2720
+          },
+          "data": {
+            "label": "scene-b-fail",
+            "text": "나는 연락책을 찾았지만 저택 경비가 먼저 길을 끊었다. 조조의 행선지를 모른 채 군중 뒤로 빠졌다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "scene-c",
+          "type": "result",
+          "position": {
+            "x": 1050,
+            "y": 2380
+          },
+          "data": {
+            "label": "scene-c",
+            "text": "나는 역참에서 나오자마자 수배 행렬의 길을 비켰다. 조조가 동쪽으로 달아났다는 말만 확인했다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "after",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 3060
+          },
+          "data": {
+            "label": "사건 종료 표식",
+            "silent": true,
+            "effects": [
+              {
+                "type": "flag",
+                "key": "r004-05-complete",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "outcome-0",
+          "type": "result",
+          "position": {
+            "x": -210,
+            "y": 3740
+          },
+          "data": {
+            "label": "실제 결말",
+            "text": "조조는 거울을 경계해 암살 시도를 접고 보도를 헌상했다. 동탁이 의심해 추격을 명했지만 조조는 수도를 떠났다.",
+            "recordType": "outcome",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "caoFled",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "outcome-if-0",
+          "type": "condition",
+          "position": {
+            "x": 0,
+            "y": 3400
+          },
+          "data": {
+            "label": "변경된 역사 확인",
+            "condition": {
+              "field": "world.flags.mirrorWarned",
+              "operator": "eq",
+              "value": true
+            }
+          }
+        },
+        {
+          "id": "outcome-1",
+          "type": "result",
+          "position": {
+            "x": 210,
+            "y": 3740
+          },
+          "data": {
+            "label": "실제 결말",
+            "text": "동탁이 거울 속 움직임을 보고 돌아보자 조조는 보도를 바치는 척했다. 조조는 시험 승마를 구실로 수도를 떠났고 동탁의 추격령이 뒤따랐다.",
+            "recordType": "outcome",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "caoFled",
+                "value": true
+              }
+            ]
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "start-next",
+          "source": "start",
+          "target": "alive-0",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "alive-0-yes",
+          "source": "alive-0",
+          "target": "alive-1",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "alive-0-no",
+          "source": "alive-0",
+          "target": "end",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "alive-1-yes",
+          "source": "alive-1",
+          "target": "entry",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "alive-1-no",
+          "source": "alive-1",
+          "target": "end",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "entry-next",
+          "source": "entry",
+          "target": "background",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "background-next",
+          "source": "background",
+          "target": "when-0",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "when-0-yes",
+          "source": "when-0",
+          "target": "mirror",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "mirror-a",
+          "source": "mirror",
+          "target": "mirror-a-check",
+          "sourceHandle": "a"
+        },
+        {
+          "id": "mirror-a-ok-next",
+          "source": "mirror-a-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "mirror-a-fail-next",
+          "source": "mirror-a-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "mirror-a-check-yes",
+          "source": "mirror-a-check",
+          "target": "mirror-a-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "mirror-a-check-no",
+          "source": "mirror-a-check",
+          "target": "mirror-a-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "mirror-b",
+          "source": "mirror",
+          "target": "mirror-b-check",
+          "sourceHandle": "b"
+        },
+        {
+          "id": "mirror-b-ok-next",
+          "source": "mirror-b-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "mirror-b-fail-next",
+          "source": "mirror-b-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "mirror-b-check-yes",
+          "source": "mirror-b-check",
+          "target": "mirror-b-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "mirror-b-check-no",
+          "source": "mirror-b-check",
+          "target": "mirror-b-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "mirror-c-next",
+          "source": "mirror-c",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "mirror-c",
+          "source": "mirror",
+          "target": "mirror-c",
+          "sourceHandle": "c"
+        },
+        {
+          "id": "when-0-no",
+          "source": "when-0",
+          "target": "scene",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "scene-a",
+          "source": "scene",
+          "target": "scene-a-check",
+          "sourceHandle": "a"
+        },
+        {
+          "id": "scene-a-ok-next",
+          "source": "scene-a-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-a-fail-next",
+          "source": "scene-a-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-a-check-yes",
+          "source": "scene-a-check",
+          "target": "scene-a-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "scene-a-check-no",
+          "source": "scene-a-check",
+          "target": "scene-a-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "scene-b",
+          "source": "scene",
+          "target": "scene-b-check",
+          "sourceHandle": "b"
+        },
+        {
+          "id": "scene-b-ok-next",
+          "source": "scene-b-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-b-fail-next",
+          "source": "scene-b-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-b-check-yes",
+          "source": "scene-b-check",
+          "target": "scene-b-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "scene-b-check-no",
+          "source": "scene-b-check",
+          "target": "scene-b-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "scene-c-next",
+          "source": "scene-c",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-c",
+          "source": "scene",
+          "target": "scene-c",
+          "sourceHandle": "c"
+        },
+        {
+          "id": "outcome-0-next",
+          "source": "outcome-0",
+          "target": "end",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "after-next",
+          "source": "after",
+          "target": "outcome-if-0",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "outcome-if-0-yes",
+          "source": "outcome-if-0",
+          "target": "outcome-0",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "outcome-1-next",
+          "source": "outcome-1",
+          "target": "end",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "outcome-if-0-no",
+          "source": "outcome-if-0",
+          "target": "outcome-1",
+          "sourceHandle": "no"
+        }
+      ],
+      "passiveEffects": []
+    }
+  },
+  {
+    "id": "r004-06",
+    "chapterId": "chapter-004",
+    "sequence": 6,
+    "prerequisiteEventIds": [
+      "r004-05"
+    ],
+    "connections": [
+      {
+        "targetId": "r004-07",
+        "label": "다음 장면"
+      }
+    ],
+    "year": 189,
+    "month": null,
+    "precision": "year",
+    "calendar": "lunar",
+    "title": "[현령님, 체포보다 동업이 낫지 않나요]",
+    "summary": "중모에서 붙잡힌 조조는 현령 진궁에게 암살의 뜻을 밝혔다. 진궁은 조조를 풀어 주고 관직을 버린 채 함께 떠났다.",
+    "regionIds": [
+      "zhongmu"
+    ],
+    "factionIds": [
+      "han",
+      "dong-zhuo",
+      "cao-cao"
+    ],
+    "relatedPeople": [
+      "조조",
+      "진궁"
+    ],
+    "relatedOfficerIds": [
+      "rtk14-0521",
+      "rtk14-0671"
+    ],
+    "category": "novel",
+    "source": {
+      "title": "삼국지연의 제4회 사건 문서",
+      "record": "중모에서 붙잡힌 조조는 현령 진궁에게 암살의 뜻을 밝혔다. 진궁은 조조를 풀어 주고 관직을 버린 채 함께 떠났다."
+    },
+    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작.",
+    "flow": {
+      "nodes": [
+        {
+          "id": "start",
+          "type": "start",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "data": {
+            "label": "황제 폐립과 조조의 도피·거병"
+          }
+        },
+        {
+          "id": "end",
+          "type": "end",
+          "position": {
+            "x": 0,
+            "y": 3400
+          },
+          "data": {
+            "label": "다음 사건"
+          }
+        },
+        {
+          "id": "entry",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 680
+          },
+          "data": {
+            "label": "현장 도착",
+            "text": "검문이 심해지자 나는 동쪽으로 떠나는 수레와 함께 중모현까지 움직였다. 역참에 수배 문서가 붙었고 안에서는 조조를 심문한다는 소리가 새어 나왔다.",
+            "effects": [
+              {
+                "type": "region",
+                "value": "zhongmu"
+              }
+            ],
+            "silent": false
+          }
+        },
+        {
+          "id": "alive-0",
+          "type": "condition",
+          "position": {
+            "x": 0,
+            "y": 340
+          },
+          "data": {
+            "label": "필수 인물 생존",
+            "condition": {
+              "field": "world.people.rtk14-0521",
+              "operator": "neq",
+              "value": "dead"
+            }
+          }
+        },
+        {
+          "id": "background",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 1020
+          },
+          "data": {
+            "label": "사건 배경",
+            "text": "조조의 수배 문서가 중모현에도 도착했다. 현령 진궁은 붙잡힌 사람이 무엇을 하려 했는지 따로 확인하려 했다.",
+            "recordType": "background",
+            "effects": []
+          }
+        },
+        {
+          "id": "when-0",
+          "type": "condition",
+          "position": {
+            "x": 0,
+            "y": 1360
+          },
+          "data": {
+            "label": "앞선 선택 반영",
+            "condition": {
+              "field": "world.flags.caoEscapeLead",
+              "operator": "eq",
+              "value": true
+            }
+          }
+        },
+        {
+          "id": "ahead",
+          "type": "choice",
+          "position": {
+            "x": -210,
+            "y": 1700
+          },
+          "data": {
+            "label": "현령님, 체포보다 동업이 낫지 않나요",
+            "text": "수도에서 번 시간 덕에 조조는 중모의 첫 검문은 지났지만 이어진 수배 확인에 붙잡혔다. 진궁은 그가 왜 동탁을 노렸는지 따로 듣겠다고 했다. 성문 하나를 열어 줬다고 도주 전체가 끝난 건 아니었다. 이번에는 진궁에게 대조 가능한 증언을 건넬 수 있을까?",
+            "artwork": {
+              "src": "/art/choices/official.png",
+              "alt": "권력 다툼 속에서 문서를 확인하는 주인공"
+            },
+            "options": [
+              {
+                "id": "a",
+                "title": "[동탁군 약탈의 확인 가능한 경과를 증언한다]",
+                "description": "암살을 영웅담으로 꾸미지 말자. 직접 확인할 집과 사람을 대면 된다.",
+                "artwork": {
+                  "src": "/art/choices/official.png",
+                  "alt": "확인할 문서와 증언을 담당자에게 전달하는 주인공"
+                }
+              },
+              {
+                "id": "b",
+                "title": "[진궁의 서리에게 조조 측 연락을 청한다]",
+                "description": "현령에게 바로 임관할 판은 아니다. 풀려난 뒤 말을 전할 길부터 만들자.",
+                "artwork": {
+                  "src": "/art/choices/official.png",
+                  "alt": "진궁의 서리에게 조조 측 연락을 청한다"
+                }
+              },
+              {
+                "id": "c",
+                "title": "[심문이 끝날 때까지 관아 밖에 머문다]",
+                "description": "현령의 인생 결정을 구경하다 죄수 명단에 들지는 말자.",
+                "outcome": "체포·심문에 관여하지 않음",
+                "artwork": {
+                  "src": "/art/choices/travel-wagons.png",
+                  "alt": "충돌 현장을 벗어나 수레와 숙소 쪽으로 이동하는 주인공"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "ahead-a-check",
+          "type": "check",
+          "position": {
+            "x": -1050,
+            "y": 2040
+          },
+          "data": {
+            "label": "동탁군 약탈의 확인 가능한 경과를 증언한다 판정",
+            "check": {
+              "kind": "strategy",
+              "success": "진궁의 동행 결심을 뒷받침",
+              "failure": "증언 미채택",
+              "successNarrative": "나는 진궁 측 서리에게 약탈 피해와 확인할 사람을 따로 적어 전했다. 진궁은 증언을 대조한 뒤 조조의 말을 다시 듣고 관직을 버릴 뜻을 굳혔다.",
+              "failureNarrative": "나는 증언을 청했지만 신분을 보증할 사람이 없어 심문실에 들지 못했다. 진궁은 내 말과 별개로 조조를 다시 만났다."
+            }
+          }
+        },
+        {
+          "id": "ahead-a-ok",
+          "type": "result",
+          "position": {
+            "x": -1470,
+            "y": 2380
+          },
+          "data": {
+            "label": "ahead-a-ok",
+            "text": "나는 진궁 측 서리에게 약탈 피해와 확인할 사람을 따로 적어 전했다. 진궁은 증언을 대조한 뒤 조조의 말을 다시 듣고 관직을 버릴 뜻을 굳혔다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "chenEvidence",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "ahead-a-fail",
+          "type": "result",
+          "position": {
+            "x": -1050,
+            "y": 2380
+          },
+          "data": {
+            "label": "ahead-a-fail",
+            "text": "나는 증언을 청했지만 신분을 보증할 사람이 없어 심문실에 들지 못했다. 진궁은 내 말과 별개로 조조를 다시 만났다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "ahead-b-check",
+          "type": "check",
+          "position": {
+            "x": -630,
+            "y": 2040
+          },
+          "data": {
+            "label": "진궁의 서리에게 조조 측 연락을 청한다 판정",
+            "check": {
+              "kind": "relationship",
+              "success": "조조 측 접촉",
+              "failure": "접촉 거절",
+              "successNarrative": "나는 진궁의 서리에게 조조가 떠나면 연락을 전해 달라고 청했다. 서리는 내 이름과 숙소를 적어 조조 측에 넘겼다.",
+              "failureNarrative": "나는 연락을 부탁했지만 심문 중에는 이름을 받을 수 없다는 답을 들었다. 역참에서 결과를 기다렸다."
+            }
+          }
+        },
+        {
+          "id": "ahead-b-ok",
+          "type": "result",
+          "position": {
+            "x": -630,
+            "y": 2380
+          },
+          "data": {
+            "label": "ahead-b-ok",
+            "text": "나는 진궁의 서리에게 조조가 떠나면 연락을 전해 달라고 청했다. 서리는 내 이름과 숙소를 적어 조조 측에 넘겼다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "metCaoContact",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "ahead-b-fail",
+          "type": "result",
+          "position": {
+            "x": -210,
+            "y": 2380
+          },
+          "data": {
+            "label": "ahead-b-fail",
+            "text": "나는 연락을 부탁했지만 심문 중에는 이름을 받을 수 없다는 답을 들었다. 역참에서 결과를 기다렸다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "ahead-c",
+          "type": "result",
+          "position": {
+            "x": -210,
+            "y": 2040
+          },
+          "data": {
+            "label": "ahead-c",
+            "text": "나는 관아에서 떨어진 주막에 머물렀다. 진궁이 조조와 함께 떠났다는 소식을 듣고 검문이 잦아들기를 기다렸다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "scene",
+          "type": "choice",
+          "position": {
+            "x": 210,
+            "y": 1700
+          },
+          "data": {
+            "label": "현령님, 체포보다 동업이 낫지 않나요",
+            "text": "조조를 잡은 현령이 오히려 함께 떠나는 전개를 나는 알고 있었다. 그렇다고 문을 박차고 들어가 둘이 천생연분이라고 할 수는 없었다. 진궁이 고민하는 건 죄수의 말과 동탁의 실상 중 무엇을 믿을지였다. 내가 본 피해를 증언하면 그 선택을 앞당길 수 있을까?",
+            "artwork": {
+              "src": "/art/choices/official.png",
+              "alt": "권력 다툼 속에서 문서를 확인하는 주인공"
+            },
+            "options": [
+              {
+                "id": "a",
+                "title": "[동탁군 약탈의 확인 가능한 경과를 증언한다]",
+                "description": "암살을 영웅담으로 꾸미지 말자. 직접 확인할 집과 사람을 대면 된다.",
+                "artwork": {
+                  "src": "/art/choices/official.png",
+                  "alt": "확인할 문서와 증언을 담당자에게 전달하는 주인공"
+                }
+              },
+              {
+                "id": "b",
+                "title": "[진궁의 서리에게 조조 측 연락을 청한다]",
+                "description": "현령에게 바로 임관할 판은 아니다. 풀려난 뒤 말을 전할 길부터 만들자.",
+                "artwork": {
+                  "src": "/art/choices/official.png",
+                  "alt": "진궁의 서리에게 조조 측 연락을 청한다"
+                }
+              },
+              {
+                "id": "c",
+                "title": "[심문이 끝날 때까지 관아 밖에 머문다]",
+                "description": "현령의 인생 결정을 구경하다 죄수 명단에 들지는 말자.",
+                "outcome": "체포·심문에 관여하지 않음",
+                "artwork": {
+                  "src": "/art/choices/travel-wagons.png",
+                  "alt": "충돌 현장을 벗어나 수레와 숙소 쪽으로 이동하는 주인공"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "scene-a-check",
+          "type": "check",
+          "position": {
+            "x": 210,
+            "y": 2040
+          },
+          "data": {
+            "label": "동탁군 약탈의 확인 가능한 경과를 증언한다 판정",
+            "check": {
+              "kind": "strategy",
+              "success": "진궁의 동행 결심을 뒷받침",
+              "failure": "증언 미채택",
+              "successNarrative": "나는 진궁 측 서리에게 약탈 피해와 확인할 사람을 따로 적어 전했다. 진궁은 증언을 대조한 뒤 조조의 말을 다시 듣고 관직을 버릴 뜻을 굳혔다.",
+              "failureNarrative": "나는 증언을 청했지만 신분을 보증할 사람이 없어 심문실에 들지 못했다. 진궁은 내 말과 별개로 조조를 다시 만났다."
+            }
+          }
+        },
+        {
+          "id": "scene-a-ok",
+          "type": "result",
+          "position": {
+            "x": 210,
+            "y": 2380
+          },
+          "data": {
+            "label": "scene-a-ok",
+            "text": "나는 진궁 측 서리에게 약탈 피해와 확인할 사람을 따로 적어 전했다. 진궁은 증언을 대조한 뒤 조조의 말을 다시 듣고 관직을 버릴 뜻을 굳혔다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "chenEvidence",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "scene-a-fail",
+          "type": "result",
+          "position": {
+            "x": 630,
+            "y": 2380
+          },
+          "data": {
+            "label": "scene-a-fail",
+            "text": "나는 증언을 청했지만 신분을 보증할 사람이 없어 심문실에 들지 못했다. 진궁은 내 말과 별개로 조조를 다시 만났다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "scene-b-check",
+          "type": "check",
+          "position": {
+            "x": 630,
+            "y": 2040
+          },
+          "data": {
+            "label": "진궁의 서리에게 조조 측 연락을 청한다 판정",
+            "check": {
+              "kind": "relationship",
+              "success": "조조 측 접촉",
+              "failure": "접촉 거절",
+              "successNarrative": "나는 진궁의 서리에게 조조가 떠나면 연락을 전해 달라고 청했다. 서리는 내 이름과 숙소를 적어 조조 측에 넘겼다.",
+              "failureNarrative": "나는 연락을 부탁했지만 심문 중에는 이름을 받을 수 없다는 답을 들었다. 역참에서 결과를 기다렸다."
+            }
+          }
+        },
+        {
+          "id": "scene-b-ok",
+          "type": "result",
+          "position": {
+            "x": 1050,
+            "y": 2380
+          },
+          "data": {
+            "label": "scene-b-ok",
+            "text": "나는 진궁의 서리에게 조조가 떠나면 연락을 전해 달라고 청했다. 서리는 내 이름과 숙소를 적어 조조 측에 넘겼다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "metCaoContact",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "scene-b-fail",
+          "type": "result",
+          "position": {
+            "x": 1470,
+            "y": 2380
+          },
+          "data": {
+            "label": "scene-b-fail",
+            "text": "나는 연락을 부탁했지만 심문 중에는 이름을 받을 수 없다는 답을 들었다. 역참에서 결과를 기다렸다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "scene-c",
+          "type": "result",
+          "position": {
+            "x": 1050,
+            "y": 2040
+          },
+          "data": {
+            "label": "scene-c",
+            "text": "나는 관아에서 떨어진 주막에 머물렀다. 진궁이 조조와 함께 떠났다는 소식을 듣고 검문이 잦아들기를 기다렸다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "after",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 2720
+          },
+          "data": {
+            "label": "사건 종료 표식",
+            "silent": true,
+            "effects": [
+              {
+                "type": "flag",
+                "key": "r004-06-complete",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "outcome-0",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 3060
+          },
+          "data": {
+            "label": "실제 결말",
+            "text": "진궁은 조조의 반동탁 의지에 공감해 그를 풀어 주었다. 진궁은 관직을 버리고 조조와 함께 중모를 떠났다.",
+            "recordType": "outcome",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "chenWithCao",
+                "value": true
+              }
+            ]
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "start-next",
+          "source": "start",
+          "target": "alive-0",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "alive-0-yes",
+          "source": "alive-0",
+          "target": "entry",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "alive-0-no",
+          "source": "alive-0",
+          "target": "end",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "entry-next",
+          "source": "entry",
+          "target": "background",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "background-next",
+          "source": "background",
+          "target": "when-0",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "when-0-yes",
+          "source": "when-0",
+          "target": "ahead",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "ahead-a",
+          "source": "ahead",
+          "target": "ahead-a-check",
+          "sourceHandle": "a"
+        },
+        {
+          "id": "ahead-a-ok-next",
+          "source": "ahead-a-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "ahead-a-fail-next",
+          "source": "ahead-a-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "ahead-a-check-yes",
+          "source": "ahead-a-check",
+          "target": "ahead-a-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "ahead-a-check-no",
+          "source": "ahead-a-check",
+          "target": "ahead-a-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "ahead-b",
+          "source": "ahead",
+          "target": "ahead-b-check",
+          "sourceHandle": "b"
+        },
+        {
+          "id": "ahead-b-ok-next",
+          "source": "ahead-b-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "ahead-b-fail-next",
+          "source": "ahead-b-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "ahead-b-check-yes",
+          "source": "ahead-b-check",
+          "target": "ahead-b-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "ahead-b-check-no",
+          "source": "ahead-b-check",
+          "target": "ahead-b-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "ahead-c-next",
+          "source": "ahead-c",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "ahead-c",
+          "source": "ahead",
+          "target": "ahead-c",
+          "sourceHandle": "c"
+        },
+        {
+          "id": "when-0-no",
+          "source": "when-0",
+          "target": "scene",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "scene-a",
+          "source": "scene",
+          "target": "scene-a-check",
+          "sourceHandle": "a"
+        },
+        {
+          "id": "scene-a-ok-next",
+          "source": "scene-a-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-a-fail-next",
+          "source": "scene-a-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-a-check-yes",
+          "source": "scene-a-check",
+          "target": "scene-a-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "scene-a-check-no",
+          "source": "scene-a-check",
+          "target": "scene-a-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "scene-b",
+          "source": "scene",
+          "target": "scene-b-check",
+          "sourceHandle": "b"
+        },
+        {
+          "id": "scene-b-ok-next",
+          "source": "scene-b-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-b-fail-next",
+          "source": "scene-b-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-b-check-yes",
+          "source": "scene-b-check",
+          "target": "scene-b-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "scene-b-check-no",
+          "source": "scene-b-check",
+          "target": "scene-b-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "scene-c-next",
+          "source": "scene-c",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-c",
+          "source": "scene",
+          "target": "scene-c",
+          "sourceHandle": "c"
+        },
+        {
+          "id": "outcome-0-next",
+          "source": "outcome-0",
+          "target": "end",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "after-next",
+          "source": "after",
+          "target": "outcome-0",
+          "sourceHandle": "next"
+        }
+      ],
+      "passiveEffects": []
+    }
+  },
+  {
+    "id": "r004-07",
+    "chapterId": "chapter-004",
+    "sequence": 7,
+    "prerequisiteEventIds": [
+      "r004-06"
+    ],
+    "connections": [
+      {
+        "targetId": "r004-08",
+        "label": "다음 장면"
+      }
+    ],
+    "year": 189,
+    "month": null,
+    "precision": "year",
+    "calendar": "lunar",
+    "title": "[돼지 소리부터 듣고 칼 뽑으세요]",
+    "summary": "조조와 진궁은 여백사의 집에서 칼 가는 소리를 자신들을 해치려는 준비로 오해해 집안사람들을 죽였다. 조조는 뒤에 여백사까지 죽였고 진궁은 충격을 받아 떠났다.",
+    "regionIds": [
+      "chenggao"
+    ],
+    "factionIds": [
+      "han",
+      "dong-zhuo",
+      "cao-cao"
+    ],
+    "relatedPeople": [
+      "조조",
+      "진궁",
+      "여백사"
+    ],
+    "relatedOfficerIds": [
+      "rtk14-0521",
+      "rtk14-0671"
+    ],
+    "category": "novel",
+    "source": {
+      "title": "삼국지연의 제4회 사건 문서",
+      "record": "조조와 진궁은 여백사의 집에서 칼 가는 소리를 자신들을 해치려는 준비로 오해해 집안사람들을 죽였다. 조조는 뒤에 여백사까지 죽였고 진궁은 충격을 받아 떠났다."
+    },
+    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작.",
+    "flow": {
+      "nodes": [
+        {
+          "id": "start",
+          "type": "start",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "data": {
+            "label": "황제 폐립과 조조의 도피·거병"
+          }
+        },
+        {
+          "id": "end",
+          "type": "end",
+          "position": {
+            "x": 0,
+            "y": 3400
+          },
+          "data": {
+            "label": "다음 사건"
+          }
+        },
+        {
+          "id": "entry",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 680
+          },
+          "data": {
+            "label": "현장 도착",
+            "text": "나는 중모에서 나온 수레길을 따라 저녁 숙소를 찾았다. 여백사 집 앞에서 조조 일행의 말이 묶인 걸 보고 담장 밖에 멈췄다.",
+            "effects": [
+              {
+                "type": "region",
+                "value": "chenggao"
+              }
+            ],
+            "silent": false
+          }
+        },
+        {
+          "id": "alive-0",
+          "type": "condition",
+          "position": {
+            "x": 0,
+            "y": 340
+          },
+          "data": {
+            "label": "필수 인물 생존",
+            "condition": {
+              "field": "world.people.rtk14-0521",
+              "operator": "neq",
+              "value": "dead"
+            }
+          }
+        },
+        {
+          "id": "background",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 1020
+          },
+          "data": {
+            "label": "사건 배경",
+            "text": "조조와 진궁이 여백사의 집에 잠시 묵었다. 여백사는 술을 구하러 나갔고 안에서는 손님을 대접할 준비를 했다.",
+            "recordType": "background",
+            "effects": []
+          }
+        },
+        {
+          "id": "scene",
+          "type": "choice",
+          "position": {
+            "x": 0,
+            "y": 1360
+          },
+          "data": {
+            "label": "돼지 소리부터 듣고 칼 뽑으세요",
+            "text": "칼 가는 소리 뒤로 묶어서 죽이라는 말이 들렸다. 조조의 손이 칼로 가는 순간, 나는 저게 손님이 아니라 돼지 이야기라는 걸 떠올렸다. 의심을 설득으로 이기려면 목소리보다 먼저 보여 줄 게 있어야 했다. 부엌의 돼지 한 마리로 사람들의 운명을 바꿀 수 있을까?",
+            "artwork": {
+              "src": "/art/scenes/r004-pig.png",
+              "alt": "여백사 집 부엌 옆 돼지 우리를 가리키며 오해를 확인하려는 주인공"
+            },
+            "options": [
+              {
+                "id": "a",
+                "title": "[칼을 뽑기 전에 돼지 우리를 확인시키려 한다]",
+                "description": "조조의 의심을 비웃으면 내 목부터 날아갈 수 있다. 현물 확인을 요구하자.",
+                "artwork": {
+                  "src": "/art/scenes/r004-pig.png",
+                  "alt": "돼지 우리를 확인시켜 오해를 풀려는 주인공"
+                }
+              },
+              {
+                "id": "b",
+                "title": "[진궁에게 집 안을 먼저 확인해 달라고 청한다]",
+                "description": "조조를 정면으로 가르칠 처지는 아니다. 아직 칼을 들지 않은 사람에게 부탁하자.",
+                "artwork": {
+                  "src": "/art/choices/official.png",
+                  "alt": "진궁에게 집 안을 먼저 확인해 달라고 청한다"
+                }
+              },
+              {
+                "id": "c",
+                "title": "[무장한 손님들의 말소리에서 멀어진다]",
+                "description": "이 집의 미래를 알아도 지금 칼을 막을 자신은 없다.",
+                "outcome": "직접 충돌 회피·참사는 막지 못함",
+                "artwork": {
+                  "src": "/art/choices/travel-wagons.png",
+                  "alt": "충돌 현장을 벗어나 수레와 숙소 쪽으로 이동하는 주인공"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "scene-a-check",
+          "type": "check",
+          "position": {
+            "x": -420,
+            "y": 1700
+          },
+          "data": {
+            "label": "칼을 뽑기 전에 돼지 우리를 확인시키려 한다 판정",
+            "check": {
+              "kind": "strategy",
+              "success": "여백사 일가 생존·진궁 동행 유지",
+              "failure": "경고 실패·일가 살해·진궁 결별",
+              "successNarrative": "나는 담장 옆 돼지 울음을 가리키며 부엌을 먼저 확인하라고 외쳤다. 진궁이 안을 살피고 도살 준비였다고 알리자 조조는 칼을 거뒀고 돌아온 여백사와 가족도 살아남았다.",
+              "failureNarrative": "나는 돼지 우리를 가리켰지만 경계하던 조조에게 목소리가 닿지 않았다. 안에서 비명이 난 뒤에야 진궁이 잘못을 알았고 나는 담장 밖으로 도망쳤다."
+            }
+          }
+        },
+        {
+          "id": "scene-a-ok",
+          "type": "result",
+          "position": {
+            "x": -630,
+            "y": 2040
+          },
+          "data": {
+            "label": "scene-a-ok",
+            "text": "나는 담장 옆 돼지 울음을 가리키며 부엌을 먼저 확인하라고 외쳤다. 진궁이 안을 살피고 도살 준비였다고 알리자 조조는 칼을 거뒀고 돌아온 여백사와 가족도 살아남았다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "luBosheSaved",
+                "value": true
+              },
+              {
+                "type": "flag",
+                "key": "chenStayed",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "scene-a-fail",
+          "type": "result",
+          "position": {
+            "x": -210,
+            "y": 2040
+          },
+          "data": {
+            "label": "scene-a-fail",
+            "text": "나는 돼지 우리를 가리켰지만 경계하던 조조에게 목소리가 닿지 않았다. 안에서 비명이 난 뒤에야 진궁이 잘못을 알았고 나는 담장 밖으로 도망쳤다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "scene-b-check",
+          "type": "check",
+          "position": {
+            "x": 0,
+            "y": 1700
+          },
+          "data": {
+            "label": "진궁에게 집 안을 먼저 확인해 달라고 청한다 판정",
+            "check": {
+              "kind": "relationship",
+              "success": "오해 해소·일가 생존",
+              "failure": "확인 지연·일가 살해",
+              "successNarrative": "나는 진궁에게 부엌 사정을 따로 확인해 달라고 간청했다. 진궁이 조조를 잠시 붙들고 안에서 돼지를 확인해 돌아오자 칼은 끝내 뽑히지 않았다.",
+              "failureNarrative": "나는 진궁을 부르려 했지만 문 안으로 들어가지 못했다. 뒤늦게 잘못을 알아차린 두 사람의 말소리만 듣고 물러났다."
+            }
+          }
+        },
+        {
+          "id": "scene-b-ok",
+          "type": "result",
+          "position": {
+            "x": 210,
+            "y": 2040
+          },
+          "data": {
+            "label": "scene-b-ok",
+            "text": "나는 진궁에게 부엌 사정을 따로 확인해 달라고 간청했다. 진궁이 조조를 잠시 붙들고 안에서 돼지를 확인해 돌아오자 칼은 끝내 뽑히지 않았다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "luBosheSaved",
+                "value": true
+              },
+              {
+                "type": "flag",
+                "key": "chenStayed",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "scene-b-fail",
+          "type": "result",
+          "position": {
+            "x": 630,
+            "y": 2040
+          },
+          "data": {
+            "label": "scene-b-fail",
+            "text": "나는 진궁을 부르려 했지만 문 안으로 들어가지 못했다. 뒤늦게 잘못을 알아차린 두 사람의 말소리만 듣고 물러났다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "scene-c",
+          "type": "result",
+          "position": {
+            "x": 420,
+            "y": 1700
+          },
+          "data": {
+            "label": "scene-c",
+            "text": "나는 담장을 돌아 다른 숙소로 향했다. 뒤에 여백사 일가의 죽음과 진궁의 결별 소식을 전해 들었다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "after",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 2380
+          },
+          "data": {
+            "label": "사건 종료 표식",
+            "silent": true,
+            "effects": [
+              {
+                "type": "flag",
+                "key": "r004-07-complete",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "outcome-0",
+          "type": "result",
+          "position": {
+            "x": -210,
+            "y": 3060
+          },
+          "data": {
+            "label": "실제 결말",
+            "text": "도살 준비라는 사실이 드러나 여백사 일가는 살아남았다. 조조가 오해를 거둔 이 경로에서 진궁도 동행을 이어 갔다.",
+            "recordType": "outcome",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "chenWithCao",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "outcome-if-0",
+          "type": "condition",
+          "position": {
+            "x": 0,
+            "y": 2720
+          },
+          "data": {
+            "label": "변경된 역사 확인",
+            "condition": {
+              "field": "world.flags.luBosheSaved",
+              "operator": "eq",
+              "value": true
+            }
+          }
+        },
+        {
+          "id": "outcome-1",
+          "type": "result",
+          "position": {
+            "x": 210,
+            "y": 3060
+          },
+          "data": {
+            "label": "실제 결말",
+            "text": "조조와 진궁은 집안사람들을 죽인 뒤 도살 준비였음을 알았다. 조조는 돌아온 여백사마저 죽였고 진궁은 잠든 조조를 해치지 않은 채 홀로 떠났다.",
+            "recordType": "outcome",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "luBosheKilled",
+                "value": true
+              },
+              {
+                "type": "flag",
+                "key": "chenWithCao",
+                "value": false
+              },
+              {
+                "type": "flag",
+                "key": "chenLeft",
+                "value": true
+              }
+            ]
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "start-next",
+          "source": "start",
+          "target": "alive-0",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "alive-0-yes",
+          "source": "alive-0",
+          "target": "entry",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "alive-0-no",
+          "source": "alive-0",
+          "target": "end",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "entry-next",
+          "source": "entry",
+          "target": "background",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "background-next",
+          "source": "background",
+          "target": "scene",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-a",
+          "source": "scene",
+          "target": "scene-a-check",
+          "sourceHandle": "a"
+        },
+        {
+          "id": "scene-a-ok-next",
+          "source": "scene-a-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-a-fail-next",
+          "source": "scene-a-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-a-check-yes",
+          "source": "scene-a-check",
+          "target": "scene-a-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "scene-a-check-no",
+          "source": "scene-a-check",
+          "target": "scene-a-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "scene-b",
+          "source": "scene",
+          "target": "scene-b-check",
+          "sourceHandle": "b"
+        },
+        {
+          "id": "scene-b-ok-next",
+          "source": "scene-b-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-b-fail-next",
+          "source": "scene-b-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-b-check-yes",
+          "source": "scene-b-check",
+          "target": "scene-b-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "scene-b-check-no",
+          "source": "scene-b-check",
+          "target": "scene-b-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "scene-c-next",
+          "source": "scene-c",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-c",
+          "source": "scene",
+          "target": "scene-c",
+          "sourceHandle": "c"
+        },
+        {
+          "id": "outcome-0-next",
+          "source": "outcome-0",
+          "target": "end",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "after-next",
+          "source": "after",
+          "target": "outcome-if-0",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "outcome-if-0-yes",
+          "source": "outcome-if-0",
+          "target": "outcome-0",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "outcome-1-next",
+          "source": "outcome-1",
+          "target": "end",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "outcome-if-0-no",
+          "source": "outcome-if-0",
+          "target": "outcome-1",
+          "sourceHandle": "no"
+        }
+      ],
+      "passiveEffects": []
+    }
+  },
+  {
+    "id": "r004-08",
+    "chapterId": "chapter-004",
+    "sequence": 8,
+    "prerequisiteEventIds": [
+      "r004-07"
+    ],
+    "connections": [],
+    "year": 189,
+    "month": null,
+    "precision": "year",
+    "calendar": "lunar",
+    "title": "[암살 다음은 군대 창업이네]",
+    "summary": "조조는 진류에서 아버지의 재산과 위홍의 지원으로 군사를 모았다. 악진·이전과 하후 형제, 조인·조홍 등이 합류했고 반동탁 격문을 보냈다.",
+    "regionIds": [
+      "chenliu"
+    ],
+    "factionIds": [
+      "han",
+      "dong-zhuo",
+      "cao-cao"
+    ],
+    "relatedPeople": [
+      "조조",
+      "위홍",
+      "악진",
+      "이전",
+      "하후돈",
+      "하후연",
+      "조인",
+      "조홍"
+    ],
+    "relatedOfficerIds": [
+      "rtk14-0102",
+      "rtk14-0114",
+      "rtk14-0124",
+      "rtk14-0511",
+      "rtk14-0518",
+      "rtk14-0521",
+      "rtk14-0620",
+      "rtk14-0913"
+    ],
+    "category": "novel",
+    "source": {
+      "title": "삼국지연의 제4회 사건 문서",
+      "record": "조조는 진류에서 아버지의 재산과 위홍의 지원으로 군사를 모았다. 악진·이전과 하후 형제, 조인·조홍 등이 합류했고 반동탁 격문을 보냈다."
+    },
+    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작.",
+    "flow": {
+      "nodes": [
+        {
+          "id": "start",
+          "type": "start",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "data": {
+            "label": "황제 폐립과 조조의 도피·거병"
+          }
+        },
+        {
+          "id": "end",
+          "type": "end",
+          "position": {
+            "x": 0,
+            "y": 4080
+          },
+          "data": {
+            "label": "다음 사건"
+          }
+        },
+        {
+          "id": "entry",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 680
+          },
+          "data": {
+            "label": "현장 도착",
+            "text": "나는 동쪽 수레길을 따라 진류의 모집 거리로 들어갔다. 숙소와 군영을 오가는 연락책들에게 조조의 격문이 돌기 시작했다.",
+            "effects": [
+              {
+                "type": "region",
+                "value": "chenliu"
+              }
+            ],
+            "silent": false
+          }
+        },
+        {
+          "id": "alive-0",
+          "type": "condition",
+          "position": {
+            "x": 0,
+            "y": 340
+          },
+          "data": {
+            "label": "필수 인물 생존",
+            "condition": {
+              "field": "world.people.rtk14-0521",
+              "operator": "neq",
+              "value": "dead"
+            }
+          }
+        },
+        {
+          "id": "background",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 1020
+          },
+          "data": {
+            "label": "사건 배경",
+            "text": "조조는 진류에서 병사와 군량을 모으기 시작했다. 위홍이 자금을 보탰고 여러 장수가 모집소에 모여들었다.",
+            "recordType": "background",
+            "effects": []
+          }
+        },
+        {
+          "id": "when-0",
+          "type": "condition",
+          "position": {
+            "x": 0,
+            "y": 1360
+          },
+          "data": {
+            "label": "앞선 선택 반영",
+            "condition": {
+              "field": "factionId",
+              "operator": "in",
+              "value": [
+                "liu-bei",
+                "cao-cao",
+                "dong-zhuo",
+                "ding-yuan",
+                "han",
+                "yellow-turban"
+              ]
+            }
+          }
+        },
+        {
+          "id": "affiliated",
+          "type": "choice",
+          "position": {
+            "x": -210,
+            "y": 1700
+          },
+          "data": {
+            "label": "암살 다음은 군대 창업이네",
+            "text": "나는 기존 소속의 연락선으로 돌아갈 자료를 찾으러 조조의 공개 모집 거리를 살폈다. 자금과 군량이 모이고 격문 사본이 사람들 손을 탔다. 이름난 영웅들이 모이는 곳이라도 소속을 숨기고 두 군영에 이름을 올릴 수는 없었다. 지금 맡은 일에 쓸 자료를 얻을까, 모집 장부의 빈틈을 짚을까?",
+            "artwork": {
+              "src": "/art/choices/supplies.png",
+              "alt": "진류 모집 거리의 군량 인수 장부를 살피는 주인공"
+            },
+            "options": [
+              {
+                "id": "a",
+                "title": "[기부금과 군량 인수 장부를 분리하자고 제안한다]",
+                "description": "횡령이 터지기 전에 담당자를 나누자. 돈줄을 의심했다는 역풍도 감수해야 한다.",
+                "artwork": {
+                  "src": "/art/choices/supplies.png",
+                  "alt": "군량 인수 장부와 물자를 대조하는 주인공"
+                }
+              },
+              {
+                "id": "b",
+                "title": "[기존 소속을 밝히고 격문 사본을 청한다]",
+                "description": "모집소를 봤다고 주군이 자동으로 바뀌는 건 아니다. 지금 연락선으로 돌아갈 자료를 얻자.",
+                "artwork": {
+                  "src": "/art/choices/official.png",
+                  "alt": "기존 소속을 밝히고 격문 사본을 청한다"
+                }
+              },
+              {
+                "id": "c",
+                "title": "[모집소 밖 운송 일을 맡아 숙소를 구한다]",
+                "description": "대업에 서명하기 전에 오늘 잘 곳부터 있어야 한다.",
+                "outcome": "소속 변경 없이 숙소 확보",
+                "artwork": {
+                  "src": "/art/choices/travel-wagons.png",
+                  "alt": "충돌 현장을 벗어나 수레와 숙소 쪽으로 이동하는 주인공"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "affiliated-a-check",
+          "type": "check",
+          "position": {
+            "x": -840,
+            "y": 2040
+          },
+          "data": {
+            "label": "기부금과 군량 인수 장부를 분리하자고 제안한다 판정",
+            "check": {
+              "kind": "politics",
+              "success": "모집 군량 누락 방지·신뢰 획득",
+              "failure": "자금 탐문 의심",
+              "successNarrative": "나는 돈을 받은 사람과 군량을 확인한 사람을 따로 적도록 제안했다. 위홍 측 서리가 일부 창고에서 방식을 시험해 누락된 인수분을 찾아냈다.",
+              "failureNarrative": "나는 장부 분리를 제안했지만 외부인이 자금 사정을 캐묻는다는 경계를 샀다. 장부에 손대지 않고 모집소를 나왔다."
+            }
+          }
+        },
+        {
+          "id": "affiliated-a-ok",
+          "type": "result",
+          "position": {
+            "x": -1890,
+            "y": 2380
+          },
+          "data": {
+            "label": "affiliated-a-ok",
+            "text": "나는 돈을 받은 사람과 군량을 확인한 사람을 따로 적도록 제안했다. 위홍 측 서리가 일부 창고에서 방식을 시험해 누락된 인수분을 찾아냈다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "caoSupplyLedger",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "affiliated-a-fail",
+          "type": "result",
+          "position": {
+            "x": -1470,
+            "y": 2380
+          },
+          "data": {
+            "label": "affiliated-a-fail",
+            "text": "나는 장부 분리를 제안했지만 외부인이 자금 사정을 캐묻는다는 경계를 샀다. 장부에 손대지 않고 모집소를 나왔다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "affiliated-b-check",
+          "type": "check",
+          "position": {
+            "x": -420,
+            "y": 2040
+          },
+          "data": {
+            "label": "기존 소속을 밝히고 격문 사본을 청한다 판정",
+            "check": {
+              "kind": "relationship",
+              "success": "현재 소속 유지·격문 확보",
+              "failure": "격문 사본 요청 거절",
+              "successNarrative": "나는 현재 소속을 밝히고 공개 격문 사본을 청했다. 모집 서리는 군사 명부 대신 격문을 내줬고 나는 기존 연락선으로 사본을 전했다.",
+              "failureNarrative": "나는 사본을 청했지만 검증 전에는 내줄 수 없다는 답을 받았다. 기존 소속을 유지하고 연락소로 돌아갔다."
+            }
+          }
+        },
+        {
+          "id": "affiliated-b-ok",
+          "type": "result",
+          "position": {
+            "x": -1050,
+            "y": 2380
+          },
+          "data": {
+            "label": "affiliated-b-ok",
+            "text": "나는 현재 소속을 밝히고 공개 격문 사본을 청했다. 모집 서리는 군사 명부 대신 격문을 내줬고 나는 기존 연락선으로 사본을 전했다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "caoProclamation",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "affiliated-b-fail",
+          "type": "result",
+          "position": {
+            "x": -630,
+            "y": 2380
+          },
+          "data": {
+            "label": "affiliated-b-fail",
+            "text": "나는 사본을 청했지만 검증 전에는 내줄 수 없다는 답을 받았다. 기존 소속을 유지하고 연락소로 돌아갔다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "affiliated-c",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 2040
+          },
+          "data": {
+            "label": "affiliated-c",
+            "text": "나는 군사 명부에 들지 않고 짐 나르는 품을 팔았다. 모집 거리 바깥 숙소를 얻고 격문이 퍼지는 방향을 살폈다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "when-1",
+          "type": "condition",
+          "position": {
+            "x": 210,
+            "y": 1700
+          },
+          "data": {
+            "label": "앞선 선택 반영",
+            "condition": {
+              "field": "world.flags.metCaoContact",
+              "operator": "eq",
+              "value": true
+            }
+          }
+        },
+        {
+          "id": "known",
+          "type": "choice",
+          "position": {
+            "x": 420,
+            "y": 2040
+          },
+          "data": {
+            "label": "암살 다음은 군대 창업이네",
+            "text": "조조 측 서리가 앞서 남긴 내 이름을 찾아봤다. 연락을 받은 것과 군사 명부에 오르는 것은 별개라 신원 대조가 한 번 더 필요했다. 돈과 무기를 가져온 사람들 사이에서 내가 내밀 것은 지금까지의 경과였다. 이 기회에 정식으로 지원할까? ",
+            "artwork": {
+              "src": "/art/choices/supplies.png",
+              "alt": "진류 모집 거리의 군량 인수 장부를 살피는 주인공"
+            },
+            "options": [
+              {
+                "id": "a",
+                "title": "[기부금과 군량 인수 장부를 분리하자고 제안한다]",
+                "description": "횡령이 터지기 전에 담당자를 나누자. 돈줄을 의심했다는 역풍도 감수해야 한다.",
+                "artwork": {
+                  "src": "/art/choices/supplies.png",
+                  "alt": "군량 인수 장부와 물자를 대조하는 주인공"
+                }
+              },
+              {
+                "id": "b",
+                "title": "[접촉한 조조의 모집소에 정식 지원한다]",
+                "description": "연락선은 있다. 이제 매력으로 사람을 얻는 단계다.",
+                "artwork": {
+                  "src": "/art/choices/official.png",
+                  "alt": "접촉한 조조의 모집소에 정식 지원한다"
+                }
+              },
+              {
+                "id": "c",
+                "title": "[모집소 밖 운송 일을 맡아 숙소를 구한다]",
+                "description": "대업에 서명하기 전에 오늘 잘 곳부터 있어야 한다.",
+                "outcome": "소속 변경 없이 숙소 확보",
+                "artwork": {
+                  "src": "/art/choices/travel-wagons.png",
+                  "alt": "충돌 현장을 벗어나 수레와 숙소 쪽으로 이동하는 주인공"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "known-a-check",
+          "type": "check",
+          "position": {
+            "x": -210,
+            "y": 2380
+          },
+          "data": {
+            "label": "기부금과 군량 인수 장부를 분리하자고 제안한다 판정",
+            "check": {
+              "kind": "politics",
+              "success": "모집 군량 누락 방지·신뢰 획득",
+              "failure": "자금 탐문 의심",
+              "successNarrative": "나는 돈을 받은 사람과 군량을 확인한 사람을 따로 적도록 제안했다. 위홍 측 서리가 일부 창고에서 방식을 시험해 누락된 인수분을 찾아냈다.",
+              "failureNarrative": "나는 장부 분리를 제안했지만 외부인이 자금 사정을 캐묻는다는 경계를 샀다. 장부에 손대지 않고 모집소를 나왔다."
+            }
+          }
+        },
+        {
+          "id": "known-a-ok",
+          "type": "result",
+          "position": {
+            "x": -1470,
+            "y": 2720
+          },
+          "data": {
+            "label": "known-a-ok",
+            "text": "나는 돈을 받은 사람과 군량을 확인한 사람을 따로 적도록 제안했다. 위홍 측 서리가 일부 창고에서 방식을 시험해 누락된 인수분을 찾아냈다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "caoSupplyLedger",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "known-a-fail",
+          "type": "result",
+          "position": {
+            "x": -1050,
+            "y": 2720
+          },
+          "data": {
+            "label": "known-a-fail",
+            "text": "나는 장부 분리를 제안했지만 외부인이 자금 사정을 캐묻는다는 경계를 샀다. 장부에 손대지 않고 모집소를 나왔다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "known-b-check",
+          "type": "check",
+          "position": {
+            "x": 210,
+            "y": 2380
+          },
+          "data": {
+            "label": "접촉한 조조의 모집소에 정식 지원한다 판정",
+            "check": {
+              "kind": "relationship",
+              "success": "조조군 정식 임관",
+              "failure": "정식 지원 거절",
+              "successNarrative": "나는 연락을 받아 준 서리에게 정식 지원 의사를 밝혔다. 신원 대조가 끝나 조조군의 병졸로 받아들여졌고 맡을 자리도 통보받았다.",
+              "failureNarrative": "나는 정식 지원을 청했지만 신원 보증이 부족하다는 이유로 거절당했다. 재야 신분으로 모집소를 떠났다."
+            }
+          }
+        },
+        {
+          "id": "known-b-ok",
+          "type": "result",
+          "position": {
+            "x": -630,
+            "y": 2720
+          },
+          "data": {
+            "label": "known-b-ok",
+            "text": "나는 연락을 받아 준 서리에게 정식 지원 의사를 밝혔다. 신원 대조가 끝나 조조군의 병졸로 받아들여졌고 맡을 자리도 통보받았다.",
+            "effects": [
+              {
+                "type": "faction",
+                "value": "cao-cao"
+              },
+              {
+                "type": "role",
+                "value": "soldier"
+              },
+              {
+                "type": "flag",
+                "key": "caoService",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "known-b-fail",
+          "type": "result",
+          "position": {
+            "x": -210,
+            "y": 2720
+          },
+          "data": {
+            "label": "known-b-fail",
+            "text": "나는 정식 지원을 청했지만 신원 보증이 부족하다는 이유로 거절당했다. 재야 신분으로 모집소를 떠났다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "known-c",
+          "type": "result",
+          "position": {
+            "x": 630,
+            "y": 2380
+          },
+          "data": {
+            "label": "known-c",
+            "text": "나는 군사 명부에 들지 않고 짐 나르는 품을 팔았다. 모집 거리 바깥 숙소를 얻고 격문이 퍼지는 방향을 살폈다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "scene",
+          "type": "choice",
+          "position": {
+            "x": 840,
+            "y": 2040
+          },
+          "data": {
+            "label": "암살 다음은 군대 창업이네",
+            "text": "칼 한 자루로 끝내려던 일이 이제 군량과 명부가 필요한 전쟁으로 커졌다. 앞으로 모일 영웅들의 이름은 알아도 당장 줄 설 자리는 따로 구해야 했다. 조조의 모집소에서는 무기도 돈도 없는 사람을 한 번 더 쳐다봤다. 미래 지식을 자금 장부로 바꿀까, 인연부터 만들까?",
+            "artwork": {
+              "src": "/art/choices/supplies.png",
+              "alt": "진류 모집 거리의 군량 인수 장부를 살피는 주인공"
+            },
+            "options": [
+              {
+                "id": "a",
+                "title": "[기부금과 군량 인수 장부를 분리하자고 제안한다]",
+                "description": "횡령이 터지기 전에 담당자를 나누자. 돈줄을 의심했다는 역풍도 감수해야 한다.",
+                "artwork": {
+                  "src": "/art/choices/supplies.png",
+                  "alt": "군량 인수 장부와 물자를 대조하는 주인공"
+                }
+              },
+              {
+                "id": "b",
+                "title": "[조조 측 모집 서리에게 소개를 청한다]",
+                "description": "격문을 안다고 초면에 벼슬이 나오지는 않는다. 이름을 기억하게 만들자.",
+                "artwork": {
+                  "src": "/art/choices/official.png",
+                  "alt": "조조 측 모집 서리에게 소개를 청한다"
+                }
+              },
+              {
+                "id": "c",
+                "title": "[모집소 밖 운송 일을 맡아 숙소를 구한다]",
+                "description": "대업에 서명하기 전에 오늘 잘 곳부터 있어야 한다.",
+                "outcome": "소속 변경 없이 숙소 확보",
+                "artwork": {
+                  "src": "/art/choices/travel-wagons.png",
+                  "alt": "충돌 현장을 벗어나 수레와 숙소 쪽으로 이동하는 주인공"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "scene-a-check",
+          "type": "check",
+          "position": {
+            "x": 1050,
+            "y": 2380
+          },
+          "data": {
+            "label": "기부금과 군량 인수 장부를 분리하자고 제안한다 판정",
+            "check": {
+              "kind": "politics",
+              "success": "모집 군량 누락 방지·신뢰 획득",
+              "failure": "자금 탐문 의심",
+              "successNarrative": "나는 돈을 받은 사람과 군량을 확인한 사람을 따로 적도록 제안했다. 위홍 측 서리가 일부 창고에서 방식을 시험해 누락된 인수분을 찾아냈다.",
+              "failureNarrative": "나는 장부 분리를 제안했지만 외부인이 자금 사정을 캐묻는다는 경계를 샀다. 장부에 손대지 않고 모집소를 나왔다."
+            }
+          }
+        },
+        {
+          "id": "scene-a-ok",
+          "type": "result",
+          "position": {
+            "x": 210,
+            "y": 2720
+          },
+          "data": {
+            "label": "scene-a-ok",
+            "text": "나는 돈을 받은 사람과 군량을 확인한 사람을 따로 적도록 제안했다. 위홍 측 서리가 일부 창고에서 방식을 시험해 누락된 인수분을 찾아냈다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "caoSupplyLedger",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "scene-a-fail",
+          "type": "result",
+          "position": {
+            "x": 630,
+            "y": 2720
+          },
+          "data": {
+            "label": "scene-a-fail",
+            "text": "나는 장부 분리를 제안했지만 외부인이 자금 사정을 캐묻는다는 경계를 샀다. 장부에 손대지 않고 모집소를 나왔다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "scene-b-check",
+          "type": "check",
+          "position": {
+            "x": 1470,
+            "y": 2380
+          },
+          "data": {
+            "label": "조조 측 모집 서리에게 소개를 청한다 판정",
+            "check": {
+              "kind": "relationship",
+              "success": "조조 측 접촉·즉시 임관 아님",
+              "failure": "소개 거절",
+              "successNarrative": "나는 조조 측 모집 서리에게 신원과 이동 경과를 밝혔다. 서리는 다음 모집 때 말을 전하겠다며 내 이름을 남겼다.",
+              "failureNarrative": "나는 소개를 청했지만 보증할 사람이 없어 접수가 보류됐다. 기존 소속을 바꾸지 않고 모집소를 나왔다."
+            }
+          }
+        },
+        {
+          "id": "scene-b-ok",
+          "type": "result",
+          "position": {
+            "x": 1050,
+            "y": 2720
+          },
+          "data": {
+            "label": "scene-b-ok",
+            "text": "나는 조조 측 모집 서리에게 신원과 이동 경과를 밝혔다. 서리는 다음 모집 때 말을 전하겠다며 내 이름을 남겼다.",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "metCaoContact",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "scene-b-fail",
+          "type": "result",
+          "position": {
+            "x": 1470,
+            "y": 2720
+          },
+          "data": {
+            "label": "scene-b-fail",
+            "text": "나는 소개를 청했지만 보증할 사람이 없어 접수가 보류됐다. 기존 소속을 바꾸지 않고 모집소를 나왔다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "scene-c",
+          "type": "result",
+          "position": {
+            "x": 1890,
+            "y": 2380
+          },
+          "data": {
+            "label": "scene-c",
+            "text": "나는 군사 명부에 들지 않고 짐 나르는 품을 팔았다. 모집 거리 바깥 숙소를 얻고 격문이 퍼지는 방향을 살폈다.",
+            "effects": []
+          }
+        },
+        {
+          "id": "after",
+          "type": "result",
+          "position": {
+            "x": 0,
+            "y": 3060
+          },
+          "data": {
+            "label": "사건 종료 표식",
+            "silent": true,
+            "effects": [
+              {
+                "type": "flag",
+                "key": "r004-08-complete",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "outcome-0",
+          "type": "result",
+          "position": {
+            "x": -210,
+            "y": 3740
+          },
+          "data": {
+            "label": "실제 결말",
+            "text": "조조는 진류에서 군사를 모았고 진궁도 동행을 이어 모집 일을 도왔다. 여백사 일가의 죽음을 막은 변화가 새 군영의 인적 구성까지 이어졌다.",
+            "recordType": "outcome",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "caoRaisedArmy",
+                "value": true
+              },
+              {
+                "type": "flag",
+                "key": "chapter4Done",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "outcome-if-0",
+          "type": "condition",
+          "position": {
+            "x": 0,
+            "y": 3400
+          },
+          "data": {
+            "label": "변경된 역사 확인",
+            "condition": {
+              "field": "world.flags.chenStayed",
+              "operator": "eq",
+              "value": true
+            }
+          }
+        },
+        {
+          "id": "outcome-1",
+          "type": "result",
+          "position": {
+            "x": 210,
+            "y": 3740
+          },
+          "data": {
+            "label": "실제 결말",
+            "text": "조조는 진류에서 군사와 군량을 모으고 반동탁 격문을 각지에 보냈다. 개인 암살 대신 제후들의 공동 군사 행동을 추진하기 시작했다.",
+            "recordType": "outcome",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "caoRaisedArmy",
+                "value": true
+              },
+              {
+                "type": "flag",
+                "key": "chapter4Done",
+                "value": true
+              }
+            ]
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "start-next",
+          "source": "start",
+          "target": "alive-0",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "alive-0-yes",
+          "source": "alive-0",
+          "target": "entry",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "alive-0-no",
+          "source": "alive-0",
+          "target": "end",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "entry-next",
+          "source": "entry",
+          "target": "background",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "background-next",
+          "source": "background",
+          "target": "when-0",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "when-0-yes",
+          "source": "when-0",
+          "target": "affiliated",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "affiliated-a",
+          "source": "affiliated",
+          "target": "affiliated-a-check",
+          "sourceHandle": "a"
+        },
+        {
+          "id": "affiliated-a-ok-next",
+          "source": "affiliated-a-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "affiliated-a-fail-next",
+          "source": "affiliated-a-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "affiliated-a-check-yes",
+          "source": "affiliated-a-check",
+          "target": "affiliated-a-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "affiliated-a-check-no",
+          "source": "affiliated-a-check",
+          "target": "affiliated-a-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "affiliated-b",
+          "source": "affiliated",
+          "target": "affiliated-b-check",
+          "sourceHandle": "b"
+        },
+        {
+          "id": "affiliated-b-ok-next",
+          "source": "affiliated-b-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "affiliated-b-fail-next",
+          "source": "affiliated-b-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "affiliated-b-check-yes",
+          "source": "affiliated-b-check",
+          "target": "affiliated-b-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "affiliated-b-check-no",
+          "source": "affiliated-b-check",
+          "target": "affiliated-b-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "affiliated-c-next",
+          "source": "affiliated-c",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "affiliated-c",
+          "source": "affiliated",
+          "target": "affiliated-c",
+          "sourceHandle": "c"
+        },
+        {
+          "id": "when-0-no",
+          "source": "when-0",
+          "target": "when-1",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "when-1-yes",
+          "source": "when-1",
+          "target": "known",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "known-a",
+          "source": "known",
+          "target": "known-a-check",
+          "sourceHandle": "a"
+        },
+        {
+          "id": "known-a-ok-next",
+          "source": "known-a-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "known-a-fail-next",
+          "source": "known-a-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "known-a-check-yes",
+          "source": "known-a-check",
+          "target": "known-a-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "known-a-check-no",
+          "source": "known-a-check",
+          "target": "known-a-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "known-b",
+          "source": "known",
+          "target": "known-b-check",
+          "sourceHandle": "b"
+        },
+        {
+          "id": "known-b-ok-next",
+          "source": "known-b-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "known-b-fail-next",
+          "source": "known-b-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "known-b-check-yes",
+          "source": "known-b-check",
+          "target": "known-b-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "known-b-check-no",
+          "source": "known-b-check",
+          "target": "known-b-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "known-c-next",
+          "source": "known-c",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "known-c",
+          "source": "known",
+          "target": "known-c",
+          "sourceHandle": "c"
+        },
+        {
+          "id": "when-1-no",
+          "source": "when-1",
+          "target": "scene",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "scene-a",
+          "source": "scene",
+          "target": "scene-a-check",
+          "sourceHandle": "a"
+        },
+        {
+          "id": "scene-a-ok-next",
+          "source": "scene-a-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-a-fail-next",
+          "source": "scene-a-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-a-check-yes",
+          "source": "scene-a-check",
+          "target": "scene-a-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "scene-a-check-no",
+          "source": "scene-a-check",
+          "target": "scene-a-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "scene-b",
+          "source": "scene",
+          "target": "scene-b-check",
+          "sourceHandle": "b"
+        },
+        {
+          "id": "scene-b-ok-next",
+          "source": "scene-b-ok",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-b-fail-next",
+          "source": "scene-b-fail",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-b-check-yes",
+          "source": "scene-b-check",
+          "target": "scene-b-ok",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "scene-b-check-no",
+          "source": "scene-b-check",
+          "target": "scene-b-fail",
+          "sourceHandle": "no"
+        },
+        {
+          "id": "scene-c-next",
+          "source": "scene-c",
+          "target": "after",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "scene-c",
+          "source": "scene",
+          "target": "scene-c",
+          "sourceHandle": "c"
+        },
+        {
+          "id": "outcome-0-next",
+          "source": "outcome-0",
+          "target": "end",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "after-next",
+          "source": "after",
+          "target": "outcome-if-0",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "outcome-if-0-yes",
+          "source": "outcome-if-0",
+          "target": "outcome-0",
+          "sourceHandle": "yes"
+        },
+        {
+          "id": "outcome-1-next",
+          "source": "outcome-1",
+          "target": "end",
+          "sourceHandle": "next"
+        },
+        {
+          "id": "outcome-if-0-no",
+          "source": "outcome-if-0",
+          "target": "outcome-1",
           "sourceHandle": "no"
         }
       ],

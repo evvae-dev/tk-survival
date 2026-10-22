@@ -221,3 +221,4 @@
  .mobileMapButton{display:block}
  .historyFlow{height:100%}
 }
+.ending>.primaryButton+.primaryButton{margin-top:14px}

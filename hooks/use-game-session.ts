@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useGameStore } from '@/stores/game-store';
 import { getEffectiveCatalog, useEventCatalogStore } from '@/stores/event-catalog-store';
-import { getCurrentEvent } from '@/lib/event-engine';
+import { continuationEvent, getCurrentEvent } from '@/lib/event-engine';
 
 export function useGameSession() {
   const store = useGameStore();
@@ -15,5 +15,5 @@ export function useGameSession() {
   }, []);
   const catalog = useMemo(() => getEffectiveCatalog(), [catalogStore.overrides, catalogStore.deletedIds]);
   const event = useMemo(() => store.game ? getCurrentEvent(store.game, catalog, true) : null, [store.game, catalog]);
-  return { ...store, ready, event, view: event?.automatic ? store.game : event?.state ?? store.game };
+  return { ...store, ready, event, continuation: store.game ? continuationEvent(store.game, catalog) : undefined, view: event?.automatic ? store.game : event?.state ?? store.game };
 }

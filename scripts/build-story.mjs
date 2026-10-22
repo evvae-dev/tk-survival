@@ -42,7 +42,7 @@ for(const chapter of index.chapters){
    if(v.condition){node(`when-${j}`,'condition',{label:'앞선 선택 반영',condition:v.condition},-500,j*300);edge(j?`when-${j-1}`:'background',`when-${j}`,j?'no':'next');edge(`when-${j}`,key,'yes');}
    else edge(j?`when-${j-1}`:'background',key,j?'no':'next');
    const choices=v.choices??d.choices;
-   node(key,'choice',{label:d.title,text:v.text,artwork:d.artwork??null,options:choices.map(c=>({id:c.id,title:`[${c.title}]`,description:c.description,...(c.conditions?{conditions:c.conditions}:{}),...(!c.check?{outcome:c.success.hint??c.success.text}:{}),artwork:c.artwork??null}))},j*620,850);
+   node(key,'choice',{label:d.title,text:v.text,artwork:v.artwork??d.artwork??null,options:choices.map(c=>({id:c.id,title:`[${c.title}]`,description:c.description,...(c.conditions?{conditions:c.conditions}:{}),...(!c.check?{outcome:c.success.hint??c.success.text}:{}),artwork:c.artwork??null}))},j*620,850);
    for(const c of choices){
     const prefix=`${key}-${c.id}`;
     if(c.check){

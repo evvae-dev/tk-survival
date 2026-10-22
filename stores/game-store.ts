@@ -2,13 +2,13 @@ import { getEffectiveCatalog } from "./event-catalog-store";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { applyStats, familyEffects, familyLabels, initialStats, type Game, type Stats, type HistoricalEvent } from "@/lib/game";
-import { getCurrentEvent, resolveChoice } from "@/lib/event-engine";
+import { continuationEvent, getCurrentEvent, resolveChoice } from "@/lib/event-engine";
 import { playbackKey } from '@/lib/record-playback';
 import { rollStartingStats, validStartingStats } from '@/lib/starting-stats';
 import { createWorld } from "@/lib/world";
 import { restoreHistoryRecords } from '@/lib/history-records';
 
-type GameStore = { game: Game | null; startGame: (name: string, stats?: Stats) => void; changeStats: (delta: Partial<Stats>) => void; nextTurn: (choiceKey: string) => void; advanceRecord: (expectedKey: string) => void; resetGame: () => void };
+type GameStore = { game: Game | null; startGame: (name: string, stats?: Stats) => void; continueStory: () => void; changeStats: (delta: Partial<Stats>) => void; nextTurn: (choiceKey: string) => void; advanceRecord: (expectedKey: string) => void; resetGame: () => void };
 const pick = <T,>(items: T[]): T => items[Math.floor(Math.random() * items.length)];
 export function newGame(name: string, year: number, region: string, family: string, catalog?: HistoricalEvent[]): Game {
   return { name, startYear: year, year, month: null, region, birthRegion: region, birthYear: year - 20, family, age: 20, turn: 0, fame: 0, stats: applyStats(initialStats, familyEffects[family] ?? {}), completed: false, factionId: null, role: "civilian", reputation: family === "gentry" ? { han: 20 } : {}, resolvedEventIds: [], world: createWorld(year,catalog), decisions: [] };
@@ -20,6 +20,7 @@ export function migrateGame(persisted:unknown,_version=0):{game:Game|null}{
 }
 export const useGameStore = create<GameStore>()(persist((set) => ({
   game: null,
+  continueStory: () => set(({ game }) => game && continuationEvent(game, getEffectiveCatalog()) ? { game: { ...game, completed: false } } : {}),
   startGame: (input, rolled) => {
     const name = input.trim().slice(0, 20);
     const stats = rolled ?? rollStartingStats();

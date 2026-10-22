@@ -10,17 +10,18 @@
       "path": "docs/romance-three-kingdoms/chapters/"
     }
   ],
-  "timelineCount": 24,
+  "timelineCount": 32,
   "officerCount": 1000,
   "yearRange": [
     184,
     189
   ],
-  "playableTimelineCount": 24,
+  "playableTimelineCount": 32,
   "headings": [
     "chapter-001",
     "chapter-002",
-    "chapter-003"
+    "chapter-003",
+    "chapter-004"
   ],
   "tabs": [
     {
@@ -39,7 +40,7 @@
     "연표는 data/chapters/facts.json의 챕터 사건을 투영하며 원사서 직접 대조 자료가 아니다.",
     "선택·판정·대체 결과는 게임 창작이다."
   ],
-  "collectedTimelineCount": 24,
+  "collectedTimelineCount": 32,
   "excludedTimelineCount": 0,
   "activeScope": "삼국지연의 챕터 파일 순서"
 }

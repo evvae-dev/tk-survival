@@ -1,0 +1,236 @@
+{
+  "chapterId": "chapter-004",
+  "stage": "complete",
+  "iteration": 2,
+  "scope": "문구·분기·실제 엔진·이미지 직접 검수·PC/모바일/짧은 PC·관리자·완주 저장 이어하기",
+  "chapterTotal": 8.3,
+  "scenes": [
+    {
+      "eventId": "r004-01",
+      "nodeId": "scene",
+      "scores": {
+        "logic": 8,
+        "tone": 8,
+        "flow": 8,
+        "balance": 8,
+        "curiosity": 8
+      },
+      "total": 8.0,
+      "evidence": "추격 명단의 교차 확인으로 일부 일족에게 시간만 벌어 주며 원소의 수도 탈출과 과장 없이 합류한다."
+    },
+    {
+      "eventId": "r004-02",
+      "nodeId": "scene",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 8,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.4,
+      "evidence": "독립 군영 없는 기본 경로에서는 정관 구출과 폐립 저지를 분리한다. 정관 생존은 황제 보전으로 확대하지 않는다."
+    },
+    {
+      "eventId": "r004-02",
+      "nodeId": "counterweight",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.6,
+      "evidence": "3화에 남긴 군권 분산이 공동 청원의 실행 근거다. 성공해야 폐립 보류 플래그가 생기며 실패는 강행된다."
+    },
+    {
+      "eventId": "r004-03",
+      "nodeId": "scene",
+      "scores": {
+        "logic": 8,
+        "tone": 8,
+        "flow": 8,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.2,
+      "evidence": "음식 봉인과 처분 명령의 교차 확인이라는 실행 수단을 제시한다. 구출도 감시에서의 해방으로 과장하지 않는다."
+    },
+    {
+      "eventId": "r004-03",
+      "nodeId": "reigning",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 8
+      },
+      "total": 8.4,
+      "evidence": "폐립이 막힌 뒤에는 유변을 폐제라고 부르거나 원래 독살을 재생하지 않는다. 왕실 위협과 민간 약탈은 남는다."
+    },
+    {
+      "eventId": "r004-04",
+      "nodeId": "scene",
+      "scores": {
+        "logic": 8,
+        "tone": 8,
+        "flow": 8,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.2,
+      "evidence": "반사면 확인을 권할 뿐 방 안을 실제로 보았다고 거짓 서술하지 않는다. 실패 때 계획 탐문 혐의를 보여 준다."
+    },
+    {
+      "eventId": "r004-05",
+      "nodeId": "scene",
+      "scores": {
+        "logic": 8,
+        "tone": 8,
+        "flow": 8,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.2,
+      "evidence": "성문 지연 성공은 도주 전부의 성공이 아니다. 수배 문서와 출발 허가의 실제 순서를 이용한다."
+    },
+    {
+      "eventId": "r004-05",
+      "nodeId": "mirror",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.6,
+      "evidence": "거울 경고 뒤에는 놀라서 헌상으로 위장하는 장면 대신 암살을 접는 경과를 기록한다."
+    },
+    {
+      "eventId": "r004-06",
+      "nodeId": "scene",
+      "scores": {
+        "logic": 8,
+        "tone": 8,
+        "flow": 8,
+        "balance": 8,
+        "curiosity": 8
+      },
+      "total": 8.0,
+      "evidence": "진궁의 판단에는 대조 가능한 증언을 보태고 이 한 번의 성공으로 즉시 임관시키지 않는다."
+    },
+    {
+      "eventId": "r004-06",
+      "nodeId": "ahead",
+      "scores": {
+        "logic": 8,
+        "tone": 8,
+        "flow": 8,
+        "balance": 8,
+        "curiosity": 8
+      },
+      "total": 8.0,
+      "evidence": "첫 검문을 지났어도 뒤따른 수배로 붙잡혀 원본 진궁 사건과 인과가 이어진다."
+    },
+    {
+      "eventId": "r004-07",
+      "nodeId": "scene",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.6,
+      "evidence": "돼지를 현물로 확인하는 A와 진궁을 통해 확인하는 B의 위험·능력을 구별한다. 두 구출 경로 모두 두 번째 살해와 결별을 취소한다."
+    },
+    {
+      "eventId": "r004-08",
+      "nodeId": "scene",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 8,
+        "balance": 8,
+        "curiosity": 8
+      },
+      "total": 8.2,
+      "evidence": "초면의 소개는 신뢰 확보까지만 허용하며 군사 명부 등록과 구분한다."
+    },
+    {
+      "eventId": "r004-08",
+      "nodeId": "affiliated",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 8
+      },
+      "total": 8.4,
+      "evidence": "현재 소속을 밝힌 격문 요청으로 기존 주군을 보존한다. 적대 세력에게 몰래 임관시키지 않는다."
+    },
+    {
+      "eventId": "r004-08",
+      "nodeId": "known",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.6,
+      "evidence": "접촉한 재야의 매력 판정만 조조군 임관으로 연결하고 거절은 재야를 유지한다."
+    }
+  ],
+  "confirmedOpenErrors": 0,
+  "revisions": [
+    {
+      "issue": "기존 엔진이 지원하지 않는 null 확정 조건",
+      "fix": "지원되는 소속 목록 조건으로 변경·그래프 전체 검사 통과"
+    },
+    {
+      "issue": "기존 완주 저장이 새 화에 접근할 수 없음",
+      "fix": "기록을 자동 변경하지 않는 명시적 이어하기·종료 분기 차단·상태 보존 검증"
+    },
+    {
+      "issue": "하진/정원 구출 뒤 기본 폐립·독살 강제 위험",
+      "fix": "군영을 근거로 폐립 보류를 분기하고 왕실 후속 장면·결말 별도 작성"
+    },
+    {
+      "issue": "완주 화면에서 두 버튼의 그림자가 맞닿음",
+      "fix": "버튼 사이 간격 추가 후 PC·모바일 이어하기 및 간격 재검증 통과"
+    }
+  ],
+  "engineEvidence": "/tmp/tk-chapter4-tests2.log",
+  "imagePlan": [
+    {
+      "path": "public/art/scenes/r004-petition.png",
+      "use": "r004-02 상황",
+      "composition": "주인공이 궁정 밖 서리에게 봉한 청원, 무장 경계 양측, 황제 교체나 처형 결과 표시하지 않음"
+    },
+    {
+      "path": "public/art/scenes/r004-mirror.png",
+      "use": "r004-04 상황·A 경고 행동",
+      "composition": "주인공은 저택 바깥 연락소에서 방 배치와 거울 위험을 생각함. 조조가 몰래 칼을 뽑거나 동탁 살해에 성공한 결과 묘사 금지"
+    },
+    {
+      "path": "public/art/scenes/r004-pig.png",
+      "use": "r004-07 상황과 A 행동",
+      "composition": "여백사 집 담장 바깥에서 주인공이 부엌·돼지 우리를 가리킴. 살해·구출 성공 전의 긴장, 조조는 칼집에 손만 둠"
+    }
+  ],
+  "imageInspection": "외형·복장·진영·행동·결말 스포일러를 세 이미지에서 직접 확인. 판정 전 긴장 장면으로 연결.",
+  "finalBrowserReport": "/tmp/tk-story-004/report.json",
+  "continuationReport": "/tmp/tk-story-continuation/report.json",
+  "adminChecksReport": "/tmp/tk-story-conditions-004/report.json",
+  "finalTests": "/tmp/tk-chapter4-final-tests.log",
+  "finalBuild": "/tmp/tk-chapter4-build3.log",
+  "releaseTests": "/tmp/tk-chapter4-release-tests.log",
+  "releaseBuild": "/tmp/tk-chapter4-release-build2.log"
+}

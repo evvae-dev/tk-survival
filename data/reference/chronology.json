@@ -958,5 +958,324 @@
     "verification": "secondary",
     "section": "chapter-003",
     "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+  },
+  {
+    "id": "r004-01",
+    "year": 189,
+    "month": null,
+    "precision": "year",
+    "calendar": "lunar",
+    "leapMonth": null,
+    "title": "[원소 탈출, 동아줄은 밖에 있다]",
+    "content": "원소는 동탁의 폐립에 항변한 뒤 수도를 떠났다. 동탁은 원씨 가문의 영향력을 고려해 추격 대신 회유할 여지를 남겼다.",
+    "regionIds": [
+      "luoyang"
+    ],
+    "factionIds": [
+      "han",
+      "dong-zhuo",
+      "cao-cao"
+    ],
+    "relatedPeople": [
+      "원소",
+      "동탁"
+    ],
+    "relatedOfficerIds": [
+      "rtk14-0035",
+      "rtk14-0736"
+    ],
+    "officerLinkInferences": [],
+    "officerLinkIssues": [],
+    "category": "novel",
+    "parentId": null,
+    "source": {
+      "title": "삼국지연의 제4회 사건 문서",
+      "record": null
+    },
+    "verification": "secondary",
+    "section": "chapter-004",
+    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+  },
+  {
+    "id": "r004-02",
+    "year": 189,
+    "month": null,
+    "precision": "year",
+    "calendar": "lunar",
+    "leapMonth": null,
+    "title": "[황제 교체가 결재 한 번이라고?]",
+    "content": "동탁은 유변을 홍농왕으로 낮추고 유협을 황제로 세웠다. 폐립에 간언한 정관을 죽여 신하들을 위협했다.",
+    "regionIds": [
+      "luoyang"
+    ],
+    "factionIds": [
+      "han",
+      "dong-zhuo",
+      "cao-cao"
+    ],
+    "relatedPeople": [
+      "동탁",
+      "정관",
+      "유변",
+      "유협",
+      "왕윤"
+    ],
+    "relatedOfficerIds": [
+      "rtk14-0042",
+      "rtk14-0736"
+    ],
+    "officerLinkInferences": [],
+    "officerLinkIssues": [],
+    "category": "novel",
+    "parentId": null,
+    "source": {
+      "title": "삼국지연의 제4회 사건 문서",
+      "record": null
+    },
+    "verification": "secondary",
+    "section": "chapter-004",
+    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+  },
+  {
+    "id": "r004-03",
+    "year": 189,
+    "month": null,
+    "precision": "year",
+    "calendar": "lunar",
+    "leapMonth": null,
+    "title": "[그 술상, 독살 이벤트잖아]",
+    "content": "동탁의 명을 받은 이유는 폐제 유변과 하태후·당비를 죽였다. 동탁군의 약탈로 궁중과 민간의 공포가 커졌다.",
+    "regionIds": [
+      "luoyang"
+    ],
+    "factionIds": [
+      "han",
+      "dong-zhuo",
+      "cao-cao"
+    ],
+    "relatedPeople": [
+      "동탁",
+      "이유",
+      "유변",
+      "하태후",
+      "당비",
+      "왕윤"
+    ],
+    "relatedOfficerIds": [
+      "rtk14-0042",
+      "rtk14-0736",
+      "rtk14-0907"
+    ],
+    "officerLinkInferences": [],
+    "officerLinkIssues": [],
+    "category": "novel",
+    "parentId": null,
+    "source": {
+      "title": "삼국지연의 제4회 사건 문서",
+      "record": null
+    },
+    "verification": "secondary",
+    "section": "chapter-004",
+    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+  },
+  {
+    "id": "r004-04",
+    "year": 189,
+    "month": null,
+    "precision": "year",
+    "calendar": "lunar",
+    "leapMonth": null,
+    "title": "[암살 퀘스트에 거울이 왜 있어]",
+    "content": "왕윤의 모임에서 조조는 동탁 암살을 자원했다. 왕윤에게 빌린 칠성보도를 들고 동탁에게 접근할 계획을 세웠다.",
+    "regionIds": [
+      "luoyang"
+    ],
+    "factionIds": [
+      "han",
+      "dong-zhuo",
+      "cao-cao"
+    ],
+    "relatedPeople": [
+      "왕윤",
+      "조조",
+      "동탁"
+    ],
+    "relatedOfficerIds": [
+      "rtk14-0042",
+      "rtk14-0521",
+      "rtk14-0736"
+    ],
+    "officerLinkInferences": [],
+    "officerLinkIssues": [],
+    "category": "novel",
+    "parentId": null,
+    "source": {
+      "title": "삼국지연의 제4회 사건 문서",
+      "record": null
+    },
+    "verification": "secondary",
+    "section": "chapter-004",
+    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+  },
+  {
+    "id": "r004-05",
+    "year": 189,
+    "month": null,
+    "precision": "year",
+    "calendar": "lunar",
+    "leapMonth": null,
+    "title": "[헌상품입니다, 체포영장 말고요]",
+    "content": "조조는 거울 때문에 암살이 발각될 위기에 놓이자 칼을 헌상하는 척했다. 말을 시험한다는 구실로 달아났고 동탁은 뒤늦게 체포령을 내렸다.",
+    "regionIds": [
+      "luoyang"
+    ],
+    "factionIds": [
+      "han",
+      "dong-zhuo",
+      "cao-cao"
+    ],
+    "relatedPeople": [
+      "동탁",
+      "조조"
+    ],
+    "relatedOfficerIds": [
+      "rtk14-0521",
+      "rtk14-0736"
+    ],
+    "officerLinkInferences": [],
+    "officerLinkIssues": [],
+    "category": "novel",
+    "parentId": null,
+    "source": {
+      "title": "삼국지연의 제4회 사건 문서",
+      "record": null
+    },
+    "verification": "secondary",
+    "section": "chapter-004",
+    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+  },
+  {
+    "id": "r004-06",
+    "year": 189,
+    "month": null,
+    "precision": "year",
+    "calendar": "lunar",
+    "leapMonth": null,
+    "title": "[현령님, 체포보다 동업이 낫지 않나요]",
+    "content": "중모에서 붙잡힌 조조는 현령 진궁에게 암살의 뜻을 밝혔다. 진궁은 조조를 풀어 주고 관직을 버린 채 함께 떠났다.",
+    "regionIds": [
+      "zhongmu"
+    ],
+    "factionIds": [
+      "han",
+      "dong-zhuo",
+      "cao-cao"
+    ],
+    "relatedPeople": [
+      "조조",
+      "진궁"
+    ],
+    "relatedOfficerIds": [
+      "rtk14-0521",
+      "rtk14-0671"
+    ],
+    "officerLinkInferences": [],
+    "officerLinkIssues": [],
+    "category": "novel",
+    "parentId": null,
+    "source": {
+      "title": "삼국지연의 제4회 사건 문서",
+      "record": null
+    },
+    "verification": "secondary",
+    "section": "chapter-004",
+    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+  },
+  {
+    "id": "r004-07",
+    "year": 189,
+    "month": null,
+    "precision": "year",
+    "calendar": "lunar",
+    "leapMonth": null,
+    "title": "[돼지 소리부터 듣고 칼 뽑으세요]",
+    "content": "조조와 진궁은 여백사의 집에서 칼 가는 소리를 자신들을 해치려는 준비로 오해해 집안사람들을 죽였다. 조조는 뒤에 여백사까지 죽였고 진궁은 충격을 받아 떠났다.",
+    "regionIds": [
+      "chenggao"
+    ],
+    "factionIds": [
+      "han",
+      "dong-zhuo",
+      "cao-cao"
+    ],
+    "relatedPeople": [
+      "조조",
+      "진궁",
+      "여백사"
+    ],
+    "relatedOfficerIds": [
+      "rtk14-0521",
+      "rtk14-0671"
+    ],
+    "officerLinkInferences": [],
+    "officerLinkIssues": [],
+    "category": "novel",
+    "parentId": null,
+    "source": {
+      "title": "삼국지연의 제4회 사건 문서",
+      "record": null
+    },
+    "verification": "secondary",
+    "section": "chapter-004",
+    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+  },
+  {
+    "id": "r004-08",
+    "year": 189,
+    "month": null,
+    "precision": "year",
+    "calendar": "lunar",
+    "leapMonth": null,
+    "title": "[암살 다음은 군대 창업이네]",
+    "content": "조조는 진류에서 아버지의 재산과 위홍의 지원으로 군사를 모았다. 악진·이전과 하후 형제, 조인·조홍 등이 합류했고 반동탁 격문을 보냈다.",
+    "regionIds": [
+      "chenliu"
+    ],
+    "factionIds": [
+      "han",
+      "dong-zhuo",
+      "cao-cao"
+    ],
+    "relatedPeople": [
+      "조조",
+      "위홍",
+      "악진",
+      "이전",
+      "하후돈",
+      "하후연",
+      "조인",
+      "조홍"
+    ],
+    "relatedOfficerIds": [
+      "rtk14-0102",
+      "rtk14-0114",
+      "rtk14-0124",
+      "rtk14-0511",
+      "rtk14-0518",
+      "rtk14-0521",
+      "rtk14-0620",
+      "rtk14-0913"
+    ],
+    "officerLinkInferences": [],
+    "officerLinkIssues": [],
+    "category": "novel",
+    "parentId": null,
+    "source": {
+      "title": "삼국지연의 제4회 사건 문서",
+      "record": null
+    },
+    "verification": "secondary",
+    "section": "chapter-004",
+    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
   }
 ]

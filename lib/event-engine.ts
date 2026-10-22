@@ -7,6 +7,13 @@ import { normalizeMembership } from './world';
 import type { FlowResult } from './event-flow';
 import type { Artwork } from './artwork';
 import { eventHistoryRecord } from './history-records';
+import { chapterOrder } from './chapter';
+
+export function continuationEvent(game: Game, catalog: HistoricalEvent[] = historicalEvents): HistoricalEvent | undefined {
+  if (!game.completed || game.world.flags.playerDead || game.world.flags.playerExecuted || game.world.flags.yellowEmpireFounded) return undefined;
+  const lastChapter = Math.max(0, ...catalog.filter(e => game.world.appliedEventIds.includes(e.id)).map(e => chapterOrder(e.chapterId)));
+  return sortEvents(catalog).find(e => e.flow && !game.world.appliedEventIds.includes(e.id) && chapterOrder(e.chapterId) > lastChapter);
+}
 
 export type Choice = { id: string; title: string; description: string; outcome?: string; artwork?: Artwork | null; check?: ChoiceCheck; effects: Partial<Stats>; note: string; disabledReason?: string };
 export type GameEvent = { id: string; year: number; month: number | null; title: string; scene: string; choices: Choice[]; historical?: HistoricalEvent; automatic?: boolean; annual: boolean; state: Game };
