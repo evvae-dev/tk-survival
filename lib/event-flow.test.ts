@@ -4,7 +4,7 @@ import { getCurrentEvent, resolveChoice, choiceKey } from './event-engine';
 import { createDefaultFlow, validateFlow, validateEvent } from './event-flow';
 import { historicalEvents } from './history';
 import { getEffectiveCatalog, useEventCatalogStore } from '@/stores/event-catalog-store';
-const sample = () => { const event = { ...historicalEvents[0], id: 'test-custom', sequence: -1, prerequisiteEventIds: [], connections: [] }; return { ...event, flow: createDefaultFlow(event) }; };
+const sample = () => { const event = { ...historicalEvents[0], id: 'test-custom', regionIds:[], sequence: -1, prerequisiteEventIds: [], connections: [] }; return { ...event, flow: createDefaultFlow(event) }; };
 beforeEach(() => useEventCatalogStore.getState().restoreDefaults());
 describe('관리자 흐름과 실행 계약', () => {
   it('5.1의 모든 그래프는 연결·조건·효과가 유효하다', () => {
@@ -21,7 +21,7 @@ describe('관리자 흐름과 실행 계약', () => {
     expect(getCurrentEvent(game, getEffectiveCatalog())?.id).not.toBe(event.id);
   });
   it('기존 사건 JSON을 가져와 복구하는 것을 거절한다', () => {
-    expect(() => useEventCatalogStore.getState().importCatalog([{ ...sample(), chapterId: undefined }])).toThrow('5.1');
+    expect(() => useEventCatalogStore.getState().importCatalog([{ ...sample(), chapterId: undefined }])).toThrow('챕터');
   });
   it('순환과 무한 효과, 중복 ID를 거절한다', () => {
     const event = sample();

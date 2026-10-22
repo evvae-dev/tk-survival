@@ -1,12 +1,8 @@
 {
-  "edition": "5.1-5.5-records-v2",
-  "eventCount": 29,
-  "yearRange": [
-    184,
-    188
-  ],
-  "sourceBattleCount": 5,
-  "fictionalCampaignCount": 1,
-  "collectionFile": "data/collection/5-2-to-5-5.json",
-  "note": "5.1 기존 전선·원정 유지, 군주 합류·재야 이동 4개, 5.2~5.5 수집 사건 16개. 연표의 장 배치와 실제 연대 이견은 dateNote와 수집본에 보존."
+  "edition": "romance-chapters-v1",
+  "eventCount": 24,
+  "chapterCount": 3,
+  "orderPolicy": "chapter-file-order",
+  "sourceType": "삼국지연의 챕터 사건 문서",
+  "generatedBy": "scripts/build-story.mjs"
 }

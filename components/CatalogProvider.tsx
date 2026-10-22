@@ -8,7 +8,7 @@ import s from './CatalogProvider.module.css';
 
 type CloudState = { message: string; busy: boolean; pull: () => Promise<void>; publish: () => Promise<void> };
 const CloudContext = createContext<CloudState | null>(null);
-const markerKey = 'tk-survival-catalog-sync-5.1-v1';
+const markerKey = 'tk-survival-catalog-sync-romance-v1';
 async function fingerprint() {
   const bytes = new TextEncoder().encode(JSON.stringify(getCatalogForSync()));
   return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', bytes)), byte => byte.toString(16).padStart(2, '0')).join('');

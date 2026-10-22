@@ -1,50 +1,50 @@
 # 내가 삼국지에 떨어진다면
 
-현재는 **184년·20세 고정으로 5.1 황건적의 난을 시험하는 버전**입니다. 진영·전선·가정·능력에 따라 전투와 인물 생존이 달라지고 다음 사건의 성립 여부도 바뀝니다. 이전 10살 시작과 연간 성장 진행은 이번 테스트에서 폐기했습니다.
+`docs/romance-three-kingdoms/chapters/001.md`~`003.md`의 사건 문서를 기준으로 만든 삼국지 빙의 인터랙티브 웹소설 게임입니다. 연도별 챕터를 폐기하고 **1화 → 2화 → 3화의 파일 순서**로 진행합니다. 날짜는 사건 정보로 보존하며, 월을 모르는 사건에 임의의 월을 붙이지 않습니다.
 
-## 실행
+- 1화: 도원결의와 황건적의 난. 조기 경고, 유비 접촉·지원, 첫 전투, 청주 구원, 노식의 지휘권, 동탁과의 충돌.
+- 2화: 황건 토벌의 마무리와 독우 매질. 완성 항복 협상, 전공 증거, 독우 모함, 관직 유지/이탈, 영제 사후와 하진의 소환.
+- 3화: 하진 피살과 동탁의 입경. 하진 생존/피살, 궁중 혼란, 왕실 피란, 동탁의 군권, 여포와 정원 암살 저지.
 
-```bash
+기본 사건은 24개, 상태에 따라 달라지는 선택 장면은 37개입니다. 매 장면은 A 원작 파괴, B 영웅과 인연, C 생존 우선의 세 행동을 제공합니다. 통솔·무력·지력·정치·매력으로 판정하고 성공/실패의 실제 결과를 기록합니다. 임관은 매력으로 판정하며 접촉과 정식 소속을 구별합니다. 여포 일기토 패배는 사전에 안내한 전사 엔딩으로 끝납니다.
+
+챕터 문서의 연의 전개, 플레이어의 실제 결과, 게임 창작을 구분합니다. 선택 전에는 현재 배경과 짧은 위험 힌트를 보여 주고, 결과는 선택 뒤에 공개합니다.
+
+## 실행·검증
+
+```sh
 npm install
 npm run dev
 npm run typecheck
 npm test
 npm run build
+node scripts/build-story.mjs
+node scripts/validate-event-data.mjs
+node scripts/validate-reference-data.mjs
 ```
 
-기본 실행·빌드는 Next.js를 사용하며 Vercel 배포용 `.next` 결과물을 생성합니다. Vercel 프로젝트는 Framework Preset을 `Next.js`, Build Command를 `npm run build`로 설정하고 Output Directory 재정의는 끕니다. Firebase 관리자 기능에는 기존 Firebase 환경변수를 Vercel에도 설정해야 합니다.
+게임은 `/`, 사건 편집은 `/admin/events`, 전체/내부 실행 플로우는 `/admin/collection`, 장수·사건 자료는 `/admin/data`에서 확인합니다. 게임과 관리자가 동일한 사건 목록을 사용합니다. 사건 제목·ID로 검색하거나 `/admin/events?event=r001-01`처럼 직접 엽니다.
 
-운영 배포는 GitHub `origin/main` 푸시로 Vercel에서 자동 진행합니다. 확인 주소는 https://tk-survival.vercel.app 입니다. 배포 요청 시 이 경로를 기본으로 사용합니다.
+## 데이터와 저장
 
-ChatGPT Sites의 Cloudflare Workers 배포는 별도 요청 시에만 사용하며, 별도 명령인 `npm run dev:sites`, `npm run build:sites`를 사용합니다. 자세한 내용은 [Sites 배포 문서](docs/SITES_DEPLOYMENT.md)를 확인하세요.
+| 역할 | 위치 |
+|---|---|
+| 회차 원본 | `docs/romance-three-kingdoms/chapters/001.md`~`003.md` |
+| 챕터 순서 | `data/chapters/index.json` |
+| 장면·선택·조건·판정·효과·문구·이미지 원본 | `data/chapters/chapter-001.json`~`chapter-003.json` |
+| 생성기 | `scripts/build-story.mjs` |
+| 공통 실행 사건 | `data/history/events.json` |
+| 사실·원본 파일·SHA-256 대응 | `data/chapters/facts.json` |
+| QA 점수·수정 근거 | `data/chapters/chapter-001-qa.json`~`chapter-003-qa.json` |
+| 개발·검증 기록 | `docs/development/rebuild-chapters-1-3.md` |
+| 이미지 | `public/art/characters/`, `public/art/scenes/`, `public/art/choices/` |
 
-카카오톡 등 링크 공유에는 Open Graph 제목·설명과 `public/share/game-cover.jpg` 썸네일을 사용합니다. 공유 주소는 `NEXT_PUBLIC_SITE_URL`, Vercel 프로덕션 도메인, 현재 배포 도메인 순으로 결정하며, 모두 없으면 최초 공유 주소를 사용합니다. 커스텀 도메인을 쓸 때는 `NEXT_PUBLIC_SITE_URL`에 `https://`를 포함한 주소를 설정하고 다시 빌드하세요. Vercel의 개별 배포 주소는 고정된 버전이므로 업데이트 공유에는 최신 배포가 연결되는 프로덕션 도메인을 사용하세요.
+기존 나무위키 5.1~5.5 수집·서사·실행 데이터와 생성기를 제거했습니다. 장수 1,000명의 능력 자료와 공통 이미지 자산은 보존했습니다. 연표 API도 현재 챕터의 사실 목록을 사용합니다.
 
-Next.js App Router, TypeScript, React, Tailwind CSS, Zustand persist, Firebase를 사용합니다. 일반 글꼴은 서울한강체, 대사는 궁서체입니다.
+새 게임은 `tk-survival-game-romance-v1`, 사건 편집은 `tk-survival-event-catalog-romance-v1`에 저장합니다. 예전 저장은 옛 키에 남아 있고 새 판본에 자동 혼합하지 않습니다. 새 판본 안에서는 선택·효과·판정을 중복 적용하지 않으며 편집본과 명시적 삭제를 보존합니다. Firebase 공유 포인터는 `eventCatalog/romance-chapters-v1`이며 로컬 개발 완료와 공유 게시·배포는 별개입니다.
 
-## 화면과 데이터
+## 후속 개발과 배포
 
-- 게임: [http://localhost:3000](http://localhost:3000). 이름 입력 → 관군·황건군·주민 선택 → 탁군/청주·완성·광종/하곡양 전선 선택.
-- 실행·수집 플로우: [http://localhost:3000/admin/collection](http://localhost:3000/admin/collection). 사건 간 연결과 전투 내부 분기를 확인합니다.
-- 사건 편집: [http://localhost:3000/admin/events](http://localhost:3000/admin/events). 노드·조건·선택·결과·선행 사건을 편집하고 Firebase에 공유 게시합니다.
-- 연표·장수: [http://localhost:3000/admin/data](http://localhost:3000/admin/data). 활성 연표 6개와 장수 1,000명을 조회합니다.
+`.agents/skills/three-kingdoms-development/SKILL.md`로 챕터를 순차 개발하고 실행 흐름·QA 스킬을 적용합니다. 확인된 오류를 모두 수정하고 종합 점수 7점 초과 후 이미지를 생성·연결하며 게임·관리자·저장·PC/모바일을 확인합니다.
 
-기본 사건은 도입 1개·전투 5개·결말 1개·황건 천하통일 가상 원정 1개, 총 8개입니다. 이전 기본·공유 사건은 활성 목록에서 제거했습니다. 다른 전선은 기본 경과를 따르며 대흥산과 광종의 결과는 각각 청주·하곡양의 전제를 바꿉니다. 월 미상 자료에 가짜 월을 붙이지 않습니다. 통솔·무력·지력·매력 판정과 대체 역사는 게임 창작입니다.
-
-게임은 브라우저에 자동 저장합니다. 이전 연간 성장 세이브는 초기화하며, 5.1 버전 4 저장은 정치 능력을 보충해 유지합니다. 사건 편집은 같은 브라우저에 먼저 저장되고, 관리자 Google 로그인 후 공유 게시하면 다른 브라우저에도 전달됩니다. Firebase의 현재 리비전만 활성 목록으로 사용하며 이전 리비전은 복구 이력입니다.
-
-황건군으로 **황건적 코스프레 → 천하통일에 나선다**를 선택하면 동탁군 → 유비군 → 조조군을 차례로 상대합니다. 세 전투 승리 후 황제를 생포하고 황건국을 세워 통일하며, 어느 전투든 패하면 생포·처형으로 끝납니다. [가상 시나리오 설계](docs/YELLOW_CONQUEST.md)를 참고하세요.
-
-## 이어서 개발하기
-
-[5.1 실행 설계·분기·저장 전환](docs/CHAPTER_5_1_RUNTIME.md)을 현재 기준으로 사용하세요. [원자료 수집 기록](docs/COLLECTION_5_1.md), [관리 화면](docs/ADMIN_GUIDE.md), [Firebase 연결](docs/FIREBASE_SETUP.md), [인과 이벤트 설계](docs/CAUSAL_EVENT_DESIGN.md)도 참고합니다.
-
-5.2 이후는 아직 수집·실행에 추가하지 않았습니다. 다음 장 수집은 사용자 확인 후 Gemini CLI로 진행합니다. 원사서가 미확인인 자료는 미확인으로 유지하고, 수집본의 이견을 임의로 교정하지 않습니다. 수명·세대교체·전면적인 세력 AI는 구현 범위에 포함하지 않습니다.
-
-## 화면과 코드 구성
-
-제공된 HTML 샘플의 다크 테마를 전체 화면에 적용했습니다. 데스크톱 3단 게임 패널, 모바일 능력·정세 팝업, 선택 모달, 실제 장수 순위를 제공합니다. CSS·컴포넌트·저장 훅·차트 계산 함수의 분리는 [UI 적용 문서](docs/UI_REDESIGN.md)를 확인하세요.
-
-이벤트는 [이벤트 작성 지침](docs/EVENT_WRITING_GUIDE.md)에 따라 짧은 1인칭 웹소설 독백과 `[행동] 속마음`으로 작성합니다. 5.1 문구는 `data/history/narrative-5-1.json`에서 관리하며 사실·출처와 분리합니다. `node scripts/build-chapter-5-1.mjs`로 재생성해도 문체가 유지됩니다. 체력·자금 없이 다섯 능력을 사용하며, [능력 확률 판정](docs/ABILITY_CHECKS.md)의 가중치는 `.env`의 `ABILITY_CHECK_WEIGHT`로 설정합니다.
-
-테스트 기본값은 `.env`의 `CACHE_ENABLED=false`입니다. `CACHE_TTL_SECONDS`로 캐시 시간을 초 단위로 설정합니다. 설정 변경 후 서버를 재시작하며, 상세 범위는 [캐시 설정 문서](docs/CACHE_SETTINGS.md)를 확인하세요. 본문은 Noto Sans KR, 로고는 Galmuri9로 샘플과 맞췄습니다.
+운영 배포는 사용자가 요청하면 GitHub `origin/main` 푸시 → Vercel 자동 배포를 사용합니다. 운영 주소는 https://tk-survival.vercel.app 입니다. Next.js 빌드 결과는 `.next`를 사용합니다. Firebase 환경 설정은 `docs/FIREBASE_SETUP.md`, 별도 요청하는 Sites 배포는 `docs/SITES_DEPLOYMENT.md`를 참고합니다.

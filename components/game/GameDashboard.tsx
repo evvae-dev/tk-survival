@@ -10,7 +10,8 @@ import { choiceKey, type GameEvent } from "@/lib/event-engine";
 import { testAbilityDelta } from "@/lib/game-presentation";
 import { useRecordPlayback } from "@/hooks/use-record-playback";
 import PlaybackControls from "./PlaybackControls";
-import chapter from "@/data/collection/5-1-yellow-turban.json";
+import officerAbilities from "@/data/reference/officer-abilities.json";
+import { chapterTitle } from "@/lib/chapter";
 import CharacterPanel, { CharacterDetails } from "./CharacterPanel";
 import SituationMap from "./SituationMap";
 import HistoryFlow from "./HistoryFlow";
@@ -23,7 +24,7 @@ import s from "./game.module.css";
 import ChoiceButton from "./ChoiceButton";
 import OfficerName, { OfficerText } from "./OfficerName";
 
-const people = new Map(chapter.people.map((person) => [person.id, person]));
+const people = new Map(officerAbilities.map((person) => [person.id, {...person,officerId:person.id}]));
 type Modal = "event" | "stats" | "map" | "settings" | "people" | "source" | null;
 type Props = {
   game: Game;
@@ -74,7 +75,9 @@ export default function GameDashboard({
   const lastDecision = game.decisions.at(-1);
   const preserved = view.world.factions["yellow-turban"] === "preserved";
   const founded = view.world.flags.yellowEmpireFounded === true;
+  const died = view.world.flags.playerDead === true;
   const executed = view.world.flags.playerExecuted === true;
+  useEffect(() => { if (game.completed && died) eventRef.current?.scrollIntoView({block:'start',behavior:'instant'}); }, [game.completed,died]);
   return (
     <div className={`${s.app} ${game.completed ? s.completedApp : ""} ${playback.waiting && !modal ? s.clickToAdvance : ''}`} data-testid="game-screen">
       {awakening && <AwakeningTransition onComplete={() => setAwakening(false)} />}
@@ -140,14 +143,14 @@ export default function GameDashboard({
             {game.completed ? (
               <div className={s.ending} data-testid="completed-screen">
                 <span className={s.endingSeal}>記</span>
-                <p className={s.eyebrow}>{founded || executed ? '가상 시나리오 / ' + (executed ? '패배' : '천하통일') : `${view.year}년 / 기록 완료`}</p>
+                <p className={s.eyebrow}>{founded || executed || died ? '가상 시나리오 / ' + (executed || died ? '패배' : '천하통일') : `${view.year}년 / 기록 완료`}</p>
                 <h1>
-                  {executed ? "패배하여 처형당했습니다." : founded ? "황건국을 세워 천하를 통일했습니다." : preserved
+                  {died ? "여포와의 일기토에서 전사했습니다." : executed ? "패배하여 처형당했습니다." : founded ? "황건국을 세워 천하를 통일했습니다." : preserved
                     ? "황건의 거점이 남았습니다."
                     : "난세에서 이어 온 발걸음입니다."}
                 </h1>
                 <p>
-                  {executed ? `${game.name}은(는) 전투에서 패해 생포된 뒤 처형당했습니다. 원정은 여기서 끝납니다.` : founded ? '동탁군·유비군·조조군을 차례로 격파하고 황제를 생포했습니다. 황건의 나라가 세워졌습니다.' : <>{game.name}의 {game.turn}번의 판단이<br />{view.year}년까지의 여정에 흔적을 남겼습니다.</>}
+                  {died ? `${game.name}의 이야기는 낙양 길목의 일기토에서 끝났습니다. 이후 사건은 이 플레이에서 진행되지 않습니다.` : executed ? `${game.name}은(는) 전투에서 패해 생포된 뒤 처형당했습니다. 원정은 여기서 끝납니다.` : founded ? '동탁군·유비군·조조군을 차례로 격파하고 황제를 생포했습니다. 황건의 나라가 세워졌습니다.' : <>{game.name}의 {game.turn}번의 판단이<br />{view.year}년까지의 여정에 흔적을 남겼습니다.</>}
                 </p>
                 <button className={s.primaryButton} onClick={onReset}>
                   새로운 인물로 시작 →
@@ -158,10 +161,7 @@ export default function GameDashboard({
                 <>
                   <div className={s.eventHeading}>
                     <p className={s.eyebrow}>
-                      {event.historical?.chapterId?.replace("chapter-", "").replace("-yellow-turban", "").replaceAll("-", ".") ?? "기록"} ·{" "}
-                      {event.id === 'chapter-5-1-yellow-conquest' ? '황건 천하통일 · 가상 시나리오' : event.historical?.category === "novel"
-                        ? "연의 기반"
-                        : event.year === 184 ? "황건적의 난" : `${event.year}년의 여정`}
+                      {chapterTitle(event.historical?.chapterId)} · 연의 기반
                     </p>
                     {event.historical && <button className={s.sourceButton} onClick={() => setModal('source')}>사건 기록과 출처 ↗</button>}
                   </div>
@@ -184,7 +184,7 @@ export default function GameDashboard({
           {game.completed && <Chronicle game={game} />}
         </div>
         <aside className={s.rightSidebar}>
-          <HistoryFlow entries={historyEntries} speed={playback.speed} reading={playback.waiting && !modal && !awakening} />
+          <HistoryFlow entries={historyEntries} speed={playback.speed} reading={!game.completed && playback.waiting && !modal && !awakening} />
         </aside>
       </main>
       <GameDialog

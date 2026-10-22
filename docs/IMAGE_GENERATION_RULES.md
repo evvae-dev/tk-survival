@@ -62,4 +62,4 @@
 | 선택지 이미지 연결 | `lib/choice-art.ts` |
 | 상황 이미지 연결 | `lib/scene-art.ts` |
 
-현재 기준 이미지 파일은 `protagonist.png`, `liu-bei.png`, `guan-yu.png`, `zhang-fei.png`, `cao-cao.png`이다. 구현 현황은 `docs/PIXEL_ART.md`를 참고한다.
+현재 기준 이미지 파일은 `protagonist.png`, `liu-bei.png`, `guan-yu.png`, `zhang-fei.png`, `cao-cao.png`, `dong-zhuo.png`, `lu-bu.png`이다. 구현 현황은 `docs/PIXEL_ART.md`를 참고한다.

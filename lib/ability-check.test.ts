@@ -67,26 +67,23 @@ describe('A·B 능력 비교 판정', () => {
   });
   it('미리보기는 추첨하지 않고 선택할 때 한 번만 추첨·저장한다', () => {
     let game = makeGame();
-    for (const option of ['side:han', 'han-company:regular', 'front:north']) {
-      const event = getCurrentEvent(game)!;
-      game = resolveChoice(game, choiceKey(event, option));
-    }
+    const catalog=historicalEvents.filter(e=>e.id==='r001-05');
     game.stats.strength = 96;
     const random = vi.fn(() => .1);
-    const current = getCurrentEvent(game)!;
-    expect(current.choices.find(choice => choice.id === 'han-plan:duel')!.check?.successRate).toBe(80);
-    const key = choiceKey(current, 'han-plan:duel');
-    const next = resolveChoice(game, key, historicalEvents, random);
+    const current = getCurrentEvent(game,catalog)!;
+    expect(current.choices.find(choice => choice.id === 'scene:a')!.check?.successRate).toBe(80);
+    const key = choiceKey(current, 'scene:a');
+    const next = resolveChoice(game, key, catalog, random);
     expect(random).toHaveBeenCalledTimes(1);
     expect(next.decisions.at(-1)?.check).toMatchObject({ opponentId: 'rtk14-0746', chance: 80, roll: 10, success: true });
-    expect(next.world.flags.daxingshanCapturedLeaders).toBe(true);
+    expect(next.world.flags.defeatedDengMao).toBe(true);
     const restored = JSON.parse(JSON.stringify(next));
     getCurrentEvent(restored); getCurrentEvent(restored);
-    expect(resolveChoice(restored, key, historicalEvents, random)).toBe(restored);
+    expect(resolveChoice(restored, key, catalog, random)).toBe(restored);
     expect(random).toHaveBeenCalledTimes(1);
-    const failure = resolveChoice(game, key, historicalEvents, () => .99);
+    const failure = resolveChoice(game, key, catalog, () => .99);
     expect(failure.decisions.at(-1)?.check?.success).toBe(false);
-    expect(failure.world.people['person-rtk14-0746']).toBe('dead');
+    expect(failure.world.people['rtk14-0746']).toBe('dead');
   });
   it('이전 저장에서 체력·자금을 제거해도 진행과 세계를 보존한다', () => {
     const game = makeGame();
@@ -96,17 +93,5 @@ describe('A·B 능력 비교 판정', () => {
     expect(migrated.world).toEqual(game.world);
     expect(migrated.turn).toBe(game.turn);
   });
-  it('이전 편집본은 문구를 보존하면서 폐기된 효과와 판정을 이관한다', () => {
-    const legacy = structuredClone(historicalEvents.find(event => event.id === 'battle-184-daxingshan')!);
-    const node = legacy.flow!.nodes.find(node => node.id === 'duel-check')!;
-    node.type = 'condition'; node.data = { label: '예전 무력 조건', condition: { field: 'stats.strength', operator: 'gte', value: 65 } };
-    legacy.flow!.nodes.find(node => node.type === 'result')!.data.effects!.push({ type: 'stat', key: 'health', value: -15 } as never);
-    legacy.title = '관리자 편집 제목';
-    const upgraded = upgradeLegacyEvent(legacy);
-    expect(upgraded.title).toBe(legacy.title);
-    expect(validateEvent(upgraded)).toEqual([]);
-    expect(upgraded.flow!.nodes.find(node => node.id === 'duel-check')!.type).toBe('check');
-    expect(JSON.stringify(upgraded.flow)).not.toContain('"key":"health"');
-    expect(legacy.flow!.nodes.find(node => node.id === 'duel-check')!.type).toBe('condition');
-  });
+  it('현재 챕터 편집본의 문구·조건·배치를 그대로 보존한다',()=>{const event=structuredClone(historicalEvents[0]);event.title='편집한 제목';expect(upgradeLegacyEvent(event)).toEqual(event);expect(validateEvent(event)).toEqual([]);});
 });

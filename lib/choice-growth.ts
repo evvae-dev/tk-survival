@@ -1,15 +1,5 @@
 import { applyStats, type ChoiceGrowth, type Game, type Stats } from './game';
 import { abilityKeys } from './game-presentation';
-import campaignNarrative from '@/data/history/campaign-narrative.json';
-
-const campaignAbilities = new Map<string, keyof Stats>(Object.values(campaignNarrative).map(story => [story.action,
-  ({ relationship: 'charisma', politics: 'politics', strategy: 'intelligence', battle: 'leadership' } as Record<string, keyof Stats>)[story.checkKind],
-]));
-
-for (const story of Object.values(campaignNarrative)) {
- campaignAbilities.set(story.alternate.action, ({relationship:'charisma',politics:'politics',strategy:'intelligence',battle:'leadership'} as Record<string,keyof Stats>)[story.alternate.checkKind]);
- for (const action of [story.nextSuccessAction,story.nextFailureAction,story.nextWaitAction]) campaignAbilities.set(action,'intelligence');
-}
 const groups: Record<keyof Stats, string[]> = {
   strength: ['냅다 도망친다','등무와 맞붙는다','성문까지 길을 뚫는다','돌격대를 이끈다','성벽에서 버틴다','포위선을 돌파한다','성벽에서 맞선다','죽부터 먹는다'],
   leadership: ['동탁군 앞에서 부대를 지휘한다','유비군에 맞서 진형을 지휘한다','조조군의 방어선을 돌파한다','퇴로를 막는다','유비군을 따라간다','퇴로를 확보한다','진형을 지킨다','성문을 막는다','끝까지 추격한다','토벌군 명령을 따른다','새 명령을 따른다','야습대를 이끈다','장량의 퇴로를 만든다','포위망을 지휘한다','황보숭을 따라 진격한다'],
@@ -19,7 +9,6 @@ const groups: Record<keyof Stats, string[]> = {
 };
 export function choiceAbility(title: string): keyof Stats | undefined {
   const action = title.replace(/^\[|\]$/g, '');
-  if (campaignAbilities.has(action)) return campaignAbilities.get(action);
   if (/명부|수신처|연락 순서|인원을 확인|군장을 맞춘다/.test(action)) return 'politics';
   if (/주민에게|피란민에게|주민과 연락/.test(action)) return 'charisma';
   if (action === '맡은 거점에서 대기한다' || action === '현지에서 연락을 기다린다') return 'intelligence';

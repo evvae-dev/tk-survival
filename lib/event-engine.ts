@@ -11,7 +11,7 @@ import { eventHistoryRecord } from './history-records';
 export type Choice = { id: string; title: string; description: string; outcome?: string; artwork?: Artwork | null; check?: ChoiceCheck; effects: Partial<Stats>; note: string; disabledReason?: string };
 export type GameEvent = { id: string; year: number; month: number | null; title: string; scene: string; choices: Choice[]; historical?: HistoricalEvent; automatic?: boolean; annual: boolean; state: Game };
 function appendResults(state: Game, event: HistoricalEvent, records: FlowResult[]): Game {
- const entries = records.filter(record => !state.world.log.some(entry => entry.recordId === `${event.id}:${record.id}`)).map(record => ({eventId:event.id,recordId:`${event.id}:${record.id}`,recordType:record.recordType ?? 'personal' as const,year:state.year,month:event.month,title:event.title,detail:record.text,kind:'history' as const}));
+ const entries = records.filter(record => !state.world.log.some(entry => entry.recordId === `${event.id}:${record.id}`)).map(record => ({eventId:event.id,recordId:`${event.id}:${record.id}`,recordType:record.recordType ?? 'personal' as const,year:state.year,month:event.month,title:event.title,detail:record.text,kind:(record.recordType ? 'history' : 'fiction') as 'history'|'fiction'}));
  return {...state,world:{...state.world,log:[...state.world.log,...entries]}};
 }
 function finishEvent(state: Game, event: HistoricalEvent): Game {
@@ -29,8 +29,10 @@ export function getCurrentEvent(game: Game, catalog: HistoricalEvent[] = histori
   const cursorEvent = ordered.find(event => event.id === state.flowProgress?.eventId);
   const pending = cursorEvent ? [cursorEvent, ...ordered.filter(event => event !== cursorEvent)] : ordered;
   for (let pass = 0; pass < pending.length; pass++) for (const event of pending) {
-    if (event.year !== state.year || !event.flow || state.world.appliedEventIds.includes(event.id)) continue;
+    if (!event.flow || state.world.appliedEventIds.includes(event.id)) continue;
     if ((event.prerequisiteEventIds ?? []).some(id => catalog.some(item => item.id === id) && !state.world.appliedEventIds.includes(id))) continue;
+    const year = Math.max(state.year, event.year);
+    state = {...state,year,age:state.age+year-state.year};
     const progress = advanceFlow(state, event, state.flowProgress?.eventId === event.id ? state.flowProgress.nodeId : undefined);
     state = progress.state;
     if (progress.results.length) {
@@ -48,14 +50,8 @@ export function getCurrentEvent(game: Game, catalog: HistoricalEvent[] = histori
     };
     state = finishEvent(state, event);
   }
-  if (pending.some(e => e.year === state.year && e.flow && !state.world.appliedEventIds.includes(e.id))) return { id: 'blocked-dependencies', year: state.year, month: null, title: '사건의 선행 조건을 확인하세요', scene: '사건 사이의 순환 의존 때문에 진행할 수 없습니다. 사건 관리에서 선행 사건 ID를 수정하세요.', annual: false, state, choices: [] };
-  const upcoming = ordered.find(event => event.flow && event.year > state.year && !state.world.appliedEventIds.includes(event.id));
-  if (upcoming) {
-    const previousYear = state.year;
-    state = { ...state, year: upcoming.year, month: null, age: state.age + upcoming.year - previousYear };
-    return getCurrentEvent(state, catalog, stopAfterRecord);
-  }
-  return { id: 'chapter-end', year: state.year, month: null, title: '지금까지의 여정', scene: state.world.log.findLast(entry => entry.eventId === 'chapter-5-5-closing')?.detail ?? '나는 지금 머무는 곳에서 지나온 선택을 돌아봤다. 함께 남은 사람들과 아직 해결되지 않은 일들이 내 다음 길에 남아 있다.', annual: false, state, choices: [{ id: 'finish', title: '[지난 기록을 돌아본다]', description: '함께한 사람들과 지금까지의 일을 돌아보자.', effects: {}, note: '' }] };
+  if (pending.some(e => e.flow && !state.world.appliedEventIds.includes(e.id))) return { id:'blocked-dependencies',year:state.year,month:null,title:'사건의 선행 조건을 확인하세요',scene:'선행 사건의 순환 연결 때문에 진행할 수 없습니다.',annual:false,state,choices:[] };
+  return { id: 'chapter-end', year: state.year, month: null, title: '지금까지의 여정', scene: state.world.log.at(-1)?.detail ?? '나는 지금 머무는 곳에서 지나온 선택을 돌아봤다. 함께 남은 사람들과 아직 해결되지 않은 일들이 내 다음 길에 남아 있다.', annual: false, state, choices: [{ id: 'finish', title: '[지난 기록을 돌아본다]', description: '함께한 사람들과 지금까지의 일을 돌아보자.', effects: {}, note: '' }] };
 }
 export function choiceKey(event: GameEvent, choiceId: string): string { return `${event.year}:${event.id}:${choiceId}`; }
 export function resolveChoice(game: Game, key: string, catalog: HistoricalEvent[] = historicalEvents, random: () => number = Math.random): Game {
@@ -88,6 +84,6 @@ export function resolveChoice(game: Game, key: string, catalog: HistoricalEvent[
   let next: Game = { ...progress.state, introChoicePending: false, turn: game.turn + 1, decisions: [...progress.state.decisions, entry], world: { ...progress.state.world, log: [...progress.state.world.log, entry] } };
   next = appendResults(next, historical, remainingRecords);
   if (!progress.node) next = finishEvent(next, historical);
-  const terminalEnding = next.world.flags.playerExecuted === true || next.world.flags.yellowEmpireFounded === true;
+  const terminalEnding = next.world.flags.playerDead === true || next.world.flags.playerExecuted === true || next.world.flags.yellowEmpireFounded === true;
   return { ...next, completed: terminalEnding || (!progress.node && next.world.flags.chapterFinished === true && catalog.filter(e => e.year >= next.year && e.flow).every(e => next.world.appliedEventIds.includes(e.id))) };
 }

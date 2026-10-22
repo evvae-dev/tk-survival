@@ -4,18 +4,14 @@ import { useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import type { Officer } from '@/lib/reference-data';
 import { abilityKeys, abilityLabels } from '@/lib/game-presentation';
-import campaign from '@/data/collection/5-2-to-5-5.json';
-import chapter from '@/data/collection/5-1-yellow-turban.json';
+import storyFacts from '@/data/chapters/facts.json';
 import officerAbilities from '@/data/reference/officer-abilities.json';
 import s from './game.module.css';
 import { personSegments } from '@/lib/record-presentation';
 
 const cache = new Map<string, Officer>();
-const people = new Map<string, { officerId?: string | null }>();
-// Only people named in the approved events are candidates in prose.
-for (const person of [...chapter.people, ...campaign.events.flatMap(event => event.participants)]) {
- if (person.officerId || !people.has(person.name)) people.set(person.name, person);
-}
+const activePeople = new Set(storyFacts.flatMap(event=>event.officers));
+const people = new Map(officerAbilities.filter(person=>activePeople.has(person.id)).filter(person=>!['사정','봉기','조정','전해','유주','장수','전의','추정','서구'].includes(person.name)).map(person=>[person.name,{officerId:person.id}]));
 export function OfficerText({ text }: { text: string }) {
   return <>{personSegments(text, [...people.keys()]).map((part, index) => {
     const person = part.person ? people.get(part.person) : undefined;

@@ -10,7 +10,7 @@ export default function ChoiceButton({ choice, index, onChoose, artwork }: { cho
   const check = choice.check;
   const art = artwork === undefined ? choiceArt(choice) : artwork;
   return <button disabled={!!choice.disabledReason} onClick={onChoose}>
-    <span>{String(index + 1).padStart(2, '0')}</span><div>
+    <span>{String.fromCharCode(65 + index)}</span><div>
       {art && <img className={s.choiceArt} src={art.src} alt={art.alt} loading="lazy" width={362} height={350} />}
       <strong><OfficerText text={choice.title} /></strong><p><OfficerText text={choice.description} /></p>
       {check && <><div className={s.checkMeta}>

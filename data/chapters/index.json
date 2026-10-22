@@ -1,0 +1,26 @@
+{
+  "edition": "romance-chapters-v1",
+  "chapters": [
+    {
+      "id": "chapter-001",
+      "order": 1,
+      "title": "도원결의와 황건적의 난",
+      "source": "docs/romance-three-kingdoms/chapters/001.md",
+      "status": "complete"
+    },
+    {
+      "id": "chapter-002",
+      "order": 2,
+      "title": "황건 토벌의 마무리와 독우 매질",
+      "source": "docs/romance-three-kingdoms/chapters/002.md",
+      "status": "complete"
+    },
+    {
+      "id": "chapter-003",
+      "order": 3,
+      "title": "하진 피살과 동탁의 입경",
+      "source": "docs/romance-three-kingdoms/chapters/003.md",
+      "status": "complete"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "generatedAssets": [
+    {
+      "path": "public/art/characters/lu-bu.png",
+      "sha256": "74a2a1f2a8ad6bde7acb25b61dde7585768a4431b2d0b5311bffc09816e5e52b"
+    },
+    {
+      "path": "public/art/scenes/r001-market.png",
+      "sha256": "e096aa85edd94a8d53726903ccf621681a0cab5af51e0cede53a54309c0e61c6"
+    },
+    {
+      "path": "public/art/scenes/r001-oath.png",
+      "sha256": "84a8ca07bc9d28d8524c24952cfbdf0d0eb2dcebda2033f49800113069119643"
+    },
+    {
+      "path": "public/art/scenes/r001-tavern.png",
+      "sha256": "6c6fa3299d9f8717f77e46c5786cef7bd2cac95372222d224c20da15f0e41830"
+    },
+    {
+      "path": "public/art/scenes/r002-evidence.png",
+      "sha256": "ce48fcce1f6c248788f09c9a47e4d0c94a943a78a6e16398eb8d4885d5400dab"
+    },
+    {
+      "path": "public/art/scenes/r002-gate.png",
+      "sha256": "0f2e04ace763d7af233409f1badb499dde0f1fdee7a8eac65712c1c7cf528362"
+    },
+    {
+      "path": "public/art/scenes/r002-rally.png",
+      "sha256": "812295106c13c9f13e0db9504688b3866fd4da5ecb103e5342f8445647090d54"
+    },
+    {
+      "path": "public/art/scenes/r003-duel.png",
+      "sha256": "05b1845a3a094837094e3bcb4c97560c6419cafd4041467719be8409e3795a2b"
+    },
+    {
+      "path": "public/art/scenes/r003-guard.png",
+      "sha256": "44e099a4fd90f8e3b26ded8fddab03bffca479cc491f48049d0df2b17df60a72"
+    },
+    {
+      "path": "public/art/scenes/r003-horse.png",
+      "sha256": "0bca8fdfea74999fa4a405c9e068a6c32c13e3edbc4b8751c9b2487fbac48c48"
+    },
+    {
+      "path": "public/art/scenes/r003-refuge.png",
+      "sha256": "13e811eadf39e73afc01023c0e1effb839679825a4e6ba808dc665e180ea46c6"
+    }
+  ],
+  "generationRules": "docs/IMAGE_GENERATION_RULES.md",
+  "protagonistReference": "public/art/characters/protagonist.png",
+  "luBuReference": "public/art/characters/lu-bu.png",
+  "review": "생성 결과와 실제 화면 캡처 직접 열람, 의상·진영·상대·행동 검수",
+  "runtimeMapping": "data/chapters/chapter-001.json~chapter-003.json의 artwork 필드"
+}

@@ -5,7 +5,7 @@ import { validateEvent, validateDependencies } from './event-flow';
 import { firebaseClient } from './firebase-client';
 
 export type PublishedCatalog = { revision: string | null; events: HistoricalEvent[] | null };
-const catalogPath = 'eventCatalog/current';
+const catalogPath = 'eventCatalog/romance-chapters-v1';
 export function watchCatalogRevision(onChange: (revision: string | null) => void, onError: (error: Error) => void) {
   return onSnapshot(doc(firebaseClient().db, catalogPath), snapshot => {
     onChange(snapshot.exists() ? snapshot.data().revision ?? null : null);
@@ -22,7 +22,7 @@ export function validateCatalog(events: HistoricalEvent[]) {
   if (new Set(events.map(event => event?.id)).size !== events.length) throw new Error('사건 ID가 중복됩니다.');
   for (const event of events) {
     const errors = validateEvent(event);
-    if (!supportedChapter(event?.chapterId)) errors.push('현재 목록은 5.1~5.5 사건을 지원합니다.');
+    if (!supportedChapter(event?.chapterId)) errors.push('현재 목록은 챕터 파일에 등록된 사건을 지원합니다.');
     if (event && !event.flow) errors.push('새 사건은 실행할 플로가 필요합니다.');
     if (errors.length) throw new Error(`${event?.title ?? '사건'}: ${errors.join('\n')}`);
   }

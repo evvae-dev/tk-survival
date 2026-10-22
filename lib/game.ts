@@ -1,5 +1,4 @@
 import type { EventFlow } from './event-flow-types';
-import collected from '@/data/collection/5-1-yellow-turban.json';
 import entities from "@/data/history/entities.json";
 export type OfficerLinkInference = { name: string; officerId: string; method: 'lifespan' | 'context'; reason: string };
 export type Stats = { leadership: number; strength: number; intelligence: number; politics: number; charisma: number };
@@ -14,8 +13,9 @@ export type HistoricalEvent = { id:string;chapterId?:string;sequence?:number;pre
 export const statLabels: Record<keyof Stats, string> = { leadership: "통솔", strength: "무력", intelligence: "지력", politics: "정치", charisma: "매력" };
 export const initialStats: Stats = { leadership: 50, strength: 50, intelligence: 50, politics: 50, charisma: 50 };
 export const regionLabels: Record<string, string> = { unknown: "모름", luoyang: "낙양", changan: "장안", zhuo: "탁군", chenliu: "진류", chengdu: "성도", jizhou: "기주", qingzhou: "청주", xuzhou: "서주", jingzhou: "형주", yangzhou: "양주", liangzhou: "량주", hanzhong: "한중", guandu: "관도", chibi: "적벽", jianye: "건업", shouchun: "수춘", liaodong: "요동", yizhou: "익주", yuzhou: "예주", yanzhou: "연주", bingzhou: "병주", xuchang: "허창" };
-for (const place of collected.places) regionLabels[place.id] = place.label;
+Object.assign(regionLabels,{yingchuan:'영천',wan:'완성',anxi:'안희현',mengjin:'맹진'});
 export const factionLabels: Record<string, string> = { han: "후한", "yellow-turban": "황건 주력군", "dong-zhuo": "동탁", coalition: "반동탁 연합", "cao-cao": "조조", "yuan-shao": "원소", "yuan-shu": "원술", "gongsun-zan": "공손찬", "liu-biao": "유표", "liu-yan": "유언", "tao-qian": "도겸", "liu-zhang": "유장", "zhang-lu": "장로", sun: "손씨", "liu-bei": "유비", wei: "위", shu: "촉", wu: "오", jin: "진", sima: "사마씨", "northern-tribes": "북방 세력" };
+factionLabels['ding-yuan']='정원';
 export const familyLabels: Record<string, string> = { farmer: "농민", merchant: "상인", scholar: "서생", military: "군인", gentry: "사족" };
 for (const entity of entities.regions) if (!regionLabels[entity.id]) regionLabels[entity.id] = entity.label;
 for (const entity of entities.factions) if (!factionLabels[entity.id]) factionLabels[entity.id] = entity.label;

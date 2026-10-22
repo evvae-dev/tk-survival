@@ -1,0 +1,546 @@
+[
+  {
+    "id": "r001-01",
+    "chapterId": "chapter-001",
+    "order": 1,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/001.md",
+    "sourceSha256": "6990dc589e2dd1af28eb6b1d8a1cb21f14c610e6bd20f650c6579b289e2a7907",
+    "sourceStage": 1,
+    "title": "내 삼국지 지식, 여기서 써먹는다고?",
+    "fact": "후한 조정의 부패와 재난으로 민심이 흔들리자 장각은 태평요술서를 익히고 치료 활동으로 신도를 모아 장보·장량과 반란을 준비했다.",
+    "category": "novel",
+    "people": [
+      "장각",
+      "장보",
+      "장량"
+    ],
+    "officers": [
+      "rtk14-0607",
+      "rtk14-0659",
+      "rtk14-0664"
+    ]
+  },
+  {
+    "id": "r001-02",
+    "chapterId": "chapter-001",
+    "order": 2,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/001.md",
+    "sourceSha256": "6990dc589e2dd1af28eb6b1d8a1cb21f14c610e6bd20f650c6579b289e2a7907",
+    "sourceStage": 2,
+    "title": "거사 날짜가 벌써 새어 나갔다",
+    "fact": "당주의 밀고로 수도 내응 세력이 적발되자 장각은 계획보다 이르게 봉기를 명했다. 황건군이 관청을 공격하자 조정과 지방은 토벌군과 의용군을 모집했다.",
+    "category": "novel",
+    "people": [
+      "장각",
+      "당주"
+    ],
+    "officers": [
+      "rtk14-0607"
+    ]
+  },
+  {
+    "id": "r001-03",
+    "chapterId": "chapter-001",
+    "order": 3,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/001.md",
+    "sourceSha256": "6990dc589e2dd1af28eb6b1d8a1cb21f14c610e6bd20f650c6579b289e2a7907",
+    "sourceStage": 3,
+    "title": "주막 옆자리에서 SSR 셋이 모인다",
+    "fact": "모집 방을 보던 유비에게 장비가 거병 자금을 대겠다고 나섰고, 주막에서 만난 관우도 나라와 백성을 구하자는 뜻에 동참했다.",
+    "category": "novel",
+    "people": [
+      "유비",
+      "관우",
+      "장비"
+    ],
+    "officers": [
+      "rtk14-0952",
+      "rtk14-0147",
+      "rtk14-0656"
+    ]
+  },
+  {
+    "id": "r001-04",
+    "chapterId": "chapter-001",
+    "order": 4,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/001.md",
+    "sourceSha256": "6990dc589e2dd1af28eb6b1d8a1cb21f14c610e6bd20f650c6579b289e2a7907",
+    "sourceStage": 4,
+    "title": "도원결의에 출석 체크는 안 되나요?",
+    "fact": "유비·관우·장비는 복숭아밭에서 형제가 되기로 맹세했다. 장세평과 소쌍의 지원으로 무기와 군장을 마련하고 향용을 편성했다.",
+    "category": "novel",
+    "people": [
+      "유비",
+      "관우",
+      "장비",
+      "장세평",
+      "소쌍"
+    ],
+    "officers": [
+      "rtk14-0952",
+      "rtk14-0147",
+      "rtk14-0656"
+    ]
+  },
+  {
+    "id": "r001-05",
+    "chapterId": "chapter-001",
+    "order": 5,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/001.md",
+    "sourceSha256": "6990dc589e2dd1af28eb6b1d8a1cb21f14c610e6bd20f650c6579b289e2a7907",
+    "sourceStage": 5,
+    "title": "등무 앞에서 내 무력을 믿어도 될까?",
+    "fact": "유비 일행은 추정의 안내로 유언을 만나 향용을 이끌고 출전했다. 연의의 기본 전개에서는 장비가 등무를, 관우가 정원지를 베어 첫 승리를 거뒀다.",
+    "category": "novel",
+    "people": [
+      "유언",
+      "추정",
+      "유비",
+      "관우",
+      "장비",
+      "정원지",
+      "등무"
+    ],
+    "officers": [
+      "rtk14-0925",
+      "rtk14-0952",
+      "rtk14-0147",
+      "rtk14-0656",
+      "rtk14-0690",
+      "rtk14-0746"
+    ]
+  },
+  {
+    "id": "r001-06",
+    "chapterId": "chapter-001",
+    "order": 6,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/001.md",
+    "sourceSha256": "6990dc589e2dd1af28eb6b1d8a1cb21f14c610e6bd20f650c6579b289e2a7907",
+    "sourceStage": 6,
+    "title": "청주성 앞, 매복인 걸 나만 안다",
+    "fact": "청주 구원을 위해 출전한 유비는 적의 수가 많자 관우와 장비를 매복시키고 직접 적을 유인했다. 매복군과 성안 병력이 협공해 포위를 풀었다.",
+    "category": "novel",
+    "people": [
+      "유비",
+      "관우",
+      "장비",
+      "추정"
+    ],
+    "officers": [
+      "rtk14-0952",
+      "rtk14-0147",
+      "rtk14-0656"
+    ]
+  },
+  {
+    "id": "r001-07",
+    "chapterId": "chapter-001",
+    "order": 7,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/001.md",
+    "sourceSha256": "6990dc589e2dd1af28eb6b1d8a1cb21f14c610e6bd20f650c6579b289e2a7907",
+    "sourceStage": 7,
+    "title": "노식 선생님, 그 환관 그냥 보내면 안 돼요",
+    "fact": "유비는 노식의 군영을 방문한 뒤 황보숭·주준을 돕게 됐다. 황보숭·주준은 풀밭의 적진을 불태워 공격했고 조조는 패주하는 적을 추격했다. 좌풍의 참소는 뒤이어 노식 실각의 원인이 됐다.",
+    "category": "novel",
+    "people": [
+      "유비",
+      "노식",
+      "황보숭",
+      "주준",
+      "조조",
+      "좌풍"
+    ],
+    "officers": [
+      "rtk14-0952",
+      "rtk14-1000",
+      "rtk14-0279",
+      "rtk14-0387",
+      "rtk14-0521"
+    ]
+  },
+  {
+    "id": "r001-08",
+    "chapterId": "chapter-001",
+    "order": 8,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/001.md",
+    "sourceSha256": "6990dc589e2dd1af28eb6b1d8a1cb21f14c610e6bd20f650c6579b289e2a7907",
+    "sourceStage": 8,
+    "title": "구해 줬더니 백신이라 무시한다고?",
+    "fact": "좌풍의 참소로 노식은 압송되고 유비는 장비의 호송군 공격을 만류했다. 유비 일행은 패주하던 동탁을 구했지만 동탁은 관직 없는 이들을 업신여겼고 장비가 분노했다.",
+    "category": "novel",
+    "people": [
+      "노식",
+      "유비",
+      "관우",
+      "장비",
+      "동탁"
+    ],
+    "officers": [
+      "rtk14-1000",
+      "rtk14-0952",
+      "rtk14-0147",
+      "rtk14-0656",
+      "rtk14-0736"
+    ]
+  },
+  {
+    "id": "r002-01",
+    "chapterId": "chapter-002",
+    "order": 1,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/002.md",
+    "sourceSha256": "ba618373e2988f932e6e217fd29260a4e2992f89c0947b5894364c2c9769ad2d",
+    "sourceStage": 1,
+    "title": "상관을 베기 전에 갈아타자",
+    "fact": "유비와 관우는 장비의 동탁 살해를 말렸다. 동탁 밑에서 일하지 않겠다는 장비의 말에 세 사람은 함께 떠나 주준의 군대에 합류했다.",
+    "category": "novel",
+    "people": [
+      "유비",
+      "관우",
+      "장비",
+      "동탁",
+      "주준"
+    ],
+    "officers": [
+      "rtk14-0952",
+      "rtk14-0147",
+      "rtk14-0656",
+      "rtk14-0736",
+      "rtk14-0387"
+    ]
+  },
+  {
+    "id": "r002-02",
+    "chapterId": "chapter-002",
+    "order": 2,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/002.md",
+    "sourceSha256": "ba618373e2988f932e6e217fd29260a4e2992f89c0947b5894364c2c9769ad2d",
+    "sourceStage": 2,
+    "title": "장보가 진짜 흑마법을 쓴다",
+    "fact": "연의에서 장보는 바람과 검은 기운을 일으키는 요술로 관군을 혼란에 빠뜨렸다. 주준은 돼지와 양의 피 등으로 술법을 깨뜨릴 준비를 하고 반격했다.",
+    "category": "novel",
+    "people": [
+      "유비",
+      "장보",
+      "주준"
+    ],
+    "officers": [
+      "rtk14-0952",
+      "rtk14-0659",
+      "rtk14-0387"
+    ]
+  },
+  {
+    "id": "r002-03",
+    "chapterId": "chapter-002",
+    "order": 3,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/002.md",
+    "sourceSha256": "ba618373e2988f932e6e217fd29260a4e2992f89c0947b5894364c2c9769ad2d",
+    "sourceStage": 3,
+    "title": "퇴로 하나로 완성의 결말을 바꾼다",
+    "fact": "장각의 병사와 장량의 토벌, 장보에 대한 부하의 배반으로 황건 지도부가 무너졌다. 완성의 한충·조홍·손중은 저항했고, 유비는 퇴로를 열어 적을 성 밖으로 유인하자고 건의했다. 손견도 공략에 공을 세웠다.",
+    "category": "novel",
+    "people": [
+      "유비",
+      "주준",
+      "손견",
+      "장보",
+      "장각",
+      "장량",
+      "한충",
+      "조홍",
+      "손중"
+    ],
+    "officers": [
+      "rtk14-0952",
+      "rtk14-0387",
+      "rtk14-0607",
+      "rtk14-0664",
+      "rtk14-0659",
+      "rtk14-0173",
+      "rtk14-0620",
+      "rtk14-0568",
+      "rtk14-0551"
+    ]
+  },
+  {
+    "id": "r002-04",
+    "chapterId": "chapter-002",
+    "order": 4,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/002.md",
+    "sourceSha256": "ba618373e2988f932e6e217fd29260a4e2992f89c0947b5894364c2c9769ad2d",
+    "sourceStage": 4,
+    "title": "전공은 있는데 인사팀이 안 읽는다",
+    "fact": "토벌 후에도 유비의 임관은 늦어졌다. 장균은 환관의 부패와 공신의 부당한 처우를 지적했다가 모함을 받았으며, 유비는 뒤늦게 안희현 현위에 임명됐다.",
+    "category": "novel",
+    "people": [
+      "유비",
+      "장균"
+    ],
+    "officers": [
+      "rtk14-0952"
+    ]
+  },
+  {
+    "id": "r002-05",
+    "chapterId": "chapter-002",
+    "order": 5,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/002.md",
+    "sourceSha256": "ba618373e2988f932e6e217fd29260a4e2992f89c0947b5894364c2c9769ad2d",
+    "sourceStage": 5,
+    "title": "독우가 원하는 건 민원 처리가 아니다",
+    "fact": "독우는 군공으로 임명된 관리들을 조사하면서 유비의 출신과 공적을 깎아내리고 뇌물을 기대했다. 유비가 응하지 않자 아전들에게 허위 진술을 받아내려 하고 해명을 위한 면담도 거절했다.",
+    "category": "novel",
+    "people": [
+      "유비",
+      "독우"
+    ],
+    "officers": [
+      "rtk14-0952"
+    ]
+  },
+  {
+    "id": "r002-06",
+    "chapterId": "chapter-002",
+    "order": 6,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/002.md",
+    "sourceSha256": "ba618373e2988f932e6e217fd29260a4e2992f89c0947b5894364c2c9769ad2d",
+    "sourceStage": 6,
+    "title": "장비 형님, 채찍 들기 전에 10초만",
+    "fact": "장비는 울고 있는 주민들에게 독우의 횡포를 듣고 독우를 매질했다. 유비는 독우의 목숨을 살려 주고 인수를 돌려준 뒤 관우·장비와 관직을 버리고 떠났다.",
+    "category": "novel",
+    "people": [
+      "유비",
+      "관우",
+      "장비",
+      "독우"
+    ],
+    "officers": [
+      "rtk14-0952",
+      "rtk14-0147",
+      "rtk14-0656"
+    ]
+  },
+  {
+    "id": "r002-07",
+    "chapterId": "chapter-002",
+    "order": 7,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/002.md",
+    "sourceSha256": "ba618373e2988f932e6e217fd29260a4e2992f89c0947b5894364c2c9769ad2d",
+    "sourceStage": 7,
+    "title": "영제가 죽는다는데, 낙양행 편도표요?",
+    "fact": "유비는 유우의 토벌에 참여해 사면과 추천으로 관직을 회복했다. 중앙에서는 영제 사후 유변을 지지하는 하황후·하진과 유협을 지지하는 건석이 충돌했고 하진은 건석을 제거해 유변을 즉위시켰다.",
+    "category": "novel",
+    "people": [
+      "유비",
+      "유우",
+      "하진",
+      "하황후",
+      "건석",
+      "유변",
+      "유협",
+      "조조"
+    ],
+    "officers": [
+      "rtk14-0952",
+      "rtk14-0932",
+      "rtk14-0132",
+      "rtk14-0521"
+    ]
+  },
+  {
+    "id": "r002-08",
+    "chapterId": "chapter-002",
+    "order": 8,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/002.md",
+    "sourceSha256": "ba618373e2988f932e6e217fd29260a4e2992f89c0947b5894364c2c9769ad2d",
+    "sourceStage": 8,
+    "title": "동탁 초대장, 발송 취소 안 되나요?",
+    "fact": "하진은 하태후를 압박해 환관을 제거하려고 지방 군벌을 수도로 불렀다. 조조는 외부 군대 동원의 위험을 경고했지만 받아들여지지 않았고, 환관들은 태후의 명을 내세워 하진을 궁으로 불러들이려 했다.",
+    "category": "novel",
+    "people": [
+      "하진",
+      "원소",
+      "조조",
+      "하태후",
+      "장양",
+      "동탁"
+    ],
+    "officers": [
+      "rtk14-0132",
+      "rtk14-0521",
+      "rtk14-0736",
+      "rtk14-0035"
+    ]
+  },
+  {
+    "id": "r003-01",
+    "chapterId": "chapter-003",
+    "order": 1,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/003.md",
+    "sourceSha256": "c1f430d07adac437e9ba9eb49325d64731b31eb70053fedcd4fe198f835db214",
+    "sourceStage": 1,
+    "title": "하진님, 그 문 열면 죽어요",
+    "fact": "태후의 명을 내세운 환관들의 소환에 하진은 궁으로 들어가려 했다. 조조와 원소는 위험을 경고했으나 하진은 이를 무시했고 환관들에게 살해됐다.",
+    "category": "novel",
+    "people": [
+      "하진",
+      "조조",
+      "원소",
+      "장양"
+    ],
+    "officers": [
+      "rtk14-0132",
+      "rtk14-0521",
+      "rtk14-0035"
+    ]
+  },
+  {
+    "id": "r003-02",
+    "chapterId": "chapter-003",
+    "order": 2,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/003.md",
+    "sourceSha256": "c1f430d07adac437e9ba9eb49325d64731b31eb70053fedcd4fe198f835db214",
+    "sourceStage": 2,
+    "title": "수염 없다고 다 환관은 아니잖아",
+    "fact": "하진의 피살 소식을 들은 원소 일행이 궁문을 공격했고 원술도 병력을 움직였다. 군사들은 환관뿐 아니라 수염 없는 사람까지 공격해 궁중의 혼란과 살육이 확대됐다.",
+    "category": "novel",
+    "people": [
+      "원소",
+      "원술",
+      "하진"
+    ],
+    "officers": [
+      "rtk14-0132",
+      "rtk14-0035",
+      "rtk14-0032"
+    ]
+  },
+  {
+    "id": "r003-03",
+    "chapterId": "chapter-003",
+    "order": 3,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/003.md",
+    "sourceSha256": "c1f430d07adac437e9ba9eb49325d64731b31eb70053fedcd4fe198f835db214",
+    "sourceStage": 3,
+    "title": "밤길에서 황제 이름이 들렸다",
+    "fact": "장양 등 환관은 황제와 진류왕을 데리고 궁을 빠져나갔다. 추격에 몰린 환관들이 강물에 몸을 던지자 두 황자는 호위를 잃고 밤길을 헤맸다.",
+    "category": "novel",
+    "people": [
+      "장양",
+      "유변",
+      "유협"
+    ],
+    "officers": []
+  },
+  {
+    "id": "r003-04",
+    "chapterId": "chapter-003",
+    "order": 4,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/003.md",
+    "sourceSha256": "c1f430d07adac437e9ba9eb49325d64731b31eb70053fedcd4fe198f835db214",
+    "sourceStage": 4,
+    "title": "동탁군 숫자, 같은 얼굴이 또 지나간다",
+    "fact": "동탁은 황제와 진류왕을 영접해 수도로 모셔 온 공을 내세웠다. 병력을 실제보다 크게 보이게 하고 하진·하묘의 옛 부대까지 흡수해 군사적 우위를 만들었다.",
+    "category": "novel",
+    "people": [
+      "동탁",
+      "유변",
+      "유협",
+      "하진",
+      "하묘"
+    ],
+    "officers": [
+      "rtk14-0736",
+      "rtk14-0132",
+      "rtk14-0142"
+    ]
+  },
+  {
+    "id": "r003-05",
+    "chapterId": "chapter-003",
+    "order": 5,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/003.md",
+    "sourceSha256": "c1f430d07adac437e9ba9eb49325d64731b31eb70053fedcd4fe198f835db214",
+    "sourceStage": 5,
+    "title": "정원 옆에 무력 100이 서 있다",
+    "fact": "동탁은 황제를 폐하고 진류왕을 세우겠다고 주장했다. 정원은 신하가 함부로 황제를 바꿀 수 없다며 반대했고 여포가 곁에서 위세를 보이자 동탁은 물러났다.",
+    "category": "novel",
+    "people": [
+      "동탁",
+      "정원",
+      "여포"
+    ],
+    "officers": [
+      "rtk14-0736",
+      "rtk14-0694",
+      "rtk14-0987"
+    ]
+  },
+  {
+    "id": "r003-06",
+    "chapterId": "chapter-003",
+    "order": 6,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/003.md",
+    "sourceSha256": "c1f430d07adac437e9ba9eb49325d64731b31eb70053fedcd4fe198f835db214",
+    "sourceStage": 6,
+    "title": "여포랑 일기토, 취소 버튼 있나요?",
+    "fact": "동탁과 정원의 군대가 충돌하자 여포가 앞장서 동탁군을 무너뜨렸다. 이숙은 여포를 회유하자고 제안했고 동탁은 적토마와 재물을 내줄 준비를 했다.",
+    "category": "novel",
+    "people": [
+      "동탁",
+      "정원",
+      "여포",
+      "이숙"
+    ],
+    "officers": [
+      "rtk14-0736",
+      "rtk14-0694",
+      "rtk14-0987",
+      "rtk14-0908"
+    ]
+  },
+  {
+    "id": "r003-07",
+    "chapterId": "chapter-003",
+    "order": 7,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/003.md",
+    "sourceSha256": "c1f430d07adac437e9ba9eb49325d64731b31eb70053fedcd4fe198f835db214",
+    "sourceStage": 7,
+    "title": "적토마 한 필에 군영이 뒤집힌다",
+    "fact": "이숙은 적토마와 선물을 여포에게 건네며 정원 밑에서는 큰 영달을 얻기 어렵다고 설득했다. 여포는 동탁에게 가기로 하고 정원을 죽여 충성을 증명하려 했다.",
+    "category": "novel",
+    "people": [
+      "동탁",
+      "정원",
+      "여포",
+      "이숙"
+    ],
+    "officers": [
+      "rtk14-0736",
+      "rtk14-0694",
+      "rtk14-0987",
+      "rtk14-0908"
+    ]
+  },
+  {
+    "id": "r003-08",
+    "chapterId": "chapter-003",
+    "order": 8,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/003.md",
+    "sourceSha256": "c1f430d07adac437e9ba9eb49325d64731b31eb70053fedcd4fe198f835db214",
+    "sourceStage": 8,
+    "title": "정원 막사의 불이 꺼지기 전에",
+    "fact": "여포는 정원을 살해하고 동탁에게 투항했다. 동탁은 그를 양아들로 받아들이고 병력을 거두어 수도의 반대 세력을 약화시킨 뒤 다시 폐립을 추진했다.",
+    "category": "novel",
+    "people": [
+      "정원",
+      "여포",
+      "동탁"
+    ],
+    "officers": [
+      "rtk14-0694",
+      "rtk14-0987",
+      "rtk14-0736"
+    ]
+  }
+]

@@ -1,0 +1,267 @@
+{
+  "chapterId": "chapter-002",
+  "stage": "complete",
+  "iteration": 2,
+  "initialIssues": [
+    "황건 지도부 사망 소식과 실제 생존 상태 불일치",
+    "현장 증언 공개 성공이 결과를 바꾸지 않아 A 선택의 의미가 약함",
+    "안희 전공 증거를 모아도 다음 장면에 반영되지 않음"
+  ],
+  "fixes": [
+    "사망 소식의 background 노드에서 해당 인물의 사망 효과 적용",
+    "증언/문서 공개 성공은 독우 조사 중단·관직 유지, 실패는 매질·이탈로 분리",
+    "meritEvidence 별도 장면과 duyouEvidence 공개 분기 연결"
+  ],
+  "scenes": [
+    {
+      "eventId": "r002-01",
+      "scores": {
+        "logic": 8,
+        "tone": 8,
+        "flow": 8,
+        "balance": 8,
+        "curiosity": 8
+      },
+      "total": 8.0,
+      "evidence": "동탁 이탈과 주준 합류를 신원 확인·보급소 진입으로 연결한다.",
+      "nodeId": "scene"
+    },
+    {
+      "eventId": "r002-02",
+      "scores": {
+        "logic": 8,
+        "tone": 8,
+        "flow": 8,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.2,
+      "evidence": "요술이 실제인 연의 설정을 존중하고 현대 지식은 사람의 집결에 사용한다.",
+      "nodeId": "scene"
+    },
+    {
+      "eventId": "r002-03",
+      "scores": {
+        "logic": 8,
+        "tone": 8,
+        "flow": 8,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.2,
+      "evidence": "지도부 사망을 상태에 반영하고 조건부 항복은 일부 병력·포로 인계로 한정한다.",
+      "nodeId": "scene"
+    },
+    {
+      "eventId": "r002-04",
+      "scores": {
+        "logic": 8,
+        "tone": 8,
+        "flow": 8,
+        "balance": 8,
+        "curiosity": 8
+      },
+      "total": 8.0,
+      "evidence": "공적 누락과 지방 임관을 별도 전개로 다루고 기록은 다음 모함 장면에 반영한다.",
+      "nodeId": "scene"
+    },
+    {
+      "eventId": "r002-05",
+      "scores": {
+        "logic": 8,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 8
+      },
+      "total": 8.2,
+      "evidence": "전공 사본과 독우의 강요 진술은 별개의 증거임을 연결한다.",
+      "nodeId": "merit"
+    },
+    {
+      "eventId": "r002-05",
+      "scores": {
+        "logic": 8,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 8
+      },
+      "total": 8.2,
+      "evidence": "강요된 진술 사본 확보와 면담 거절 기록을 구별한다.",
+      "nodeId": "scene"
+    },
+    {
+      "eventId": "r002-06",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.6,
+      "evidence": "이미 확보한 사본의 공개를 정치 판정으로 처리한다.",
+      "nodeId": "proof"
+    },
+    {
+      "eventId": "r002-06",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.6,
+      "evidence": "기존 증거의 공개와 현장 증언을 다른 능력으로 판정하고 성공 시 관직 이탈을 막는다.",
+      "nodeId": "scene"
+    },
+    {
+      "eventId": "r002-07",
+      "scores": {
+        "logic": 8,
+        "tone": 8,
+        "flow": 8,
+        "balance": 8,
+        "curiosity": 8
+      },
+      "total": 8.0,
+      "evidence": "안희 관직 유지 경로에는 원래의 사면·재기를 실제 소식으로 넣지 않는다.",
+      "nodeId": "office"
+    },
+    {
+      "eventId": "r002-07",
+      "scores": {
+        "logic": 8,
+        "tone": 8,
+        "flow": 8,
+        "balance": 8,
+        "curiosity": 8
+      },
+      "total": 8.0,
+      "evidence": "안희 관직 유지 분기에서는 거짓 사면·재기 소식을 재생하지 않는다.",
+      "nodeId": "scene"
+    },
+    {
+      "eventId": "r002-08",
+      "scores": {
+        "logic": 8,
+        "tone": 8,
+        "flow": 8,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.2,
+      "evidence": "권한 없는 주인공이 조서를 훼손하지 않고 반대 의견·입궁 경고를 전달한다.",
+      "nodeId": "scene"
+    }
+  ],
+  "confirmedOpenErrors": 0,
+  "engineTests": "/tmp/tk-chapter2-qa3.log",
+  "imageAndBrowserStatus": "모든 조건별 장면을 PC·모바일·낮은 PC에서 검증; 실제 이미지 직접 열람; 관리자 저장·새로고침·게임 반영 통과",
+  "chapterTotal": 8.2,
+  "browserReport": "/tmp/tk-story-browser-002/report.json",
+  "eventAssessments": [
+    {
+      "eventId": "r002-01",
+      "scores": {
+        "logic": 8,
+        "tone": 8,
+        "flow": 8,
+        "balance": 8,
+        "curiosity": 8
+      },
+      "total": 8.0,
+      "evidence": "동탁 이탈과 주준 합류를 신원 확인·보급소 진입으로 연결한다."
+    },
+    {
+      "eventId": "r002-02",
+      "scores": {
+        "logic": 8,
+        "tone": 8,
+        "flow": 8,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.2,
+      "evidence": "요술이 실제인 연의 설정을 존중하고 현대 지식은 사람의 집결에 사용한다."
+    },
+    {
+      "eventId": "r002-03",
+      "scores": {
+        "logic": 8,
+        "tone": 8,
+        "flow": 8,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.2,
+      "evidence": "지도부 사망을 상태에 반영하고 조건부 항복은 일부 병력·포로 인계로 한정한다."
+    },
+    {
+      "eventId": "r002-04",
+      "scores": {
+        "logic": 8,
+        "tone": 8,
+        "flow": 8,
+        "balance": 8,
+        "curiosity": 8
+      },
+      "total": 8.0,
+      "evidence": "공적 누락과 지방 임관을 별도 전개로 다루고 기록은 다음 모함 장면에 반영한다."
+    },
+    {
+      "eventId": "r002-05",
+      "scores": {
+        "logic": 8,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 8
+      },
+      "total": 8.2,
+      "evidence": "강요된 진술 사본 확보와 면담 거절 기록을 구별한다."
+    },
+    {
+      "eventId": "r002-06",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.6,
+      "evidence": "기존 증거의 공개와 현장 증언을 다른 능력으로 판정하고 성공 시 관직 이탈을 막는다."
+    },
+    {
+      "eventId": "r002-07",
+      "scores": {
+        "logic": 8,
+        "tone": 8,
+        "flow": 8,
+        "balance": 8,
+        "curiosity": 8
+      },
+      "total": 8.0,
+      "evidence": "안희 관직 유지 분기에서는 거짓 사면·재기 소식을 재생하지 않는다."
+    },
+    {
+      "eventId": "r002-08",
+      "scores": {
+        "logic": 8,
+        "tone": 8,
+        "flow": 8,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.2,
+      "evidence": "권한 없는 주인공이 조서를 훼손하지 않고 반대 의견·입궁 경고를 전달한다."
+    }
+  ],
+  "finalBrowserReport": "/tmp/tk-story-final-002/report.json",
+  "finalTests": "/tmp/tk-final-tests4.log",
+  "finalBuild": "/tmp/tk-final-build3.log",
+  "finalFullPlaythrough": "/tmp/tk-story-playthrough-final/report.json"
+}

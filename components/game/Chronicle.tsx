@@ -15,6 +15,7 @@ export default function Chronicle({ game }: { game: Game }) {
   const reduced = useRef(false);
   useEffect(() => {
     reduced.current = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (game.world.flags.playerDead) { setAll(true); setShown(lines.length); return; }
     section.current?.scrollIntoView({ block: 'start', behavior: reduced.current ? 'instant' : 'smooth' });
     if (reduced.current) { setAll(true); setShown(lines.length); }
     else setShown(Math.min(1, lines.length));

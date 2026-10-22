@@ -13,18 +13,10 @@ const pick = <T,>(items: T[]): T => items[Math.floor(Math.random() * items.lengt
 export function newGame(name: string, year: number, region: string, family: string, catalog?: HistoricalEvent[]): Game {
   return { name, startYear: year, year, month: null, region, birthRegion: region, birthYear: year - 20, family, age: 20, turn: 0, fame: 0, stats: applyStats(initialStats, familyEffects[family] ?? {}), completed: false, factionId: null, role: "civilian", reputation: family === "gentry" ? { han: 20 } : {}, resolvedEventIds: [], world: createWorld(year,catalog), decisions: [] };
 }
-// 이전 연간 성장·역사 상태는 새 5.1 테스트와 호환되지 않는다.
-export function migrateGame(persisted: unknown, version = 0): { game: Game | null } {
-  const saved = (persisted as { game?: Game } | null)?.game;
-  if (version < 4 || !saved || (!Number.isInteger(saved.year) || saved.year < 184 || saved.year > 188) || !saved.stats) return { game: null };
-  const evidence = JSON.stringify(saved.decisions.map(entry => [entry.recordId, entry.title]));
-  const flags = { ...saved.world.flags };
-  if (version < 9 && saved.flowProgress?.eventId.endsWith('-service') && /^(stay-or-leave|stay-|follow-|duty-|people-)/.test(saved.flowProgress.nodeId)) flags.legacyAnnualServicePending = true;
-  if (evidence.includes('han-company:cao') || evidence.includes('[조조 부대의 연락을 맡는다]')) { flags.chapter51AccompaniedCaoCao = true; flags.chapter51AccompaniedLiuBei = false; }
-  else if (evidence.includes('han-company:regular') || evidence.includes('[일반 관군과 움직인다]')) { flags.chapter51AccompaniedCaoCao = false; flags.chapter51AccompaniedLiuBei = false; }
-  else if (evidence.includes('han-company:liu') || evidence.includes('[유비 일행과 동행한다]') || saved.decisions.some(entry => ['battle-184-daxingshan','battle-184-qingzhou-city'].includes(entry.eventId ?? '') && (entry.recordId?.includes('han-plan:') || /신호|관우|장비/.test(entry.title)))) flags.chapter51AccompaniedLiuBei = true;
-  const defaults = applyStats(initialStats, familyEffects[saved.family] ?? {});
-  return { game: { ...saved, fame: saved.fame ?? 0, world: { ...saved.world, flags, historyLog: restoreHistoryRecords(saved, getEffectiveCatalog()) }, completed: saved.completed && !(saved.year === 184 && !saved.world.flags.playerExecuted && !saved.world.flags.yellowEmpireFounded), stats: applyStats({ ...defaults, ...saved.stats }, {}) } };
+// This edition has independent storage; previous saves stay in their old key.
+export function migrateGame(persisted:unknown,_version=0):{game:Game|null}{
+ const game=(persisted as {game?:Game}|null)?.game;
+ return game?.stats&&game.world&&Array.isArray(game.decisions)?{game:{...game,fame:game.fame??0,stats:applyStats({leadership:game.stats.leadership,strength:game.stats.strength,intelligence:game.stats.intelligence,politics:game.stats.politics,charisma:game.stats.charisma},{})}}:{game:null};
 }
 export const useGameStore = create<GameStore>()(persist((set) => ({
   game: null,
@@ -32,7 +24,7 @@ export const useGameStore = create<GameStore>()(persist((set) => ({
     const name = input.trim().slice(0, 20);
     const stats = rolled ?? rollStartingStats();
     if (!name || !validStartingStats(stats)) return;
-    const game = newGame(name, 184, 'unknown', pick(Object.keys(familyLabels)), getEffectiveCatalog());
+    const game = newGame(name, 184, 'zhuo', pick(Object.keys(familyLabels)), getEffectiveCatalog());
     set({ game: { ...game, stats: { ...stats }, introChoicePending: true } });
   },
   changeStats: delta => set(({ game }) => game && !game.completed ? { game: { ...game, stats: applyStats(game.stats, delta) } } : {}),
@@ -43,4 +35,4 @@ export const useGameStore = create<GameStore>()(persist((set) => ({
     return next?.automatic ? { game: next.state } : {};
   }),
   resetGame: () => set({ game: null }),
-}), { name: "tk-survival-game-v1", version: 9, migrate: migrateGame, partialize: ({ game }) => ({ game }), skipHydration: true }));
+}), { name: "tk-survival-game-romance-v1", version: 1, migrate: migrateGame, partialize: ({ game }) => ({ game }), skipHydration: true }));
