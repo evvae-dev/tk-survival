@@ -1,0 +1,1324 @@
+{
+  "work": "삼국지연의 통행 120회본",
+  "target_chapters": 120,
+  "authorized_batch": [
+    116,
+    117,
+    118,
+    119,
+    120
+  ],
+  "saved_chapters": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120
+  ],
+  "next_chapter": null,
+  "storage": "chapters/{chapter:03d}.md",
+  "game_integration": false,
+  "existing_game_data_modified": false,
+  "source_policy": "연의만 사용. 정사·현대 각색·게임 창작 배제.",
+  "verification": {
+    "001": {
+      "status": "draft_unverified",
+      "sources_consulted": []
+    },
+    "002": {
+      "status": "draft_unverified",
+      "sources_consulted": []
+    },
+    "003": {
+      "status": "draft_unverified",
+      "sources_consulted": []
+    },
+    "004": {
+      "status": "draft_unverified",
+      "sources_consulted": []
+    },
+    "005": {
+      "status": "draft_unverified",
+      "sources_consulted": []
+    },
+    "006": {
+      "status": "draft_unverified",
+      "sources_consulted": []
+    },
+    "007": {
+      "status": "draft_unverified",
+      "sources_consulted": []
+    },
+    "008": {
+      "status": "draft_unverified",
+      "sources_consulted": []
+    },
+    "009": {
+      "status": "draft_unverified",
+      "sources_consulted": []
+    },
+    "010": {
+      "status": "draft_unverified",
+      "sources_consulted": []
+    },
+    "011": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/011.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "012": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/012.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "013": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/013.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "014": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/014.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "015": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/015.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "016": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/016.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "017": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/017.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "018": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/018.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "019": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/019.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "020": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/020.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "021": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/021.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "022": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/022.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "023": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/023.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "024": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/024.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "025": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/025.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "026": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/026.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "027": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/027.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "028": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/028.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "029": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/029.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "030": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/030.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "031": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/031.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "032": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/032.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "033": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/033.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "034": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/034.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "035": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/035.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "036": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/036.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "037": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/037.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "038": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/038.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "039": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/039.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "040": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/040.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "041": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/041.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "042": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/042.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "043": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/043.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "044": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/044.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "045": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/045.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "046": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/046.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "047": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/047.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "048": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/048.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "049": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/049.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "050": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/050.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "051": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/051.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "052": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/052.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "053": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/053.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "054": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/054.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "055": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/055.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "056": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/056.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "057": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/057.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "058": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/058.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "059": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/059.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "060": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/060.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "061": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/061.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "062": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/062.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "063": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/063.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "064": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/064.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "065": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/065.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "066": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/066.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "067": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/067.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "068": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/068.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "069": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/069.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "070": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/070.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "071": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/071.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "072": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/072.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "073": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/073.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "074": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/074.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "075": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/075.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "076": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/076.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "077": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/077.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "078": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/078.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "079": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/079.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "080": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/080.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "081": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/081.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "082": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/082.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "083": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/083.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "084": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/084.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "085": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/085.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "086": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/086.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "087": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/087.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "088": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/088.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "089": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/089.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "090": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/090.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "091": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/091.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "092": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/092.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "093": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/093.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "094": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/094.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "095": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/095.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "096": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/096.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "097": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/097.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "098": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/098.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "099": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/099.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "100": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/100.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "101": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/101.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "102": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/102.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "103": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/103.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "104": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/104.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "105": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/105.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "106": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/106.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "107": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/107.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "108": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/108.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "109": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/109.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "110": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/110.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "111": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/111.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "112": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/112.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "113": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/113.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "114": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/114.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "115": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/115.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "116": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/116.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "117": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/117.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "118": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/118.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "119": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/119.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    },
+    "120": {
+      "status": "source_outline_checked",
+      "sources_consulted": [
+        "sources/plain/120.txt"
+      ],
+      "review_scope": "주석을 제외한 회차별 본문 문단 앞뒤 발췌로 주요 전개·회차 경계 대조. 정밀 문장별 검증 전."
+    }
+  },
+  "editor_notes": [
+    "제1~10회는 지식 기반 미대조 초안. 제11회 이후는 저장된 모평본의 문단 발췌로 흐름을 대조한 한국어 요약이며 정밀 검증은 미완료.",
+    "각 회차 경계와 세부 사건 순서는 원문 대조 후 검증 상태를 갱신한다.",
+    "제1~120회 한국어 요약 파일 저장 완료. 전역 스킬 자동 설치나 원문 정밀 검증 완료를 의미하지 않는다.",
+    "사용자 지시에 따라 회차마다 독립 파일로만 저장했다. 기존 게임 사건 데이터 삭제·등록·변환은 수행하지 않는다.",
+    "원문 판본과 커밋, 회차별 HTML·본문 파일의 대응은 sources/source.json에 기록했다. 요약은 독자적으로 작성했으며 원문 평주를 게임 서사로 취급하지 않는다."
+  ],
+  "authorization": "사용자가 제11회부터 120회까지 5회씩 연속 작성·저장하도록 지시",
+  "authorized_chapters": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120
+  ],
+  "authoring_status": "completed",
+  "precise_source_verification": "pending",
+  "completed_batches": [
+    {
+      "chapters": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "status": "saved"
+    },
+    {
+      "chapters": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "status": "saved"
+    },
+    {
+      "chapters": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "status": "saved"
+    },
+    {
+      "chapters": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "status": "saved"
+    },
+    {
+      "chapters": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "status": "saved"
+    },
+    {
+      "chapters": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "status": "saved"
+    },
+    {
+      "chapters": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "status": "saved"
+    },
+    {
+      "chapters": [
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "status": "saved"
+    },
+    {
+      "chapters": [
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "status": "saved"
+    },
+    {
+      "chapters": [
+        46,
+        47,
+        48,
+        49,
+        50
+      ],
+      "status": "saved"
+    },
+    {
+      "chapters": [
+        51,
+        52,
+        53,
+        54,
+        55
+      ],
+      "status": "saved"
+    },
+    {
+      "chapters": [
+        56,
+        57,
+        58,
+        59,
+        60
+      ],
+      "status": "saved"
+    },
+    {
+      "chapters": [
+        61,
+        62,
+        63,
+        64,
+        65
+      ],
+      "status": "saved"
+    },
+    {
+      "chapters": [
+        66,
+        67,
+        68,
+        69,
+        70
+      ],
+      "status": "saved"
+    },
+    {
+      "chapters": [
+        71,
+        72,
+        73,
+        74,
+        75
+      ],
+      "status": "saved"
+    },
+    {
+      "chapters": [
+        76,
+        77,
+        78,
+        79,
+        80
+      ],
+      "status": "saved"
+    },
+    {
+      "chapters": [
+        81,
+        82,
+        83,
+        84,
+        85
+      ],
+      "status": "saved"
+    },
+    {
+      "chapters": [
+        86,
+        87,
+        88,
+        89,
+        90
+      ],
+      "status": "saved"
+    },
+    {
+      "chapters": [
+        91,
+        92,
+        93,
+        94,
+        95
+      ],
+      "status": "saved"
+    },
+    {
+      "chapters": [
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "status": "saved"
+    },
+    {
+      "chapters": [
+        101,
+        102,
+        103,
+        104,
+        105
+      ],
+      "status": "saved"
+    },
+    {
+      "chapters": [
+        106,
+        107,
+        108,
+        109,
+        110
+      ],
+      "status": "saved"
+    },
+    {
+      "chapters": [
+        111,
+        112,
+        113,
+        114,
+        115
+      ],
+      "status": "saved"
+    },
+    {
+      "chapters": [
+        116,
+        117,
+        118,
+        119,
+        120
+      ],
+      "status": "saved"
+    }
+  ]
+}
