@@ -15,6 +15,8 @@ for(const event of events){
  assert.equal(event.edition,index.edition);assert.ok(index.chapters.some(c=>c.id===event.chapterId));assert.equal(event.month,null);assert.ok(event.summary&&event.source.record&&event.flow);assert.ok(facts.some(f=>f.id===event.id));
  for(const id of event.prerequisiteEventIds??[])assert.ok(ids.has(id));for(const c of event.connections??[])assert.ok(ids.has(c.targetId));
  for(const node of event.flow.nodes){
+  const narrative=[node.data.text,...(node.data.options??[]).flatMap(o=>[o.title,o.description,o.outcome]),node.data.check?.success,node.data.check?.failure,node.data.check?.successNarrative,node.data.check?.failureNarrative].filter(v=>typeof v==='string');
+  for(const text of narrative)assert.ok(!/(?:연의|정사|게임)(?:의| 속)? (?:기본 |요술 )?(?:설정|전개)(?:이다|다|이며|에서)/.test(text),`${event.id}/${node.id}: 출처·설정 해설은 게임 서술에 넣지 말고 관리자 근거로 분리하세요.`);
   if(node.type==='choice'){
    assert.ok(node.data.options.length>=1,`${event.id}/${node.id}: 유효한 현장 행동 필요`);
    assert.ok(node.data.text.split(/(?<=[.!?])\s+/).length>=3);

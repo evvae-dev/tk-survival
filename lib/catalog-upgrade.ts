@@ -2,6 +2,7 @@ import type { HistoricalEvent } from './game';
 import { CATALOG_EDITION, supportedChapter } from './chapter';
 import { historicalEvents } from './history';
 import { checkWeights } from './ability-check';
+import { repairLegacyEditorialText } from './record-presentation';
 const defaults = new Map(historicalEvents.map(event => [event.id, event]));
 const fallback = {src:'/art/choices/strategy.png',alt:'군영의 지도와 주변 상황을 살피는 주인공'};
 const illustrated = (art: import('./artwork').Artwork | null | undefined) => !!art && !art.src.startsWith('/art/characters/');
@@ -11,6 +12,10 @@ export function upgradeLegacyEvent(event: HistoricalEvent): HistoricalEvent {
  let changed=false;
  const nodes=event.flow.nodes.map(node=>{
   const base=defaults.get(event.id)?.flow?.nodes.find(n=>n.id===node.id);
+  if(node.data.text!==undefined){
+   const text=repairLegacyEditorialText(node.data.text);
+   if(text!==node.data.text){changed=true;node={...node,data:{...node.data,text}};}
+  }
   if(node.type==='choice'){
    const artwork=illustrated(node.data.artwork)?node.data.artwork:base?.data.artwork??fallback;
    const options=(node.data.options??[]).map(option=>illustrated(option.artwork)?option:{...option,artwork:base?.data.options?.find(o=>o.id===option.id)?.artwork??artwork});

@@ -1,6 +1,18 @@
+// Repair known editorial notes from older catalogs for display only.
+// Keep saved outcomes and surrounding player/admin prose intact.
+export function repairLegacyEditorialText(text: string): string {
+ const repaired=text
+  .replace(/\s*요술은 연의의 설정이다\./g, '')
+  .replace(/\s*이는 연의의 요술 전개다\./g, '')
+  .replace(/장보의 요술은 연의 속 전개다\.\s*/g, '')
+  .replace(/연의의 기본 전개에서 /g, '')
+  .replace('연의에서 주준이 준비했던 물건들이 군영에 들어오는 게 보였다.', '수송병들이 주준의 명령을 받고 돼지와 양의 피를 담은 통을 군영 안으로 옮겼다.');
+ return repaired===text?text:repaired.trim();
+}
+
 // Result prose is persisted by the engine; never reconstruct it from intentions.
 export function narrativeText(text:string) {
- const lines=text.split(/\n+/).filter(Boolean);
+ const lines=repairLegacyEditorialText(text).split(/\n+/).filter(Boolean);
  const body=lines.filter(line=>!/^(성공|실패) · /.test(line)).join('\n\n').trim();
  return (body||lines.join(' ')).replace(/ · /g,' ');
 }

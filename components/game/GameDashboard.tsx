@@ -17,6 +17,7 @@ import SituationMap from "./SituationMap";
 import HistoryFlow from "./HistoryFlow";
 
 import { unifiedRecords } from '@/lib/history-records';
+import { narrativeText } from '@/lib/record-presentation';
 import GameDialog from "./GameDialog";
 import Chronicle from "./Chronicle";
 import AwakeningTransition from "./AwakeningTransition";
@@ -160,7 +161,7 @@ export default function GameDashboard({
               {art && <div className={s.eventArt}><Image src={art.src} alt={art.alt} fill priority sizes="(max-width: 768px) 90vw, 640px" /></div>}
               <p className={s.eyebrow}>나의 기록</p>
               <h1><OfficerText text={event?.title ?? '이어지는 이야기'} /></h1>
-              <p className={s.dialogue}><OfficerText text={event?.automatic ? event.scene : game.world.log.at(-1)?.detail ?? '이야기가 이어지고 있다.'} /></p>
+              <p className={s.dialogue}><OfficerText text={narrativeText(event?.automatic ? event.scene : game.world.log.at(-1)?.detail ?? '이야기가 이어지고 있다.')} /></p>
             </div> : (
               event && (
                 <>
