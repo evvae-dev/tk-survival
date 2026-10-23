@@ -70,6 +70,12 @@ for(const chapter of index.chapters){
 writeFileSync('data/history/events.json',JSON.stringify(all,null,2)+'\n');
 writeFileSync('data/history/catalog-metadata.json',JSON.stringify({edition:index.edition,eventCount:all.length,chapterCount:new Set(all.map(e=>e.chapterId)).size,orderPolicy:'chapter-file-order',sourceType:'삼국지연의 챕터 사건 문서',generatedBy:'scripts/build-story.mjs'},null,2)+'\n');
 writeFileSync('data/chapters/facts.json',JSON.stringify(facts,null,2)+'\n');
+const balance=all.flatMap(event=>event.flow.nodes.filter(node=>node.type==='choice').flatMap(node=>(node.data.options??[]).flatMap(option=>{
+ const edge=event.flow.edges.find(edge=>edge.source===node.id&&edge.sourceHandle===option.id);
+ const check=event.flow.nodes.find(target=>target.id===edge?.target)?.data.check;
+ return check?[{eventId:event.id,nodeId:node.id,choiceId:option.id,weights:check.weights,difficulty:check.difficulty,successFame:check.fameReward,failureFame:-check.fameReward/2,basis:check.fameReason}]:[];
+})));
+writeFileSync('data/chapters/balance-review.json',JSON.stringify({version:1,policy:'선택별 가중 평균 또는 실존 상대 능력 비교 + (50 − 상황 난도). 성공 명성은 영향력에 따른 명시 보상, 실패는 정확히 −50%.',choices:balance},null,2)+'\n');
 console.log(`챕터 ${new Set(all.map(e=>e.chapterId)).size}개 · 사건 ${all.length}개 생성`);
 
 // The retired Namu chronology is replaced by the chapter document facts.

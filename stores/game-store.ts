@@ -7,8 +7,9 @@ import { playbackKey } from '@/lib/record-playback';
 import { rollStartingStats, validStartingStats } from '@/lib/starting-stats';
 import { createWorld } from "@/lib/world";
 import { restoreHistoryRecords } from '@/lib/history-records';
+import { RESULT_DURATION_MS } from '@/lib/record-playback';
 
-type GameStore = { game: Game | null; startGame: (name: string, stats?: Stats) => void; continueStory: () => void; changeStats: (delta: Partial<Stats>) => void; nextTurn: (choiceKey: string) => void; advanceRecord: (expectedKey: string) => void; resetGame: () => void };
+type GameStore = { game: Game | null; startGame: (name: string, stats?: Stats) => void; continueStory: () => void; finishResult: (recordId: string) => void; changeStats: (delta: Partial<Stats>) => void; nextTurn: (choiceKey: string) => void; advanceRecord: (expectedKey: string) => void; resetGame: () => void };
 const pick = <T,>(items: T[]): T => items[Math.floor(Math.random() * items.length)];
 export function newGame(name: string, year: number, region: string, family: string, catalog?: HistoricalEvent[]): Game {
   return { name, startYear: year, year, month: null, region, birthRegion: region, birthYear: year - 20, family, age: 20, turn: 0, fame: 0, stats: applyStats(initialStats, familyEffects[family] ?? {}), completed: false, factionId: null, role: "civilian", reputation: family === "gentry" ? { han: 20 } : {}, resolvedEventIds: [], world: createWorld(year,catalog), decisions: [] };
@@ -29,9 +30,19 @@ export const useGameStore = create<GameStore>()(persist((set) => ({
     set({ game: { ...game, stats: { ...stats }, introChoicePending: true } });
   },
   changeStats: delta => set(({ game }) => game && !game.completed ? { game: { ...game, stats: applyStats(game.stats, delta) } } : {}),
-  nextTurn: key => set(({ game }) => game && !game.completed && !getCurrentEvent(game, getEffectiveCatalog(), true)?.automatic ? { game: resolveChoice(game, key, getEffectiveCatalog()) } : {}),
+  nextTurn: key => set(({ game }) => {
+    if (!game || game.completed || game.pendingResult && game.pendingResult.expiresAt > Date.now() || getCurrentEvent(game, getEffectiveCatalog(), true)?.automatic) return {};
+    const next = resolveChoice(game, key, getEffectiveCatalog());
+    const recordId = next.decisions.at(-1)?.recordId;
+    return next === game ? {} : { game: next.turn > game.turn && recordId ? { ...next, pendingResult: { recordId, expiresAt: Date.now() + RESULT_DURATION_MS } } : next };
+  }),
+  finishResult: recordId => set(({ game }) => {
+    if (!game?.pendingResult || game.pendingResult.recordId !== recordId || game.pendingResult.expiresAt > Date.now()) return {};
+    const { pendingResult: _pending, ...next } = game;
+    return { game: next };
+  }),
   advanceRecord: expectedKey => set(({ game }) => {
-    if (!game || game.completed || playbackKey(game) !== expectedKey) return {};
+    if (!game || game.completed || game.pendingResult && game.pendingResult.expiresAt > Date.now() || playbackKey(game) !== expectedKey) return {};
     const next = getCurrentEvent(game, getEffectiveCatalog(), true);
     return next?.automatic ? { game: next.state } : {};
   }),

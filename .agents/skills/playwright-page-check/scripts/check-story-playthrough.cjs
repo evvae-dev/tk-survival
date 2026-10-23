@@ -1,16 +1,17 @@
 const fs=require('node:fs');const assert=require('node:assert/strict');const {launchBrowser}=require('./check-page.cjs');
 const [url='http://127.0.0.1:4173',out='/tmp/tk-story-playthrough']=process.argv.slice(2);fs.mkdirSync(out,{recursive:true});const expected=JSON.parse(fs.readFileSync('data/history/events.json','utf8')).length;
-(async()=>{const browser=await launchBrowser();try{const context=await browser.newContext({viewport:{width:1440,height:1000},reducedMotion:'reduce'});const page=await context.newPage();page.setDefaultTimeout(15000);const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(url);await page.getByRole('button',{name:'시작하기',exact:true}).click();await page.getByRole('textbox',{name:'이 시대에 남길 이름',exact:true}).fill('연속완주');await page.getByRole('button',{name:'이름 넣고 시작'}).click();await page.getByTestId('stat-roulette').getByRole('button',{name:'시작',exact:true}).click();await page.getByTestId('awakening-transition').waitFor({state:'detached'});
+(async()=>{const browser=await launchBrowser();try{const context=await browser.newContext({viewport:{width:1440,height:1000},reducedMotion:'reduce'});const page=await context.newPage();page.setDefaultTimeout(15000);const epoch=new Date('2026-10-22T00:00:00Z');await page.clock.install({time:epoch});await page.clock.pauseAt(new Date(epoch.getTime()+60000));await page.clock.setSystemTime(epoch);const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(url);await page.getByRole('button',{name:'시작하기',exact:true}).click();await page.getByRole('textbox',{name:'이 시대에 남길 이름',exact:true}).fill('연속완주');await page.getByRole('button',{name:'이름 넣고 시작'}).click();await page.getByTestId('stat-roulette').waitFor();await page.clock.runFor(1000);await page.getByTestId('stat-roulette').getByRole('button',{name:'시작',exact:true}).click();await page.getByTestId('awakening-transition').waitFor();await page.clock.runFor(300);await page.getByTestId('awakening-transition').waitFor({state:'detached'});
  const saved=()=>page.evaluate(()=>JSON.parse(localStorage.getItem('tk-survival-game-romance-v1')).state.game);
  for(let step=0;step<expected*15+30;step++){
   const game=await saved();if(game.completed)break;
+  if(await page.getByTestId('choice-result').isVisible()){await page.clock.runFor(5000);continue;}
   const dialog=page.locator('dialog[open]');
   if(await dialog.count()){
    const choices=dialog.locator('button').filter({has:page.locator('strong')});const count=await choices.count();if(count){const choice=choices.nth(count===3?2:0);await choice.scrollIntoViewIfNeeded();await choice.click();await page.waitForFunction(turn=>{const g=JSON.parse(localStorage.getItem('tk-survival-game-romance-v1')).state.game;return g.turn>turn||g.completed;},game.turn);continue;}
    await dialog.getByRole('button',{name:'팝업 닫기'}).click();
   }
   const button=page.getByRole('button',{name:'선택하기',exact:false});if(await button.isVisible()){await button.click();continue;}
-  await page.mouse.click(5,320);await page.waitForTimeout(100);
+  await page.clock.runFor(5000);
  }
  const result=await saved();assert.equal(result.completed,true);assert.equal(result.turn,expected);assert.equal(new Set(result.world.appliedEventIds).size,expected);assert.equal(new Set(result.decisions.map(e=>e.eventId)).size,expected);assert.deepEqual(errors,[]);
  await page.screenshot({path:`${out}/completed.png`,fullPage:false});

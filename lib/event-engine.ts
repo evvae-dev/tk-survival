@@ -8,6 +8,7 @@ import type { FlowResult } from './event-flow';
 import type { Artwork } from './artwork';
 import { eventHistoryRecord } from './history-records';
 import { chapterOrder } from './chapter';
+import { choiceArt } from './choice-art';
 
 export function continuationEvent(game: Game, catalog: HistoricalEvent[] = historicalEvents): HistoricalEvent | undefined {
   if (!game.completed || game.world.flags.playerDead || game.world.flags.playerExecuted || game.world.flags.yellowEmpireFounded) return undefined;
@@ -79,7 +80,7 @@ export function resolveChoice(game: Game, key: string, catalog: HistoricalEvent[
     target = historical.flow!.edges.find(edge => edge.source === checkNode.id && edge.sourceHandle === (check!.success ? 'yes' : 'no'))!.target;
   }
   const progress = advanceFlow(event.state, historical, target);
-  const reward = applyChoiceGrowth(event.state, progress.state, selected.title, check?.success);
+  const reward = applyChoiceGrowth(event.state, progress.state, selected.title, check?.success, check?.fameReward ?? 4);
   progress.state = reward.state;
   const outcome = check ? `${check.success ? '성공' : '실패'} · ${check.success ? selected.check?.success : selected.check?.failure}` : '';
   const bridge = check ? (check.success ? selected.check?.successNarrative : selected.check?.failureNarrative) : undefined;
@@ -87,7 +88,7 @@ export function resolveChoice(game: Game, key: string, catalog: HistoricalEvent[
   const personalPrefix = firstHistorical < 0 ? progress.records : progress.records.slice(0, firstHistorical);
   const remainingRecords = firstHistorical < 0 ? [] : progress.records.slice(firstHistorical);
   const resultText = personalPrefix.map(record => record.text).join(' ') || (check ? bridge || (check.success ? selected.check?.success : selected.check?.failure) || '' : selected.outcome || (progress.records.some(record => record.recordType) ? '나는 맡은 자리에서 일행의 움직임을 따랐다. 뒤이어 현장의 소식을 들었다.' : selected.description));
-  const entry = { recordType: 'personal' as const, recordId: key, eventId: historical.id, year: event.year, month: historical.month, title: `${historical.title} · ${selected.title}`, detail: [outcome, resultText].filter(Boolean).join('\n'), kind: 'fiction' as const, ...(reward.growth ? { growth: reward.growth } : {}), ...(check ? { check } : {}) };
+  const entry = { recordType: 'personal' as const, recordId: key, eventId: historical.id, artwork: choiceArt(selected), year: event.year, month: historical.month, title: `${historical.title} · ${selected.title}`, detail: [outcome, resultText].filter(Boolean).join('\n'), kind: 'fiction' as const, ...(reward.growth ? { growth: reward.growth } : {}), ...(check ? { check } : {}) };
   let next: Game = { ...progress.state, introChoicePending: false, turn: game.turn + 1, decisions: [...progress.state.decisions, entry], world: { ...progress.state.world, log: [...progress.state.world.log, entry] } };
   next = appendResults(next, historical, remainingRecords);
   if (!progress.node) next = finishEvent(next, historical);

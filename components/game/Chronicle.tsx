@@ -5,6 +5,7 @@ import { unifiedRecords } from '@/lib/history-records';
 import { buildChronicle } from '@/lib/chronicle';
 import { OfficerText } from './OfficerName';
 import s from './game.module.css';
+import { playbackDelay } from '@/lib/record-playback';
 
 export default function Chronicle({ game }: { game: Game }) {
   const lines = useMemo(() => buildChronicle(unifiedRecords(game.world).filter(entry => entry.recordType !== 'background')), [game.world.log]);
@@ -22,7 +23,7 @@ export default function Chronicle({ game }: { game: Game }) {
   }, [lines.length]);
   useEffect(() => {
     if (all || shown >= lines.length) return;
-    const timer = setTimeout(() => setShown(value => value + 1), 1500);
+    const timer = setTimeout(() => setShown(value => value + 1), playbackDelay(1));
     return () => clearTimeout(timer);
   }, [shown, all, lines.length]);
   useEffect(() => {

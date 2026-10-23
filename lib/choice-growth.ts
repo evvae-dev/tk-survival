@@ -16,16 +16,15 @@ export function choiceAbility(title: string): keyof Stats | undefined {
   if (action.endsWith('로 향한다') || ['재야로 길을 나선다', '무리하지 않고 지켜본다'].includes(action)) return 'intelligence';
   return abilityKeys.find(key => groups[key].includes(action));
 }
-export function applyChoiceGrowth(before: Game, after: Game, title: string, success?: boolean): { state: Game; growth?: ChoiceGrowth } {
-  if (after.world.flags.playerExecuted) return { state: after };
+export function applyChoiceGrowth(before: Game, after: Game, title: string, success?: boolean, successFame = 4): { state: Game; growth?: ChoiceGrowth } {
   const ability = choiceAbility(title);
-  if (!ability) return { state: after };
   const amount = success === true ? 2 : 1;
   // Result-node grants already applied are retained, with no duplicate grant.
-  const stats = after.stats[ability] === before.stats[ability] ? applyStats(after.stats, { [ability]: amount }) : after.stats;
+  const stats = ability && after.stats[ability] === before.stats[ability] ? applyStats(after.stats, { [ability]: amount }) : after.stats;
   const reputation = { ...after.reputation };
-  if (after.factionId && (after.reputation[after.factionId] ?? 0) === (before.reputation[after.factionId] ?? 0)) reputation[after.factionId] = (reputation[after.factionId] ?? 0) + amount;
-  const state = { ...after, stats, reputation, fame: (before.fame ?? 0) + amount };
-  const growth: ChoiceGrowth = { stats: Object.fromEntries(abilityKeys.flatMap(key => stats[key] === before.stats[key] ? [] : [[key, stats[key] - before.stats[key]]])), fame: amount };
-  return { state, growth };
+  if (ability && after.factionId && (after.reputation[after.factionId] ?? 0) === (before.reputation[after.factionId] ?? 0)) reputation[after.factionId] = (reputation[after.factionId] ?? 0) + amount;
+  const fame = success === undefined ? 0 : success ? successFame : -successFame / 2;
+  const state = { ...after, stats, reputation, fame: (after.fame ?? before.fame ?? 0) + fame };
+  const growth: ChoiceGrowth = { stats: Object.fromEntries(abilityKeys.flatMap(key => stats[key] === before.stats[key] ? [] : [[key, stats[key] - before.stats[key]]])), fame };
+  return { state, ...(fame || Object.keys(growth.stats).length ? {growth} : {}) };
 }

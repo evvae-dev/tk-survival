@@ -18,9 +18,12 @@ for(const event of events){
   if(node.type==='choice'){
    assert.equal(node.data.options.length,3,`${event.id}/${node.id}: A/B/C`);
    assert.ok(node.data.text.split(/(?<=[.!?])\s+/).length>=3);
+   assert.ok(node.data.artwork,`${event.id}/${node.id}: 상황 이미지 필요`);
+   for(const option of node.data.options)assert.ok(option.artwork,`${event.id}/${node.id}/${option.id}: 선택 이미지 필요`);
   }
   const artwork=[node.data.artwork,...(node.data.options??[]).map(o=>o.artwork)].filter(Boolean);
-  for(const art of artwork){assert.ok(existsSync('public'+art.src),art.src);assert.ok(art.alt);}
+  for(const art of artwork){assert.ok(existsSync('public'+art.src),art.src);assert.ok(art.alt);assert.ok(!art.src.startsWith('/art/characters/'),`${event.id}/${node.id}: 인물 단독 이미지 금지`);}
+  if(node.type==='check'){assert.ok(node.data.check.weights);assert.ok(Number.isFinite(node.data.check.difficulty));assert.ok(node.data.check.fameReward>0);}
   if(node.data.check?.opponentId)assert.ok(officers.has(node.data.check.opponentId));
   for(const eff of node.data.effects??[])if(eff.type==='person')assert.ok(officers.has(eff.personId));
  }

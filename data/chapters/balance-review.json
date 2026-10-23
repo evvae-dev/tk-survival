@@ -1,0 +1,2089 @@
+{
+  "version": 1,
+  "policy": "선택별 가중 평균 또는 실존 상대 능력 비교 + (50 − 상황 난도). 성공 명성은 영향력에 따른 명시 보상, 실패는 정확히 −50%.",
+  "choices": [
+    {
+      "eventId": "r001-01",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.6,
+        "politics": 0.3,
+        "charisma": 0.1
+      },
+      "difficulty": 75,
+      "successFame": 16,
+      "failureFame": -8,
+      "basis": "사전 고발로 반란 대응의 시점을 바꿈"
+    },
+    {
+      "eventId": "r001-01",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.7,
+        "intelligence": 0.15,
+        "politics": 0.15
+      },
+      "difficulty": 38,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "모집 소문과 접근 통로 확보"
+    },
+    {
+      "eventId": "r001-02",
+      "nodeId": "warned",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.7,
+        "politics": 0.2,
+        "charisma": 0.1
+      },
+      "difficulty": 70,
+      "successFame": 8,
+      "failureFame": -4,
+      "basis": "조기 경보 뒤 더 경계하는 연락책 추적"
+    },
+    {
+      "eventId": "r001-02",
+      "nodeId": "warned",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.7,
+        "intelligence": 0.15,
+        "politics": 0.15
+      },
+      "difficulty": 43,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "유비 측 첫 접촉"
+    },
+    {
+      "eventId": "r001-02",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.7,
+        "politics": 0.2,
+        "charisma": 0.1
+      },
+      "difficulty": 65,
+      "successFame": 8,
+      "failureFame": -4,
+      "basis": "은밀한 동선을 추적해 지역 피란 위험을 줄임"
+    },
+    {
+      "eventId": "r001-02",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.7,
+        "intelligence": 0.15,
+        "politics": 0.15
+      },
+      "difficulty": 43,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "유비 측 첫 접촉"
+    },
+    {
+      "eventId": "r001-03",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.55,
+        "charisma": 0.25,
+        "leadership": 0.2
+      },
+      "difficulty": 66,
+      "successFame": 8,
+      "failureFame": -4,
+      "basis": "매복 전술의 선행 경고"
+    },
+    {
+      "eventId": "r001-03",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.55,
+        "politics": 0.35,
+        "intelligence": 0.1
+      },
+      "difficulty": 44,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "첫 동행을 허락받음"
+    },
+    {
+      "eventId": "r001-04",
+      "nodeId": "known",
+      "choiceId": "a",
+      "weights": {
+        "leadership": 0.45,
+        "intelligence": 0.35,
+        "charisma": 0.2
+      },
+      "difficulty": 58,
+      "successFame": 8,
+      "failureFame": -4,
+      "basis": "출전 전 부대의 비상 신호 정비"
+    },
+    {
+      "eventId": "r001-04",
+      "nodeId": "known",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.8,
+        "politics": 0.2
+      },
+      "difficulty": 60,
+      "successFame": 8,
+      "failureFame": -4,
+      "basis": "소개를 넘어 유비 향용에 정식 지원"
+    },
+    {
+      "eventId": "r001-04",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "leadership": 0.45,
+        "intelligence": 0.35,
+        "charisma": 0.2
+      },
+      "difficulty": 58,
+      "successFame": 8,
+      "failureFame": -4,
+      "basis": "출전 전 부대의 비상 신호 정비"
+    },
+    {
+      "eventId": "r001-04",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.7,
+        "intelligence": 0.15,
+        "politics": 0.15
+      },
+      "difficulty": 40,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "상인에게 소개를 받음"
+    },
+    {
+      "eventId": "r001-05",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "strength": 1
+      },
+      "difficulty": 50,
+      "successFame": 14,
+      "failureFame": -7,
+      "basis": "등무를 꺾어 첫 전장의 공적을 바꿈"
+    },
+    {
+      "eventId": "r001-05",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "leadership": 1.5,
+        "strength": 1
+      },
+      "difficulty": 48,
+      "successFame": 6,
+      "failureFame": -3,
+      "basis": "장비 뒤의 대열 유지"
+    },
+    {
+      "eventId": "r001-06",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.55,
+        "charisma": 0.25,
+        "leadership": 0.2
+      },
+      "difficulty": 68,
+      "successFame": 12,
+      "failureFame": -6,
+      "basis": "매복이 드러나기 전 유인로를 변경"
+    },
+    {
+      "eventId": "r001-06",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "leadership": 1,
+        "strength": 1.5
+      },
+      "difficulty": 56,
+      "successFame": 8,
+      "failureFame": -4,
+      "basis": "철수 신호를 전해 병력 이탈을 도움"
+    },
+    {
+      "eventId": "r001-07",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "politics": 0.55,
+        "intelligence": 0.35,
+        "charisma": 0.1
+      },
+      "difficulty": 70,
+      "successFame": 14,
+      "failureFame": -7,
+      "basis": "군공 증거가 소실되지 않게 사본 전달"
+    },
+    {
+      "eventId": "r001-07",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 45,
+      "successFame": 5,
+      "failureFame": -2.5,
+      "basis": "좌풍의 요구를 아군에 보고"
+    },
+    {
+      "eventId": "r001-08",
+      "nodeId": "evidence",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.45,
+        "charisma": 0.4,
+        "politics": 0.15
+      },
+      "difficulty": 74,
+      "successFame": 10,
+      "failureFame": -5,
+      "basis": "동탁의 패주를 공개 증언해 영웅의 대응을 바꿈"
+    },
+    {
+      "eventId": "r001-08",
+      "nodeId": "evidence",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.55,
+        "politics": 0.35,
+        "intelligence": 0.1
+      },
+      "difficulty": 57,
+      "successFame": 6,
+      "failureFame": -3,
+      "basis": "장비의 충돌을 말려 이탈을 도움"
+    },
+    {
+      "eventId": "r001-08",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.45,
+        "charisma": 0.4,
+        "politics": 0.15
+      },
+      "difficulty": 74,
+      "successFame": 10,
+      "failureFame": -5,
+      "basis": "동탁의 패주를 공개 증언해 영웅의 대응을 바꿈"
+    },
+    {
+      "eventId": "r001-08",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.55,
+        "politics": 0.35,
+        "intelligence": 0.1
+      },
+      "difficulty": 57,
+      "successFame": 6,
+      "failureFame": -3,
+      "basis": "장비의 충돌을 말려 이탈을 도움"
+    },
+    {
+      "eventId": "r002-01",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "politics": 0.5,
+        "intelligence": 0.4,
+        "leadership": 0.1
+      },
+      "difficulty": 60,
+      "successFame": 8,
+      "failureFame": -4,
+      "basis": "패전 경과를 지휘부에 공식 보고"
+    },
+    {
+      "eventId": "r002-01",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.55,
+        "politics": 0.35,
+        "intelligence": 0.1
+      },
+      "difficulty": 43,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "유비 측 신원 확인 지원"
+    },
+    {
+      "eventId": "r002-02",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "leadership": 0.45,
+        "intelligence": 0.35,
+        "charisma": 0.2
+      },
+      "difficulty": 68,
+      "successFame": 12,
+      "failureFame": -6,
+      "basis": "요술에 흔들린 병력의 재집결 방식을 변경"
+    },
+    {
+      "eventId": "r002-02",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "leadership": 1.5,
+        "strength": 1
+      },
+      "difficulty": 56,
+      "successFame": 6,
+      "failureFame": -3,
+      "basis": "방어 대열 유지"
+    },
+    {
+      "eventId": "r002-03",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.45,
+        "charisma": 0.4,
+        "politics": 0.15
+      },
+      "difficulty": 72,
+      "successFame": 14,
+      "failureFame": -7,
+      "basis": "무장 해제 협상의 성패를 바꿈"
+    },
+    {
+      "eventId": "r002-03",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "leadership": 1,
+        "strength": 1.5
+      },
+      "difficulty": 54,
+      "successFame": 6,
+      "failureFame": -3,
+      "basis": "완성 전선의 퇴로 신호 전달"
+    },
+    {
+      "eventId": "r002-04",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "politics": 0.55,
+        "intelligence": 0.35,
+        "charisma": 0.1
+      },
+      "difficulty": 59,
+      "successFame": 10,
+      "failureFame": -5,
+      "basis": "군공 증언을 현청 기록으로 남김"
+    },
+    {
+      "eventId": "r002-04",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.55,
+        "politics": 0.35,
+        "intelligence": 0.1
+      },
+      "difficulty": 42,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "초기 현청 업무 지원"
+    },
+    {
+      "eventId": "r002-05",
+      "nodeId": "merit",
+      "choiceId": "a",
+      "weights": {
+        "politics": 0.55,
+        "intelligence": 0.35,
+        "charisma": 0.1
+      },
+      "difficulty": 69,
+      "successFame": 12,
+      "failureFame": -6,
+      "basis": "강요 진술 사본이라는 후속 구출 근거 확보"
+    },
+    {
+      "eventId": "r002-05",
+      "nodeId": "merit",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 48,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "해명 요청 전달"
+    },
+    {
+      "eventId": "r002-05",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "politics": 0.55,
+        "intelligence": 0.35,
+        "charisma": 0.1
+      },
+      "difficulty": 69,
+      "successFame": 12,
+      "failureFame": -6,
+      "basis": "강요 진술 사본이라는 후속 구출 근거 확보"
+    },
+    {
+      "eventId": "r002-05",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 48,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "해명 요청 전달"
+    },
+    {
+      "eventId": "r002-06",
+      "nodeId": "proof",
+      "choiceId": "a",
+      "weights": {
+        "politics": 0.55,
+        "intelligence": 0.35,
+        "charisma": 0.1
+      },
+      "difficulty": 59,
+      "successFame": 22,
+      "failureFame": -11,
+      "basis": "사본과 현장 증언을 공개 대조해 관직 이탈을 저지"
+    },
+    {
+      "eventId": "r002-06",
+      "nodeId": "proof",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.55,
+        "politics": 0.35,
+        "intelligence": 0.1
+      },
+      "difficulty": 58,
+      "successFame": 8,
+      "failureFame": -4,
+      "basis": "독우의 살해를 만류"
+    },
+    {
+      "eventId": "r002-06",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.45,
+        "charisma": 0.4,
+        "politics": 0.15
+      },
+      "difficulty": 77,
+      "successFame": 18,
+      "failureFame": -9,
+      "basis": "모인 증언으로 독우의 행패와 관직 이탈을 저지"
+    },
+    {
+      "eventId": "r002-06",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.55,
+        "politics": 0.35,
+        "intelligence": 0.1
+      },
+      "difficulty": 58,
+      "successFame": 8,
+      "failureFame": -4,
+      "basis": "독우의 살해를 만류"
+    },
+    {
+      "eventId": "r002-07",
+      "nodeId": "office",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.55,
+        "charisma": 0.25,
+        "leadership": 0.2
+      },
+      "difficulty": 75,
+      "successFame": 18,
+      "failureFame": -9,
+      "basis": "건석의 함정을 경고해 정국 개입 준비"
+    },
+    {
+      "eventId": "r002-07",
+      "nodeId": "office",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 44,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "조조 측 서찰 전달"
+    },
+    {
+      "eventId": "r002-07",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.55,
+        "charisma": 0.25,
+        "leadership": 0.2
+      },
+      "difficulty": 75,
+      "successFame": 18,
+      "failureFame": -9,
+      "basis": "건석의 함정을 경고해 정국 개입 준비"
+    },
+    {
+      "eventId": "r002-07",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 44,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "조조 측 서찰 전달"
+    },
+    {
+      "eventId": "r002-08",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "politics": 0.5,
+        "intelligence": 0.4,
+        "leadership": 0.1
+      },
+      "difficulty": 78,
+      "successFame": 16,
+      "failureFame": -8,
+      "basis": "군벌 소집의 위험을 공식 반대 의견으로 제시"
+    },
+    {
+      "eventId": "r002-08",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "intelligence": 0.55,
+        "charisma": 0.25,
+        "leadership": 0.2
+      },
+      "difficulty": 61,
+      "successFame": 10,
+      "failureFame": -5,
+      "basis": "하진의 단독 입궁 경고 전달"
+    },
+    {
+      "eventId": "r003-01",
+      "nodeId": "warning",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.45,
+        "charisma": 0.4,
+        "politics": 0.15
+      },
+      "difficulty": 78,
+      "successFame": 24,
+      "failureFame": -12,
+      "basis": "하진의 단독 입궁을 보류시켜 생명을 구함"
+    },
+    {
+      "eventId": "r003-01",
+      "nodeId": "warning",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 46,
+      "successFame": 6,
+      "failureFame": -3,
+      "basis": "궁문 밖 호위 연락 유지"
+    },
+    {
+      "eventId": "r003-01",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.45,
+        "charisma": 0.4,
+        "politics": 0.15
+      },
+      "difficulty": 78,
+      "successFame": 24,
+      "failureFame": -12,
+      "basis": "하진의 단독 입궁을 보류시켜 생명을 구함"
+    },
+    {
+      "eventId": "r003-01",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 46,
+      "successFame": 6,
+      "failureFame": -3,
+      "basis": "궁문 밖 호위 연락 유지"
+    },
+    {
+      "eventId": "r003-02",
+      "nodeId": "hejin",
+      "choiceId": "a",
+      "weights": {
+        "politics": 0.55,
+        "intelligence": 0.35,
+        "charisma": 0.1
+      },
+      "difficulty": 64,
+      "successFame": 12,
+      "failureFame": -6,
+      "basis": "오인된 하인의 신원을 확인해 피해 감소"
+    },
+    {
+      "eventId": "r003-02",
+      "nodeId": "hejin",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.7,
+        "intelligence": 0.15,
+        "politics": 0.15
+      },
+      "difficulty": 40,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "피란 통로 문의"
+    },
+    {
+      "eventId": "r003-02",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "politics": 0.55,
+        "intelligence": 0.35,
+        "charisma": 0.1
+      },
+      "difficulty": 64,
+      "successFame": 12,
+      "failureFame": -6,
+      "basis": "오인된 하인의 신원을 확인해 피해 감소"
+    },
+    {
+      "eventId": "r003-02",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.7,
+        "intelligence": 0.15,
+        "politics": 0.15
+      },
+      "difficulty": 40,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "피란 통로 문의"
+    },
+    {
+      "eventId": "r003-03",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.7,
+        "politics": 0.2,
+        "charisma": 0.1
+      },
+      "difficulty": 63,
+      "successFame": 16,
+      "failureFame": -8,
+      "basis": "왕실 피란처를 선점해 구조 경로를 바꿈"
+    },
+    {
+      "eventId": "r003-03",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 42,
+      "successFame": 6,
+      "failureFame": -3,
+      "basis": "관군에 발견 위치 보고"
+    },
+    {
+      "eventId": "r003-04",
+      "nodeId": "refuge",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.6,
+        "politics": 0.3,
+        "charisma": 0.1
+      },
+      "difficulty": 75,
+      "successFame": 16,
+      "failureFame": -8,
+      "basis": "반복 입성의 표식을 대조해 병력 과장을 폭로"
+    },
+    {
+      "eventId": "r003-04",
+      "nodeId": "refuge",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.7,
+        "intelligence": 0.15,
+        "politics": 0.15
+      },
+      "difficulty": 45,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "동탁 측 길 안내 접촉"
+    },
+    {
+      "eventId": "r003-04",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.6,
+        "politics": 0.3,
+        "charisma": 0.1
+      },
+      "difficulty": 75,
+      "successFame": 16,
+      "failureFame": -8,
+      "basis": "반복 입성의 표식을 대조해 병력 과장을 폭로"
+    },
+    {
+      "eventId": "r003-04",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.7,
+        "intelligence": 0.15,
+        "politics": 0.15
+      },
+      "difficulty": 45,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "동탁 측 길 안내 접촉"
+    },
+    {
+      "eventId": "r003-05",
+      "nodeId": "liu",
+      "choiceId": "a",
+      "weights": {
+        "politics": 0.5,
+        "intelligence": 0.4,
+        "leadership": 0.1
+      },
+      "difficulty": 78,
+      "successFame": 20,
+      "failureFame": -10,
+      "basis": "대신과 독립 군영의 공동 반대 근거를 만듦"
+    },
+    {
+      "eventId": "r003-05",
+      "nodeId": "liu",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 40,
+      "successFame": 5,
+      "failureFame": -2.5,
+      "basis": "이미 동행하는 유비에게 수도 배치를 보고"
+    },
+    {
+      "eventId": "r003-05",
+      "nodeId": "contact",
+      "choiceId": "a",
+      "weights": {
+        "politics": 0.5,
+        "intelligence": 0.4,
+        "leadership": 0.1
+      },
+      "difficulty": 78,
+      "successFame": 20,
+      "failureFame": -10,
+      "basis": "대신과 독립 군영의 공동 반대 근거를 만듦"
+    },
+    {
+      "eventId": "r003-05",
+      "nodeId": "contact",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.8,
+        "politics": 0.2
+      },
+      "difficulty": 62,
+      "successFame": 8,
+      "failureFame": -4,
+      "basis": "실제 접촉 뒤 동탁군에 정식 지원"
+    },
+    {
+      "eventId": "r003-05",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "politics": 0.5,
+        "intelligence": 0.4,
+        "leadership": 0.1
+      },
+      "difficulty": 78,
+      "successFame": 20,
+      "failureFame": -10,
+      "basis": "대신과 독립 군영의 공동 반대 근거를 만듦"
+    },
+    {
+      "eventId": "r003-05",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.7,
+        "intelligence": 0.15,
+        "politics": 0.15
+      },
+      "difficulty": 41,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "동탁 측 소개"
+    },
+    {
+      "eventId": "r003-06",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "strength": 1
+      },
+      "difficulty": 50,
+      "successFame": 24,
+      "failureFame": -12,
+      "basis": "여포를 상대로 승리해 전투 경과를 바꿈"
+    },
+    {
+      "eventId": "r003-06",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "leadership": 1,
+        "strength": 1.5
+      },
+      "difficulty": 57,
+      "successFame": 6,
+      "failureFame": -3,
+      "basis": "연락책과 함께 전장을 이탈"
+    },
+    {
+      "eventId": "r003-07",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.55,
+        "charisma": 0.25,
+        "leadership": 0.2
+      },
+      "difficulty": 68,
+      "successFame": 12,
+      "failureFame": -6,
+      "basis": "회유 사실로 정원의 경계를 강화"
+    },
+    {
+      "eventId": "r003-07",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.7,
+        "intelligence": 0.15,
+        "politics": 0.15
+      },
+      "difficulty": 49,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "여포 측 소개 통로 확보"
+    },
+    {
+      "eventId": "r003-08",
+      "nodeId": "guarded",
+      "choiceId": "a",
+      "weights": {
+        "leadership": 0.45,
+        "intelligence": 0.35,
+        "charisma": 0.2
+      },
+      "difficulty": 66,
+      "successFame": 28,
+      "failureFame": -14,
+      "basis": "사전 경고로 늘어난 호위를 즉시 동원"
+    },
+    {
+      "eventId": "r003-08",
+      "nodeId": "guarded",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 49,
+      "successFame": 6,
+      "failureFame": -3,
+      "basis": "확인한 군영 이동을 보고"
+    },
+    {
+      "eventId": "r003-08",
+      "nodeId": "wounded",
+      "choiceId": "a",
+      "weights": {
+        "leadership": 0.45,
+        "intelligence": 0.35,
+        "charisma": 0.2
+      },
+      "difficulty": 72,
+      "successFame": 28,
+      "failureFame": -14,
+      "basis": "부상한 여포의 진입을 경보로 저지"
+    },
+    {
+      "eventId": "r003-08",
+      "nodeId": "wounded",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 49,
+      "successFame": 6,
+      "failureFame": -3,
+      "basis": "확인한 군영 이동을 보고"
+    },
+    {
+      "eventId": "r003-08",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "leadership": 0.45,
+        "intelligence": 0.35,
+        "charisma": 0.2
+      },
+      "difficulty": 80,
+      "successFame": 28,
+      "failureFame": -14,
+      "basis": "정원 암살을 저지해 군권 장악을 바꿈"
+    },
+    {
+      "eventId": "r003-08",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 49,
+      "successFame": 6,
+      "failureFame": -3,
+      "basis": "확인한 군영 이동을 보고"
+    },
+    {
+      "eventId": "r004-01",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "politics": 0.55,
+        "intelligence": 0.35,
+        "charisma": 0.1
+      },
+      "difficulty": 70,
+      "successFame": 12,
+      "failureFame": -6,
+      "basis": "추격 명단에서 가족을 분리해 피신 시간을 확보"
+    },
+    {
+      "eventId": "r004-01",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.7,
+        "intelligence": 0.15,
+        "politics": 0.15
+      },
+      "difficulty": 42,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "원소 측 숙소 연락"
+    },
+    {
+      "eventId": "r004-02",
+      "nodeId": "counterweight",
+      "choiceId": "a",
+      "weights": {
+        "politics": 0.5,
+        "intelligence": 0.4,
+        "leadership": 0.1
+      },
+      "difficulty": 65,
+      "successFame": 30,
+      "failureFame": -15,
+      "basis": "독립 군영과 청원을 연결해 황제 폐립 보류"
+    },
+    {
+      "eventId": "r004-02",
+      "nodeId": "counterweight",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 47,
+      "successFame": 5,
+      "failureFame": -2.5,
+      "basis": "왕윤 측 회의 보고"
+    },
+    {
+      "eventId": "r004-02",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "politics": 0.5,
+        "intelligence": 0.4,
+        "leadership": 0.1
+      },
+      "difficulty": 72,
+      "successFame": 20,
+      "failureFame": -10,
+      "basis": "정관의 처형을 저지"
+    },
+    {
+      "eventId": "r004-02",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 47,
+      "successFame": 5,
+      "failureFame": -2.5,
+      "basis": "왕윤 측 회의 보고"
+    },
+    {
+      "eventId": "r004-03",
+      "nodeId": "reigning",
+      "choiceId": "a",
+      "weights": {
+        "politics": 0.5,
+        "intelligence": 0.4,
+        "leadership": 0.1
+      },
+      "difficulty": 62,
+      "successFame": 16,
+      "failureFame": -8,
+      "basis": "재위 중인 왕실의 호위·검수 분리"
+    },
+    {
+      "eventId": "r004-03",
+      "nodeId": "reigning",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 45,
+      "successFame": 6,
+      "failureFame": -3,
+      "basis": "민가 약탈 피해 보고"
+    },
+    {
+      "eventId": "r004-03",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "politics": 0.55,
+        "intelligence": 0.35,
+        "charisma": 0.1
+      },
+      "difficulty": 80,
+      "successFame": 28,
+      "failureFame": -14,
+      "basis": "왕실 일가의 독살을 저지"
+    },
+    {
+      "eventId": "r004-03",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 45,
+      "successFame": 6,
+      "failureFame": -3,
+      "basis": "민가 약탈 피해 보고"
+    },
+    {
+      "eventId": "r004-04",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.55,
+        "charisma": 0.25,
+        "leadership": 0.2
+      },
+      "difficulty": 67,
+      "successFame": 12,
+      "failureFame": -6,
+      "basis": "거울 위험을 경고해 암살 시도를 재검토"
+    },
+    {
+      "eventId": "r004-04",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.7,
+        "intelligence": 0.15,
+        "politics": 0.15
+      },
+      "difficulty": 42,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "조조 측 전달 통로 확보"
+    },
+    {
+      "eventId": "r004-05",
+      "nodeId": "mirror",
+      "choiceId": "a",
+      "weights": {
+        "politics": 0.5,
+        "intelligence": 0.4,
+        "leadership": 0.1
+      },
+      "difficulty": 75,
+      "successFame": 14,
+      "failureFame": -7,
+      "basis": "수배 문서보다 출발 허가를 먼저 처리해 추격 지연"
+    },
+    {
+      "eventId": "r004-05",
+      "nodeId": "mirror",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 49,
+      "successFame": 6,
+      "failureFame": -3,
+      "basis": "검문 위치 전달"
+    },
+    {
+      "eventId": "r004-05",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "politics": 0.5,
+        "intelligence": 0.4,
+        "leadership": 0.1
+      },
+      "difficulty": 75,
+      "successFame": 14,
+      "failureFame": -7,
+      "basis": "수배 문서보다 출발 허가를 먼저 처리해 추격 지연"
+    },
+    {
+      "eventId": "r004-05",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 49,
+      "successFame": 6,
+      "failureFame": -3,
+      "basis": "검문 위치 전달"
+    },
+    {
+      "eventId": "r004-06",
+      "nodeId": "ahead",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.6,
+        "politics": 0.3,
+        "charisma": 0.1
+      },
+      "difficulty": 63,
+      "successFame": 10,
+      "failureFame": -5,
+      "basis": "대조 가능한 증언으로 진궁의 결심을 뒷받침"
+    },
+    {
+      "eventId": "r004-06",
+      "nodeId": "ahead",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.7,
+        "intelligence": 0.15,
+        "politics": 0.15
+      },
+      "difficulty": 43,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "진궁을 거친 조조 접촉"
+    },
+    {
+      "eventId": "r004-06",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.6,
+        "politics": 0.3,
+        "charisma": 0.1
+      },
+      "difficulty": 63,
+      "successFame": 10,
+      "failureFame": -5,
+      "basis": "대조 가능한 증언으로 진궁의 결심을 뒷받침"
+    },
+    {
+      "eventId": "r004-06",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.7,
+        "intelligence": 0.15,
+        "politics": 0.15
+      },
+      "difficulty": 43,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "진궁을 거친 조조 접촉"
+    },
+    {
+      "eventId": "r004-07",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.6,
+        "politics": 0.3,
+        "charisma": 0.1
+      },
+      "difficulty": 76,
+      "successFame": 24,
+      "failureFame": -12,
+      "basis": "오해를 현물로 풀어 여백사 일가와 진궁 동행을 보전"
+    },
+    {
+      "eventId": "r004-07",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "intelligence": 0.45,
+        "charisma": 0.4,
+        "politics": 0.15
+      },
+      "difficulty": 69,
+      "successFame": 22,
+      "failureFame": -11,
+      "basis": "진궁의 확인을 이끌어 일가 살해 저지"
+    },
+    {
+      "eventId": "r004-08",
+      "nodeId": "affiliated",
+      "choiceId": "a",
+      "weights": {
+        "politics": 0.5,
+        "intelligence": 0.4,
+        "leadership": 0.1
+      },
+      "difficulty": 59,
+      "successFame": 10,
+      "failureFame": -5,
+      "basis": "기부·군량 대조로 누락을 찾아냄"
+    },
+    {
+      "eventId": "r004-08",
+      "nodeId": "affiliated",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 39,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "기존 소속을 밝히고 공개 격문 사본 요청"
+    },
+    {
+      "eventId": "r004-08",
+      "nodeId": "known",
+      "choiceId": "a",
+      "weights": {
+        "politics": 0.5,
+        "intelligence": 0.4,
+        "leadership": 0.1
+      },
+      "difficulty": 59,
+      "successFame": 10,
+      "failureFame": -5,
+      "basis": "기부·군량 대조로 누락을 찾아냄"
+    },
+    {
+      "eventId": "r004-08",
+      "nodeId": "known",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.8,
+        "politics": 0.2
+      },
+      "difficulty": 61,
+      "successFame": 8,
+      "failureFame": -4,
+      "basis": "접촉한 재야의 조조군 정식 지원"
+    },
+    {
+      "eventId": "r004-08",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "politics": 0.5,
+        "intelligence": 0.4,
+        "leadership": 0.1
+      },
+      "difficulty": 59,
+      "successFame": 10,
+      "failureFame": -5,
+      "basis": "기부·군량 대조로 누락을 찾아냄"
+    },
+    {
+      "eventId": "r004-08",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.7,
+        "intelligence": 0.15,
+        "politics": 0.15
+      },
+      "difficulty": 41,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "모집 서리에게 소개"
+    },
+    {
+      "eventId": "r005-01",
+      "nodeId": "dong",
+      "choiceId": "a",
+      "weights": {
+        "politics": 0.5,
+        "intelligence": 0.4,
+        "leadership": 0.1
+      },
+      "difficulty": 67,
+      "successFame": 10,
+      "failureFame": -5,
+      "basis": "민가 중복 징발을 줄임"
+    },
+    {
+      "eventId": "r005-01",
+      "nodeId": "dong",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 38,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "아군 연락소에 확인한 격문을 보고"
+    },
+    {
+      "eventId": "r005-01",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "politics": 0.5,
+        "intelligence": 0.4,
+        "leadership": 0.1
+      },
+      "difficulty": 64,
+      "successFame": 10,
+      "failureFame": -5,
+      "basis": "군영 간 인수증을 공유해 보급 단절 증거 확보"
+    },
+    {
+      "eventId": "r005-01",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.7,
+        "intelligence": 0.15,
+        "politics": 0.15
+      },
+      "difficulty": 40,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "조조 측 공개 통행 절차 확인"
+    },
+    {
+      "eventId": "r005-02",
+      "nodeId": "dong",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.7,
+        "politics": 0.2,
+        "charisma": 0.1
+      },
+      "difficulty": 76,
+      "successFame": 18,
+      "failureFame": -9,
+      "basis": "아군에 발각될 위험을 감수하고 포충 출격을 저지"
+    },
+    {
+      "eventId": "r005-02",
+      "nodeId": "dong",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 40,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "호진 측에 확인한 동선 전달"
+    },
+    {
+      "eventId": "r005-02",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.55,
+        "charisma": 0.25,
+        "leadership": 0.2
+      },
+      "difficulty": 69,
+      "successFame": 18,
+      "failureFame": -9,
+      "basis": "포충의 독단 출격을 멈춰 생명을 구함"
+    },
+    {
+      "eventId": "r005-02",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 44,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "손견 측 수레길 보고"
+    },
+    {
+      "eventId": "r005-03",
+      "nodeId": "dong",
+      "choiceId": "a",
+      "weights": {
+        "leadership": 0.5,
+        "intelligence": 0.3,
+        "charisma": 0.2
+      },
+      "difficulty": 79,
+      "successFame": 18,
+      "failureFame": -9,
+      "basis": "야습 전 경계 종으로 손견군과 조무 철수 유도"
+    },
+    {
+      "eventId": "r005-03",
+      "nodeId": "dong",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.7,
+        "intelligence": 0.15,
+        "politics": 0.15
+      },
+      "difficulty": 39,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "아군 연락 임무 후 귀환 확인"
+    },
+    {
+      "eventId": "r005-03",
+      "nodeId": "ledger",
+      "choiceId": "a",
+      "weights": {
+        "politics": 0.5,
+        "intelligence": 0.4,
+        "leadership": 0.1
+      },
+      "difficulty": 57,
+      "successFame": 22,
+      "failureFame": -11,
+      "basis": "공동 인수증으로 입증한 누락을 근거로 우회 배송"
+    },
+    {
+      "eventId": "r005-03",
+      "nodeId": "ledger",
+      "choiceId": "b",
+      "weights": {
+        "intelligence": 0.45,
+        "charisma": 0.4,
+        "politics": 0.15
+      },
+      "difficulty": 64,
+      "successFame": 16,
+      "failureFame": -8,
+      "basis": "미리 철수해 조무의 희생을 피함"
+    },
+    {
+      "eventId": "r005-03",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "politics": 0.5,
+        "intelligence": 0.4,
+        "leadership": 0.1
+      },
+      "difficulty": 77,
+      "successFame": 22,
+      "failureFame": -11,
+      "basis": "군량 독점을 우회해 선봉과 조무를 보전"
+    },
+    {
+      "eventId": "r005-03",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "intelligence": 0.45,
+        "charisma": 0.4,
+        "politics": 0.15
+      },
+      "difficulty": 64,
+      "successFame": 16,
+      "failureFame": -8,
+      "basis": "미리 철수해 조무의 희생을 피함"
+    },
+    {
+      "eventId": "r005-04",
+      "nodeId": "dong",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.45,
+        "charisma": 0.4,
+        "politics": 0.15
+      },
+      "difficulty": 73,
+      "successFame": 20,
+      "failureFame": -10,
+      "basis": "승세에 취한 화웅을 철수시켜 참수 저지"
+    },
+    {
+      "eventId": "r005-04",
+      "nodeId": "dong",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 39,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "아군 후방 귀환 지점 확인"
+    },
+    {
+      "eventId": "r005-04",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "strength": 1
+      },
+      "difficulty": 50,
+      "successFame": 24,
+      "failureFame": -12,
+      "basis": "화웅 생포로 유섭·반봉 출격과 참수를 취소"
+    },
+    {
+      "eventId": "r005-04",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.55,
+        "politics": 0.35,
+        "intelligence": 0.1
+      },
+      "difficulty": 61,
+      "successFame": 14,
+      "failureFame": -7,
+      "basis": "관우 조기 추천으로 두 장수의 출격을 보류"
+    },
+    {
+      "eventId": "r005-05",
+      "nodeId": "captured",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.6,
+        "politics": 0.3,
+        "charisma": 0.1
+      },
+      "difficulty": 60,
+      "successFame": 8,
+      "failureFame": -4,
+      "basis": "포로 처형 대신 검증된 전선 정보 확보"
+    },
+    {
+      "eventId": "r005-05",
+      "nodeId": "captured",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 38,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "이미 생포한 경과 보고"
+    },
+    {
+      "eventId": "r005-05",
+      "nodeId": "withdrawn",
+      "choiceId": "a",
+      "weights": {
+        "politics": 0.55,
+        "intelligence": 0.35,
+        "charisma": 0.1
+      },
+      "difficulty": 56,
+      "successFame": 6,
+      "failureFame": -3,
+      "basis": "철수를 전사로 왜곡하지 않고 대조"
+    },
+    {
+      "eventId": "r005-05",
+      "nodeId": "withdrawn",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 37,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "철수 경과 보고"
+    },
+    {
+      "eventId": "r005-05",
+      "nodeId": "dong",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.45,
+        "charisma": 0.4,
+        "politics": 0.15
+      },
+      "difficulty": 80,
+      "successFame": 22,
+      "failureFame": -11,
+      "basis": "아군 장수의 항복·포로 인계를 통한 생존"
+    },
+    {
+      "eventId": "r005-05",
+      "nodeId": "dong",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 40,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "아군 연락관에 교전 보고"
+    },
+    {
+      "eventId": "r005-05",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.45,
+        "charisma": 0.4,
+        "politics": 0.15
+      },
+      "difficulty": 78,
+      "successFame": 22,
+      "failureFame": -11,
+      "basis": "참수 대신 항복·생포를 성사"
+    },
+    {
+      "eventId": "r005-05",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 42,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "조조 측에 출전 경과 전달"
+    },
+    {
+      "eventId": "r005-06",
+      "nodeId": "dong",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.7,
+        "politics": 0.2,
+        "charisma": 0.1
+      },
+      "difficulty": 79,
+      "successFame": 24,
+      "failureFame": -12,
+      "basis": "보복 명단보다 먼저 경고해 잔류 일족을 구출"
+    },
+    {
+      "eventId": "r005-06",
+      "nodeId": "dong",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 46,
+      "successFame": 5,
+      "failureFame": -2.5,
+      "basis": "출병 사실과 공적 다툼을 구분해 보고"
+    },
+    {
+      "eventId": "r005-06",
+      "nodeId": "family-ready",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.7,
+        "politics": 0.2,
+        "charisma": 0.1
+      },
+      "difficulty": 64,
+      "successFame": 24,
+      "failureFame": -12,
+      "basis": "사전 피신 준비를 활용해 잔류 가족까지 구출"
+    },
+    {
+      "eventId": "r005-06",
+      "nodeId": "family-ready",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 46,
+      "successFame": 5,
+      "failureFame": -2.5,
+      "basis": "출병 사실과 공적 다툼을 구분해 보고"
+    },
+    {
+      "eventId": "r005-06",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.7,
+        "politics": 0.2,
+        "charisma": 0.1
+      },
+      "difficulty": 79,
+      "successFame": 24,
+      "failureFame": -12,
+      "basis": "보복 명단보다 먼저 경고해 잔류 일족을 구출"
+    },
+    {
+      "eventId": "r005-06",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 46,
+      "successFame": 5,
+      "failureFame": -2.5,
+      "basis": "출병 사실과 공적 다툼을 구분해 보고"
+    },
+    {
+      "eventId": "r005-07",
+      "nodeId": "dong",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.7,
+        "politics": 0.2,
+        "charisma": 0.1
+      },
+      "difficulty": 80,
+      "successFame": 18,
+      "failureFame": -9,
+      "basis": "교섭 틈에 적장의 철수 길을 흘림"
+    },
+    {
+      "eventId": "r005-07",
+      "nodeId": "dong",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.7,
+        "intelligence": 0.15,
+        "politics": 0.15
+      },
+      "difficulty": 40,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "여포 측 후방 복귀 지점 확인"
+    },
+    {
+      "eventId": "r005-07",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "leadership": 0.5,
+        "intelligence": 0.3,
+        "charisma": 0.2
+      },
+      "difficulty": 72,
+      "successFame": 18,
+      "failureFame": -9,
+      "basis": "예비 말과 퇴로로 공손찬을 미리 구출"
+    },
+    {
+      "eventId": "r005-07",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 53,
+      "successFame": 8,
+      "failureFame": -4,
+      "basis": "장비의 원군 연락을 앞당김"
+    },
+    {
+      "eventId": "r005-08",
+      "nodeId": "dong",
+      "choiceId": "a",
+      "weights": {
+        "intelligence": 0.7,
+        "politics": 0.2,
+        "charisma": 0.1
+      },
+      "difficulty": 87,
+      "successFame": 30,
+      "failureFame": -15,
+      "basis": "발각을 감수한 돌파 방향 유출로 여포 생포"
+    },
+    {
+      "eventId": "r005-08",
+      "nodeId": "dong",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 49,
+      "successFame": 6,
+      "failureFame": -3,
+      "basis": "아군의 열린 관문과 복귀 신호 전달"
+    },
+    {
+      "eventId": "r005-08",
+      "nodeId": "rescued",
+      "choiceId": "a",
+      "weights": {
+        "leadership": 0.45,
+        "intelligence": 0.35,
+        "charisma": 0.2
+      },
+      "difficulty": 82,
+      "successFame": 30,
+      "failureFame": -15,
+      "basis": "세 형제와 예비 병력을 연결해 여포를 생포"
+    },
+    {
+      "eventId": "r005-08",
+      "nodeId": "rescued",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 49,
+      "successFame": 6,
+      "failureFame": -3,
+      "basis": "유비 측 후방 복귀 지원"
+    },
+    {
+      "eventId": "r005-08",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "leadership": 0.45,
+        "intelligence": 0.35,
+        "charisma": 0.2
+      },
+      "difficulty": 82,
+      "successFame": 30,
+      "failureFame": -15,
+      "basis": "세 형제와 예비 병력을 연결해 여포를 생포"
+    },
+    {
+      "eventId": "r005-08",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.4,
+        "intelligence": 0.35,
+        "leadership": 0.25
+      },
+      "difficulty": 49,
+      "successFame": 6,
+      "failureFame": -3,
+      "basis": "유비 측 후방 복귀 지원"
+    },
+    {
+      "eventId": "r005-09",
+      "nodeId": "dong",
+      "choiceId": "a",
+      "weights": {
+        "leadership": 1.5,
+        "strength": 1
+      },
+      "difficulty": 62,
+      "successFame": 12,
+      "failureFame": -6,
+      "basis": "후퇴 혼잡에서 민간 통로를 지휘"
+    },
+    {
+      "eventId": "r005-09",
+      "nodeId": "dong",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.55,
+        "politics": 0.35,
+        "intelligence": 0.1
+      },
+      "difficulty": 42,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "현재 군영의 교대 경계 담당"
+    },
+    {
+      "eventId": "r005-09",
+      "nodeId": "captive",
+      "choiceId": "a",
+      "weights": {
+        "leadership": 1.5,
+        "strength": 1
+      },
+      "difficulty": 67,
+      "successFame": 12,
+      "failureFame": -6,
+      "basis": "관문 앞 추격을 통제해 병력 피해 감소"
+    },
+    {
+      "eventId": "r005-09",
+      "nodeId": "captive",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.55,
+        "politics": 0.35,
+        "intelligence": 0.1
+      },
+      "difficulty": 42,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "현재 군영의 교대 경계 담당"
+    },
+    {
+      "eventId": "r005-09",
+      "nodeId": "scene",
+      "choiceId": "a",
+      "weights": {
+        "leadership": 1.5,
+        "strength": 1
+      },
+      "difficulty": 67,
+      "successFame": 12,
+      "failureFame": -6,
+      "basis": "관문 앞 추격을 통제해 병력 피해 감소"
+    },
+    {
+      "eventId": "r005-09",
+      "nodeId": "scene",
+      "choiceId": "b",
+      "weights": {
+        "charisma": 0.55,
+        "politics": 0.35,
+        "intelligence": 0.1
+      },
+      "difficulty": 42,
+      "successFame": 4,
+      "failureFame": -2,
+      "basis": "현재 군영의 교대 경계 담당"
+    }
+  ]
+}

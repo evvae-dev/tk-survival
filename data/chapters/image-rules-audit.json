@@ -1,0 +1,138 @@
+{
+  "mandatoryChoiceImages": true,
+  "portraitOnlyAllowed": false,
+  "replacementMode": "새 환경 장면 9개 생성·검수·연결, 의미가 정확한 기존 환경 장면 재사용",
+  "portraitReplacements": [
+    {
+      "eventId": "r001-08",
+      "nodeId": "scene",
+      "previous": "/art/characters/dong-zhuo.png",
+      "replacement": "/art/scenes/dong-battle-camp.png",
+      "status": "환경·진영·시점 검수 완료. 생성 참조 인물 파일은 게임에 표시하지 않음."
+    },
+    {
+      "eventId": "r002-08",
+      "nodeId": "scene",
+      "previous": "/art/characters/cao-cao.png",
+      "replacement": "/art/scenes/cao-court-warning.png",
+      "status": "환경·진영·시점 검수 완료. 생성 참조 인물 파일은 게임에 표시하지 않음."
+    },
+    {
+      "eventId": "r003-04",
+      "nodeId": "scene",
+      "previous": "/art/characters/dong-zhuo.png",
+      "replacement": "/art/scenes/dong-royal-road.png",
+      "status": "환경·진영·시점 검수 완료. 생성 참조 인물 파일은 게임에 표시하지 않음."
+    },
+    {
+      "eventId": "r003-05",
+      "nodeId": "scene",
+      "previous": "/art/characters/lu-bu.png",
+      "replacement": "/art/scenes/dong-command-hall.png",
+      "status": "환경·진영·시점 검수 완료. 생성 참조 인물 파일은 게임에 표시하지 않음."
+    },
+    {
+      "eventId": "r003-06",
+      "nodeId": "scene",
+      "previous": "/art/characters/lu-bu.png",
+      "replacement": "/art/scenes/r003-duel.png",
+      "status": "환경·진영·시점 검수 완료. 생성 참조 인물 파일은 게임에 표시하지 않음."
+    },
+    {
+      "eventId": "r003-08",
+      "nodeId": "scene",
+      "previous": "/art/characters/lu-bu.png",
+      "replacement": "/art/scenes/lu-bu-night-camp.png",
+      "status": "환경·진영·시점 검수 완료. 생성 참조 인물 파일은 게임에 표시하지 않음."
+    },
+    {
+      "eventId": "r005-01",
+      "nodeId": "dong",
+      "previous": "/art/characters/dong-zhuo.png",
+      "replacement": "/art/scenes/r005-dong-liaison.png",
+      "status": "환경·진영·시점 검수 완료. 생성 참조 인물 파일은 게임에 표시하지 않음."
+    },
+    {
+      "eventId": "r005-02",
+      "nodeId": "dong",
+      "previous": "/art/characters/dong-zhuo.png",
+      "replacement": "/art/scenes/r005-dong-liaison.png",
+      "status": "환경·진영·시점 검수 완료. 생성 참조 인물 파일은 게임에 표시하지 않음."
+    },
+    {
+      "eventId": "r005-03",
+      "nodeId": "dong",
+      "previous": "/art/characters/dong-zhuo.png",
+      "replacement": "/art/choices/night.png",
+      "status": "환경·진영·시점 검수 완료. 생성 참조 인물 파일은 게임에 표시하지 않음."
+    },
+    {
+      "eventId": "r005-04",
+      "nodeId": "dong",
+      "previous": "/art/characters/dong-zhuo.png",
+      "replacement": "/art/scenes/r005-dong-liaison.png",
+      "status": "환경·진영·시점 검수 완료. 생성 참조 인물 파일은 게임에 표시하지 않음."
+    },
+    {
+      "eventId": "r005-05",
+      "nodeId": "dong",
+      "previous": "/art/characters/dong-zhuo.png",
+      "replacement": "/art/scenes/r005-dong-liaison.png",
+      "status": "환경·진영·시점 검수 완료. 생성 참조 인물 파일은 게임에 표시하지 않음."
+    },
+    {
+      "eventId": "r005-06",
+      "nodeId": "dong",
+      "previous": "/art/characters/dong-zhuo.png",
+      "replacement": "/art/scenes/r005-dong-liaison.png",
+      "status": "환경·진영·시점 검수 완료. 생성 참조 인물 파일은 게임에 표시하지 않음."
+    },
+    {
+      "eventId": "r005-07",
+      "nodeId": "dong",
+      "previous": "/art/characters/dong-zhuo.png",
+      "replacement": "/art/scenes/r005-dong-liaison.png",
+      "status": "환경·진영·시점 검수 완료. 생성 참조 인물 파일은 게임에 표시하지 않음."
+    },
+    {
+      "eventId": "r005-08",
+      "nodeId": "dong",
+      "previous": "/art/characters/dong-zhuo.png",
+      "replacement": "/art/scenes/r005-dong-liaison.png",
+      "status": "환경·진영·시점 검수 완료. 생성 참조 인물 파일은 게임에 표시하지 않음."
+    },
+    {
+      "eventId": "r005-09",
+      "nodeId": "dong",
+      "previous": "/art/characters/dong-zhuo.png",
+      "replacement": "/art/choices/travel-wagons.png",
+      "status": "환경·진영·시점 검수 완료. 생성 참조 인물 파일은 게임에 표시하지 않음."
+    }
+  ],
+  "generationHistory": [
+    {
+      "status": "failed",
+      "error": "http 400: Unknown parameter: 'reasoning'"
+    },
+    {
+      "status": "recovered",
+      "generatedAssets": [
+        "scenes/dong-command-hall",
+        "scenes/cao-court-warning",
+        "scenes/dong-battle-camp",
+        "scenes/dong-royal-road",
+        "scenes/lu-bu-night-camp",
+        "characters/sun-jian",
+        "characters/hua-xiong",
+        "scenes/r005-supply",
+        "scenes/r005-challenge",
+        "scenes/r005-three-heroes",
+        "scenes/r005-dong-liaison"
+      ],
+      "review": "새 삼영전여포 장면은 기마전으로 수정 후 직접 열람 검수"
+    }
+  ],
+  "status": "complete",
+  "newSceneCount": 9,
+  "newReferenceCount": 2
+}

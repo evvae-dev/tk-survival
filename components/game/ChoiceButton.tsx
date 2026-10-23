@@ -8,10 +8,10 @@ import { OfficerText } from './OfficerName';
 
 export default function ChoiceButton({ choice, index, onChoose, artwork }: { choice: Choice; index: number; onChoose: () => void; artwork?: ChoiceArt | null }) {
   const check = choice.check;
-  const art = artwork === undefined ? choiceArt(choice) : artwork;
+  const art = artwork ?? choiceArt(choice);
   return <button disabled={!!choice.disabledReason} onClick={onChoose}>
     <span>{String.fromCharCode(65 + index)}</span><div>
-      {art && <img className={s.choiceArt} src={art.src} alt={art.alt} loading="lazy" width={362} height={350} />}
+      <img className={s.choiceArt} src={art.src} alt={art.alt} loading="lazy" width={362} height={350} />
       <strong><OfficerText text={choice.title} /></strong><p><OfficerText text={choice.description} /></p>
       {check && <><div className={s.checkMeta}>
         {(Object.entries(check.weights) as [keyof Stats, number][]).filter(([, weight]) => weight > 0).map(([key, weight]) => <span key={key}><AbilityIcon ability={key}/>[{statLabels[key]}]{weight !== 1 && ` ×${weight}`}</span>)}
@@ -20,6 +20,7 @@ export default function ChoiceButton({ choice, index, onChoose, artwork }: { cho
         <div className={s.successOutcome}><span>성공: <OfficerText text={check.success} /></span><b data-testid="success-probability">{check.successRate}%</b></div>
         <div className={s.failureOutcome}><span>실패: <OfficerText text={check.failure} /></span><b data-testid="failure-probability">{check.failureRate}%</b></div>
       </div></>}
+      {check && <p data-testid="choice-fame">명성 · 성공 +{check.fameReward} / 실패 −{check.fameReward / 2}</p>}
       {!check && choice.outcome && <p className={s.fixedOutcome}>결과: <OfficerText text={choice.outcome} /></p>}
       {choice.disabledReason && <small>{choice.disabledReason}</small>}
     </div>

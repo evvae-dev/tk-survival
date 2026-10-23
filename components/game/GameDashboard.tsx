@@ -36,6 +36,7 @@ type Props = {
   onStats: (delta: Partial<Stats>) => void;
   onContinue?: () => void;
   continuationTitle?: string;
+  onFinishResult: (recordId: string) => void;
 };
 export default function GameDashboard({
   game,
@@ -47,10 +48,11 @@ export default function GameDashboard({
   onStats,
   onContinue,
   continuationTitle,
+  onFinishResult,
 }: Props) {
   const [awakening, setAwakening] = useState(() => !!game.introChoicePending);
   const [modal, setModal] = useState<Modal>(null);
-  const playback = useRecordPlayback(game, event, onAdvanceRecord, modal !== null || awakening);
+  const playback = useRecordPlayback(game, event, onAdvanceRecord, modal !== null || awakening, onFinishResult);
   const historyEntries = useMemo(() => unifiedRecords(view.world), [view.world.historyLog, view.world.log]);
 
   const eventRef = useRef<HTMLElement>(null);
@@ -75,13 +77,12 @@ export default function GameDashboard({
     }
   };
   const choiceImages = event ? popupArtwork(event) : [];
-  const art = event ? sceneArt(event) : null;
-  const lastDecision = game.decisions.at(-1);
+  const art = sceneArt(event ?? {id:'ending',state:game});
   const preserved = view.world.factions["yellow-turban"] === "preserved";
   const founded = view.world.flags.yellowEmpireFounded === true;
   const died = view.world.flags.playerDead === true;
   const executed = view.world.flags.playerExecuted === true;
-  useEffect(() => { if (game.completed && died) eventRef.current?.scrollIntoView({block:'start',behavior:'instant'}); }, [game.completed,died]);
+  useEffect(() => { if (playback.result || game.completed && died) eventRef.current?.scrollIntoView({block:'start',behavior:'instant'}); }, [game.completed,died,playback.result?.recordId]);
   return (
     <div className={`${s.app} ${game.completed ? s.completedApp : ""} ${playback.waiting && !modal ? s.clickToAdvance : ''}`} data-testid="game-screen">
       {awakening && <AwakeningTransition onComplete={() => setAwakening(false)} />}
@@ -130,21 +131,15 @@ export default function GameDashboard({
           </section>
         </aside>
         <div className={`${s.centerContent} ${game.completed ? s.completedCenter : ""} ${!playback.panelVisible ? s.recordReading : ""}`}>
-          {(playback.panelVisible || game.completed) && <section ref={eventRef} className={`${s.panel} ${s.eventPanel}`} aria-live="polite" data-testid="event-panel">
-            {lastDecision?.check && (
-              <div
-                data-testid="last-check-result"
-                className={`${s.lastCheck} ${lastDecision.check.success ? s.successOutcome : s.failureOutcome}`}
-                role="status"
-              >
-                <strong>
-                  {lastDecision.check.success ? "성공" : "실패"} · 확률{" "}
-                  {lastDecision.check.chance}%
-                </strong>
-                <p><OfficerText text={lastDecision.detail.split("\n")[0]} /></p>
-              </div>
-            )}
-            {game.completed ? (
+          <section ref={eventRef} className={`${s.panel} ${s.eventPanel}`} aria-live="polite" data-testid="event-panel">
+            {playback.result ? <div className={s.resultCard} data-testid="choice-result">
+              <p className={s.eyebrow}>나의 선택 · {playback.result.check ? playback.result.check.success ? '성공' : '실패' : '행동 결과'}</p>
+              <div className={s.eventArt}><Image src={playback.result.artwork?.src ?? art!.src} alt={playback.result.artwork?.alt ?? art!.alt} fill priority sizes="(max-width: 768px) 90vw, 640px" /></div>
+              <h1><OfficerText text={playback.result.title} /></h1>
+              <p className={s.dialogue}><OfficerText text={playback.result.detail} /></p>
+              {playback.result.growth?.fame !== undefined && <p data-testid="result-fame" className={playback.result.growth.fame < 0 ? s.failureOutcome : s.successOutcome}>명성 {playback.result.growth.fame > 0 ? '+' : ''}{playback.result.growth.fame}</p>}
+              <small>잠시 후 이야기가 이어집니다.</small>
+            </div> : game.completed ? (
               <div className={s.ending} data-testid="completed-screen">
                 <span className={s.endingSeal}>記</span>
                 <p className={s.eyebrow}>{founded || executed || died ? '가상 시나리오 / ' + (executed || died ? '패배' : '천하통일') : `${view.year}년 / 기록 완료`}</p>
@@ -161,7 +156,12 @@ export default function GameDashboard({
                   새로운 인물로 시작 →
                 </button>
               </div>
-            ) : (
+            ) : playback.waiting ? <div className={s.resultCard} data-testid="record-card">
+              {art && <div className={s.eventArt}><Image src={art.src} alt={art.alt} fill priority sizes="(max-width: 768px) 90vw, 640px" /></div>}
+              <p className={s.eyebrow}>나의 기록</p>
+              <h1><OfficerText text={event?.title ?? '이어지는 이야기'} /></h1>
+              <p className={s.dialogue}><OfficerText text={event?.automatic ? event.scene : game.world.log.at(-1)?.detail ?? '이야기가 이어지고 있다.'} /></p>
+            </div> : (
               event && (
                 <>
                   <div className={s.eventHeading}>
@@ -185,11 +185,11 @@ export default function GameDashboard({
                 </>
               )
             )}
-          </section>}
-          {game.completed && <Chronicle game={game} />}
+          </section>
+          {game.completed && !playback.result && <Chronicle game={game} />}
         </div>
         <aside className={s.rightSidebar}>
-          <HistoryFlow entries={historyEntries} speed={playback.speed} reading={!game.completed && playback.waiting && !modal && !awakening} />
+          <HistoryFlow entries={historyEntries} speed={playback.speed} reading={!playback.result && !game.completed && playback.waiting && !modal && !awakening} />
         </aside>
       </main>
       <GameDialog

@@ -1,0 +1,432 @@
+{
+  "chapterId": "chapter-005",
+  "stage": "complete",
+  "iteration": 2,
+  "chapterTotal": 8.5,
+  "scenes": [
+    {
+      "eventId": "r005-01",
+      "nodeId": "scene",
+      "scores": {
+        "logic": 8,
+        "tone": 8,
+        "flow": 8,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.2,
+      "evidence": "군영별 보급권과 통행 권한을 구분한다. 공동 장부는 보급 완료가 아닌 확인 수단이며 초면 접촉도 즉시 임관이 아니다."
+    },
+    {
+      "eventId": "r005-01",
+      "nodeId": "dong",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 8
+      },
+      "total": 8.4,
+      "evidence": "진류에서 동탁군 연락선으로 복귀한 이동을 설명하고 징발·보고·후방 대기라는 실제 아군 행동을 제시한다."
+    },
+    {
+      "eventId": "r005-02",
+      "nodeId": "scene",
+      "scores": {
+        "logic": 8,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 8
+      },
+      "total": 8.2,
+      "evidence": "포충의 선공을 합동 정찰로 바꾸는 근거를 두고 실패는 실제 전사 보고로 남긴다. 손견의 호진 격파와 보급 의존을 연결한다."
+    },
+    {
+      "eventId": "r005-02",
+      "nodeId": "dong",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 8,
+        "balance": 8,
+        "curiosity": 8
+      },
+      "total": 8.2,
+      "evidence": "포신 측에 경고를 흘리는 위험과 호진 측 연락 임무를 구분하며 동탁군 소속을 자동 교체하지 않는다."
+    },
+    {
+      "eventId": "r005-03",
+      "nodeId": "scene",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.6,
+      "evidence": "공동 보급은 진영 유지·조무 생존, 조기 경고는 진영 상실·조무 생존, 비개입은 기본 패전·죽음으로 구별한다."
+    },
+    {
+      "eventId": "r005-03",
+      "nodeId": "dong",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.6,
+      "evidence": "민간 수레 경계 종으로 적군에게 신호가 닿는 과정을 명시한다. 성공은 철수·조무 생존이고 군량 공급까지 창조하지 않는다."
+    },
+    {
+      "eventId": "r005-03",
+      "nodeId": "ledger",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.6,
+      "evidence": "이전 인수증은 우회 배송의 근거가 되지만 배송 성공은 별도 판정을 거친다."
+    },
+    {
+      "eventId": "r005-04",
+      "nodeId": "scene",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.6,
+      "evidence": "실제 화웅 무력 92와 일기토를 비교한다. 창을 빌리는 실행 수단, 생포로 두 출격 취소, 실패의 부상·후퇴를 명시한다."
+    },
+    {
+      "eventId": "r005-04",
+      "nodeId": "dong",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.6,
+      "evidence": "화웅을 내 진영의 장수로 보고 철수 권고·보고·대기를 제시한다. 성공해야 관우 결투가 취소된다."
+    },
+    {
+      "eventId": "r005-05",
+      "nodeId": "scene",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.6,
+      "evidence": "항복 제안과 관우의 기본 참수를 분기한다. 실제 참수 때만 화웅 사망과 관우 전과를 남긴다."
+    },
+    {
+      "eventId": "r005-05",
+      "nodeId": "captured",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.6,
+      "evidence": "이미 포로인 화웅을 다시 싸우거나 베지 않는다. 전령 교섭으로 양쪽 소속 모두에서 접근할 수 있고 관우의 미발생 전과도 기록하지 않는다."
+    },
+    {
+      "eventId": "r005-05",
+      "nodeId": "withdrawn",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.6,
+      "evidence": "화웅 철수 경로는 생포와 명확히 다른 보고·결말을 쓴다. 포로 인계와 관우의 참수는 모두 재생하지 않는다."
+    },
+    {
+      "eventId": "r005-05",
+      "nodeId": "dong",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 8
+      },
+      "total": 8.4,
+      "evidence": "교섭 전령을 통한 생존·포로 인계와 직접 관문 보고를 구별한다. 동탁군 소속을 바꾸지 않는다."
+    },
+    {
+      "eventId": "r005-06",
+      "nodeId": "scene",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.6,
+      "evidence": "잔류 가족과 먼저 피신한 가족을 구분해 보복과 구출을 기록한다. 화웅 생포 경로에서도 사망을 재보고하지 않고 패전으로 연결한다."
+    },
+    {
+      "eventId": "r005-06",
+      "nodeId": "dong",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 8,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.4,
+      "evidence": "아군 처분 명부를 외부에 흘릴 발각 위험을 알리고 현재 연락선 유지도 가능하게 한다."
+    },
+    {
+      "eventId": "r005-06",
+      "nodeId": "family-ready",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.6,
+      "evidence": "4화에서 벌어 둔 시간은 일부 가족의 피신 준비이고 전체 구출과 다르다. 추가 개입이 잔류 가족의 생사를 결정한다."
+    },
+    {
+      "eventId": "r005-07",
+      "nodeId": "scene",
+      "scores": {
+        "logic": 8,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.4,
+      "evidence": "방열·목순의 이미 발생한 죽음과 공손찬에게 남은 구출 기회를 구별한다. 적토마의 추격을 철수 길로 바꾸며 무안국은 부상 표식만 남긴다."
+    },
+    {
+      "eventId": "r005-07",
+      "nodeId": "dong",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 8,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.4,
+      "evidence": "공손찬에게 경고하려면 적측 전령 교섭을 이용해야 한다. 아군 전령 임무와 위험한 역사 개입을 나눈다."
+    },
+    {
+      "eventId": "r005-08",
+      "nodeId": "scene",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.6,
+      "evidence": "세 형제와 예비 병력이라는 실제 실행 주체가 있어야 퇴로 예측이 생포로 이어진다. 직접 여포와 겨루는 일기토로 가장하지 않는다."
+    },
+    {
+      "eventId": "r005-08",
+      "nodeId": "dong",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.6,
+      "evidence": "돌파 방향 유출은 현재 진영을 거스르는 행동임을 미리 알린다. 귀환 신호와 후방 대기도 내 진영의 행동으로 유지한다."
+    },
+    {
+      "eventId": "r005-08",
+      "nodeId": "rescued",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.6,
+      "evidence": "공손찬을 이미 구했다면 장비가 다시 구출했다고 쓰지 않고 공세를 막는 협공으로 연결한다."
+    },
+    {
+      "eventId": "r005-09",
+      "nodeId": "scene",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 8
+      },
+      "total": 8.4,
+      "evidence": "관문 밖 병력 통제는 통솔·무력으로 판정한다. 추격 성과가 동탁·황제 확보나 전쟁 종결을 자동 확정하지 않는다."
+    },
+    {
+      "eventId": "r005-09",
+      "nodeId": "dong",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 8
+      },
+      "total": 8.4,
+      "evidence": "동탁군 내벽의 수레 통제·아군 교대·후방 복귀로 장면을 바꾼다. 여포가 잡혀도 원래 탈출 장면을 강제하지 않는다."
+    },
+    {
+      "eventId": "r005-09",
+      "nodeId": "captive",
+      "scores": {
+        "logic": 9,
+        "tone": 8,
+        "flow": 9,
+        "balance": 8,
+        "curiosity": 9
+      },
+      "total": 8.6,
+      "evidence": "생포한 여포를 추격하지 않고 장수 없이 물러나는 병력을 상대로 관문 앞 통제를 제시한다."
+    }
+  ],
+  "confirmedOpenErrors": 0,
+  "scope": "24개 조건별 장면의 문구·분기·실제 엔진·환경 이미지 직접 열람·PC/모바일/짧은 PC·관리자 편집 저장·저장 복원 검증 완료.",
+  "revisions": [
+    {
+      "nodes": [
+        "r005-05:withdrawn"
+      ],
+      "beforeTotal": 6.8,
+      "issue": "철수 경로의 B 결과가 생포 보고를 재사용함",
+      "fix": "화웅의 관문 철수 보고와 거절 결과를 별도 작성·실제 엔진 검사"
+    },
+    {
+      "nodes": [
+        "r005-05:captured",
+        "r005-05:withdrawn"
+      ],
+      "beforeTotal": 7.0,
+      "issue": "공통 배경이 포로·철수 경로에도 출전 논쟁과 술상을 확정함",
+      "fix": "양쪽 연락소의 교전 보고라는 중립 배경으로 수정"
+    },
+    {
+      "nodes": [
+        "r005-09:dong"
+      ],
+      "beforeTotal": 7.0,
+      "issue": "생포 장면의 우선순위 때문에 동탁군도 연합군 지휘를 전제할 위험",
+      "fix": "동탁군 시점을 우선 적용하고 실제 임관 후 여섯 경로에서 소속·장면·끝까지 실행 검증"
+    },
+    {
+      "nodes": [
+        "r005-04:scene"
+      ],
+      "issue": "일기토의 무기 접근 수단 누락",
+      "fix": "호위의 창을 빌리는 행동과 부상 실패 표식 추가"
+    },
+    {
+      "nodes": [
+        "r005-08:scene",
+        "r005-08:rescued"
+      ],
+      "issue": "첫 생성본에서 장수들이 보병으로 표현됨",
+      "fix": "유비·관우·장비·여포 네 장수의 기마전으로 편집하고 직접 열람 검수"
+    },
+    {
+      "nodes": [
+        "r005-01:dong",
+        "r005-02:dong",
+        "r005-04:dong",
+        "r005-05:dong",
+        "r005-06:dong",
+        "r005-07:dong",
+        "r005-08:dong"
+      ],
+      "issue": "동탁 지휘부 그림을 사수관 연락 장면에 사용하면 동탁 본인이 같은 장소에 있다는 오해 발생",
+      "fix": "일반 연락관과 관문 연락소 전용 환경 장면을 새로 생성·검수·연결. 동탁 본인은 등장하지 않음"
+    }
+  ],
+  "engineEvidence": "/tmp/tk-chapter5-tests2.log",
+  "engineCoverage": "조건별 선택 장면 24개 전부 실제 엔진 상태로 도달. 동탁군 실제 임관 후 A/B/C 성공·실패 6경로, 기본 경로와 조무·화웅·여포 분기 검사.",
+  "imagePlan": [
+    {
+      "path": "public/art/characters/sun-jian.png",
+      "use": "이미지 생성 참조 전용. 게임에는 환경 장면 사용.",
+      "composition": "강동의 젊은 지휘관, 붉은 두건, 짙은 남청 갑옷, 호랑이 어깨장식. 3등신 픽셀 아트"
+    },
+    {
+      "path": "public/art/characters/hua-xiong.png",
+      "use": "이미지 생성 참조 전용. 게임에는 환경 장면 사용.",
+      "composition": "건장한 수비 장수, 검은 철제 갑옷·투구, 자주빛 술, 장병기. 기존 동탁·여포와 구분"
+    },
+    {
+      "path": "public/art/scenes/r005-supply.png",
+      "use": "r005-03 기본/장부 장면·A 보급 행동",
+      "composition": "주인공이 막힌 군량 수레와 확인 내역을 대조, 손견은 배고픈 선봉 뒤에서 긴장. 배송 성공·조무 죽음 확정 금지"
+    },
+    {
+      "path": "public/art/scenes/r005-challenge.png",
+      "use": "r005-04 기본 도전·A 준비",
+      "composition": "관문 앞 화웅과 멀리 떨어져 창을 빌리려는 주인공. 승패·생포 확정 금지"
+    },
+    {
+      "path": "public/art/scenes/r005-three-heroes.png",
+      "use": "r005-08 기본/구출 장면",
+      "composition": "유비·관우·장비가 여포와 대치, 주인공은 후방에서 예비 병력 동선을 살핌. 생포·탈출 확정 금지"
+    },
+    {
+      "path": "public/art/scenes/r005-dong-liaison.png",
+      "use": "동탁군 연락 분기 7개",
+      "composition": "일반 연락관·관문 안쪽 사무소·지도·병사·수레. 멀리 있는 동탁 본인은 등장하지 않음."
+    }
+  ],
+  "finalBrowserReport": "/tmp/tk-release-final-005/report.json",
+  "adminChecksReport": "/tmp/tk-story-conditions-005/report.json",
+  "continuationReport": "/tmp/tk-release-continuation/report.json",
+  "fullPlaythroughReport": "/tmp/tk-release-playthrough/report.json",
+  "finalBuild": "/tmp/tk-rules-release-build.log",
+  "imageGeneration": {
+    "status": "complete",
+    "attempts": 4,
+    "generatedAssets": [
+      "public/art/characters/sun-jian.png",
+      "public/art/characters/hua-xiong.png",
+      "public/art/scenes/r005-supply.png",
+      "public/art/scenes/r005-challenge.png",
+      "public/art/scenes/r005-three-heroes.png",
+      "public/art/scenes/r005-dong-liaison.png"
+    ],
+    "previousError": "http 400 Bad Request: Unknown parameter: 'reasoning'"
+  },
+  "finalTests": "/tmp/tk-rules-release-tests.log",
+  "regenerationReport": "/tmp/tk-rules-release-regeneration.json",
+  "newRulesReport": "/tmp/tk-release-rules/report.json"
+}

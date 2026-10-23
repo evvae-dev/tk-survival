@@ -17,7 +17,7 @@ describe('능력 판정 선택지 표시', () => {
     }));
     expect(parse(html).textContent).toContain('관우 통솔 96 무력 97');
     expect(html).not.toContain('정치 63');
-    expect(html).not.toContain('<img');
+    expect(html).toContain('<img');
   });
 
   it('상대 이름·무력 아이콘과 실제 성공/실패 확률을 함께 보여준다', () => {

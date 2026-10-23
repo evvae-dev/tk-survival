@@ -1,0 +1,2977 @@
+{
+  "chapterId": "chapter-005",
+  "source": "docs/romance-three-kingdoms/chapters/005.md",
+  "events": [
+    {
+      "title": "연합군인데 단체 채팅방이 없다",
+      "fact": "조조의 격문에 호응한 제후들이 집결해 원소를 맹주로 세웠다. 공손찬과 유비 형제도 참여했고 손견은 선봉, 원술은 군량을 맡았다.",
+      "background": "조조의 격문에 호응한 제후들이 군사를 모았다. 원소가 맹주가 되고 손견과 원술에게 선봉과 군량 담당이 나뉘었다.",
+      "entry": "나는 진류의 연락 거리를 떠나 관문으로 향하는 군량 수레길을 따라갔다. 각 군영의 연락소에는 같은 동탁 토벌 격문이 붙었지만 출입을 허락하는 표식은 제각각이었다.",
+      "scene": "동탁을 치자는 말은 같아도 군량을 내놓겠다는 표정은 제각각이었다. 황제가 바뀌었든 폐립이 막혔든 동탁군의 위협이 남아 제후들은 모여들었다. 공동의 적 하나로 이 사람들이 서로 믿을 거라고 생각하면 내가 먼저 굶는다. 전쟁의 입구에서 칼보다 인수증을 챙길까?",
+      "choices": [
+        {
+          "id": "a",
+          "title": "군량 인수증을 두 군영이 나눠 갖자고 제안한다",
+          "description": "배송 기록을 서로 보관하면 모른 척하기 어려워진다. 담당자를 불신한다는 반발은 각오하자.",
+          "check": {
+            "kind": "politics",
+            "weights": {
+              "politics": 0.5,
+              "intelligence": 0.4,
+              "leadership": 0.1
+            },
+            "difficulty": 64,
+            "fameReward": 10,
+            "fameReason": "군영 간 인수증을 공유해 보급 단절 증거 확보"
+          },
+          "success": {
+            "text": "나는 군량을 내준 곳과 받은 곳이 같은 인수 내역을 보관하자고 제안했다. 일부 수레에서 대조가 시작돼 선봉에 도착하지 않은 물량을 따로 확인할 수 있게 됐다.",
+            "hint": "공동 군량 대조표 확보",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "allianceLedger",
+                "value": true
+              }
+            ]
+          },
+          "failure": {
+            "text": "나는 공동 인수증을 제안했지만 담당 서리는 다른 군영이 장부를 들여다볼 수 없다며 거절했다. 원술의 군량 권한은 그대로 남았다.",
+            "hint": "군영 간 불신·장부 공유 거절",
+            "effects": []
+          },
+          "artwork": {
+            "src": "/art/choices/strategy.png",
+            "alt": "군량 인수증을 두 군영이 나눠 갖자고 제안한다"
+          }
+        },
+        {
+          "id": "b",
+          "title": "조조 측 연락소에 관문 통행 절차를 묻는다",
+          "description": "임관을 다시 청할 때는 아니다. 지금 소속을 밝히고 연락할 사람부터 확인하자.",
+          "check": {
+            "kind": "relationship",
+            "weights": {
+              "charisma": 0.7,
+              "intelligence": 0.15,
+              "politics": 0.15
+            },
+            "difficulty": 40,
+            "fameReward": 4,
+            "fameReason": "조조 측 공개 통행 절차 확인"
+          },
+          "success": {
+            "text": "나는 현재 신분과 소속을 밝히고 관문 연락 절차를 물었다. 조조 측 연락소는 교신할 서리와 공개 통행 구역을 알려 줬다.",
+            "hint": "조조 측 연락·공개 통행 구역 확인",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "metCaoContact",
+                "value": true
+              },
+              {
+                "type": "flag",
+                "key": "allianceAccess",
+                "value": true
+              }
+            ]
+          },
+          "failure": {
+            "text": "나는 연락 절차를 물었지만 신원 확인이 끝나지 않았다는 답을 받았다. 군영 안으로 들어가지 않고 바깥 역참에 머물렀다.",
+            "hint": "군영 접근 제한",
+            "effects": []
+          },
+          "artwork": {
+            "src": "/art/choices/official.png",
+            "alt": "조조 측 연락소에 관문 통행 절차를 묻는다"
+          }
+        },
+        {
+          "id": "c",
+          "title": "모집 행렬에서 빠져 수레꾼 숙소를 잡는다",
+          "description": "맹세에 이름을 올리기 전에 도망갈 길부터 보자.",
+          "success": {
+            "text": "나는 군사 명부에 서명하지 않고 수레꾼 숙소에 머물렀다. 군영의 공고와 돌아오는 운송꾼을 통해 전황을 확인했다.",
+            "hint": "기존 소속 유지·군영 바깥 숙소",
+            "effects": []
+          },
+          "artwork": {
+            "src": "/art/choices/travel-wagons.png",
+            "alt": "모집 행렬에서 빠져 수레꾼 숙소를 잡는다"
+          }
+        }
+      ],
+      "region": "suanzao",
+      "year": 190,
+      "dateNote": "제5회 전개 순서. 190년 전후, 월 미상. 연의의 전투 배치이며 선택·대체 결과는 게임 창작.",
+      "precision": "approximate",
+      "factions": [
+        "han",
+        "dong-zhuo",
+        "cao-cao",
+        "liu-bei",
+        "sun-jian",
+        "yuan-shao",
+        "yuan-shu"
+      ],
+      "people": [
+        "조조",
+        "원소",
+        "원술",
+        "손견",
+        "공손찬",
+        "유비",
+        "관우",
+        "장비"
+      ],
+      "officers": [
+        "rtk14-0032",
+        "rtk14-0035",
+        "rtk14-0147",
+        "rtk14-0266",
+        "rtk14-0521",
+        "rtk14-0551",
+        "rtk14-0656",
+        "rtk14-0952"
+      ],
+      "artwork": {
+        "src": "/art/choices/formation.png",
+        "alt": "관문 바깥의 병력 배치를 살피는 주인공"
+      },
+      "variants": [
+        {
+          "key": "dong",
+          "condition": {
+            "field": "factionId",
+            "operator": "eq",
+            "value": "dong-zhuo"
+          },
+          "text": "나는 진류에서 본 격문을 챙겨 동탁군의 관문 연락선으로 돌아왔다. 바깥에는 토벌을 내건 연합군이 모이고 있었고 내 이름은 여전히 동탁군 명부에 있었다. 적의 군영에 자연스럽게 끼어들 수 있는 신분은 아니었다. 안에서 얻을 수 있는 정보로 싸움을 바꿀까, 맡은 연락을 지킬까?",
+          "choices": [
+            {
+              "id": "a",
+              "title": "민가를 군량 징발 대상에서 분리하자고 요구한다",
+              "description": "군량 부족을 약탈로 메우게 두면 민심은 더 무너진다. 군령에 간섭했다는 의심을 감수하자.",
+              "check": {
+                "kind": "politics",
+                "weights": {
+                  "politics": 0.5,
+                  "intelligence": 0.4,
+                  "leadership": 0.1
+                },
+                "difficulty": 67,
+                "fameReward": 10,
+                "fameReason": "민가 중복 징발을 줄임"
+              },
+              "success": {
+                "text": "나는 세금 장부와 군량 징발 명부가 겹친 마을을 대조해 중복 징발을 빼 달라고 청했다. 담당 서리가 일부 명단을 고쳐 해당 마을의 짐이 줄었다.",
+                "hint": "민가 중복 징발 감소",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "dongCivilianLedger",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 명부 대조를 청했지만 담당자는 전시에 군량을 줄일 수 없다며 거절했다. 원본을 돌려주고 검문선으로 물러났다.",
+                "hint": "군령 간섭 의심",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/strategy.png",
+                "alt": "민가를 군량 징발 대상에서 분리하자고 요구한다"
+              }
+            },
+            {
+              "id": "b",
+              "title": "동탁군 연락소에 제후 집결 정보를 보고한다",
+              "description": "내가 본 격문과 확인하지 못한 병력 수를 구분하자.",
+              "check": {
+                "kind": "relationship",
+                "weights": {
+                  "charisma": 0.4,
+                  "intelligence": 0.35,
+                  "leadership": 0.25
+                },
+                "difficulty": 38,
+                "fameReward": 4,
+                "fameReason": "아군 연락소에 확인한 격문을 보고"
+              },
+              "success": {
+                "text": "나는 직접 본 격문과 운송 경로만 골라 동탁군 연락소에 보고했다. 연락관은 내 소속을 확인하고 관문으로 돌아갈 통행 표식을 내줬다.",
+                "hint": "동탁군 소속 유지·통행 확인",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "dongDefenseLinked",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 보고를 청했지만 연락관이 원본 대조를 요구해 접수가 늦어졌다. 소속을 바꾸지 않고 바깥 숙영지에서 기다렸다.",
+                "hint": "보고 지연",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/official.png",
+                "alt": "동탁군 연락소에 제후 집결 정보를 보고한다"
+              }
+            },
+            {
+              "id": "c",
+              "title": "군령을 기다리며 후방 수레 숙소에 남는다",
+              "description": "어느 편인지까지 바뀌는 지름길은 없다.",
+              "success": {
+                "text": "나는 동탁군 후방 수레가 머무는 숙소로 돌아갔다. 연합군 진영에 들어가지 않은 채 관문의 보고를 기다렸다.",
+                "hint": "동탁군 후방 대기",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "군령을 기다리며 후방 수레 숙소에 남는다"
+              }
+            }
+          ],
+          "artwork": {
+            "src": "/art/scenes/r005-dong-liaison.png",
+            "alt": "관문 안쪽 연락소에서 일반 연락관에게 전선 보고와 문서를 확인받는 주인공"
+          }
+        }
+      ],
+      "backgroundEffects": [
+        {
+          "type": "region",
+          "value": "sishui",
+          "when": {
+            "field": "factionId",
+            "operator": "eq",
+            "value": "dong-zhuo"
+          }
+        }
+      ]
+    },
+    {
+      "title": "선착순 공적 경쟁은 사망 플래그다",
+      "fact": "포신은 선봉 손견보다 먼저 공을 세우려고 포충을 별도로 보냈으나 화웅에게 잃었다. 손견은 호진을 무찌르며 사수관으로 진격했다.",
+      "background": "포신 측에서 손견의 선봉보다 먼저 출격하려는 움직임이 보였다. 손견군은 사수관 방면으로 진격하며 호진의 부대와 맞섰다.",
+      "entry": "나는 수레길이 갈라지는 사수관 바깥 연락소로 옮겼다. 따로 출격하려는 포신 측 전령과 선봉의 군량 수레가 같은 길목에서 엇갈렸다.",
+      "scene": "포충을 따로 보내면 화웅에게 잃는다는 걸 알고 있었다. 하지만 공을 먼저 세우겠다는 사람에게 미래의 패배를 들이밀어도 비웃음만 산다. 손견 쪽과 같은 길을 쓰는 정찰로 돌리면 독단 출격을 늦출 명분이 생긴다. 첫 전공보다 살아 돌아올 사람을 남길까?",
+      "choices": [
+        {
+          "id": "a",
+          "title": "포충의 출격을 합동 정찰로 바꾸자고 전한다",
+          "description": "길과 신호를 먼저 맞추자는 명분을 대자. 남의 공을 가로챈다는 말을 들을 수도 있다.",
+          "check": {
+            "kind": "strategy",
+            "weights": {
+              "intelligence": 0.55,
+              "charisma": 0.25,
+              "leadership": 0.2
+            },
+            "difficulty": 69,
+            "fameReward": 18,
+            "fameReason": "포충의 독단 출격을 멈춰 생명을 구함"
+          },
+          "success": {
+            "text": "나는 포신 측 전령에게 선봉과 길이 겹치니 정찰 신호부터 맞추자고 제안했다. 출격이 대조 작업으로 늦춰져 포충은 화웅에게 단독으로 돌진하지 않았다.",
+            "hint": "포충의 독단 출격·죽음 저지",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "baoChongSaved",
+                "value": true
+              }
+            ]
+          },
+          "failure": {
+            "text": "나는 정찰 합류를 권했지만 전령은 공을 늦출 수 없다며 달려갔다. 뒤에 포충이 화웅에게 죽었다는 보고가 돌아왔다.",
+            "hint": "독단 출격 강행·포충 전사",
+            "effects": []
+          },
+          "artwork": {
+            "src": "/art/choices/strategy.png",
+            "alt": "포충의 출격을 합동 정찰로 바꾸자고 전한다"
+          }
+        },
+        {
+          "id": "b",
+          "title": "손견 측 전령에게 수레길 상황을 알린다",
+          "description": "선봉에 바로 들어가는 대신 지금 확인한 길부터 전하자.",
+          "check": {
+            "kind": "relationship",
+            "weights": {
+              "charisma": 0.4,
+              "intelligence": 0.35,
+              "leadership": 0.25
+            },
+            "difficulty": 44,
+            "fameReward": 4,
+            "fameReason": "손견 측 수레길 보고"
+          },
+          "success": {
+            "text": "나는 손견 측 전령에게 갈라지는 수레길과 포신 측 출격을 알렸다. 전령은 길을 확인하고 다음 군량 연락을 받을 장소를 알려 줬다.",
+            "hint": "손견 측 접촉",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "metSunJian",
+                "value": true
+              }
+            ]
+          },
+          "failure": {
+            "text": "나는 전령에게 말을 걸었지만 신원 대조 전에 선봉 소식을 나눌 수 없다는 답을 받았다. 수레길 밖으로 비켰다.",
+            "hint": "손견 측 접촉 거절",
+            "effects": []
+          },
+          "artwork": {
+            "src": "/art/choices/official.png",
+            "alt": "손견 측 전령에게 수레길 상황을 알린다"
+          }
+        },
+        {
+          "id": "c",
+          "title": "단독 출격 행렬과 거리를 둔다",
+          "description": "공적 줄서기에 휩쓸리면 칼도 없이 첫 타자가 된다.",
+          "success": {
+            "text": "나는 출격 행렬을 따라가지 않고 짐수레가 멈춘 곳에 남았다. 싸움의 경과는 돌아온 전령에게 들었다.",
+            "hint": "선공에 직접 참가하지 않음",
+            "effects": []
+          },
+          "artwork": {
+            "src": "/art/choices/travel-wagons.png",
+            "alt": "단독 출격 행렬과 거리를 둔다"
+          }
+        }
+      ],
+      "region": "sishui",
+      "year": 190,
+      "dateNote": "제5회 전개 순서. 190년 전후, 월 미상. 연의의 전투 배치이며 선택·대체 결과는 게임 창작.",
+      "precision": "approximate",
+      "factions": [
+        "han",
+        "dong-zhuo",
+        "cao-cao",
+        "liu-bei",
+        "sun-jian",
+        "yuan-shao",
+        "yuan-shu"
+      ],
+      "people": [
+        "포신",
+        "포충",
+        "손견",
+        "화웅",
+        "호진"
+      ],
+      "officers": [
+        "rtk14-0144",
+        "rtk14-0301",
+        "rtk14-0551",
+        "rtk14-0826"
+      ],
+      "artwork": {
+        "src": "/art/choices/formation.png",
+        "alt": "관문 바깥의 병력 배치를 살피는 주인공"
+      },
+      "outcomes": [
+        {
+          "text": "포충은 합동 정찰 대조 때문에 단독 출격하지 않아 살아남았다. 손견은 사수관 방면에서 호진의 부대를 물리쳤지만 계속 싸울 군량이 필요했다.",
+          "effects": [],
+          "condition": {
+            "field": "world.flags.baoChongSaved",
+            "operator": "eq",
+            "value": true
+          }
+        },
+        {
+          "text": "포충은 단독으로 공격했다가 화웅에게 죽었다. 손견은 사수관 방면에서 호진의 부대를 물리쳤으나 군량 보급에 의존해야 했다.",
+          "effects": [
+            {
+              "type": "flag",
+              "key": "baoChongKilled",
+              "value": true
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "key": "dong",
+          "condition": {
+            "field": "factionId",
+            "operator": "eq",
+            "value": "dong-zhuo"
+          },
+          "text": "동탁군 연락소에 포신 측의 성급한 출격과 손견의 진격이 함께 보고됐다. 관문에서는 공을 탐내는 적을 따로 끊어 먹을 기회라고 떠들었다. 나는 저 독단 출격이 누구의 죽음으로 끝날지 알고 있었다. 적의 실수를 이용하라는 군령 앞에서 어떤 말을 남길까?",
+          "choices": [
+            {
+              "id": "a",
+              "title": "전령 교섭 때 합동 정찰의 필요를 흘린다",
+              "description": "포신 측이 멈추게 만들 정보를 넘기자. 적에게 경고했다는 사실이 드러나면 위험하다.",
+              "check": {
+                "kind": "strategy",
+                "weights": {
+                  "intelligence": 0.7,
+                  "politics": 0.2,
+                  "charisma": 0.1
+                },
+                "difficulty": 76,
+                "fameReward": 18,
+                "fameReason": "아군에 발각될 위험을 감수하고 포충 출격을 저지"
+              },
+              "success": {
+                "text": "나는 길목을 확인하러 온 포신 측 전령에게 선봉과 동선이 겹친다고 알렸다. 전령이 대조를 요청해 포충의 단독 출격이 멈췄고 나는 발신자를 드러내지 않고 돌아왔다.",
+                "hint": "포충 독단 출격 저지·발각 위험",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "baoChongSaved",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 동선 경고를 흘리려 했지만 교섭이 먼저 끊겼다. 관문에서 포충을 베었다는 화웅 측 보고를 들었다.",
+                "hint": "경고 실패·포충 전사",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/strategy.png",
+                "alt": "전령 교섭 때 합동 정찰의 필요를 흘린다"
+              }
+            },
+            {
+              "id": "b",
+              "title": "호진 측 연락관에게 선봉의 이동을 전한다",
+              "description": "지금은 내 진영의 연락을 맡고 있다. 직접 본 동선만 말하자.",
+              "check": {
+                "kind": "relationship",
+                "weights": {
+                  "charisma": 0.4,
+                  "intelligence": 0.35,
+                  "leadership": 0.25
+                },
+                "difficulty": 40,
+                "fameReward": 4,
+                "fameReason": "호진 측에 확인한 동선 전달"
+              },
+              "success": {
+                "text": "나는 호진 측 연락관에게 수레길의 이동을 전했다. 연락관은 전달자를 확인하고 물러날 길을 알려 줬지만 전투 자체를 뒤집지는 못했다.",
+                "hint": "동탁군 연락 유지",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "dongForwardReport",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 연락관을 찾지 못해 보고가 늦었다. 전투가 벌어진 길에서 후방으로 물러났다.",
+                "hint": "전달 지연",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/official.png",
+                "alt": "호진 측 연락관에게 선봉의 이동을 전한다"
+              }
+            },
+            {
+              "id": "c",
+              "title": "관문 안쪽 보급소에서 보고를 기다린다",
+              "description": "전공 다툼에 내 이름을 보태지는 말자.",
+              "success": {
+                "text": "나는 동탁군 보급소에 남아 출격하지 않았다. 전투 보고가 돌아온 뒤에야 길목의 통제가 바뀌었다는 걸 알았다.",
+                "hint": "동탁군 후방 대기",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "관문 안쪽 보급소에서 보고를 기다린다"
+              }
+            }
+          ],
+          "artwork": {
+            "src": "/art/scenes/r005-dong-liaison.png",
+            "alt": "관문 안쪽 연락소에서 일반 연락관에게 전선 보고와 문서를 확인받는 주인공"
+          }
+        }
+      ]
+    },
+    {
+      "title": "군량 담당이 아군 맞습니까",
+      "fact": "원술은 손견이 공을 세울 것을 시기해 군량을 끊었다. 화웅의 야습으로 손견군이 무너졌고 조무는 붉은 두건으로 적을 유인하다 죽었다.",
+      "background": "원술의 담당소에서 손견군에 보낼 군량을 내주지 않았다. 굶주린 병사들이 동요하는 가운데 화웅 측은 야습을 준비했다.",
+      "entry": null,
+      "scene": "선봉이 배고프다는 보고 옆에서 군량 창고의 봉인은 멀쩡했다. 배송이 늦은 게 아니라 담당자가 문을 잠근 것이다. 오늘 밤을 넘기지 못하면 붉은 두건을 대신 쓰는 조무가 죽는다. 창고 문을 우회할까, 사람이라도 먼저 빼낼까?",
+      "choices": [
+        {
+          "id": "a",
+          "title": "원술을 거치지 않는 소량 공동 배송을 제안한다",
+          "description": "도착 확인을 여러 군영이 나누면 한 사람이 전부 막기 어렵다. 보급권을 건드렸다는 역풍을 감수하자.",
+          "check": {
+            "kind": "politics",
+            "weights": {
+              "politics": 0.5,
+              "intelligence": 0.4,
+              "leadership": 0.1
+            },
+            "difficulty": 77,
+            "fameReward": 22,
+            "fameReason": "군량 독점을 우회해 선봉과 조무를 보전"
+          },
+          "success": {
+            "text": "나는 선봉이 받을 최소 물량을 여러 군영의 수레에 나눠 싣고 도착을 함께 확인하자고 청했다. 일부 담당자가 동의해 식량이 손견군에 도착했고 야습을 맞을 때 경계가 무너지지 않았다.",
+            "hint": "손견 보급 확보·야습 피해 감소",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "sunSupplied",
+                "value": true
+              },
+              {
+                "type": "flag",
+                "key": "zuMaoSaved",
+                "value": true
+              }
+            ]
+          },
+          "failure": {
+            "text": "나는 공동 배송을 청했지만 원술 측 담당자가 반출을 막았다. 군량이 오지 않은 밤 손견군이 습격당했고 나는 수레길로 빠졌다.",
+            "hint": "보급 차단 지속·야습 위험",
+            "effects": []
+          },
+          "artwork": {
+            "src": "/art/scenes/r005-supply.png",
+            "alt": "막힌 군량 수레 앞에서 인수 내역을 대조하는 주인공과 손견군"
+          }
+        },
+        {
+          "id": "b",
+          "title": "손견 측 전령에게 조기 철수 신호를 청한다",
+          "description": "식량을 당장 못 보내면 기습 전에 병력이라도 모이게 하자.",
+          "check": {
+            "kind": "relationship",
+            "weights": {
+              "intelligence": 0.45,
+              "charisma": 0.4,
+              "politics": 0.15
+            },
+            "difficulty": 64,
+            "fameReward": 16,
+            "fameReason": "미리 철수해 조무의 희생을 피함"
+          },
+          "success": {
+            "text": "나는 손견 측 전령에게 야간 경계를 확인하고 흩어지기 전에 철수 신호를 정해 달라고 청했다. 경고를 받은 부대가 먼저 빠져 손견은 진영을 잃었지만 조무가 두건으로 적을 유인할 필요는 없었다.",
+            "hint": "선봉 후퇴·조무 생존",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "sunWarned",
+                "value": true
+              },
+              {
+                "type": "flag",
+                "key": "zuMaoSaved",
+                "value": true
+              }
+            ]
+          },
+          "failure": {
+            "text": "나는 철수 신호를 부탁했지만 전령과 연락이 끊겼다. 야습 보고 뒤에야 흩어진 선봉군을 만났다.",
+            "hint": "경고 미전달·선봉 혼란",
+            "effects": []
+          },
+          "artwork": {
+            "src": "/art/choices/official.png",
+            "alt": "손견 측 전령에게 조기 철수 신호를 청한다"
+          }
+        },
+        {
+          "id": "c",
+          "title": "선봉 야영지에서 떨어진 수레 숙소로 간다",
+          "description": "빈속인 군대와 야습 사이에 끼어 있고 싶지는 않다.",
+          "success": {
+            "text": "나는 선봉 진영으로 더 들어가지 않고 수레 숙소로 물러났다. 밤의 패전과 조무의 죽음은 새벽에 돌아온 병사들에게 들었다.",
+            "hint": "야습 현장 이탈·조무는 구하지 못함",
+            "effects": []
+          },
+          "artwork": {
+            "src": "/art/choices/travel-wagons.png",
+            "alt": "선봉 야영지에서 떨어진 수레 숙소로 간다"
+          }
+        }
+      ],
+      "region": "sishui",
+      "year": 190,
+      "dateNote": "제5회 전개 순서. 190년 전후, 월 미상. 연의의 전투 배치이며 선택·대체 결과는 게임 창작.",
+      "precision": "approximate",
+      "factions": [
+        "han",
+        "dong-zhuo",
+        "cao-cao",
+        "liu-bei",
+        "sun-jian",
+        "yuan-shao",
+        "yuan-shu"
+      ],
+      "people": [
+        "원술",
+        "손견",
+        "화웅",
+        "조무"
+      ],
+      "officers": [
+        "rtk14-0032",
+        "rtk14-0144",
+        "rtk14-0538",
+        "rtk14-0551"
+      ],
+      "artwork": {
+        "src": "/art/scenes/r005-supply.png",
+        "alt": "막힌 군량 수레 앞에서 인수 내역을 대조하는 주인공과 손견군"
+      },
+      "variants": [
+        {
+          "key": "dong",
+          "condition": {
+            "field": "factionId",
+            "operator": "eq",
+            "value": "dong-zhuo"
+          },
+          "text": "동탁군 연락관은 적의 군량이 끊겼으니 오늘 밤이 기회라고 했다. 내가 아는 붉은 두건의 주인은 그 야습에서 손견 대신 죽는다. 적군을 살리려 경보를 보내면 내 진영에 발각될 수 있다. 야습을 지켜볼까, 기록되지 않을 경고를 건넬까?",
+          "choices": [
+            {
+              "id": "a",
+              "title": "군영 바깥 종으로 야습 접근을 알린다",
+              "description": "민간 수레에 위험을 알리는 척 신호를 멀리 보내자. 야습을 망쳤다는 의심을 받을 수 있다.",
+              "check": {
+                "kind": "strategy",
+                "weights": {
+                  "leadership": 0.5,
+                  "intelligence": 0.3,
+                  "charisma": 0.2
+                },
+                "difficulty": 79,
+                "fameReward": 18,
+                "fameReason": "야습 전 경계 종으로 손견군과 조무 철수 유도"
+              },
+              "success": {
+                "text": "나는 위험 지역의 수레를 비우자며 바깥 경계 종을 울렸다. 먼저 소리를 들은 손견군이 진영을 접고 빠져 조무가 두건으로 적을 유인할 일은 없었다.",
+                "hint": "야습 경보·조무 생존",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "sunWarned",
+                    "value": true
+                  },
+                  {
+                    "type": "flag",
+                    "key": "zuMaoSaved",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 종을 울리려 했지만 초병에게 제지당했다. 야습이 시작된 뒤 선봉 패전과 조무의 전사 보고가 들어왔다.",
+                "hint": "경보 실패·조무 전사",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/strategy.png",
+                "alt": "군영 바깥 종으로 야습 접근을 알린다"
+              }
+            },
+            {
+              "id": "b",
+              "title": "화웅 측 연락관에게 후방 길을 확인한다",
+              "description": "지원하더라도 퇴로가 없는 자리에 서지 말자.",
+              "check": {
+                "kind": "relationship",
+                "weights": {
+                  "charisma": 0.7,
+                  "intelligence": 0.15,
+                  "politics": 0.15
+                },
+                "difficulty": 39,
+                "fameReward": 4,
+                "fameReason": "아군 연락 임무 후 귀환 확인"
+              },
+              "success": {
+                "text": "나는 화웅 측 연락관에게 전달을 마친 뒤 돌아갈 길을 확인했다. 연락관이 후방 통행 표식을 내줘 나는 선두 야습에는 끼지 않았다.",
+                "hint": "동탁군 연락 임무·후방 복귀",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "dongNightContact",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 귀환 확인을 받지 못해 전령 대기소에 남았다. 야습대가 떠난 뒤 보급소로 돌아갔다.",
+                "hint": "연락 지연",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/official.png",
+                "alt": "화웅 측 연락관에게 후방 길을 확인한다"
+              }
+            },
+            {
+              "id": "c",
+              "title": "동탁군 보급소에 남아 출격을 피한다",
+              "description": "누군가의 두건을 쫓는 밤에 같이 나가고 싶진 않다.",
+              "success": {
+                "text": "나는 동탁군 보급소에 남아 수레를 지켰다. 손견군이 패하고 조무가 죽었다는 보고는 야습대가 돌아와 전했다.",
+                "hint": "야습 직접 참가 회피",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "동탁군 보급소에 남아 출격을 피한다"
+              }
+            }
+          ],
+          "artwork": {
+            "src": "/art/choices/night.png",
+            "alt": "야습을 준비하는 군영 바깥 수레와 초병을 살피는 주인공"
+          }
+        },
+        {
+          "key": "ledger",
+          "condition": {
+            "field": "world.flags.allianceLedger",
+            "operator": "eq",
+            "value": true
+          },
+          "text": "앞서 나눠 둔 인수증에는 선봉에 도착하지 않은 물량이 선명히 남아 있었다. 원술 측이 창고를 열지 않았다는 걸 다른 군영도 확인할 수 있었다. 장부를 만든 것과 식량을 실제로 보낸 것은 아직 다른 일이다. 이 증거로 우회 배송을 밀어붙일까, 철수 신호부터 전할까?",
+          "choices": [
+            {
+              "id": "a",
+              "title": "원술을 거치지 않는 소량 공동 배송을 제안한다",
+              "description": "도착 확인을 여러 군영이 나누면 한 사람이 전부 막기 어렵다. 보급권을 건드렸다는 역풍을 감수하자.",
+              "check": {
+                "kind": "politics",
+                "weights": {
+                  "politics": 0.5,
+                  "intelligence": 0.4,
+                  "leadership": 0.1
+                },
+                "difficulty": 57,
+                "fameReward": 22,
+                "fameReason": "공동 인수증으로 입증한 누락을 근거로 우회 배송"
+              },
+              "success": {
+                "text": "나는 선봉이 받을 최소 물량을 여러 군영의 수레에 나눠 싣고 도착을 함께 확인하자고 청했다. 일부 담당자가 동의해 식량이 손견군에 도착했고 야습을 맞을 때 경계가 무너지지 않았다.",
+                "hint": "손견 보급 확보·야습 피해 감소",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "sunSupplied",
+                    "value": true
+                  },
+                  {
+                    "type": "flag",
+                    "key": "zuMaoSaved",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 공동 배송을 청했지만 원술 측 담당자가 반출을 막았다. 군량이 오지 않은 밤 손견군이 습격당했고 나는 수레길로 빠졌다.",
+                "hint": "보급 차단 지속·야습 위험",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/scenes/r005-supply.png",
+                "alt": "막힌 군량 수레 앞에서 인수 내역을 대조하는 주인공과 손견군"
+              }
+            },
+            {
+              "id": "b",
+              "title": "손견 측 전령에게 조기 철수 신호를 청한다",
+              "description": "식량을 당장 못 보내면 기습 전에 병력이라도 모이게 하자.",
+              "check": {
+                "kind": "relationship",
+                "weights": {
+                  "intelligence": 0.45,
+                  "charisma": 0.4,
+                  "politics": 0.15
+                },
+                "difficulty": 64,
+                "fameReward": 16,
+                "fameReason": "미리 철수해 조무의 희생을 피함"
+              },
+              "success": {
+                "text": "나는 손견 측 전령에게 야간 경계를 확인하고 흩어지기 전에 철수 신호를 정해 달라고 청했다. 경고를 받은 부대가 먼저 빠져 손견은 진영을 잃었지만 조무가 두건으로 적을 유인할 필요는 없었다.",
+                "hint": "선봉 후퇴·조무 생존",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "sunWarned",
+                    "value": true
+                  },
+                  {
+                    "type": "flag",
+                    "key": "zuMaoSaved",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 철수 신호를 부탁했지만 전령과 연락이 끊겼다. 야습 보고 뒤에야 흩어진 선봉군을 만났다.",
+                "hint": "경고 미전달·선봉 혼란",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/official.png",
+                "alt": "손견 측 전령에게 조기 철수 신호를 청한다"
+              }
+            },
+            {
+              "id": "c",
+              "title": "선봉 야영지에서 떨어진 수레 숙소로 간다",
+              "description": "빈속인 군대와 야습 사이에 끼어 있고 싶지는 않다.",
+              "success": {
+                "text": "나는 선봉 진영으로 더 들어가지 않고 수레 숙소로 물러났다. 밤의 패전과 조무의 죽음은 새벽에 돌아온 병사들에게 들었다.",
+                "hint": "야습 현장 이탈·조무는 구하지 못함",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "선봉 야영지에서 떨어진 수레 숙소로 간다"
+              }
+            }
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "공동 배송으로 군량을 받은 손견군은 야습을 경계하고 선봉 진영을 지켰다. 조무는 붉은 두건으로 적을 유인할 필요가 없어 살아남았다.",
+          "effects": [],
+          "condition": {
+            "field": "world.flags.sunSupplied",
+            "operator": "eq",
+            "value": true
+          }
+        },
+        {
+          "text": "군량이 끊긴 손견군은 선봉 진영을 잃었으나 미리 정한 신호로 물러났다. 조무는 손견을 대신한 유인에 나서지 않아 살아남았다.",
+          "effects": [],
+          "condition": {
+            "field": "world.flags.zuMaoSaved",
+            "operator": "eq",
+            "value": true
+          }
+        },
+        {
+          "text": "군량이 끊긴 손견군은 화웅의 야습에 패했다. 조무는 손견의 붉은 두건으로 적을 유인하다 죽었고 손견은 원술에게 보급 책임을 물었다.",
+          "effects": [
+            {
+              "type": "person",
+              "personId": "rtk14-0538",
+              "value": "dead"
+            },
+            {
+              "type": "flag",
+              "key": "sunDefeated",
+              "value": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "화웅 코인, 술 식기 전 상장 폐지?",
+      "fact": "화웅은 연합군 앞에서 도전해 유섭과 반봉을 죽였다. 관우가 출전을 청했지만 원술은 낮은 신분을 들어 반대했다.",
+      "background": "화웅이 관문 앞에서 싸움을 걸어 왔다. 유섭과 반봉이 출전을 준비했고 연합군 안에서는 누가 먼저 나설지를 다퉜다.",
+      "entry": null,
+      "scene": "내가 기억하는 장면은 술잔이지만 지금 출격을 기다리는 건 죽을 사람들이다. 화웅의 무력은 만만하지 않고 관우를 부를 명분도 아직 부족했다. 내가 나선다면 공적을 바꿀 수는 있어도 내 몸까지 원작 보정을 받지는 않는다. 직접 판을 뒤집을까, 진짜 주인공에게 길을 열까?",
+      "choices": [
+        {
+          "id": "a",
+          "title": "호위의 창을 빌려 화웅의 생포를 노린다",
+          "description": "창을 빌려도 칼날 안으로 들어가는 건 내 몸이다. 실패하면 부상한 채 물러나야 한다.",
+          "check": {
+            "kind": "duel",
+            "opponentId": "rtk14-0144",
+            "weights": {
+              "strength": 1
+            },
+            "difficulty": 50,
+            "fameReward": 24,
+            "fameReason": "화웅 생포로 유섭·반봉 출격과 참수를 취소"
+          },
+          "success": {
+            "text": "나는 호위에게 창을 빌려 화웅의 진로를 끊고 말에서 밀어내 포박을 도왔다. 연합군 경비가 포로를 넘겨받자 유섭과 반봉의 단독 출격도 멈췄다.",
+            "hint": "화웅 생포·유섭과 반봉 출격 중지",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "huaCaptured",
+                "value": true
+              }
+            ]
+          },
+          "failure": {
+            "text": "나는 화웅에게 밀려 팔을 다친 채 호위 뒤로 물러났다. 내 도전이 끝난 뒤 유섭과 반봉이 차례로 나섰다가 돌아오지 못했다.",
+            "hint": "부상·후퇴·후속 장수 전사",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "huaDuelWounded",
+                "value": true
+              }
+            ]
+          },
+          "artwork": {
+            "src": "/art/scenes/r005-challenge.png",
+            "alt": "사수관 앞 말 탄 화웅을 보며 호위에게 창을 빌리는 주인공"
+          }
+        },
+        {
+          "id": "b",
+          "title": "관우의 출전 요청을 조조 측에 먼저 전한다",
+          "description": "관우가 누구인지 안다는 말보다 출전 의사를 전달하자. 받아들일지는 제후들의 몫이다.",
+          "check": {
+            "kind": "relationship",
+            "weights": {
+              "charisma": 0.55,
+              "politics": 0.35,
+              "intelligence": 0.1
+            },
+            "difficulty": 61,
+            "fameReward": 14,
+            "fameReason": "관우 조기 추천으로 두 장수의 출격을 보류"
+          },
+          "success": {
+            "text": "나는 관우가 싸우겠다는 뜻을 조조 측 연락관에게 전했다. 조조가 출전 문제를 먼저 논의하게 하면서 유섭과 반봉의 차례가 보류됐다.",
+            "hint": "관우 조기 추천·앞선 두 출격 보류",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "guanEarly",
+                "value": true
+              }
+            ]
+          },
+          "failure": {
+            "text": "나는 조조 측에 말을 전하려 했지만 출전 순서가 먼저 정해졌다. 유섭과 반봉이 나섰다가 죽었다는 보고를 들었다.",
+            "hint": "추천 지연·유섭과 반봉 전사",
+            "effects": []
+          },
+          "artwork": {
+            "src": "/art/choices/official.png",
+            "alt": "관우의 출전 요청을 조조 측에 먼저 전한다"
+          }
+        },
+        {
+          "id": "c",
+          "title": "출격선에서 물러나 부상자 수레를 지킨다",
+          "description": "술 식기 전 장면을 보겠다고 내가 술안주가 될 필요는 없다.",
+          "success": {
+            "text": "나는 출격선 뒤의 부상자 수레에 남았다. 유섭과 반봉이 돌아오지 못하자 관우가 나서겠다는 말이 퍼졌다.",
+            "hint": "직접 일기토 회피",
+            "effects": []
+          },
+          "artwork": {
+            "src": "/art/choices/travel-wagons.png",
+            "alt": "출격선에서 물러나 부상자 수레를 지킨다"
+          }
+        }
+      ],
+      "region": "sishui",
+      "year": 190,
+      "dateNote": "제5회 전개 순서. 190년 전후, 월 미상. 연의의 전투 배치이며 선택·대체 결과는 게임 창작.",
+      "precision": "approximate",
+      "factions": [
+        "han",
+        "dong-zhuo",
+        "cao-cao",
+        "liu-bei",
+        "sun-jian",
+        "yuan-shao",
+        "yuan-shu"
+      ],
+      "people": [
+        "화웅",
+        "유섭",
+        "반봉",
+        "관우",
+        "원술",
+        "조조"
+      ],
+      "officers": [
+        "rtk14-0032",
+        "rtk14-0144",
+        "rtk14-0147",
+        "rtk14-0521",
+        "rtk14-0785",
+        "rtk14-0853"
+      ],
+      "artwork": {
+        "src": "/art/scenes/r005-challenge.png",
+        "alt": "사수관 앞 말 탄 화웅을 보며 호위에게 창을 빌리는 주인공"
+      },
+      "requiredAlive": [
+        "rtk14-0144"
+      ],
+      "outcomes": [
+        {
+          "text": "화웅은 살아서 포로가 됐고 유섭과 반봉의 출격은 취소됐다. 관우가 화웅을 베어야 할 결투 자체가 열리지 않았다.",
+          "effects": [],
+          "condition": {
+            "field": "world.flags.huaCaptured",
+            "operator": "eq",
+            "value": true
+          }
+        },
+        {
+          "text": "화웅은 먼저 철수해 관문 안으로 돌아갔다. 유섭과 반봉의 차례도 열리지 않았고 관우와의 결투는 성립하지 않았다.",
+          "effects": [],
+          "condition": {
+            "field": "world.flags.huaWithdrawn",
+            "operator": "eq",
+            "value": true
+          }
+        },
+        {
+          "text": "관우의 출전 논의가 앞당겨져 유섭과 반봉의 단독 도전은 보류됐다. 제후들은 낮은 신분의 관우에게 기회를 줄지를 다퉜다.",
+          "effects": [],
+          "condition": {
+            "field": "world.flags.guanEarly",
+            "operator": "eq",
+            "value": true
+          }
+        },
+        {
+          "text": "유섭과 반봉은 차례로 화웅에게 죽었다. 출전자가 사라지자 관우가 싸우겠다고 나섰고 원술은 그의 낮은 신분을 문제 삼았다.",
+          "effects": [
+            {
+              "type": "person",
+              "personId": "rtk14-0853",
+              "value": "dead"
+            },
+            {
+              "type": "person",
+              "personId": "rtk14-0785",
+              "value": "dead"
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "key": "dong",
+          "condition": {
+            "field": "factionId",
+            "operator": "eq",
+            "value": "dong-zhuo"
+          },
+          "text": "관문 밖으로 나간 화웅이 잇달아 도전을 받아들인다는 보고가 왔다. 연합군에는 아직 칼을 뽑지 않은 관우가 있었다. 나는 화웅이 누구와 마주칠지 알지만 동탁군 명부에 든 채 적진의 승리를 응원할 수는 없었다. 도전을 접게 할까, 연락만 마치고 돌아갈까?",
+          "choices": [
+            {
+              "id": "a",
+              "title": "관우의 출전 가능성을 알려 화웅의 철수를 청한다",
+              "description": "앞선 승리에 취하기 전에 멈추게 하자. 겁을 먹었다며 무시당할 수 있다.",
+              "check": {
+                "kind": "strategy",
+                "weights": {
+                  "intelligence": 0.45,
+                  "charisma": 0.4,
+                  "politics": 0.15
+                },
+                "difficulty": 73,
+                "fameReward": 20,
+                "fameReason": "승세에 취한 화웅을 철수시켜 참수 저지"
+              },
+              "success": {
+                "text": "나는 화웅 측 전령에게 새 도전자가 나서기 전에 병력을 추스르자고 전했다. 관문의 재확인 명령이 내려가 화웅은 결투를 멈추고 돌아왔다.",
+                "hint": "화웅 철수·추가 결투 취소",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "huaWithdrawn",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 철수를 청했지만 화웅 측은 승세를 꺾을 수 없다며 거절했다. 전령은 다시 도전장을 들고 관문 밖으로 갔다.",
+                "hint": "철수 권고 거절",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/strategy.png",
+                "alt": "관우의 출전 가능성을 알려 화웅의 철수를 청한다"
+              }
+            },
+            {
+              "id": "b",
+              "title": "화웅 측 후방 연락관에게 귀환 지점을 확인한다",
+              "description": "동탁군 연락 임무를 이어도 결투 한가운데 설 이유는 없다.",
+              "check": {
+                "kind": "relationship",
+                "weights": {
+                  "charisma": 0.4,
+                  "intelligence": 0.35,
+                  "leadership": 0.25
+                },
+                "difficulty": 39,
+                "fameReward": 4,
+                "fameReason": "아군 후방 귀환 지점 확인"
+              },
+              "success": {
+                "text": "나는 후방 연락관에게 보고를 마치고 돌아갈 지점을 확인했다. 그는 관문 안 보급소를 알려 줬고 나는 소속을 유지한 채 물러났다.",
+                "hint": "동탁군 연락 유지",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "dongDuelReport",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 연락관을 놓쳐 문밖에서 오래 기다렸다. 추가 도전 소식을 들은 뒤에야 후방으로 돌아갔다.",
+                "hint": "보고 지연",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/official.png",
+                "alt": "화웅 측 후방 연락관에게 귀환 지점을 확인한다"
+              }
+            },
+            {
+              "id": "c",
+              "title": "관문 안쪽에서 전령의 복귀를 기다린다",
+              "description": "저 칼을 구경할 안전거리는 생각보다 멀다.",
+              "success": {
+                "text": "나는 관문 안 보급소로 물러나 전령을 기다렸다. 바깥의 결투는 돌아온 병사들의 보고로 확인했다.",
+                "hint": "동탁군 소속으로 직접 결투 회피",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "관문 안쪽에서 전령의 복귀를 기다린다"
+              }
+            }
+          ],
+          "artwork": {
+            "src": "/art/scenes/r005-dong-liaison.png",
+            "alt": "관문 안쪽 연락소에서 일반 연락관에게 전선 보고와 문서를 확인받는 주인공"
+          }
+        }
+      ]
+    },
+    {
+      "title": "그 술잔의 결말은 아직 모른다",
+      "fact": "조조는 신분으로 관우의 출전을 막지 말자고 설득하고 데운 술을 권했다. 관우는 돌아와 마시겠다며 나가 화웅을 베고 술이 식기 전에 돌아왔다.",
+      "background": "사수관의 교전 보고가 양쪽 연락소에 모였다. 관우의 출전 여부와 화웅의 신변을 두고 전달자들이 움직였다.",
+      "entry": null,
+      "scene": "관우가 술은 돌아와서 마시겠다고 했다. 내가 아는 장면이 눈앞에 와도 칼끝의 결과를 선택 전에 확정할 수는 없었다. 화웅을 살아서 붙잡으면 전선 정보와 이후의 반응도 달라질 것이다. 원작의 명장면을 지킬까, 목 하나의 용도를 바꿀까?",
+      "choices": [
+        {
+          "id": "a",
+          "title": "교전 전에 화웅 생포와 항복 전달을 제안한다",
+          "description": "목보다 연락 체계가 쓸모 있을 수 있다. 거짓 항복을 받으면 역습을 맞는다.",
+          "check": {
+            "kind": "strategy",
+            "weights": {
+              "intelligence": 0.45,
+              "charisma": 0.4,
+              "politics": 0.15
+            },
+            "difficulty": 78,
+            "fameReward": 22,
+            "fameReason": "참수 대신 항복·생포를 성사"
+          },
+          "success": {
+            "text": "나는 교전 전령에게 생포와 항복 조건을 전달하자고 청했다. 퇴로가 막힌 화웅이 조건을 받아 무기를 내려놓아 관우의 참수 대신 포로 인계가 이뤄졌다.",
+            "hint": "화웅 생존·항복·참수 취소",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "huaCaptured",
+                "value": true
+              }
+            ]
+          },
+          "failure": {
+            "text": "나는 항복 조건을 전하려 했지만 화웅은 도전만 되풀이했다. 관우가 나선 뒤 화웅을 베었다는 보고가 돌아왔다.",
+            "hint": "항복 제안 거절·관우의 참수",
+            "effects": []
+          },
+          "artwork": {
+            "src": "/art/choices/strategy.png",
+            "alt": "교전 전에 화웅 생포와 항복 전달을 제안한다"
+          }
+        },
+        {
+          "id": "b",
+          "title": "조조 측 연락관에게 관우의 출전 경과를 전한다",
+          "description": "이름을 아는 팬보다 확인한 일을 전하는 사람이 쓸모 있다.",
+          "check": {
+            "kind": "relationship",
+            "weights": {
+              "charisma": 0.4,
+              "intelligence": 0.35,
+              "leadership": 0.25
+            },
+            "difficulty": 42,
+            "fameReward": 4,
+            "fameReason": "조조 측에 출전 경과 전달"
+          },
+          "success": {
+            "text": "나는 관우의 출전 요청과 제후들의 반응을 조조 측 연락관에게 전했다. 연락관은 확인한 경과를 적고 이후 연락을 받을 장소를 알려 줬다.",
+            "hint": "조조 연락·관우 출전 경과 전달",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "metCaoContact",
+                "value": true
+              },
+              {
+                "type": "flag",
+                "key": "guanReport",
+                "value": true
+              }
+            ]
+          },
+          "failure": {
+            "text": "나는 경과를 전하려 했지만 연락관은 이미 전장으로 떠난 뒤였다. 술을 데우던 곳에서 떨어져 결과를 기다렸다.",
+            "hint": "연락 실패",
+            "effects": []
+          },
+          "artwork": {
+            "src": "/art/choices/official.png",
+            "alt": "조조 측 연락관에게 관우의 출전 경과를 전한다"
+          }
+        },
+        {
+          "id": "c",
+          "title": "술상과 출전선에서 떨어져 기다린다",
+          "description": "유명한 장면 가까이에 있다고 목숨에 보너스가 붙지는 않는다.",
+          "success": {
+            "text": "나는 술상 뒤로 물러나 전령이 올 때까지 기다렸다. 관우가 화웅을 베고 돌아왔다는 소식을 들었지만 직접 싸움에 끼지는 않았다.",
+            "hint": "결투 직접 참가 회피",
+            "effects": []
+          },
+          "artwork": {
+            "src": "/art/choices/travel-wagons.png",
+            "alt": "술상과 출전선에서 떨어져 기다린다"
+          }
+        }
+      ],
+      "region": "sishui",
+      "year": 190,
+      "dateNote": "제5회 전개 순서. 190년 전후, 월 미상. 연의의 전투 배치이며 선택·대체 결과는 게임 창작.",
+      "precision": "approximate",
+      "factions": [
+        "han",
+        "dong-zhuo",
+        "cao-cao",
+        "liu-bei",
+        "sun-jian",
+        "yuan-shao",
+        "yuan-shu"
+      ],
+      "people": [
+        "조조",
+        "관우",
+        "화웅",
+        "원술"
+      ],
+      "officers": [
+        "rtk14-0032",
+        "rtk14-0144",
+        "rtk14-0147",
+        "rtk14-0521"
+      ],
+      "artwork": {
+        "src": "/art/choices/formation.png",
+        "alt": "관문 바깥의 병력 배치를 살피는 주인공"
+      },
+      "requiredAlive": [
+        "rtk14-0147"
+      ],
+      "variants": [
+        {
+          "key": "captured",
+          "condition": {
+            "field": "world.flags.huaCaptured",
+            "operator": "eq",
+            "value": true
+          },
+          "text": "화웅은 목이 아니라 살아 있는 포로로 넘어왔다. 술이 식기 전에 베고 돌아온다는 내가 아는 장면은 열리지 않았다. 포로 처우를 맡은 전령들이 양쪽 연락선을 오가고 있었다. 익숙한 명장면 대신 이 사람에게서 확인할 정보를 택할까?",
+          "choices": [
+            {
+              "id": "a",
+              "title": "포로의 지휘 연락을 검증한 뒤 처우를 정하자고 한다",
+              "description": "무조건 믿지도 바로 죽이지도 말자. 틀린 정보라면 유인책에 걸릴 수 있다.",
+              "check": {
+                "kind": "strategy",
+                "weights": {
+                  "intelligence": 0.6,
+                  "politics": 0.3,
+                  "charisma": 0.1
+                },
+                "difficulty": 60,
+                "fameReward": 8,
+                "fameReason": "포로 처형 대신 검증된 전선 정보 확보"
+              },
+              "success": {
+                "text": "나는 포로 교섭을 맡은 전령에게 화웅의 연락 방식을 다른 보고와 대조하자고 제안했다. 일부 내용이 확인돼 성급한 처형 대신 구금과 정보 확인이 이어졌다.",
+                "hint": "화웅 생존·교차 확인한 전선 정보",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "huaIntel",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 검증을 제안했지만 상대 전령이 신뢰할 수 없다며 교섭을 끊었다. 포로는 구금된 채 남았고 새 정보는 얻지 못했다.",
+                "hint": "정보 확보 실패·포로 구금 유지",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/strategy.png",
+                "alt": "포로의 지휘 연락을 검증한 뒤 처우를 정하자고 한다"
+              }
+            },
+            {
+              "id": "b",
+              "title": "현재 연락선에 생포 경과를 정확히 전한다",
+              "description": "관우가 베었다는 익숙한 결말을 덧붙이면 내가 거짓 전령이 된다.",
+              "check": {
+                "kind": "relationship",
+                "weights": {
+                  "charisma": 0.4,
+                  "intelligence": 0.35,
+                  "leadership": 0.25
+                },
+                "difficulty": 38,
+                "fameReward": 4,
+                "fameReason": "이미 생포한 경과 보고"
+              },
+              "success": {
+                "text": "나는 화웅이 살아서 붙잡혔고 결투가 취소됐다는 경과만 전달했다. 연락관이 사망 보고를 고쳐 적고 내 증언을 접수했다.",
+                "hint": "생포 경과 보고·현재 소속 유지",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "huaReport",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 보고하려 했지만 포로 교섭 중에는 외부 증언을 받지 않겠다는 답을 들었다. 확인한 사실만 기억하고 물러났다.",
+                "hint": "보고 접수 거절",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/official.png",
+                "alt": "현재 연락선에 생포 경과를 정확히 전한다"
+              }
+            },
+            {
+              "id": "c",
+              "title": "포로 교섭에서 떨어져 돌아갈 수레를 찾는다",
+              "description": "잡았다는 소식과 안전한 교섭장은 다른 문제다.",
+              "success": {
+                "text": "나는 포로를 넘기는 길목에서 벗어나 수레 옆에 머물렀다. 누가 처우를 정할지는 교섭 담당자들에게 맡겼다.",
+                "hint": "포로 교섭 직접 개입 회피",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "포로 교섭에서 떨어져 돌아갈 수레를 찾는다"
+              }
+            }
+          ],
+          "artwork": {
+            "src": "/art/choices/official.png",
+            "alt": "화웅의 생포 경과와 처우를 전령에게 확인하는 주인공"
+          }
+        },
+        {
+          "key": "withdrawn",
+          "condition": {
+            "field": "world.flags.huaWithdrawn",
+            "operator": "eq",
+            "value": true
+          },
+          "text": "화웅은 관문 안으로 철수했고 관우와의 결투는 열리지 않았다. 베었다는 목도 식지 않은 술잔의 전설도 이번에는 생기지 않았다. 돌아오는 전령들 사이에 서로 다른 승전 소문이 돌기 시작했다. 실제로 확인한 퇴각을 기록할까?",
+          "choices": [
+            {
+              "id": "a",
+              "title": "화웅의 퇴각 경위를 과장 없이 대조하자고 한다",
+              "description": "죽지도 않은 사람의 목이 공적 장부에 오르면 다음 판단도 틀어진다.",
+              "check": {
+                "kind": "politics",
+                "weights": {
+                  "politics": 0.55,
+                  "intelligence": 0.35,
+                  "charisma": 0.1
+                },
+                "difficulty": 56,
+                "fameReward": 6,
+                "fameReason": "철수를 전사로 왜곡하지 않고 대조"
+              },
+              "success": {
+                "text": "나는 양쪽 전령의 보고를 대조해 화웅이 살아서 철수했다는 경과를 남겼다. 확인한 연락관은 전사나 대승이라는 과장된 보고를 보류했다.",
+                "hint": "화웅 생존·퇴각 보고 확인",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "huaIntel",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 대조를 청했지만 전령들이 서로의 보고를 내놓지 않았다. 새 전과를 단정하지 않고 물러났다.",
+                "hint": "보고 대조 실패",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/strategy.png",
+                "alt": "화웅의 퇴각 경위를 과장 없이 대조하자고 한다"
+              }
+            },
+            {
+              "id": "b",
+              "title": "현재 연락선에 화웅의 철수를 전한다",
+              "description": "생포와 철수는 전혀 다른 결과다. 내가 확인한 말을 그대로 전하자.",
+              "check": {
+                "kind": "relationship",
+                "weights": {
+                  "charisma": 0.4,
+                  "intelligence": 0.35,
+                  "leadership": 0.25
+                },
+                "difficulty": 37,
+                "fameReward": 4,
+                "fameReason": "철수 경과 보고"
+              },
+              "success": {
+                "text": "나는 화웅이 살아서 관문 안으로 철수했다는 경과를 연락관에게 전했다. 연락관은 전사 보고를 고치고 내 증언을 접수했다.",
+                "hint": "화웅 철수 경과 보고·현재 소속 유지",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "huaReport",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 철수 경과를 전하려 했지만 담당자를 만나지 못했다. 새 전과를 단정하지 않고 기존 연락소로 물러났다.",
+                "hint": "철수 보고 접수 실패",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/official.png",
+                "alt": "화웅의 철수를 담당자에게 보고하는 주인공"
+              }
+            },
+            {
+              "id": "c",
+              "title": "포로 교섭에서 떨어져 돌아갈 수레를 찾는다",
+              "description": "잡았다는 소식과 안전한 교섭장은 다른 문제다.",
+              "success": {
+                "text": "나는 포로를 넘기는 길목에서 벗어나 수레 옆에 머물렀다. 누가 처우를 정할지는 교섭 담당자들에게 맡겼다.",
+                "hint": "포로 교섭 직접 개입 회피",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "포로 교섭에서 떨어져 돌아갈 수레를 찾는다"
+              }
+            }
+          ],
+          "artwork": {
+            "src": "/art/choices/official.png",
+            "alt": "관문의 퇴각 보고를 대조하려는 주인공"
+          }
+        },
+        {
+          "key": "dong",
+          "condition": {
+            "field": "factionId",
+            "operator": "eq",
+            "value": "dong-zhuo"
+          },
+          "text": "관문 연락소에 관우가 출전한다는 보고가 들어왔다. 화웅의 앞선 승리에 취한 전령들은 새 도전도 같은 싸움이라고 말했다. 내가 아는 다음 장면을 바꾸려면 아직 닿을 수 있는 후퇴 연락부터 보내야 했다. 그를 부를 마지막 신호를 건넬까?",
+          "choices": [
+            {
+              "id": "a",
+              "title": "포로 교섭 전령을 통해 항복 조건을 전달한다",
+              "description": "거짓 항복으로 보이지 않게 무기를 내릴 절차까지 확인시키자. 군영의 체면을 건드릴 위험이 있다.",
+              "check": {
+                "kind": "strategy",
+                "weights": {
+                  "intelligence": 0.45,
+                  "charisma": 0.4,
+                  "politics": 0.15
+                },
+                "difficulty": 80,
+                "fameReward": 22,
+                "fameReason": "아군 장수의 항복·포로 인계를 통한 생존"
+              },
+              "success": {
+                "text": "나는 교섭 전령에게 무기를 내려놓을 조건과 포로 인계 절차를 전했다. 퇴로가 막힌 화웅이 조건을 받아들여 목숨을 건졌으나 연합군의 포로가 됐다.",
+                "hint": "화웅 생존·포로 인계",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "huaCaptured",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 교섭을 청했지만 화웅은 도전을 철회하지 않았다. 관우가 그를 베었다는 보고가 관문 안으로 들어왔다.",
+                "hint": "교섭 거절·화웅 전사",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/strategy.png",
+                "alt": "포로 교섭 전령을 통해 항복 조건을 전달한다"
+              }
+            },
+            {
+              "id": "b",
+              "title": "동탁군 연락관에게 교전 보고를 맡긴다",
+              "description": "내가 보지 못한 승리를 써넣지 말자. 확인한 소식만 남기면 된다.",
+              "check": {
+                "kind": "relationship",
+                "weights": {
+                  "charisma": 0.4,
+                  "intelligence": 0.35,
+                  "leadership": 0.25
+                },
+                "difficulty": 40,
+                "fameReward": 4,
+                "fameReason": "아군 연락관에 교전 보고"
+              },
+              "success": {
+                "text": "나는 교전이 시작됐다는 경과를 동탁군 연락관에게 전했다. 그는 결과를 따로 확인하겠다며 나를 후방 연락 지점으로 돌려보냈다.",
+                "hint": "동탁군 소속 유지·후방 연락",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "dongHuaReport",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 연락관을 찾지 못해 보고가 늦어졌다. 화웅의 전사 소식이 먼저 도착한 뒤에야 보급소로 물러났다.",
+                "hint": "보고 지연",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/official.png",
+                "alt": "동탁군 연락관에게 교전 보고를 맡긴다"
+              }
+            },
+            {
+              "id": "c",
+              "title": "관문 내벽의 안전한 숙영지로 물러난다",
+              "description": "적장의 술잔을 보러 나갔다가 내 목이 먼저 걸릴 수도 있다.",
+              "success": {
+                "text": "나는 관문 내벽 쪽 숙영지로 돌아갔다. 관우가 화웅을 베었다는 소식은 돌아온 전령이 전했다.",
+                "hint": "관문 후방 대기",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "관문 내벽의 안전한 숙영지로 물러난다"
+              }
+            }
+          ],
+          "artwork": {
+            "src": "/art/scenes/r005-dong-liaison.png",
+            "alt": "관문 안쪽 연락소에서 일반 연락관에게 전선 보고와 문서를 확인받는 주인공"
+          }
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "화웅은 살아서 포로가 됐다. 관우가 화웅을 참수한 전과는 이 전투에서 생기지 않았고 양쪽은 포로 처우를 논의했다.",
+          "effects": [],
+          "condition": {
+            "field": "world.flags.huaCaptured",
+            "operator": "eq",
+            "value": true
+          }
+        },
+        {
+          "text": "화웅은 관문 안으로 철수해 살아남았다. 관우와의 결투는 취소됐으며 사수관을 둘러싼 대치는 이어졌다.",
+          "effects": [],
+          "condition": {
+            "field": "world.flags.huaWithdrawn",
+            "operator": "eq",
+            "value": true
+          }
+        },
+        {
+          "text": "관우는 출전해 화웅을 베고 돌아왔다. 조조가 준비한 술이 식기 전이었다는 말이 퍼지며 관우의 무용이 제후들 앞에 알려졌다.",
+          "effects": [
+            {
+              "type": "person",
+              "personId": "rtk14-0144",
+              "value": "dead"
+            },
+            {
+              "type": "flag",
+              "key": "guanSlaysHua",
+              "value": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "공적 회의 다음은 보복 명단",
+      "fact": "원술은 장비와 형제들의 낮은 신분을 모욕했고 유비는 충돌을 피해 물러났다. 화웅의 패전 뒤 동탁은 원씨 일족을 죽이고 여포를 앞세워 호뢰관으로 나왔다.",
+      "background": "연합군에서는 공적과 신분을 둘러싼 갈등이 커졌다. 동탁은 사수관 방면의 패전을 보고받고 호뢰관 출병과 낙양 원씨 일족의 처분을 준비했다.",
+      "entry": "나는 관문을 오가는 전령들의 길을 따라 호뢰관 방면 연락소로 옮겼다. 낙양으로 되돌아가는 처분 명부와 앞으로 나아가는 군령이 같은 역참을 거쳤다.",
+      "scene": "밖에서는 영웅들의 신분을 따지고 안에서는 그 친족을 잡겠다는 문서가 돌았다. 원소에게 보복하려 원씨 일족을 죽이는 순서도 나는 알고 있었다. 하지만 이미 피신한 사람과 아직 수도에 남은 사람부터 구분해야 했다. 전장으로 향하는 길에서 뒤쪽의 목숨을 챙길 수 있을까?",
+      "choices": [
+        {
+          "id": "a",
+          "title": "원씨 잔류 일족에게 체포 전 피신 경고를 보낸다",
+          "description": "미래의 학살을 외치기보다 처분 명부가 돌아간다는 사실을 전하자. 발신자가 드러나면 공범이다.",
+          "check": {
+            "kind": "strategy",
+            "weights": {
+              "intelligence": 0.7,
+              "politics": 0.2,
+              "charisma": 0.1
+            },
+            "difficulty": 79,
+            "fameReward": 24,
+            "fameReason": "보복 명단보다 먼저 경고해 잔류 일족을 구출"
+          },
+          "success": {
+            "text": "나는 낙양으로 가는 연락책에게 아직 남은 원씨 일족에게 처분 명부의 이동을 알리라고 청했다. 경고가 먼저 닿아 잔류 가족들이 체포를 피해 흩어졌다.",
+            "hint": "원씨 잔류 일족 피신",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "yuanEvacuated",
+                "value": true
+              }
+            ]
+          },
+          "failure": {
+            "text": "나는 피신 경고를 맡길 사람을 찾았지만 처분 명령이 먼저 도착했다. 뒤늦게 남아 있던 원씨 일족이 죽었다는 소식을 들었다.",
+            "hint": "경고 지연·잔류 일족 피살",
+            "effects": []
+          },
+          "artwork": {
+            "src": "/art/choices/strategy.png",
+            "alt": "원씨 잔류 일족에게 체포 전 피신 경고를 보낸다"
+          }
+        },
+        {
+          "id": "b",
+          "title": "현재 연락선에 공적 다툼과 출병 소식을 나눠 전한다",
+          "description": "내 편의 자존심과 확인한 전황을 섞으면 보고가 망가진다.",
+          "check": {
+            "kind": "relationship",
+            "weights": {
+              "charisma": 0.4,
+              "intelligence": 0.35,
+              "leadership": 0.25
+            },
+            "difficulty": 46,
+            "fameReward": 5,
+            "fameReason": "출병 사실과 공적 다툼을 구분해 보고"
+          },
+          "success": {
+            "text": "나는 연락관에게 제후들의 다툼과 동탁의 출병을 따로 적어 전했다. 연락관은 사실을 대조하고 호뢰관 쪽 교신 지점을 알려 줬다.",
+            "hint": "기존 소속 유지·호뢰관 교신",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "hulaoContact",
+                "value": true
+              }
+            ]
+          },
+          "failure": {
+            "text": "나는 교신 지점을 청했지만 검문 때문에 전달자를 만나지 못했다. 내 소속의 기존 연락소로 돌아갔다.",
+            "hint": "교신 지연",
+            "effects": []
+          },
+          "artwork": {
+            "src": "/art/choices/official.png",
+            "alt": "현재 연락선에 공적 다툼과 출병 소식을 나눠 전한다"
+          }
+        },
+        {
+          "id": "c",
+          "title": "처분 명부를 건드리지 않고 수레길을 비킨다",
+          "description": "전선도 위험하지만 보복 명단의 발신자를 찾는 사람도 위험하다.",
+          "success": {
+            "text": "나는 처분 명령을 실은 전령과 거리를 뒀다. 낙양에 남은 원씨 일족의 죽음과 호뢰관 출병 소식을 뒤에 들었다.",
+            "hint": "체포 명부 직접 개입 회피",
+            "effects": []
+          },
+          "artwork": {
+            "src": "/art/choices/travel-wagons.png",
+            "alt": "처분 명부를 건드리지 않고 수레길을 비킨다"
+          }
+        }
+      ],
+      "region": "hulao",
+      "year": 190,
+      "dateNote": "제5회 전개 순서. 190년 전후, 월 미상. 연의의 전투 배치이며 선택·대체 결과는 게임 창작.",
+      "precision": "approximate",
+      "factions": [
+        "han",
+        "dong-zhuo",
+        "cao-cao",
+        "liu-bei",
+        "sun-jian",
+        "yuan-shao",
+        "yuan-shu"
+      ],
+      "people": [
+        "장비",
+        "관우",
+        "유비",
+        "원술",
+        "조조",
+        "동탁",
+        "원소",
+        "여포"
+      ],
+      "officers": [
+        "rtk14-0032",
+        "rtk14-0035",
+        "rtk14-0147",
+        "rtk14-0521",
+        "rtk14-0656",
+        "rtk14-0736",
+        "rtk14-0952",
+        "rtk14-0987"
+      ],
+      "artwork": {
+        "src": "/art/choices/formation.png",
+        "alt": "관문 바깥의 병력 배치를 살피는 주인공"
+      },
+      "variants": [
+        {
+          "key": "dong",
+          "condition": {
+            "field": "factionId",
+            "operator": "eq",
+            "value": "dong-zhuo"
+          },
+          "text": "동탁군 연락소에 호뢰관 집결 명령이 내려왔고 낙양으로는 원씨 일족 체포 명부가 돌아갔다. 전장에서 싸우는 사람 대신 가족을 잡는 순서를 나는 알고 있었다. 나는 동탁군의 문서를 볼 수 있었지만 그 문서를 밖으로 흘린 흔적도 남길 수 있었다. 보복을 막을 경고를 보낼까?",
+          "choices": [
+            {
+              "id": "a",
+              "title": "원씨 잔류 일족에게 체포 전 피신 경고를 보낸다",
+              "description": "미래의 학살을 외치기보다 처분 명부가 돌아간다는 사실을 전하자. 발신자가 드러나면 공범이다.",
+              "check": {
+                "kind": "strategy",
+                "weights": {
+                  "intelligence": 0.7,
+                  "politics": 0.2,
+                  "charisma": 0.1
+                },
+                "difficulty": 79,
+                "fameReward": 24,
+                "fameReason": "보복 명단보다 먼저 경고해 잔류 일족을 구출"
+              },
+              "success": {
+                "text": "나는 낙양으로 가는 연락책에게 아직 남은 원씨 일족에게 처분 명부의 이동을 알리라고 청했다. 경고가 먼저 닿아 잔류 가족들이 체포를 피해 흩어졌다.",
+                "hint": "원씨 잔류 일족 피신",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "yuanEvacuated",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 피신 경고를 맡길 사람을 찾았지만 처분 명령이 먼저 도착했다. 뒤늦게 남아 있던 원씨 일족이 죽었다는 소식을 들었다.",
+                "hint": "경고 지연·잔류 일족 피살",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/strategy.png",
+                "alt": "원씨 잔류 일족에게 체포 전 피신 경고를 보낸다"
+              }
+            },
+            {
+              "id": "b",
+              "title": "현재 연락선에 공적 다툼과 출병 소식을 나눠 전한다",
+              "description": "내 편의 자존심과 확인한 전황을 섞으면 보고가 망가진다.",
+              "check": {
+                "kind": "relationship",
+                "weights": {
+                  "charisma": 0.4,
+                  "intelligence": 0.35,
+                  "leadership": 0.25
+                },
+                "difficulty": 46,
+                "fameReward": 5,
+                "fameReason": "출병 사실과 공적 다툼을 구분해 보고"
+              },
+              "success": {
+                "text": "나는 연락관에게 제후들의 다툼과 동탁의 출병을 따로 적어 전했다. 연락관은 사실을 대조하고 호뢰관 쪽 교신 지점을 알려 줬다.",
+                "hint": "기존 소속 유지·호뢰관 교신",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "hulaoContact",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 교신 지점을 청했지만 검문 때문에 전달자를 만나지 못했다. 내 소속의 기존 연락소로 돌아갔다.",
+                "hint": "교신 지연",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/official.png",
+                "alt": "현재 연락선에 공적 다툼과 출병 소식을 나눠 전한다"
+              }
+            },
+            {
+              "id": "c",
+              "title": "처분 명부를 건드리지 않고 수레길을 비킨다",
+              "description": "전선도 위험하지만 보복 명단의 발신자를 찾는 사람도 위험하다.",
+              "success": {
+                "text": "나는 처분 명령을 실은 전령과 거리를 뒀다. 낙양에 남은 원씨 일족의 죽음과 호뢰관 출병 소식을 뒤에 들었다.",
+                "hint": "체포 명부 직접 개입 회피",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "처분 명부를 건드리지 않고 수레길을 비킨다"
+              }
+            }
+          ],
+          "artwork": {
+            "src": "/art/scenes/r005-dong-liaison.png",
+            "alt": "관문 안쪽 연락소에서 일반 연락관에게 전선 보고와 문서를 확인받는 주인공"
+          }
+        },
+        {
+          "key": "family-ready",
+          "condition": {
+            "field": "world.flags.yuanFamilyReady",
+            "operator": "eq",
+            "value": true
+          },
+          "text": "수도 탈출 때 명부에서 분리해 둔 일부 일족은 이미 피신을 준비한 상태였다. 하지만 낙양에 남은 친족까지 안전해진 것은 아니었다. 호뢰관 출병 문서 뒤로 남은 사람들을 잡으라는 명령이 돌았다. 앞서 번 시간을 실제 피신으로 이어 갈까?",
+          "choices": [
+            {
+              "id": "a",
+              "title": "원씨 잔류 일족에게 체포 전 피신 경고를 보낸다",
+              "description": "미래의 학살을 외치기보다 처분 명부가 돌아간다는 사실을 전하자. 발신자가 드러나면 공범이다.",
+              "check": {
+                "kind": "strategy",
+                "weights": {
+                  "intelligence": 0.7,
+                  "politics": 0.2,
+                  "charisma": 0.1
+                },
+                "difficulty": 64,
+                "fameReward": 24,
+                "fameReason": "사전 피신 준비를 활용해 잔류 가족까지 구출"
+              },
+              "success": {
+                "text": "나는 낙양으로 가는 연락책에게 아직 남은 원씨 일족에게 처분 명부의 이동을 알리라고 청했다. 경고가 먼저 닿아 잔류 가족들이 체포를 피해 흩어졌다.",
+                "hint": "원씨 잔류 일족 피신",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "yuanEvacuated",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 피신 경고를 맡길 사람을 찾았지만 처분 명령이 먼저 도착했다. 뒤늦게 남아 있던 원씨 일족이 죽었다는 소식을 들었다.",
+                "hint": "경고 지연·잔류 일족 피살",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/strategy.png",
+                "alt": "원씨 잔류 일족에게 체포 전 피신 경고를 보낸다"
+              }
+            },
+            {
+              "id": "b",
+              "title": "현재 연락선에 공적 다툼과 출병 소식을 나눠 전한다",
+              "description": "내 편의 자존심과 확인한 전황을 섞으면 보고가 망가진다.",
+              "check": {
+                "kind": "relationship",
+                "weights": {
+                  "charisma": 0.4,
+                  "intelligence": 0.35,
+                  "leadership": 0.25
+                },
+                "difficulty": 46,
+                "fameReward": 5,
+                "fameReason": "출병 사실과 공적 다툼을 구분해 보고"
+              },
+              "success": {
+                "text": "나는 연락관에게 제후들의 다툼과 동탁의 출병을 따로 적어 전했다. 연락관은 사실을 대조하고 호뢰관 쪽 교신 지점을 알려 줬다.",
+                "hint": "기존 소속 유지·호뢰관 교신",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "hulaoContact",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 교신 지점을 청했지만 검문 때문에 전달자를 만나지 못했다. 내 소속의 기존 연락소로 돌아갔다.",
+                "hint": "교신 지연",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/official.png",
+                "alt": "현재 연락선에 공적 다툼과 출병 소식을 나눠 전한다"
+              }
+            },
+            {
+              "id": "c",
+              "title": "처분 명부를 건드리지 않고 수레길을 비킨다",
+              "description": "전선도 위험하지만 보복 명단의 발신자를 찾는 사람도 위험하다.",
+              "success": {
+                "text": "나는 처분 명령을 실은 전령과 거리를 뒀다. 낙양에 남은 원씨 일족의 죽음과 호뢰관 출병 소식을 뒤에 들었다.",
+                "hint": "체포 명부 직접 개입 회피",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "처분 명부를 건드리지 않고 수레길을 비킨다"
+              }
+            }
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "경고를 받은 잔류 일족이 낙양을 빠져나가 동탁의 보복 처분을 피했다. 동탁은 여포와 병력을 앞세워 호뢰관으로 나왔고 황제를 확보하려는 연합군과 대치했다.",
+          "effects": [],
+          "condition": {
+            "field": "world.flags.yuanEvacuated",
+            "operator": "eq",
+            "value": true
+          }
+        },
+        {
+          "text": "수도 탈출 때 피신을 준비한 일부 원씨 일족은 살아남았다. 그러나 남은 친족은 동탁의 보복으로 죽었고 동탁은 호뢰관으로 병력을 움직였다.",
+          "effects": [
+            {
+              "type": "flag",
+              "key": "yuanFamilyPartlyKilled",
+              "value": true
+            }
+          ],
+          "condition": {
+            "field": "world.flags.yuanFamilyReady",
+            "operator": "eq",
+            "value": true
+          }
+        },
+        {
+          "text": "동탁은 낙양에 남은 원씨 일족을 죽여 원소에게 보복했다. 이어 여포를 앞세워 호뢰관에서 연합군을 막으려 했다.",
+          "effects": [
+            {
+              "type": "flag",
+              "key": "yuanFamilyKilled",
+              "value": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "공손찬 뒤의 적토마가 너무 빠르다",
+      "fact": "여포는 방열과 목순을 죽이고 무안국을 다치게 했다. 공손찬도 패주했고 적토마를 탄 여포의 추격으로 위험에 몰렸다.",
+      "background": "호뢰관 앞에서 여포가 방열과 목순을 죽이고 무안국을 다치게 했다. 공손찬도 그와 맞서기 위해 앞으로 나왔다.",
+      "entry": null,
+      "scene": "여포를 한 명씩 상대하겠다는 결정이 또 반복됐다. 방열과 목순의 전사 보고 뒤에 공손찬의 백마가 앞으로 나가는 게 보였다. 적토마에게 추격당하면 속도 차이부터가 생존 조건이다. 맞싸움을 부추기는 대신 돌아올 길을 먼저 만들까?",
+      "choices": [
+        {
+          "id": "a",
+          "title": "공손찬 측에 예비 말을 둔 철수 길을 알린다",
+          "description": "적토마를 이기라는 말 대신 추격을 끊을 길을 제시하자. 길을 전하다 여포에게 노출될 수 있다.",
+          "check": {
+            "kind": "strategy",
+            "weights": {
+              "leadership": 0.5,
+              "intelligence": 0.3,
+              "charisma": 0.2
+            },
+            "difficulty": 72,
+            "fameReward": 18,
+            "fameReason": "예비 말과 퇴로로 공손찬을 미리 구출"
+          },
+          "success": {
+            "text": "나는 공손찬 측 전령에게 예비 말과 엄폐물이 있는 철수 길을 전했다. 공손찬이 밀리자 미리 대기한 호위가 그 길로 맞아들여 여포의 추격을 끊었다.",
+            "hint": "공손찬 조기 구출",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "gongsunEarlySaved",
+                "value": true
+              }
+            ]
+          },
+          "failure": {
+            "text": "나는 철수 길을 전하려 했지만 전령이 전장 소리에 묻혔다. 공손찬이 여포에게 쫓기기 시작하자 나는 말길에서 물러났다.",
+            "hint": "철수 연락 실패·추격 위기",
+            "effects": []
+          },
+          "artwork": {
+            "src": "/art/choices/strategy.png",
+            "alt": "공손찬 측에 예비 말을 둔 철수 길을 알린다"
+          }
+        },
+        {
+          "id": "b",
+          "title": "공손찬 측 전령에게 원군 요청을 맡긴다",
+          "description": "이름난 장수라도 혼자 버티는 데는 한계가 있다. 원군을 부를 사람을 확보하자.",
+          "check": {
+            "kind": "relationship",
+            "weights": {
+              "charisma": 0.4,
+              "intelligence": 0.35,
+              "leadership": 0.25
+            },
+            "difficulty": 53,
+            "fameReward": 8,
+            "fameReason": "장비의 원군 연락을 앞당김"
+          },
+          "success": {
+            "text": "나는 공손찬 측 전령에게 원군을 요청해 달라고 청했다. 전령이 유비 형제 쪽으로 말을 달려 장비의 출전을 앞당겼다.",
+            "hint": "공손찬 측 접촉·원군 연락",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "gongsunAid",
+                "value": true
+              }
+            ]
+          },
+          "failure": {
+            "text": "나는 원군 연락을 청했지만 전령을 찾지 못했다. 앞선 병사들이 물러나자 후방으로 비켰다.",
+            "hint": "원군 연락 실패",
+            "effects": []
+          },
+          "artwork": {
+            "src": "/art/choices/official.png",
+            "alt": "공손찬 측 전령에게 원군 요청을 맡긴다"
+          }
+        },
+        {
+          "id": "c",
+          "title": "기병이 달리는 길 밖으로 물러난다",
+          "description": "적토마의 스펙을 확인하러 바퀴 사이에 설 필요는 없다.",
+          "success": {
+            "text": "나는 기병들의 진로에서 벗어나 수레 뒤에 섰다. 공손찬이 추격당하자 원군이 움직이는 모습을 멀리서 봤다.",
+            "hint": "직접 기병전 회피",
+            "effects": []
+          },
+          "artwork": {
+            "src": "/art/choices/travel-wagons.png",
+            "alt": "기병이 달리는 길 밖으로 물러난다"
+          }
+        }
+      ],
+      "region": "hulao",
+      "year": 190,
+      "dateNote": "제5회 전개 순서. 190년 전후, 월 미상. 연의의 전투 배치이며 선택·대체 결과는 게임 창작.",
+      "precision": "approximate",
+      "factions": [
+        "han",
+        "dong-zhuo",
+        "cao-cao",
+        "liu-bei",
+        "sun-jian",
+        "yuan-shao",
+        "yuan-shu"
+      ],
+      "people": [
+        "여포",
+        "방열",
+        "목순",
+        "무안국",
+        "공손찬",
+        "장비"
+      ],
+      "officers": [
+        "rtk14-0266",
+        "rtk14-0656",
+        "rtk14-0798",
+        "rtk14-0818",
+        "rtk14-0835",
+        "rtk14-0987"
+      ],
+      "artwork": {
+        "src": "/art/choices/formation.png",
+        "alt": "관문 바깥의 병력 배치를 살피는 주인공"
+      },
+      "requiredAlive": [
+        "rtk14-0987",
+        "rtk14-0266"
+      ],
+      "backgroundEffects": [
+        {
+          "type": "person",
+          "personId": "rtk14-0818",
+          "value": "dead"
+        },
+        {
+          "type": "person",
+          "personId": "rtk14-0835",
+          "value": "dead"
+        },
+        {
+          "type": "flag",
+          "key": "wuAnguoWounded",
+          "value": true
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "공손찬은 준비된 철수 길에서 호위를 만나 추격을 벗어났다. 여포의 공세는 이어졌고 유비 형제도 그를 막기 위해 앞으로 나왔다.",
+          "effects": [],
+          "condition": {
+            "field": "world.flags.gongsunEarlySaved",
+            "operator": "eq",
+            "value": true
+          }
+        },
+        {
+          "text": "공손찬은 여포에게 밀려 달아났고 적토마의 추격으로 위험에 몰렸다. 장비가 그를 구하려고 급히 앞으로 나왔다.",
+          "effects": []
+        }
+      ],
+      "variants": [
+        {
+          "key": "dong",
+          "condition": {
+            "field": "factionId",
+            "operator": "eq",
+            "value": "dong-zhuo"
+          },
+          "text": "동탁군 쪽으로 여포의 연승 보고가 들어왔고 다음 상대가 공손찬이라는 말이 붙었다. 나는 관문 연락 지점에서 그가 물러날 길을 볼 수 있었다. 적장의 목숨을 살릴 정보를 흘리면 내 군영에서는 배신으로 볼 일이다. 군령에 남지 않을 경고를 보낼까?",
+          "choices": [
+            {
+              "id": "a",
+              "title": "전령 교섭 틈에 공손찬의 철수 길을 흘린다",
+              "description": "추격로 바깥 예비 말 위치를 알려 주자. 내 이름이 오가면 위험하다.",
+              "check": {
+                "kind": "strategy",
+                "weights": {
+                  "intelligence": 0.7,
+                  "politics": 0.2,
+                  "charisma": 0.1
+                },
+                "difficulty": 80,
+                "fameReward": 18,
+                "fameReason": "교섭 틈에 적장의 철수 길을 흘림"
+              },
+              "success": {
+                "text": "나는 교섭 전령에게 예비 말과 엄폐물이 있는 길을 흘렸다. 공손찬 측 호위가 그 길을 확보해 여포의 추격을 끊었고 나는 발신자를 남기지 않고 돌아왔다.",
+                "hint": "공손찬 조기 구출·발각 위험",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "gongsunEarlySaved",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 길을 전하려 했지만 교섭이 먼저 끝났다. 여포가 공손찬을 추격한다는 보고를 듣고 관문 뒤로 물러났다.",
+                "hint": "경고 실패·공손찬 추격 위기",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/strategy.png",
+                "alt": "전령 교섭 틈에 공손찬의 철수 길을 흘린다"
+              }
+            },
+            {
+              "id": "b",
+              "title": "여포 측 연락관에게 병력 복귀 지점을 묻는다",
+              "description": "연승을 구경하다 퇴로가 닫히는 일은 피하자.",
+              "check": {
+                "kind": "relationship",
+                "weights": {
+                  "charisma": 0.7,
+                  "intelligence": 0.15,
+                  "politics": 0.15
+                },
+                "difficulty": 40,
+                "fameReward": 4,
+                "fameReason": "여포 측 후방 복귀 지점 확인"
+              },
+              "success": {
+                "text": "나는 여포 측 연락관에게 전령이 돌아갈 관문을 확인했다. 연락관이 후방 복귀 지점을 알려 줘 나는 정식 소속을 유지한 채 보고를 마쳤다.",
+                "hint": "동탁군 연락·후방 복귀",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "luBuCampContact",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 복귀 지점을 확인하지 못해 후방 수레와 함께 돌아갔다. 추가 전황은 보급소에서 들었다.",
+                "hint": "연락 지연",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/official.png",
+                "alt": "여포 측 연락관에게 병력 복귀 지점을 묻는다"
+              }
+            },
+            {
+              "id": "c",
+              "title": "동탁군 관문 뒤로 물러난다",
+              "description": "무력 백의 추격전에 전령 하나가 보태질 필요는 없다.",
+              "success": {
+                "text": "나는 관문 뒤 수레로 돌아가 말길을 비웠다. 여포가 연합군 원군과 마주친다는 보고를 기다렸다.",
+                "hint": "동탁군 후방 대기",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "동탁군 관문 뒤로 물러난다"
+              }
+            }
+          ],
+          "artwork": {
+            "src": "/art/scenes/r005-dong-liaison.png",
+            "alt": "관문 안쪽 연락소에서 일반 연락관에게 전선 보고와 문서를 확인받는 주인공"
+          }
+        }
+      ]
+    },
+    {
+      "title": "셋이 싸우는데 빈틈은 한 군데다",
+      "fact": "장비가 공손찬을 구하고 여포와 맞섰다. 관우와 유비가 차례로 가세했으나 여포는 유비 쪽을 공격해 포위를 벗어났다.",
+      "background": "장비와 관우, 유비가 여포를 막기 위해 전장에 나섰다. 관문 바깥의 시선이 네 사람의 대치로 쏠렸다.",
+      "entry": null,
+      "scene": "공손찬을 쫓던 여포를 장비가 가로막자 관우와 유비도 앞으로 나왔다. 셋이 포위해도 여포는 유비 쪽을 뚫고 빠져나갈 것이다. 그 장면을 안다고 내가 네 번째 칼잡이가 될 필요는 없었다. 포위 바깥의 예비 병력에 한마디를 제때 전할 수 있을까?",
+      "choices": [
+        {
+          "id": "a",
+          "title": "유비 쪽 퇴로에 예비 병력을 두자고 전한다",
+          "description": "여포가 포위를 깨는 방향을 안다. 하지만 예측을 믿고 움직일 지휘관을 설득해야 한다.",
+          "check": {
+            "kind": "strategy",
+            "weights": {
+              "leadership": 0.45,
+              "intelligence": 0.35,
+              "charisma": 0.2
+            },
+            "difficulty": 82,
+            "fameReward": 30,
+            "fameReason": "세 형제와 예비 병력을 연결해 여포를 생포"
+          },
+          "success": {
+            "text": "나는 연합군 전령에게 유비 쪽 빈틈 바깥에 예비 병력을 두자고 전했다. 빠져나오던 여포가 그 병력에 막혀 세 형제와 호위들에게 포박됐다.",
+            "hint": "여포 생포·호뢰관 후퇴 경과 변경",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "luBuCaptured",
+                "value": true
+              }
+            ]
+          },
+          "failure": {
+            "text": "나는 퇴로를 막자고 전했지만 예비 병력이 움직이기 전에 여포가 틈을 뚫었다. 그의 말길을 피해 엄폐물 뒤로 물러났다.",
+            "hint": "예측 전달 지연·여포 탈출",
+            "effects": []
+          },
+          "artwork": {
+            "src": "/art/choices/strategy.png",
+            "alt": "유비 쪽 퇴로에 예비 병력을 두자고 전한다"
+          }
+        },
+        {
+          "id": "b",
+          "title": "유비 측 전령에게 후방 신호를 맞추자고 청한다",
+          "description": "세 형제의 싸움에 끼기보다 돌아올 길을 지키는 사람이 되자.",
+          "check": {
+            "kind": "relationship",
+            "weights": {
+              "charisma": 0.4,
+              "intelligence": 0.35,
+              "leadership": 0.25
+            },
+            "difficulty": 49,
+            "fameReward": 6,
+            "fameReason": "유비 측 후방 복귀 지원"
+          },
+          "success": {
+            "text": "나는 유비 측 전령에게 후방의 빈 수레길과 복귀 신호를 알려 줬다. 전령은 호위들에게 신호를 전해 형제들이 물러날 길을 확인했다.",
+            "hint": "유비 측 연락·후방 복귀 지원",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "liuBattleContact",
+                "value": true
+              }
+            ]
+          },
+          "failure": {
+            "text": "나는 전령에게 신호를 청했지만 싸움 소리에 묻혀 확인받지 못했다. 형제들의 진로를 가로막지 않고 뒤로 비켰다.",
+            "hint": "후방 신호 전달 실패",
+            "effects": []
+          },
+          "artwork": {
+            "src": "/art/choices/official.png",
+            "alt": "유비 측 전령에게 후방 신호를 맞추자고 청한다"
+          }
+        },
+        {
+          "id": "c",
+          "title": "병사들의 퇴각로를 비우고 지켜본다",
+          "description": "네 명의 무기 길이에 내 목숨을 대입하지 말자.",
+          "success": {
+            "text": "나는 기병과 보병이 돌아올 길에서 수레를 치웠다. 직접 칼을 맞대지 않고 전투가 끝날 때까지 엄폐물 곁에 남았다.",
+            "hint": "직접 협공 참가 회피",
+            "effects": []
+          },
+          "artwork": {
+            "src": "/art/choices/travel-wagons.png",
+            "alt": "병사들의 퇴각로를 비우고 지켜본다"
+          }
+        }
+      ],
+      "region": "hulao",
+      "year": 190,
+      "dateNote": "제5회 전개 순서. 190년 전후, 월 미상. 연의의 전투 배치이며 선택·대체 결과는 게임 창작.",
+      "precision": "approximate",
+      "factions": [
+        "han",
+        "dong-zhuo",
+        "cao-cao",
+        "liu-bei",
+        "sun-jian",
+        "yuan-shao",
+        "yuan-shu"
+      ],
+      "people": [
+        "유비",
+        "관우",
+        "장비",
+        "여포",
+        "공손찬"
+      ],
+      "officers": [
+        "rtk14-0147",
+        "rtk14-0266",
+        "rtk14-0656",
+        "rtk14-0952",
+        "rtk14-0987"
+      ],
+      "artwork": {
+        "src": "/art/scenes/r005-three-heroes.png",
+        "alt": "호뢰관 앞에서 말 탄 유비 관우 장비와 여포의 싸움을 후방에서 살피는 주인공"
+      },
+      "requiredAlive": [
+        "rtk14-0952",
+        "rtk14-0147",
+        "rtk14-0656",
+        "rtk14-0987"
+      ],
+      "variants": [
+        {
+          "key": "dong",
+          "condition": {
+            "field": "factionId",
+            "operator": "eq",
+            "value": "dong-zhuo"
+          },
+          "text": "관문 바깥에서 여포가 장비·관우·유비에게 둘러싸였다는 보고가 왔다. 한 명씩 상대하던 싸움과 달리 이번에는 돌아올 길까지 막힐 수 있었다. 나는 그가 유비 쪽으로 빠져나가려 할 것을 알고 있었다. 내 군영의 퇴각을 도울까, 그 정보를 반대편에 넘겨 여포를 묶을까?",
+          "choices": [
+            {
+              "id": "a",
+              "title": "교섭 전령에게 여포의 돌파 방향을 흘린다",
+              "description": "유비 쪽 바깥을 막으라는 말을 보내자. 발각되면 동탁군에서 설 곳이 없어진다.",
+              "check": {
+                "kind": "strategy",
+                "weights": {
+                  "intelligence": 0.7,
+                  "politics": 0.2,
+                  "charisma": 0.1
+                },
+                "difficulty": 87,
+                "fameReward": 30,
+                "fameReason": "발각을 감수한 돌파 방향 유출로 여포 생포"
+              },
+              "success": {
+                "text": "나는 교섭 전령에게 여포가 유비 쪽으로 빠질 거라는 예측을 전했다. 연합군 예비 병력이 그 길을 막아 여포를 포박했고 나는 연락선에서 조용히 빠졌다.",
+                "hint": "여포 생포·군영 내 발각 위험",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "luBuCaptured",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 예측을 전하려 했지만 전령이 움직이기 전에 여포가 빠져나왔다. 내 연락 흔적을 남기지 않고 후방으로 물러났다.",
+                "hint": "전달 실패·여포 탈출",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/strategy.png",
+                "alt": "교섭 전령에게 여포의 돌파 방향을 흘린다"
+              }
+            },
+            {
+              "id": "b",
+              "title": "여포 측 연락관에게 관문 귀환 신호를 전한다",
+              "description": "연승이 끝나도 살아서 돌아올 문은 열려 있어야 한다.",
+              "check": {
+                "kind": "relationship",
+                "weights": {
+                  "charisma": 0.4,
+                  "intelligence": 0.35,
+                  "leadership": 0.25
+                },
+                "difficulty": 49,
+                "fameReward": 6,
+                "fameReason": "아군의 열린 관문과 복귀 신호 전달"
+              },
+              "success": {
+                "text": "나는 여포 측 연락관에게 열린 관문과 복귀 신호를 전했다. 여포가 포위를 빠져나온 뒤 연락관은 흩어진 호위를 그 문으로 모았다.",
+                "hint": "동탁군 호위 수습·소속 유지",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "dongRetreatOrder",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 귀환 신호를 확인받지 못했다. 여포가 돌파한 뒤 흩어진 병력을 피해 보급소로 돌아갔다.",
+                "hint": "귀환 신호 전달 실패",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/official.png",
+                "alt": "여포 측 연락관에게 관문 귀환 신호를 전한다"
+              }
+            },
+            {
+              "id": "c",
+              "title": "동탁군 귀환 수레가 막히지 않게 길을 비운다",
+              "description": "말에서 떨어질 영웅 대신 수레에 깔릴 내가 먼저 걱정이다.",
+              "success": {
+                "text": "나는 관문 앞 수레를 옮겨 돌아오는 병사들의 길을 비웠다. 칼을 들고 전장에 끼지 않은 채 후방으로 물러났다.",
+                "hint": "직접 협공 참가 회피",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "동탁군 귀환 수레가 막히지 않게 길을 비운다"
+              }
+            }
+          ],
+          "artwork": {
+            "src": "/art/scenes/r005-dong-liaison.png",
+            "alt": "관문 안쪽 연락소에서 일반 연락관에게 전선 보고와 문서를 확인받는 주인공"
+          }
+        },
+        {
+          "key": "rescued",
+          "condition": {
+            "field": "world.flags.gongsunEarlySaved",
+            "operator": "eq",
+            "value": true
+          },
+          "text": "공손찬은 미리 준비한 길로 추격을 벗어나 후방에 도착했다. 유비 형제는 남은 병력을 밀어붙이는 여포를 가로막으려고 앞으로 나왔다. 내가 바꾼 구출 뒤에도 여포가 세 형제의 포위를 깨려는 싸움은 남았다. 이번에는 유비 쪽의 빈틈까지 막을까?",
+          "choices": [
+            {
+              "id": "a",
+              "title": "유비 쪽 퇴로에 예비 병력을 두자고 전한다",
+              "description": "여포가 포위를 깨는 방향을 안다. 하지만 예측을 믿고 움직일 지휘관을 설득해야 한다.",
+              "check": {
+                "kind": "strategy",
+                "weights": {
+                  "leadership": 0.45,
+                  "intelligence": 0.35,
+                  "charisma": 0.2
+                },
+                "difficulty": 82,
+                "fameReward": 30,
+                "fameReason": "세 형제와 예비 병력을 연결해 여포를 생포"
+              },
+              "success": {
+                "text": "나는 연합군 전령에게 유비 쪽 빈틈 바깥에 예비 병력을 두자고 전했다. 빠져나오던 여포가 그 병력에 막혀 세 형제와 호위들에게 포박됐다.",
+                "hint": "여포 생포·호뢰관 후퇴 경과 변경",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "luBuCaptured",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 퇴로를 막자고 전했지만 예비 병력이 움직이기 전에 여포가 틈을 뚫었다. 그의 말길을 피해 엄폐물 뒤로 물러났다.",
+                "hint": "예측 전달 지연·여포 탈출",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/strategy.png",
+                "alt": "유비 쪽 퇴로에 예비 병력을 두자고 전한다"
+              }
+            },
+            {
+              "id": "b",
+              "title": "유비 측 전령에게 후방 신호를 맞추자고 청한다",
+              "description": "세 형제의 싸움에 끼기보다 돌아올 길을 지키는 사람이 되자.",
+              "check": {
+                "kind": "relationship",
+                "weights": {
+                  "charisma": 0.4,
+                  "intelligence": 0.35,
+                  "leadership": 0.25
+                },
+                "difficulty": 49,
+                "fameReward": 6,
+                "fameReason": "유비 측 후방 복귀 지원"
+              },
+              "success": {
+                "text": "나는 유비 측 전령에게 후방의 빈 수레길과 복귀 신호를 알려 줬다. 전령은 호위들에게 신호를 전해 형제들이 물러날 길을 확인했다.",
+                "hint": "유비 측 연락·후방 복귀 지원",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "liuBattleContact",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 전령에게 신호를 청했지만 싸움 소리에 묻혀 확인받지 못했다. 형제들의 진로를 가로막지 않고 뒤로 비켰다.",
+                "hint": "후방 신호 전달 실패",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/official.png",
+                "alt": "유비 측 전령에게 후방 신호를 맞추자고 청한다"
+              }
+            },
+            {
+              "id": "c",
+              "title": "병사들의 퇴각로를 비우고 지켜본다",
+              "description": "네 명의 무기 길이에 내 목숨을 대입하지 말자.",
+              "success": {
+                "text": "나는 기병과 보병이 돌아올 길에서 수레를 치웠다. 직접 칼을 맞대지 않고 전투가 끝날 때까지 엄폐물 곁에 남았다.",
+                "hint": "직접 협공 참가 회피",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "병사들의 퇴각로를 비우고 지켜본다"
+              }
+            }
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "세 형제의 포위 바깥에 예비 병력이 대기해 여포의 돌파를 막았다. 여포는 살아서 붙잡혔고 동탁군은 장수 없이 호뢰관 안으로 물러나기 시작했다.",
+          "effects": [],
+          "condition": {
+            "field": "world.flags.luBuCaptured",
+            "operator": "eq",
+            "value": true
+          }
+        },
+        {
+          "text": "장비·관우·유비는 여포를 포위했으나 여포가 유비 쪽을 공격해 틈을 만들었다. 여포는 포위를 벗어나 호뢰관 방면으로 달아났다.",
+          "effects": []
+        }
+      ]
+    },
+    {
+      "title": "호뢰관 승리 버튼은 아직 없다",
+      "fact": "세 형제가 여포를 뒤쫓자 연합군이 진격했고 동탁군은 관 안으로 물러났다. 장비는 관 위의 동탁을 보고 달려들었지만 동탁이나 황제를 확보한 것은 아니었다.",
+      "background": "연합군이 기세를 타고 호뢰관 앞으로 진격했다. 동탁군은 관문을 닫을 준비를 했고 장비는 관 위의 동탁을 노려봤다.",
+      "entry": null,
+      "scene": "여포를 뒤쫓는 기세로 모두가 호뢰관을 향해 달렸다. 장비는 관 위의 동탁을 보고 직접 잡겠다며 성큼 나섰다. 전투에서 밀어냈다고 닫힌 관문과 황제가 자동으로 손에 들어오지는 않는다. 마지막 몇 걸음을 통제할까, 살아서 다음 명령을 기다릴까?",
+      "choices": [
+        {
+          "id": "a",
+          "title": "관문 앞 정지선과 교대 신호를 먼저 제안한다",
+          "description": "승세에 취한 돌격을 멈추고 사거리 밖에서 병력을 묶자. 소극적이라는 비난을 받을 수 있다.",
+          "check": {
+            "kind": "battle",
+            "weights": {
+              "leadership": 1.5,
+              "strength": 1
+            },
+            "difficulty": 67,
+            "fameReward": 12,
+            "fameReason": "관문 앞 추격을 통제해 병력 피해 감소"
+          },
+          "success": {
+            "text": "나는 가까운 부대를 모아 관문 사거리 밖에 정지선을 만들고 교대 신호를 보냈다. 일부 병력이 선을 지켜 무리한 추격 피해를 줄였지만 닫힌 관문과 동탁의 신병은 확보하지 못했다.",
+            "hint": "추격 피해 감소·관문 밖 진지 확보",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "hulaoApproachSecured",
+                "value": true
+              }
+            ]
+          },
+          "failure": {
+            "text": "나는 정지 신호를 보냈지만 밀려드는 병력이 제각각 움직였다. 화살이 떨어지자 엄폐물 뒤로 물러나 더 깊이 쫓지 않았다.",
+            "hint": "추격 통제 실패·화살 사거리에서 후퇴",
+            "effects": []
+          },
+          "artwork": {
+            "src": "/art/choices/strategy.png",
+            "alt": "관문 앞 정지선과 교대 신호를 먼저 제안한다"
+          }
+        },
+        {
+          "id": "b",
+          "title": "현재 연락선에 교대 경계 임무를 청한다",
+          "description": "소속을 바꾸는 대신 오늘 맡을 자리를 확인하자.",
+          "check": {
+            "kind": "relationship",
+            "weights": {
+              "charisma": 0.55,
+              "politics": 0.35,
+              "intelligence": 0.1
+            },
+            "difficulty": 42,
+            "fameReward": 4,
+            "fameReason": "현재 군영의 교대 경계 담당"
+          },
+          "success": {
+            "text": "나는 내 연락선에 지금 지켜야 할 지점을 물었다. 연락관이 수레길 경계를 맡겨 나는 기존 소속을 유지한 채 다음 명령을 기다렸다.",
+            "hint": "현재 소속 유지·교대 경계",
+            "effects": [
+              {
+                "type": "flag",
+                "key": "hulaoWatch",
+                "value": true
+              }
+            ]
+          },
+          "failure": {
+            "text": "나는 경계 임무를 청했지만 지휘가 정리되지 않아 답을 받지 못했다. 기존 연락소로 돌아가 대기했다.",
+            "hint": "경계 배정 지연",
+            "effects": []
+          },
+          "artwork": {
+            "src": "/art/choices/official.png",
+            "alt": "현재 연락선에 교대 경계 임무를 청한다"
+          }
+        },
+        {
+          "id": "c",
+          "title": "관문 사거리 밖 후방 숙영지로 돌아간다",
+          "description": "주인공들의 추격전에 내 생존을 담보로 걸지는 말자.",
+          "success": {
+            "text": "나는 호뢰관 사거리 밖 숙영지로 돌아갔다. 전투가 끝나도 동탁과 황제를 확보하지 못했다는 소식을 듣고 다음 움직임을 기다렸다.",
+            "hint": "추격 직접 참가 회피·후방 복귀",
+            "effects": []
+          },
+          "artwork": {
+            "src": "/art/choices/travel-wagons.png",
+            "alt": "관문 사거리 밖 후방 숙영지로 돌아간다"
+          }
+        }
+      ],
+      "region": "hulao",
+      "year": 190,
+      "dateNote": "제5회 전개 순서. 190년 전후, 월 미상. 연의의 전투 배치이며 선택·대체 결과는 게임 창작.",
+      "precision": "approximate",
+      "factions": [
+        "han",
+        "dong-zhuo",
+        "cao-cao",
+        "liu-bei",
+        "sun-jian",
+        "yuan-shao",
+        "yuan-shu"
+      ],
+      "people": [
+        "유비",
+        "관우",
+        "장비",
+        "여포",
+        "동탁"
+      ],
+      "officers": [
+        "rtk14-0147",
+        "rtk14-0656",
+        "rtk14-0736",
+        "rtk14-0952",
+        "rtk14-0987"
+      ],
+      "artwork": {
+        "src": "/art/choices/formation.png",
+        "alt": "관문 바깥의 병력 배치를 살피는 주인공"
+      },
+      "variants": [
+        {
+          "key": "dong",
+          "condition": {
+            "field": "factionId",
+            "operator": "eq",
+            "value": "dong-zhuo"
+          },
+          "text": "동탁군이 호뢰관 안으로 물러나자 관문 앞의 수레와 병력이 한꺼번에 몰렸다. 바깥에는 연합군이 남아 있었고 닫힌 문 안에도 안전한 자리는 많지 않았다. 여포의 생사는 앞선 싸움에서 정해졌어도 지금 통행을 막은 사람들은 따로 살펴야 했다. 문을 지킬까, 민간 수레가 짓눌리지 않게 길을 열까?",
+          "choices": [
+            {
+              "id": "a",
+              "title": "민간 수레와 군용 수레의 통로를 나눠 지휘한다",
+              "description": "한 번에 밀어 넣으면 내 편의 수레가 백성을 깔아 버린다. 군령을 바꾼다는 항의는 감수하자.",
+              "check": {
+                "kind": "battle",
+                "weights": {
+                  "leadership": 1.5,
+                  "strength": 1
+                },
+                "difficulty": 62,
+                "fameReward": 12,
+                "fameReason": "후퇴 혼잡에서 민간 통로를 지휘"
+              },
+              "success": {
+                "text": "나는 가까운 경비를 모아 민간 수레가 빠질 통로와 군용 수레의 대기선을 나눴다. 병사들이 선을 지켜 압사 위험이 줄었고 나는 관문 안 연락소로 복귀했다.",
+                "hint": "후퇴 혼잡 완화·민간 통로 확보",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "dongCivilianPass",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 통로를 나누려 했지만 밀려드는 수레를 통제하지 못했다. 더 밀리기 전에 내벽 쪽으로 물러났다.",
+                "hint": "후퇴 통제 실패",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/strategy.png",
+                "alt": "민간 수레와 군용 수레의 통로를 나눠 지휘한다"
+              }
+            },
+            {
+              "id": "b",
+              "title": "현재 연락선에 교대 경계 임무를 청한다",
+              "description": "소속을 바꾸는 대신 오늘 맡을 자리를 확인하자.",
+              "check": {
+                "kind": "relationship",
+                "weights": {
+                  "charisma": 0.55,
+                  "politics": 0.35,
+                  "intelligence": 0.1
+                },
+                "difficulty": 42,
+                "fameReward": 4,
+                "fameReason": "현재 군영의 교대 경계 담당"
+              },
+              "success": {
+                "text": "나는 내 연락선에 지금 지켜야 할 지점을 물었다. 연락관이 수레길 경계를 맡겨 나는 기존 소속을 유지한 채 다음 명령을 기다렸다.",
+                "hint": "현재 소속 유지·교대 경계",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "hulaoWatch",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 경계 임무를 청했지만 지휘가 정리되지 않아 답을 받지 못했다. 기존 연락소로 돌아가 대기했다.",
+                "hint": "경계 배정 지연",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/official.png",
+                "alt": "현재 연락선에 교대 경계 임무를 청한다"
+              }
+            },
+            {
+              "id": "c",
+              "title": "동탁군 내벽의 보급소로 돌아간다",
+              "description": "닫힌 문 양쪽에서 영웅이 싸워도 오늘 잘 자리는 필요하다.",
+              "success": {
+                "text": "나는 동탁군 내벽 쪽 보급소로 돌아갔다. 관문이 닫힌 뒤 기존 연락선에서 다음 군령을 기다렸다.",
+                "hint": "동탁군 소속 유지·후방 복귀",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "동탁군 내벽의 보급소로 돌아간다"
+              }
+            }
+          ],
+          "artwork": {
+            "src": "/art/choices/travel-wagons.png",
+            "alt": "호뢰관 내벽 쪽으로 귀환할 수레길을 찾는 주인공"
+          }
+        },
+        {
+          "key": "captive",
+          "condition": {
+            "field": "world.flags.luBuCaptured",
+            "operator": "eq",
+            "value": true
+          },
+          "text": "여포가 포로로 묶이자 동탁군은 장수 없이 호뢰관 안으로 물러났다. 이번에는 달아나는 여포를 쫓는 싸움이 아니었지만 장비는 관 위의 동탁을 보고 앞으로 나섰다. 포로 한 명이 닫힌 성문까지 열어 주지는 않았다. 관문을 향한 추격을 통제할까?",
+          "choices": [
+            {
+              "id": "a",
+              "title": "관문 앞 정지선과 교대 신호를 먼저 제안한다",
+              "description": "승세에 취한 돌격을 멈추고 사거리 밖에서 병력을 묶자. 소극적이라는 비난을 받을 수 있다.",
+              "check": {
+                "kind": "battle",
+                "weights": {
+                  "leadership": 1.5,
+                  "strength": 1
+                },
+                "difficulty": 67,
+                "fameReward": 12,
+                "fameReason": "관문 앞 추격을 통제해 병력 피해 감소"
+              },
+              "success": {
+                "text": "나는 가까운 부대를 모아 관문 사거리 밖에 정지선을 만들고 교대 신호를 보냈다. 일부 병력이 선을 지켜 무리한 추격 피해를 줄였지만 닫힌 관문과 동탁의 신병은 확보하지 못했다.",
+                "hint": "추격 피해 감소·관문 밖 진지 확보",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "hulaoApproachSecured",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 정지 신호를 보냈지만 밀려드는 병력이 제각각 움직였다. 화살이 떨어지자 엄폐물 뒤로 물러나 더 깊이 쫓지 않았다.",
+                "hint": "추격 통제 실패·화살 사거리에서 후퇴",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/strategy.png",
+                "alt": "관문 앞 정지선과 교대 신호를 먼저 제안한다"
+              }
+            },
+            {
+              "id": "b",
+              "title": "현재 연락선에 교대 경계 임무를 청한다",
+              "description": "소속을 바꾸는 대신 오늘 맡을 자리를 확인하자.",
+              "check": {
+                "kind": "relationship",
+                "weights": {
+                  "charisma": 0.55,
+                  "politics": 0.35,
+                  "intelligence": 0.1
+                },
+                "difficulty": 42,
+                "fameReward": 4,
+                "fameReason": "현재 군영의 교대 경계 담당"
+              },
+              "success": {
+                "text": "나는 내 연락선에 지금 지켜야 할 지점을 물었다. 연락관이 수레길 경계를 맡겨 나는 기존 소속을 유지한 채 다음 명령을 기다렸다.",
+                "hint": "현재 소속 유지·교대 경계",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "hulaoWatch",
+                    "value": true
+                  }
+                ]
+              },
+              "failure": {
+                "text": "나는 경계 임무를 청했지만 지휘가 정리되지 않아 답을 받지 못했다. 기존 연락소로 돌아가 대기했다.",
+                "hint": "경계 배정 지연",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/official.png",
+                "alt": "현재 연락선에 교대 경계 임무를 청한다"
+              }
+            },
+            {
+              "id": "c",
+              "title": "관문 사거리 밖 후방 숙영지로 돌아간다",
+              "description": "주인공들의 추격전에 내 생존을 담보로 걸지는 말자.",
+              "success": {
+                "text": "나는 호뢰관 사거리 밖 숙영지로 돌아갔다. 전투가 끝나도 동탁과 황제를 확보하지 못했다는 소식을 듣고 다음 움직임을 기다렸다.",
+                "hint": "추격 직접 참가 회피·후방 복귀",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "관문 사거리 밖 후방 숙영지로 돌아간다"
+              }
+            }
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "여포가 포로가 된 뒤 동탁군은 호뢰관 안으로 물러났다. 연합군은 관문 밖에 머물렀고 동탁과 황제의 신병은 확보하지 못했다. 나는 현재의 연락선과 거점에서 다음 움직임을 기다렸다.",
+          "effects": [
+            {
+              "type": "flag",
+              "key": "chapter5Done",
+              "value": true
+            }
+          ],
+          "condition": {
+            "field": "world.flags.luBuCaptured",
+            "operator": "eq",
+            "value": true
+          }
+        },
+        {
+          "text": "여포는 호뢰관으로 돌아갔고 동탁군도 관 안으로 물러났다. 연합군은 공세를 꺾었으나 동탁과 황제의 신병을 확보하지 못했다. 나는 현재의 연락선과 거점에서 다음 움직임을 기다렸다.",
+          "effects": [
+            {
+              "type": "flag",
+              "key": "chapter5Done",
+              "value": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

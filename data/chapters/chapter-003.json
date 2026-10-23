@@ -31,7 +31,95 @@
             "operator": "eq",
             "value": true
           },
-          "text": "앞서 경고를 받아 간 조조 측 연락책이 내 얼굴을 알아보고 궁문 앞으로 불렀다. 하진은 여전히 태후가 부른다는 말만 믿고 호위를 떼려 했다. 경고를 전달한 것과 사람을 살린 것은 아직 다른 일이었다. 이번에는 원소가 소환의 진위를 확인하도록 붙들 명분이 필요했다."
+          "text": "앞서 경고를 받아 간 조조 측 연락책이 내 얼굴을 알아보고 궁문 앞으로 불렀다. 하진은 여전히 태후가 부른다는 말만 믿고 호위를 떼려 했다. 경고를 전달한 것과 사람을 살린 것은 아직 다른 일이었다. 이번에는 원소가 소환의 진위를 확인하도록 붙들 명분이 필요했다.",
+          "choices": [
+            {
+              "id": "a",
+              "title": "원소에게 별도 확인 사자를 보내 달라고 한다",
+              "description": "태후의 명이 맞는지 한 번만 더 묻게 하자. 하진이 불쾌해하면 내가 붙잡힐 수도 있다.",
+              "success": {
+                "text": "나는 원소 측 호위에게 소환을 전한 환관과 태후 측 전달자를 따로 확인해 달라고 요청했다. 원소가 확인을 요구하며 행렬을 세웠고 하진의 단독 입궁이 보류됐다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "heJinSaved",
+                    "value": true
+                  }
+                ],
+                "hint": "단독 입궁 보류·하진 생존"
+              },
+              "check": {
+                "kind": "strategy",
+                "weights": {
+                  "intelligence": 0.45,
+                  "charisma": 0.4,
+                  "politics": 0.15
+                },
+                "difficulty": 78,
+                "fameReward": 24,
+                "fameReason": "하진의 단독 입궁을 보류시켜 생명을 구함"
+              },
+              "failure": {
+                "text": "나는 재확인을 청했지만 하진은 이미 문 안으로 들어가 버렸다. 안쪽에서 비명이 들려오자 경비병이 나를 바깥으로 밀쳐 냈다.",
+                "effects": [],
+                "hint": "경고가 늦어져 하진 피살"
+              },
+              "artwork": {
+                "src": "/art/choices/official.png",
+                "alt": "원소에게 별도 확인 사자를 보내 달라고 한다에 나서는 주인공"
+              }
+            },
+            {
+              "id": "b",
+              "title": "조조 측 호위에게 문밖 경계를 부탁한다",
+              "description": "직접 궁문을 막을 지위는 없다. 적어도 문밖 사람들이 흩어지지 않게 하자.",
+              "success": {
+                "text": "나는 조조 측 연락책에게 호위를 흩어 놓지 말아 달라고 전했다. 그는 주변 사람들에게 대기하라고 했지만 이미 들어간 하진을 불러내지는 못했다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "gateGuardAlert",
+                    "value": true
+                  }
+                ],
+                "hint": "문밖 호위·연락선 유지"
+              },
+              "check": {
+                "kind": "relationship",
+                "weights": {
+                  "charisma": 0.4,
+                  "intelligence": 0.35,
+                  "leadership": 0.25
+                },
+                "difficulty": 46,
+                "fameReward": 6,
+                "fameReason": "궁문 밖 호위 연락 유지"
+              },
+              "failure": {
+                "text": "나는 연락책을 찾았지만 행렬과 경비병 사이에서 길을 잃었다. 하진의 뒤를 따라가려다 제지당하고 문밖으로 물러났다.",
+                "effects": [],
+                "hint": "호위 연락에 실패·문 안 진입 불가"
+              },
+              "artwork": {
+                "src": "/art/scenes/r002-gate.png",
+                "alt": "조조 측 호위에게 문밖 경계를 부탁한다에 나서는 주인공"
+              }
+            },
+            {
+              "id": "c",
+              "title": "궁문에서 떨어진 돌담 뒤로 간다",
+              "description": "안에 있는 사람을 구하겠다고 같이 들어갈 수는 없다. 소리가 바뀌면 바로 빠질 자리부터 잡자.",
+              "success": {
+                "text": "나는 행렬의 동선에서 벗어나 돌담 모퉁이에 섰다. 궁문 안으로 들어가지 않은 채 바깥에서 움직임을 지켜봤다.",
+                "effects": [],
+                "hint": "궁중 함정에 직접 들어가지 않음"
+              },
+              "artwork": {
+                "src": "/art/choices/hide.png",
+                "alt": "궁문에서 떨어진 돌담 뒤로 간다에 나서는 주인공"
+              }
+            }
+          ]
         }
       ],
       "choices": [
@@ -51,7 +139,15 @@
             "hint": "단독 입궁 보류·하진 생존"
           },
           "check": {
-            "kind": "strategy"
+            "kind": "strategy",
+            "weights": {
+              "intelligence": 0.45,
+              "charisma": 0.4,
+              "politics": 0.15
+            },
+            "difficulty": 78,
+            "fameReward": 24,
+            "fameReason": "하진의 단독 입궁을 보류시켜 생명을 구함"
           },
           "failure": {
             "text": "나는 재확인을 청했지만 하진은 이미 문 안으로 들어가 버렸다. 안쪽에서 비명이 들려오자 경비병이 나를 바깥으로 밀쳐 냈다.",
@@ -79,7 +175,15 @@
             "hint": "문밖 호위·연락선 유지"
           },
           "check": {
-            "kind": "relationship"
+            "kind": "relationship",
+            "weights": {
+              "charisma": 0.4,
+              "intelligence": 0.35,
+              "leadership": 0.25
+            },
+            "difficulty": 46,
+            "fameReward": 6,
+            "fameReason": "궁문 밖 호위 연락 유지"
           },
           "failure": {
             "text": "나는 연락책을 찾았지만 행렬과 경비병 사이에서 길을 잃었다. 하진의 뒤를 따라가려다 제지당하고 문밖으로 물러났다.",
@@ -167,7 +271,95 @@
             "operator": "eq",
             "value": true
           },
-          "text": "하진의 입궁은 멈췄지만 궁문 안의 환관 측 병력이 먼저 움직였다는 소문이 터졌다. 원소 측 군사들이 밀고 들어가자 하인과 서리까지 한꺼번에 내몰렸다. 수염만 보고 편을 가르겠다는 말에 나는 턱을 만졌다. 사람 한 명을 살렸다고 이 혼란까지 자동으로 끝나는 건 아니었다."
+          "text": "하진의 입궁은 멈췄지만 궁문 안의 환관 측 병력이 먼저 움직였다는 소문이 터졌다. 원소 측 군사들이 밀고 들어가자 하인과 서리까지 한꺼번에 내몰렸다. 수염만 보고 편을 가르겠다는 말에 나는 턱을 만졌다. 사람 한 명을 살렸다고 이 혼란까지 자동으로 끝나는 건 아니었다.",
+          "choices": [
+            {
+              "id": "a",
+              "title": "하인들의 신원 확인을 요구한다",
+              "description": "누가 누구를 데려왔는지 확인하게 만들자. 환관을 숨겼다는 의심이 내 쪽으로 올 수 있다.",
+              "success": {
+                "text": "나는 가까운 관리에게 하인들이 맡은 일과 데려온 사람을 대조해 달라고 외쳤다. 몇 사람이 신원을 확인받아 줄 밖으로 나왔지만 궁 전체의 공격을 멈추지는 못했다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "servantsSpared",
+                    "value": true
+                  }
+                ],
+                "hint": "일부 하인의 신원 확인·오인 피해 감소"
+              },
+              "check": {
+                "kind": "politics",
+                "weights": {
+                  "politics": 0.55,
+                  "intelligence": 0.35,
+                  "charisma": 0.1
+                },
+                "difficulty": 64,
+                "fameReward": 12,
+                "fameReason": "오인된 하인의 신원을 확인해 피해 감소"
+              },
+              "failure": {
+                "text": "나는 확인을 요구했지만 군사들은 환관의 편을 드느냐며 다가왔다. 하인들을 데리고 물러나려다 갈라져 나 혼자 돌담 뒤로 빠졌다.",
+                "effects": [],
+                "hint": "환관 옹호자로 의심받아 후퇴"
+              },
+              "artwork": {
+                "src": "/art/choices/official.png",
+                "alt": "하인들의 신원 확인을 요구한다에 나서는 주인공"
+              }
+            },
+            {
+              "id": "b",
+              "title": "원소 측 전령에게 피란 통로를 묻는다",
+              "description": "지휘관을 아는 척할 때가 아니다. 군사들이 비워 둔 길을 아는 사람부터 붙잡자.",
+              "success": {
+                "text": "나는 원소 측 전령에게 부상자와 하인을 내보낼 통로를 물었다. 전령이 비운 문을 알려 줘 곁에 있던 사람들과 그곳으로 움직였다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "palaceExit",
+                    "value": true
+                  }
+                ],
+                "hint": "원소 측이 비운 통로 확인"
+              },
+              "check": {
+                "kind": "relationship",
+                "weights": {
+                  "charisma": 0.7,
+                  "intelligence": 0.15,
+                  "politics": 0.15
+                },
+                "difficulty": 40,
+                "fameReward": 4,
+                "fameReason": "피란 통로 문의"
+              },
+              "failure": {
+                "text": "나는 전령에게 말을 걸었지만 그는 급한 명령을 전하느라 멈추지 않았다. 추격하지 않고 내가 들어온 길을 더듬어 물러났다.",
+                "effects": [],
+                "hint": "급한 전령과 접촉 실패"
+              },
+              "artwork": {
+                "src": "/art/choices/han.png",
+                "alt": "원소 측 전령에게 피란 통로를 묻는다에 나서는 주인공"
+              }
+            },
+            {
+              "id": "c",
+              "title": "담장 바깥으로 바로 빠진다",
+              "description": "궁문 안으로 들어갈 이유는 끝났다. 지금은 수염을 확인당하기 전에 나가자.",
+              "success": {
+                "text": "나는 들어오는 군사들과 반대로 움직여 담장 밖으로 나왔다. 사람들이 몰리는 큰 문을 피해 역참 쪽 작은 길로 물러났다.",
+                "effects": [],
+                "hint": "궁중 충돌에서 즉시 이탈"
+              },
+              "artwork": {
+                "src": "/art/choices/run.png",
+                "alt": "담장 바깥으로 바로 빠진다에 나서는 주인공"
+              }
+            }
+          ]
         }
       ],
       "choices": [
@@ -187,7 +379,15 @@
             "hint": "일부 하인의 신원 확인·오인 피해 감소"
           },
           "check": {
-            "kind": "politics"
+            "kind": "politics",
+            "weights": {
+              "politics": 0.55,
+              "intelligence": 0.35,
+              "charisma": 0.1
+            },
+            "difficulty": 64,
+            "fameReward": 12,
+            "fameReason": "오인된 하인의 신원을 확인해 피해 감소"
           },
           "failure": {
             "text": "나는 확인을 요구했지만 군사들은 환관의 편을 드느냐며 다가왔다. 하인들을 데리고 물러나려다 갈라져 나 혼자 돌담 뒤로 빠졌다.",
@@ -215,7 +415,15 @@
             "hint": "원소 측이 비운 통로 확인"
           },
           "check": {
-            "kind": "relationship"
+            "kind": "relationship",
+            "weights": {
+              "charisma": 0.7,
+              "intelligence": 0.15,
+              "politics": 0.15
+            },
+            "difficulty": 40,
+            "fameReward": 4,
+            "fameReason": "피란 통로 문의"
           },
           "failure": {
             "text": "나는 전령에게 말을 걸었지만 그는 급한 명령을 전하느라 멈추지 않았다. 추격하지 않고 내가 들어온 길을 더듬어 물러났다.",
@@ -296,7 +504,15 @@
             "hint": "왕실 일행의 임시 피란처 확보"
           },
           "check": {
-            "kind": "strategy"
+            "kind": "strategy",
+            "weights": {
+              "intelligence": 0.7,
+              "politics": 0.2,
+              "charisma": 0.1
+            },
+            "difficulty": 63,
+            "fameReward": 16,
+            "fameReason": "왕실 피란처를 선점해 구조 경로를 바꿈"
           },
           "failure": {
             "text": "나는 횃불을 피해 민가로 가려다 길이 끊겨 아이들 가까이에 닿지 못했다. 낯선 무리에게 쫓기게 하지 않으려고 더 따라가지 않았다.",
@@ -324,7 +540,15 @@
             "hint": "신원을 확인한 수색자에게 위치 전달"
           },
           "check": {
-            "kind": "relationship"
+            "kind": "relationship",
+            "weights": {
+              "charisma": 0.4,
+              "intelligence": 0.35,
+              "leadership": 0.25
+            },
+            "difficulty": 42,
+            "fameReward": 6,
+            "fameReason": "관군에 발견 위치 보고"
           },
           "failure": {
             "text": "나는 수색자를 찾았지만 소속을 확인할 표식을 보지 못했다. 아이들의 위치를 아무에게나 말하지 않고 물러났다.",
@@ -405,7 +629,101 @@
             "operator": "eq",
             "value": true
           },
-          "text": "내가 찾아 둔 피란처로 왕실 영접대가 몰려오고 동탁도 그 공을 차지하려 했다. 수도로 돌아오는 길에서 같은 얼굴의 병사들이 성문을 여러 번 지나는 걸 봤다. 왕실을 먼저 보호했어도 군권을 쥔 사람이 그 공을 가로챌 수 있었다. 병력의 허상을 밝힐 근거를 남겨야 할까?"
+          "text": "내가 찾아 둔 피란처로 왕실 영접대가 몰려오고 동탁도 그 공을 차지하려 했다. 수도로 돌아오는 길에서 같은 얼굴의 병사들이 성문을 여러 번 지나는 걸 봤다. 왕실을 먼저 보호했어도 군권을 쥔 사람이 그 공을 가로챌 수 있었다. 병력의 허상을 밝힐 근거를 남겨야 할까?",
+          "choices": [
+            {
+              "id": "a",
+              "title": "반복 입성하는 병사들의 표식을 대조한다",
+              "description": "군번표는 없지만 깃발과 수레 흠집은 보인다. 숫자 부풀리는 걸 들키면 날 그냥 둘까?",
+              "success": {
+                "text": "나는 깃발의 찢긴 자리와 수레의 흠집을 시간순으로 적어 다른 군영 연락책에게 전했다. 반복 입성의 흔적이 알려져 동탁의 병력 과시는 그대로 받아들여지지 않았다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "dongNumbersExposed",
+                    "value": true
+                  }
+                ],
+                "hint": "동탁의 병력 부풀리기 근거 공개"
+              },
+              "check": {
+                "kind": "strategy",
+                "weights": {
+                  "intelligence": 0.6,
+                  "politics": 0.3,
+                  "charisma": 0.1
+                },
+                "difficulty": 75,
+                "fameReward": 16,
+                "fameReason": "반복 입성의 표식을 대조해 병력 과장을 폭로"
+              },
+              "failure": {
+                "text": "나는 반복되는 표식을 적다 동탁 측 초병에게 들켰다. 수첩 대신 적은 나무 조각을 버리고 피란 수레 사이로 물러났다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "dongHostile",
+                    "value": true
+                  }
+                ],
+                "hint": "초병에게 들켜 동탁 측 경계 대상"
+              },
+              "artwork": {
+                "src": "/art/choices/strategy.png",
+                "alt": "반복 입성하는 병사들의 표식을 대조한다에 나서는 주인공"
+              }
+            },
+            {
+              "id": "b",
+              "title": "동탁 측 연락책에게 길 안내를 맡겠다고 한다",
+              "description": "군영의 안쪽은 모르지만 피란길은 봤다. 일거리부터 얻어 얼굴을 익히자.",
+              "success": {
+                "text": "나는 피란길에서 확인한 막힌 길을 동탁 측 연락책에게 전했다. 그는 안내할 구간을 묻고 내 이름을 적었지만 정식 군적을 준 것은 아니었다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "metDongZhuo",
+                    "value": true
+                  }
+                ],
+                "hint": "동탁 측 실무 연락선 확보·임관은 별도"
+              },
+              "check": {
+                "kind": "relationship",
+                "weights": {
+                  "charisma": 0.7,
+                  "intelligence": 0.15,
+                  "politics": 0.15
+                },
+                "difficulty": 45,
+                "fameReward": 4,
+                "fameReason": "동탁 측 길 안내 접촉"
+              },
+              "failure": {
+                "text": "나는 안내를 맡겠다고 했지만 연락책은 신원도 모르는 사람을 쓰지 않겠다고 했다. 호송대에 끼지 못하고 수레길 밖으로 물러났다.",
+                "effects": [],
+                "hint": "신원 문제로 안내 제안 거절"
+              },
+              "artwork": {
+                "src": "/art/choices/han.png",
+                "alt": "동탁 측 연락책에게 길 안내를 맡겠다고 한다에 나서는 주인공"
+              }
+            },
+            {
+              "id": "c",
+              "title": "입성 행렬이 끝날 때까지 기다린다",
+              "description": "병력 숫자를 세다가 간자로 몰릴 수는 없다. 장터가 열릴 때까지 수레 옆에 붙어 있자.",
+              "success": {
+                "text": "나는 성문에서 떨어진 피란 수레 곁에 머물렀다. 군사들의 반복 행렬이 끝나고 나서야 장터로 움직였다.",
+                "effects": [],
+                "hint": "동탁군의 검문과 직접 접촉을 피함"
+              },
+              "artwork": {
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "입성 행렬이 끝날 때까지 기다린다에 나서는 주인공"
+              }
+            }
+          ]
         }
       ],
       "choices": [
@@ -425,7 +743,15 @@
             "hint": "동탁의 병력 부풀리기 근거 공개"
           },
           "check": {
-            "kind": "strategy"
+            "kind": "strategy",
+            "weights": {
+              "intelligence": 0.6,
+              "politics": 0.3,
+              "charisma": 0.1
+            },
+            "difficulty": 75,
+            "fameReward": 16,
+            "fameReason": "반복 입성의 표식을 대조해 병력 과장을 폭로"
           },
           "failure": {
             "text": "나는 반복되는 표식을 적다 동탁 측 초병에게 들켰다. 수첩 대신 적은 나무 조각을 버리고 피란 수레 사이로 물러났다.",
@@ -459,7 +785,15 @@
             "hint": "동탁 측 실무 연락선 확보·임관은 별도"
           },
           "check": {
-            "kind": "relationship"
+            "kind": "relationship",
+            "weights": {
+              "charisma": 0.7,
+              "intelligence": 0.15,
+              "politics": 0.15
+            },
+            "difficulty": 45,
+            "fameReward": 4,
+            "fameReason": "동탁 측 길 안내 접촉"
           },
           "failure": {
             "text": "나는 안내를 맡겠다고 했지만 연락책은 신원도 모르는 사람을 쓰지 않겠다고 했다. 호송대에 끼지 못하고 수레길 밖으로 물러났다.",
@@ -520,8 +854,8 @@
         "ding-yuan"
       ],
       "artwork": {
-        "src": "/art/characters/dong-zhuo.png",
-        "alt": "왕실 영접의 공으로 조정에 들어온 동탁"
+        "src": "/art/scenes/dong-royal-road.png",
+        "alt": "피란 중인 두 왕자에게 접근하는 동탁의 기병과 길목을 살피는 주인공"
       }
     },
     {
@@ -569,7 +903,15 @@
             "hint": "공동 폐립 반대 기록 확보"
           },
           "check": {
-            "kind": "politics"
+            "kind": "politics",
+            "weights": {
+              "politics": 0.5,
+              "intelligence": 0.4,
+              "leadership": 0.1
+            },
+            "difficulty": 78,
+            "fameReward": 20,
+            "fameReason": "대신과 독립 군영의 공동 반대 근거를 만듦"
           },
           "failure": {
             "text": "나는 공동 의견을 청했지만 관리들은 동탁의 병력을 두려워해 이름을 남기지 않았다. 정원에게 책임을 떠넘기는 문서는 만들지 않고 물러났다.",
@@ -597,7 +939,15 @@
             "hint": "동탁 측 담당 연락책을 소개받음"
           },
           "check": {
-            "kind": "relationship"
+            "kind": "relationship",
+            "weights": {
+              "charisma": 0.7,
+              "intelligence": 0.15,
+              "politics": 0.15
+            },
+            "difficulty": 41,
+            "fameReward": 4,
+            "fameReason": "동탁 측 소개"
           },
           "failure": {
             "text": "나는 소개를 청했지만 문지기는 병력 과시를 구경하러 온 사람 취급을 했다. 더 접근하지 않고 연락책이 모인 자리로 돌아왔다.",
@@ -655,7 +1005,15 @@
                 "hint": "공동 폐립 반대 기록 확보"
               },
               "check": {
-                "kind": "politics"
+                "kind": "politics",
+                "weights": {
+                  "politics": 0.5,
+                  "intelligence": 0.4,
+                  "leadership": 0.1
+                },
+                "difficulty": 78,
+                "fameReward": 20,
+                "fameReason": "대신과 독립 군영의 공동 반대 근거를 만듦"
               },
               "failure": {
                 "text": "나는 공동 의견을 청했지만 관리들은 동탁의 병력을 두려워해 이름을 남기지 않았다. 정원에게 책임을 떠넘기는 문서는 만들지 않고 물러났다.",
@@ -683,7 +1041,15 @@
                 "hint": "유비 소속 유지·수도 군영 정보 전달"
               },
               "check": {
-                "kind": "relationship"
+                "kind": "relationship",
+                "weights": {
+                  "charisma": 0.4,
+                  "intelligence": 0.35,
+                  "leadership": 0.25
+                },
+                "difficulty": 40,
+                "fameReward": 5,
+                "fameReason": "이미 동행하는 유비에게 수도 배치를 보고"
               },
               "failure": {
                 "text": "나는 유비 측 연락선을 찾았지만 성문 통제로 전령을 만나지 못했다. 동탁에게 소속을 바꾸겠다고 말하지는 않고 답을 기다렸다.",
@@ -736,7 +1102,15 @@
                 "hint": "공동 폐립 반대 기록 확보"
               },
               "check": {
-                "kind": "politics"
+                "kind": "politics",
+                "weights": {
+                  "politics": 0.5,
+                  "intelligence": 0.4,
+                  "leadership": 0.1
+                },
+                "difficulty": 78,
+                "fameReward": 20,
+                "fameReason": "대신과 독립 군영의 공동 반대 근거를 만듦"
               },
               "failure": {
                 "text": "나는 공동 의견을 청했지만 관리들은 동탁의 병력을 두려워해 이름을 남기지 않았다. 정원에게 책임을 떠넘기는 문서는 만들지 않고 물러났다.",
@@ -772,7 +1146,14 @@
                 "hint": "동탁군 병사로 정식 합류"
               },
               "check": {
-                "kind": "relationship"
+                "kind": "relationship",
+                "weights": {
+                  "charisma": 0.8,
+                  "politics": 0.2
+                },
+                "difficulty": 62,
+                "fameReward": 8,
+                "fameReason": "실제 접촉 뒤 동탁군에 정식 지원"
               },
               "failure": {
                 "text": "나는 지원 의사를 냈지만 담당자는 신뢰할 근거가 부족하다고 답했다. 군적 없이 연락책들과 왕래하던 자리로 돌아왔다.",
@@ -808,8 +1189,8 @@
         "ding-yuan"
       ],
       "artwork": {
-        "src": "/art/characters/lu-bu.png",
-        "alt": "정원 곁에서 동탁의 폐립 강행을 막는 여포"
+        "src": "/art/scenes/dong-command-hall.png",
+        "alt": "동탁의 군영 연락소에서 폐립 반대 소식과 문서를 살피는 주인공"
       }
     },
     {
@@ -853,7 +1234,13 @@
           },
           "check": {
             "kind": "duel",
-            "opponentId": "rtk14-0987"
+            "opponentId": "rtk14-0987",
+            "weights": {
+              "strength": 1
+            },
+            "difficulty": 50,
+            "fameReward": 24,
+            "fameReason": "여포를 상대로 승리해 전투 경과를 바꿈"
           },
           "failure": {
             "text": "나는 여포의 속도를 따라가지 못했다. 반격이 닿는 순간 몸이 무너졌고, 내 삼국지의 이야기는 그 길목에서 끝났다.",
@@ -887,7 +1274,14 @@
             "hint": "후방 연락선 보존"
           },
           "check": {
-            "kind": "battle"
+            "kind": "battle",
+            "weights": {
+              "leadership": 1,
+              "strength": 1.5
+            },
+            "difficulty": 57,
+            "fameReward": 6,
+            "fameReason": "연락책과 함께 전장을 이탈"
           },
           "failure": {
             "text": "나는 뒤쪽 대열을 모으려 했지만 말발굽 소리에 사람들이 먼저 흩어졌다. 다 같이 움직이지는 못했어도 나 역시 큰길을 피해 빠져나왔다.",
@@ -942,8 +1336,8 @@
         "ding-yuan"
       ],
       "artwork": {
-        "src": "/art/characters/lu-bu.png",
-        "alt": "군영 앞을 가로막는 여포와 그의 방천화극"
+        "src": "/art/scenes/r003-duel.png",
+        "alt": "낙양 군영 앞에서 말 탄 여포와 거리를 두고 대치하는 주인공"
       }
     },
     {
@@ -986,7 +1380,15 @@
             "hint": "정원 막사 경계 강화·암살 저지 준비"
           },
           "check": {
-            "kind": "strategy"
+            "kind": "strategy",
+            "weights": {
+              "intelligence": 0.55,
+              "charisma": 0.25,
+              "leadership": 0.2
+            },
+            "difficulty": 68,
+            "fameReward": 12,
+            "fameReason": "회유 사실로 정원의 경계를 강화"
           },
           "failure": {
             "text": "나는 회유의 위험을 알렸지만 초병은 여포를 모함하느냐며 받아들이지 않았다. 이름을 더 남기지 못하고 초소에서 물러났다.",
@@ -1014,7 +1416,15 @@
             "hint": "여포에게 말을 전할 통로 확보"
           },
           "check": {
-            "kind": "relationship"
+            "kind": "relationship",
+            "weights": {
+              "charisma": 0.7,
+              "intelligence": 0.15,
+              "politics": 0.15
+            },
+            "difficulty": 49,
+            "fameReward": 4,
+            "fameReason": "여포 측 소개 통로 확보"
           },
           "failure": {
             "text": "나는 소개를 청했지만 연락책은 선물 수신자에게 가까이 가지 말라며 제지했다. 여포가 받아들였다는 소식도 확인하지 못하고 물러났다.",
@@ -1080,7 +1490,95 @@
             "operator": "eq",
             "value": true
           },
-          "text": "내 경고를 받은 초소가 정원 막사 바깥에 병사를 더 세웠다. 그런데 여포가 나타나자 경비병들이 지휘를 따라야 할지 망설이고 있었다. 경계를 늘린 것만으로 암살이 막힌 건 아니었다. 누군가 지금 정원의 호위를 직접 깨워야 했다."
+          "text": "내 경고를 받은 초소가 정원 막사 바깥에 병사를 더 세웠다. 그런데 여포가 나타나자 경비병들이 지휘를 따라야 할지 망설이고 있었다. 경계를 늘린 것만으로 암살이 막힌 건 아니었다. 누군가 지금 정원의 호위를 직접 깨워야 했다.",
+          "choices": [
+            {
+              "id": "a",
+              "title": "막사 호위를 깨워 여포의 진입을 막는다",
+              "description": "배신자라는 말로 결론부터 내지 말고 경비를 돌려 달라고 외치자. 여포가 나를 발견하면 다음 표적은 나다.",
+              "success": {
+                "text": "나는 막사 호위를 향해 경계가 비었다고 외쳤고 정원에게 직접 보고하게 했다. 호위가 모이자 여포는 칼을 뽑을 틈을 잃고 빠져나갔고, 정원은 살아서 병력을 다시 모았다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "dingSaved",
+                    "value": true
+                  }
+                ],
+                "hint": "정원 생존·동탁의 군권 독점 저지"
+              },
+              "check": {
+                "kind": "strategy",
+                "weights": {
+                  "leadership": 0.45,
+                  "intelligence": 0.35,
+                  "charisma": 0.2
+                },
+                "difficulty": 66,
+                "fameReward": 28,
+                "fameReason": "사전 경고로 늘어난 호위를 즉시 동원"
+              },
+              "failure": {
+                "text": "나는 경보를 올렸지만 여포가 막사 안으로 들어가는 쪽이 더 빨랐다. 정원이 쓰러졌다는 소식을 들은 뒤에야 나는 수레길로 빠져나왔다.",
+                "effects": [],
+                "hint": "경보 지연·정원 암살과 여포 투항"
+              },
+              "artwork": {
+                "src": "/art/scenes/r003-guard.png",
+                "alt": "정원군의 회색 갑옷 호위를 깨워 경계를 알리는 주인공"
+              }
+            },
+            {
+              "id": "b",
+              "title": "지금의 연락선으로 군영 상황을 전달한다",
+              "description": "살아남은 영웅에게 무엇이 벌어졌는지 정확히 전하자. 내가 보지 못한 살해까지 목격했다고 하면 안 된다.",
+              "success": {
+                "text": "나는 연락책에게 막사 주변의 경계 공백과 여포의 이동을 전했다. 답을 기다리던 중 정원의 죽음과 여포의 투항 소식이 도착해 그 경과까지 구분해 전달했다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "courtReport",
+                    "value": true
+                  }
+                ],
+                "hint": "확인한 경과·정원 피살 소식을 연락선에 전달"
+              },
+              "check": {
+                "kind": "relationship",
+                "weights": {
+                  "charisma": 0.4,
+                  "intelligence": 0.35,
+                  "leadership": 0.25
+                },
+                "difficulty": 49,
+                "fameReward": 6,
+                "fameReason": "확인한 군영 이동을 보고"
+              },
+              "failure": {
+                "text": "나는 연락을 잇고 싶었지만 검문이 시작되면서 전령을 만나지 못했다. 확인한 이동 경과만 기억하고 숙소로 돌아갔다.",
+                "effects": [],
+                "hint": "검문으로 전달 실패"
+              },
+              "artwork": {
+                "src": "/art/choices/official.png",
+                "alt": "지금의 연락선으로 군영 상황을 전달한다에 나서는 주인공"
+              }
+            },
+            {
+              "id": "c",
+              "title": "성 밖 피란 수레로 돌아간다",
+              "description": "무력 백의 야간 방문에 끼지 말자. 살아서 오늘 밤을 기억하는 사람이 되는 것도 선택이다.",
+              "success": {
+                "text": "나는 군영 쪽으로 더 들어가지 않고 피란 수레들이 머무는 곳으로 돌아갔다. 정원의 죽음과 여포의 투항은 다음 날 연락책에게서 들었다.",
+                "effects": [],
+                "hint": "직접 개입 없이 안전한 숙소로 복귀"
+              },
+              "artwork": {
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "성 밖 피란 수레로 돌아간다에 나서는 주인공"
+              }
+            }
+          ]
         },
         {
           "key": "wounded",
@@ -1089,7 +1587,95 @@
             "operator": "eq",
             "value": true
           },
-          "text": "여포가 부상을 입었다고 정원 막사로 향하는 발걸음까지 멈추지는 않았다. 길목에서 그의 말발굽 소리를 들은 나는 지친 팔을 움켜쥐었다. 다시 맞붙는 대신 경보를 올리면 다른 병사들이 움직일 틈이 생길 수 있었다. 처음의 승리를 여기서 진짜 변화로 이어 갈까?"
+          "text": "여포가 부상을 입었다고 정원 막사로 향하는 발걸음까지 멈추지는 않았다. 길목에서 그의 말발굽 소리를 들은 나는 지친 팔을 움켜쥐었다. 다시 맞붙는 대신 경보를 올리면 다른 병사들이 움직일 틈이 생길 수 있었다. 처음의 승리를 여기서 진짜 변화로 이어 갈까?",
+          "choices": [
+            {
+              "id": "a",
+              "title": "막사 호위를 깨워 여포의 진입을 막는다",
+              "description": "배신자라는 말로 결론부터 내지 말고 경비를 돌려 달라고 외치자. 여포가 나를 발견하면 다음 표적은 나다.",
+              "success": {
+                "text": "나는 막사 호위를 향해 경계가 비었다고 외쳤고 정원에게 직접 보고하게 했다. 호위가 모이자 여포는 칼을 뽑을 틈을 잃고 빠져나갔고, 정원은 살아서 병력을 다시 모았다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "dingSaved",
+                    "value": true
+                  }
+                ],
+                "hint": "정원 생존·동탁의 군권 독점 저지"
+              },
+              "check": {
+                "kind": "strategy",
+                "weights": {
+                  "leadership": 0.45,
+                  "intelligence": 0.35,
+                  "charisma": 0.2
+                },
+                "difficulty": 72,
+                "fameReward": 28,
+                "fameReason": "부상한 여포의 진입을 경보로 저지"
+              },
+              "failure": {
+                "text": "나는 경보를 올렸지만 여포가 막사 안으로 들어가는 쪽이 더 빨랐다. 정원이 쓰러졌다는 소식을 들은 뒤에야 나는 수레길로 빠져나왔다.",
+                "effects": [],
+                "hint": "경보 지연·정원 암살과 여포 투항"
+              },
+              "artwork": {
+                "src": "/art/scenes/r003-guard.png",
+                "alt": "정원군의 회색 갑옷 호위를 깨워 경계를 알리는 주인공"
+              }
+            },
+            {
+              "id": "b",
+              "title": "지금의 연락선으로 군영 상황을 전달한다",
+              "description": "살아남은 영웅에게 무엇이 벌어졌는지 정확히 전하자. 내가 보지 못한 살해까지 목격했다고 하면 안 된다.",
+              "success": {
+                "text": "나는 연락책에게 막사 주변의 경계 공백과 여포의 이동을 전했다. 답을 기다리던 중 정원의 죽음과 여포의 투항 소식이 도착해 그 경과까지 구분해 전달했다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "courtReport",
+                    "value": true
+                  }
+                ],
+                "hint": "확인한 경과·정원 피살 소식을 연락선에 전달"
+              },
+              "check": {
+                "kind": "relationship",
+                "weights": {
+                  "charisma": 0.4,
+                  "intelligence": 0.35,
+                  "leadership": 0.25
+                },
+                "difficulty": 49,
+                "fameReward": 6,
+                "fameReason": "확인한 군영 이동을 보고"
+              },
+              "failure": {
+                "text": "나는 연락을 잇고 싶었지만 검문이 시작되면서 전령을 만나지 못했다. 확인한 이동 경과만 기억하고 숙소로 돌아갔다.",
+                "effects": [],
+                "hint": "검문으로 전달 실패"
+              },
+              "artwork": {
+                "src": "/art/choices/official.png",
+                "alt": "지금의 연락선으로 군영 상황을 전달한다에 나서는 주인공"
+              }
+            },
+            {
+              "id": "c",
+              "title": "성 밖 피란 수레로 돌아간다",
+              "description": "무력 백의 야간 방문에 끼지 말자. 살아서 오늘 밤을 기억하는 사람이 되는 것도 선택이다.",
+              "success": {
+                "text": "나는 군영 쪽으로 더 들어가지 않고 피란 수레들이 머무는 곳으로 돌아갔다. 정원의 죽음과 여포의 투항은 다음 날 연락책에게서 들었다.",
+                "effects": [],
+                "hint": "직접 개입 없이 안전한 숙소로 복귀"
+              },
+              "artwork": {
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "성 밖 피란 수레로 돌아간다에 나서는 주인공"
+              }
+            }
+          ]
         }
       ],
       "choices": [
@@ -1109,7 +1695,15 @@
             "hint": "정원 생존·동탁의 군권 독점 저지"
           },
           "check": {
-            "kind": "strategy"
+            "kind": "strategy",
+            "weights": {
+              "leadership": 0.45,
+              "intelligence": 0.35,
+              "charisma": 0.2
+            },
+            "difficulty": 80,
+            "fameReward": 28,
+            "fameReason": "정원 암살을 저지해 군권 장악을 바꿈"
           },
           "failure": {
             "text": "나는 경보를 올렸지만 여포가 막사 안으로 들어가는 쪽이 더 빨랐다. 정원이 쓰러졌다는 소식을 들은 뒤에야 나는 수레길로 빠져나왔다.",
@@ -1137,7 +1731,15 @@
             "hint": "확인한 경과·정원 피살 소식을 연락선에 전달"
           },
           "check": {
-            "kind": "relationship"
+            "kind": "relationship",
+            "weights": {
+              "charisma": 0.4,
+              "intelligence": 0.35,
+              "leadership": 0.25
+            },
+            "difficulty": 49,
+            "fameReward": 6,
+            "fameReason": "확인한 군영 이동을 보고"
           },
           "failure": {
             "text": "나는 연락을 잇고 싶었지만 검문이 시작되면서 전령을 만나지 못했다. 확인한 이동 경과만 기억하고 숙소로 돌아갔다.",
@@ -1253,8 +1855,8 @@
         "ding-yuan"
       ],
       "artwork": {
-        "src": "/art/characters/lu-bu.png",
-        "alt": "정원 막사로 향할 뜻을 숨기고 있는 여포"
+        "src": "/art/scenes/lu-bu-night-camp.png",
+        "alt": "정원의 야간 막사로 다가오는 여포와 망설이는 초병을 지켜보는 주인공"
       }
     }
   ]

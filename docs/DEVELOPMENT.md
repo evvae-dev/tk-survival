@@ -16,3 +16,5 @@ node .agents/skills/playwright-page-check/scripts/check-story-chapters.cjs http:
 `002`, `003`, `004`도 같은 방식으로 검증한다. A/B/C 성공·실패의 실제 엔진 상태를 모아 조건별 장면을 방문하고 이미지·PC/모바일·짧은 화면·관리자 편집·저장·복원·게임 반영을 확인한다. 캡처와 실제 테스트 결과는 `docs/development/rebuild-chapters-1-3.md`에 기록한다.
 
 완료 저장의 새 화 이어하기는 `continuationEvent`와 `continueStory`를 사용한다. 완료 상태를 자동으로 바꾸지 않으며 과거 완료 챕터 뒤의 신규 사건이 있을 때만 버튼을 연다. 전사·처형·통일 엔딩은 제외한다.
+
+최신 재생·명성·가중치·이미지 규칙과 검증은 `docs/development/game-rules-20261022.md`를 따른다. `check-game-rules.cjs`가 4,999/5,000ms, 속도 변경, 저장한 결과 기한, 실패 소수점 명성, 전사, 관리자 비중·난도·명성 편집을 실제 화면에서 검증한다. `check-story-chapters.cjs`는 이제 각 옵션 이미지 3개도 필수 검사한다.

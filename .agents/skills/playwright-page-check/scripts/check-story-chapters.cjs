@@ -21,7 +21,7 @@ async function images(page){
    assert(state,`fixture ${event.id}`);
    await page.goto(url);await page.evaluate(state=>localStorage.setItem('tk-survival-game-romance-v1',JSON.stringify({state:{game:{...state,introChoicePending:false}},version:1})),state);await page.reload();
    console.log(label,event.id);await page.getByTestId('event-panel').waitFor();assert(await page.getByTestId('event-panel').innerText().then(x=>x.includes(event.title)));
-   assert.deepEqual(await images(page),[]);await page.getByRole('button',{name:'선택하기',exact:false}).click();const dialog=page.locator('dialog[open]');await dialog.waitFor();assert.equal(await dialog.locator('button').filter({has:page.locator('strong')}).count(),3);
+   assert.deepEqual(await images(page),[]);if(['r001-08','r002-08','r003-04','r003-05','r003-08','r005-03','r005-04','r005-08'].includes(event.id))await page.screenshot({path:`${out}/${chapter}-${label}-${event.id}-${state.flowProgress.nodeId}-scene.png`,fullPage:false});await page.getByRole('button',{name:'선택하기',exact:false}).click();const dialog=page.locator('dialog[open]');await dialog.waitFor();assert.equal(await dialog.locator('button').filter({has:page.locator('strong')}).count(),3);assert.equal(await dialog.locator('button img').count(),3);assert.equal(await dialog.locator('img[src*="/characters/"]').count(),0);
    assert.deepEqual(await images(page),[]);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false);
    await dialog.evaluate(el=>el.scrollTop=0);if(event===events[0]||event===events.at(-1))await page.screenshot({path:`${out}/${chapter}-${label}-${event.id}-${state.flowProgress.nodeId}.png`,fullPage:true});
    await dialog.getByRole('button',{name:/팝업 닫기/}).click();

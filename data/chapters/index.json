@@ -28,6 +28,13 @@
       "title": "황제 폐립과 조조의 도피·거병",
       "source": "docs/romance-three-kingdoms/chapters/004.md",
       "status": "complete"
+    },
+    {
+      "id": "chapter-005",
+      "order": 5,
+      "title": "반동탁 연합군과 호뢰관 전투",
+      "source": "docs/romance-three-kingdoms/chapters/005.md",
+      "status": "complete"
     }
   ]
 }

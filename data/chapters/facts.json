@@ -717,5 +717,241 @@
       "rtk14-0620",
       "rtk14-0913"
     ]
+  },
+  {
+    "id": "r005-01",
+    "chapterId": "chapter-005",
+    "order": 1,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/005.md",
+    "sourceSha256": "c984b283a5215a1275f7d4ff90ba8db7efc3adebbc28e520f1faa3152a002fea",
+    "sourceStage": 1,
+    "title": "연합군인데 단체 채팅방이 없다",
+    "fact": "조조의 격문에 호응한 제후들이 집결해 원소를 맹주로 세웠다. 공손찬과 유비 형제도 참여했고 손견은 선봉, 원술은 군량을 맡았다.",
+    "category": "novel",
+    "people": [
+      "조조",
+      "원소",
+      "원술",
+      "손견",
+      "공손찬",
+      "유비",
+      "관우",
+      "장비"
+    ],
+    "officers": [
+      "rtk14-0032",
+      "rtk14-0035",
+      "rtk14-0147",
+      "rtk14-0266",
+      "rtk14-0521",
+      "rtk14-0551",
+      "rtk14-0656",
+      "rtk14-0952"
+    ]
+  },
+  {
+    "id": "r005-02",
+    "chapterId": "chapter-005",
+    "order": 2,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/005.md",
+    "sourceSha256": "c984b283a5215a1275f7d4ff90ba8db7efc3adebbc28e520f1faa3152a002fea",
+    "sourceStage": 2,
+    "title": "선착순 공적 경쟁은 사망 플래그다",
+    "fact": "포신은 선봉 손견보다 먼저 공을 세우려고 포충을 별도로 보냈으나 화웅에게 잃었다. 손견은 호진을 무찌르며 사수관으로 진격했다.",
+    "category": "novel",
+    "people": [
+      "포신",
+      "포충",
+      "손견",
+      "화웅",
+      "호진"
+    ],
+    "officers": [
+      "rtk14-0144",
+      "rtk14-0301",
+      "rtk14-0551",
+      "rtk14-0826"
+    ]
+  },
+  {
+    "id": "r005-03",
+    "chapterId": "chapter-005",
+    "order": 3,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/005.md",
+    "sourceSha256": "c984b283a5215a1275f7d4ff90ba8db7efc3adebbc28e520f1faa3152a002fea",
+    "sourceStage": 3,
+    "title": "군량 담당이 아군 맞습니까",
+    "fact": "원술은 손견이 공을 세울 것을 시기해 군량을 끊었다. 화웅의 야습으로 손견군이 무너졌고 조무는 붉은 두건으로 적을 유인하다 죽었다.",
+    "category": "novel",
+    "people": [
+      "원술",
+      "손견",
+      "화웅",
+      "조무"
+    ],
+    "officers": [
+      "rtk14-0032",
+      "rtk14-0144",
+      "rtk14-0538",
+      "rtk14-0551"
+    ]
+  },
+  {
+    "id": "r005-04",
+    "chapterId": "chapter-005",
+    "order": 4,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/005.md",
+    "sourceSha256": "c984b283a5215a1275f7d4ff90ba8db7efc3adebbc28e520f1faa3152a002fea",
+    "sourceStage": 4,
+    "title": "화웅 코인, 술 식기 전 상장 폐지?",
+    "fact": "화웅은 연합군 앞에서 도전해 유섭과 반봉을 죽였다. 관우가 출전을 청했지만 원술은 낮은 신분을 들어 반대했다.",
+    "category": "novel",
+    "people": [
+      "화웅",
+      "유섭",
+      "반봉",
+      "관우",
+      "원술",
+      "조조"
+    ],
+    "officers": [
+      "rtk14-0032",
+      "rtk14-0144",
+      "rtk14-0147",
+      "rtk14-0521",
+      "rtk14-0785",
+      "rtk14-0853"
+    ]
+  },
+  {
+    "id": "r005-05",
+    "chapterId": "chapter-005",
+    "order": 5,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/005.md",
+    "sourceSha256": "c984b283a5215a1275f7d4ff90ba8db7efc3adebbc28e520f1faa3152a002fea",
+    "sourceStage": 5,
+    "title": "그 술잔의 결말은 아직 모른다",
+    "fact": "조조는 신분으로 관우의 출전을 막지 말자고 설득하고 데운 술을 권했다. 관우는 돌아와 마시겠다며 나가 화웅을 베고 술이 식기 전에 돌아왔다.",
+    "category": "novel",
+    "people": [
+      "조조",
+      "관우",
+      "화웅",
+      "원술"
+    ],
+    "officers": [
+      "rtk14-0032",
+      "rtk14-0144",
+      "rtk14-0147",
+      "rtk14-0521"
+    ]
+  },
+  {
+    "id": "r005-06",
+    "chapterId": "chapter-005",
+    "order": 6,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/005.md",
+    "sourceSha256": "c984b283a5215a1275f7d4ff90ba8db7efc3adebbc28e520f1faa3152a002fea",
+    "sourceStage": 6,
+    "title": "공적 회의 다음은 보복 명단",
+    "fact": "원술은 장비와 형제들의 낮은 신분을 모욕했고 유비는 충돌을 피해 물러났다. 화웅의 패전 뒤 동탁은 원씨 일족을 죽이고 여포를 앞세워 호뢰관으로 나왔다.",
+    "category": "novel",
+    "people": [
+      "장비",
+      "관우",
+      "유비",
+      "원술",
+      "조조",
+      "동탁",
+      "원소",
+      "여포"
+    ],
+    "officers": [
+      "rtk14-0032",
+      "rtk14-0035",
+      "rtk14-0147",
+      "rtk14-0521",
+      "rtk14-0656",
+      "rtk14-0736",
+      "rtk14-0952",
+      "rtk14-0987"
+    ]
+  },
+  {
+    "id": "r005-07",
+    "chapterId": "chapter-005",
+    "order": 7,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/005.md",
+    "sourceSha256": "c984b283a5215a1275f7d4ff90ba8db7efc3adebbc28e520f1faa3152a002fea",
+    "sourceStage": 7,
+    "title": "공손찬 뒤의 적토마가 너무 빠르다",
+    "fact": "여포는 방열과 목순을 죽이고 무안국을 다치게 했다. 공손찬도 패주했고 적토마를 탄 여포의 추격으로 위험에 몰렸다.",
+    "category": "novel",
+    "people": [
+      "여포",
+      "방열",
+      "목순",
+      "무안국",
+      "공손찬",
+      "장비"
+    ],
+    "officers": [
+      "rtk14-0266",
+      "rtk14-0656",
+      "rtk14-0798",
+      "rtk14-0818",
+      "rtk14-0835",
+      "rtk14-0987"
+    ]
+  },
+  {
+    "id": "r005-08",
+    "chapterId": "chapter-005",
+    "order": 8,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/005.md",
+    "sourceSha256": "c984b283a5215a1275f7d4ff90ba8db7efc3adebbc28e520f1faa3152a002fea",
+    "sourceStage": 8,
+    "title": "셋이 싸우는데 빈틈은 한 군데다",
+    "fact": "장비가 공손찬을 구하고 여포와 맞섰다. 관우와 유비가 차례로 가세했으나 여포는 유비 쪽을 공격해 포위를 벗어났다.",
+    "category": "novel",
+    "people": [
+      "유비",
+      "관우",
+      "장비",
+      "여포",
+      "공손찬"
+    ],
+    "officers": [
+      "rtk14-0147",
+      "rtk14-0266",
+      "rtk14-0656",
+      "rtk14-0952",
+      "rtk14-0987"
+    ]
+  },
+  {
+    "id": "r005-09",
+    "chapterId": "chapter-005",
+    "order": 9,
+    "sourceFile": "docs/romance-three-kingdoms/chapters/005.md",
+    "sourceSha256": "c984b283a5215a1275f7d4ff90ba8db7efc3adebbc28e520f1faa3152a002fea",
+    "sourceStage": 9,
+    "title": "호뢰관 승리 버튼은 아직 없다",
+    "fact": "세 형제가 여포를 뒤쫓자 연합군이 진격했고 동탁군은 관 안으로 물러났다. 장비는 관 위의 동탁을 보고 달려들었지만 동탁이나 황제를 확보한 것은 아니었다.",
+    "category": "novel",
+    "people": [
+      "유비",
+      "관우",
+      "장비",
+      "여포",
+      "동탁"
+    ],
+    "officers": [
+      "rtk14-0147",
+      "rtk14-0656",
+      "rtk14-0736",
+      "rtk14-0952",
+      "rtk14-0987"
+    ]
   }
 ]

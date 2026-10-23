@@ -222,3 +222,6 @@
  .historyFlow{height:100%}
 }
 .ending>.primaryButton+.primaryButton{margin-top:14px}
+.resultCard{display:flex;flex-direction:column;gap:10px;width:100%;min-width:0}.resultCard>.dialogue{font-size:16px;line-height:1.65;white-space:pre-line;margin:0}.resultCard>small{color:var(--text-muted)}.resultCard>[data-testid="result-fame"]{font-weight:700;margin:0}
+.resultCard .eventArt{flex:none;height:160px;min-height:120px;max-height:180px}.resultCard h1{font-size:19px}
+.eventPanel{scroll-margin-top:90px}

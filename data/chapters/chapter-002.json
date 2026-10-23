@@ -42,7 +42,15 @@
             "hint": "패주 기록을 주준에게 남김"
           },
           "check": {
-            "kind": "politics"
+            "kind": "politics",
+            "weights": {
+              "politics": 0.5,
+              "intelligence": 0.4,
+              "leadership": 0.1
+            },
+            "difficulty": 60,
+            "fameReward": 8,
+            "fameReason": "패전 경과를 지휘부에 공식 보고"
           },
           "failure": {
             "text": "나는 패주를 설명했지만 직접 지휘한 것도 아니면서 남을 깎아내린다는 말을 들었다. 유비의 신원 확인이 끝날 때까지 초소 밖에서 기다렸다.",
@@ -70,7 +78,15 @@
             "hint": "유비 행렬의 출입 확인"
           },
           "check": {
-            "kind": "relationship"
+            "kind": "relationship",
+            "weights": {
+              "charisma": 0.55,
+              "politics": 0.35,
+              "intelligence": 0.1
+            },
+            "difficulty": 43,
+            "fameReward": 4,
+            "fameReason": "유비 측 신원 확인 지원"
           },
           "failure": {
             "text": "나는 신원을 설명하려다 말을 꼬아 초병을 더 경계하게 만들었다. 유비가 직접 답하는 동안 나는 수레 곁으로 물러났다.",
@@ -141,7 +157,15 @@
             "hint": "요술 속 집결로 일부 병력 보존"
           },
           "check": {
-            "kind": "strategy"
+            "kind": "strategy",
+            "weights": {
+              "leadership": 0.45,
+              "intelligence": 0.35,
+              "charisma": 0.2
+            },
+            "difficulty": 68,
+            "fameReward": 12,
+            "fameReason": "요술에 흔들린 병력의 재집결 방식을 변경"
           },
           "failure": {
             "text": "나는 방울 소리를 울렸지만 바람과 함성에 묻혀 사람들이 듣지 못했다. 주준의 반격 준비가 끝날 때까지 흩어진 향용을 따라 물러났다.",
@@ -169,7 +193,14 @@
             "hint": "후퇴 병력 엄호와 반격 합류"
           },
           "check": {
-            "kind": "battle"
+            "kind": "battle",
+            "weights": {
+              "leadership": 1.5,
+              "strength": 1
+            },
+            "difficulty": 56,
+            "fameReward": 6,
+            "fameReason": "방어 대열 유지"
           },
           "failure": {
             "text": "나는 빈 대열을 메우려다 몰려드는 병사들에게 밀렸다. 방패를 잃었지만 수레 뒤로 빠져 다음 신호를 기다렸다.",
@@ -258,7 +289,15 @@
             "hint": "일부 황건 병력의 조건부 항복·포로 인계"
           },
           "check": {
-            "kind": "strategy"
+            "kind": "strategy",
+            "weights": {
+              "intelligence": 0.45,
+              "charisma": 0.4,
+              "politics": 0.15
+            },
+            "difficulty": 72,
+            "fameReward": 14,
+            "fameReason": "무장 해제 협상의 성패를 바꿈"
           },
           "failure": {
             "text": "나는 한충에게 조건을 전했지만 양쪽이 서로의 약속을 믿지 않아 협상이 끊겼다. 성 밖 유인 작전이 시작되기 전에 나는 협상 자리를 빠져나왔다.",
@@ -286,7 +325,14 @@
             "hint": "퇴로 유지·유비 측 공략 지원"
           },
           "check": {
-            "kind": "battle"
+            "kind": "battle",
+            "weights": {
+              "leadership": 1,
+              "strength": 1.5
+            },
+            "difficulty": 54,
+            "fameReward": 6,
+            "fameReason": "완성 전선의 퇴로 신호 전달"
           },
           "failure": {
             "text": "나는 퇴로 신호를 늦게 전해 한동안 향용들이 길을 막았다. 유비 측이 다시 전령을 보내 정리할 때까지 나는 뒤로 물러났다.",
@@ -395,7 +441,15 @@
             "hint": "안희 현청에 전공 증언 사본 보존"
           },
           "check": {
-            "kind": "politics"
+            "kind": "politics",
+            "weights": {
+              "politics": 0.55,
+              "intelligence": 0.35,
+              "charisma": 0.1
+            },
+            "difficulty": 59,
+            "fameReward": 10,
+            "fameReason": "군공 증언을 현청 기록으로 남김"
           },
           "failure": {
             "text": "나는 증언을 모았지만 이름과 참여 시점이 맞지 않아 서리가 받아 주지 않았다. 확인 못 한 공적은 적지 않고 증언자 목록만 남겼다.",
@@ -423,7 +477,15 @@
             "hint": "현청 연락책·주민과 인연 확보"
           },
           "check": {
-            "kind": "relationship"
+            "kind": "relationship",
+            "weights": {
+              "charisma": 0.55,
+              "politics": 0.35,
+              "intelligence": 0.1
+            },
+            "difficulty": 42,
+            "fameReward": 4,
+            "fameReason": "초기 현청 업무 지원"
           },
           "failure": {
             "text": "나는 일을 돕겠다고 했지만 이미 사람이 정해졌다는 답을 받았다. 현청 안을 서성이지 않고 주민들이 기다리는 처마 밑으로 돌아왔다.",
@@ -495,7 +557,15 @@
             "hint": "강요된 진술의 모순을 증거로 확보"
           },
           "check": {
-            "kind": "politics"
+            "kind": "politics",
+            "weights": {
+              "politics": 0.55,
+              "intelligence": 0.35,
+              "charisma": 0.1
+            },
+            "difficulty": 69,
+            "fameReward": 12,
+            "fameReason": "강요 진술 사본이라는 후속 구출 근거 확보"
           },
           "failure": {
             "text": "나는 사본을 남기려 했지만 겁먹은 서리들이 이름을 대지 않겠다며 물러났다. 내 짐작만으로 문서를 만들어 내지는 못했다.",
@@ -523,7 +593,15 @@
             "hint": "면담 거절 경과와 전달자를 기록"
           },
           "check": {
-            "kind": "relationship"
+            "kind": "relationship",
+            "weights": {
+              "charisma": 0.4,
+              "intelligence": 0.35,
+              "leadership": 0.25
+            },
+            "difficulty": 48,
+            "fameReward": 4,
+            "fameReason": "해명 요청 전달"
           },
           "failure": {
             "text": "나는 면담을 청했지만 문지기가 이름도 받지 않겠다고 했다. 문을 억지로 밀지 않고 유비 측에 거절당한 경과를 전했다.",
@@ -560,7 +638,95 @@
             "operator": "eq",
             "value": true
           },
-          "text": "내가 현청에 남긴 전공 증언을 독우가 읽지도 않고 옆으로 밀었다. 이번에는 아전들에게 유비가 주민을 해쳤다는 말을 쓰라며 압박했다. 공적 사본이 있다고 모함이 저절로 막히는 건 아니었다. 이제는 그가 거짓 진술을 강요했다는 증거가 필요했다."
+          "text": "내가 현청에 남긴 전공 증언을 독우가 읽지도 않고 옆으로 밀었다. 이번에는 아전들에게 유비가 주민을 해쳤다는 말을 쓰라며 압박했다. 공적 사본이 있다고 모함이 저절로 막히는 건 아니었다. 이제는 그가 거짓 진술을 강요했다는 증거가 필요했다.",
+          "choices": [
+            {
+              "id": "a",
+              "title": "강요받은 진술의 사본을 확보한다",
+              "description": "말만 가지고 맞서면 독우가 내 입부터 막는다. 서로 다른 증언과 기록을 맞춰야 한다.",
+              "success": {
+                "text": "나는 서리들의 동의를 받아 강요받은 내용과 실제 민원 기록을 따로 적었다. 서로 맞지 않는 대목이 드러나 독우가 내민 진술의 허점을 증명할 수 있게 됐다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "duyouEvidence",
+                    "value": true
+                  }
+                ],
+                "hint": "강요된 진술의 모순을 증거로 확보"
+              },
+              "check": {
+                "kind": "politics",
+                "weights": {
+                  "politics": 0.55,
+                  "intelligence": 0.35,
+                  "charisma": 0.1
+                },
+                "difficulty": 69,
+                "fameReward": 12,
+                "fameReason": "강요 진술 사본이라는 후속 구출 근거 확보"
+              },
+              "failure": {
+                "text": "나는 사본을 남기려 했지만 겁먹은 서리들이 이름을 대지 않겠다며 물러났다. 내 짐작만으로 문서를 만들어 내지는 못했다.",
+                "effects": [],
+                "hint": "증언자들이 물러나 증거 확보 실패"
+              },
+              "artwork": {
+                "src": "/art/scenes/r002-evidence.png",
+                "alt": "강요받은 진술의 사본을 확보한다에 나서는 주인공"
+              }
+            },
+            {
+              "id": "b",
+              "title": "유비의 해명 요청을 전달한다",
+              "description": "장비가 소식부터 들으면 일이 커진다. 당사자가 항변할 자리를 먼저 열어 보자.",
+              "success": {
+                "text": "나는 담당자를 통해 유비가 해명을 원한다는 말을 거듭 전했다. 면담은 여전히 거절됐지만 거절 시점과 전달받은 사람을 남길 수 있었다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "refusalRecorded",
+                    "value": true
+                  }
+                ],
+                "hint": "면담 거절 경과와 전달자를 기록"
+              },
+              "check": {
+                "kind": "relationship",
+                "weights": {
+                  "charisma": 0.4,
+                  "intelligence": 0.35,
+                  "leadership": 0.25
+                },
+                "difficulty": 48,
+                "fameReward": 4,
+                "fameReason": "해명 요청 전달"
+              },
+              "failure": {
+                "text": "나는 면담을 청했지만 문지기가 이름도 받지 않겠다고 했다. 문을 억지로 밀지 않고 유비 측에 거절당한 경과를 전했다.",
+                "effects": [],
+                "hint": "문지기가 접수 자체를 거부"
+              },
+              "artwork": {
+                "src": "/art/choices/official.png",
+                "alt": "유비의 해명 요청을 전달한다에 나서는 주인공"
+              }
+            },
+            {
+              "id": "c",
+              "title": "울고 있는 주민 곁에 남는다",
+              "description": "독우 방에 들어갈 줄이 없다. 무슨 말을 시켰는지 주민들이라도 다치지 않고 나오게 기다리자.",
+              "success": {
+                "text": "나는 관청 밖에서 돌아오는 주민들에게 앉을 자리를 내줬다. 독우와 직접 다투지 않고 주민들이 털어놓는 사정을 들었다.",
+                "effects": [],
+                "hint": "직접 충돌을 피하며 주민 곁에 대기"
+              },
+              "artwork": {
+                "src": "/art/choices/relief.png",
+                "alt": "울고 있는 주민 곁에 남는다에 나서는 주인공"
+              }
+            }
+          ]
         }
       ],
       "artwork": {
@@ -614,7 +780,15 @@
                 "hint": "허위 진술 공개·유비의 안희 관직 유지"
               },
               "check": {
-                "kind": "politics"
+                "kind": "politics",
+                "weights": {
+                  "politics": 0.55,
+                  "intelligence": 0.35,
+                  "charisma": 0.1
+                },
+                "difficulty": 59,
+                "fameReward": 22,
+                "fameReason": "사본과 현장 증언을 공개 대조해 관직 이탈을 저지"
               },
               "failure": {
                 "text": "나는 사본을 읽으려 했지만 독우의 수행원이 증언자들을 흩어 버렸다. 증거가 공개되기 전에 장비가 끼어들어 매질을 시작했다.",
@@ -642,7 +816,15 @@
                 "hint": "유비가 개입해 독우를 살리고 관직 반납"
               },
               "check": {
-                "kind": "relationship"
+                "kind": "relationship",
+                "weights": {
+                  "charisma": 0.55,
+                  "politics": 0.35,
+                  "intelligence": 0.1
+                },
+                "difficulty": 58,
+                "fameReward": 8,
+                "fameReason": "독우의 살해를 만류"
               },
               "failure": {
                 "text": "나는 유비에게 가는 길이 막혀 소식을 늦게 전했다. 유비와 관우가 스스로 장비를 말려 독우를 풀어 주는 동안 나는 짐을 챙겼다.",
@@ -688,7 +870,15 @@
             "hint": "현장 증언을 모아 허위 조사 중단"
           },
           "check": {
-            "kind": "strategy"
+            "kind": "strategy",
+            "weights": {
+              "intelligence": 0.45,
+              "charisma": 0.4,
+              "politics": 0.15
+            },
+            "difficulty": 77,
+            "fameReward": 18,
+            "fameReason": "모인 증언으로 독우의 행패와 관직 이탈을 저지"
           },
           "failure": {
             "text": "나는 장비를 막으려 했지만 주민들의 울음 앞에서 말이 닿지 않았다. 유비가 도착할 때까지 독우는 매질을 당했고 나도 접근하지 못했다.",
@@ -716,7 +906,15 @@
             "hint": "유비가 개입해 독우를 살리고 관직 반납"
           },
           "check": {
-            "kind": "relationship"
+            "kind": "relationship",
+            "weights": {
+              "charisma": 0.55,
+              "politics": 0.35,
+              "intelligence": 0.1
+            },
+            "difficulty": 58,
+            "fameReward": 8,
+            "fameReason": "독우의 살해를 만류"
           },
           "failure": {
             "text": "나는 유비에게 가는 길이 막혀 소식을 늦게 전했다. 유비와 관우가 스스로 장비를 말려 독우를 풀어 주는 동안 나는 짐을 챙겼다.",
@@ -810,7 +1008,95 @@
             "operator": "eq",
             "value": true
           },
-          "text": "안희의 관직을 지킨 유비 측과 연락을 이어 가며 나는 상단 수레로 낙양 역참에 왔다. 원래 겪었을 관직 이탈을 피했지만 영제가 위독하다는 소식은 그대로 들려왔다. 궁문 수비가 바뀌는 걸 보니 내 작은 성공이 중앙의 다툼까지 지운 건 아니었다. 후계 다툼의 결말을 어디까지 꺼내 말할까?"
+          "text": "안희의 관직을 지킨 유비 측과 연락을 이어 가며 나는 상단 수레로 낙양 역참에 왔다. 원래 겪었을 관직 이탈을 피했지만 영제가 위독하다는 소식은 그대로 들려왔다. 궁문 수비가 바뀌는 걸 보니 내 작은 성공이 중앙의 다툼까지 지운 건 아니었다. 후계 다툼의 결말을 어디까지 꺼내 말할까?",
+          "choices": [
+            {
+              "id": "a",
+              "title": "건석의 함정을 하진 측에 경고한다",
+              "description": "궁 안에서 혼자 움직이지 말라는 말은 할 수 있다. 근거를 못 대면 내가 음모의 연락책이다.",
+              "success": {
+                "text": "나는 하진 측 문지기에게 궁문 지휘를 바꾼 경위와 호위 없는 출입의 위험을 전했다. 경고는 담당자에게 넘어갔지만 하진을 직접 만날 수는 없었다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "warnedHeJinEarly",
+                    "value": true
+                  }
+                ],
+                "hint": "하진 측에 위험 경고 전달"
+              },
+              "check": {
+                "kind": "strategy",
+                "weights": {
+                  "intelligence": 0.55,
+                  "charisma": 0.25,
+                  "leadership": 0.2
+                },
+                "difficulty": 75,
+                "fameReward": 18,
+                "fameReason": "건석의 함정을 경고해 정국 개입 준비"
+              },
+              "failure": {
+                "text": "나는 건석의 음모를 아는 듯 말하다가 근거를 대라는 추궁을 받았다. 더 끌려들기 전에 확인한 궁문 변화만 말하고 물러났다.",
+                "effects": [],
+                "hint": "음모 가담자로 의심받을 위험"
+              },
+              "artwork": {
+                "src": "/art/choices/official.png",
+                "alt": "건석의 함정을 하진 측에 경고한다에 나서는 주인공"
+              }
+            },
+            {
+              "id": "b",
+              "title": "조조 측 연락책에게 서찰을 인계한다",
+              "description": "조조는 외부 군벌을 부르는 위험을 안다. 예언 대신 내가 본 궁문 상황을 전해 보자.",
+              "success": {
+                "text": "나는 서찰의 수신처를 확인받고 조조 측 연락책에게 궁문에서 본 움직임을 전했다. 그는 내 이름과 머무는 역참을 받아 적었다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "metCaoContact",
+                    "value": true
+                  }
+                ],
+                "hint": "조조 측 연락선·역참 주소 확보"
+              },
+              "check": {
+                "kind": "relationship",
+                "weights": {
+                  "charisma": 0.4,
+                  "intelligence": 0.35,
+                  "leadership": 0.25
+                },
+                "difficulty": 44,
+                "fameReward": 4,
+                "fameReason": "조조 측 서찰 전달"
+              },
+              "failure": {
+                "text": "나는 조조 측 사람을 찾았지만 서찰 확인이 끝나기 전에는 별말을 듣지 못했다. 내용은 꾸며 보태지 않고 역참에서 답을 기다렸다.",
+                "effects": [],
+                "hint": "신원 확인 때문에 접촉 보류"
+              },
+              "artwork": {
+                "src": "/art/choices/han.png",
+                "alt": "조조 측 연락책에게 서찰을 인계한다에 나서는 주인공"
+              }
+            },
+            {
+              "id": "c",
+              "title": "궁문과 떨어진 역참에 머문다",
+              "description": "황제 후계 구도 안다고 궁에 들어갈 자격이 생기는 건 아니다. 잠자리부터 안전한 곳으로 옮기자.",
+              "success": {
+                "text": "나는 서찰을 역참 담당자에게 인계하고 궁문과 떨어진 숙소에 머물렀다. 중앙의 인사 변화는 오가는 전령에게서 들었다.",
+                "effects": [],
+                "hint": "궁문 밖 역참에 머물며 위험 회피"
+              },
+              "artwork": {
+                "src": "/art/choices/hide.png",
+                "alt": "궁문과 떨어진 역참에 머문다에 나서는 주인공"
+              }
+            }
+          ]
         }
       ],
       "choices": [
@@ -830,7 +1116,15 @@
             "hint": "하진 측에 위험 경고 전달"
           },
           "check": {
-            "kind": "strategy"
+            "kind": "strategy",
+            "weights": {
+              "intelligence": 0.55,
+              "charisma": 0.25,
+              "leadership": 0.2
+            },
+            "difficulty": 75,
+            "fameReward": 18,
+            "fameReason": "건석의 함정을 경고해 정국 개입 준비"
           },
           "failure": {
             "text": "나는 건석의 음모를 아는 듯 말하다가 근거를 대라는 추궁을 받았다. 더 끌려들기 전에 확인한 궁문 변화만 말하고 물러났다.",
@@ -858,7 +1152,15 @@
             "hint": "조조 측 연락선·역참 주소 확보"
           },
           "check": {
-            "kind": "relationship"
+            "kind": "relationship",
+            "weights": {
+              "charisma": 0.4,
+              "intelligence": 0.35,
+              "leadership": 0.25
+            },
+            "difficulty": 44,
+            "fameReward": 4,
+            "fameReason": "조조 측 서찰 전달"
           },
           "failure": {
             "text": "나는 조조 측 사람을 찾았지만 서찰 확인이 끝나기 전에는 별말을 듣지 못했다. 내용은 꾸며 보태지 않고 역참에서 답을 기다렸다.",
@@ -945,7 +1247,15 @@
             "hint": "군벌 소집 반대 기록·소집 자체는 유지"
           },
           "check": {
-            "kind": "politics"
+            "kind": "politics",
+            "weights": {
+              "politics": 0.5,
+              "intelligence": 0.4,
+              "leadership": 0.1
+            },
+            "difficulty": 78,
+            "fameReward": 16,
+            "fameReason": "군벌 소집의 위험을 공식 반대 의견으로 제시"
           },
           "failure": {
             "text": "나는 조서의 위험을 말했지만 서리는 결정된 일에 간섭하지 말라고 했다. 문서를 빼앗지 못하고 역참 밖으로 물러났다.",
@@ -973,7 +1283,15 @@
             "hint": "조조 측이 입궁 경고를 접수"
           },
           "check": {
-            "kind": "relationship"
+            "kind": "relationship",
+            "weights": {
+              "intelligence": 0.55,
+              "charisma": 0.25,
+              "leadership": 0.2
+            },
+            "difficulty": 61,
+            "fameReward": 10,
+            "fameReason": "하진의 단독 입궁 경고 전달"
           },
           "failure": {
             "text": "나는 경고를 전하려 했지만 궁문이 닫히면서 연락책과 만나지 못했다. 문밖 경비에게만 위험을 알리고 밤길로 물러났다.",
@@ -1024,8 +1342,8 @@
         }
       ],
       "artwork": {
-        "src": "/art/characters/cao-cao.png",
-        "alt": "지방군 소집의 위험을 경고하는 조조"
+        "src": "/art/scenes/cao-court-warning.png",
+        "alt": "궁정 밖 연락소에서 조조에게 전할 경고 문서를 확인받는 주인공"
       }
     }
   ]

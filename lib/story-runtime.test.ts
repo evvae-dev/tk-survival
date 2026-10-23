@@ -69,7 +69,7 @@ describe('새 챕터 실행 계약',()=>{
   useGameStore.getState().nextTurn(choiceKey(future,future.choices[0].id));expect(useGameStore.getState().game).toBe(game);
   const key=playbackKey(game);useGameStore.getState().advanceRecord(key);const after=useGameStore.getState().game;
   expect(after).not.toBe(game);useGameStore.getState().advanceRecord(key);expect(useGameStore.getState().game).toBe(after);
-  expect([.5,1,1.5,2].map(n=>playbackDelay(n as .5|1|1.5|2))).toEqual([1500,3000,4500,6000]);
+  expect([.5,1,1.5,2].map(n=>playbackDelay(n as .5|1|1.5|2))).toEqual([2500,5000,7500,10000]);
  });
  it('연도가 아니라 챕터 파일 순서대로 실행하며 나이는 역행하지 않는다',()=>{
   const a=structuredClone(historicalEvents[0]);const b=structuredClone(historicalEvents[1]);a.year=189;b.year=184;b.chapterId='chapter-002';b.sequence=1;b.prerequisiteEventIds=[a.id];
