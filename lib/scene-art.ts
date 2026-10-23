@@ -3,6 +3,8 @@ import type { Artwork } from './artwork';
 export function sceneArt(event: Pick<GameEvent,'id'|'state'|'historical'>): Artwork {
  const art=event.historical?.flow?.nodes.find(node=>node.id===event.state.flowProgress?.nodeId)?.data.artwork;
  if(art && !art.src.startsWith('/art/characters/'))return art;
+ const recorded=event.state.world.log.at(-1);
+ if(recorded?.eventId===event.id && recorded.artwork && !recorded.artwork.src.startsWith('/art/characters/'))return recorded.artwork;
  const previous=event.state.decisions.at(-1)?.artwork;
  return previous && !previous.src.startsWith('/art/characters/') ? previous : {src:'/art/choices/strategy.png',alt:'군영 주변의 지형과 지도를 살피며 다음 행동을 생각하는 주인공'};
 }

@@ -19,7 +19,7 @@ export function continuationEvent(game: Game, catalog: HistoricalEvent[] = histo
 export type Choice = { id: string; title: string; description: string; outcome?: string; artwork?: Artwork | null; check?: ChoiceCheck; effects: Partial<Stats>; note: string; disabledReason?: string };
 export type GameEvent = { id: string; year: number; month: number | null; title: string; scene: string; choices: Choice[]; historical?: HistoricalEvent; automatic?: boolean; annual: boolean; state: Game };
 function appendResults(state: Game, event: HistoricalEvent, records: FlowResult[]): Game {
- const entries = records.filter(record => !state.world.log.some(entry => entry.recordId === `${event.id}:${record.id}`)).map(record => ({eventId:event.id,recordId:`${event.id}:${record.id}`,recordType:record.recordType ?? 'personal' as const,year:state.year,month:event.month,title:event.title,detail:record.text,kind:(record.recordType ? 'history' : 'fiction') as 'history'|'fiction'}));
+ const entries = records.filter(record => !state.world.log.some(entry => entry.recordId === `${event.id}:${record.id}`)).map(record => ({eventId:event.id,recordId:`${event.id}:${record.id}`,artwork:record.artwork,recordType:record.recordType ?? 'personal' as const,year:state.year,month:event.month,title:event.title,detail:record.text,kind:(record.recordType ? 'history' : 'fiction') as 'history'|'fiction'}));
  return {...state,world:{...state.world,log:[...state.world.log,...entries]}};
 }
 function finishEvent(state: Game, event: HistoricalEvent): Game {
@@ -82,13 +82,14 @@ export function resolveChoice(game: Game, key: string, catalog: HistoricalEvent[
   const progress = advanceFlow(event.state, historical, target);
   const reward = applyChoiceGrowth(event.state, progress.state, selected.title, check?.success, check?.fameReward ?? 4);
   progress.state = reward.state;
-  const outcome = check ? `${check.success ? '성공' : '실패'} · ${check.success ? selected.check?.success : selected.check?.failure}` : '';
+  const outcomeText = check ? (check.success ? selected.check?.success : selected.check?.failure) : undefined;
+  const outcome = check ? `${check.success ? '성공' : '실패'} · ${outcomeText}` : '';
   const bridge = check ? (check.success ? selected.check?.successNarrative : selected.check?.failureNarrative) : undefined;
   const firstHistorical = progress.records.findIndex(record => !!record.recordType);
   const personalPrefix = firstHistorical < 0 ? progress.records : progress.records.slice(0, firstHistorical);
   const remainingRecords = firstHistorical < 0 ? [] : progress.records.slice(firstHistorical);
   const resultText = personalPrefix.map(record => record.text).join(' ') || (check ? bridge || (check.success ? selected.check?.success : selected.check?.failure) || '' : selected.outcome || (progress.records.some(record => record.recordType) ? '나는 맡은 자리에서 일행의 움직임을 따랐다. 뒤이어 현장의 소식을 들었다.' : selected.description));
-  const entry = { recordType: 'personal' as const, recordId: key, eventId: historical.id, artwork: choiceArt(selected), year: event.year, month: historical.month, title: `${historical.title} · ${selected.title}`, detail: [outcome, resultText].filter(Boolean).join('\n'), kind: 'fiction' as const, ...(reward.growth ? { growth: reward.growth } : {}), ...(check ? { check } : {}) };
+  const entry = { recordType: 'personal' as const, recordId: key, eventId: historical.id, artwork: personalPrefix.at(-1)?.artwork ?? choiceArt(selected), year: event.year, month: historical.month, title: `${historical.title} · ${selected.title}`, detail: [outcome, outcomeText === resultText ? '' : resultText].filter(Boolean).join('\n'), kind: 'fiction' as const, ...(reward.growth ? { growth: reward.growth } : {}), ...(check ? { check } : {}) };
   let next: Game = { ...progress.state, introChoicePending: false, turn: game.turn + 1, decisions: [...progress.state.decisions, entry], world: { ...progress.state.world, log: [...progress.state.world.log, entry] } };
   next = appendResults(next, historical, remainingRecords);
   if (!progress.node) next = finishEvent(next, historical);

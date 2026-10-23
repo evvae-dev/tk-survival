@@ -1,9 +1,9 @@
 {
   "chapterId": "chapter-002",
-  "source": "docs/romance-three-kingdoms/chapters/002.md",
+  "edition": "romance-participation-v2",
   "events": [
     {
-      "title": "상관을 베기 전에 갈아타자",
+      "title": "참은 다음에는 지휘관을 고른다",
       "region": "yingchuan",
       "people": [
         "유비",
@@ -19,397 +19,892 @@
         "rtk14-0736",
         "rtk14-0387"
       ],
-      "requiredAlive": [
-        "rtk14-0952"
-      ],
-      "fact": "유비와 관우는 장비의 동탁 살해를 말렸다. 동탁 밑에서 일하지 않겠다는 장비의 말에 세 사람은 함께 떠나 주준의 군대에 합류했다.",
-      "entry": "동탁의 군영을 떠난 일행이 주준 쪽으로 향하자 나도 보급 수레를 따라 영천 방면으로 움직였다. 주준의 초소 앞에서 행렬이 멈췄다.",
-      "scene": "주준의 병사는 동탁에게서 왔다는 말에 인솔자가 누구냐고 물었다. 장비는 그 이름이 나오자 다시 얼굴을 구겼고 유비가 대신 앞으로 나섰다. 나는 다음 전공이 이 군영에서 시작된다는 걸 알지만, 동탁의 패주를 떠들면 분풀이꾼으로 보일 수도 있었다. 새 지휘관에게 무엇을 내밀까?",
-      "choices": [
-        {
-          "id": "a",
-          "title": "동탁의 패주 경과를 보고한다",
-          "description": "감정 대신 전장의 빈틈을 이야기하자. 하지만 동탁에게 전달되면 내 편을 바꾸기 어렵다.",
-          "success": {
-            "text": "나는 패잔병이 몰려나온 길과 유비 일행의 구원 경과를 담당 서리에게 설명했다. 주준은 보고를 받아 출입을 허락했고 동탁 쪽 눈치를 볼 이유는 하나 더 생겼다.",
-            "effects": [
-              {
-                "type": "flag",
-                "key": "zhuReport",
-                "value": true
-              }
-            ],
-            "hint": "패주 기록을 주준에게 남김"
-          },
-          "check": {
-            "kind": "politics",
-            "weights": {
-              "politics": 0.5,
-              "intelligence": 0.4,
-              "leadership": 0.1
-            },
-            "difficulty": 60,
-            "fameReward": 8,
-            "fameReason": "패전 경과를 지휘부에 공식 보고"
-          },
-          "failure": {
-            "text": "나는 패주를 설명했지만 직접 지휘한 것도 아니면서 남을 깎아내린다는 말을 들었다. 유비의 신원 확인이 끝날 때까지 초소 밖에서 기다렸다.",
-            "effects": [],
-            "hint": "출입 보류·동탁 측 경계 위험"
-          },
-          "artwork": {
-            "src": "/art/choices/official.png",
-            "alt": "동탁의 패주 경과를 보고한다에 나서는 주인공"
-          }
-        },
-        {
-          "id": "b",
-          "title": "유비의 신원 확인을 돕는다",
-          "description": "내가 대장이 된 척하지 말자. 주준이 받아들일 이름은 유비다.",
-          "success": {
-            "text": "나는 유비 일행과 함께 온 향용과 수레를 가리켜 신원을 설명했다. 초병은 주준에게 확인을 보냈고, 우리 행렬은 군영 곁에 머물 허락을 받았다.",
-            "effects": [
-              {
-                "type": "flag",
-                "key": "zhuAccess",
-                "value": true
-              }
-            ],
-            "hint": "유비 행렬의 출입 확인"
-          },
-          "check": {
-            "kind": "relationship",
-            "weights": {
-              "charisma": 0.55,
-              "politics": 0.35,
-              "intelligence": 0.1
-            },
-            "difficulty": 43,
-            "fameReward": 4,
-            "fameReason": "유비 측 신원 확인 지원"
-          },
-          "failure": {
-            "text": "나는 신원을 설명하려다 말을 꼬아 초병을 더 경계하게 만들었다. 유비가 직접 답하는 동안 나는 수레 곁으로 물러났다.",
-            "effects": [],
-            "hint": "초병이 경계해 유비가 직접 해명"
-          },
-          "artwork": {
-            "src": "/art/choices/han.png",
-            "alt": "유비의 신원 확인을 돕는다에 나서는 주인공"
-          }
-        },
-        {
-          "id": "c",
-          "title": "군영 밖 보급소에서 기다린다",
-          "description": "상관 평가에 끼지 말고 짐이나 지키자. 군문 안으로 들어갈 이유도 아직 없다.",
-          "success": {
-            "text": "나는 보급소 담당자의 허락을 받고 짐을 지켰다. 유비 일행이 주준의 토벌에 참여한다는 소식을 그곳에서 들었다.",
-            "effects": [],
-            "hint": "군영 밖에서 안전하게 대기"
-          },
-          "artwork": {
-            "src": "/art/choices/supplies.png",
-            "alt": "군영 밖 보급소에서 기다린다에 나서는 주인공"
-          }
-        }
-      ],
-      "outcomes": [
-        {
-          "text": "유비·관우·장비는 동탁을 떠나 주준의 군대에 합류해 토벌을 계속했다. 상관을 죽이는 대신 지휘관을 바꾸는 길을 택했다."
-        }
-      ],
+      "fact": "유비·관우는 동탁을 죽이려는 장비를 만류했다. 세 사람은 동탁을 떠나 주준의 군대에 합류해 토벌에 참여했다.",
+      "year": 184,
+      "background": "유비·관우는 동탁을 죽이려는 장비를 만류했다. 세 사람은 동탁을 떠나 주준의 군대에 합류해 토벌에 참여했다.",
       "artwork": {
-        "src": "/art/choices/han.png",
-        "alt": "주준의 군영 초소 앞에서 말을 고르는 주인공"
+        "src": "/art/choices/formation.png",
+        "alt": "참은 다음에는 지휘관을 고른다"
       },
-      "background": "동탁의 모욕을 견디지 못한 유비·관우·장비는 군영을 떠나 주준의 토벌군으로 향했다. 새 군영에서는 먼저 신원을 확인하고 있었다."
-    },
-    {
-      "title": "장보가 진짜 흑마법을 쓴다",
-      "region": "yingchuan",
-      "people": [
-        "유비",
-        "장보",
-        "주준"
-      ],
-      "officers": [
-        "rtk14-0952",
-        "rtk14-0659",
-        "rtk14-0387"
-      ],
-      "fact": "연의에서 장보는 바람과 검은 기운을 일으키는 요술로 관군을 혼란에 빠뜨렸다. 주준은 돼지와 양의 피 등으로 술법을 깨뜨릴 준비를 하고 반격했다.",
-      "entry": "나는 토벌군 뒤의 수레를 따라가다 장보의 부대와 맞선 진지 가장자리에 닿았다.",
-      "scene": "바람이 뒤집히더니 검은 기운이 밀려와 향용들이 비명을 질렀다. 현대 지식으로 다 설명될 줄 알았는데 이 세계는 연의의 요술까지 실제였다. 주준은 준비한 피와 물건을 앞으로 옮기라며 사람을 불렀다. 술법 자체와 싸우기보다 무너지는 사람부터 붙잡아 볼까?",
-      "choices": [
+      "routes": [
         {
-          "id": "a",
-          "title": "요술이 닿기 전에 집결 신호를 바꾼다",
-          "description": "눈앞이 안 보여도 들을 수 있는 소리를 정하자. 실패하면 내가 먼저 고립된다.",
-          "success": {
-            "text": "나는 가까운 향용들에게 북소리가 끊겨도 수레 방울 소리를 따라 모이라고 전했다. 검은 기운 속에서도 몇 사람은 서로를 놓치지 않아 후퇴 손실을 줄였다.",
-            "effects": [
-              {
-                "type": "flag",
-                "key": "magicRally",
-                "value": true
-              }
-            ],
-            "hint": "요술 속 집결로 일부 병력 보존"
-          },
-          "check": {
-            "kind": "strategy",
-            "weights": {
-              "leadership": 0.45,
-              "intelligence": 0.35,
-              "charisma": 0.2
+          "id": "liu",
+          "when": [
+            {
+              "field": "world.flags.liuTravel",
+              "operator": "eq",
+              "value": true
             },
-            "difficulty": 68,
-            "fameReward": 12,
-            "fameReason": "요술에 흔들린 병력의 재집결 방식을 변경"
-          },
-          "failure": {
-            "text": "나는 방울 소리를 울렸지만 바람과 함성에 묻혀 사람들이 듣지 못했다. 주준의 반격 준비가 끝날 때까지 흩어진 향용을 따라 물러났다.",
-            "effects": [],
-            "hint": "신호가 묻혀 대열 이탈"
-          },
-          "artwork": {
-            "src": "/art/scenes/r002-rally.png",
-            "alt": "요술이 닿기 전에 집결 신호를 바꾼다에 나서는 주인공"
-          }
-        },
-        {
-          "id": "b",
-          "title": "유비 측 방어 대열을 돕는다",
-          "description": "주준의 준비가 끝날 때까지 영웅 뒤에서 줄을 지키자. 모르는 마법에 객기는 금물이다.",
-          "success": {
-            "text": "나는 물러나는 향용의 빈자리에 방패를 세워 뒤쪽 사람들이 빠질 시간을 벌었다. 주준이 반격을 시작하자 유비 측 대열과 함께 움직였다.",
-            "effects": [
-              {
-                "type": "flag",
-                "key": "magicSupport",
-                "value": true
+            {
+              "field": "factionId",
+              "operator": "neq",
+              "value": "yellow-turban"
+            }
+          ],
+          "text": "동탁에게 받은 모욕 뒤 장비가 다시 칼자루를 잡았다. 유비는 사람을 베는 대신 주준의 군영으로 가겠다고 했다. 나도 계속 동행할지 정할 때가 됐다. 새 지휘관에게 무엇을 맡겠다고 할까?",
+          "choices": [
+            {
+              "id": "transfer",
+              "title": "주준 군영의 전달 임무를 잇는다",
+              "description": "분풀이보다 일할 수 있는 지휘관이 낫다.",
+              "success": {
+                "text": "나는 유비의 이동 명령을 받아 주준의 군영에 인수 문서를 전달했다. 새 전선에서도 연락과 보급을 맡아 동행을 이어 갔다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "zhuJunContact",
+                    "value": true
+                  }
+                ]
+              },
+              "artwork": {
+                "src": "/art/choices/follow.png",
+                "alt": "주준 군영의 전달 임무를 잇는다를 준비하는 주인공과 주변 현장"
               }
-            ],
-            "hint": "후퇴 병력 엄호와 반격 합류"
-          },
-          "check": {
-            "kind": "battle",
-            "weights": {
-              "leadership": 1.5,
-              "strength": 1
             },
-            "difficulty": 56,
-            "fameReward": 6,
-            "fameReason": "방어 대열 유지"
-          },
-          "failure": {
-            "text": "나는 빈 대열을 메우려다 몰려드는 병사들에게 밀렸다. 방패를 잃었지만 수레 뒤로 빠져 다음 신호를 기다렸다.",
-            "effects": [],
-            "hint": "대열 유지 실패·후방으로 이탈"
-          },
+            {
+              "id": "leave",
+              "title": "전선 동행을 마치고 완성행 상단에 붙는다",
+              "description": "이번 출전이 내 평생 직업일 필요는 없다.",
+              "success": {
+                "text": "나는 유비에게 동행을 마치겠다고 말하고 군적도 정리했다. 완성행 상단의 짐을 맡아 민간인으로 길을 바꿨다.",
+                "effects": [
+                  {
+                    "type": "faction",
+                    "value": null
+                  },
+                  {
+                    "type": "role",
+                    "value": "civilian"
+                  },
+                  {
+                    "type": "flag",
+                    "key": "liuTravel",
+                    "value": false
+                  },
+                  {
+                    "type": "region",
+                    "value": "wan"
+                  },
+                  {
+                    "type": "flag",
+                    "key": "civilWan",
+                    "value": true
+                  }
+                ]
+              },
+              "artwork": {
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "전선 동행을 마치고 완성행 상단에 붙는다를 준비하는 주인공과 주변 현장"
+              }
+            }
+          ],
           "artwork": {
             "src": "/art/choices/formation.png",
-            "alt": "유비 측 방어 대열을 돕는다에 나서는 주인공"
-          }
+            "alt": "동탁에게 받은 모욕 뒤 장비가 다시 칼자루를 잡았다"
+          },
+          "region": "yingchuan",
+          "arrival": "유비 일행의 이동을 따라 기주를 떠나 주준이 있는 전선의 연락 지점에 도착했다.",
+          "background": "동탁과 향용 사이의 갈등이 커졌다. 유비 일행은 군사 충돌 대신 다른 지휘관에게 합류하려 한다."
         },
         {
-          "id": "c",
-          "title": "의무 수레 뒤로 물러난다",
-          "description": "마법이 진짜라면 더더욱 몸으로 증명하지 말자. 부상자를 받을 자리부터 비워야겠다.",
-          "success": {
-            "text": "나는 의무 수레 앞을 비우고 물러난 사람들이 앉을 자리를 만들었다. 술법을 깨뜨리는 준비가 끝날 때까지 전열에 나가지 않았다.",
-            "effects": [],
-            "hint": "직접 교전을 피하고 후방 대기"
-          },
+          "id": "yellow",
+          "when": [
+            {
+              "field": "factionId",
+              "operator": "eq",
+              "value": "yellow-turban"
+            }
+          ],
+          "text": "우리 연락망에도 주준의 공격이 거세진다는 소식이 왔다. 장보의 진영은 사람을 다시 모으지만 패잔병의 이름부터 엇갈렸다. 살아남은 사람들을 잇는 일이 없으면 다음 명령도 닿지 않는다. 나는 무엇을 챙길까?",
+          "choices": [
+            {
+              "id": "roster",
+              "title": "후미 연락병의 이름과 복귀 지점을 맞춘다",
+              "description": "죽은 사람에게 명령이 가면 산 사람도 길을 잃는다.",
+              "success": {
+                "text": "나는 돌아온 연락병들과 다음 복귀 지점을 맞췄다. 흩어진 병력을 찾을 연락망을 남겨 이후 철수에 쓸 준비를 했다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "yellowNetwork",
+                    "value": true
+                  }
+                ]
+              },
+              "artwork": {
+                "src": "/art/choices/yellow-supplies.png",
+                "alt": "후미 연락병의 이름과 복귀 지점을 맞춘다를 준비하는 주인공과 주변 현장"
+              },
+              "check": {
+                "kind": "politics",
+                "weights": {
+                  "politics": 0.6,
+                  "intelligence": 0.3,
+                  "charisma": 0.1
+                },
+                "difficulty": 46,
+                "fameReward": 6,
+                "fameReason": "황건 후미의 생존 연락망 구성"
+              },
+              "failure": {
+                "text": "나는 이름이 다른 사람들을 대조하지 못했다. 확인한 연락 지점만 남기고 더 큰 약속은 하지 않았다.",
+                "effects": []
+              }
+            },
+            {
+              "id": "guard",
+              "title": "맡은 보급 수레를 지킨다",
+              "description": "명부보다 눈앞의 짐을 책임질 자리가 내 몫일 수 있다.",
+              "success": {
+                "text": "나는 후방 수레의 경계를 맡았다. 주준의 군영으로 따라가지 않고 황건 연락 지점을 지켰다.",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/yellow-sentry.png",
+                "alt": "맡은 보급 수레를 지킨다를 준비하는 주인공과 주변 현장"
+              }
+            }
+          ],
           "artwork": {
-            "src": "/art/choices/relief.png",
-            "alt": "의무 수레 뒤로 물러난다에 나서는 주인공"
+            "src": "/art/choices/yellow-supplies.png",
+            "alt": "우리 연락망에도 주준의 공격이 거세진다는 소식이 왔다"
+          },
+          "background": "황건 연락망은 관군의 반격 속에서 전선을 다시 연결하려 한다."
+        },
+        {
+          "id": "civil",
+          "when": [
+            {
+              "field": "world.flags.liuTravel",
+              "operator": "neq",
+              "value": true
+            },
+            {
+              "field": "factionId",
+              "operator": "neq",
+              "value": "yellow-turban"
+            }
+          ],
+          "text": "상인들 사이에 완성으로 구호 짐을 보낼 사람이 필요하다는 말이 돌았다. 군대의 명령은 내게 오지 않았지만 이 계약은 직접 고를 수 있다. 가까운 창고에 남으면 전선 소식만 듣게 될 것이다. 어느 일을 맡을까?",
+          "choices": [
+            {
+              "id": "wan",
+              "title": "구호 운송 계약으로 완성 길목에 간다",
+              "description": "누구 군대인지보다 짐을 어디에 내릴지 먼저 확인하자.",
+              "success": {
+                "text": "나는 구호소의 인수인을 확인하고 운송 일을 맡았다. 상단을 따라 완성 길목에 도착해 민간인 구호 일을 시작했다.",
+                "effects": [
+                  {
+                    "type": "region",
+                    "value": "wan"
+                  },
+                  {
+                    "type": "flag",
+                    "key": "civilWan",
+                    "value": true
+                  }
+                ]
+              },
+              "artwork": {
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "구호 운송 계약으로 완성 길목에 간다를 준비하는 주인공과 주변 현장"
+              }
+            },
+            {
+              "id": "remain",
+              "title": "지금 거점의 생업을 잇는다",
+              "description": "큰 전투마다 달려가야 살아남는 것은 아니다.",
+              "success": {
+                "text": "나는 머물던 거점에서 상인의 짐 정리를 이어 갔다. 완성 전선에는 가지 않고 소식만 확인하기로 했다.",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/supplies.png",
+                "alt": "지금 거점의 생업을 잇는다를 준비하는 주인공과 주변 현장"
+              }
+            }
+          ],
+          "artwork": {
+            "src": "/art/choices/travel-wagons.png",
+            "alt": "상인들 사이에 완성으로 구호 짐을 보낼 사람이 필요하다는 말이 돌았다"
           }
         }
       ],
       "outcomes": [
         {
-          "text": "주준의 군대는 준비한 물건으로 장보의 술법에 대응하고 반격했다. 장보가 물러나자 관군은 성을 포위하며 압박했다."
+          "text": "유비·관우·장비는 동탁을 떠나 주준의 지휘 아래 황건군 토벌을 이어 갔다.",
+          "effects": [
+            {
+              "type": "flag",
+              "key": "liuWithZhuJun",
+              "value": true
+            }
+          ]
         }
-      ],
-      "artwork": {
-        "src": "/art/scenes/r002-rally.png",
-        "alt": "검은 기운 속에서 향용을 집결시키려는 주인공"
-      },
-      "background": "장보가 요술로 바람과 검은 기운을 일으키자 관군의 대열이 흔들렸다. 주준은 준비한 물건을 앞으로 옮겨 대응하려 했다."
+      ]
     },
     {
-      "title": "퇴로 하나로 완성의 결말을 바꾼다",
-      "region": "wan",
+      "title": "요술보다 먼저 보이는 퇴로",
+      "region": "yingchuan",
       "people": [
-        "유비",
-        "주준",
-        "손견",
         "장보",
-        "장각",
-        "장량",
-        "한충",
-        "조홍",
-        "손중"
+        "주준",
+        "유비"
       ],
       "officers": [
-        "rtk14-0952",
+        "rtk14-0659",
         "rtk14-0387",
+        "rtk14-0952"
+      ],
+      "fact": "장보의 요술로 관군이 혼란에 빠지자 주준은 돼지·양의 피 등으로 이를 깨뜨리는 방책을 썼다. 장보가 물러나자 관군은 성을 포위했다. 이는 연의의 요술 전개다.",
+      "year": 184,
+      "background": "장보의 요술로 관군이 혼란에 빠지자 주준은 돼지·양의 피 등으로 이를 깨뜨리는 방책을 썼다. 장보가 물러나자 관군은 성을 포위했다. 이는 연의의 요술 전개다.",
+      "artwork": {
+        "src": "/art/choices/han-night-support.png",
+        "alt": "요술보다 먼저 보이는 퇴로"
+      },
+      "routes": [
+        {
+          "id": "liu",
+          "when": [
+            {
+              "field": "world.flags.liuTravel",
+              "operator": "eq",
+              "value": true
+            },
+            {
+              "field": "factionId",
+              "operator": "neq",
+              "value": "yellow-turban"
+            }
+          ],
+          "text": "검은 기운을 보고 신병들이 서로의 등을 밀었다. 연의에서 주준이 준비했던 물건들이 군영에 들어오는 게 보였다. 나는 요술을 배운 사람이 아니라 연락을 맡은 사람이다. 대열과 전달 순서 중 어디부터 붙잡을까?",
+          "choices": [
+            {
+              "id": "order",
+              "title": "후퇴와 재집결 신호를 나눠 전한다",
+              "description": "돌아오라는 명령과 달아나라는 비명이 섞이면 끝이다.",
+              "success": {
+                "text": "나는 지휘자의 재집결 지점을 확인하고 후미에 나눠 전했다. 신병 일부가 대열로 돌아와 반격 준비를 도왔다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "secondRally",
+                    "value": true
+                  }
+                ]
+              },
+              "artwork": {
+                "src": "/art/choices/formation.png",
+                "alt": "후퇴와 재집결 신호를 나눠 전한다를 준비하는 주인공과 주변 현장"
+              },
+              "check": {
+                "kind": "battle",
+                "weights": {
+                  "leadership": 0.7,
+                  "strength": 0.3
+                },
+                "difficulty": 56,
+                "fameReward": 8,
+                "fameReason": "혼란 속 향용 재집결"
+              },
+              "failure": {
+                "text": "나는 비명에 묻혀 신호를 전하지 못했다. 후미를 따라 물러나 새 명령을 확인했다.",
+                "effects": []
+              }
+            },
+            {
+              "id": "supply",
+              "title": "주준이 요구한 준비물을 전달한다",
+              "description": "미래 지식을 뽐내기보다 지금의 지시를 정확히 잇자.",
+              "success": {
+                "text": "나는 준비물의 수량과 전달 지점을 확인해 군영 안으로 보냈다. 술법을 깬 주역인 척하지 않고 맡은 전달을 마쳤다.",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/supplies.png",
+                "alt": "주준이 요구한 준비물을 전달한다를 준비하는 주인공과 주변 현장"
+              }
+            }
+          ],
+          "artwork": {
+            "src": "/art/choices/formation.png",
+            "alt": "혼란한 군영의 대열을 바로잡는 주인공"
+          },
+          "background": "장보의 요술은 연의 속 전개다. 주준의 군영이 혼란에 대응할 준비를 하고 있다."
+        },
+        {
+          "id": "yellow",
+          "when": [
+            {
+              "field": "factionId",
+              "operator": "eq",
+              "value": "yellow-turban"
+            }
+          ],
+          "text": "장보의 진영에서 환호가 터졌지만 후문 경계는 비어 있었다. 요술이 관군을 밀어냈다는 말에 모두 앞만 보고 있었다. 내 기억 속 위험은 정면 공격만이 아니었다. 배반과 기습을 대비해 보자고 할까?",
+          "choices": [
+            {
+              "id": "watch",
+              "title": "후문 인수인과 교대 신호를 대조한다",
+              "description": "누가 들어오는지 모르는 문은 기적도 못 지킨다.",
+              "success": {
+                "text": "나는 후문의 이름과 교대 신호를 대조해 낯선 출입을 찾아냈다. 장보 측근에게 보고할 근거를 확보했다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "zhangBaoWarning",
+                    "value": true
+                  }
+                ]
+              },
+              "artwork": {
+                "src": "/art/choices/yellow-night-watch.png",
+                "alt": "후문 인수인과 교대 신호를 대조한다를 준비하는 주인공과 주변 현장"
+              },
+              "check": {
+                "kind": "strategy",
+                "weights": {
+                  "intelligence": 0.6,
+                  "politics": 0.3,
+                  "charisma": 0.1
+                },
+                "difficulty": 62,
+                "fameReward": 9,
+                "fameReason": "장보 배반 경고의 실제 근거 확보"
+              },
+              "failure": {
+                "text": "나는 교대 문서를 얻지 못해 낯선 사람을 가려내지 못했다. 확인 없는 고발은 접고 후미 경계를 맡았다.",
+                "effects": []
+              }
+            },
+            {
+              "id": "rear",
+              "title": "수송병의 철수 지점을 확인한다",
+              "description": "한 번 밀린 군대가 다음에도 이긴다고 믿을 수는 없다.",
+              "success": {
+                "text": "나는 후미 사람들과 포위될 때 모일 길목을 확인했다. 정면 승부와 별개로 돌아갈 지점을 남겼다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "yellowFallback",
+                    "value": true
+                  }
+                ]
+              },
+              "artwork": {
+                "src": "/art/choices/yellow-retreat.png",
+                "alt": "수송병의 철수 지점을 확인한다를 준비하는 주인공과 주변 현장"
+              }
+            }
+          ],
+          "artwork": {
+            "src": "/art/choices/yellow-night-watch.png",
+            "alt": "장보의 진영에서 환호가 터졌지만 후문 경계는 비어 있었다"
+          },
+          "background": "장보의 진영은 관군의 대응을 앞두고 있다. 요술을 믿는 분위기 속에서도 출입과 후미 경계는 필요하다."
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "주준의 관군은 장보의 술법을 깨뜨리고 반격했다. 장보의 병력은 물러나 성을 지키게 됐다.",
+          "effects": [
+            {
+              "type": "flag",
+              "key": "zhangBaoBesieged",
+              "value": true
+            }
+          ]
+        }
+      ],
+      "requires": [
+        {
+          "field": "world.people.rtk14-0659",
+          "operator": "neq",
+          "value": "dead"
+        }
+      ],
+      "newsWhen": [
+        {
+          "field": "region",
+          "operator": "in",
+          "value": [
+            "yingchuan",
+            "jizhou"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "완성 밖으로 나온 사람들",
+      "region": "wan",
+      "people": [
+        "장각",
+        "장량",
+        "장보",
+        "한충",
+        "조홍",
+        "손중",
+        "손견",
+        "유비"
+      ],
+      "officers": [
         "rtk14-0607",
         "rtk14-0664",
         "rtk14-0659",
         "rtk14-0173",
+        "rtk14-0174",
+        "rtk14-0511",
         "rtk14-0620",
         "rtk14-0568",
-        "rtk14-0551"
+        "rtk14-0551",
+        "rtk14-0952"
       ],
-      "fact": "장각의 병사와 장량의 토벌, 장보에 대한 부하의 배반으로 황건 지도부가 무너졌다. 완성의 한충·조홍·손중은 저항했고, 유비는 퇴로를 열어 적을 성 밖으로 유인하자고 건의했다. 손견도 공략에 공을 세웠다.",
-      "background": "장각이 병사하고 장량이 토벌됐으며 장보는 부하의 배반으로 죽었다는 소식이 도착했다. 완성에서는 한충·조홍·손중 등의 저항이 남아 있었다.",
-      "entry": "토벌군이 완성으로 진격하자 나는 남쪽으로 가는 보급 행렬에 동행했다. 성 밖에는 투항하려는 사람과 싸우려는 사람이 뒤섞여 있었다.",
-      "scene": "성에서 항복 이야기가 나오는데 관군의 창끝은 내려가지 않았다. 유비는 살길이 없으면 적이 끝까지 버틴다며 한쪽 퇴로를 열자고 했다. 나는 그 길이 밖으로 유인해 치는 길이 될 수도 있다는 걸 알고 있었다. 퇴로를 진짜 피란길로 만들려면 누가 적이고 누가 주민인지부터 가려야 했다.",
-      "choices": [
+      "fact": "장각이 병사하고 장량이 토벌당했으며 장보도 부하의 배반으로 죽었다. 완성의 한충·조홍·손중 등이 저항하자 관군은 퇴로를 열어 유인했고 손견과 유비 일행이 공을 세웠다.",
+      "year": 184,
+      "background": "장각이 병사하고 장량이 토벌당했으며 장보도 부하의 배반으로 죽었다. 완성의 한충·조홍·손중 등이 저항하자 관군은 퇴로를 열어 유인했고 손견과 유비 일행이 공을 세웠다.",
+      "artwork": {
+        "src": "/art/choices/formation.png",
+        "alt": "완성 밖으로 나온 사람들"
+      },
+      "routes": [
         {
-          "id": "a",
-          "title": "한충에게 무장 해제 조건을 제안한다",
-          "description": "살려 주겠다고 내 마음대로 약속할 수는 없다. 주준 측이 지킬 조건까지 받아내야 한다.",
-          "success": {
-            "text": "나는 주준 측 담당자에게 무장 해제와 주민 분리 조건을 확인한 뒤 한충에게 전했다. 한충이 받아들여 일부 병력이 성 밖에서 무기를 내려놓았고, 그들은 포로로 인계됐다.",
-            "effects": [
-              {
-                "type": "flag",
-                "key": "wanSurrender",
-                "value": true
+          "id": "yellow-warned",
+          "when": [
+            {
+              "field": "factionId",
+              "operator": "eq",
+              "value": "yellow-turban"
+            },
+            {
+              "field": "world.flags.zhangBaoWarning",
+              "operator": "eq",
+              "value": true
+            }
+          ],
+          "text": "기주 연락망으로 돌아오자 장보의 측근이 내가 확인한 출입 기록을 다시 물었다. 배반이 닥칠 것을 막으려면 사람을 움직여야 했다. 완성의 잔여 병력도 관군에 몰리고 있었다. 누구를 먼저 철수시킬까?",
+          "choices": [
+            {
+              "id": "save",
+              "title": "기록을 보여 장보의 거처를 옮기게 한다",
+              "description": "경고가 사실이어도 움직이지 않으면 늦는다.",
+              "success": {
+                "text": "나는 확인한 출입 기록을 측근에게 넘기고 후문 통로를 안내했다. 장보가 거처를 옮겨 배반자의 공격을 피하고 일부 연락망을 보존했다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "zhangBaoSaved",
+                    "value": true
+                  },
+                  {
+                    "type": "flag",
+                    "key": "yellowRemnant",
+                    "value": true
+                  }
+                ]
               },
-              {
-                "type": "flag",
-                "key": "hanZhongCaptured",
-                "value": true
+              "artwork": {
+                "src": "/art/choices/yellow-evacuate.png",
+                "alt": "기록을 보여 장보의 거처를 옮기게 한다를 준비하는 주인공과 주변 현장"
+              },
+              "check": {
+                "kind": "strategy",
+                "weights": {
+                  "intelligence": 0.6,
+                  "politics": 0.3,
+                  "charisma": 0.1
+                },
+                "difficulty": 70,
+                "fameReward": 20,
+                "fameReason": "장보 생존과 황건 연락망 보존"
+              },
+              "failure": {
+                "text": "나는 기록을 전달했지만 측근의 결정을 받기 전에 문이 닫혔다. 장보를 빼내지 못하고 후미 연락병들만 완성 길목으로 철수시켰다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "yellowRemnant",
+                    "value": true
+                  },
+                  {
+                    "type": "region",
+                    "value": "wan"
+                  }
+                ]
               }
-            ],
-            "hint": "일부 황건 병력의 조건부 항복·포로 인계"
-          },
-          "check": {
-            "kind": "strategy",
-            "weights": {
-              "intelligence": 0.45,
-              "charisma": 0.4,
-              "politics": 0.15
             },
-            "difficulty": 72,
-            "fameReward": 14,
-            "fameReason": "무장 해제 협상의 성패를 바꿈"
-          },
-          "failure": {
-            "text": "나는 한충에게 조건을 전했지만 양쪽이 서로의 약속을 믿지 않아 협상이 끊겼다. 성 밖 유인 작전이 시작되기 전에 나는 협상 자리를 빠져나왔다.",
-            "effects": [],
-            "hint": "불신으로 협상 결렬·강공 지속"
-          },
+            {
+              "id": "retreat",
+              "title": "후미 연락병을 먼저 빼낸다",
+              "description": "장수를 구할 권한이 없더라도 내 곁 사람은 놓치지 말자.",
+              "success": {
+                "text": "나는 후미 연락병들을 모아 완성 길목으로 물렸다. 장보의 거처에는 닿지 못했지만 살아남은 연락망을 유지했다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "yellowRemnant",
+                    "value": true
+                  },
+                  {
+                    "type": "region",
+                    "value": "wan"
+                  }
+                ]
+              },
+              "artwork": {
+                "src": "/art/choices/yellow-retreat.png",
+                "alt": "후미 연락병을 먼저 빼낸다를 준비하는 주인공과 주변 현장"
+              }
+            }
+          ],
           "artwork": {
-            "src": "/art/choices/negotiate.png",
-            "alt": "한충에게 무장 해제 조건을 제안한다에 나서는 주인공"
-          }
+            "src": "/art/choices/yellow-retreat.png",
+            "alt": "기주 연락망으로 돌아오자 장보의 측근이 내가 확인한 출입 기록을 다시 물었다"
+          },
+          "background": "황건 지도부가 흔들리며 각 진영의 연락이 끊어지고 있다. 배반을 피할 기회와 남은 병력의 철수가 맞물려 있다."
         },
         {
-          "id": "b",
-          "title": "유비 측의 퇴로 신호를 전달한다",
-          "description": "무작정 막지 말라는 뜻을 정확히 전하자. 내 신호 하나가 필사 항전과 퇴각을 가른다.",
-          "success": {
-            "text": "나는 퇴로를 비우라는 유비의 뜻을 주변 향용에게 전했다. 관군은 성을 나온 적을 상대로 움직였고 손견의 성벽 공격도 이어졌다.",
-            "effects": [
-              {
-                "type": "flag",
-                "key": "wanSignal",
-                "value": true
+          "id": "yellow",
+          "when": [
+            {
+              "field": "factionId",
+              "operator": "eq",
+              "value": "yellow-turban"
+            }
+          ],
+          "text": "지도부가 무너졌다는 보고 뒤 완성 길목까지 패잔병이 밀려왔다. 성밖의 빈 길이 살길처럼 보였지만 관군의 유인일 수 있었다. 연락망을 지킬지 전쟁을 끝낼지 결정해야 했다. 내 발로 고를 길은 어느 쪽일까?",
+          "choices": [
+            {
+              "id": "network",
+              "title": "가족과 수송병부터 우회시킨다",
+              "description": "대오가 남아야 다음 명령도 닿는다.",
+              "success": {
+                "text": "나는 수송병들을 모아 관군의 유인로 밖으로 우회했다. 일부 연락망이 살아남아 황건 잔존 세력으로 남았다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "yellowRemnant",
+                    "value": true
+                  }
+                ]
+              },
+              "artwork": {
+                "src": "/art/choices/yellow-evacuate.png",
+                "alt": "가족과 수송병부터 우회시킨다를 준비하는 주인공과 주변 현장"
+              },
+              "check": {
+                "kind": "strategy",
+                "weights": {
+                  "intelligence": 0.6,
+                  "politics": 0.3,
+                  "charisma": 0.1
+                },
+                "difficulty": 60,
+                "fameReward": 10,
+                "fameReason": "황건 잔존 연락망 보존"
+              },
+              "failure": {
+                "text": "나는 우회로를 확인하지 못해 사람들을 흩어 보냈다. 부대와 연락이 끊긴 뒤 두건을 내려놓고 피난민으로 남았다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "yellowRemnant",
+                    "value": false
+                  }
+                ]
               }
-            ],
-            "hint": "퇴로 유지·유비 측 공략 지원"
-          },
-          "check": {
-            "kind": "battle",
-            "weights": {
-              "leadership": 1,
-              "strength": 1.5
             },
-            "difficulty": 54,
-            "fameReward": 6,
-            "fameReason": "완성 전선의 퇴로 신호 전달"
-          },
-          "failure": {
-            "text": "나는 퇴로 신호를 늦게 전해 한동안 향용들이 길을 막았다. 유비 측이 다시 전령을 보내 정리할 때까지 나는 뒤로 물러났다.",
-            "effects": [],
-            "hint": "신호 지연으로 퇴로에 혼선"
-          },
+            {
+              "id": "disarm",
+              "title": "무장을 내려놓고 민간 구호소로 간다",
+              "description": "싸움을 끝내겠다는 결정도 내가 해야 한다.",
+              "success": {
+                "text": "나는 무장을 내려놓고 연락 임무를 끝내겠다고 알렸다. 완성의 민간 구호소로 이동해 재야로 남았다.",
+                "effects": [
+                  {
+                    "type": "faction",
+                    "value": null
+                  },
+                  {
+                    "type": "role",
+                    "value": "refugee"
+                  },
+                  {
+                    "type": "flag",
+                    "key": "yellowRemnant",
+                    "value": false
+                  },
+                  {
+                    "type": "region",
+                    "value": "wan"
+                  },
+                  {
+                    "type": "flag",
+                    "key": "civilWan",
+                    "value": true
+                  }
+                ]
+              },
+              "artwork": {
+                "src": "/art/choices/relief.png",
+                "alt": "무장을 내려놓고 민간 구호소로 간다를 준비하는 주인공과 주변 현장"
+              }
+            }
+          ],
           "artwork": {
-            "src": "/art/choices/han-assault.png",
-            "alt": "유비 측의 퇴로 신호를 전달한다에 나서는 주인공"
-          }
+            "src": "/art/choices/yellow-retreat.png",
+            "alt": "지도부가 무너졌다는 보고 뒤 완성 길목까지 패잔병이 밀려왔다"
+          },
+          "region": "wan",
+          "arrival": "나는 무너진 전선의 수송병들과 완성 밖 연락 지점으로 이동했다.",
+          "background": "황건 지도부의 붕괴 뒤 완성에서 저항이 이어진다. 성밖의 퇴로에는 관군의 유인이 섞여 있다."
         },
         {
-          "id": "c",
-          "title": "피란민 수레를 전장 밖으로 뺀다",
-          "description": "누가 이길지는 장수들이 정한다. 나는 항복과 관계없는 사람부터 길에서 치우자.",
-          "success": {
-            "text": "나는 주민 수레를 토벌군의 공격로 밖으로 옮겼다. 적이 성 밖으로 나올 때 주민들이 그 사이에 섞이지 않도록 거리를 뒀다.",
-            "effects": [],
-            "hint": "주민 수레를 공격로 밖으로 이동"
+          "id": "liu",
+          "when": [
+            {
+              "field": "world.flags.liuTravel",
+              "operator": "eq",
+              "value": true
+            },
+            {
+              "field": "factionId",
+              "operator": "neq",
+              "value": "yellow-turban"
+            }
+          ],
+          "text": "완성에서 항복하려는 사람과 무장한 병사가 뒤섞여 나왔다. 유비는 몰아붙이면 더 필사적으로 싸울 것이라며 퇴로를 이야기했다. 그 말이 모두의 신변 보장을 뜻하지는 않았다. 내가 확인할 수 있는 통로부터 붙잡을까?",
+          "choices": [
+            {
+              "id": "passage",
+              "title": "무장 해제한 사람들의 이동을 증언으로 남긴다",
+              "description": "항복했다고 외치는 것과 실제로 칼을 버린 건 구분하자.",
+              "success": {
+                "text": "나는 통로에서 무장 해제를 확인하고 인수 관리의 이름을 남겼다. 확인된 사람 일부가 구호 지점으로 넘어가 살길을 얻었다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "wanWitness",
+                    "value": true
+                  }
+                ]
+              },
+              "artwork": {
+                "src": "/art/choices/han-prisoners-witness.png",
+                "alt": "무장 해제한 사람들의 이동을 증언으로 남긴다를 준비하는 주인공과 주변 현장"
+              },
+              "check": {
+                "kind": "politics",
+                "weights": {
+                  "politics": 0.6,
+                  "intelligence": 0.3,
+                  "charisma": 0.1
+                },
+                "difficulty": 61,
+                "fameReward": 12,
+                "fameReason": "항복자 인계 증거와 생존 통로 확보"
+              },
+              "failure": {
+                "text": "나는 인수 지휘자를 확인하지 못해 통로의 안전을 보장하지 못했다. 유비에게 보고하고 사람들을 더 내보내지 않았다.",
+                "effects": []
+              }
+            },
+            {
+              "id": "rear",
+              "title": "손견의 돌입 뒤 보급 대열을 받친다",
+              "description": "성벽의 공은 성벽에 오른 사람에게 돌리자.",
+              "success": {
+                "text": "나는 손견의 돌입 뒤 물자가 막히지 않게 수레를 정리했다. 성벽을 넘은 공을 가로채지 않고 향용의 보급을 맡았다.",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/formation.png",
+                "alt": "손견의 돌입 뒤 보급 대열을 받친다를 준비하는 주인공과 주변 현장"
+              }
+            }
+          ],
+          "artwork": {
+            "src": "/art/choices/formation.png",
+            "alt": "완성에서 항복하려는 사람과 무장한 병사가 뒤섞여 나왔다"
           },
+          "region": "wan",
+          "arrival": "주준의 토벌군과 함께 완성 외곽의 보급 지점에 도착했다.",
+          "background": "한충 등 남은 황건 장수들이 완성을 지키고 손견과 유비의 병력이 공략에 나서고 있다."
+        },
+        {
+          "id": "civil",
+          "when": [
+            {
+              "field": "region",
+              "operator": "eq",
+              "value": "wan"
+            },
+            {
+              "field": "factionId",
+              "operator": "neq",
+              "value": "yellow-turban"
+            }
+          ],
+          "text": "계약한 구호 짐을 내리자 성밖에서 무장을 버린 사람들이 몰려왔다. 누구의 전공인지 따질 틈에 부상자가 수레에서 떨어졌다. 나는 토벌 명령을 받은 병사가 아니다. 구호소의 문을 열기 위해 무엇을 할까?",
+          "choices": [
+            {
+              "id": "relief",
+              "title": "구호소와 인수할 사람을 먼저 확인한다",
+              "description": "이름 없는 약속으로 사람을 길 한복판에 세워 두지 말자.",
+              "success": {
+                "text": "나는 구호소 담당자와 인수 인원을 확인해 수레를 보냈다. 부상자들이 쉴 자리를 얻었고 상인과의 연락도 이어졌다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "civilianContacts",
+                    "value": true
+                  }
+                ]
+              },
+              "artwork": {
+                "src": "/art/choices/relief.png",
+                "alt": "구호소와 인수할 사람을 먼저 확인한다를 준비하는 주인공과 주변 현장"
+              },
+              "check": {
+                "kind": "relationship",
+                "weights": {
+                  "charisma": 0.7,
+                  "politics": 0.3
+                },
+                "difficulty": 44,
+                "fameReward": 5,
+                "fameReason": "부상자 구호 인계"
+              },
+              "failure": {
+                "text": "나는 구호소가 꽉 찬 것을 뒤늦게 알았다. 짐을 내려 임시로 쉴 자리를 만들고 다음 인수를 기다렸다.",
+                "effects": []
+              }
+            },
+            {
+              "id": "stay",
+              "title": "수레를 멈추고 상인의 짐을 지킨다",
+              "description": "내가 맡은 일이 아닌 곳까지 약속하지 말자.",
+              "success": {
+                "text": "나는 전투 쪽으로 가지 않고 상인의 수레를 지켰다. 구호소에서 짐을 받을 때까지 민간 대기 지점에 남았다.",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "수레를 멈추고 상인의 짐을 지킨다를 준비하는 주인공과 주변 현장"
+              }
+            }
+          ],
           "artwork": {
             "src": "/art/choices/relief.png",
-            "alt": "피란민 수레를 전장 밖으로 뺀다에 나서는 주인공"
+            "alt": "계약한 구호 짐을 내리자 성밖에서 무장을 버린 사람들이 몰려왔다"
           }
         }
       ],
       "outcomes": [
         {
-          "condition": {
-            "field": "world.flags.wanSurrender",
-            "operator": "eq",
-            "value": true
-          },
-          "text": "완성 공략이 이어지는 동안 한충이 이끈 일부 병력은 무장을 내려놓고 관군에 포로로 인계됐다. 관군은 남은 저항을 무너뜨리고 완성을 장악했다.",
+          "text": "장각은 병사하고 장량은 토벌당했다. 장보는 경고를 받고 배반을 피했으며 일부 황건 연락망이 남았다. 관군은 완성을 공략했다.",
           "effects": [
             {
-              "type": "control",
-              "regionId": "wan",
-              "value": "han"
+              "type": "person",
+              "personId": "rtk14-0607",
+              "value": "dead"
+            },
+            {
+              "type": "person",
+              "personId": "rtk14-0664",
+              "value": "dead"
+            },
+            {
+              "type": "factionStatus",
+              "factionId": "yellow-turban",
+              "value": "preserved"
+            },
+            {
+              "type": "flag",
+              "key": "wanTaken",
+              "value": true
+            }
+          ],
+          "when": [
+            {
+              "field": "world.flags.zhangBaoSaved",
+              "operator": "eq",
+              "value": true
             }
           ]
         },
         {
-          "text": "관군은 퇴로를 열어 성 밖으로 나온 적을 공격했고 손견도 성벽 공략에 참여했다. 유비 일행은 달아나는 적을 추격해 완성 일대의 저항을 무너뜨렸다.",
+          "text": "장각·장량·장보의 지도부는 무너졌고 관군이 완성을 공략했다. 일부 황건 연락망은 철수해 잔존 세력으로 남았다.",
           "effects": [
             {
-              "type": "control",
-              "regionId": "wan",
-              "value": "han"
+              "type": "person",
+              "personId": "rtk14-0607",
+              "value": "dead"
+            },
+            {
+              "type": "person",
+              "personId": "rtk14-0664",
+              "value": "dead"
+            },
+            {
+              "type": "person",
+              "personId": "rtk14-0659",
+              "value": "dead"
+            },
+            {
+              "type": "factionStatus",
+              "factionId": "yellow-turban",
+              "value": "preserved"
+            },
+            {
+              "type": "flag",
+              "key": "wanTaken",
+              "value": true
+            }
+          ],
+          "when": [
+            {
+              "field": "world.flags.yellowRemnant",
+              "operator": "eq",
+              "value": true
+            }
+          ]
+        },
+        {
+          "text": "장각·장량·장보의 지도부가 무너지고 관군이 완성을 공략했다. 연결된 황건 부대는 흩어져 더는 같은 지휘 아래 움직이지 못했다.",
+          "effects": [
+            {
+              "type": "person",
+              "personId": "rtk14-0607",
+              "value": "dead"
+            },
+            {
+              "type": "person",
+              "personId": "rtk14-0664",
+              "value": "dead"
+            },
+            {
+              "type": "person",
+              "personId": "rtk14-0659",
+              "value": "dead"
+            },
+            {
+              "type": "factionStatus",
+              "factionId": "yellow-turban",
+              "value": "defeated"
+            },
+            {
+              "type": "flag",
+              "key": "wanTaken",
+              "value": true
             }
           ]
         }
-      ],
-      "backgroundEffects": [
-        {
-          "type": "person",
-          "personId": "rtk14-0607",
-          "value": "dead"
-        },
-        {
-          "type": "person",
-          "personId": "rtk14-0664",
-          "value": "dead"
-        },
-        {
-          "type": "person",
-          "personId": "rtk14-0659",
-          "value": "dead"
-        }
-      ],
-      "artwork": {
-        "src": "/art/scenes/siege.png",
-        "alt": "완성 공략을 앞두고 성벽을 바라보는 주인공"
-      }
+      ]
     },
     {
-      "title": "전공은 있는데 인사팀이 안 읽는다",
+      "title": "공로가 관직이 되는 동안",
       "region": "anxi",
       "people": [
         "유비",
@@ -418,114 +913,234 @@
       "officers": [
         "rtk14-0952"
       ],
-      "requiredAlive": [
-        "rtk14-0952"
-      ],
-      "fact": "토벌 후에도 유비의 임관은 늦어졌다. 장균은 환관의 부패와 공신의 부당한 처우를 지적했다가 모함을 받았으며, 유비는 뒤늦게 안희현 현위에 임명됐다.",
-      "entry": "토벌 뒤 나는 유비 측과 왕래하는 짐수레에 머물렀다. 기다림 끝에 안희현 발령 소식이 와 행렬을 따라 현청 밖까지 갔다.",
-      "scene": "전장에서는 유비 이름을 그렇게 찾더니 포상 명단에서는 잘 보이지 않았다. 장균이 부당한 처우를 따졌다가 되레 모함받았다는 말까지 돌았다. 뒤늦게 안희현 현위라는 자리가 나왔지만, 공이 누락된 기록은 그대로였다. 지금 남겨 두지 않으면 다음 감사에서도 똑같은 말을 듣겠지?",
-      "choices": [
+      "fact": "유비의 전공은 환관의 인맥과 청탁 속에서 보상받지 못했다. 장균은 부당한 처우를 지적하다 모함받았고 이후 유비는 안희현 현위에 임명되었다.",
+      "year": 186,
+      "background": "유비의 전공은 환관의 인맥과 청탁 속에서 보상받지 못했다. 장균은 부당한 처우를 지적하다 모함받았고 이후 유비는 안희현 현위에 임명되었다.",
+      "artwork": {
+        "src": "/art/choices/official.png",
+        "alt": "공로가 관직이 되는 동안"
+      },
+      "routes": [
         {
-          "id": "a",
-          "title": "전공 증언을 현청 기록에 남긴다",
-          "description": "승리한 전투 이름만 적으면 과장꾼이다. 누가 봤고 무엇을 했는지 증언부터 맞추자.",
-          "success": {
-            "text": "나는 향용들의 증언을 서리에게 모아 전공 기록에 붙이게 했다. 현청에 남은 사본 덕분에 나중에 공적 자체를 없던 일로 만들기는 어려워졌다.",
-            "effects": [
-              {
-                "type": "flag",
-                "key": "meritEvidence",
-                "value": true
-              }
-            ],
-            "hint": "안희 현청에 전공 증언 사본 보존"
-          },
-          "check": {
-            "kind": "politics",
-            "weights": {
-              "politics": 0.55,
-              "intelligence": 0.35,
-              "charisma": 0.1
+          "id": "liu",
+          "when": [
+            {
+              "field": "world.flags.liuTravel",
+              "operator": "eq",
+              "value": true
             },
-            "difficulty": 59,
-            "fameReward": 10,
-            "fameReason": "군공 증언을 현청 기록으로 남김"
-          },
-          "failure": {
-            "text": "나는 증언을 모았지만 이름과 참여 시점이 맞지 않아 서리가 받아 주지 않았다. 확인 못 한 공적은 적지 않고 증언자 목록만 남겼다.",
-            "effects": [],
-            "hint": "증언 불일치로 정식 기록 거절"
-          },
+            {
+              "field": "factionId",
+              "operator": "neq",
+              "value": "yellow-turban"
+            }
+          ],
+          "text": "토벌이 끝났는데 유비의 이름은 보상 문서에서 밀렸다. 안희현 현위 임명이 뒤늦게 내려오자 전선의 짐을 다시 묶게 됐다. 관직을 얻었다고 내 역할까지 자동으로 달라지는 것은 아니다. 현청에서도 함께 일할까?",
+          "choices": [
+            {
+              "id": "service",
+              "title": "안희 부임에 연락 일을 이어 맡는다",
+              "description": "전쟁이 끝나도 맡은 사람과 문서는 남는다.",
+              "success": {
+                "text": "나는 유비의 부임 행렬을 따라 안희에 도착했다. 군대에서 맡던 연락을 현청 인수 업무로 이어 갔다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "anxiAccess",
+                    "value": true
+                  }
+                ]
+              },
+              "artwork": {
+                "src": "/art/choices/official.png",
+                "alt": "안희 부임에 연락 일을 이어 맡는다를 준비하는 주인공과 주변 현장"
+              }
+            },
+            {
+              "id": "leave",
+              "title": "부임 인수를 마치고 동행을 끝낸다",
+              "description": "관청 일까지 하겠다고 약속한 것은 아니다.",
+              "success": {
+                "text": "나는 안희의 인수를 마친 뒤 유비에게 동행을 끝내겠다고 인사했다. 군적을 정리하고 완성으로 돌아가는 민간 행렬의 일을 맡았다.",
+                "effects": [
+                  {
+                    "type": "faction",
+                    "value": null
+                  },
+                  {
+                    "type": "role",
+                    "value": "civilian"
+                  },
+                  {
+                    "type": "flag",
+                    "key": "liuTravel",
+                    "value": false
+                  },
+                  {
+                    "type": "region",
+                    "value": "wan"
+                  }
+                ]
+              },
+              "artwork": {
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "부임 전에 동행을 마치고 재야로 남는다를 준비하는 주인공과 주변 현장"
+              }
+            }
+          ],
           "artwork": {
             "src": "/art/choices/official.png",
-            "alt": "전공 증언을 현청 기록에 남긴다에 나서는 주인공"
-          }
+            "alt": "토벌이 끝났는데 유비의 이름은 보상 문서에서 밀렸다"
+          },
+          "region": "anxi",
+          "arrival": "나는 유비의 부임 행렬과 함께 안희현의 인수 지점까지 이동했다.",
+          "background": "토벌 공로를 둘러싼 인사 끝에 유비의 안희현 부임 명령이 내려왔다."
         },
         {
-          "id": "b",
-          "title": "유비의 첫 현청 업무를 돕는다",
-          "description": "벼슬이 작다고 무시하면 동탁이랑 뭐가 다르냐. 주민들에게 얼굴부터 익히자.",
-          "success": {
-            "text": "나는 유비 측 연락책에게 주민들의 민원 순서를 전했다. 그는 내가 도울 수 있는 연락 일을 맡겼고 주민 몇 사람과 인사를 나눴다.",
-            "effects": [
-              {
-                "type": "flag",
-                "key": "anxiContacts",
-                "value": true
+          "id": "yellow",
+          "when": [
+            {
+              "field": "factionId",
+              "operator": "eq",
+              "value": "yellow-turban"
+            }
+          ],
+          "text": "새 벼슬을 받는 사람들의 이름이 오갈 때 우리 거점에는 돌아오지 않은 사람의 이름이 더 많았다. 남은 연락망을 지키면 황건 소속으로 계속 움직이게 된다. 민간인으로 돌아가려면 지금 그 책임을 정리해야 한다. 어느 쪽을 택할까?",
+          "choices": [
+            {
+              "id": "keep",
+              "title": "잔존 연락 거점의 인수를 맡는다",
+              "description": "살아남은 사람끼리도 책임질 자리는 있어야 한다.",
+              "success": {
+                "text": "나는 기주 거점의 인수를 맡고 연락병들에게 복귀 지점을 알렸다. 황건 잔존 세력 소속을 유지했다.",
+                "effects": [
+                  {
+                    "type": "region",
+                    "value": "jizhou"
+                  },
+                  {
+                    "type": "flag",
+                    "key": "yellowNetwork",
+                    "value": true
+                  }
+                ]
+              },
+              "artwork": {
+                "src": "/art/choices/yellow-supplies.png",
+                "alt": "잔존 연락 거점의 인수를 맡는다를 준비하는 주인공과 주변 현장"
               }
-            ],
-            "hint": "현청 연락책·주민과 인연 확보"
-          },
-          "check": {
-            "kind": "relationship",
-            "weights": {
-              "charisma": 0.55,
-              "politics": 0.35,
-              "intelligence": 0.1
             },
-            "difficulty": 42,
-            "fameReward": 4,
-            "fameReason": "초기 현청 업무 지원"
-          },
-          "failure": {
-            "text": "나는 일을 돕겠다고 했지만 이미 사람이 정해졌다는 답을 받았다. 현청 안을 서성이지 않고 주민들이 기다리는 처마 밑으로 돌아왔다.",
-            "effects": [],
-            "hint": "역할이 없어 현청 업무 참여 거절"
-          },
+            {
+              "id": "leave",
+              "title": "연락 임무를 정리하고 안희행 상단에 붙는다",
+              "description": "이탈은 두건만 벗고 모른 척할 일이 아니다.",
+              "success": {
+                "text": "나는 맡은 연락을 인계하고 더는 군에 남지 않겠다고 밝혔다. 안희행 상단의 짐을 맡아 민간인으로 이동했다.",
+                "effects": [
+                  {
+                    "type": "faction",
+                    "value": null
+                  },
+                  {
+                    "type": "role",
+                    "value": "civilian"
+                  },
+                  {
+                    "type": "region",
+                    "value": "anxi"
+                  },
+                  {
+                    "type": "flag",
+                    "key": "anxiLocal",
+                    "value": true
+                  }
+                ]
+              },
+              "artwork": {
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "연락 임무를 정리하고 안희행 상단에 붙는다를 준비하는 주인공과 주변 현장"
+              }
+            }
+          ],
           "artwork": {
-            "src": "/art/choices/follow.png",
-            "alt": "유비의 첫 현청 업무를 돕는다에 나서는 주인공"
+            "src": "/art/choices/yellow-supplies.png",
+            "alt": "새 벼슬을 받는 사람들의 이름이 오갈 때 우리 거점에는 돌아오지 않은 사람의 이름이 더 많았다"
           }
         },
         {
-          "id": "c",
-          "title": "현청 밖 숙소에서 생업을 찾는다",
-          "description": "지방 관리의 부하가 아니어도 밥은 먹어야 한다. 상인 짐부터 받아 나르자.",
-          "success": {
-            "text": "나는 현청 밖에서 상인들의 짐을 나르고 숙소 자리를 얻었다. 포상이나 벼슬에는 끼지 않은 채 안희의 사정을 살폈다.",
-            "effects": [],
-            "hint": "현청 정치와 거리를 두고 숙소 확보"
-          },
+          "id": "civil",
+          "when": [
+            {
+              "field": "world.flags.liuTravel",
+              "operator": "neq",
+              "value": true
+            },
+            {
+              "field": "factionId",
+              "operator": "neq",
+              "value": "yellow-turban"
+            }
+          ],
+          "text": "토벌 뒤 일거리를 찾는 사람들과 상단이 다시 모였다. 안희로 가면 새 현청 근처의 운송 일이 있고 남으면 지금 거래처를 지킬 수 있다. 유비를 몰라도 이 계약은 내게 열려 있었다. 어디서 다음 일을 구할까?",
+          "choices": [
+            {
+              "id": "anxi",
+              "title": "안희행 운송 일을 맡는다",
+              "description": "군주 소개가 아니라 일할 장소를 고르는 것이다.",
+              "success": {
+                "text": "나는 상단의 운송 계약을 맡아 안희에 짐을 내렸다. 유비 소속이 되지 않은 채 현청 밖 민간 일자리를 얻었다.",
+                "effects": [
+                  {
+                    "type": "region",
+                    "value": "anxi"
+                  },
+                  {
+                    "type": "flag",
+                    "key": "anxiLocal",
+                    "value": true
+                  }
+                ]
+              },
+              "artwork": {
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "안희행 운송 일을 맡는다를 준비하는 주인공과 주변 현장"
+              }
+            },
+            {
+              "id": "remain",
+              "title": "지금 거래처를 지킨다",
+              "description": "새 현위가 왔다고 모두 따라갈 필요는 없다.",
+              "success": {
+                "text": "나는 지금 거점에서 거래처의 짐을 맡았다. 안희로 이동하거나 유비에게 자동으로 소개받지 않았다.",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/supplies.png",
+                "alt": "지금 거래처를 지킨다를 준비하는 주인공과 주변 현장"
+              }
+            }
+          ],
           "artwork": {
             "src": "/art/choices/travel-wagons.png",
-            "alt": "현청 밖 숙소에서 생업을 찾는다에 나서는 주인공"
+            "alt": "토벌 뒤 일거리를 찾는 사람들과 상단이 다시 모였다"
           }
         }
       ],
       "outcomes": [
         {
-          "text": "유비는 전공에 대한 보상이 늦어진 뒤 안희현 현위로 부임했다. 작은 관직을 얻었지만 청탁과 신분 차별의 문제는 남아 있었다."
+          "text": "유비는 토벌 공로에 대한 보상이 늦어진 뒤 안희현 현위로 임명되었다.",
+          "effects": [
+            {
+              "type": "flag",
+              "key": "liuAnxi",
+              "value": true
+            }
+          ]
         }
-      ],
-      "precision": "approximate",
-      "dateNote": "원본 사건 문서에 정확한 연월이 없다. 황건 토벌 뒤부터 영제 사망 전까지의 상대 순서로 진행한다.",
-      "artwork": {
-        "src": "/art/choices/official.png",
-        "alt": "공적 기록을 남기려 현청 관리에게 다가간 주인공"
-      }
+      ]
     },
     {
-      "title": "독우가 원하는 건 민원 처리가 아니다",
+      "title": "독우의 말보다 인수인의 이름",
       "region": "anxi",
       "people": [
         "유비",
@@ -534,208 +1149,187 @@
       "officers": [
         "rtk14-0952"
       ],
-      "requiredAlive": [
-        "rtk14-0952"
-      ],
-      "fact": "독우는 군공으로 임명된 관리들을 조사하면서 유비의 출신과 공적을 깎아내리고 뇌물을 기대했다. 유비가 응하지 않자 아전들에게 허위 진술을 받아내려 하고 해명을 위한 면담도 거절했다.",
-      "entry": null,
-      "scene": "감사하러 왔다는 독우가 유비의 집안부터 따지더니 아전들을 따로 불렀다. 밖으로 나온 서리의 손은 떨렸고 주민을 해쳤다는 말을 쓰라고 강요받았다고 했다. 독우가 입을 막으면 내일은 그 거짓말이 공식 기록이 된다. 미래를 아는 내가 움직일 수 있는 건 몽둥이가 아니라 이 증언이었다.",
-      "choices": [
+      "fact": "독우는 유비의 출신과 공적을 깎아내리고 뇌물을 기대했다. 유비가 응하지 않자 아전들에게 모함 진술을 강요하고 해명도 받아 주지 않았다.",
+      "year": 187,
+      "background": "독우는 유비의 출신과 공적을 깎아내리고 뇌물을 기대했다. 유비가 응하지 않자 아전들에게 모함 진술을 강요하고 해명도 받아 주지 않았다.",
+      "artwork": {
+        "src": "/art/scenes/r002-evidence.png",
+        "alt": "독우의 말보다 인수인의 이름"
+      },
+      "routes": [
         {
-          "id": "a",
-          "title": "강요받은 진술의 사본을 확보한다",
-          "description": "말만 가지고 맞서면 독우가 내 입부터 막는다. 서로 다른 증언과 기록을 맞춰야 한다.",
-          "success": {
-            "text": "나는 서리들의 동의를 받아 강요받은 내용과 실제 민원 기록을 따로 적었다. 서로 맞지 않는 대목이 드러나 독우가 내민 진술의 허점을 증명할 수 있게 됐다.",
-            "effects": [
-              {
-                "type": "flag",
-                "key": "duyouEvidence",
-                "value": true
-              }
-            ],
-            "hint": "강요된 진술의 모순을 증거로 확보"
-          },
-          "check": {
-            "kind": "politics",
-            "weights": {
-              "politics": 0.55,
-              "intelligence": 0.35,
-              "charisma": 0.1
+          "id": "clerk",
+          "when": [
+            {
+              "field": "world.flags.anxiAccess",
+              "operator": "eq",
+              "value": true
             },
-            "difficulty": 69,
-            "fameReward": 12,
-            "fameReason": "강요 진술 사본이라는 후속 구출 근거 확보"
-          },
-          "failure": {
-            "text": "나는 사본을 남기려 했지만 겁먹은 서리들이 이름을 대지 않겠다며 물러났다. 내 짐작만으로 문서를 만들어 내지는 못했다.",
-            "effects": [],
-            "hint": "증언자들이 물러나 증거 확보 실패"
-          },
-          "artwork": {
-            "src": "/art/scenes/r002-evidence.png",
-            "alt": "강요받은 진술의 사본을 확보한다에 나서는 주인공"
-          }
-        },
-        {
-          "id": "b",
-          "title": "유비의 해명 요청을 전달한다",
-          "description": "장비가 소식부터 들으면 일이 커진다. 당사자가 항변할 자리를 먼저 열어 보자.",
-          "success": {
-            "text": "나는 담당자를 통해 유비가 해명을 원한다는 말을 거듭 전했다. 면담은 여전히 거절됐지만 거절 시점과 전달받은 사람을 남길 수 있었다.",
-            "effects": [
-              {
-                "type": "flag",
-                "key": "refusalRecorded",
-                "value": true
-              }
-            ],
-            "hint": "면담 거절 경과와 전달자를 기록"
-          },
-          "check": {
-            "kind": "relationship",
-            "weights": {
-              "charisma": 0.4,
-              "intelligence": 0.35,
-              "leadership": 0.25
-            },
-            "difficulty": 48,
-            "fameReward": 4,
-            "fameReason": "해명 요청 전달"
-          },
-          "failure": {
-            "text": "나는 면담을 청했지만 문지기가 이름도 받지 않겠다고 했다. 문을 억지로 밀지 않고 유비 측에 거절당한 경과를 전했다.",
-            "effects": [],
-            "hint": "문지기가 접수 자체를 거부"
-          },
-          "artwork": {
-            "src": "/art/choices/official.png",
-            "alt": "유비의 해명 요청을 전달한다에 나서는 주인공"
-          }
-        },
-        {
-          "id": "c",
-          "title": "울고 있는 주민 곁에 남는다",
-          "description": "독우 방에 들어갈 줄이 없다. 무슨 말을 시켰는지 주민들이라도 다치지 않고 나오게 기다리자.",
-          "success": {
-            "text": "나는 관청 밖에서 돌아오는 주민들에게 앉을 자리를 내줬다. 독우와 직접 다투지 않고 주민들이 털어놓는 사정을 들었다.",
-            "effects": [],
-            "hint": "직접 충돌을 피하며 주민 곁에 대기"
-          },
-          "artwork": {
-            "src": "/art/choices/relief.png",
-            "alt": "울고 있는 주민 곁에 남는다에 나서는 주인공"
-          }
-        }
-      ],
-      "precision": "approximate",
-      "dateNote": "원본 사건 문서에 정확한 연월이 없다. 황건 토벌 뒤부터 영제 사망 전까지의 상대 순서로 진행한다.",
-      "variants": [
-        {
-          "key": "merit",
-          "condition": {
-            "field": "world.flags.meritEvidence",
-            "operator": "eq",
-            "value": true
-          },
-          "text": "내가 현청에 남긴 전공 증언을 독우가 읽지도 않고 옆으로 밀었다. 이번에는 아전들에게 유비가 주민을 해쳤다는 말을 쓰라며 압박했다. 공적 사본이 있다고 모함이 저절로 막히는 건 아니었다. 이제는 그가 거짓 진술을 강요했다는 증거가 필요했다.",
+            {
+              "field": "world.flags.liuTravel",
+              "operator": "eq",
+              "value": true
+            }
+          ],
+          "text": "독우가 아전들을 따로 불러 유비의 일을 캐물었다. 백성의 재물을 바치지 않았다는 대답 뒤에 말투가 달라졌다. 내가 본 인수와 진술을 구분해 놓지 않으면 누가 무슨 말을 했는지 사라질 것이다. 무엇부터 남길까?",
           "choices": [
             {
-              "id": "a",
-              "title": "강요받은 진술의 사본을 확보한다",
-              "description": "말만 가지고 맞서면 독우가 내 입부터 막는다. 서로 다른 증언과 기록을 맞춰야 한다.",
+              "id": "proof",
+              "title": "아전의 진술 날짜와 실제 인수를 대조한다",
+              "description": "청렴하다는 주장보다 강요된 진술을 드러낼 근거가 필요하다.",
               "success": {
-                "text": "나는 서리들의 동의를 받아 강요받은 내용과 실제 민원 기록을 따로 적었다. 서로 맞지 않는 대목이 드러나 독우가 내민 진술의 허점을 증명할 수 있게 됐다.",
+                "text": "나는 아전이 불린 시각과 문서 인수를 대조하고 당사자의 확인을 받았다. 독우의 모함에 반박할 자료를 확보했다.",
                 "effects": [
                   {
                     "type": "flag",
                     "key": "duyouEvidence",
                     "value": true
                   }
-                ],
-                "hint": "강요된 진술의 모순을 증거로 확보"
+                ]
+              },
+              "artwork": {
+                "src": "/art/scenes/r002-evidence.png",
+                "alt": "아전의 진술 날짜와 실제 인수를 대조한다를 준비하는 주인공과 주변 현장"
               },
               "check": {
                 "kind": "politics",
                 "weights": {
-                  "politics": 0.55,
-                  "intelligence": 0.35,
+                  "politics": 0.6,
+                  "intelligence": 0.3,
                   "charisma": 0.1
                 },
-                "difficulty": 69,
-                "fameReward": 12,
-                "fameReason": "강요 진술 사본이라는 후속 구출 근거 확보"
+                "difficulty": 58,
+                "fameReward": 9,
+                "fameReason": "독우 모함에 반박할 실제 진술 확보"
               },
               "failure": {
-                "text": "나는 사본을 남기려 했지만 겁먹은 서리들이 이름을 대지 않겠다며 물러났다. 내 짐작만으로 문서를 만들어 내지는 못했다.",
-                "effects": [],
-                "hint": "증언자들이 물러나 증거 확보 실패"
-              },
-              "artwork": {
-                "src": "/art/scenes/r002-evidence.png",
-                "alt": "강요받은 진술의 사본을 확보한다에 나서는 주인공"
+                "text": "나는 아전들의 확인을 받지 못했다. 근거 없는 문장을 빼고 내가 직접 본 시각만 기록했다.",
+                "effects": []
               }
             },
             {
-              "id": "b",
-              "title": "유비의 해명 요청을 전달한다",
-              "description": "장비가 소식부터 들으면 일이 커진다. 당사자가 항변할 자리를 먼저 열어 보자.",
+              "id": "report",
+              "title": "유비에게 확인한 상황만 보고한다",
+              "description": "분노를 옮기기보다 사실부터 전하자.",
               "success": {
-                "text": "나는 담당자를 통해 유비가 해명을 원한다는 말을 거듭 전했다. 면담은 여전히 거절됐지만 거절 시점과 전달받은 사람을 남길 수 있었다.",
+                "text": "나는 독우가 면담을 막고 아전을 불렀다는 사실을 유비에게 전했다. 모르는 뇌물 액수나 명령은 덧붙이지 않았다.",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/official.png",
+                "alt": "유비에게 확인한 상황만 보고한다를 준비하는 주인공과 주변 현장"
+              }
+            }
+          ],
+          "artwork": {
+            "src": "/art/scenes/r002-evidence.png",
+            "alt": "독우가 아전들을 따로 불러 유비의 일을 캐물었다"
+          },
+          "background": "독우가 현청의 인사와 공적을 조사하고 있다. 유비는 백성의 재물을 거두어 뇌물로 바치는 일을 거절했다."
+        },
+        {
+          "id": "local",
+          "when": [
+            {
+              "field": "region",
+              "operator": "eq",
+              "value": "anxi"
+            },
+            {
+              "field": "factionId",
+              "operator": "neq",
+              "value": "yellow-turban"
+            }
+          ],
+          "text": "현청 밖에서 노인들이 면담을 기다리다 울음을 터뜨렸다. 나는 유비의 부하가 아니지만 아전에게 진술을 강요한다는 말은 들었다. 증언을 남길 사람을 찾으면 내 눈앞의 갈등에 개입할 수 있다. 어디까지 나설까?",
+          "choices": [
+            {
+              "id": "witness",
+              "title": "노인과 아전에게 함께 확인을 청한다",
+              "description": "소문만 옮기면 저 사람들만 위험해진다.",
+              "success": {
+                "text": "나는 노인과 아전에게 서로 확인할 수 있는 말만 적자고 청했다. 두 사람이 이름을 남겨 모함을 반박할 증언을 확보했다.",
                 "effects": [
                   {
                     "type": "flag",
-                    "key": "refusalRecorded",
+                    "key": "duyouEvidence",
                     "value": true
                   }
-                ],
-                "hint": "면담 거절 경과와 전달자를 기록"
+                ]
+              },
+              "artwork": {
+                "src": "/art/choices/official.png",
+                "alt": "노인과 아전에게 함께 확인을 청한다를 준비하는 주인공과 주변 현장"
               },
               "check": {
                 "kind": "relationship",
                 "weights": {
-                  "charisma": 0.4,
-                  "intelligence": 0.35,
-                  "leadership": 0.25
+                  "charisma": 0.7,
+                  "politics": 0.3
                 },
-                "difficulty": 48,
-                "fameReward": 4,
-                "fameReason": "해명 요청 전달"
+                "difficulty": 55,
+                "fameReward": 7,
+                "fameReason": "현지 민간 증언의 실제 확인"
               },
               "failure": {
-                "text": "나는 면담을 청했지만 문지기가 이름도 받지 않겠다고 했다. 문을 억지로 밀지 않고 유비 측에 거절당한 경과를 전했다.",
-                "effects": [],
-                "hint": "문지기가 접수 자체를 거부"
-              },
-              "artwork": {
-                "src": "/art/choices/official.png",
-                "alt": "유비의 해명 요청을 전달한다에 나서는 주인공"
+                "text": "나는 이름을 남겨 달라는 부탁을 거절당했다. 사람들을 위험하게 만들지 않으려고 익명 소문을 증거로 제출하지 않았다.",
+                "effects": []
               }
             },
             {
-              "id": "c",
-              "title": "울고 있는 주민 곁에 남는다",
-              "description": "독우 방에 들어갈 줄이 없다. 무슨 말을 시켰는지 주민들이라도 다치지 않고 나오게 기다리자.",
+              "id": "wait",
+              "title": "면담을 기다리는 사람에게 물을 나른다",
+              "description": "할 수 없는 변론을 약속하기보다 옆에 있자.",
               "success": {
-                "text": "나는 관청 밖에서 돌아오는 주민들에게 앉을 자리를 내줬다. 독우와 직접 다투지 않고 주민들이 털어놓는 사정을 들었다.",
-                "effects": [],
-                "hint": "직접 충돌을 피하며 주민 곁에 대기"
+                "text": "나는 기다리는 사람들에게 물을 나르고 상황을 들었다. 현청 안으로 들어갈 권한을 얻은 척하지 않았다.",
+                "effects": []
               },
               "artwork": {
-                "src": "/art/choices/relief.png",
-                "alt": "울고 있는 주민 곁에 남는다에 나서는 주인공"
+                "src": "/art/choices/supplies.png",
+                "alt": "면담을 기다리는 사람에게 물을 나른다를 준비하는 주인공과 주변 현장"
               }
+            }
+          ],
+          "artwork": {
+            "src": "/art/choices/official.png",
+            "alt": "현청 밖에서 노인들이 면담을 기다리다 울음을 터뜨렸다"
+          }
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "독우는 유비의 해명을 받지 않고 아전들에게 모함 진술을 요구했다. 현청 밖에서는 항의와 울음이 이어졌다.",
+          "effects": [
+            {
+              "type": "flag",
+              "key": "duyouConflict",
+              "value": true
             }
           ]
         }
       ],
-      "artwork": {
-        "src": "/art/scenes/r002-evidence.png",
-        "alt": "강요된 진술과 문서를 대조할 준비를 하는 주인공"
-      }
+      "requires": [
+        {
+          "field": "world.people.rtk14-0952",
+          "operator": "neq",
+          "value": "dead"
+        },
+        {
+          "field": "world.flags.liuAnxi",
+          "operator": "eq",
+          "value": true
+        }
+      ],
+      "newsWhen": [
+        {
+          "field": "region",
+          "operator": "eq",
+          "value": "anxi"
+        }
+      ]
     },
     {
-      "title": "장비 형님, 채찍 들기 전에 10초만",
+      "title": "채찍이 들리기 전에 남긴 증거",
       "region": "anxi",
       "people": [
         "유비",
@@ -748,217 +1342,159 @@
         "rtk14-0147",
         "rtk14-0656"
       ],
-      "requiredAlive": [
-        "rtk14-0952"
-      ],
-      "fact": "장비는 울고 있는 주민들에게 독우의 횡포를 듣고 독우를 매질했다. 유비는 독우의 목숨을 살려 주고 인수를 돌려준 뒤 관우·장비와 관직을 버리고 떠났다.",
-      "entry": null,
-      "scene": "주민들의 말을 들은 장비가 독우가 있는 건물 쪽으로 성큼성큼 걸었다. 저대로 들어가면 매질은 속 시원하겠지만 유비는 관직을 버리고 달아나야 한다. 증거가 없으면 내 말도 분풀이를 참으라는 잔소리로 끝날 거다. 장비를 붙잡을까, 유비가 빠져나갈 길을 챙길까?",
-      "variants": [
+      "fact": "장비는 백성의 사정을 듣고 독우를 끌어내 매질했다. 유비는 독우를 살려 주고 인수를 돌려준 뒤 관우·장비와 관직을 버리고 떠났다.",
+      "year": 187,
+      "background": "장비는 백성의 사정을 듣고 독우를 끌어내 매질했다. 유비는 독우를 살려 주고 인수를 돌려준 뒤 관우·장비와 관직을 버리고 떠났다.",
+      "artwork": {
+        "src": "/art/scenes/r002-gate.png",
+        "alt": "채찍이 들리기 전에 남긴 증거"
+      },
+      "routes": [
         {
-          "key": "proof",
-          "condition": {
-            "field": "world.flags.duyouEvidence",
-            "operator": "eq",
-            "value": true
-          },
-          "text": "내가 모은 진술 사본을 쥐고 나오자 장비가 독우 쪽으로 걸어가고 있었다. 주민들의 말과 서리의 기록은 맞아떨어졌고 거짓 진술에 난 날짜도 어긋나 있었다. 이걸 공개하면 유비가 도망자로 떠나는 전개를 바꿀 수 있다. 문제는 장비가 내 설명을 듣기 전에 문을 박차느냐였다.",
+          "id": "proof",
+          "when": [
+            {
+              "field": "region",
+              "operator": "eq",
+              "value": "anxi"
+            },
+            {
+              "field": "world.flags.duyouEvidence",
+              "operator": "eq",
+              "value": true
+            },
+            {
+              "field": "factionId",
+              "operator": "neq",
+              "value": "yellow-turban"
+            }
+          ],
+          "text": "현청 문 앞에서 장비가 독우를 찾으며 목소리를 높였다. 내 손에는 날짜와 인수인이 확인된 진술이 남아 있었다. 이 자료가 있어도 직접 제출해 받아 줄 사람을 세워야 한다. 채찍이 움직이기 전에 문서를 낼까?",
           "choices": [
             {
-              "id": "a",
-              "title": "사본과 증언을 주민들 앞에서 대조한다",
-              "description": "이미 모은 증거를 읽어 독우가 발뺌하지 못하게 하자. 장비가 문을 부수기 전에 끝내야 한다.",
+              "id": "submit",
+              "title": "인수인과 함께 모함 진술을 제출한다",
+              "description": "종이만 던지고 정의가 이겼다고 할 수는 없다.",
               "success": {
-                "text": "나는 진술 사본의 날짜와 전공 기록을 주민들 앞에서 대조했다. 독우가 강요한 말의 모순이 드러나 조사가 중단됐고 장비도 채찍을 내려놓았다.",
+                "text": "나는 인수인과 함께 진술을 제출해 현청의 조사를 요구했다. 담당자가 모함의 모순을 확인하자 유비가 장비를 멈추고 관직을 지켰다.",
                 "effects": [
                   {
                     "type": "flag",
-                    "key": "duyouExposed",
+                    "key": "anxiRetained",
                     "value": true
                   }
-                ],
-                "hint": "허위 진술 공개·유비의 안희 관직 유지"
+                ]
+              },
+              "artwork": {
+                "src": "/art/scenes/r002-evidence.png",
+                "alt": "인수인과 함께 모함 진술을 제출한다를 준비하는 주인공과 주변 현장"
               },
               "check": {
                 "kind": "politics",
                 "weights": {
-                  "politics": 0.55,
-                  "intelligence": 0.35,
+                  "politics": 0.6,
+                  "intelligence": 0.3,
                   "charisma": 0.1
                 },
-                "difficulty": 59,
-                "fameReward": 22,
-                "fameReason": "사본과 현장 증언을 공개 대조해 관직 이탈을 저지"
+                "difficulty": 62,
+                "fameReward": 20,
+                "fameReason": "독우 갈등을 증거로 해결해 유비 관직 유지"
               },
               "failure": {
-                "text": "나는 사본을 읽으려 했지만 독우의 수행원이 증언자들을 흩어 버렸다. 증거가 공개되기 전에 장비가 끼어들어 매질을 시작했다.",
-                "effects": [],
-                "hint": "공개 저지·매질과 관직 이탈로 진행"
-              },
-              "artwork": {
-                "src": "/art/choices/official.png",
-                "alt": "사본과 증언을 주민들 앞에서 대조한다에 나서는 주인공"
+                "text": "나는 인수인을 데려왔지만 독우의 문을 열게 하지 못했다. 장비의 매질을 막지 못하고 사람들을 뒤로 물렸다.",
+                "effects": []
               }
             },
             {
-              "id": "b",
-              "title": "유비에게 독우의 목숨부터 구하자고 한다",
-              "description": "분노는 이해해도 관리 살해는 선을 넘는다. 유비가 인수를 돌려주고 떠날 여지는 남겨야 한다.",
+              "id": "withdraw",
+              "title": "노인들을 매질에서 떨어진 곳으로 옮긴다",
+              "description": "증거가 있어도 지금 다칠 사람을 먼저 볼 수 있다.",
               "success": {
-                "text": "나는 유비를 찾아 관리의 목숨부터 살려야 한다고 알렸다. 유비가 장비를 멈추고 독우를 풀어 준 뒤 인수를 돌려주고 떠났다.",
-                "effects": [
-                  {
-                    "type": "flag",
-                    "key": "duyouSpared",
-                    "value": true
-                  }
-                ],
-                "hint": "유비가 개입해 독우를 살리고 관직 반납"
+                "text": "나는 노인들을 문가에서 물렸다. 증언은 보관했지만 장비의 매질과 유비의 관직 이탈을 막지는 못했다.",
+                "effects": []
               },
-              "check": {
-                "kind": "relationship",
-                "weights": {
-                  "charisma": 0.55,
-                  "politics": 0.35,
-                  "intelligence": 0.1
-                },
-                "difficulty": 58,
-                "fameReward": 8,
-                "fameReason": "독우의 살해를 만류"
-              },
-              "failure": {
-                "text": "나는 유비에게 가는 길이 막혀 소식을 늦게 전했다. 유비와 관우가 스스로 장비를 말려 독우를 풀어 주는 동안 나는 짐을 챙겼다.",
-                "effects": [],
-                "hint": "연락 지연·유비와 관우가 직접 수습"
+              "artwork": {
+                "src": "/art/choices/relief.png",
+                "alt": "노인들을 매질에서 떨어진 곳으로 옮긴다를 준비하는 주인공과 주변 현장"
+              }
+            }
+          ],
+          "artwork": {
+            "src": "/art/scenes/r002-evidence.png",
+            "alt": "현청 문 앞에서 장비가 독우를 찾으며 목소리를 높였다"
+          },
+          "background": "장비가 독우에게 항의하려고 현청으로 왔다. 기록을 통한 해결과 직접 보복이 갈림길에 놓였다."
+        },
+        {
+          "id": "local",
+          "when": [
+            {
+              "field": "region",
+              "operator": "eq",
+              "value": "anxi"
+            },
+            {
+              "field": "factionId",
+              "operator": "neq",
+              "value": "yellow-turban"
+            }
+          ],
+          "text": "장비가 현청으로 들어가 독우를 끌어냈다. 노인들의 말은 들었지만 나는 검증된 증거를 확보하지 못했다. 당장 일어난 매질을 내 손으로 재판할 수는 없었다. 다칠 사람을 물릴까, 유비에게 전할까?",
+          "choices": [
+            {
+              "id": "report",
+              "title": "유비에게 현청의 충돌을 알린다",
+              "description": "멈출 수 있는 사람에게 상황을 정확히 전하자.",
+              "success": {
+                "text": "나는 유비에게 장비와 독우의 충돌을 알렸다. 유비가 달려와 독우의 목숨을 살렸지만 관직은 버리고 떠났다.",
+                "effects": []
               },
               "artwork": {
                 "src": "/art/choices/follow.png",
-                "alt": "유비에게 독우의 목숨부터 구하자고 한다에 나서는 주인공"
+                "alt": "유비에게 현청의 충돌을 알린다를 준비하는 주인공과 주변 현장"
               }
             },
             {
-              "id": "c",
-              "title": "떠날 수레와 짐부터 챙긴다",
-              "description": "채찍을 뺏을 무력도 없다. 도망칠 때 누군가는 짐을 잊고 나올 테니 출구라도 확보하자.",
+              "id": "shelter",
+              "title": "노인들을 길 밖으로 대피시킨다",
+              "description": "이 분노에 휘말릴 사람부터 빼자.",
               "success": {
-                "text": "나는 숙소의 짐을 수레에 모으고 관청 밖 출구를 비웠다. 유비 일행이 독우를 살려 두고 나왔을 때 함께 떠날 준비를 마쳤다.",
-                "effects": [],
-                "hint": "직접 보복을 피하고 철수 준비"
+                "text": "나는 노인들을 수레 뒤로 안내했다. 유비가 인수를 돌려주고 떠날 때까지 현청 문 앞을 비워 두었다.",
+                "effects": []
               },
               "artwork": {
-                "src": "/art/choices/travel-wagons.png",
-                "alt": "떠날 수레와 짐부터 챙긴다에 나서는 주인공"
+                "src": "/art/choices/relief.png",
+                "alt": "노인들을 길 밖으로 대피시킨다를 준비하는 주인공과 주변 현장"
               }
             }
-          ]
-        }
-      ],
-      "choices": [
-        {
-          "id": "a",
-          "title": "주민들의 증언을 모아 독우를 멈춘다",
-          "description": "주민들의 말을 대조하자고 외친다. 증거가 부족하면 독우가 빠져나갈 틈만 줄 수도 있다.",
-          "success": {
-            "text": "나는 주민들에게 강요받은 말과 진술을 요구한 사람을 서로 확인하게 했다. 서리까지 같은 내용을 증언하자 독우는 조사를 멈췄고 장비도 채찍을 내려놓았다.",
-            "effects": [
-              {
-                "type": "flag",
-                "key": "duyouExposed",
-                "value": true
-              }
-            ],
-            "hint": "현장 증언을 모아 허위 조사 중단"
-          },
-          "check": {
-            "kind": "strategy",
-            "weights": {
-              "intelligence": 0.45,
-              "charisma": 0.4,
-              "politics": 0.15
-            },
-            "difficulty": 77,
-            "fameReward": 18,
-            "fameReason": "모인 증언으로 독우의 행패와 관직 이탈을 저지"
-          },
-          "failure": {
-            "text": "나는 장비를 막으려 했지만 주민들의 울음 앞에서 말이 닿지 않았다. 유비가 도착할 때까지 독우는 매질을 당했고 나도 접근하지 못했다.",
-            "effects": [],
-            "hint": "장비가 말을 듣지 않고 독우를 매질"
-          },
+          ],
           "artwork": {
-            "src": "/art/choices/official.png",
-            "alt": "주민들의 증언을 모아 독우를 멈춘다에 나서는 주인공"
-          }
-        },
-        {
-          "id": "b",
-          "title": "유비에게 독우의 목숨부터 구하자고 한다",
-          "description": "분노는 이해해도 관리 살해는 선을 넘는다. 유비가 인수를 돌려주고 떠날 여지는 남겨야 한다.",
-          "success": {
-            "text": "나는 유비를 찾아 관리의 목숨부터 살려야 한다고 알렸다. 유비가 장비를 멈추고 독우를 풀어 준 뒤 인수를 돌려주고 떠났다.",
-            "effects": [
-              {
-                "type": "flag",
-                "key": "duyouSpared",
-                "value": true
-              }
-            ],
-            "hint": "유비가 개입해 독우를 살리고 관직 반납"
+            "src": "/art/scenes/r002-gate.png",
+            "alt": "장비가 현청으로 들어가 독우를 끌어냈다"
           },
-          "check": {
-            "kind": "relationship",
-            "weights": {
-              "charisma": 0.55,
-              "politics": 0.35,
-              "intelligence": 0.1
-            },
-            "difficulty": 58,
-            "fameReward": 8,
-            "fameReason": "독우의 살해를 만류"
-          },
-          "failure": {
-            "text": "나는 유비에게 가는 길이 막혀 소식을 늦게 전했다. 유비와 관우가 스스로 장비를 말려 독우를 풀어 주는 동안 나는 짐을 챙겼다.",
-            "effects": [],
-            "hint": "연락 지연·유비와 관우가 직접 수습"
-          },
-          "artwork": {
-            "src": "/art/choices/follow.png",
-            "alt": "유비에게 독우의 목숨부터 구하자고 한다에 나서는 주인공"
-          }
-        },
-        {
-          "id": "c",
-          "title": "떠날 수레와 짐부터 챙긴다",
-          "description": "채찍을 뺏을 무력도 없다. 도망칠 때 누군가는 짐을 잊고 나올 테니 출구라도 확보하자.",
-          "success": {
-            "text": "나는 숙소의 짐을 수레에 모으고 관청 밖 출구를 비웠다. 유비 일행이 독우를 살려 두고 나왔을 때 함께 떠날 준비를 마쳤다.",
-            "effects": [],
-            "hint": "직접 보복을 피하고 철수 준비"
-          },
-          "artwork": {
-            "src": "/art/choices/travel-wagons.png",
-            "alt": "떠날 수레와 짐부터 챙긴다에 나서는 주인공"
-          }
+          "background": "장비가 독우의 모함과 횡포에 분노해 현청에서 충돌하고 있다."
         }
       ],
       "outcomes": [
         {
-          "condition": {
-            "field": "world.flags.duyouExposed",
-            "operator": "eq",
-            "value": true
-          },
-          "text": "강요된 진술과 전공 기록의 모순이 공개되면서 독우는 조사를 멈췄다. 이 경로에서 유비는 독우를 매질한 도망자가 되지 않고 안희 관직을 지켰다.",
+          "text": "확인된 진술로 독우의 모함이 드러났다. 유비는 장비를 멈추고 안희현 관직을 유지했다.",
           "effects": [
             {
               "type": "flag",
-              "key": "anxiRetained",
+              "key": "anxiLeft",
+              "value": false
+            }
+          ],
+          "when": [
+            {
+              "field": "world.flags.anxiRetained",
+              "operator": "eq",
               "value": true
             }
           ]
         },
         {
-          "text": "장비는 독우의 횡포에 분노해 매질했고 유비는 그의 목숨을 살려 줬다. 유비 일행은 인수를 돌려주고 관직을 버린 채 안희를 떠났다.",
+          "text": "장비가 독우를 매질한 뒤 유비는 그의 목숨을 살렸다. 유비·관우·장비는 인수를 돌려주고 안희현을 떠났다.",
           "effects": [
             {
               "type": "flag",
@@ -968,383 +1504,477 @@
           ]
         }
       ],
-      "precision": "approximate",
-      "dateNote": "원본 사건 문서에 정확한 연월이 없다. 황건 토벌 뒤부터 영제 사망 전까지의 상대 순서로 진행한다.",
-      "artwork": {
-        "src": "/art/scenes/r002-evidence.png",
-        "alt": "독우의 모함을 막을 증거와 증언을 살피는 주인공"
-      },
-      "background": "독우가 주민과 아전들을 압박하고 유비의 해명 요청을 거절했다. 사정을 들은 장비는 분노하여 독우가 있는 곳으로 향했다."
+      "requires": [
+        {
+          "field": "world.people.rtk14-0952",
+          "operator": "neq",
+          "value": "dead"
+        },
+        {
+          "field": "world.flags.duyouConflict",
+          "operator": "eq",
+          "value": true
+        }
+      ],
+      "newsWhen": [
+        {
+          "field": "region",
+          "operator": "eq",
+          "value": "anxi"
+        }
+      ]
     },
     {
-      "title": "영제가 죽는다는데, 낙양행 편도표요?",
+      "title": "다음 길은 수도인가 지금 거점인가",
       "region": "luoyang",
-      "year": 189,
       "people": [
         "유비",
         "유우",
+        "영제",
         "하진",
-        "하황후",
         "건석",
         "유변",
-        "유협",
-        "조조"
+        "유협"
       ],
       "officers": [
         "rtk14-0952",
         "rtk14-0932",
-        "rtk14-0132",
-        "rtk14-0521"
+        "rtk14-0132"
       ],
-      "fact": "유비는 유우의 토벌에 참여해 사면과 추천으로 관직을 회복했다. 중앙에서는 영제 사후 유변을 지지하는 하황후·하진과 유협을 지지하는 건석이 충돌했고 하진은 건석을 제거해 유변을 즉위시켰다.",
-      "background": "영제의 병세와 후계 문제가 중앙의 갈등으로 떠올랐다. 하황후·하진과 환관 건석은 서로 다른 황자를 지지했다.",
-      "entry": "유비와 왕래하던 상단에서 낙양에 서찰을 전할 사람을 구했다. 나는 인계할 곳을 확인하고 상단 수레에 동행해 수도 바깥 역참에 도착했다.",
-      "scene": "길에서는 유비가 유우의 토벌에 참여해 다시 관직을 얻었다는 소식을 들었다. 낙양 역참에 도착하니 이번에는 영제가 위독하고 궁문 수비가 바뀐다는 말이 돌았다. 안희보다 훨씬 큰 판인데도 문서 한 장에 목숨이 오가는 건 똑같았다. 이제 내가 알던 황제의 죽음이 가까워졌다면 누구에게 경고를 남길까?",
-      "variants": [
+      "fact": "관직을 떠난 유비는 유우의 토벌에 참여하고 사면과 추천으로 다시 지방 관직을 얻었다. 중앙에서는 영제 사후 하진이 건석을 제거하고 유변을 황제로 세웠다.",
+      "year": 189,
+      "background": "영제가 죽은 뒤 하진과 건석을 비롯한 궁중 세력이 후계를 다투었다. 유변 즉위 소식이 지방의 각 거점에 전해졌다.",
+      "artwork": {
+        "src": "/art/choices/travel-wagons.png",
+        "alt": "다음 길은 수도인가 지금 거점인가"
+      },
+      "routes": [
         {
-          "key": "office",
-          "condition": {
-            "field": "world.flags.anxiRetained",
-            "operator": "eq",
-            "value": true
-          },
-          "text": "안희의 관직을 지킨 유비 측과 연락을 이어 가며 나는 상단 수레로 낙양 역참에 왔다. 원래 겪었을 관직 이탈을 피했지만 영제가 위독하다는 소식은 그대로 들려왔다. 궁문 수비가 바뀌는 걸 보니 내 작은 성공이 중앙의 다툼까지 지운 건 아니었다. 후계 다툼의 결말을 어디까지 꺼내 말할까?",
+          "id": "retained",
+          "when": [
+            {
+              "field": "world.flags.liuTravel",
+              "operator": "eq",
+              "value": true
+            },
+            {
+              "field": "world.flags.anxiRetained",
+              "operator": "eq",
+              "value": true
+            }
+          ],
+          "text": "안희에 남은 유비에게 영제의 죽음과 새 황제의 소식이 왔다. 관직을 지킨 덕분에 급히 도망갈 필요는 없었다. 나는 여기서 일을 잇거나 정식으로 동행을 끝내고 수도행 계약을 고를 수 있다. 다음 일은 어디에 둘까?",
           "choices": [
             {
-              "id": "a",
-              "title": "건석의 함정을 하진 측에 경고한다",
-              "description": "궁 안에서 혼자 움직이지 말라는 말은 할 수 있다. 근거를 못 대면 내가 음모의 연락책이다.",
+              "id": "remain",
+              "title": "안희의 인수와 연락을 계속 맡는다",
+              "description": "수도에 큰일이 난다고 내 책임이 사라지는 건 아니다.",
               "success": {
-                "text": "나는 하진 측 문지기에게 궁문 지휘를 바꾼 경위와 호위 없는 출입의 위험을 전했다. 경고는 담당자에게 넘어갔지만 하진을 직접 만날 수는 없었다.",
+                "text": "나는 안희의 연락 업무를 계속 맡았다. 소속과 동행을 유지하고 낙양으로 임의 이동하지 않았다.",
                 "effects": [
                   {
-                    "type": "flag",
-                    "key": "warnedHeJinEarly",
-                    "value": true
+                    "type": "region",
+                    "value": "anxi"
                   }
-                ],
-                "hint": "하진 측에 위험 경고 전달"
-              },
-              "check": {
-                "kind": "strategy",
-                "weights": {
-                  "intelligence": 0.55,
-                  "charisma": 0.25,
-                  "leadership": 0.2
-                },
-                "difficulty": 75,
-                "fameReward": 18,
-                "fameReason": "건석의 함정을 경고해 정국 개입 준비"
-              },
-              "failure": {
-                "text": "나는 건석의 음모를 아는 듯 말하다가 근거를 대라는 추궁을 받았다. 더 끌려들기 전에 확인한 궁문 변화만 말하고 물러났다.",
-                "effects": [],
-                "hint": "음모 가담자로 의심받을 위험"
+                ]
               },
               "artwork": {
                 "src": "/art/choices/official.png",
-                "alt": "건석의 함정을 하진 측에 경고한다에 나서는 주인공"
+                "alt": "안희의 인수와 연락을 계속 맡는다를 준비하는 주인공과 주변 현장"
               }
             },
             {
-              "id": "b",
-              "title": "조조 측 연락책에게 서찰을 인계한다",
-              "description": "조조는 외부 군벌을 부르는 위험을 안다. 예언 대신 내가 본 궁문 상황을 전해 보자.",
+              "id": "capital",
+              "title": "동행을 정리하고 낙양행 상단과 간다",
+              "description": "떠날 때는 남은 일을 인계하자.",
               "success": {
-                "text": "나는 서찰의 수신처를 확인받고 조조 측 연락책에게 궁문에서 본 움직임을 전했다. 그는 내 이름과 머무는 역참을 받아 적었다.",
+                "text": "나는 유비에게 일을 인계하고 동행과 군적을 정리했다. 낙양행 상단의 운송 계약을 맡아 수도에 도착했다.",
                 "effects": [
                   {
+                    "type": "faction",
+                    "value": null
+                  },
+                  {
+                    "type": "role",
+                    "value": "civilian"
+                  },
+                  {
                     "type": "flag",
-                    "key": "metCaoContact",
-                    "value": true
+                    "key": "liuTravel",
+                    "value": false
+                  },
+                  {
+                    "type": "region",
+                    "value": "luoyang"
                   }
-                ],
-                "hint": "조조 측 연락선·역참 주소 확보"
-              },
-              "check": {
-                "kind": "relationship",
-                "weights": {
-                  "charisma": 0.4,
-                  "intelligence": 0.35,
-                  "leadership": 0.25
-                },
-                "difficulty": 44,
-                "fameReward": 4,
-                "fameReason": "조조 측 서찰 전달"
-              },
-              "failure": {
-                "text": "나는 조조 측 사람을 찾았지만 서찰 확인이 끝나기 전에는 별말을 듣지 못했다. 내용은 꾸며 보태지 않고 역참에서 답을 기다렸다.",
-                "effects": [],
-                "hint": "신원 확인 때문에 접촉 보류"
+                ]
               },
               "artwork": {
-                "src": "/art/choices/han.png",
-                "alt": "조조 측 연락책에게 서찰을 인계한다에 나서는 주인공"
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "동행을 정리하고 낙양행 상단과 간다를 준비하는 주인공과 주변 현장"
+              }
+            }
+          ],
+          "artwork": {
+            "src": "/art/choices/official.png",
+            "alt": "안희에 남은 유비에게 영제의 죽음과 새 황제의 소식이 왔다"
+          }
+        },
+        {
+          "id": "liu",
+          "when": [
+            {
+              "field": "world.flags.liuTravel",
+              "operator": "eq",
+              "value": true
+            },
+            {
+              "field": "factionId",
+              "operator": "neq",
+              "value": "yellow-turban"
+            }
+          ],
+          "text": "안희를 떠난 유비가 유우의 토벌 사업에서 다시 일을 얻었다. 사면과 추천을 기다리는 동안 수도의 후계 소식이 전해졌다. 내가 따르는 행렬과 낙양행 상단의 길이 갈라졌다. 계속 동행할까?",
+          "choices": [
+            {
+              "id": "remain",
+              "title": "유비의 재기 행렬과 함께 간다",
+              "description": "지난 실패 하나로 함께한 시간이 지워지지는 않는다.",
+              "success": {
+                "text": "나는 유비 일행과 함께 유우의 연락 지점으로 이동했다. 사면 뒤에도 동행과 기존 소속을 유지했다.",
+                "effects": [
+                  {
+                    "type": "region",
+                    "value": "jizhou"
+                  }
+                ]
+              },
+              "artwork": {
+                "src": "/art/choices/follow.png",
+                "alt": "유비의 재기 행렬과 함께 간다를 준비하는 주인공과 주변 현장"
               }
             },
             {
-              "id": "c",
-              "title": "궁문과 떨어진 역참에 머문다",
-              "description": "황제 후계 구도 안다고 궁에 들어갈 자격이 생기는 건 아니다. 잠자리부터 안전한 곳으로 옮기자.",
+              "id": "capital",
+              "title": "동행을 마치고 낙양행 운송을 맡는다",
+              "description": "내가 직접 보고 싶은 곳으로 가되 계약한 길로 움직이자.",
               "success": {
-                "text": "나는 서찰을 역참 담당자에게 인계하고 궁문과 떨어진 숙소에 머물렀다. 중앙의 인사 변화는 오가는 전령에게서 들었다.",
-                "effects": [],
-                "hint": "궁문 밖 역참에 머물며 위험 회피"
+                "text": "나는 유비에게 동행을 마치겠다고 인사했다. 군적을 정리하고 낙양행 상단의 짐을 맡아 수도로 이동했다.",
+                "effects": [
+                  {
+                    "type": "faction",
+                    "value": null
+                  },
+                  {
+                    "type": "role",
+                    "value": "civilian"
+                  },
+                  {
+                    "type": "flag",
+                    "key": "liuTravel",
+                    "value": false
+                  },
+                  {
+                    "type": "region",
+                    "value": "luoyang"
+                  }
+                ]
               },
               "artwork": {
-                "src": "/art/choices/hide.png",
-                "alt": "궁문과 떨어진 역참에 머문다에 나서는 주인공"
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "동행을 마치고 낙양행 운송을 맡는다를 준비하는 주인공과 주변 현장"
               }
             }
-          ]
-        }
-      ],
-      "choices": [
-        {
-          "id": "a",
-          "title": "건석의 함정을 하진 측에 경고한다",
-          "description": "궁 안에서 혼자 움직이지 말라는 말은 할 수 있다. 근거를 못 대면 내가 음모의 연락책이다.",
-          "success": {
-            "text": "나는 하진 측 문지기에게 궁문 지휘를 바꾼 경위와 호위 없는 출입의 위험을 전했다. 경고는 담당자에게 넘어갔지만 하진을 직접 만날 수는 없었다.",
-            "effects": [
-              {
-                "type": "flag",
-                "key": "warnedHeJinEarly",
-                "value": true
-              }
-            ],
-            "hint": "하진 측에 위험 경고 전달"
-          },
-          "check": {
-            "kind": "strategy",
-            "weights": {
-              "intelligence": 0.55,
-              "charisma": 0.25,
-              "leadership": 0.2
-            },
-            "difficulty": 75,
-            "fameReward": 18,
-            "fameReason": "건석의 함정을 경고해 정국 개입 준비"
-          },
-          "failure": {
-            "text": "나는 건석의 음모를 아는 듯 말하다가 근거를 대라는 추궁을 받았다. 더 끌려들기 전에 확인한 궁문 변화만 말하고 물러났다.",
-            "effects": [],
-            "hint": "음모 가담자로 의심받을 위험"
-          },
+          ],
           "artwork": {
-            "src": "/art/choices/official.png",
-            "alt": "건석의 함정을 하진 측에 경고한다에 나서는 주인공"
+            "src": "/art/choices/travel-wagons.png",
+            "alt": "안희를 떠난 유비가 유우의 토벌 사업에서 다시 일을 얻었다"
           }
         },
         {
-          "id": "b",
-          "title": "조조 측 연락책에게 서찰을 인계한다",
-          "description": "조조는 외부 군벌을 부르는 위험을 안다. 예언 대신 내가 본 궁문 상황을 전해 보자.",
-          "success": {
-            "text": "나는 서찰의 수신처를 확인받고 조조 측 연락책에게 궁문에서 본 움직임을 전했다. 그는 내 이름과 머무는 역참을 받아 적었다.",
-            "effects": [
-              {
-                "type": "flag",
-                "key": "metCaoContact",
-                "value": true
+          "id": "yellow",
+          "when": [
+            {
+              "field": "factionId",
+              "operator": "eq",
+              "value": "yellow-turban"
+            }
+          ],
+          "text": "기주의 잔존 연락망에도 새 황제의 소식이 왔다. 수도의 권력 다툼을 안다고 황건 소속으로 궁문을 통과할 수는 없다. 거점을 지킬지 군을 떠나 낙양에서 생업을 구할지 정해야 했다. 어느 길을 고를까?",
+          "choices": [
+            {
+              "id": "remain",
+              "title": "기주 잔존 거점을 지킨다",
+              "description": "남은 사람들이 있다는 이유도 내 선택의 근거다.",
+              "success": {
+                "text": "나는 기주 거점에서 연락을 이었다. 황건 잔존 소속을 유지하고 수도의 궁문 사건에는 참가하지 않았다.",
+                "effects": [
+                  {
+                    "type": "region",
+                    "value": "jizhou"
+                  }
+                ]
+              },
+              "artwork": {
+                "src": "/art/choices/yellow-supplies.png",
+                "alt": "기주 잔존 거점을 지킨다를 준비하는 주인공과 주변 현장"
               }
-            ],
-            "hint": "조조 측 연락선·역참 주소 확보"
-          },
-          "check": {
-            "kind": "relationship",
-            "weights": {
-              "charisma": 0.4,
-              "intelligence": 0.35,
-              "leadership": 0.25
             },
-            "difficulty": 44,
-            "fameReward": 4,
-            "fameReason": "조조 측 서찰 전달"
-          },
-          "failure": {
-            "text": "나는 조조 측 사람을 찾았지만 서찰 확인이 끝나기 전에는 별말을 듣지 못했다. 내용은 꾸며 보태지 않고 역참에서 답을 기다렸다.",
-            "effects": [],
-            "hint": "신원 확인 때문에 접촉 보류"
-          },
+            {
+              "id": "capital",
+              "title": "황건 연락을 인계하고 수도행 짐을 맡는다",
+              "description": "두건을 숨기는 것만으로 신분이 바뀌지는 않는다. 일을 정리하고 나가자.",
+              "success": {
+                "text": "나는 연락을 인계하고 잔존군에서 떠나겠다고 알렸다. 민간 상단의 운송 일을 맡아 낙양으로 이동했다.",
+                "effects": [
+                  {
+                    "type": "faction",
+                    "value": null
+                  },
+                  {
+                    "type": "role",
+                    "value": "civilian"
+                  },
+                  {
+                    "type": "region",
+                    "value": "luoyang"
+                  },
+                  {
+                    "type": "flag",
+                    "key": "formerYellow",
+                    "value": true
+                  }
+                ]
+              },
+              "artwork": {
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "황건 연락을 인계하고 수도행 짐을 맡는다를 준비하는 주인공과 주변 현장"
+              }
+            }
+          ],
           "artwork": {
-            "src": "/art/choices/han.png",
-            "alt": "조조 측 연락책에게 서찰을 인계한다에 나서는 주인공"
+            "src": "/art/choices/yellow-supplies.png",
+            "alt": "기주의 잔존 연락망에도 새 황제의 소식이 왔다"
           }
         },
         {
-          "id": "c",
-          "title": "궁문과 떨어진 역참에 머문다",
-          "description": "황제 후계 구도 안다고 궁에 들어갈 자격이 생기는 건 아니다. 잠자리부터 안전한 곳으로 옮기자.",
-          "success": {
-            "text": "나는 서찰을 역참 담당자에게 인계하고 궁문과 떨어진 숙소에 머물렀다. 중앙의 인사 변화는 오가는 전령에게서 들었다.",
-            "effects": [],
-            "hint": "궁문 밖 역참에 머물며 위험 회피"
-          },
+          "id": "civil",
+          "when": [
+            {
+              "field": "world.flags.liuTravel",
+              "operator": "neq",
+              "value": true
+            },
+            {
+              "field": "factionId",
+              "operator": "neq",
+              "value": "yellow-turban"
+            }
+          ],
+          "text": "새 황제가 섰다는 소식에 상단의 수도행 계약이 늘었다. 나는 관청의 명령이 아니라 일할 장소를 고를 수 있는 처지였다. 수도로 가면 새 소문을 직접 확인하겠지만 지금 거래처를 놓칠 수도 있다. 어느 쪽을 택할까?",
+          "choices": [
+            {
+              "id": "capital",
+              "title": "낙양행 운송 계약을 맡는다",
+              "description": "길과 인수인을 확인한 뒤 움직이자.",
+              "success": {
+                "text": "나는 낙양의 인수인을 확인하고 상단을 따라 수도로 이동했다. 군주 소속을 새로 얻지 않은 채 민간 일자리를 찾았다.",
+                "effects": [
+                  {
+                    "type": "region",
+                    "value": "luoyang"
+                  },
+                  {
+                    "type": "flag",
+                    "key": "capitalTrader",
+                    "value": true
+                  }
+                ]
+              },
+              "artwork": {
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "낙양행 운송 계약을 맡는다를 준비하는 주인공과 주변 현장"
+              }
+            },
+            {
+              "id": "remain",
+              "title": "지금 거점의 거래를 이어 간다",
+              "description": "소식이 크다고 내 삶까지 모두 옮길 필요는 없다.",
+              "success": {
+                "text": "나는 현재 거점에서 거래를 이어 갔다. 낙양의 정치 사건은 관련 소식으로만 접하기로 했다.",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/supplies.png",
+                "alt": "지금 거점의 거래를 이어 간다를 준비하는 주인공과 주변 현장"
+              }
+            }
+          ],
           "artwork": {
-            "src": "/art/choices/hide.png",
-            "alt": "궁문과 떨어진 역참에 머문다에 나서는 주인공"
+            "src": "/art/choices/travel-wagons.png",
+            "alt": "새 황제가 섰다는 소식에 상단의 수도행 계약이 늘었다"
           }
         }
       ],
       "outcomes": [
         {
-          "text": "영제가 죽은 뒤 하진은 건석을 제거하고 유변을 황제로 세웠다. 새 황제의 즉위 뒤에도 하진과 환관들의 대립은 끝나지 않았다.",
+          "text": "영제가 죽은 뒤 하진은 건석을 제거하고 유변을 황제로 세웠다. 중앙에서는 하진과 환관들의 대립이 커졌다.",
           "effects": [
             {
               "type": "flag",
               "key": "emperorBian",
               "value": true
-            },
-            {
-              "type": "flag",
-              "key": "jianShuoRemoved",
-              "value": true
             }
           ]
         }
-      ],
-      "artwork": {
-        "src": "/art/scenes/r002-gate.png",
-        "alt": "궁문 밖에서 연락책을 부르는 주인공"
-      }
+      ]
     },
     {
-      "title": "동탁 초대장, 발송 취소 안 되나요?",
+      "title": "궁문에 닿을 근거부터",
       "region": "luoyang",
-      "year": 189,
       "people": [
         "하진",
         "원소",
-        "조조",
         "하태후",
-        "장양",
+        "조조",
         "동탁"
       ],
       "officers": [
         "rtk14-0132",
+        "rtk14-0035",
         "rtk14-0521",
-        "rtk14-0736",
-        "rtk14-0035"
+        "rtk14-0736"
       ],
-      "fact": "하진은 하태후를 압박해 환관을 제거하려고 지방 군벌을 수도로 불렀다. 조조는 외부 군대 동원의 위험을 경고했지만 받아들여지지 않았고, 환관들은 태후의 명을 내세워 하진을 궁으로 불러들이려 했다.",
-      "entry": null,
-      "scene": "역참에서 지방군을 부르는 조서가 나간다는 말을 들었다. 동탁이 이 초대장을 받아 수도에 들어온 뒤 어떤 일이 벌어지는지 나는 안다. 그런데 조조 쪽에서도 반대했다는 방책을 이름 없는 내가 말로만 막기는 어려웠다. 군대를 부르는 위험을 기록으로 남길까, 궁문 함정부터 경고할까?",
-      "choices": [
+      "fact": "하진은 태후를 압박하려 지방 군벌을 수도로 불렀다. 조조 등의 경고는 받아들여지지 않았고 환관들은 태후의 명을 내세워 하진을 궁중으로 불렀다.",
+      "year": 189,
+      "background": "하진은 태후를 압박하려 지방 군벌을 수도로 불렀다. 조조 등의 경고는 받아들여지지 않았고 환관들은 태후의 명을 내세워 하진을 궁중으로 불렀다.",
+      "artwork": {
+        "src": "/art/choices/official.png",
+        "alt": "궁문에 닿을 근거부터"
+      },
+      "routes": [
         {
-          "id": "a",
-          "title": "군벌 소집을 막을 반대 의견을 전한다",
-          "description": "전국의 군대를 부르면 환관만 제거하고 끝나지 않는다. 전달 과정에서 조서를 훼손해서는 안 된다.",
-          "success": {
-            "text": "나는 조서를 취급하는 서리에게 지휘권과 철수 시점을 정하지 않은 위험을 짚어 반대 의견을 넘겼다. 발송을 막지는 못했지만 동탁 입경을 경계해야 한다는 기록은 남겼다.",
-            "effects": [
-              {
-                "type": "flag",
-                "key": "warlordObjection",
-                "value": true
-              }
-            ],
-            "hint": "군벌 소집 반대 기록·소집 자체는 유지"
-          },
-          "check": {
-            "kind": "politics",
-            "weights": {
-              "politics": 0.5,
-              "intelligence": 0.4,
-              "leadership": 0.1
+          "id": "capital",
+          "when": [
+            {
+              "field": "region",
+              "operator": "eq",
+              "value": "luoyang"
             },
-            "difficulty": 78,
-            "fameReward": 16,
-            "fameReason": "군벌 소집의 위험을 공식 반대 의견으로 제시"
-          },
-          "failure": {
-            "text": "나는 조서의 위험을 말했지만 서리는 결정된 일에 간섭하지 말라고 했다. 문서를 빼앗지 못하고 역참 밖으로 물러났다.",
-            "effects": [],
-            "hint": "권한 부족으로 의견 접수 거절"
-          },
+            {
+              "field": "factionId",
+              "operator": "neq",
+              "value": "yellow-turban"
+            }
+          ],
+          "text": "낙양에서 맡은 짐의 인수처가 대장군부 바깥에 있었다. 관리들이 지방 군대의 입경 문서를 옮기며 서둘렀다. 하진을 안다고 주장해도 문은 열리지 않지만 경고 문서를 맡길 창구는 보였다. 지금 무엇을 전할까?",
+          "choices": [
+            {
+              "id": "warning",
+              "title": "외군 소환의 위험을 문서로 전달한다",
+              "description": "동탁의 이름만 외치지 말고 군권을 넘길 위험을 설명하자.",
+              "success": {
+                "text": "나는 외군의 입경과 궁문 경비가 갈라지는 위험을 정리해 전달했다. 담당 관리가 내 설명을 확인하고 다음 소환 문서의 진위를 대조할 전달 자리를 허락했다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "palaceAccess",
+                    "value": true
+                  }
+                ]
+              },
+              "artwork": {
+                "src": "/art/choices/official.png",
+                "alt": "외군 소환의 위험을 문서로 전달한다를 준비하는 주인공과 주변 현장"
+              },
+              "check": {
+                "kind": "politics",
+                "weights": {
+                  "politics": 0.6,
+                  "intelligence": 0.3,
+                  "charisma": 0.1
+                },
+                "difficulty": 64,
+                "fameReward": 10,
+                "fameReason": "하진 측 문서 창구의 실제 접근 허가"
+              },
+              "failure": {
+                "text": "나는 문서를 냈지만 담당 관리의 확인을 받지 못했다. 궁문에 들어갈 허락 없이 민간 인수처로 돌아왔다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "palaceAccess",
+                    "value": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": "contact",
+              "title": "원소의 연락 담당에게 물자 인수를 청한다",
+              "description": "영웅을 찾아간다는 말보다 실제 문서가 먼저다.",
+              "success": {
+                "text": "나는 물자 인수 절차를 확인하며 원소의 연락 담당과 이름을 나눴다. 그는 다음 문서 전달 때 찾아올 창구를 알려 줬다.",
+                "effects": [
+                  {
+                    "type": "flag",
+                    "key": "yuanContact",
+                    "value": true
+                  }
+                ]
+              },
+              "artwork": {
+                "src": "/art/choices/official.png",
+                "alt": "원소의 연락 담당에게 물자 인수를 청한다를 준비하는 주인공과 주변 현장"
+              },
+              "check": {
+                "kind": "relationship",
+                "weights": {
+                  "charisma": 0.7,
+                  "politics": 0.3
+                },
+                "difficulty": 52,
+                "fameReward": 5,
+                "fameReason": "원소 연락 담당과 실제 접촉"
+              },
+              "failure": {
+                "text": "나는 보증 없는 인수 요청을 거절당했다. 원소를 만났다고 꾸미지 않고 민간 상단으로 돌아왔다.",
+                "effects": []
+              }
+            },
+            {
+              "id": "quiet",
+              "title": "상단의 인수만 마치고 궁문에서 물러난다",
+              "description": "사건을 안다고 모든 문을 열 필요는 없다.",
+              "success": {
+                "text": "나는 계약한 짐만 인수하고 관청 바깥으로 물러났다. 궁문 출입 권한을 얻지 않은 채 낙양의 민간 거점에 남았다.",
+                "effects": []
+              },
+              "artwork": {
+                "src": "/art/choices/travel-wagons.png",
+                "alt": "상단의 인수만 마치고 궁문에서 물러난다를 준비하는 주인공과 주변 현장"
+              }
+            }
+          ],
           "artwork": {
             "src": "/art/choices/official.png",
-            "alt": "군벌 소집을 막을 반대 의견을 전한다에 나서는 주인공"
-          }
-        },
-        {
-          "id": "b",
-          "title": "조조 측에 하진의 단독 입궁을 경고한다",
-          "description": "이미 외부군 반대 의견이 묵살됐다면 다음 함정이라도 막자. 내 말을 전할 사람은 필요하다.",
-          "success": {
-            "text": "나는 조조 측 문지기에게 하진이 호위 없이 들어가면 위험하다고 전했다. 담당자가 경고를 받아 갔지만 하진의 마음이 바뀌었는지는 확인할 수 없었다.",
-            "effects": [
-              {
-                "type": "flag",
-                "key": "heJinWarningReady",
-                "value": true
-              }
-            ],
-            "hint": "조조 측이 입궁 경고를 접수"
+            "alt": "낙양에서 맡은 짐의 인수처가 대장군부 바깥에 있었다"
           },
-          "check": {
-            "kind": "relationship",
-            "weights": {
-              "intelligence": 0.55,
-              "charisma": 0.25,
-              "leadership": 0.2
-            },
-            "difficulty": 61,
-            "fameReward": 10,
-            "fameReason": "하진의 단독 입궁 경고 전달"
-          },
-          "failure": {
-            "text": "나는 경고를 전하려 했지만 궁문이 닫히면서 연락책과 만나지 못했다. 문밖 경비에게만 위험을 알리고 밤길로 물러났다.",
-            "effects": [],
-            "hint": "궁문 통제로 전달 실패"
-          },
-          "artwork": {
-            "src": "/art/scenes/r002-gate.png",
-            "alt": "조조 측에 하진의 단독 입궁을 경고한다에 나서는 주인공"
-          }
-        },
-        {
-          "id": "c",
-          "title": "역참의 뒷문과 피란길을 확인한다",
-          "description": "상층부가 말 안 들으면 내 탈출구라도 확보해야지. 지금 길을 봐 두면 밤에 덜 헤맬 것이다.",
-          "success": {
-            "text": "나는 역참 주인에게 뒷문과 북쪽 길목을 물어 이동 경로를 확인했다. 군벌 소집에는 끼지 않고 궁중 소란에 대비할 길을 기억했다.",
-            "effects": [
-              {
-                "type": "flag",
-                "key": "escapeRouteKnown",
-                "value": true
-              }
-            ],
-            "hint": "수도 소란에 대비한 피란 동선 확보"
-          },
-          "artwork": {
-            "src": "/art/choices/travel-wagons.png",
-            "alt": "역참의 뒷문과 피란길을 확인한다에 나서는 주인공"
-          }
+          "background": "하진은 외부 군대를 불러 환관 세력을 압박하려 한다. 궁중의 소환은 함정일 수 있지만 실제 피살은 아직 일어나지 않았다."
         }
       ],
       "outcomes": [
         {
-          "text": "하진은 지방 군벌을 불러 하태후를 압박하려 했고, 환관들은 먼저 그를 제거하려고 궁중 소환을 준비했다. 군벌의 소집과 궁문 안의 함정은 별개의 위험으로 남았다.",
+          "text": "하진이 지방 군벌을 소환하자 환관들은 태후의 명을 내세워 그를 궁중으로 불렀다.",
           "effects": [
             {
               "type": "flag",
-              "key": "dongSummoned",
-              "value": true
-            },
-            {
-              "type": "flag",
-              "key": "chapter2Done",
+              "key": "heJinSummoned",
               "value": true
             }
           ]
         }
-      ],
-      "artwork": {
-        "src": "/art/scenes/cao-court-warning.png",
-        "alt": "궁정 밖 연락소에서 조조에게 전할 경고 문서를 확인받는 주인공"
-      }
+      ]
     }
   ]
 }

@@ -1,85 +1,89 @@
-import {readFileSync,writeFileSync,existsSync} from 'node:fs';
-import {createHash} from 'node:crypto';
-const read=p=>JSON.parse(readFileSync(p,'utf8'));
-const index=read('data/chapters/index.json');
-const all=[];const facts=[];
-// Lay out every branch independently so its checks remain selectable in the editor.
-function layoutFlow(nodes,edges){
- const byId=new Map(nodes.map(n=>[n.id,n]));
- const incoming=new Map(nodes.map(n=>[n.id,0]));
- const outgoing=new Map(nodes.map(n=>[n.id,[]]));
- const depth=new Map(nodes.map(n=>[n.id,0]));
- for(const e of edges){incoming.set(e.target,incoming.get(e.target)+1);outgoing.get(e.source).push(e.target);}
- const ready=nodes.filter(n=>incoming.get(n.id)===0).map(n=>n.id);let visited=0;
- for(let i=0;i<ready.length;i++){
-  const id=ready[i];visited++;
-  for(const target of outgoing.get(id)){
-   depth.set(target,Math.max(depth.get(target),depth.get(id)+1));
-   incoming.set(target,incoming.get(target)-1);
-   if(incoming.get(target)===0)ready.push(target);
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+const read = path => JSON.parse(readFileSync(path, 'utf8'));
+const write = (path, value) => writeFileSync(path, JSON.stringify(value, null, 2) + '\n');
+const index = read('data/chapters/index.json');
+const events = [], facts = [];
+function compile(definition, chapter, sequence) {
+  const d = definition, nodes = [], edges = [];
+  const node = (id, type, data) => { if (nodes.some(n => n.id === id)) throw Error(`중복 노드 ${id}`); nodes.push({id, type, position:{x:0,y:0}, data:{label:id,...data}}); return id; };
+  const edge = (source, target, sourceHandle='next') => edges.push({id:`${source}-${sourceHandle}`,source,target,sourceHandle});
+  const conditions = (prefix, values, yes, no, label) => {
+    if (!values?.length) return yes;
+    values.forEach((condition, i) => { const id=node(`${prefix}-${i}`,'condition',{label,condition}); edge(id, i+1<values.length?`${prefix}-${i+1}`:yes,'yes'); edge(id,no,'no'); });
+    return `${prefix}-0`;
+  };
+  const result = (id, value, next, extra={}) => { node(id,'result',{text:value.text??'',effects:value.effects??[],artwork:value.artwork??d.artwork,...extra}); edge(id,next); return id; };
+  node('start','start',{label:chapter.title}); node('end','end',{label:'다음 사건'});
+  const outcomes = d.outcomes?.length ? d.outcomes : [{text:d.fact,effects:[]}];
+  // World outcomes are shared semantically, never unconditionally applied at finish.
+  const resolution = (prefix, remote) => {
+    let next='end';
+    for(let i=outcomes.length-1;i>=0;i--) {
+      const o=outcomes[i], id=`${prefix}-${i}`;
+      result(id,{...o,text:remote?(o.news??o.text):o.text,artwork:remote?{src:'/art/scenes/v2-news-courier.png',alt:'행인이 전하는 먼 곳의 소식을 길가 찻집에서 듣는 주인공'}:o.artwork},'end',{label:remote?'전해 들은 소식':'실제 결말',recordType:remote?'news':'outcome',silent:!remote&&d.outcomes===undefined});
+      next=conditions(`${id}-when`,o.when,id,next,'현재 세계의 결말 조건');
+    }
+    return next;
+  };
+  const localEnd=resolution('outcome',false);
+  let remoteEnd=resolution('news',true);
+  // Unrelated news still updates the world, without creating a personal card.
+  if(d.newsWhen?.length){
+    let silentNext='end';
+    for(let i=outcomes.length-1;i>=0;i--){const o=outcomes[i],id=`world-${i}`;result(id,o,'end',{label:'불참 세계 처리',silent:true});silentNext=conditions(`${id}-when`,o.when,id,silentNext,'세계 결말 조건');}
+    remoteEnd=conditions('news-related',d.newsWhen,remoteEnd,silentNext,'나의 여정에 관련된 소식인가');
   }
- }
- if(visited!==nodes.length)throw new Error('실행흐름에 순환 연결이 있습니다.');
- const layers=new Map();
- for(const n of nodes){const level=depth.get(n.id);if(!layers.has(level))layers.set(level,[]);layers.get(level).push(n.id);}
- for(const [level,ids]of layers)ids.forEach((id,i)=>{byId.get(id).position={x:(i-(ids.length-1)/2)*420,y:level*340};});
+  let routeEntry=remoteEnd;
+  if(!d.routes?.length)throw Error(`${chapter.id}/${sequence}: routes required`);
+  for(let r=d.routes.length-1;r>=0;r--){
+    const route=d.routes[r], id=route.id;
+    if(!route.choices?.length)throw Error(`${id}: empty choice route`);
+    node(id,'choice',{label:route.label??d.title,text:route.text,artwork:route.artwork??d.artwork,options:route.choices.map(c=>({id:c.id,title:`[${c.title}]`,description:c.description,artwork:c.artwork??route.artwork??d.artwork,...(c.conditions?{conditions:c.conditions}:{}),...(!c.check?{outcome:c.success.hint??c.success.text}:{})}))});
+    for(const choice of route.choices){
+      const prefix=`${id}-${choice.id}`;
+      const ok=result(`${prefix}-ok`,{...choice.success,artwork:choice.success.artwork??choice.artwork??route.artwork??d.artwork},localEnd,{label:`${choice.title} 결과`});
+      if(choice.check){
+        const check=node(`${prefix}-check`,'check',{label:`${choice.title} 판정`,check:{...choice.check,success:choice.success.hint??choice.success.text,failure:choice.failure.hint??choice.failure.text,successNarrative:choice.success.text,failureNarrative:choice.failure.text}});
+        const fail=result(`${prefix}-fail`,{...choice.failure,artwork:choice.failure.artwork??choice.artwork??route.artwork??d.artwork},localEnd,{label:`${choice.title} 실패`});
+        edge(id,check,choice.id);edge(check,ok,'yes');edge(check,fail,'no');
+      }else edge(id,ok,choice.id);
+    }
+    const background=result(`${id}-background`,{text:route.background??d.background??d.fact,artwork:route.artwork??d.artwork},id,{label:'현장 배경',recordType:'background'});
+    const arrival=result(`${id}-arrival`,{text:route.arrival??'',effects:[...(route.region?[{type:'region',value:route.region}]:[]),...(route.entryEffects??[])],artwork:route.artwork??d.artwork},background,{label:'허가된 현장 진입',silent:!route.arrival});
+    routeEntry=conditions(`${id}-eligible`,route.when,arrival,routeEntry,'참여 자격·진영 확인');
+  }
+  const cancel=result('cancel',{text:d.cancelText??'사건의 전제가 달라져 원래 전개는 일어나지 않았다.'},'end',{label:'원래 사건 취소',silent:!d.cancelText,recordType:'news'});
+  const requirements=[...(d.requires??[]),...(d.requiredAlive??[]).map(id=>({field:`world.people.${id}`,operator:'neq',value:'dead'}))];
+  // No unreachable cancellation node for an event without world requirements.
+  if(!requirements.length){nodes.splice(nodes.findIndex(n=>n.id==='cancel'),1);edges.splice(edges.findIndex(e=>e.source==='cancel'),1);}
+  edge('start',conditions('world-requires',requirements,routeEntry,'cancel','세계에서 사건이 성립하는가'));
+  // Deterministic layered layout; every branch remains editable in the common graph.
+  const degree=new Map(nodes.map(n=>[n.id,0])),depth=new Map(nodes.map(n=>[n.id,0]));
+  for(const e of edges)degree.set(e.target,degree.get(e.target)+1);
+  const ready=nodes.filter(n=>!degree.get(n.id)).map(n=>n.id);
+  for(let i=0;i<ready.length;i++)for(const e of edges.filter(e=>e.source===ready[i])){depth.set(e.target,Math.max(depth.get(e.target),depth.get(e.source)+1));degree.set(e.target,degree.get(e.target)-1);if(!degree.get(e.target))ready.push(e.target);}
+  if(ready.length!==nodes.length)throw Error('순환 그래프');
+  const layers=new Map();for(const n of nodes){const level=depth.get(n.id);if(!layers.has(level))layers.set(level,[]);layers.get(level).push(n);}
+  for(const [level,layer]of layers)layer.forEach((n,i)=>{n.position={x:(i-(layer.length-1)/2)*420,y:level*300};});
+  const id=`r${String(chapter.order).padStart(3,'0')}-${String(sequence).padStart(2,'0')}`;
+  return {id,edition:index.edition,chapterId:chapter.id,sequence,prerequisiteEventIds:events.length?[events.at(-1).id]:[],connections:[],year:d.year??184,month:null,precision:d.precision??'approximate',calendar:'lunar',title:`[${d.title}]`,summary:d.fact,regionIds:d.regions??[d.region],factionIds:d.factions??['han','yellow-turban','liu-bei'],relatedPeople:d.people??[],relatedOfficerIds:d.officers??[],category:'novel',source:{title:`삼국지연의 제${chapter.order}회`,record:d.fact},dateNote:d.dateNote??'원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작.',flow:{nodes,edges,passiveEffects:[]}};
 }
 for(const chapter of index.chapters){
  const path=`data/chapters/${chapter.id}.json`;if(!existsSync(path))continue;
- const book=read(path);const source=readFileSync(chapter.source,'utf8');
- for(const [i,d] of book.events.entries()){
-  const id=`r${String(chapter.order).padStart(3,'0')}-${String(i+1).padStart(2,'0')}`;
-  const nodes=[],edges=[];
-  const node=(id,type,data,x=0,y=nodes.length*190)=>{nodes.push({id,type,position:{x,y},data:{label:data.label??id,...data}});return id;};
-  const edge=(source,target,sourceHandle='next')=>edges.push({id:`${source}-${sourceHandle}`,source,target,sourceHandle});
-  node('start','start',{label:chapter.title});node('end','end',{label:'다음 사건'},1600,0);
-  const result=(key,value,next='after')=>{node(key,'result',{label:key,text:value.text,effects:value.effects??[]});edge(key,next);};
-  node('entry','result',{label:'현장 도착',text:d.entry,effects:[{type:'region',value:d.region}],silent:!d.entry});if(d.requiredAlive?.length){edge('start','alive-0');for(const [a,person]of d.requiredAlive.entries()){node(`alive-${a}`,'condition',{label:'필수 인물 생존',condition:{field:`world.people.${person}`,operator:'neq',value:'dead'}});edge(`alive-${a}`,a===d.requiredAlive.length-1?'entry':`alive-${a+1}`,'yes');edge(`alive-${a}`,'end','no');}}else edge('start','entry');
-  node('background','result',{label:'사건 배경',text:d.background??d.fact,recordType:'background',effects:d.backgroundEffects??[]});edge('entry','background');
-  const variants=[...(d.variants??[]),{key:'scene',text:d.scene}];
-  for(const [j,v] of variants.entries()){
-   const key=v.key??`variant-${j}`;
-   if(v.condition){node(`when-${j}`,'condition',{label:'앞선 선택 반영',condition:v.condition},-500,j*300);edge(j?`when-${j-1}`:'background',`when-${j}`,j?'no':'next');edge(`when-${j}`,key,'yes');}
-   else edge(j?`when-${j-1}`:'background',key,j?'no':'next');
-   const choices=v.choices??d.choices;
-   node(key,'choice',{label:d.title,text:v.text,artwork:v.artwork??d.artwork??null,options:choices.map(c=>({id:c.id,title:`[${c.title}]`,description:c.description,...(c.conditions?{conditions:c.conditions}:{}),...(!c.check?{outcome:c.success.hint??c.success.text}:{}),artwork:c.artwork??null}))},j*620,850);
-   for(const c of choices){
-    const prefix=`${key}-${c.id}`;
-    if(c.check){
-     node(`${prefix}-check`,'check',{label:`${c.title} 판정`,check:{...c.check,success:c.success.hint??c.success.text,failure:c.failure.hint??c.failure.text,successNarrative:c.success.text,failureNarrative:c.failure.text}},j*620,1200);edge(key,`${prefix}-check`,c.id);
-     result(`${prefix}-ok`,c.success);result(`${prefix}-fail`,c.failure);edge(`${prefix}-check`,`${prefix}-ok`,'yes');edge(`${prefix}-check`,`${prefix}-fail`,'no');
-    }else {result(prefix,c.success);edge(key,prefix,c.id);}
-   }
-  }
-  const outcomes=d.outcomes??[];
-  node('after','result',{label:'사건 종료 표식',silent:true,effects:[{type:'flag',key:`${id}-complete`,value:true}]});
-  for(const [k,o]of outcomes.entries()){
-   const out=`outcome-${k}`;node(out,'result',{label:'실제 결말',text:o.text,recordType:'outcome',effects:o.effects??[]});edge(out,'end');
-   if(o.condition){node(`outcome-if-${k}`,'condition',{label:'변경된 역사 확인',condition:o.condition});edge(k?`outcome-if-${k-1}`:'after',`outcome-if-${k}`,k?'no':'next');edge(`outcome-if-${k}`,out,'yes');}
-   else edge(k?`outcome-if-${k-1}`:'after',out,k?'no':'next');
-  }
-  if(!outcomes.length)edge('after','end');
-  layoutFlow(nodes,edges);
-  const prior=i?`r${String(chapter.order).padStart(3,'0')}-${String(i).padStart(2,'0')}`:all.at(-1)?.id;
-  const event={id,chapterId:chapter.id,sequence:i+1,prerequisiteEventIds:prior?[prior]:[],connections:[],year:d.year??184,month:null,precision:d.precision??'year',calendar:'lunar',title:`[${d.title}]`,summary:d.fact,regionIds:[d.region],factionIds:d.factions??['han','yellow-turban'],relatedPeople:d.people??[],relatedOfficerIds:d.officers??[],category:'novel',source:{title:`삼국지연의 제${chapter.order}회 사건 문서`,record:d.fact},dateNote:d.dateNote??'챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작.',flow:{nodes,edges,passiveEffects:[]}};
-  if(all.length)all.at(-1).connections=[{targetId:id,label:all.at(-1).chapterId===chapter.id?'다음 장면':'다음 챕터'}];
-  all.push(event);
-  facts.push({id:event.id,chapterId:chapter.id,order:i+1,sourceFile:chapter.source,sourceSha256:createHash('sha256').update(source).digest('hex'),sourceStage:i+1,title:d.title,fact:d.fact,category:'novel',people:d.people??[],officers:d.officers??[]});
+ const book=read(path),source=readFileSync(chapter.source,'utf8');
+ if(book.edition!==index.edition)throw Error(`${path}: 폐기된 판본은 생성할 수 없습니다.`);
+ for(const [i,d]of book.events.entries()){
+  const event=compile(d,chapter,i+1);
+  if(events.length)events.at(-1).connections=[{targetId:event.id,label:events.at(-1).chapterId===chapter.id?'다음 시대 흐름':'다음 챕터'}];
+  events.push(event);facts.push({id:event.id,chapterId:chapter.id,order:i+1,sourceFile:chapter.source,sourceSha256:createHash('sha256').update(source).digest('hex'),sourceStage:d.sourceStage??i+1,title:d.title,fact:d.fact,category:'novel',people:d.people??[],officers:d.officers??[]});
  }
 }
-writeFileSync('data/history/events.json',JSON.stringify(all,null,2)+'\n');
-writeFileSync('data/history/catalog-metadata.json',JSON.stringify({edition:index.edition,eventCount:all.length,chapterCount:new Set(all.map(e=>e.chapterId)).size,orderPolicy:'chapter-file-order',sourceType:'삼국지연의 챕터 사건 문서',generatedBy:'scripts/build-story.mjs'},null,2)+'\n');
-writeFileSync('data/chapters/facts.json',JSON.stringify(facts,null,2)+'\n');
-const balance=all.flatMap(event=>event.flow.nodes.filter(node=>node.type==='choice').flatMap(node=>(node.data.options??[]).flatMap(option=>{
- const edge=event.flow.edges.find(edge=>edge.source===node.id&&edge.sourceHandle===option.id);
- const check=event.flow.nodes.find(target=>target.id===edge?.target)?.data.check;
- return check?[{eventId:event.id,nodeId:node.id,choiceId:option.id,weights:check.weights,difficulty:check.difficulty,successFame:check.fameReward,failureFame:-check.fameReward/2,basis:check.fameReason}]:[];
-})));
-writeFileSync('data/chapters/balance-review.json',JSON.stringify({version:1,policy:'선택별 가중 평균 또는 실존 상대 능력 비교 + (50 − 상황 난도). 성공 명성은 영향력에 따른 명시 보상, 실패는 정확히 −50%.',choices:balance},null,2)+'\n');
-console.log(`챕터 ${new Set(all.map(e=>e.chapterId)).size}개 · 사건 ${all.length}개 생성`);
-
-// The retired Namu chronology is replaced by the chapter document facts.
-writeFileSync('data/reference/chronology.json',JSON.stringify(all.map(e=>({id:e.id,year:e.year,month:e.month,precision:e.precision,calendar:e.calendar,leapMonth:null,title:e.title,content:e.summary,regionIds:e.regionIds,factionIds:e.factionIds,relatedPeople:e.relatedPeople,relatedOfficerIds:e.relatedOfficerIds,officerLinkInferences:[],officerLinkIssues:[],category:e.category,parentId:null,source:{title:e.source.title,record:null},verification:'secondary',section:e.chapterId,dateNote:e.dateNote})),null,2)+'\n');
-
-const refMetadata=read('data/reference/metadata.json');
-writeFileSync('data/reference/metadata.json',JSON.stringify({...refMetadata,timelineCount:all.length,playableTimelineCount:all.length,collectedTimelineCount:all.length,yearRange:[Math.min(...all.map(e=>e.year)),Math.max(...all.map(e=>e.year))],headings:[...new Set(all.map(e=>e.chapterId))]},null,2)+'\n');
+write('data/history/events.json',events);
+write('data/chapters/facts.json',facts);
+write('data/history/catalog-metadata.json',{edition:index.edition,eventCount:events.length,chapterCount:new Set(events.map(e=>e.chapterId)).size,orderPolicy:'chapter-file-order',sourceType:'삼국지연의 회차 원본',generatedBy:'scripts/build-story.mjs'});
+write('data/chapters/balance-review.json',{edition:index.edition,choices:events.flatMap(event=>event.flow.nodes.filter(n=>n.type==='check').map(n=>({eventId:event.id,nodeId:n.id,...n.data.check,failureFame:-n.data.check.fameReward/2})))});
+write('data/reference/chronology.json',events.map(e=>({id:e.id,year:e.year,month:null,precision:e.precision,calendar:e.calendar,leapMonth:null,title:e.title,content:e.summary,regionIds:e.regionIds,factionIds:e.factionIds,relatedPeople:e.relatedPeople,relatedOfficerIds:e.relatedOfficerIds,officerLinkInferences:[],officerLinkIssues:[],category:e.category,parentId:null,source:{title:e.source.title,record:null},verification:'secondary',section:e.chapterId,dateNote:e.dateNote})));
+const meta=read('data/reference/metadata.json');
+write('data/reference/metadata.json',{...meta,timelineCount:events.length,playableTimelineCount:events.length,collectedTimelineCount:events.length,yearRange:events.length?[Math.min(...events.map(e=>e.year)),Math.max(...events.map(e=>e.year))]:[],headings:[...new Set(events.map(e=>e.chapterId))]});
+console.log(`새 판본 ${index.edition}: 챕터 ${new Set(events.map(e=>e.chapterId)).size}개 · 사건 ${events.length}개`);

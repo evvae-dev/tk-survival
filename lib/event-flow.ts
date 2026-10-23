@@ -31,7 +31,7 @@ export function renderFlowText(text: string, game: Game): string {
  const region = game.region === 'liangzhou' ? '서방의 양주' : regionLabels[game.region] ?? '현재 거점';
  return text.replaceAll('{region}', region === '모름' ? '현재 거점' : region);
 }
-export type FlowResult = { id: string; text: string; recordType?: 'background'|'outcome'|'news' };
+export type FlowResult = { id: string; text: string; artwork?: import('./artwork').Artwork; recordType?: 'background'|'outcome'|'news' };
 export function advanceFlow(game:Game,event:HistoricalEvent,nodeId?:string):{state:Game;node?:EventFlow['nodes'][number];results:string[];records:FlowResult[]}{
  const flow=event.flow!;let state=game;const results:string[]=[];const records:FlowResult[]=[];
  let node=flow.nodes.find(n=>nodeId?n.id===nodeId:n.type==='start');
@@ -42,7 +42,7 @@ export function advanceFlow(game:Game,event:HistoricalEvent,nodeId?:string):{sta
    const id=`${event.id}:${node.id}`;
    if(!state.world.log.some(entry=>entry.recordId===id)){
     state=applyFlowEffects(state,node.data.effects??[]); const text=renderFlowText(node.data.text||node.data.label,state);
-    if (!node.data.silent) { results.push(text); records.push({id:node.id,text,recordType:node.data.recordType}); }
+    if (!node.data.silent) { results.push(text); records.push({id:node.id,text,artwork:node.data.artwork??undefined,recordType:node.data.recordType}); }
    }
   }
   const handle=node.type==='condition'?(matches(state,node.data.condition!)?'yes':'no'):'next';

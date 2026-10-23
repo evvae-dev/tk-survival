@@ -3,17 +3,18 @@
     "id": "r001-01",
     "year": 184,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[내 삼국지 지식, 여기서 써먹는다고?]",
-    "content": "후한 조정의 부패와 재난으로 민심이 흔들리자 장각은 태평요술서를 익히고 치료 활동으로 신도를 모아 장보·장량과 반란을 준비했다.",
+    "title": "[눈떠 보니 반란 연락망 한가운데]",
+    "content": "후한 조정의 부패와 재난 속에서 장각은 태평요술서와 치료 활동으로 신도를 모았고 장보·장량과 거사를 준비했다. 요술은 연의의 설정이다.",
     "regionIds": [
       "zhuo"
     ],
     "factionIds": [
       "han",
-      "yellow-turban"
+      "yellow-turban",
+      "liu-bei"
     ],
     "relatedPeople": [
       "장각",
@@ -30,28 +31,29 @@
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제1회 사건 문서",
+      "title": "삼국지연의 제1회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-001",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r001-02",
     "year": 184,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[거사 날짜가 벌써 새어 나갔다]",
-    "content": "당주의 밀고로 수도 내응 세력이 적발되자 장각은 계획보다 이르게 봉기를 명했다. 황건군이 관청을 공격하자 조정과 지방은 토벌군과 의용군을 모집했다.",
+    "title": "[봉기가 터졌다, 내 편은 아직 없다]",
+    "content": "당주의 밀고로 수도 내응 세력이 적발되자 장각은 봉기를 앞당겼다. 황건군의 공격에 조정과 지방은 토벌군과 의용군을 모집했다.",
     "regionIds": [
       "zhuo"
     ],
     "factionIds": [
       "han",
-      "yellow-turban"
+      "yellow-turban",
+      "liu-bei"
     ],
     "relatedPeople": [
       "장각",
@@ -65,28 +67,29 @@
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제1회 사건 문서",
+      "title": "삼국지연의 제1회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-001",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r001-03",
     "year": 184,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[주막 옆자리에서 SSR 셋이 모인다]",
-    "content": "모집 방을 보던 유비에게 장비가 거병 자금을 대겠다고 나섰고, 주막에서 만난 관우도 나라와 백성을 구하자는 뜻에 동참했다.",
+    "title": "[초대장을 받아도 동행은 별개다]",
+    "content": "유비는 장비의 거병 제안을 받고 주막에서 의논하다 관우를 만났다. 세 사람은 나라와 백성을 구하자는 뜻을 모았다.",
     "regionIds": [
       "zhuo"
     ],
     "factionIds": [
       "han",
-      "yellow-turban"
+      "yellow-turban",
+      "liu-bei"
     ],
     "relatedPeople": [
       "유비",
@@ -103,28 +106,29 @@
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제1회 사건 문서",
+      "title": "삼국지연의 제1회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-001",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r001-04",
     "year": 184,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[도원결의에 출석 체크는 안 되나요?]",
-    "content": "유비·관우·장비는 복숭아밭에서 형제가 되기로 맹세했다. 장세평과 소쌍의 지원으로 무기와 군장을 마련하고 향용을 편성했다.",
+    "title": "[복숭아밭에 들어갈 사람은 정해졌다]",
+    "content": "유비·관우·장비는 장비의 집 뒤 복숭아밭에서 의형제를 맺었다. 장세평과 소쌍이 말과 자금을 보태 향용의 무기와 군장을 마련했다.",
     "regionIds": [
       "zhuo"
     ],
     "factionIds": [
       "han",
-      "yellow-turban"
+      "yellow-turban",
+      "liu-bei"
     ],
     "relatedPeople": [
       "유비",
@@ -143,28 +147,29 @@
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제1회 사건 문서",
+      "title": "삼국지연의 제1회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-001",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r001-05",
     "year": 184,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[등무 앞에서 내 무력을 믿어도 될까?]",
-    "content": "유비 일행은 추정의 안내로 유언을 만나 향용을 이끌고 출전했다. 연의의 기본 전개에서는 장비가 등무를, 관우가 정원지를 베어 첫 승리를 거뒀다.",
+    "title": "[같은 전장, 서로 다른 아군]",
+    "content": "유비 일행은 추정의 안내로 유언을 만나 출전했다. 연의의 기본 전개에서 장비는 등무를, 관우는 정원지를 베어 유주 첫 전투에 승리했다.",
     "regionIds": [
       "zhuo"
     ],
     "factionIds": [
       "han",
-      "yellow-turban"
+      "yellow-turban",
+      "liu-bei"
     ],
     "relatedPeople": [
       "유언",
@@ -188,36 +193,39 @@
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제1회 사건 문서",
+      "title": "삼국지연의 제1회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-001",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r001-06",
     "year": 184,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[청주성 앞, 매복인 걸 나만 안다]",
-    "content": "청주 구원을 위해 출전한 유비는 적의 수가 많자 관우와 장비를 매복시키고 직접 적을 유인했다. 매복군과 성안 병력이 협공해 포위를 풀었다.",
+    "title": "[청주로 가는 길을 고를 때]",
+    "content": "청주가 황건군에 포위되자 유언은 추정과 유비를 구원군으로 보냈다. 유비는 적을 유인하고 관우·장비의 매복과 성안 병력을 맞춰 포위를 풀었다.",
     "regionIds": [
       "qingzhou"
     ],
     "factionIds": [
       "han",
-      "yellow-turban"
+      "yellow-turban",
+      "liu-bei"
     ],
     "relatedPeople": [
+      "유언",
+      "추정",
       "유비",
       "관우",
-      "장비",
-      "추정"
+      "장비"
     ],
     "relatedOfficerIds": [
+      "rtk14-0925",
       "rtk14-0952",
       "rtk14-0147",
       "rtk14-0656"
@@ -227,28 +235,29 @@
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제1회 사건 문서",
+      "title": "삼국지연의 제1회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-001",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r001-07",
     "year": 184,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[노식 선생님, 그 환관 그냥 보내면 안 돼요]",
-    "content": "유비는 노식의 군영을 방문한 뒤 황보숭·주준을 돕게 됐다. 황보숭·주준은 풀밭의 적진을 불태워 공격했고 조조는 패주하는 적을 추격했다. 좌풍의 참소는 뒤이어 노식 실각의 원인이 됐다.",
+    "title": "[불타기 전의 군영에서]",
+    "content": "유비는 노식의 군영을 찾아갔다가 황보숭·주준을 도우라는 지시를 받았다. 황보숭·주준은 황건군의 풀밭 진영에 화공을 가했고 조조는 패주하는 적을 추격했다.",
     "regionIds": [
-      "jizhou"
+      "yingchuan"
     ],
     "factionIds": [
       "han",
-      "yellow-turban"
+      "yellow-turban",
+      "liu-bei"
     ],
     "relatedPeople": [
       "유비",
@@ -256,45 +265,48 @@
       "황보숭",
       "주준",
       "조조",
-      "좌풍"
+      "장각"
     ],
     "relatedOfficerIds": [
       "rtk14-0952",
       "rtk14-1000",
       "rtk14-0279",
       "rtk14-0387",
-      "rtk14-0521"
+      "rtk14-0521",
+      "rtk14-0607"
     ],
     "officerLinkInferences": [],
     "officerLinkIssues": [],
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제1회 사건 문서",
+      "title": "삼국지연의 제1회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-001",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r001-08",
     "year": 184,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[구해 줬더니 백신이라 무시한다고?]",
-    "content": "좌풍의 참소로 노식은 압송되고 유비는 장비의 호송군 공격을 만류했다. 유비 일행은 패주하던 동탁을 구했지만 동탁은 관직 없는 이들을 업신여겼고 장비가 분노했다.",
+    "title": "[구출 뒤에 남는 것은 누구의 빚인가]",
+    "content": "노식은 좌풍의 참소로 압송되었고 유비는 장비의 호송군 공격을 만류했다. 이어 동탁을 구했지만 관직 없는 백신이라는 이유로 멸시받자 장비가 분노했다.",
     "regionIds": [
       "jizhou"
     ],
     "factionIds": [
       "han",
-      "yellow-turban"
+      "yellow-turban",
+      "liu-bei"
     ],
     "relatedPeople": [
       "노식",
+      "좌풍",
       "유비",
       "관우",
       "장비",
@@ -312,28 +324,29 @@
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제1회 사건 문서",
+      "title": "삼국지연의 제1회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-001",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r002-01",
     "year": 184,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[상관을 베기 전에 갈아타자]",
-    "content": "유비와 관우는 장비의 동탁 살해를 말렸다. 동탁 밑에서 일하지 않겠다는 장비의 말에 세 사람은 함께 떠나 주준의 군대에 합류했다.",
+    "title": "[참은 다음에는 지휘관을 고른다]",
+    "content": "유비·관우는 동탁을 죽이려는 장비를 만류했다. 세 사람은 동탁을 떠나 주준의 군대에 합류해 토벌에 참여했다.",
     "regionIds": [
       "yingchuan"
     ],
     "factionIds": [
       "han",
-      "yellow-turban"
+      "yellow-turban",
+      "liu-bei"
     ],
     "relatedPeople": [
       "유비",
@@ -354,116 +367,119 @@
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제2회 사건 문서",
+      "title": "삼국지연의 제2회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-002",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r002-02",
     "year": 184,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[장보가 진짜 흑마법을 쓴다]",
-    "content": "연의에서 장보는 바람과 검은 기운을 일으키는 요술로 관군을 혼란에 빠뜨렸다. 주준은 돼지와 양의 피 등으로 술법을 깨뜨릴 준비를 하고 반격했다.",
+    "title": "[요술보다 먼저 보이는 퇴로]",
+    "content": "장보의 요술로 관군이 혼란에 빠지자 주준은 돼지·양의 피 등으로 이를 깨뜨리는 방책을 썼다. 장보가 물러나자 관군은 성을 포위했다. 이는 연의의 요술 전개다.",
     "regionIds": [
       "yingchuan"
     ],
     "factionIds": [
       "han",
-      "yellow-turban"
+      "yellow-turban",
+      "liu-bei"
     ],
     "relatedPeople": [
-      "유비",
       "장보",
-      "주준"
+      "주준",
+      "유비"
     ],
     "relatedOfficerIds": [
-      "rtk14-0952",
       "rtk14-0659",
-      "rtk14-0387"
+      "rtk14-0387",
+      "rtk14-0952"
     ],
     "officerLinkInferences": [],
     "officerLinkIssues": [],
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제2회 사건 문서",
+      "title": "삼국지연의 제2회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-002",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r002-03",
     "year": 184,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[퇴로 하나로 완성의 결말을 바꾼다]",
-    "content": "장각의 병사와 장량의 토벌, 장보에 대한 부하의 배반으로 황건 지도부가 무너졌다. 완성의 한충·조홍·손중은 저항했고, 유비는 퇴로를 열어 적을 성 밖으로 유인하자고 건의했다. 손견도 공략에 공을 세웠다.",
+    "title": "[완성 밖으로 나온 사람들]",
+    "content": "장각이 병사하고 장량이 토벌당했으며 장보도 부하의 배반으로 죽었다. 완성의 한충·조홍·손중 등이 저항하자 관군은 퇴로를 열어 유인했고 손견과 유비 일행이 공을 세웠다.",
     "regionIds": [
       "wan"
     ],
     "factionIds": [
       "han",
-      "yellow-turban"
+      "yellow-turban",
+      "liu-bei"
     ],
     "relatedPeople": [
-      "유비",
-      "주준",
-      "손견",
-      "장보",
       "장각",
       "장량",
+      "장보",
       "한충",
       "조홍",
-      "손중"
+      "손중",
+      "손견",
+      "유비"
     ],
     "relatedOfficerIds": [
-      "rtk14-0952",
-      "rtk14-0387",
       "rtk14-0607",
       "rtk14-0664",
       "rtk14-0659",
       "rtk14-0173",
+      "rtk14-0174",
+      "rtk14-0511",
       "rtk14-0620",
       "rtk14-0568",
-      "rtk14-0551"
+      "rtk14-0551",
+      "rtk14-0952"
     ],
     "officerLinkInferences": [],
     "officerLinkIssues": [],
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제2회 사건 문서",
+      "title": "삼국지연의 제2회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-002",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r002-04",
-    "year": 184,
+    "year": 186,
     "month": null,
     "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[전공은 있는데 인사팀이 안 읽는다]",
-    "content": "토벌 후에도 유비의 임관은 늦어졌다. 장균은 환관의 부패와 공신의 부당한 처우를 지적했다가 모함을 받았으며, 유비는 뒤늦게 안희현 현위에 임명됐다.",
+    "title": "[공로가 관직이 되는 동안]",
+    "content": "유비의 전공은 환관의 인맥과 청탁 속에서 보상받지 못했다. 장균은 부당한 처우를 지적하다 모함받았고 이후 유비는 안희현 현위에 임명되었다.",
     "regionIds": [
       "anxi"
     ],
     "factionIds": [
       "han",
-      "yellow-turban"
+      "yellow-turban",
+      "liu-bei"
     ],
     "relatedPeople": [
       "유비",
@@ -477,28 +493,29 @@
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제2회 사건 문서",
+      "title": "삼국지연의 제2회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-002",
-    "dateNote": "원본 사건 문서에 정확한 연월이 없다. 황건 토벌 뒤부터 영제 사망 전까지의 상대 순서로 진행한다."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r002-05",
-    "year": 184,
+    "year": 187,
     "month": null,
     "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[독우가 원하는 건 민원 처리가 아니다]",
-    "content": "독우는 군공으로 임명된 관리들을 조사하면서 유비의 출신과 공적을 깎아내리고 뇌물을 기대했다. 유비가 응하지 않자 아전들에게 허위 진술을 받아내려 하고 해명을 위한 면담도 거절했다.",
+    "title": "[독우의 말보다 인수인의 이름]",
+    "content": "독우는 유비의 출신과 공적을 깎아내리고 뇌물을 기대했다. 유비가 응하지 않자 아전들에게 모함 진술을 강요하고 해명도 받아 주지 않았다.",
     "regionIds": [
       "anxi"
     ],
     "factionIds": [
       "han",
-      "yellow-turban"
+      "yellow-turban",
+      "liu-bei"
     ],
     "relatedPeople": [
       "유비",
@@ -512,28 +529,29 @@
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제2회 사건 문서",
+      "title": "삼국지연의 제2회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-002",
-    "dateNote": "원본 사건 문서에 정확한 연월이 없다. 황건 토벌 뒤부터 영제 사망 전까지의 상대 순서로 진행한다."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r002-06",
-    "year": 184,
+    "year": 187,
     "month": null,
     "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[장비 형님, 채찍 들기 전에 10초만]",
-    "content": "장비는 울고 있는 주민들에게 독우의 횡포를 듣고 독우를 매질했다. 유비는 독우의 목숨을 살려 주고 인수를 돌려준 뒤 관우·장비와 관직을 버리고 떠났다.",
+    "title": "[채찍이 들리기 전에 남긴 증거]",
+    "content": "장비는 백성의 사정을 듣고 독우를 끌어내 매질했다. 유비는 독우를 살려 주고 인수를 돌려준 뒤 관우·장비와 관직을 버리고 떠났다.",
     "regionIds": [
       "anxi"
     ],
     "factionIds": [
       "han",
-      "yellow-turban"
+      "yellow-turban",
+      "liu-bei"
     ],
     "relatedPeople": [
       "유비",
@@ -551,115 +569,115 @@
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제2회 사건 문서",
+      "title": "삼국지연의 제2회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-002",
-    "dateNote": "원본 사건 문서에 정확한 연월이 없다. 황건 토벌 뒤부터 영제 사망 전까지의 상대 순서로 진행한다."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r002-07",
     "year": 189,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[영제가 죽는다는데, 낙양행 편도표요?]",
-    "content": "유비는 유우의 토벌에 참여해 사면과 추천으로 관직을 회복했다. 중앙에서는 영제 사후 유변을 지지하는 하황후·하진과 유협을 지지하는 건석이 충돌했고 하진은 건석을 제거해 유변을 즉위시켰다.",
+    "title": "[다음 길은 수도인가 지금 거점인가]",
+    "content": "관직을 떠난 유비는 유우의 토벌에 참여하고 사면과 추천으로 다시 지방 관직을 얻었다. 중앙에서는 영제 사후 하진이 건석을 제거하고 유변을 황제로 세웠다.",
     "regionIds": [
       "luoyang"
     ],
     "factionIds": [
       "han",
-      "yellow-turban"
+      "yellow-turban",
+      "liu-bei"
     ],
     "relatedPeople": [
       "유비",
       "유우",
+      "영제",
       "하진",
-      "하황후",
       "건석",
       "유변",
-      "유협",
-      "조조"
+      "유협"
     ],
     "relatedOfficerIds": [
       "rtk14-0952",
       "rtk14-0932",
-      "rtk14-0132",
-      "rtk14-0521"
+      "rtk14-0132"
     ],
     "officerLinkInferences": [],
     "officerLinkIssues": [],
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제2회 사건 문서",
+      "title": "삼국지연의 제2회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-002",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r002-08",
     "year": 189,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[동탁 초대장, 발송 취소 안 되나요?]",
-    "content": "하진은 하태후를 압박해 환관을 제거하려고 지방 군벌을 수도로 불렀다. 조조는 외부 군대 동원의 위험을 경고했지만 받아들여지지 않았고, 환관들은 태후의 명을 내세워 하진을 궁으로 불러들이려 했다.",
+    "title": "[궁문에 닿을 근거부터]",
+    "content": "하진은 태후를 압박하려 지방 군벌을 수도로 불렀다. 조조 등의 경고는 받아들여지지 않았고 환관들은 태후의 명을 내세워 하진을 궁중으로 불렀다.",
     "regionIds": [
       "luoyang"
     ],
     "factionIds": [
       "han",
-      "yellow-turban"
+      "yellow-turban",
+      "liu-bei"
     ],
     "relatedPeople": [
       "하진",
       "원소",
-      "조조",
       "하태후",
-      "장양",
+      "조조",
       "동탁"
     ],
     "relatedOfficerIds": [
       "rtk14-0132",
+      "rtk14-0035",
       "rtk14-0521",
-      "rtk14-0736",
-      "rtk14-0035"
+      "rtk14-0736"
     ],
     "officerLinkInferences": [],
     "officerLinkIssues": [],
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제2회 사건 문서",
+      "title": "삼국지연의 제2회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-002",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r003-01",
     "year": 189,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[하진님, 그 문 열면 죽어요]",
-    "content": "태후의 명을 내세운 환관들의 소환에 하진은 궁으로 들어가려 했다. 조조와 원소는 위험을 경고했으나 하진은 이를 무시했고 환관들에게 살해됐다.",
+    "title": "[문밖의 경고를 안으로 들일 근거]",
+    "content": "하진은 함정일 수 있다는 경고에도 태후를 믿고 입궁했다. 환관들은 궁 안에서 그를 죽여 군권의 중심을 제거했다.",
     "regionIds": [
       "luoyang"
     ],
     "factionIds": [
       "han",
       "dong-zhuo",
-      "ding-yuan"
+      "ding-yuan",
+      "yuan-shao"
     ],
     "relatedPeople": [
       "하진",
@@ -677,29 +695,30 @@
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제3회 사건 문서",
+      "title": "삼국지연의 제3회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-003",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r003-02",
     "year": 189,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[수염 없다고 다 환관은 아니잖아]",
-    "content": "하진의 피살 소식을 들은 원소 일행이 궁문을 공격했고 원술도 병력을 움직였다. 군사들은 환관뿐 아니라 수염 없는 사람까지 공격해 궁중의 혼란과 살육이 확대됐다.",
+    "title": "[살육의 소식 앞에서 내 위치는]",
+    "content": "하진의 죽음에 원소·원술의 병력이 궁문을 공격했다. 환관을 찾는 살육은 수염 없는 사람까지 무차별 공격하는 혼란으로 번졌다.",
     "regionIds": [
       "luoyang"
     ],
     "factionIds": [
       "han",
       "dong-zhuo",
-      "ding-yuan"
+      "ding-yuan",
+      "yuan-shao"
     ],
     "relatedPeople": [
       "원소",
@@ -707,43 +726,45 @@
       "하진"
     ],
     "relatedOfficerIds": [
-      "rtk14-0132",
       "rtk14-0035",
-      "rtk14-0032"
+      "rtk14-0032",
+      "rtk14-0132"
     ],
     "officerLinkInferences": [],
     "officerLinkIssues": [],
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제3회 사건 문서",
+      "title": "삼국지연의 제3회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-003",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r003-03",
     "year": 189,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[밤길에서 황제 이름이 들렸다]",
-    "content": "장양 등 환관은 황제와 진류왕을 데리고 궁을 빠져나갔다. 추격에 몰린 환관들이 강물에 몸을 던지자 두 황자는 호위를 잃고 밤길을 헤맸다.",
+    "title": "[왕의 이름보다 호위의 근거]",
+    "content": "환관들은 황제와 진류왕을 데리고 궁을 빠져나갔다가 추격에 몰려 강물에 몸을 던졌다. 호위를 잃은 어린 두 사람은 밤길을 헤맸다.",
     "regionIds": [
-      "mengjin"
+      "luoyang"
     ],
     "factionIds": [
       "han",
       "dong-zhuo",
-      "ding-yuan"
+      "ding-yuan",
+      "yuan-shao"
     ],
     "relatedPeople": [
-      "장양",
       "유변",
-      "유협"
+      "유협",
+      "장양",
+      "단규"
     ],
     "relatedOfficerIds": [],
     "officerLinkInferences": [],
@@ -751,70 +772,74 @@
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제3회 사건 문서",
+      "title": "삼국지연의 제3회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-003",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r003-04",
     "year": 189,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[동탁군 숫자, 같은 얼굴이 또 지나간다]",
-    "content": "동탁은 황제와 진류왕을 영접해 수도로 모셔 온 공을 내세웠다. 병력을 실제보다 크게 보이게 하고 하진·하묘의 옛 부대까지 흡수해 군사적 우위를 만들었다.",
+    "title": "[같은 병사가 성문을 두 번 지난다]",
+    "content": "동탁은 황제 영접의 공을 내세워 조정에 들어갔다. 병력을 크게 보이게 하고 하진·하묘의 옛 부대를 흡수해 군사적 우위를 만들었다.",
     "regionIds": [
       "luoyang"
     ],
     "factionIds": [
       "han",
       "dong-zhuo",
-      "ding-yuan"
+      "ding-yuan",
+      "yuan-shao"
     ],
     "relatedPeople": [
       "동탁",
       "유변",
       "유협",
       "하진",
-      "하묘"
+      "하묘",
+      "정원"
     ],
     "relatedOfficerIds": [
       "rtk14-0736",
       "rtk14-0132",
-      "rtk14-0142"
+      "rtk14-0142",
+      "rtk14-0694"
     ],
     "officerLinkInferences": [],
     "officerLinkIssues": [],
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제3회 사건 문서",
+      "title": "삼국지연의 제3회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-003",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r003-05",
     "year": 189,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[정원 옆에 무력 100이 서 있다]",
-    "content": "동탁은 황제를 폐하고 진류왕을 세우겠다고 주장했다. 정원은 신하가 함부로 황제를 바꿀 수 없다며 반대했고 여포가 곁에서 위세를 보이자 동탁은 물러났다.",
+    "title": "[정원의 반대편에 설 것인가]",
+    "content": "동탁이 황제를 폐하고 진류왕을 세우겠다고 하자 정원이 반대했다. 정원 곁의 여포가 위세를 보이자 동탁은 물러났다.",
     "regionIds": [
       "luoyang"
     ],
     "factionIds": [
       "han",
       "dong-zhuo",
-      "ding-yuan"
+      "ding-yuan",
+      "yuan-shao"
     ],
     "relatedPeople": [
       "동탁",
@@ -831,40 +856,41 @@
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제3회 사건 문서",
+      "title": "삼국지연의 제3회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-003",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r003-06",
     "year": 189,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[여포랑 일기토, 취소 버튼 있나요?]",
-    "content": "동탁과 정원의 군대가 충돌하자 여포가 앞장서 동탁군을 무너뜨렸다. 이숙은 여포를 회유하자고 제안했고 동탁은 적토마와 재물을 내줄 준비를 했다.",
+    "title": "[내 편의 여포와 적의 여포]",
+    "content": "여포가 정원군 선봉에서 동탁군을 무너뜨리자 동탁은 정면 대결을 피했다. 이숙이 회유를 제안했고 동탁은 적토마와 재물을 내주었다.",
     "regionIds": [
       "luoyang"
     ],
     "factionIds": [
       "han",
       "dong-zhuo",
-      "ding-yuan"
+      "ding-yuan",
+      "yuan-shao"
     ],
     "relatedPeople": [
-      "동탁",
-      "정원",
       "여포",
+      "정원",
+      "동탁",
       "이숙"
     ],
     "relatedOfficerIds": [
-      "rtk14-0736",
-      "rtk14-0694",
       "rtk14-0987",
+      "rtk14-0694",
+      "rtk14-0736",
       "rtk14-0908"
     ],
     "officerLinkInferences": [],
@@ -872,79 +898,41 @@
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제3회 사건 문서",
+      "title": "삼국지연의 제3회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-003",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r003-07",
     "year": 189,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[적토마 한 필에 군영이 뒤집힌다]",
-    "content": "이숙은 적토마와 선물을 여포에게 건네며 정원 밑에서는 큰 영달을 얻기 어렵다고 설득했다. 여포는 동탁에게 가기로 하고 정원을 죽여 충성을 증명하려 했다.",
+    "title": "[말 한 필이 들어오는 문]",
+    "content": "이숙은 적토마와 선물을 여포에게 건네고 동탁 아래서 영달할 수 있다고 설득했다. 여포는 정원을 죽여 동탁에 대한 충성을 보이기로 했다.",
     "regionIds": [
       "luoyang"
     ],
     "factionIds": [
       "han",
       "dong-zhuo",
-      "ding-yuan"
+      "ding-yuan",
+      "yuan-shao"
     ],
     "relatedPeople": [
-      "동탁",
-      "정원",
+      "이숙",
       "여포",
-      "이숙"
-    ],
-    "relatedOfficerIds": [
-      "rtk14-0736",
-      "rtk14-0694",
-      "rtk14-0987",
-      "rtk14-0908"
-    ],
-    "officerLinkInferences": [],
-    "officerLinkIssues": [],
-    "category": "novel",
-    "parentId": null,
-    "source": {
-      "title": "삼국지연의 제3회 사건 문서",
-      "record": null
-    },
-    "verification": "secondary",
-    "section": "chapter-003",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
-  },
-  {
-    "id": "r003-08",
-    "year": 189,
-    "month": null,
-    "precision": "year",
-    "calendar": "lunar",
-    "leapMonth": null,
-    "title": "[정원 막사의 불이 꺼지기 전에]",
-    "content": "여포는 정원을 살해하고 동탁에게 투항했다. 동탁은 그를 양아들로 받아들이고 병력을 거두어 수도의 반대 세력을 약화시킨 뒤 다시 폐립을 추진했다.",
-    "regionIds": [
-      "luoyang"
-    ],
-    "factionIds": [
-      "han",
-      "dong-zhuo",
-      "ding-yuan"
-    ],
-    "relatedPeople": [
       "정원",
-      "여포",
       "동탁"
     ],
     "relatedOfficerIds": [
-      "rtk14-0694",
+      "rtk14-0908",
       "rtk14-0987",
+      "rtk14-0694",
       "rtk14-0736"
     ],
     "officerLinkInferences": [],
@@ -952,29 +940,71 @@
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제3회 사건 문서",
+      "title": "삼국지연의 제3회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-003",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
-    "id": "r004-01",
+    "id": "r003-08",
     "year": 189,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[원소 탈출, 동아줄은 밖에 있다]",
-    "content": "원소는 동탁의 폐립에 항변한 뒤 수도를 떠났다. 동탁은 원씨 가문의 영향력을 고려해 추격 대신 회유할 여지를 남겼다.",
+    "title": "[막사의 불이 꺼지기 전]",
+    "content": "여포는 정원을 죽이고 동탁에게 투항했다. 동탁은 여포를 양아들로 삼고 병력까지 흡수해 폐립에 반대할 군사 세력을 약화시켰다.",
     "regionIds": [
       "luoyang"
     ],
     "factionIds": [
       "han",
       "dong-zhuo",
-      "cao-cao"
+      "ding-yuan",
+      "yuan-shao"
+    ],
+    "relatedPeople": [
+      "여포",
+      "정원",
+      "동탁"
+    ],
+    "relatedOfficerIds": [
+      "rtk14-0987",
+      "rtk14-0694",
+      "rtk14-0736"
+    ],
+    "officerLinkInferences": [],
+    "officerLinkIssues": [],
+    "category": "novel",
+    "parentId": null,
+    "source": {
+      "title": "삼국지연의 제3회",
+      "record": null
+    },
+    "verification": "secondary",
+    "section": "chapter-003",
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
+  },
+  {
+    "id": "r004-01",
+    "year": 189,
+    "month": null,
+    "precision": "approximate",
+    "calendar": "lunar",
+    "leapMonth": null,
+    "title": "[원씨의 이름과 피신할 길]",
+    "content": "원소는 동탁의 폐립 강요에 항변한 뒤 수도를 떠났다. 동탁 주변에서는 원씨 가문의 영향력을 고려해 원소를 회유하자고 권했다.",
+    "regionIds": [
+      "luoyang"
+    ],
+    "factionIds": [
+      "han",
+      "dong-zhuo",
+      "cao-cao",
+      "yuan-shao",
+      "ding-yuan"
     ],
     "relatedPeople": [
       "원소",
@@ -989,80 +1019,84 @@
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제4회 사건 문서",
+      "title": "삼국지연의 제4회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-004",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r004-02",
     "year": 189,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[황제 교체가 결재 한 번이라고?]",
-    "content": "동탁은 유변을 홍농왕으로 낮추고 유협을 황제로 세웠다. 폐립에 간언한 정관을 죽여 신하들을 위협했다.",
+    "title": "[군권이 남아 있어야 청원도 선다]",
+    "content": "동탁은 소제 유변을 홍농왕으로 낮추고 유협을 헌제로 세웠다. 간언한 정관은 처형되어 신하들의 반대가 위축되었다.",
     "regionIds": [
       "luoyang"
     ],
     "factionIds": [
       "han",
       "dong-zhuo",
-      "cao-cao"
+      "cao-cao",
+      "yuan-shao",
+      "ding-yuan"
     ],
     "relatedPeople": [
       "동탁",
-      "정관",
       "유변",
       "유협",
-      "왕윤"
+      "정관",
+      "하진",
+      "정원"
     ],
     "relatedOfficerIds": [
-      "rtk14-0042",
-      "rtk14-0736"
+      "rtk14-0736",
+      "rtk14-0132",
+      "rtk14-0694"
     ],
     "officerLinkInferences": [],
     "officerLinkIssues": [],
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제4회 사건 문서",
+      "title": "삼국지연의 제4회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-004",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r004-03",
     "year": 189,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[그 술상, 독살 이벤트잖아]",
-    "content": "동탁의 명을 받은 이유는 폐제 유변과 하태후·당비를 죽였다. 동탁군의 약탈로 궁중과 민간의 공포가 커졌다.",
+    "title": "[폐제의 술상은 아직 끝나지 않았다]",
+    "content": "동탁은 폐제 일가의 복위 가능성을 끊으려 이유에게 이들을 죽이게 했다. 동탁의 병사들은 민간에서도 약탈과 살육을 벌였다.",
     "regionIds": [
       "luoyang"
     ],
     "factionIds": [
       "han",
       "dong-zhuo",
-      "cao-cao"
+      "cao-cao",
+      "yuan-shao",
+      "ding-yuan"
     ],
     "relatedPeople": [
       "동탁",
       "이유",
       "유변",
       "하태후",
-      "당비",
-      "왕윤"
+      "당비"
     ],
     "relatedOfficerIds": [
-      "rtk14-0042",
       "rtk14-0736",
       "rtk14-0907"
     ],
@@ -1071,29 +1105,31 @@
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제4회 사건 문서",
+      "title": "삼국지연의 제4회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-004",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r004-04",
     "year": 189,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[암살 퀘스트에 거울이 왜 있어]",
-    "content": "왕윤의 모임에서 조조는 동탁 암살을 자원했다. 왕윤에게 빌린 칠성보도를 들고 동탁에게 접근할 계획을 세웠다.",
+    "title": "[칠성보도에도 인수인이 필요하다]",
+    "content": "왕윤이 나라의 위기를 탄식하자 조조는 동탁 암살을 자원했다. 조조는 왕윤의 칠성보도를 빌려 접근할 구실을 마련했다.",
     "regionIds": [
       "luoyang"
     ],
     "factionIds": [
       "han",
       "dong-zhuo",
-      "cao-cao"
+      "cao-cao",
+      "yuan-shao",
+      "ding-yuan"
     ],
     "relatedPeople": [
       "왕윤",
@@ -1110,66 +1146,72 @@
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제4회 사건 문서",
+      "title": "삼국지연의 제4회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-004",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r004-05",
     "year": 189,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[헌상품입니다, 체포영장 말고요]",
-    "content": "조조는 거울 때문에 암살이 발각될 위기에 놓이자 칼을 헌상하는 척했다. 말을 시험한다는 구실로 달아났고 동탁은 뒤늦게 체포령을 내렸다.",
+    "title": "[거울 앞에 서지 못한 사람]",
+    "content": "조조는 동탁의 거울에 칼을 빼는 움직임이 비칠 위기에 놓였다. 보도를 바치러 왔다고 둘러댄 뒤 말 시험을 구실로 탈출했고 뒤늦게 체포령이 내려졌다.",
     "regionIds": [
       "luoyang"
     ],
     "factionIds": [
       "han",
       "dong-zhuo",
-      "cao-cao"
+      "cao-cao",
+      "yuan-shao",
+      "ding-yuan"
     ],
     "relatedPeople": [
+      "조조",
       "동탁",
-      "조조"
+      "여포"
     ],
     "relatedOfficerIds": [
       "rtk14-0521",
-      "rtk14-0736"
+      "rtk14-0736",
+      "rtk14-0987"
     ],
     "officerLinkInferences": [],
     "officerLinkIssues": [],
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제4회 사건 문서",
+      "title": "삼국지연의 제4회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-004",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r004-06",
     "year": 189,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[현령님, 체포보다 동업이 낫지 않나요]",
-    "content": "중모에서 붙잡힌 조조는 현령 진궁에게 암살의 뜻을 밝혔다. 진궁은 조조를 풀어 주고 관직을 버린 채 함께 떠났다.",
+    "title": "[진궁이 믿을 사람의 이름]",
+    "content": "중모에서 체포된 조조는 동탁을 제거하려 했다고 진궁에게 밝혔다. 진궁은 뜻에 공감해 관직을 버리고 조조와 함께 떠났다.",
     "regionIds": [
       "zhongmu"
     ],
     "factionIds": [
       "han",
       "dong-zhuo",
-      "cao-cao"
+      "cao-cao",
+      "yuan-shao",
+      "ding-yuan"
     ],
     "relatedPeople": [
       "조조",
@@ -1184,29 +1226,31 @@
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제4회 사건 문서",
+      "title": "삼국지연의 제4회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-004",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r004-07",
     "year": 189,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[돼지 소리부터 듣고 칼 뽑으세요]",
-    "content": "조조와 진궁은 여백사의 집에서 칼 가는 소리를 자신들을 해치려는 준비로 오해해 집안사람들을 죽였다. 조조는 뒤에 여백사까지 죽였고 진궁은 충격을 받아 떠났다.",
+    "title": "[칼 가는 소리 다음에 확인할 것]",
+    "content": "조조와 진궁은 여백사의 집에서 칼 가는 소리를 자신들을 죽이려는 준비로 오해했다. 일가를 죽인 뒤 돼지를 잡으려던 것임을 알았고 조조는 여백사도 죽였다. 진궁은 충격을 받아 떠났다.",
     "regionIds": [
-      "chenggao"
+      "zhongmu"
     ],
     "factionIds": [
       "han",
       "dong-zhuo",
-      "cao-cao"
+      "cao-cao",
+      "yuan-shao",
+      "ding-yuan"
     ],
     "relatedPeople": [
       "조조",
@@ -1222,29 +1266,31 @@
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제4회 사건 문서",
+      "title": "삼국지연의 제4회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-004",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r004-08",
     "year": 189,
     "month": null,
-    "precision": "year",
+    "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[암살 다음은 군대 창업이네]",
-    "content": "조조는 진류에서 아버지의 재산과 위홍의 지원으로 군사를 모았다. 악진·이전과 하후 형제, 조인·조홍 등이 합류했고 반동탁 격문을 보냈다.",
+    "title": "[진류의 모집과 내가 고른 길]",
+    "content": "조조는 진류에서 아버지의 재산과 위홍의 지원으로 병력을 모집했다. 악진·이전·하후돈·하후연·조인·조홍 등이 모였고 조조는 동탁 토벌 격문을 보냈다.",
     "regionIds": [
       "chenliu"
     ],
     "factionIds": [
       "han",
       "dong-zhuo",
-      "cao-cao"
+      "cao-cao",
+      "yuan-shao",
+      "ding-yuan"
     ],
     "relatedPeople": [
       "조조",
@@ -1257,26 +1303,26 @@
       "조홍"
     ],
     "relatedOfficerIds": [
-      "rtk14-0102",
-      "rtk14-0114",
-      "rtk14-0124",
-      "rtk14-0511",
-      "rtk14-0518",
       "rtk14-0521",
-      "rtk14-0620",
-      "rtk14-0913"
+      "rtk14-0102",
+      "rtk14-0913",
+      "rtk14-0124",
+      "rtk14-0114",
+      "rtk14-0518",
+      "rtk14-0511",
+      "rtk14-0620"
     ],
     "officerLinkInferences": [],
     "officerLinkIssues": [],
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제4회 사건 문서",
+      "title": "삼국지연의 제4회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-004",
-    "dateNote": "챕터 문서의 전개 순서. 월 미상. 선택·판정·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r005-01",
@@ -1285,51 +1331,55 @@
     "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[연합군인데 단체 채팅방이 없다]",
-    "content": "조조의 격문에 호응한 제후들이 집결해 원소를 맹주로 세웠다. 공손찬과 유비 형제도 참여했고 손견은 선봉, 원술은 군량을 맡았다.",
+    "title": "[맹세의 자리까지 가는 길]",
+    "content": "제후들이 조조의 격문에 호응해 모이고 원소를 맹주로 추대했다. 유비 일행은 공손찬을 따라 참가했으며 손견은 선봉, 원술은 군량을 맡았다.",
     "regionIds": [
       "suanzao"
     ],
     "factionIds": [
       "han",
+      "coalition",
       "dong-zhuo",
-      "cao-cao",
       "liu-bei",
-      "sun-jian",
+      "cao-cao",
       "yuan-shao",
-      "yuan-shu"
+      "yuan-shu",
+      "gongsun-zan",
+      "sun",
+      "ding-yuan",
+      "yellow-turban"
     ],
     "relatedPeople": [
       "조조",
       "원소",
-      "원술",
-      "손견",
-      "공손찬",
       "유비",
       "관우",
-      "장비"
+      "장비",
+      "공손찬",
+      "손견",
+      "원술"
     ],
     "relatedOfficerIds": [
-      "rtk14-0032",
-      "rtk14-0035",
-      "rtk14-0147",
-      "rtk14-0266",
       "rtk14-0521",
-      "rtk14-0551",
+      "rtk14-0035",
+      "rtk14-0952",
+      "rtk14-0147",
       "rtk14-0656",
-      "rtk14-0952"
+      "rtk14-0266",
+      "rtk14-0551",
+      "rtk14-0032"
     ],
     "officerLinkInferences": [],
     "officerLinkIssues": [],
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제5회 사건 문서",
+      "title": "삼국지연의 제5회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-005",
-    "dateNote": "제5회 전개 순서. 190년 전후, 월 미상. 연의의 전투 배치이며 선택·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r005-02",
@@ -1338,44 +1388,48 @@
     "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[선착순 공적 경쟁은 사망 플래그다]",
-    "content": "포신은 선봉 손견보다 먼저 공을 세우려고 포충을 별도로 보냈으나 화웅에게 잃었다. 손견은 호진을 무찌르며 사수관으로 진격했다.",
+    "title": "[선공 명령과 군량 인수증]",
+    "content": "포신은 공적을 선점하려 포충을 먼저 공격하게 했고 포충은 화웅에게 죽었다. 손견은 사수관으로 진격해 호진을 무찌르며 기세를 올렸다.",
     "regionIds": [
       "sishui"
     ],
     "factionIds": [
       "han",
+      "coalition",
       "dong-zhuo",
-      "cao-cao",
       "liu-bei",
-      "sun-jian",
+      "cao-cao",
       "yuan-shao",
-      "yuan-shu"
+      "yuan-shu",
+      "gongsun-zan",
+      "sun",
+      "ding-yuan",
+      "yellow-turban"
     ],
     "relatedPeople": [
       "포신",
       "포충",
-      "손견",
       "화웅",
+      "손견",
       "호진"
     ],
     "relatedOfficerIds": [
+      "rtk14-0826",
       "rtk14-0144",
-      "rtk14-0301",
       "rtk14-0551",
-      "rtk14-0826"
+      "rtk14-0301"
     ],
     "officerLinkInferences": [],
     "officerLinkIssues": [],
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제5회 사건 문서",
+      "title": "삼국지연의 제5회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-005",
-    "dateNote": "제5회 전개 순서. 190년 전후, 월 미상. 연의의 전투 배치이며 선택·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r005-03",
@@ -1384,19 +1438,23 @@
     "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[군량 담당이 아군 맞습니까]",
-    "content": "원술은 손견이 공을 세울 것을 시기해 군량을 끊었다. 화웅의 야습으로 손견군이 무너졌고 조무는 붉은 두건으로 적을 유인하다 죽었다.",
+    "title": "[수레가 도착한 것과 철수한 것은 다르다]",
+    "content": "원술이 군량을 보내지 않아 손견군이 동요했다. 화웅이 야습하자 손견이 달아났고 조무가 붉은 두건으로 적을 유인하다 죽었다.",
     "regionIds": [
       "sishui"
     ],
     "factionIds": [
       "han",
+      "coalition",
       "dong-zhuo",
-      "cao-cao",
       "liu-bei",
-      "sun-jian",
+      "cao-cao",
       "yuan-shao",
-      "yuan-shu"
+      "yuan-shu",
+      "gongsun-zan",
+      "sun",
+      "ding-yuan",
+      "yellow-turban"
     ],
     "relatedPeople": [
       "원술",
@@ -1406,21 +1464,21 @@
     ],
     "relatedOfficerIds": [
       "rtk14-0032",
+      "rtk14-0551",
       "rtk14-0144",
-      "rtk14-0538",
-      "rtk14-0551"
+      "rtk14-0538"
     ],
     "officerLinkInferences": [],
     "officerLinkIssues": [],
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제5회 사건 문서",
+      "title": "삼국지연의 제5회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-005",
-    "dateNote": "제5회 전개 순서. 190년 전후, 월 미상. 연의의 전투 배치이며 선택·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r005-04",
@@ -1429,19 +1487,23 @@
     "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[화웅 코인, 술 식기 전 상장 폐지?]",
-    "content": "화웅은 연합군 앞에서 도전해 유섭과 반봉을 죽였다. 관우가 출전을 청했지만 원술은 낮은 신분을 들어 반대했다.",
+    "title": "[화웅이 도전한다고 모두 나갈 수는 없다]",
+    "content": "화웅의 도전에 유섭과 반봉이 차례로 나섰다가 죽었다. 관우가 출전을 청하자 원술은 낮은 지위를 이유로 반대했고 조조는 기회를 막지 말자고 했다.",
     "regionIds": [
       "sishui"
     ],
     "factionIds": [
       "han",
+      "coalition",
       "dong-zhuo",
-      "cao-cao",
       "liu-bei",
-      "sun-jian",
+      "cao-cao",
       "yuan-shao",
-      "yuan-shu"
+      "yuan-shu",
+      "gongsun-zan",
+      "sun",
+      "ding-yuan",
+      "yellow-turban"
     ],
     "relatedPeople": [
       "화웅",
@@ -1452,24 +1514,24 @@
       "조조"
     ],
     "relatedOfficerIds": [
-      "rtk14-0032",
       "rtk14-0144",
-      "rtk14-0147",
-      "rtk14-0521",
+      "rtk14-0853",
       "rtk14-0785",
-      "rtk14-0853"
+      "rtk14-0147",
+      "rtk14-0032",
+      "rtk14-0521"
     ],
     "officerLinkInferences": [],
     "officerLinkIssues": [],
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제5회 사건 문서",
+      "title": "삼국지연의 제5회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-005",
-    "dateNote": "제5회 전개 순서. 190년 전후, 월 미상. 연의의 전투 배치이며 선택·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r005-05",
@@ -1478,43 +1540,49 @@
     "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[그 술잔의 결말은 아직 모른다]",
-    "content": "조조는 신분으로 관우의 출전을 막지 말자고 설득하고 데운 술을 권했다. 관우는 돌아와 마시겠다며 나가 화웅을 베고 술이 식기 전에 돌아왔다.",
+    "title": "[술잔의 결말은 현재 상태로 정한다]",
+    "content": "조조는 관우의 기상을 보고 출전을 지지했다. 관우는 술이 식기 전에 화웅을 베고 돌아와 신분만으로 판단하던 제후들에게 무용을 보였다.",
     "regionIds": [
       "sishui"
     ],
     "factionIds": [
       "han",
+      "coalition",
       "dong-zhuo",
-      "cao-cao",
       "liu-bei",
-      "sun-jian",
+      "cao-cao",
       "yuan-shao",
-      "yuan-shu"
+      "yuan-shu",
+      "gongsun-zan",
+      "sun",
+      "ding-yuan",
+      "yellow-turban"
     ],
     "relatedPeople": [
       "조조",
       "관우",
       "화웅",
+      "원소",
       "원술"
     ],
     "relatedOfficerIds": [
-      "rtk14-0032",
-      "rtk14-0144",
+      "rtk14-0521",
       "rtk14-0147",
-      "rtk14-0521"
+      "rtk14-0144",
+      "rtk14-0035",
+      "rtk14-0032"
     ],
     "officerLinkInferences": [],
     "officerLinkIssues": [],
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제5회 사건 문서",
+      "title": "삼국지연의 제5회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-005",
-    "dateNote": "제5회 전개 순서. 190년 전후, 월 미상. 연의의 전투 배치이며 선택·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r005-06",
@@ -1523,51 +1591,53 @@
     "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[공적 회의 다음은 보복 명단]",
-    "content": "원술은 장비와 형제들의 낮은 신분을 모욕했고 유비는 충돌을 피해 물러났다. 화웅의 패전 뒤 동탁은 원씨 일족을 죽이고 여포를 앞세워 호뢰관으로 나왔다.",
+    "title": "[보복 명부에 남은 이름]",
+    "content": "원술은 전공을 세운 유비 형제들을 낮은 신분이라 모욕했다. 동탁은 호뢰관으로 출전하며 낙양의 원씨 일족을 죽여 원소에게 보복했다.",
     "regionIds": [
       "hulao"
     ],
     "factionIds": [
       "han",
+      "coalition",
       "dong-zhuo",
-      "cao-cao",
       "liu-bei",
-      "sun-jian",
+      "cao-cao",
       "yuan-shao",
-      "yuan-shu"
+      "yuan-shu",
+      "gongsun-zan",
+      "sun",
+      "ding-yuan",
+      "yellow-turban"
     ],
     "relatedPeople": [
-      "장비",
-      "관우",
-      "유비",
       "원술",
+      "유비",
+      "관우",
+      "장비",
       "조조",
       "동탁",
-      "원소",
-      "여포"
+      "원소"
     ],
     "relatedOfficerIds": [
       "rtk14-0032",
-      "rtk14-0035",
-      "rtk14-0147",
-      "rtk14-0521",
-      "rtk14-0656",
-      "rtk14-0736",
       "rtk14-0952",
-      "rtk14-0987"
+      "rtk14-0147",
+      "rtk14-0656",
+      "rtk14-0521",
+      "rtk14-0736",
+      "rtk14-0035"
     ],
     "officerLinkInferences": [],
     "officerLinkIssues": [],
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제5회 사건 문서",
+      "title": "삼국지연의 제5회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-005",
-    "dateNote": "제5회 전개 순서. 190년 전후, 월 미상. 연의의 전투 배치이며 선택·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r005-07",
@@ -1576,19 +1646,23 @@
     "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[공손찬 뒤의 적토마가 너무 빠르다]",
-    "content": "여포는 방열과 목순을 죽이고 무안국을 다치게 했다. 공손찬도 패주했고 적토마를 탄 여포의 추격으로 위험에 몰렸다.",
+    "title": "[적토마가 좁히는 거리]",
+    "content": "여포는 방열·목순을 죽이고 무안국을 다치게 하는 등 연합군 장수들을 무너뜨렸다. 공손찬도 버티지 못하고 달아나 적토마를 탄 여포에게 추격받았다.",
     "regionIds": [
       "hulao"
     ],
     "factionIds": [
       "han",
+      "coalition",
       "dong-zhuo",
-      "cao-cao",
       "liu-bei",
-      "sun-jian",
+      "cao-cao",
       "yuan-shao",
-      "yuan-shu"
+      "yuan-shu",
+      "gongsun-zan",
+      "sun",
+      "ding-yuan",
+      "yellow-turban"
     ],
     "relatedPeople": [
       "여포",
@@ -1599,24 +1673,24 @@
       "장비"
     ],
     "relatedOfficerIds": [
-      "rtk14-0266",
-      "rtk14-0656",
-      "rtk14-0798",
+      "rtk14-0987",
       "rtk14-0818",
       "rtk14-0835",
-      "rtk14-0987"
+      "rtk14-0798",
+      "rtk14-0266",
+      "rtk14-0656"
     ],
     "officerLinkInferences": [],
     "officerLinkIssues": [],
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제5회 사건 문서",
+      "title": "삼국지연의 제5회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-005",
-    "dateNote": "제5회 전개 순서. 190년 전후, 월 미상. 연의의 전투 배치이며 선택·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r005-08",
@@ -1625,45 +1699,49 @@
     "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[셋이 싸우는데 빈틈은 한 군데다]",
-    "content": "장비가 공손찬을 구하고 여포와 맞섰다. 관우와 유비가 차례로 가세했으나 여포는 유비 쪽을 공격해 포위를 벗어났다.",
+    "title": "[셋의 협공과 내가 맡은 한 자리]",
+    "content": "장비가 공손찬을 구하고 여포와 맞서자 관우와 유비가 가세했다. 세 형제에게 포위된 여포는 유비 쪽을 공격해 틈을 만들고 달아났다.",
     "regionIds": [
       "hulao"
     ],
     "factionIds": [
       "han",
+      "coalition",
       "dong-zhuo",
-      "cao-cao",
       "liu-bei",
-      "sun-jian",
+      "cao-cao",
       "yuan-shao",
-      "yuan-shu"
+      "yuan-shu",
+      "gongsun-zan",
+      "sun",
+      "ding-yuan",
+      "yellow-turban"
     ],
     "relatedPeople": [
-      "유비",
-      "관우",
       "장비",
+      "관우",
+      "유비",
       "여포",
       "공손찬"
     ],
     "relatedOfficerIds": [
-      "rtk14-0147",
-      "rtk14-0266",
       "rtk14-0656",
+      "rtk14-0147",
       "rtk14-0952",
-      "rtk14-0987"
+      "rtk14-0987",
+      "rtk14-0266"
     ],
     "officerLinkInferences": [],
     "officerLinkIssues": [],
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제5회 사건 문서",
+      "title": "삼국지연의 제5회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-005",
-    "dateNote": "제5회 전개 순서. 190년 전후, 월 미상. 연의의 전투 배치이며 선택·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   },
   {
     "id": "r005-09",
@@ -1672,19 +1750,23 @@
     "precision": "approximate",
     "calendar": "lunar",
     "leapMonth": null,
-    "title": "[호뢰관 승리 버튼은 아직 없다]",
-    "content": "세 형제가 여포를 뒤쫓자 연합군이 진격했고 동탁군은 관 안으로 물러났다. 장비는 관 위의 동탁을 보고 달려들었지만 동탁이나 황제를 확보한 것은 아니었다.",
+    "title": "[관문 앞의 승세와 남은 삶]",
+    "content": "연합군은 세 형제의 추격을 따라 진격했고 동탁군은 호뢰관 안으로 물러났다. 장비는 관 위의 동탁을 보고 달려들었지만 동탁이나 황제의 신병은 확보되지 않았다.",
     "regionIds": [
       "hulao"
     ],
     "factionIds": [
       "han",
+      "coalition",
       "dong-zhuo",
-      "cao-cao",
       "liu-bei",
-      "sun-jian",
+      "cao-cao",
       "yuan-shao",
-      "yuan-shu"
+      "yuan-shu",
+      "gongsun-zan",
+      "sun",
+      "ding-yuan",
+      "yellow-turban"
     ],
     "relatedPeople": [
       "유비",
@@ -1694,22 +1776,22 @@
       "동탁"
     ],
     "relatedOfficerIds": [
+      "rtk14-0952",
       "rtk14-0147",
       "rtk14-0656",
-      "rtk14-0736",
-      "rtk14-0952",
-      "rtk14-0987"
+      "rtk14-0987",
+      "rtk14-0736"
     ],
     "officerLinkInferences": [],
     "officerLinkIssues": [],
     "category": "novel",
     "parentId": null,
     "source": {
-      "title": "삼국지연의 제5회 사건 문서",
+      "title": "삼국지연의 제5회",
       "record": null
     },
     "verification": "secondary",
     "section": "chapter-005",
-    "dateNote": "제5회 전개 순서. 190년 전후, 월 미상. 연의의 전투 배치이며 선택·대체 결과는 게임 창작."
+    "dateNote": "원작 회차의 전개 순서이며 월 미상. 선택·개입·대안역사는 게임 창작."
   }
 ]

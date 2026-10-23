@@ -1,5 +1,13 @@
 # 사건 관리 및 공유 저장 검증
 
+## 현재 참여 판본 — 2026-10-23
+
+현재 범위는 `romance-participation-v2`의 1~5화 사건41건·선택 장면99개다. 이전41건의 정의/실행 흐름과 기존 QA 파일을 폐기했다. 전체 테스트113개, 타입·빌드·사건/참조 검사는 통과했으며 장면별·참여/불참·진영·세계 생존·저장·실제 화면 검증 근거는 [재개발 기록](development/rebuild-participation-1-5.md)에 둔다. 아래 날짜별 수치와 Firebase 게시 결과는 과거 판본의 기록이며 새 판본의 운영 게시를 뜻하지 않는다.
+
+현재 화면 검사는 `.agents/skills/playwright-page-check/scripts/check-participation.cjs`(001~005), `check-participation-news.cjs`, `check-participation-admin.cjs`, `check-participation-results.cjs`를 사용한다. 먼저 `npm test -- lib/participation-runtime.test.ts lib/chapter-five.test.ts`로 실제 선행 선택의 격리 fixture를 생성하고 프로덕션 빌드를 실행한다. 캡처·임시 저장은 `/tmp`에 두며 실제 사용자 저장이나 Firebase를 변경하지 않는다.
+
+## 이전 판본 기록
+
 2026년 10월 15일 기준입니다. 분석·설계는 GPT-6.1 Sol high, 구현은 low 에이전트, 검증은 사용자가 승인한 GPT-6 Sol high와 브라우저 확인으로 진행했습니다.
 
 ## 자동 검사

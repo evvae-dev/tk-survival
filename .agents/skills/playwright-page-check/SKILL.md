@@ -19,9 +19,24 @@ For a private deployed site, use the supported Sites sign-in flow or an authoriz
 
 Keep page-check artifacts outside Git. Persist this skill in the project's `.agents/skills` and optionally the current user's `~/.codex/skills` so a future session can discover it. Do not overwrite an existing user skill with the same name.
 
-For this game, run `node .agents/skills/playwright-page-check/scripts/check-tk-survival.cjs http://localhost:4173 /tmp/tk-game-browser`. It verifies game start, visible scene art, three choice images, next-scene changes, desktop/mobile/short-desktop layouts, and browser errors.
+## 사건 참여 화면 담당 지시 — 2026-10-23
 
-For a complete faction/image audit, run `node .agents/skills/playwright-page-check/scripts/audit-tk-images.cjs http://localhost:4173 /tmp/tk-image-audit`. It visits all 20 choice scenes on desktop/mobile/short screens, checks all 56 options, rejects repeated scene/choice images and `상대 없음`, and verifies actual opponent ability values. It uses only isolated test browser saves.
+이 게임에서는 [사건 참여 계약](../../../docs/EVENT_PARTICIPATION_CONTRACT.md)을 우선한다. 아래 과거 스크립트의 고정 사건 수·선택 3개·이미지 중복 금지 전제를 현재 인수 기준으로 사용하지 않는다. 현재 판본의 화면 검증은 `scripts/check-participation.cjs`, `scripts/check-participation-news.cjs`, `scripts/check-participation-results.cjs`를 사용한다. 참석 조건과 소식 편집의 실제 게임 반영은 `scripts/check-participation-admin.cjs`로 검사한다. 먼저 `npm test -- lib/participation-runtime.test.ts lib/chapter-five.test.ts`로 실제 경로 fixture를 생성한다. 스킬 문서 수정만 요청받았을 때 브라우저 검증을 수행한 것으로 보고하지 않는다.
+
+1. 실제 직전 선택에서 생성한 성공·거절·미접촉·황건 합류·사건 불성립 fixture를 QA 담당에게 받아라. 임의로 참석 표식만 넣은 화면은 연속 경로 증거를 대신하지 않는다.
+2. 동행 허락 경로에는 도원결의 현장이, 거절 경로에는 관련 소식 카드만 표시되는지 확인하라. 불참자의 현장 선택 팝업·도착문·개인 보상·위치 변경이 없고 다음 유효 사건으로 이어져야 한다.
+3. 소식 재생 경계의 저장·새로고침을 검사하라. 중복 카드·중복 효과·빈 팝업·정지·새 추첨이 없어야 한다. 기존 기록 5초·선택 결과 5,000ms 규칙을 유지하라.
+4. 황건 합류자의 아군/적군 문구와 이미지, 대체 생존 결과를 확인하라. 진영 변경 없이 유비군 화면으로 바뀌거나 직전 그림이 잔류하면 결함으로 기록하라.
+5. 관리자에서 참여 조건·불참 기록을 실제 편집·저장·복원하고 게임의 참/거짓 경로에 반영되는지 확인하라. 기존 사용자 편집과 진행을 보존하며 공유 게시 없이 격리 데이터로 검사하라.
+6. PC·모바일·낮은 화면에서 실제 노출된 선택별 이미지를 검사하라. 선택 개수를 무조건 3개로 단언하지 말고 소식 경로는 0개인지 확인하라. 중복 그림도 표시하며 단독 인물 이미지는 허용하지 않는다.
+
+산출물은 경로/상태/실제 화면·저장 결과와 직접 확인한 캡처다. 기존 스크립트가 현재 사건을 다루지 못하면 범위 미지원으로 기록하고 보완하라. 옛 스크립트 통과를 새 참여 분기 통과로 보고하지 말라.
+
+## 기존 화면 검사 도구
+
+For the legacy game-start check, inspect `node .agents/skills/playwright-page-check/scripts/check-tk-survival.cjs http://localhost:4173 /tmp/tk-game-browser` before use. Its original three-choice assumptions must be adapted to the current participation contract when testing new branches.
+
+The legacy image audit is `node .agents/skills/playwright-page-check/scripts/audit-tk-images.cjs http://localhost:4173 /tmp/tk-image-audit`. Its original coverage was 20 scenes and 56 options; this is not current chapter coverage. Before reuse, update any assertions rejecting repeated images or requiring a fixed option count. Current rules require contextual images for every displayed scene/choice/result, including repeated images. Use isolated test browser saves and inspect actual opponent values where applicable.
 
 For name-dialog centering, mobile character/settings layout, and real growth/decrease feedback, run `node .agents/skills/playwright-page-check/scripts/check-layout-growth.cjs http://localhost:4173 /tmp/tk-layout-growth`. Check PC and 390px/320px mobile viewports. Mobile playback controls live in Settings; use `scripts/playback-helper.cjs` to operate the same controls without assuming they are in the header.
 

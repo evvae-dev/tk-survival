@@ -12,11 +12,11 @@ for(const chapter of index.chapters){
  for(const fact of facts.filter(f=>f.chapterId===chapter.id))assert.equal(fact.sourceSha256,createHash('sha256').update(source).digest('hex'));
 }
 for(const event of events){
- assert.ok(index.chapters.some(c=>c.id===event.chapterId));assert.equal(event.month,null);assert.ok(event.summary&&event.source.record&&event.flow);assert.ok(facts.some(f=>f.id===event.id));
+ assert.equal(event.edition,index.edition);assert.ok(index.chapters.some(c=>c.id===event.chapterId));assert.equal(event.month,null);assert.ok(event.summary&&event.source.record&&event.flow);assert.ok(facts.some(f=>f.id===event.id));
  for(const id of event.prerequisiteEventIds??[])assert.ok(ids.has(id));for(const c of event.connections??[])assert.ok(ids.has(c.targetId));
  for(const node of event.flow.nodes){
   if(node.type==='choice'){
-   assert.equal(node.data.options.length,3,`${event.id}/${node.id}: A/B/C`);
+   assert.ok(node.data.options.length>=1,`${event.id}/${node.id}: 유효한 현장 행동 필요`);
    assert.ok(node.data.text.split(/(?<=[.!?])\s+/).length>=3);
    assert.ok(node.data.artwork,`${event.id}/${node.id}: 상황 이미지 필요`);
    for(const option of node.data.options)assert.ok(option.artwork,`${event.id}/${node.id}/${option.id}: 선택 이미지 필요`);

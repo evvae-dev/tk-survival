@@ -1,8 +1,8 @@
 {
-  "edition": "romance-chapters-v1",
+  "edition": "romance-participation-v2",
   "eventCount": 41,
   "chapterCount": 5,
   "orderPolicy": "chapter-file-order",
-  "sourceType": "삼국지연의 챕터 사건 문서",
+  "sourceType": "삼국지연의 회차 원본",
   "generatedBy": "scripts/build-story.mjs"
 }

@@ -1,5 +1,5 @@
 'use client';
-import { CHAPTER_ID } from '@/lib/chapter';
+import { CATALOG_EDITION, CHAPTER_ID } from '@/lib/chapter';
 import Link from '@/components/HostedLink';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -38,7 +38,7 @@ export default function ReferenceDataPage() {
   function importEvent(entry: TimelineEntry) {
     try {
       if (!getEffectiveCatalog().some(item => item.id === entry.id)) {
-        const event: HistoricalEvent = { id: entry.id, chapterId: CHAPTER_ID, sequence: 5, prerequisiteEventIds: [], year: entry.year, month: entry.month, precision: entry.precision, calendar: 'lunar', leapMonth: entry.leapMonth, dateNote: entry.dateNote, title: entry.title, summary: entry.content, regionIds: entry.regionIds, factionIds: entry.factionIds, relatedPeople: entry.relatedPeople, relatedOfficerIds: entry.relatedOfficerIds, officerLinkInferences: entry.officerLinkInferences, category: entry.category, source: { title: entry.source.title, record: entry.source.record ?? '사서기록 미확인. 이 초안은 편년 2차 자료에서 수집했으며 원사서와 대조하지 않았다.' } };
+        const event: HistoricalEvent = { id: entry.id, edition: CATALOG_EDITION, chapterId: CHAPTER_ID, sequence: 5, prerequisiteEventIds: [], year: entry.year, month: entry.month, precision: entry.precision, calendar: 'lunar', leapMonth: entry.leapMonth, dateNote: entry.dateNote, title: entry.title, summary: entry.content, regionIds: entry.regionIds, factionIds: entry.factionIds, relatedPeople: entry.relatedPeople, relatedOfficerIds: entry.relatedOfficerIds, officerLinkInferences: entry.officerLinkInferences, category: entry.category, source: { title: entry.source.title, record: entry.source.record ?? '사서기록 미확인. 이 초안은 편년 2차 자료에서 수집했으며 원사서와 대조하지 않았다.' } };
         useEventCatalogStore.getState().saveEvent({ ...event, flow: createDefaultFlow(event) });
       }
       router.push(`/admin/events?event=${encodeURIComponent(entry.id)}`);

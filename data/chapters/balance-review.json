@@ -1,2089 +1,1538 @@
 {
-  "version": 1,
-  "policy": "선택별 가중 평균 또는 실존 상대 능력 비교 + (50 − 상황 난도). 성공 명성은 영향력에 따른 명시 보상, 실패는 정확히 −50%.",
+  "edition": "romance-participation-v2",
   "choices": [
     {
       "eventId": "r001-01",
-      "nodeId": "scene",
-      "choiceId": "a",
+      "nodeId": "market-warn-check",
+      "kind": "strategy",
       "weights": {
         "intelligence": 0.6,
-        "politics": 0.3,
-        "charisma": 0.1
+        "politics": 0.25,
+        "charisma": 0.15
       },
-      "difficulty": 75,
-      "successFame": 16,
-      "failureFame": -8,
-      "basis": "사전 고발로 반란 대응의 시점을 바꿈"
+      "difficulty": 72,
+      "fameReward": 12,
+      "fameReason": "내응 확인의 시점을 앞당기는 증언",
+      "success": "나는 봉서의 수신인과 표식을 대조해 설명했고 현리는 확인 문서를 올렸다. 연락책의 인상도 함께 남겨 내 말의 출처를 분명히 했다.",
+      "failure": "나는 이름만 확인한 채 나섰다가 봉서가 없다는 지적을 받았다. 연락책까지 내 얼굴을 알아봐 더 접근하기 어려워졌다.",
+      "successNarrative": "나는 봉서의 수신인과 표식을 대조해 설명했고 현리는 확인 문서를 올렸다. 연락책의 인상도 함께 남겨 내 말의 출처를 분명히 했다.",
+      "failureNarrative": "나는 이름만 확인한 채 나섰다가 봉서가 없다는 지적을 받았다. 연락책까지 내 얼굴을 알아봐 더 접근하기 어려워졌다.",
+      "failureFame": -6
     },
     {
       "eventId": "r001-01",
-      "nodeId": "scene",
-      "choiceId": "b",
+      "nodeId": "market-lead-check",
+      "kind": "relationship",
       "weights": {
-        "charisma": 0.7,
-        "intelligence": 0.15,
-        "politics": 0.15
+        "charisma": 0.75,
+        "politics": 0.25
       },
       "difficulty": 38,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "모집 소문과 접근 통로 확보"
+      "fameReward": 4,
+      "fameReason": "모집 장소의 실제 접근 경로 확보",
+      "success": "나는 수레꾼에게 모집 방이 붙을 자리를 물었다. 그가 장터 북쪽 벽을 가리켜 유비를 기다릴 동선을 알아냈다.",
+      "failure": "나는 거병할 사람을 찾는다는 말로 상인을 경계하게 했다. 소개는 받지 못하고 장터로 돌아왔다.",
+      "successNarrative": "나는 수레꾼에게 모집 방이 붙을 자리를 물었다. 그가 장터 북쪽 벽을 가리켜 유비를 기다릴 동선을 알아냈다.",
+      "failureNarrative": "나는 거병할 사람을 찾는다는 말로 상인을 경계하게 했다. 소개는 받지 못하고 장터로 돌아왔다.",
+      "failureFame": -2
+    },
+    {
+      "eventId": "r001-01",
+      "nodeId": "market-cult-check",
+      "kind": "relationship",
+      "weights": {
+        "charisma": 0.75,
+        "politics": 0.25
+      },
+      "difficulty": 48,
+      "fameReward": 4,
+      "fameReason": "태평도 연락책과 실제 접촉",
+      "success": "나는 병자들의 짐을 나르고 연락책에게 말을 걸었다. 그는 내 얼굴을 기억하고 봉기가 시작되면 찾아올 창고를 알려 줬다.",
+      "failure": "나는 질문을 너무 서둘러 연락책의 의심을 샀다. 창고 위치를 듣지 못한 채 심부름 자리에서 물러났다.",
+      "successNarrative": "나는 병자들의 짐을 나르고 연락책에게 말을 걸었다. 그는 내 얼굴을 기억하고 봉기가 시작되면 찾아올 창고를 알려 줬다.",
+      "failureNarrative": "나는 질문을 너무 서둘러 연락책의 의심을 샀다. 창고 위치를 듣지 못한 채 심부름 자리에서 물러났다.",
+      "failureFame": -2
     },
     {
       "eventId": "r001-02",
-      "nodeId": "warned",
-      "choiceId": "a",
+      "nodeId": "recruit-seek-check",
+      "kind": "relationship",
       "weights": {
-        "intelligence": 0.7,
-        "politics": 0.2,
-        "charisma": 0.1
+        "charisma": 0.75,
+        "politics": 0.25
       },
-      "difficulty": 70,
-      "successFame": 8,
-      "failureFame": -4,
-      "basis": "조기 경보 뒤 더 경계하는 연락책 추적"
+      "difficulty": 48,
+      "fameReward": 4,
+      "fameReason": "초면의 유비에게 주막 초대를 받음",
+      "success": "나는 모집 방의 전달 일을 돕겠다고 제안했다. 유비가 저녁 주막으로 오라고 답해 실제 초대를 얻었다.",
+      "failure": "나는 도움을 청했지만 유비는 보증인 없는 사람을 데려가기 어렵다고 답했다. 초대 없이 물러나 주민들이 있는 장터로 돌아왔다.",
+      "successNarrative": "나는 모집 방의 전달 일을 돕겠다고 제안했다. 유비가 저녁 주막으로 오라고 답해 실제 초대를 얻었다.",
+      "failureNarrative": "나는 도움을 청했지만 유비는 보증인 없는 사람을 데려가기 어렵다고 답했다. 초대 없이 물러나 주민들이 있는 장터로 돌아왔다.",
+      "failureFame": -2
     },
     {
       "eventId": "r001-02",
-      "nodeId": "warned",
-      "choiceId": "b",
+      "nodeId": "recruit-lead-seek-check",
+      "kind": "relationship",
       "weights": {
-        "charisma": 0.7,
-        "intelligence": 0.15,
-        "politics": 0.15
+        "charisma": 0.75,
+        "politics": 0.25
       },
-      "difficulty": 43,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "유비 측 첫 접촉"
+      "difficulty": 38,
+      "fameReward": 4,
+      "fameReason": "초면의 유비에게 주막 초대를 받음",
+      "success": "나는 모집 방의 전달 일을 돕겠다고 제안했다. 유비가 저녁 주막으로 오라고 답해 실제 초대를 얻었다.",
+      "failure": "나는 도움을 청했지만 유비는 보증인 없는 사람을 데려가기 어렵다고 답했다. 초대 없이 물러나 주민들이 있는 장터로 돌아왔다.",
+      "successNarrative": "나는 모집 방의 전달 일을 돕겠다고 제안했다. 유비가 저녁 주막으로 오라고 답해 실제 초대를 얻었다.",
+      "failureNarrative": "나는 도움을 청했지만 유비는 보증인 없는 사람을 데려가기 어렵다고 답했다. 초대 없이 물러나 주민들이 있는 장터로 돌아왔다.",
+      "failureFame": -2
     },
     {
       "eventId": "r001-02",
-      "nodeId": "scene",
-      "choiceId": "a",
+      "nodeId": "warned-trace-check",
+      "kind": "strategy",
       "weights": {
-        "intelligence": 0.7,
-        "politics": 0.2,
-        "charisma": 0.1
-      },
-      "difficulty": 65,
-      "successFame": 8,
-      "failureFame": -4,
-      "basis": "은밀한 동선을 추적해 지역 피란 위험을 줄임"
-    },
-    {
-      "eventId": "r001-02",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.7,
-        "intelligence": 0.15,
-        "politics": 0.15
-      },
-      "difficulty": 43,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "유비 측 첫 접촉"
-    },
-    {
-      "eventId": "r001-03",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "intelligence": 0.55,
-        "charisma": 0.25,
-        "leadership": 0.2
-      },
-      "difficulty": 66,
-      "successFame": 8,
-      "failureFame": -4,
-      "basis": "매복 전술의 선행 경고"
-    },
-    {
-      "eventId": "r001-03",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.55,
-        "politics": 0.35,
-        "intelligence": 0.1
-      },
-      "difficulty": 44,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "첫 동행을 허락받음"
-    },
-    {
-      "eventId": "r001-04",
-      "nodeId": "known",
-      "choiceId": "a",
-      "weights": {
-        "leadership": 0.45,
-        "intelligence": 0.35,
-        "charisma": 0.2
-      },
-      "difficulty": 58,
-      "successFame": 8,
-      "failureFame": -4,
-      "basis": "출전 전 부대의 비상 신호 정비"
-    },
-    {
-      "eventId": "r001-04",
-      "nodeId": "known",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.8,
-        "politics": 0.2
+        "intelligence": 0.6,
+        "politics": 0.25,
+        "charisma": 0.15
       },
       "difficulty": 60,
-      "successFame": 8,
-      "failureFame": -4,
-      "basis": "소개를 넘어 유비 향용에 정식 지원"
+      "fameReward": 8,
+      "fameReason": "경보를 실제 주민 대피로 연결",
+      "success": "나는 상인들의 이동 시각을 맞춰 습격 가능 길목을 짚었다. 현리가 주민을 다른 길로 보내 장터의 대피 통로를 확보했다.",
+      "failure": "나는 서로 다른 수레 자국을 혼동해 연락망을 확인하지 못했다. 안전하다고 장담하지 않고 현리에게 확인 불가로 보고했다.",
+      "successNarrative": "나는 상인들의 이동 시각을 맞춰 습격 가능 길목을 짚었다. 현리가 주민을 다른 길로 보내 장터의 대피 통로를 확보했다.",
+      "failureNarrative": "나는 서로 다른 수레 자국을 혼동해 연락망을 확인하지 못했다. 안전하다고 장담하지 않고 현리에게 확인 불가로 보고했다.",
+      "failureFame": -4
+    },
+    {
+      "eventId": "r001-02",
+      "nodeId": "warned-seek-check",
+      "kind": "relationship",
+      "weights": {
+        "charisma": 0.75,
+        "politics": 0.25
+      },
+      "difficulty": 45,
+      "fameReward": 4,
+      "fameReason": "유비에게 주막 초대를 받음",
+      "success": "나는 모집 방 앞에서 연락 일을 맡고 싶다고 말했다. 유비는 내 이름을 묻고 저녁 주막에서 이야기를 나누자고 초대했다.",
+      "failure": "나는 말을 걸었지만 유비는 모집 준비를 서둘러야 한다며 인사만 받았다. 주막에 오라는 허락은 얻지 못했다.",
+      "successNarrative": "나는 모집 방 앞에서 연락 일을 맡고 싶다고 말했다. 유비는 내 이름을 묻고 저녁 주막에서 이야기를 나누자고 초대했다.",
+      "failureNarrative": "나는 말을 걸었지만 유비는 모집 준비를 서둘러야 한다며 인사만 받았다. 주막에 오라는 허락은 얻지 못했다.",
+      "failureFame": -2
+    },
+    {
+      "eventId": "r001-02",
+      "nodeId": "yellow-offer-join-check",
+      "kind": "relationship",
+      "weights": {
+        "charisma": 0.75,
+        "politics": 0.25
+      },
+      "difficulty": 52,
+      "fameReward": 8,
+      "fameReason": "황건군 정식 합류와 진영 결정",
+      "success": "나는 연락책에게 지원 의사를 밝히고 통행 구호를 익혔다. 그는 내 이름을 적고 정원지 부대로 가는 연락병으로 받아들였다.",
+      "failure": "나는 지원했지만 연락책은 신원을 보증할 사람이 없다며 거절했다. 두건을 받지 못한 채 민간인으로 창고를 나왔다.",
+      "successNarrative": "나는 연락책에게 지원 의사를 밝히고 통행 구호를 익혔다. 그는 내 이름을 적고 정원지 부대로 가는 연락병으로 받아들였다.",
+      "failureNarrative": "나는 지원했지만 연락책은 신원을 보증할 사람이 없다며 거절했다. 두건을 받지 못한 채 민간인으로 창고를 나왔다.",
+      "failureFame": -4
+    },
+    {
+      "eventId": "r001-03",
+      "nodeId": "tavern-plan-check",
+      "kind": "strategy",
+      "weights": {
+        "intelligence": 0.6,
+        "politics": 0.25,
+        "charisma": 0.15
+      },
+      "difficulty": 62,
+      "fameReward": 8,
+      "fameReason": "구체 계획으로 편성 작업 참석 허가",
+      "success": "나는 연락이 끊길 때 모일 표식과 전달 순서를 설명했다. 유비는 구체적인 준비라며 내일 복숭아밭의 편성 작업을 도와 달라고 했다.",
+      "failure": "나는 설명을 서둘러 실제 신병에게 전달할 방법을 답하지 못했다. 장비가 출처를 의심했고 유비는 내일 동행을 허락하지 않았다.",
+      "successNarrative": "나는 연락이 끊길 때 모일 표식과 전달 순서를 설명했다. 유비는 구체적인 준비라며 내일 복숭아밭의 편성 작업을 도와 달라고 했다.",
+      "failureNarrative": "나는 설명을 서둘러 실제 신병에게 전달할 방법을 답하지 못했다. 장비가 출처를 의심했고 유비는 내일 동행을 허락하지 않았다.",
+      "failureFame": -4
+    },
+    {
+      "eventId": "r001-03",
+      "nodeId": "tavern-ask-check",
+      "kind": "relationship",
+      "weights": {
+        "charisma": 0.75,
+        "politics": 0.25
+      },
+      "difficulty": 48,
+      "fameReward": 5,
+      "fameReason": "도원결의 날 편성 작업 동행 허락",
+      "success": "나는 이름과 맡을 수 있는 일을 밝혔고 유비는 다음 날 편성 작업에 와도 좋다고 답했다. 정식 병사는 아니지만 동행 허락을 얻었다.",
+      "failure": "나는 동행을 청했지만 유비는 아직 나를 믿고 맡길 수 없다고 답했다. 인사한 사실만 남긴 채 주막을 나왔다.",
+      "successNarrative": "나는 이름과 맡을 수 있는 일을 밝혔고 유비는 다음 날 편성 작업에 와도 좋다고 답했다. 정식 병사는 아니지만 동행 허락을 얻었다.",
+      "failureNarrative": "나는 동행을 청했지만 유비는 아직 나를 믿고 맡길 수 없다고 답했다. 인사한 사실만 남긴 채 주막을 나왔다.",
+      "failureFame": -2.5
     },
     {
       "eventId": "r001-04",
-      "nodeId": "scene",
-      "choiceId": "a",
+      "nodeId": "oath-join-check",
+      "kind": "relationship",
       "weights": {
-        "leadership": 0.45,
-        "intelligence": 0.35,
-        "charisma": 0.2
+        "charisma": 0.75,
+        "politics": 0.25
       },
-      "difficulty": 58,
-      "successFame": 8,
-      "failureFame": -4,
-      "basis": "출전 전 부대의 비상 신호 정비"
-    },
-    {
-      "eventId": "r001-04",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.7,
-        "intelligence": 0.15,
-        "politics": 0.15
-      },
-      "difficulty": 40,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "상인에게 소개를 받음"
+      "difficulty": 56,
+      "fameReward": 8,
+      "fameReason": "유비 향용 정식 합류",
+      "success": "나는 연락병으로 지원했고 유비는 내 이름을 군적에 올렸다. 도원 형제의 맹세에는 끼지 않았지만 유비군 병사로 출전하게 됐다.",
+      "failure": "나는 입대를 청했지만 유비는 병사로 맡기기는 이르다고 답했다. 동행도 여기서 마치겠다고 인사한 뒤 민간인으로 장터에 돌아왔다.",
+      "successNarrative": "나는 연락병으로 지원했고 유비는 내 이름을 군적에 올렸다. 도원 형제의 맹세에는 끼지 않았지만 유비군 병사로 출전하게 됐다.",
+      "failureNarrative": "나는 입대를 청했지만 유비는 병사로 맡기기는 이르다고 답했다. 동행도 여기서 마치겠다고 인사한 뒤 민간인으로 장터에 돌아왔다.",
+      "failureFame": -4
     },
     {
       "eventId": "r001-05",
-      "nodeId": "scene",
-      "choiceId": "a",
+      "nodeId": "yellow-save-check",
+      "kind": "strategy",
+      "weights": {
+        "intelligence": 0.6,
+        "politics": 0.25,
+        "charisma": 0.15
+      },
+      "difficulty": 72,
+      "fameReward": 14,
+      "fameReason": "등무의 일기토를 막아 생존 경로 생성",
+      "success": "나는 등무에게 향용의 창대와 뒤쪽 협공 위험을 설명했다. 그가 출전을 멈추고 후미를 맡아 일부 병력과 함께 빠져나왔다.",
+      "failure": "나는 출전을 말렸지만 등무는 겁먹은 신병 취급하며 밀쳐 냈다. 그가 앞으로 나가자 나는 연락 임무를 지키며 후방으로 물러났다.",
+      "successNarrative": "나는 등무에게 향용의 창대와 뒤쪽 협공 위험을 설명했다. 그가 출전을 멈추고 후미를 맡아 일부 병력과 함께 빠져나왔다.",
+      "failureNarrative": "나는 출전을 말렸지만 등무는 겁먹은 신병 취급하며 밀쳐 냈다. 그가 앞으로 나가자 나는 연락 임무를 지키며 후방으로 물러났다.",
+      "failureFame": -7
+    },
+    {
+      "eventId": "r001-05",
+      "nodeId": "yellow-retreat-check",
+      "kind": "battle",
+      "weights": {
+        "leadership": 0.6,
+        "strength": 0.4
+      },
+      "difficulty": 52,
+      "fameReward": 7,
+      "fameReason": "황건 수송병의 철수 통로 확보",
+      "success": "나는 짐수레를 돌려 후미가 빠질 길을 열었다. 전투가 무너지자 수송병들이 그 길로 물러나 흩어짐을 줄였다.",
+      "failure": "나는 수레가 엉킨 길을 제때 열지 못했다. 짐을 버리고 후미 사람들과 함께 빠져나왔다.",
+      "successNarrative": "나는 짐수레를 돌려 후미가 빠질 길을 열었다. 전투가 무너지자 수송병들이 그 길로 물러나 흩어짐을 줄였다.",
+      "failureNarrative": "나는 수레가 엉킨 길을 제때 열지 못했다. 짐을 버리고 후미 사람들과 함께 빠져나왔다.",
+      "failureFame": -3.5
+    },
+    {
+      "eventId": "r001-05",
+      "nodeId": "liu-duel-check",
+      "kind": "duel",
       "weights": {
         "strength": 1
       },
       "difficulty": 50,
-      "successFame": 14,
-      "failureFame": -7,
-      "basis": "등무를 꺾어 첫 전장의 공적을 바꿈"
+      "fameReward": 14,
+      "fameReason": "등무와의 직접 일기토",
+      "opponentId": "rtk14-0746",
+      "success": "나는 등무의 창을 비껴 받아 반격했고 그를 쓰러뜨렸다. 장비는 내가 만든 틈으로 들어가 향용의 진격을 이끌었다.",
+      "failure": "나는 등무의 창에 밀려 넘어졌고 장비가 나를 엄호했다. 아군 뒤로 물러나 더는 일기토에 끼지 못했다.",
+      "successNarrative": "나는 등무의 창을 비껴 받아 반격했고 그를 쓰러뜨렸다. 장비는 내가 만든 틈으로 들어가 향용의 진격을 이끌었다.",
+      "failureNarrative": "나는 등무의 창에 밀려 넘어졌고 장비가 나를 엄호했다. 아군 뒤로 물러나 더는 일기토에 끼지 못했다.",
+      "failureFame": -7
     },
     {
       "eventId": "r001-05",
-      "nodeId": "scene",
-      "choiceId": "b",
+      "nodeId": "liu-support-check",
+      "kind": "battle",
       "weights": {
-        "leadership": 1.5,
-        "strength": 1
+        "leadership": 0.6,
+        "strength": 0.4
       },
       "difficulty": 48,
-      "successFame": 6,
-      "failureFame": -3,
-      "basis": "장비 뒤의 대열 유지"
+      "fameReward": 6,
+      "fameReason": "첫 전투의 신병 대열 유지",
+      "success": "나는 장비가 나갈 통로를 비우고 흩어진 신병들을 모았다. 관우와 장비가 적장을 상대하는 동안 후방 대열을 유지했다.",
+      "failure": "나는 소리에 놀란 신병들을 붙잡지 못했다. 장비가 앞으로 나간 뒤에야 흩어진 짐을 수습했다.",
+      "successNarrative": "나는 장비가 나갈 통로를 비우고 흩어진 신병들을 모았다. 관우와 장비가 적장을 상대하는 동안 후방 대열을 유지했다.",
+      "failureNarrative": "나는 소리에 놀란 신병들을 붙잡지 못했다. 장비가 앞으로 나간 뒤에야 흩어진 짐을 수습했다.",
+      "failureFame": -3
     },
     {
       "eventId": "r001-06",
-      "nodeId": "scene",
-      "choiceId": "a",
+      "nodeId": "yellow-warn-check",
+      "kind": "strategy",
       "weights": {
-        "intelligence": 0.55,
-        "charisma": 0.25,
-        "leadership": 0.2
+        "intelligence": 0.6,
+        "politics": 0.25,
+        "charisma": 0.15
       },
-      "difficulty": 68,
-      "successFame": 12,
-      "failureFame": -6,
-      "basis": "매복이 드러나기 전 유인로를 변경"
+      "difficulty": 64,
+      "fameReward": 10,
+      "fameReason": "황건군의 매복 피해 일부 감소",
+      "success": "나는 퇴각하는 향용의 간격을 짚어 후미 지휘자에게 경고했다. 그가 추격을 늦춰 일부 병력이 매복을 피해 물러났다.",
+      "failure": "나는 지휘자에게 닿기 전에 추격 대열에 밀렸다. 경고를 전달하지 못한 채 후방 연락 지점으로 돌아왔다.",
+      "successNarrative": "나는 퇴각하는 향용의 간격을 짚어 후미 지휘자에게 경고했다. 그가 추격을 늦춰 일부 병력이 매복을 피해 물러났다.",
+      "failureNarrative": "나는 지휘자에게 닿기 전에 추격 대열에 밀렸다. 경고를 전달하지 못한 채 후방 연락 지점으로 돌아왔다.",
+      "failureFame": -5
     },
     {
       "eventId": "r001-06",
-      "nodeId": "scene",
-      "choiceId": "b",
+      "nodeId": "liu-signal-check",
+      "kind": "strategy",
       "weights": {
-        "leadership": 1,
-        "strength": 1.5
+        "intelligence": 0.6,
+        "politics": 0.25,
+        "charisma": 0.15
       },
-      "difficulty": 56,
-      "successFame": 8,
-      "failureFame": -4,
-      "basis": "철수 신호를 전해 병력 이탈을 도움"
+      "difficulty": 58,
+      "fameReward": 8,
+      "fameReason": "청주 협공 연락 일치",
+      "success": "나는 성안 연락병과 향용의 합류 표식을 대조했다. 양쪽이 같은 신호를 확인해 유인 뒤 공격 시점을 맞췄다.",
+      "failure": "나는 성안 연락병에게 제때 닿지 못했다. 유비에게 불확실한 신호를 쓰지 말자고 보고했다.",
+      "successNarrative": "나는 성안 연락병과 향용의 합류 표식을 대조했다. 양쪽이 같은 신호를 확인해 유인 뒤 공격 시점을 맞췄다.",
+      "failureNarrative": "나는 성안 연락병에게 제때 닿지 못했다. 유비에게 불확실한 신호를 쓰지 말자고 보고했다.",
+      "failureFame": -4
     },
     {
       "eventId": "r001-07",
-      "nodeId": "scene",
-      "choiceId": "a",
+      "nodeId": "civil-guide-check",
+      "kind": "relationship",
       "weights": {
-        "politics": 0.55,
-        "intelligence": 0.35,
+        "charisma": 0.75,
+        "politics": 0.25
+      },
+      "difficulty": 42,
+      "fameReward": 5,
+      "fameReason": "피난민의 실제 귀환 정보 전달",
+      "success": "나는 피난민과 수레꾼의 증언을 맞춰 통행이 확인된 길만 표시했다. 주민 일부가 그 길로 돌아가고 모르는 구간은 남겨 두었다.",
+      "failure": "나는 서로 엇갈리는 말을 확인하지 못했다. 안전하다고 말하지 않고 주민들에게 관청 확인을 기다리자고 했다.",
+      "successNarrative": "나는 피난민과 수레꾼의 증언을 맞춰 통행이 확인된 길만 표시했다. 주민 일부가 그 길로 돌아가고 모르는 구간은 남겨 두었다.",
+      "failureNarrative": "나는 서로 엇갈리는 말을 확인하지 못했다. 안전하다고 말하지 않고 주민들에게 관청 확인을 기다리자고 했다.",
+      "failureFame": -2.5
+    },
+    {
+      "eventId": "r001-07",
+      "nodeId": "yellow-fire-check",
+      "kind": "strategy",
+      "weights": {
+        "intelligence": 0.6,
+        "politics": 0.25,
+        "charisma": 0.15
+      },
+      "difficulty": 60,
+      "fameReward": 10,
+      "fameReason": "화공 전 후미 대피로 확보",
+      "success": "나는 바람 방향과 막힌 출구를 보여 주며 후미를 설득했다. 사람들이 수레를 옮겨 불이 번졌을 때 빠져나갈 통로가 남았다.",
+      "failure": "나는 수레를 옮기자고 했지만 지휘자는 자리를 지키라고 명했다. 내 연락 꾸러미만 챙겨 비상시에 빠질 위치를 확인했다.",
+      "successNarrative": "나는 바람 방향과 막힌 출구를 보여 주며 후미를 설득했다. 사람들이 수레를 옮겨 불이 번졌을 때 빠져나갈 통로가 남았다.",
+      "failureNarrative": "나는 수레를 옮기자고 했지만 지휘자는 자리를 지키라고 명했다. 내 연락 꾸러미만 챙겨 비상시에 빠질 위치를 확인했다.",
+      "failureFame": -5
+    },
+    {
+      "eventId": "r001-07",
+      "nodeId": "liu-evidence-check",
+      "kind": "strategy",
+      "weights": {
+        "intelligence": 0.6,
+        "politics": 0.25,
+        "charisma": 0.15
+      },
+      "difficulty": 66,
+      "fameReward": 10,
+      "fameReason": "노식의 군공 증거 보존",
+      "success": "나는 담당 관리와 군공 문서의 날짜와 인수인을 대조했다. 그가 사본을 확인해 주어 노식의 실제 활동을 설명할 자료를 확보했다.",
+      "failure": "나는 인수인을 확인하지 못해 사본을 증거로 받을 수 없었다. 확정되지 않은 내용을 빼고 전달 임무만 마쳤다.",
+      "successNarrative": "나는 담당 관리와 군공 문서의 날짜와 인수인을 대조했다. 그가 사본을 확인해 주어 노식의 실제 활동을 설명할 자료를 확보했다.",
+      "failureNarrative": "나는 인수인을 확인하지 못해 사본을 증거로 받을 수 없었다. 확정되지 않은 내용을 빼고 전달 임무만 마쳤다.",
+      "failureFame": -5
+    },
+    {
+      "eventId": "r001-08",
+      "nodeId": "yellow-withdraw-check",
+      "kind": "strategy",
+      "weights": {
+        "intelligence": 0.6,
+        "politics": 0.25,
+        "charisma": 0.15
+      },
+      "difficulty": 56,
+      "fameReward": 8,
+      "fameReason": "구원군 도착 전 후미 철수",
+      "success": "나는 구원 향용이 오는 길을 짚어 후미에 알렸다. 연락병들이 짐을 줄여 기주 거점으로 돌아갈 시간을 벌었다.",
+      "failure": "나는 신호를 늦게 전해 후미가 흩어졌다. 살아남은 연락병들과 기주 거점에서 다시 만났다.",
+      "successNarrative": "나는 구원 향용이 오는 길을 짚어 후미에 알렸다. 연락병들이 짐을 줄여 기주 거점으로 돌아갈 시간을 벌었다.",
+      "failureNarrative": "나는 신호를 늦게 전해 후미가 흩어졌다. 살아남은 연락병들과 기주 거점에서 다시 만났다.",
+      "failureFame": -4
+    },
+    {
+      "eventId": "r001-08",
+      "nodeId": "liu-restrain-check",
+      "kind": "relationship",
+      "weights": {
+        "charisma": 0.75,
+        "politics": 0.25
+      },
+      "difficulty": 58,
+      "fameReward": 7,
+      "fameReason": "호송군과의 충돌 방지",
+      "success": "나는 유비의 뜻을 뒤쪽 향용에 전해 길을 비웠다. 호송군과 충돌하지 않고 다음 구원 대열을 정리했다.",
+      "failure": "나는 뒤쪽에 말을 전하기 전에 소란에 밀렸다. 유비가 직접 장비를 말린 뒤에야 향용이 물러났다.",
+      "successNarrative": "나는 유비의 뜻을 뒤쪽 향용에 전해 길을 비웠다. 호송군과 충돌하지 않고 다음 구원 대열을 정리했다.",
+      "failureNarrative": "나는 뒤쪽에 말을 전하기 전에 소란에 밀렸다. 유비가 직접 장비를 말린 뒤에야 향용이 물러났다.",
+      "failureFame": -3.5
+    },
+    {
+      "eventId": "r001-08",
+      "nodeId": "evidence-submit-check",
+      "kind": "politics",
+      "weights": {
+        "politics": 0.6,
+        "intelligence": 0.3,
+        "charisma": 0.1
+      },
+      "difficulty": 60,
+      "fameReward": 18,
+      "fameReason": "증거로 노식 압송을 보류시킴",
+      "success": "나는 인수인을 함께 불러 군공 사본을 제출했다. 관리가 참소와 다른 기록을 확인해 노식의 압송을 보류했고 지휘가 유지됐다.",
+      "failure": "나는 사본을 냈지만 담당 관리의 확인을 제때 받지 못했다. 압송 명령을 멈추지 못하고 원본을 돌려받았다.",
+      "successNarrative": "나는 인수인을 함께 불러 군공 사본을 제출했다. 관리가 참소와 다른 기록을 확인해 노식의 압송을 보류했고 지휘가 유지됐다.",
+      "failureNarrative": "나는 사본을 냈지만 담당 관리의 확인을 제때 받지 못했다. 압송 명령을 멈추지 못하고 원본을 돌려받았다.",
+      "failureFame": -9
+    },
+    {
+      "eventId": "r002-01",
+      "nodeId": "yellow-roster-check",
+      "kind": "politics",
+      "weights": {
+        "politics": 0.6,
+        "intelligence": 0.3,
+        "charisma": 0.1
+      },
+      "difficulty": 46,
+      "fameReward": 6,
+      "fameReason": "황건 후미의 생존 연락망 구성",
+      "success": "나는 돌아온 연락병들과 다음 복귀 지점을 맞췄다. 흩어진 병력을 찾을 연락망을 남겨 이후 철수에 쓸 준비를 했다.",
+      "failure": "나는 이름이 다른 사람들을 대조하지 못했다. 확인한 연락 지점만 남기고 더 큰 약속은 하지 않았다.",
+      "successNarrative": "나는 돌아온 연락병들과 다음 복귀 지점을 맞췄다. 흩어진 병력을 찾을 연락망을 남겨 이후 철수에 쓸 준비를 했다.",
+      "failureNarrative": "나는 이름이 다른 사람들을 대조하지 못했다. 확인한 연락 지점만 남기고 더 큰 약속은 하지 않았다.",
+      "failureFame": -3
+    },
+    {
+      "eventId": "r002-02",
+      "nodeId": "yellow-watch-check",
+      "kind": "strategy",
+      "weights": {
+        "intelligence": 0.6,
+        "politics": 0.3,
+        "charisma": 0.1
+      },
+      "difficulty": 62,
+      "fameReward": 9,
+      "fameReason": "장보 배반 경고의 실제 근거 확보",
+      "success": "나는 후문의 이름과 교대 신호를 대조해 낯선 출입을 찾아냈다. 장보 측근에게 보고할 근거를 확보했다.",
+      "failure": "나는 교대 문서를 얻지 못해 낯선 사람을 가려내지 못했다. 확인 없는 고발은 접고 후미 경계를 맡았다.",
+      "successNarrative": "나는 후문의 이름과 교대 신호를 대조해 낯선 출입을 찾아냈다. 장보 측근에게 보고할 근거를 확보했다.",
+      "failureNarrative": "나는 교대 문서를 얻지 못해 낯선 사람을 가려내지 못했다. 확인 없는 고발은 접고 후미 경계를 맡았다.",
+      "failureFame": -4.5
+    },
+    {
+      "eventId": "r002-02",
+      "nodeId": "liu-order-check",
+      "kind": "battle",
+      "weights": {
+        "leadership": 0.7,
+        "strength": 0.3
+      },
+      "difficulty": 56,
+      "fameReward": 8,
+      "fameReason": "혼란 속 향용 재집결",
+      "success": "나는 지휘자의 재집결 지점을 확인하고 후미에 나눠 전했다. 신병 일부가 대열로 돌아와 반격 준비를 도왔다.",
+      "failure": "나는 비명에 묻혀 신호를 전하지 못했다. 후미를 따라 물러나 새 명령을 확인했다.",
+      "successNarrative": "나는 지휘자의 재집결 지점을 확인하고 후미에 나눠 전했다. 신병 일부가 대열로 돌아와 반격 준비를 도왔다.",
+      "failureNarrative": "나는 비명에 묻혀 신호를 전하지 못했다. 후미를 따라 물러나 새 명령을 확인했다.",
+      "failureFame": -4
+    },
+    {
+      "eventId": "r002-03",
+      "nodeId": "civil-relief-check",
+      "kind": "relationship",
+      "weights": {
+        "charisma": 0.7,
+        "politics": 0.3
+      },
+      "difficulty": 44,
+      "fameReward": 5,
+      "fameReason": "부상자 구호 인계",
+      "success": "나는 구호소 담당자와 인수 인원을 확인해 수레를 보냈다. 부상자들이 쉴 자리를 얻었고 상인과의 연락도 이어졌다.",
+      "failure": "나는 구호소가 꽉 찬 것을 뒤늦게 알았다. 짐을 내려 임시로 쉴 자리를 만들고 다음 인수를 기다렸다.",
+      "successNarrative": "나는 구호소 담당자와 인수 인원을 확인해 수레를 보냈다. 부상자들이 쉴 자리를 얻었고 상인과의 연락도 이어졌다.",
+      "failureNarrative": "나는 구호소가 꽉 찬 것을 뒤늦게 알았다. 짐을 내려 임시로 쉴 자리를 만들고 다음 인수를 기다렸다.",
+      "failureFame": -2.5
+    },
+    {
+      "eventId": "r002-03",
+      "nodeId": "liu-passage-check",
+      "kind": "politics",
+      "weights": {
+        "politics": 0.6,
+        "intelligence": 0.3,
+        "charisma": 0.1
+      },
+      "difficulty": 61,
+      "fameReward": 12,
+      "fameReason": "항복자 인계 증거와 생존 통로 확보",
+      "success": "나는 통로에서 무장 해제를 확인하고 인수 관리의 이름을 남겼다. 확인된 사람 일부가 구호 지점으로 넘어가 살길을 얻었다.",
+      "failure": "나는 인수 지휘자를 확인하지 못해 통로의 안전을 보장하지 못했다. 유비에게 보고하고 사람들을 더 내보내지 않았다.",
+      "successNarrative": "나는 통로에서 무장 해제를 확인하고 인수 관리의 이름을 남겼다. 확인된 사람 일부가 구호 지점으로 넘어가 살길을 얻었다.",
+      "failureNarrative": "나는 인수 지휘자를 확인하지 못해 통로의 안전을 보장하지 못했다. 유비에게 보고하고 사람들을 더 내보내지 않았다.",
+      "failureFame": -6
+    },
+    {
+      "eventId": "r002-03",
+      "nodeId": "yellow-network-check",
+      "kind": "strategy",
+      "weights": {
+        "intelligence": 0.6,
+        "politics": 0.3,
+        "charisma": 0.1
+      },
+      "difficulty": 60,
+      "fameReward": 10,
+      "fameReason": "황건 잔존 연락망 보존",
+      "success": "나는 수송병들을 모아 관군의 유인로 밖으로 우회했다. 일부 연락망이 살아남아 황건 잔존 세력으로 남았다.",
+      "failure": "나는 우회로를 확인하지 못해 사람들을 흩어 보냈다. 부대와 연락이 끊긴 뒤 두건을 내려놓고 피난민으로 남았다.",
+      "successNarrative": "나는 수송병들을 모아 관군의 유인로 밖으로 우회했다. 일부 연락망이 살아남아 황건 잔존 세력으로 남았다.",
+      "failureNarrative": "나는 우회로를 확인하지 못해 사람들을 흩어 보냈다. 부대와 연락이 끊긴 뒤 두건을 내려놓고 피난민으로 남았다.",
+      "failureFame": -5
+    },
+    {
+      "eventId": "r002-03",
+      "nodeId": "yellow-warned-save-check",
+      "kind": "strategy",
+      "weights": {
+        "intelligence": 0.6,
+        "politics": 0.3,
         "charisma": 0.1
       },
       "difficulty": 70,
-      "successFame": 14,
-      "failureFame": -7,
-      "basis": "군공 증거가 소실되지 않게 사본 전달"
+      "fameReward": 20,
+      "fameReason": "장보 생존과 황건 연락망 보존",
+      "success": "나는 확인한 출입 기록을 측근에게 넘기고 후문 통로를 안내했다. 장보가 거처를 옮겨 배반자의 공격을 피하고 일부 연락망을 보존했다.",
+      "failure": "나는 기록을 전달했지만 측근의 결정을 받기 전에 문이 닫혔다. 장보를 빼내지 못하고 후미 연락병들만 완성 길목으로 철수시켰다.",
+      "successNarrative": "나는 확인한 출입 기록을 측근에게 넘기고 후문 통로를 안내했다. 장보가 거처를 옮겨 배반자의 공격을 피하고 일부 연락망을 보존했다.",
+      "failureNarrative": "나는 기록을 전달했지만 측근의 결정을 받기 전에 문이 닫혔다. 장보를 빼내지 못하고 후미 연락병들만 완성 길목으로 철수시켰다.",
+      "failureFame": -10
     },
     {
-      "eventId": "r001-07",
-      "nodeId": "scene",
-      "choiceId": "b",
+      "eventId": "r002-05",
+      "nodeId": "local-witness-check",
+      "kind": "relationship",
       "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
+        "charisma": 0.7,
+        "politics": 0.3
       },
-      "difficulty": 45,
-      "successFame": 5,
-      "failureFame": -2.5,
-      "basis": "좌풍의 요구를 아군에 보고"
+      "difficulty": 55,
+      "fameReward": 7,
+      "fameReason": "현지 민간 증언의 실제 확인",
+      "success": "나는 노인과 아전에게 서로 확인할 수 있는 말만 적자고 청했다. 두 사람이 이름을 남겨 모함을 반박할 증언을 확보했다.",
+      "failure": "나는 이름을 남겨 달라는 부탁을 거절당했다. 사람들을 위험하게 만들지 않으려고 익명 소문을 증거로 제출하지 않았다.",
+      "successNarrative": "나는 노인과 아전에게 서로 확인할 수 있는 말만 적자고 청했다. 두 사람이 이름을 남겨 모함을 반박할 증언을 확보했다.",
+      "failureNarrative": "나는 이름을 남겨 달라는 부탁을 거절당했다. 사람들을 위험하게 만들지 않으려고 익명 소문을 증거로 제출하지 않았다.",
+      "failureFame": -3.5
     },
     {
-      "eventId": "r001-08",
-      "nodeId": "evidence",
-      "choiceId": "a",
+      "eventId": "r002-05",
+      "nodeId": "clerk-proof-check",
+      "kind": "politics",
       "weights": {
-        "intelligence": 0.45,
-        "charisma": 0.4,
-        "politics": 0.15
+        "politics": 0.6,
+        "intelligence": 0.3,
+        "charisma": 0.1
       },
-      "difficulty": 74,
-      "successFame": 10,
-      "failureFame": -5,
-      "basis": "동탁의 패주를 공개 증언해 영웅의 대응을 바꿈"
+      "difficulty": 58,
+      "fameReward": 9,
+      "fameReason": "독우 모함에 반박할 실제 진술 확보",
+      "success": "나는 아전이 불린 시각과 문서 인수를 대조하고 당사자의 확인을 받았다. 독우의 모함에 반박할 자료를 확보했다.",
+      "failure": "나는 아전들의 확인을 받지 못했다. 근거 없는 문장을 빼고 내가 직접 본 시각만 기록했다.",
+      "successNarrative": "나는 아전이 불린 시각과 문서 인수를 대조하고 당사자의 확인을 받았다. 독우의 모함에 반박할 자료를 확보했다.",
+      "failureNarrative": "나는 아전들의 확인을 받지 못했다. 근거 없는 문장을 빼고 내가 직접 본 시각만 기록했다.",
+      "failureFame": -4.5
     },
     {
-      "eventId": "r001-08",
-      "nodeId": "evidence",
-      "choiceId": "b",
+      "eventId": "r002-06",
+      "nodeId": "proof-submit-check",
+      "kind": "politics",
       "weights": {
-        "charisma": 0.55,
-        "politics": 0.35,
-        "intelligence": 0.1
+        "politics": 0.6,
+        "intelligence": 0.3,
+        "charisma": 0.1
       },
-      "difficulty": 57,
-      "successFame": 6,
-      "failureFame": -3,
-      "basis": "장비의 충돌을 말려 이탈을 도움"
+      "difficulty": 62,
+      "fameReward": 20,
+      "fameReason": "독우 갈등을 증거로 해결해 유비 관직 유지",
+      "success": "나는 인수인과 함께 진술을 제출해 현청의 조사를 요구했다. 담당자가 모함의 모순을 확인하자 유비가 장비를 멈추고 관직을 지켰다.",
+      "failure": "나는 인수인을 데려왔지만 독우의 문을 열게 하지 못했다. 장비의 매질을 막지 못하고 사람들을 뒤로 물렸다.",
+      "successNarrative": "나는 인수인과 함께 진술을 제출해 현청의 조사를 요구했다. 담당자가 모함의 모순을 확인하자 유비가 장비를 멈추고 관직을 지켰다.",
+      "failureNarrative": "나는 인수인을 데려왔지만 독우의 문을 열게 하지 못했다. 장비의 매질을 막지 못하고 사람들을 뒤로 물렸다.",
+      "failureFame": -10
     },
     {
-      "eventId": "r001-08",
-      "nodeId": "scene",
-      "choiceId": "a",
+      "eventId": "r002-08",
+      "nodeId": "capital-warning-check",
+      "kind": "politics",
       "weights": {
-        "intelligence": 0.45,
-        "charisma": 0.4,
-        "politics": 0.15
+        "politics": 0.6,
+        "intelligence": 0.3,
+        "charisma": 0.1
       },
-      "difficulty": 74,
-      "successFame": 10,
-      "failureFame": -5,
-      "basis": "동탁의 패주를 공개 증언해 영웅의 대응을 바꿈"
+      "difficulty": 64,
+      "fameReward": 10,
+      "fameReason": "하진 측 문서 창구의 실제 접근 허가",
+      "success": "나는 외군의 입경과 궁문 경비가 갈라지는 위험을 정리해 전달했다. 담당 관리가 내 설명을 확인하고 다음 소환 문서의 진위를 대조할 전달 자리를 허락했다.",
+      "failure": "나는 문서를 냈지만 담당 관리의 확인을 받지 못했다. 궁문에 들어갈 허락 없이 민간 인수처로 돌아왔다.",
+      "successNarrative": "나는 외군의 입경과 궁문 경비가 갈라지는 위험을 정리해 전달했다. 담당 관리가 내 설명을 확인하고 다음 소환 문서의 진위를 대조할 전달 자리를 허락했다.",
+      "failureNarrative": "나는 문서를 냈지만 담당 관리의 확인을 받지 못했다. 궁문에 들어갈 허락 없이 민간 인수처로 돌아왔다.",
+      "failureFame": -5
     },
     {
-      "eventId": "r001-08",
-      "nodeId": "scene",
-      "choiceId": "b",
+      "eventId": "r002-08",
+      "nodeId": "capital-contact-check",
+      "kind": "relationship",
       "weights": {
-        "charisma": 0.55,
-        "politics": 0.35,
-        "intelligence": 0.1
+        "charisma": 0.7,
+        "politics": 0.3
       },
-      "difficulty": 57,
-      "successFame": 6,
-      "failureFame": -3,
-      "basis": "장비의 충돌을 말려 이탈을 도움"
+      "difficulty": 52,
+      "fameReward": 5,
+      "fameReason": "원소 연락 담당과 실제 접촉",
+      "success": "나는 물자 인수 절차를 확인하며 원소의 연락 담당과 이름을 나눴다. 그는 다음 문서 전달 때 찾아올 창구를 알려 줬다.",
+      "failure": "나는 보증 없는 인수 요청을 거절당했다. 원소를 만났다고 꾸미지 않고 민간 상단으로 돌아왔다.",
+      "successNarrative": "나는 물자 인수 절차를 확인하며 원소의 연락 담당과 이름을 나눴다. 그는 다음 문서 전달 때 찾아올 창구를 알려 줬다.",
+      "failureNarrative": "나는 보증 없는 인수 요청을 거절당했다. 원소를 만났다고 꾸미지 않고 민간 상단으로 돌아왔다.",
+      "failureFame": -2.5
     },
     {
-      "eventId": "r002-01",
-      "nodeId": "scene",
-      "choiceId": "a",
+      "eventId": "r003-01",
+      "nodeId": "gate-verify-check",
+      "kind": "politics",
       "weights": {
-        "politics": 0.5,
-        "intelligence": 0.4,
-        "leadership": 0.1
-      },
-      "difficulty": 60,
-      "successFame": 8,
-      "failureFame": -4,
-      "basis": "패전 경과를 지휘부에 공식 보고"
-    },
-    {
-      "eventId": "r002-01",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.55,
-        "politics": 0.35,
-        "intelligence": 0.1
-      },
-      "difficulty": 43,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "유비 측 신원 확인 지원"
-    },
-    {
-      "eventId": "r002-02",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "leadership": 0.45,
-        "intelligence": 0.35,
-        "charisma": 0.2
-      },
-      "difficulty": 68,
-      "successFame": 12,
-      "failureFame": -6,
-      "basis": "요술에 흔들린 병력의 재집결 방식을 변경"
-    },
-    {
-      "eventId": "r002-02",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "leadership": 1.5,
-        "strength": 1
-      },
-      "difficulty": 56,
-      "successFame": 6,
-      "failureFame": -3,
-      "basis": "방어 대열 유지"
-    },
-    {
-      "eventId": "r002-03",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "intelligence": 0.45,
-        "charisma": 0.4,
-        "politics": 0.15
+        "politics": 0.6,
+        "intelligence": 0.3,
+        "charisma": 0.1
       },
       "difficulty": 72,
-      "successFame": 14,
-      "failureFame": -7,
-      "basis": "무장 해제 협상의 성패를 바꿈"
+      "fameReward": 24,
+      "fameReason": "실제 소환 문서 모순으로 하진 입궁 보류",
+      "success": "나는 소환장과 호위 인수 지점이 맞지 않는 부분을 관리 앞에서 대조했다. 하진이 호위를 밖에 남기지 않고 소환을 미뤄 궁 안의 함정을 피했다.",
+      "failure": "나는 문서의 모순을 설명했지만 하진의 발걸음을 멈추지 못했다. 궁문이 닫히자 관리들과 함께 바깥으로 물러났다.",
+      "successNarrative": "나는 소환장과 호위 인수 지점이 맞지 않는 부분을 관리 앞에서 대조했다. 하진이 호위를 밖에 남기지 않고 소환을 미뤄 궁 안의 함정을 피했다.",
+      "failureNarrative": "나는 문서의 모순을 설명했지만 하진의 발걸음을 멈추지 못했다. 궁문이 닫히자 관리들과 함께 바깥으로 물러났다.",
+      "failureFame": -12
     },
     {
-      "eventId": "r002-03",
-      "nodeId": "scene",
-      "choiceId": "b",
+      "eventId": "r003-02",
+      "nodeId": "capital-rescue-check",
+      "kind": "relationship",
       "weights": {
-        "leadership": 1,
-        "strength": 1.5
+        "charisma": 0.8,
+        "politics": 0.2
+      },
+      "difficulty": 62,
+      "fameReward": 10,
+      "fameReason": "무차별 체포에서 민간인 인계와 연락 경로 확보",
+      "success": "나는 민간 인수 담당을 찾아 붙잡힌 사람의 신원을 대조했다. 일부를 대기소로 옮기고 궁 밖 연락 지점을 알게 됐다.",
+      "failure": "나는 인수 담당에게 닿지 못해 사람을 빼내지 못했다. 군사들과 충돌하지 않고 불길 밖 대기소로 물러났다.",
+      "successNarrative": "나는 민간 인수 담당을 찾아 붙잡힌 사람의 신원을 대조했다. 일부를 대기소로 옮기고 궁 밖 연락 지점을 알게 됐다.",
+      "failureNarrative": "나는 인수 담당에게 닿지 못해 사람을 빼내지 못했다. 군사들과 충돌하지 않고 불길 밖 대기소로 물러났다.",
+      "failureFame": -5
+    },
+    {
+      "eventId": "r003-02",
+      "nodeId": "contained-record-check",
+      "kind": "politics",
+      "weights": {
+        "politics": 0.6,
+        "intelligence": 0.3,
+        "charisma": 0.1
+      },
+      "difficulty": 50,
+      "fameReward": 6,
+      "fameReason": "궁문 혼란 속 민간인 인계 기록",
+      "success": "나는 인수 담당자의 이름과 통행 지점을 확인했다. 피난민 일부가 오인 체포 없이 거점을 빠져나갔다.",
+      "failure": "나는 담당자를 확인하지 못해 통행을 보장할 수 없었다. 사람들을 아직 검문이 없는 민간 대기소로 물렸다.",
+      "successNarrative": "나는 인수 담당자의 이름과 통행 지점을 확인했다. 피난민 일부가 오인 체포 없이 거점을 빠져나갔다.",
+      "failureNarrative": "나는 담당자를 확인하지 못해 통행을 보장할 수 없었다. 사람들을 아직 검문이 없는 민간 대기소로 물렸다.",
+      "failureFame": -3
+    },
+    {
+      "eventId": "r003-03",
+      "nodeId": "night-road-escort-check",
+      "kind": "strategy",
+      "weights": {
+        "intelligence": 0.6,
+        "politics": 0.25,
+        "charisma": 0.15
+      },
+      "difficulty": 68,
+      "fameReward": 18,
+      "fameReason": "황제 일행을 실제 호위에 먼저 인계",
+      "success": "나는 관리와 함께 길목의 증언을 맞춰 어린 황제 일행을 찾았다. 확인된 호위에 인계해 동탁군을 만나기 전에 신변을 확보했다.",
+      "failure": "나는 행인의 말이 엇갈려 아이들을 찾지 못했다. 관리에게 확인 못 한 길을 알리고 민간 거점으로 돌아왔다.",
+      "successNarrative": "나는 관리와 함께 길목의 증언을 맞춰 어린 황제 일행을 찾았다. 확인된 호위에 인계해 동탁군을 만나기 전에 신변을 확보했다.",
+      "failureNarrative": "나는 행인의 말이 엇갈려 아이들을 찾지 못했다. 관리에게 확인 못 한 길을 알리고 민간 거점으로 돌아왔다.",
+      "failureFame": -9
+    },
+    {
+      "eventId": "r003-04",
+      "nodeId": "capital-ding-check",
+      "kind": "relationship",
+      "weights": {
+        "charisma": 0.8,
+        "politics": 0.2
+      },
+      "difficulty": 52,
+      "fameReward": 5,
+      "fameReason": "정원 군영의 실제 접촉과 지원 창구",
+      "success": "나는 정원 군영의 인수 담당에게 계약한 짐을 넘겼다. 담당자가 이름을 확인하고 다음 병력 편성 때 지원 의사를 들을 자리를 마련해 줬다.",
+      "failure": "나는 계약 인수 확인을 받지 못해 군영 접촉이 막혔다. 지원 허가 없이 민간 거점으로 돌아왔다.",
+      "successNarrative": "나는 정원 군영의 인수 담당에게 계약한 짐을 넘겼다. 담당자가 이름을 확인하고 다음 병력 편성 때 지원 의사를 들을 자리를 마련해 줬다.",
+      "failureNarrative": "나는 계약 인수 확인을 받지 못해 군영 접촉이 막혔다. 지원 허가 없이 민간 거점으로 돌아왔다.",
+      "failureFame": -2.5
+    },
+    {
+      "eventId": "r003-04",
+      "nodeId": "capital-dong-check",
+      "kind": "relationship",
+      "weights": {
+        "charisma": 0.8,
+        "politics": 0.2
+      },
+      "difficulty": 50,
+      "fameReward": 5,
+      "fameReason": "동탁 군영 실제 접촉과 지원 창구",
+      "success": "나는 동탁군 담당자와 물자 인수를 마쳤다. 그는 내 이름을 기록하고 다음 편성 때 지원 의사를 들을 창구를 알려 줬다.",
+      "failure": "나는 보증 없는 계약으로 경계받아 인수를 마치지 못했다. 동탁을 만났다고 주장하지 않고 물러났다.",
+      "successNarrative": "나는 동탁군 담당자와 물자 인수를 마쳤다. 그는 내 이름을 기록하고 다음 편성 때 지원 의사를 들을 창구를 알려 줬다.",
+      "failureNarrative": "나는 보증 없는 계약으로 경계받아 인수를 마치지 못했다. 동탁을 만났다고 주장하지 않고 물러났다.",
+      "failureFame": -2.5
+    },
+    {
+      "eventId": "r003-05",
+      "nodeId": "dong-offer-join-check",
+      "kind": "relationship",
+      "weights": {
+        "charisma": 0.8,
+        "politics": 0.2
+      },
+      "difficulty": 58,
+      "fameReward": 8,
+      "fameReason": "동탁군 정식 임관",
+      "success": "나는 맡을 일을 밝히고 동탁군에 지원했다. 담당자가 군적에 이름을 올려 동탁 소속 병사가 됐다.",
+      "failure": "나는 지원했지만 군적 인수를 거절당했다. 소속을 얻지 못한 채 민간 인수처로 돌아왔다.",
+      "successNarrative": "나는 맡을 일을 밝히고 동탁군에 지원했다. 담당자가 군적에 이름을 올려 동탁 소속 병사가 됐다.",
+      "failureNarrative": "나는 지원했지만 군적 인수를 거절당했다. 소속을 얻지 못한 채 민간 인수처로 돌아왔다.",
+      "failureFame": -4
+    },
+    {
+      "eventId": "r003-05",
+      "nodeId": "ding-offer-join-check",
+      "kind": "relationship",
+      "weights": {
+        "charisma": 0.8,
+        "politics": 0.2
+      },
+      "difficulty": 58,
+      "fameReward": 8,
+      "fameReason": "정원군 정식 임관",
+      "success": "나는 연락과 경계 보조를 맡겠다고 지원했다. 정원군 담당자가 군적에 이름을 올려 정원 소속 병사가 됐다.",
+      "failure": "나는 지원했지만 군적을 맡길 만큼 신뢰를 얻지 못했다. 정원군에 들어가지 못한 채 민간 거점으로 돌아왔다.",
+      "successNarrative": "나는 연락과 경계 보조를 맡겠다고 지원했다. 정원군 담당자가 군적에 이름을 올려 정원 소속 병사가 됐다.",
+      "failureNarrative": "나는 지원했지만 군적을 맡길 만큼 신뢰를 얻지 못했다. 정원군에 들어가지 못한 채 민간 거점으로 돌아왔다.",
+      "failureFame": -4
+    },
+    {
+      "eventId": "r003-06",
+      "nodeId": "ding-rear-check",
+      "kind": "politics",
+      "weights": {
+        "politics": 0.6,
+        "intelligence": 0.3,
+        "charisma": 0.1
+      },
+      "difficulty": 48,
+      "fameReward": 6,
+      "fameReason": "정원 막사의 경계 담당과 실제 인수",
+      "success": "나는 막사와 선봉의 복귀 신호를 맞췄다. 전투 뒤 정원의 경계 담당과 이름을 나눠 회유 사절을 확인할 자리를 얻었다.",
+      "failure": "나는 복귀 신호를 제때 맞추지 못했다. 막사 담당자와의 인수 없이 일반 대열로 돌아왔다.",
+      "successNarrative": "나는 막사와 선봉의 복귀 신호를 맞췄다. 전투 뒤 정원의 경계 담당과 이름을 나눠 회유 사절을 확인할 자리를 얻었다.",
+      "failureNarrative": "나는 복귀 신호를 제때 맞추지 못했다. 막사 담당자와의 인수 없이 일반 대열로 돌아왔다.",
+      "failureFame": -3
+    },
+    {
+      "eventId": "r003-06",
+      "nodeId": "dong-duel-check",
+      "kind": "duel",
+      "weights": {
+        "strength": 1
+      },
+      "difficulty": 50,
+      "fameReward": 30,
+      "fameReason": "실제 무력100 여포와의 생사 일기토",
+      "opponentId": "rtk14-0987",
+      "success": "나는 여포의 창을 비껴 받아 말에서 떨어뜨리고 포박했다. 동탁군이 그를 인수해 이숙의 회유 대신 생포가 전장의 결말이 됐다.",
+      "failure": "나는 여포의 창을 막지 못했다. 전장에서 쓰러진 뒤 더는 다음 사건으로 나아가지 못했다.",
+      "successNarrative": "나는 여포의 창을 비껴 받아 말에서 떨어뜨리고 포박했다. 동탁군이 그를 인수해 이숙의 회유 대신 생포가 전장의 결말이 됐다.",
+      "failureNarrative": "나는 여포의 창을 막지 못했다. 전장에서 쓰러진 뒤 더는 다음 사건으로 나아가지 못했다.",
+      "failureFame": -15
+    },
+    {
+      "eventId": "r003-06",
+      "nodeId": "dong-retreat-check",
+      "kind": "battle",
+      "weights": {
+        "leadership": 0.65,
+        "strength": 0.35
+      },
+      "difficulty": 64,
+      "fameReward": 9,
+      "fameReason": "여포 앞 동탁군 후미 퇴각 정리",
+      "success": "나는 후미를 모아 여포의 진로에서 물렸다. 동탁군은 패퇴했지만 맡은 연락병들이 복귀할 길을 남겼다.",
+      "failure": "나는 여포의 돌격에 대열을 잡지 못했다. 남은 병사들과 군영으로 달아나 다시 인수를 받았다.",
+      "successNarrative": "나는 후미를 모아 여포의 진로에서 물렸다. 동탁군은 패퇴했지만 맡은 연락병들이 복귀할 길을 남겼다.",
+      "failureNarrative": "나는 여포의 돌격에 대열을 잡지 못했다. 남은 병사들과 군영으로 달아나 다시 인수를 받았다.",
+      "failureFame": -4.5
+    },
+    {
+      "eventId": "r003-07",
+      "nodeId": "dong-receipt-check",
+      "kind": "politics",
+      "weights": {
+        "politics": 0.6,
+        "intelligence": 0.3,
+        "charisma": 0.1
+      },
+      "difficulty": 55,
+      "fameReward": 7,
+      "fameReason": "동탁군 회유 물자의 실제 인수",
+      "success": "나는 선물과 복귀 연락을 대조해 이숙 측 인수를 확인했다. 동탁군의 연락 담당에게 보고해 다음 군영 출입을 맡을 신뢰를 얻었다.",
+      "failure": "나는 복귀 연락을 확인하지 못해 회유 완료로 보고하지 않았다. 군영 인수만 마치고 추가 출입 권한 없이 돌아왔다.",
+      "successNarrative": "나는 선물과 복귀 연락을 대조해 이숙 측 인수를 확인했다. 동탁군의 연락 담당에게 보고해 다음 군영 출입을 맡을 신뢰를 얻었다.",
+      "failureNarrative": "나는 복귀 연락을 확인하지 못해 회유 완료로 보고하지 않았다. 군영 인수만 마치고 추가 출입 권한 없이 돌아왔다.",
+      "failureFame": -3.5
+    },
+    {
+      "eventId": "r003-07",
+      "nodeId": "guarded-warn-check",
+      "kind": "strategy",
+      "weights": {
+        "intelligence": 0.6,
+        "politics": 0.25,
+        "charisma": 0.15
+      },
+      "difficulty": 60,
+      "fameReward": 10,
+      "fameReason": "실제 반입 기록으로 정원 야간 경비 강화",
+      "success": "나는 반입 기록과 이숙의 출입을 경계 담당에게 보고했다. 정원은 막사 교대를 바꾸고 야간에 혼자 사람을 받지 않기로 했다.",
+      "failure": "나는 반입 기록을 확보하지 못해 경보를 받아들여지게 하지 못했다. 일반 경계 자리로 돌아와 막사 밖을 지켰다.",
+      "successNarrative": "나는 반입 기록과 이숙의 출입을 경계 담당에게 보고했다. 정원은 막사 교대를 바꾸고 야간에 혼자 사람을 받지 않기로 했다.",
+      "failureNarrative": "나는 반입 기록을 확보하지 못해 경보를 받아들여지게 하지 못했다. 일반 경계 자리로 돌아와 막사 밖을 지켰다.",
+      "failureFame": -5
+    },
+    {
+      "eventId": "r003-08",
+      "nodeId": "guarded-save-check",
+      "kind": "strategy",
+      "weights": {
+        "intelligence": 0.6,
+        "politics": 0.25,
+        "charisma": 0.15
+      },
+      "difficulty": 68,
+      "fameReward": 24,
+      "fameReason": "경계 준비를 이용한 정원 구출과 독립 군영 유지",
+      "success": "나는 교대 호위와 뒷문 인수를 맞춰 정원을 다른 막사로 옮겼다. 여포가 독대할 기회를 놓치면서 정원의 생존과 독립 군영이 남았다.",
+      "failure": "나는 뒷문 호위와 시간을 맞추지 못했다. 여포의 침입을 막지 못하고 살아남은 병사들과 막사 밖으로 물러났다.",
+      "successNarrative": "나는 교대 호위와 뒷문 인수를 맞춰 정원을 다른 막사로 옮겼다. 여포가 독대할 기회를 놓치면서 정원의 생존과 독립 군영이 남았다.",
+      "failureNarrative": "나는 뒷문 호위와 시간을 맞추지 못했다. 여포의 침입을 막지 못하고 살아남은 병사들과 막사 밖으로 물러났다.",
+      "failureFame": -12
+    },
+    {
+      "eventId": "r004-01",
+      "nodeId": "yuan-route-check",
+      "kind": "politics",
+      "weights": {
+        "politics": 0.6,
+        "intelligence": 0.3,
+        "charisma": 0.1
+      },
+      "difficulty": 64,
+      "fameReward": 10,
+      "fameReason": "원씨 일부 가족의 실제 피신 준비",
+      "success": "나는 가족 짐을 받을 민간 인수처를 따로 확인했다. 일부가 미리 수도를 떠날 길을 얻었고 아직 남은 사람들의 이름도 구분해 두었다.",
+      "failure": "나는 확인된 인수처를 구하지 못했다. 가족이 안전해졌다고 보고하지 않고 원소 측에 미확인으로 남겼다.",
+      "successNarrative": "나는 가족 짐을 받을 민간 인수처를 따로 확인했다. 일부가 미리 수도를 떠날 길을 얻었고 아직 남은 사람들의 이름도 구분해 두었다.",
+      "failureNarrative": "나는 확인된 인수처를 구하지 못했다. 가족이 안전해졌다고 보고하지 않고 원소 측에 미확인으로 남겼다.",
+      "failureFame": -5
+    },
+    {
+      "eventId": "r004-02",
+      "nodeId": "dong-protect-check",
+      "kind": "politics",
+      "weights": {
+        "politics": 0.6,
+        "intelligence": 0.3,
+        "charisma": 0.1
+      },
+      "difficulty": 66,
+      "fameReward": 14,
+      "fameReason": "신병 인수 절차로 정관의 즉시 처형 저지",
+      "success": "나는 신병 인수의 담당자와 명령을 대조하자고 요구했다. 현장 인수가 멈춰 정관이 처형 장소로 끌려가기 전에 빠져나갈 틈이 생겼다.",
+      "failure": "나는 인수 확인을 요구했지만 군사들이 명령을 앞세워 밀어냈다. 정관의 처형을 막지 못하고 담당자 이름만 남겼다.",
+      "successNarrative": "나는 신병 인수의 담당자와 명령을 대조하자고 요구했다. 현장 인수가 멈춰 정관이 처형 장소로 끌려가기 전에 빠져나갈 틈이 생겼다.",
+      "failureNarrative": "나는 인수 확인을 요구했지만 군사들이 명령을 앞세워 밀어냈다. 정관의 처형을 막지 못하고 담당자 이름만 남겼다.",
+      "failureFame": -7
+    },
+    {
+      "eventId": "r004-02",
+      "nodeId": "ding-petition-check",
+      "kind": "politics",
+      "weights": {
+        "politics": 0.6,
+        "intelligence": 0.3,
+        "charisma": 0.1
+      },
+      "difficulty": 72,
+      "fameReward": 30,
+      "fameReason": "정원 독립 군영의 보증으로 폐립 보류",
+      "success": "나는 정원의 보증과 대신들의 확인을 맞춰 청원을 전달했다. 독립 군영의 존재가 반대를 뒷받침해 폐립이 보류됐다.",
+      "failure": "나는 대신들의 인수를 맞추지 못해 보증을 제때 전달하지 못했다. 정원군은 남았지만 이번 폐립 절차를 막지 못했다.",
+      "successNarrative": "나는 정원의 보증과 대신들의 확인을 맞춰 청원을 전달했다. 독립 군영의 존재가 반대를 뒷받침해 폐립이 보류됐다.",
+      "failureNarrative": "나는 대신들의 인수를 맞추지 못해 보증을 제때 전달하지 못했다. 정원군은 남았지만 이번 폐립 절차를 막지 못했다.",
+      "failureFame": -15
+    },
+    {
+      "eventId": "r004-02",
+      "nodeId": "counterweight-petition-check",
+      "kind": "politics",
+      "weights": {
+        "politics": 0.6,
+        "intelligence": 0.3,
+        "charisma": 0.1
+      },
+      "difficulty": 74,
+      "fameReward": 30,
+      "fameReason": "독립 군권을 근거로 황제 폐립 보류",
+      "success": "나는 남은 지휘 계통의 확인을 붙여 폐립 반대 청원을 전달했다. 대신들이 군사적 보증을 확인해 폐립 절차를 보류하고 유변의 재위를 유지했다.",
+      "failure": "나는 보증을 한 문서로 모으지 못했다. 청원이 동탁의 군사적 압박을 멈추지 못해 폐립 절차가 진행됐다.",
+      "successNarrative": "나는 남은 지휘 계통의 확인을 붙여 폐립 반대 청원을 전달했다. 대신들이 군사적 보증을 확인해 폐립 절차를 보류하고 유변의 재위를 유지했다.",
+      "failureNarrative": "나는 보증을 한 문서로 모으지 못했다. 청원이 동탁의 군사적 압박을 멈추지 못해 폐립 절차가 진행됐다.",
+      "failureFame": -15
+    },
+    {
+      "eventId": "r004-03",
+      "nodeId": "dong-ledger-check",
+      "kind": "politics",
+      "weights": {
+        "politics": 0.6,
+        "intelligence": 0.3,
+        "charisma": 0.1
       },
       "difficulty": 54,
-      "successFame": 6,
-      "failureFame": -3,
-      "basis": "완성 전선의 퇴로 신호 전달"
+      "fameReward": 6,
+      "fameReason": "약탈 물자 인수 기록 보존",
+      "success": "나는 민가 물자의 수량과 가져간 담당자를 기록했다. 일부 주민이 반환을 청할 근거를 얻었지만 왕실 처분을 바꿨다고 주장하지 않았다.",
+      "failure": "나는 담당자 이름을 확인하지 못했다. 모르는 수량을 채우지 않고 확인한 짐만 남겼다.",
+      "successNarrative": "나는 민가 물자의 수량과 가져간 담당자를 기록했다. 일부 주민이 반환을 청할 근거를 얻었지만 왕실 처분을 바꿨다고 주장하지 않았다.",
+      "failureNarrative": "나는 담당자 이름을 확인하지 못했다. 모르는 수량을 채우지 않고 확인한 짐만 남겼다.",
+      "failureFame": -3
     },
     {
-      "eventId": "r002-04",
-      "nodeId": "scene",
-      "choiceId": "a",
+      "eventId": "r004-03",
+      "nodeId": "royal-save-check",
+      "kind": "strategy",
       "weights": {
-        "politics": 0.55,
-        "intelligence": 0.35,
+        "intelligence": 0.6,
+        "politics": 0.25,
+        "charisma": 0.15
+      },
+      "difficulty": 72,
+      "fameReward": 24,
+      "fameReason": "실제 왕실 호위 접촉으로 폐제 일가 구출",
+      "success": "나는 기존 호위에게 술과 신병 인수 변경을 대조해 보였다. 호위가 거처를 비우고 폐제 일가를 다른 보호처로 옮겨 즉시 살해를 피했다.",
+      "failure": "나는 변경된 인수 담당을 확인하지 못해 호위를 움직이지 못했다. 폐제 일가의 살해를 막지 못하고 관리에게 확인 실패를 남겼다.",
+      "successNarrative": "나는 기존 호위에게 술과 신병 인수 변경을 대조해 보였다. 호위가 거처를 비우고 폐제 일가를 다른 보호처로 옮겨 즉시 살해를 피했다.",
+      "failureNarrative": "나는 변경된 인수 담당을 확인하지 못해 호위를 움직이지 못했다. 폐제 일가의 살해를 막지 못하고 관리에게 확인 실패를 남겼다.",
+      "failureFame": -12
+    },
+    {
+      "eventId": "r004-04",
+      "nodeId": "dong-watch-check",
+      "kind": "politics",
+      "weights": {
+        "politics": 0.6,
+        "intelligence": 0.3,
         "charisma": 0.1
       },
-      "difficulty": 59,
-      "successFame": 10,
-      "failureFame": -5,
-      "basis": "군공 증언을 현청 기록으로 남김"
+      "difficulty": 52,
+      "fameReward": 6,
+      "fameReason": "동탁 거처의 실제 방문 기록",
+      "success": "나는 선물 인수와 출입 시간을 맞춰 거처 담당에게 넘겼다. 방문객의 귀환 여부를 확인할 기록을 남겼다.",
+      "failure": "나는 담당자끼리 다른 시간을 맞추지 못했다. 확인되지 않은 귀환을 보고하지 않고 인수처에 남았다.",
+      "successNarrative": "나는 선물 인수와 출입 시간을 맞춰 거처 담당에게 넘겼다. 방문객의 귀환 여부를 확인할 기록을 남겼다.",
+      "failureNarrative": "나는 담당자끼리 다른 시간을 맞추지 못했다. 확인되지 않은 귀환을 보고하지 않고 인수처에 남았다.",
+      "failureFame": -3
     },
     {
-      "eventId": "r002-04",
-      "nodeId": "scene",
-      "choiceId": "b",
+      "eventId": "r004-04",
+      "nodeId": "cao-contact-contact-check",
+      "kind": "politics",
       "weights": {
-        "charisma": 0.55,
-        "politics": 0.35,
-        "intelligence": 0.1
-      },
-      "difficulty": 42,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "초기 현청 업무 지원"
-    },
-    {
-      "eventId": "r002-05",
-      "nodeId": "merit",
-      "choiceId": "a",
-      "weights": {
-        "politics": 0.55,
-        "intelligence": 0.35,
-        "charisma": 0.1
-      },
-      "difficulty": 69,
-      "successFame": 12,
-      "failureFame": -6,
-      "basis": "강요 진술 사본이라는 후속 구출 근거 확보"
-    },
-    {
-      "eventId": "r002-05",
-      "nodeId": "merit",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
-      },
-      "difficulty": 48,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "해명 요청 전달"
-    },
-    {
-      "eventId": "r002-05",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "politics": 0.55,
-        "intelligence": 0.35,
-        "charisma": 0.1
-      },
-      "difficulty": 69,
-      "successFame": 12,
-      "failureFame": -6,
-      "basis": "강요 진술 사본이라는 후속 구출 근거 확보"
-    },
-    {
-      "eventId": "r002-05",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
-      },
-      "difficulty": 48,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "해명 요청 전달"
-    },
-    {
-      "eventId": "r002-06",
-      "nodeId": "proof",
-      "choiceId": "a",
-      "weights": {
-        "politics": 0.55,
-        "intelligence": 0.35,
-        "charisma": 0.1
-      },
-      "difficulty": 59,
-      "successFame": 22,
-      "failureFame": -11,
-      "basis": "사본과 현장 증언을 공개 대조해 관직 이탈을 저지"
-    },
-    {
-      "eventId": "r002-06",
-      "nodeId": "proof",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.55,
-        "politics": 0.35,
-        "intelligence": 0.1
-      },
-      "difficulty": 58,
-      "successFame": 8,
-      "failureFame": -4,
-      "basis": "독우의 살해를 만류"
-    },
-    {
-      "eventId": "r002-06",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "intelligence": 0.45,
-        "charisma": 0.4,
-        "politics": 0.15
-      },
-      "difficulty": 77,
-      "successFame": 18,
-      "failureFame": -9,
-      "basis": "모인 증언으로 독우의 행패와 관직 이탈을 저지"
-    },
-    {
-      "eventId": "r002-06",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.55,
-        "politics": 0.35,
-        "intelligence": 0.1
-      },
-      "difficulty": 58,
-      "successFame": 8,
-      "failureFame": -4,
-      "basis": "독우의 살해를 만류"
-    },
-    {
-      "eventId": "r002-07",
-      "nodeId": "office",
-      "choiceId": "a",
-      "weights": {
-        "intelligence": 0.55,
-        "charisma": 0.25,
-        "leadership": 0.2
-      },
-      "difficulty": 75,
-      "successFame": 18,
-      "failureFame": -9,
-      "basis": "건석의 함정을 경고해 정국 개입 준비"
-    },
-    {
-      "eventId": "r002-07",
-      "nodeId": "office",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
-      },
-      "difficulty": 44,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "조조 측 서찰 전달"
-    },
-    {
-      "eventId": "r002-07",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "intelligence": 0.55,
-        "charisma": 0.25,
-        "leadership": 0.2
-      },
-      "difficulty": 75,
-      "successFame": 18,
-      "failureFame": -9,
-      "basis": "건석의 함정을 경고해 정국 개입 준비"
-    },
-    {
-      "eventId": "r002-07",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
-      },
-      "difficulty": 44,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "조조 측 서찰 전달"
-    },
-    {
-      "eventId": "r002-08",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "politics": 0.5,
-        "intelligence": 0.4,
-        "leadership": 0.1
-      },
-      "difficulty": 78,
-      "successFame": 16,
-      "failureFame": -8,
-      "basis": "군벌 소집의 위험을 공식 반대 의견으로 제시"
-    },
-    {
-      "eventId": "r002-08",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "intelligence": 0.55,
-        "charisma": 0.25,
-        "leadership": 0.2
-      },
-      "difficulty": 61,
-      "successFame": 10,
-      "failureFame": -5,
-      "basis": "하진의 단독 입궁 경고 전달"
-    },
-    {
-      "eventId": "r003-01",
-      "nodeId": "warning",
-      "choiceId": "a",
-      "weights": {
-        "intelligence": 0.45,
-        "charisma": 0.4,
-        "politics": 0.15
-      },
-      "difficulty": 78,
-      "successFame": 24,
-      "failureFame": -12,
-      "basis": "하진의 단독 입궁을 보류시켜 생명을 구함"
-    },
-    {
-      "eventId": "r003-01",
-      "nodeId": "warning",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
-      },
-      "difficulty": 46,
-      "successFame": 6,
-      "failureFame": -3,
-      "basis": "궁문 밖 호위 연락 유지"
-    },
-    {
-      "eventId": "r003-01",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "intelligence": 0.45,
-        "charisma": 0.4,
-        "politics": 0.15
-      },
-      "difficulty": 78,
-      "successFame": 24,
-      "failureFame": -12,
-      "basis": "하진의 단독 입궁을 보류시켜 생명을 구함"
-    },
-    {
-      "eventId": "r003-01",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
-      },
-      "difficulty": 46,
-      "successFame": 6,
-      "failureFame": -3,
-      "basis": "궁문 밖 호위 연락 유지"
-    },
-    {
-      "eventId": "r003-02",
-      "nodeId": "hejin",
-      "choiceId": "a",
-      "weights": {
-        "politics": 0.55,
-        "intelligence": 0.35,
+        "politics": 0.6,
+        "intelligence": 0.3,
         "charisma": 0.1
       },
       "difficulty": 64,
-      "successFame": 12,
-      "failureFame": -6,
-      "basis": "오인된 하인의 신원을 확인해 피해 감소"
+      "fameReward": 8,
+      "fameReason": "보도 인수 확인으로 조조의 바깥 연락 허락",
+      "success": "나는 전달 표식과 복귀 인수를 대조해 조조에게 설명했다. 그가 내 이름을 확인하고 동탁 방문 때 바깥 연락을 맡아 달라고 했다.",
+      "failure": "나는 인수 근거를 확인받지 못해 조조의 연락을 맡지 못했다. 방문에 따라갈 허락 없이 민간 인수처로 돌아왔다.",
+      "successNarrative": "나는 전달 표식과 복귀 인수를 대조해 조조에게 설명했다. 그가 내 이름을 확인하고 동탁 방문 때 바깥 연락을 맡아 달라고 했다.",
+      "failureNarrative": "나는 인수 근거를 확인받지 못해 조조의 연락을 맡지 못했다. 방문에 따라갈 허락 없이 민간 인수처로 돌아왔다.",
+      "failureFame": -4
     },
     {
-      "eventId": "r003-02",
-      "nodeId": "hejin",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.7,
-        "intelligence": 0.15,
-        "politics": 0.15
-      },
-      "difficulty": 40,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "피란 통로 문의"
-    },
-    {
-      "eventId": "r003-02",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "politics": 0.55,
-        "intelligence": 0.35,
-        "charisma": 0.1
-      },
-      "difficulty": 64,
-      "successFame": 12,
-      "failureFame": -6,
-      "basis": "오인된 하인의 신원을 확인해 피해 감소"
-    },
-    {
-      "eventId": "r003-02",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.7,
-        "intelligence": 0.15,
-        "politics": 0.15
-      },
-      "difficulty": 40,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "피란 통로 문의"
-    },
-    {
-      "eventId": "r003-03",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "intelligence": 0.7,
-        "politics": 0.2,
-        "charisma": 0.1
-      },
-      "difficulty": 63,
-      "successFame": 16,
-      "failureFame": -8,
-      "basis": "왕실 피란처를 선점해 구조 경로를 바꿈"
-    },
-    {
-      "eventId": "r003-03",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
-      },
-      "difficulty": 42,
-      "successFame": 6,
-      "failureFame": -3,
-      "basis": "관군에 발견 위치 보고"
-    },
-    {
-      "eventId": "r003-04",
-      "nodeId": "refuge",
-      "choiceId": "a",
+      "eventId": "r004-05",
+      "nodeId": "cao-signal-check",
+      "kind": "strategy",
       "weights": {
         "intelligence": 0.6,
-        "politics": 0.3,
-        "charisma": 0.1
-      },
-      "difficulty": 75,
-      "successFame": 16,
-      "failureFame": -8,
-      "basis": "반복 입성의 표식을 대조해 병력 과장을 폭로"
-    },
-    {
-      "eventId": "r003-04",
-      "nodeId": "refuge",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.7,
-        "intelligence": 0.15,
-        "politics": 0.15
-      },
-      "difficulty": 45,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "동탁 측 길 안내 접촉"
-    },
-    {
-      "eventId": "r003-04",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "intelligence": 0.6,
-        "politics": 0.3,
-        "charisma": 0.1
-      },
-      "difficulty": 75,
-      "successFame": 16,
-      "failureFame": -8,
-      "basis": "반복 입성의 표식을 대조해 병력 과장을 폭로"
-    },
-    {
-      "eventId": "r003-04",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.7,
-        "intelligence": 0.15,
-        "politics": 0.15
-      },
-      "difficulty": 45,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "동탁 측 길 안내 접촉"
-    },
-    {
-      "eventId": "r003-05",
-      "nodeId": "liu",
-      "choiceId": "a",
-      "weights": {
-        "politics": 0.5,
-        "intelligence": 0.4,
-        "leadership": 0.1
-      },
-      "difficulty": 78,
-      "successFame": 20,
-      "failureFame": -10,
-      "basis": "대신과 독립 군영의 공동 반대 근거를 만듦"
-    },
-    {
-      "eventId": "r003-05",
-      "nodeId": "liu",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
-      },
-      "difficulty": 40,
-      "successFame": 5,
-      "failureFame": -2.5,
-      "basis": "이미 동행하는 유비에게 수도 배치를 보고"
-    },
-    {
-      "eventId": "r003-05",
-      "nodeId": "contact",
-      "choiceId": "a",
-      "weights": {
-        "politics": 0.5,
-        "intelligence": 0.4,
-        "leadership": 0.1
-      },
-      "difficulty": 78,
-      "successFame": 20,
-      "failureFame": -10,
-      "basis": "대신과 독립 군영의 공동 반대 근거를 만듦"
-    },
-    {
-      "eventId": "r003-05",
-      "nodeId": "contact",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.8,
-        "politics": 0.2
-      },
-      "difficulty": 62,
-      "successFame": 8,
-      "failureFame": -4,
-      "basis": "실제 접촉 뒤 동탁군에 정식 지원"
-    },
-    {
-      "eventId": "r003-05",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "politics": 0.5,
-        "intelligence": 0.4,
-        "leadership": 0.1
-      },
-      "difficulty": 78,
-      "successFame": 20,
-      "failureFame": -10,
-      "basis": "대신과 독립 군영의 공동 반대 근거를 만듦"
-    },
-    {
-      "eventId": "r003-05",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.7,
-        "intelligence": 0.15,
-        "politics": 0.15
-      },
-      "difficulty": 41,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "동탁 측 소개"
-    },
-    {
-      "eventId": "r003-06",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "strength": 1
-      },
-      "difficulty": 50,
-      "successFame": 24,
-      "failureFame": -12,
-      "basis": "여포를 상대로 승리해 전투 경과를 바꿈"
-    },
-    {
-      "eventId": "r003-06",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "leadership": 1,
-        "strength": 1.5
-      },
-      "difficulty": 57,
-      "successFame": 6,
-      "failureFame": -3,
-      "basis": "연락책과 함께 전장을 이탈"
-    },
-    {
-      "eventId": "r003-07",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "intelligence": 0.55,
-        "charisma": 0.25,
-        "leadership": 0.2
+        "politics": 0.25,
+        "charisma": 0.15
       },
       "difficulty": 68,
-      "successFame": 12,
-      "failureFame": -6,
-      "basis": "회유 사실로 정원의 경계를 강화"
-    },
-    {
-      "eventId": "r003-07",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.7,
-        "intelligence": 0.15,
-        "politics": 0.15
-      },
-      "difficulty": 49,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "여포 측 소개 통로 확보"
-    },
-    {
-      "eventId": "r003-08",
-      "nodeId": "guarded",
-      "choiceId": "a",
-      "weights": {
-        "leadership": 0.45,
-        "intelligence": 0.35,
-        "charisma": 0.2
-      },
-      "difficulty": 66,
-      "successFame": 28,
-      "failureFame": -14,
-      "basis": "사전 경고로 늘어난 호위를 즉시 동원"
-    },
-    {
-      "eventId": "r003-08",
-      "nodeId": "guarded",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
-      },
-      "difficulty": 49,
-      "successFame": 6,
-      "failureFame": -3,
-      "basis": "확인한 군영 이동을 보고"
-    },
-    {
-      "eventId": "r003-08",
-      "nodeId": "wounded",
-      "choiceId": "a",
-      "weights": {
-        "leadership": 0.45,
-        "intelligence": 0.35,
-        "charisma": 0.2
-      },
-      "difficulty": 72,
-      "successFame": 28,
-      "failureFame": -14,
-      "basis": "부상한 여포의 진입을 경보로 저지"
-    },
-    {
-      "eventId": "r003-08",
-      "nodeId": "wounded",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
-      },
-      "difficulty": 49,
-      "successFame": 6,
-      "failureFame": -3,
-      "basis": "확인한 군영 이동을 보고"
-    },
-    {
-      "eventId": "r003-08",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "leadership": 0.45,
-        "intelligence": 0.35,
-        "charisma": 0.2
-      },
-      "difficulty": 80,
-      "successFame": 28,
-      "failureFame": -14,
-      "basis": "정원 암살을 저지해 군권 장악을 바꿈"
-    },
-    {
-      "eventId": "r003-08",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
-      },
-      "difficulty": 49,
-      "successFame": 6,
-      "failureFame": -3,
-      "basis": "확인한 군영 이동을 보고"
-    },
-    {
-      "eventId": "r004-01",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "politics": 0.55,
-        "intelligence": 0.35,
-        "charisma": 0.1
-      },
-      "difficulty": 70,
-      "successFame": 12,
-      "failureFame": -6,
-      "basis": "추격 명단에서 가족을 분리해 피신 시간을 확보"
-    },
-    {
-      "eventId": "r004-01",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.7,
-        "intelligence": 0.15,
-        "politics": 0.15
-      },
-      "difficulty": 42,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "원소 측 숙소 연락"
-    },
-    {
-      "eventId": "r004-02",
-      "nodeId": "counterweight",
-      "choiceId": "a",
-      "weights": {
-        "politics": 0.5,
-        "intelligence": 0.4,
-        "leadership": 0.1
-      },
-      "difficulty": 65,
-      "successFame": 30,
-      "failureFame": -15,
-      "basis": "독립 군영과 청원을 연결해 황제 폐립 보류"
-    },
-    {
-      "eventId": "r004-02",
-      "nodeId": "counterweight",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
-      },
-      "difficulty": 47,
-      "successFame": 5,
-      "failureFame": -2.5,
-      "basis": "왕윤 측 회의 보고"
-    },
-    {
-      "eventId": "r004-02",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "politics": 0.5,
-        "intelligence": 0.4,
-        "leadership": 0.1
-      },
-      "difficulty": 72,
-      "successFame": 20,
-      "failureFame": -10,
-      "basis": "정관의 처형을 저지"
-    },
-    {
-      "eventId": "r004-02",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
-      },
-      "difficulty": 47,
-      "successFame": 5,
-      "failureFame": -2.5,
-      "basis": "왕윤 측 회의 보고"
-    },
-    {
-      "eventId": "r004-03",
-      "nodeId": "reigning",
-      "choiceId": "a",
-      "weights": {
-        "politics": 0.5,
-        "intelligence": 0.4,
-        "leadership": 0.1
-      },
-      "difficulty": 62,
-      "successFame": 16,
-      "failureFame": -8,
-      "basis": "재위 중인 왕실의 호위·검수 분리"
-    },
-    {
-      "eventId": "r004-03",
-      "nodeId": "reigning",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
-      },
-      "difficulty": 45,
-      "successFame": 6,
-      "failureFame": -3,
-      "basis": "민가 약탈 피해 보고"
-    },
-    {
-      "eventId": "r004-03",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "politics": 0.55,
-        "intelligence": 0.35,
-        "charisma": 0.1
-      },
-      "difficulty": 80,
-      "successFame": 28,
-      "failureFame": -14,
-      "basis": "왕실 일가의 독살을 저지"
-    },
-    {
-      "eventId": "r004-03",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
-      },
-      "difficulty": 45,
-      "successFame": 6,
-      "failureFame": -3,
-      "basis": "민가 약탈 피해 보고"
-    },
-    {
-      "eventId": "r004-04",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "intelligence": 0.55,
-        "charisma": 0.25,
-        "leadership": 0.2
-      },
-      "difficulty": 67,
-      "successFame": 12,
-      "failureFame": -6,
-      "basis": "거울 위험을 경고해 암살 시도를 재검토"
-    },
-    {
-      "eventId": "r004-04",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.7,
-        "intelligence": 0.15,
-        "politics": 0.15
-      },
-      "difficulty": 42,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "조조 측 전달 통로 확보"
-    },
-    {
-      "eventId": "r004-05",
-      "nodeId": "mirror",
-      "choiceId": "a",
-      "weights": {
-        "politics": 0.5,
-        "intelligence": 0.4,
-        "leadership": 0.1
-      },
-      "difficulty": 75,
-      "successFame": 14,
-      "failureFame": -7,
-      "basis": "수배 문서보다 출발 허가를 먼저 처리해 추격 지연"
-    },
-    {
-      "eventId": "r004-05",
-      "nodeId": "mirror",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
-      },
-      "difficulty": 49,
-      "successFame": 6,
-      "failureFame": -3,
-      "basis": "검문 위치 전달"
-    },
-    {
-      "eventId": "r004-05",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "politics": 0.5,
-        "intelligence": 0.4,
-        "leadership": 0.1
-      },
-      "difficulty": 75,
-      "successFame": 14,
-      "failureFame": -7,
-      "basis": "수배 문서보다 출발 허가를 먼저 처리해 추격 지연"
-    },
-    {
-      "eventId": "r004-05",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
-      },
-      "difficulty": 49,
-      "successFame": 6,
-      "failureFame": -3,
-      "basis": "검문 위치 전달"
+      "fameReward": 14,
+      "fameReason": "암살 발각 위험 경고와 실제 도피 동행",
+      "success": "나는 확인한 거울 위치와 출입 신호를 연락으로 전했다. 조조는 칼을 빼기 전에 헌상으로 돌려 말하고 나에게 탈출 연락을 맡겨 중모까지 함께 움직였다.",
+      "failure": "나는 신호를 맞추지 못해 거울 경고를 전달하지 못했다. 조조는 혼자 헌상으로 둘러대고 탈출했으며 나는 낙양에 남아 동행하지 못했다.",
+      "successNarrative": "나는 확인한 거울 위치와 출입 신호를 연락으로 전했다. 조조는 칼을 빼기 전에 헌상으로 돌려 말하고 나에게 탈출 연락을 맡겨 중모까지 함께 움직였다.",
+      "failureNarrative": "나는 신호를 맞추지 못해 거울 경고를 전달하지 못했다. 조조는 혼자 헌상으로 둘러대고 탈출했으며 나는 낙양에 남아 동행하지 못했다.",
+      "failureFame": -7
     },
     {
       "eventId": "r004-06",
-      "nodeId": "ahead",
-      "choiceId": "a",
+      "nodeId": "cao-explain-check",
+      "kind": "politics",
       "weights": {
-        "intelligence": 0.6,
-        "politics": 0.3,
-        "charisma": 0.1
-      },
-      "difficulty": 63,
-      "successFame": 10,
-      "failureFame": -5,
-      "basis": "대조 가능한 증언으로 진궁의 결심을 뒷받침"
-    },
-    {
-      "eventId": "r004-06",
-      "nodeId": "ahead",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.7,
-        "intelligence": 0.15,
-        "politics": 0.15
-      },
-      "difficulty": 43,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "진궁을 거친 조조 접촉"
-    },
-    {
-      "eventId": "r004-06",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "intelligence": 0.6,
-        "politics": 0.3,
-        "charisma": 0.1
-      },
-      "difficulty": 63,
-      "successFame": 10,
-      "failureFame": -5,
-      "basis": "대조 가능한 증언으로 진궁의 결심을 뒷받침"
-    },
-    {
-      "eventId": "r004-06",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.7,
-        "intelligence": 0.15,
-        "politics": 0.15
-      },
-      "difficulty": 43,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "진궁을 거친 조조 접촉"
-    },
-    {
-      "eventId": "r004-07",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "intelligence": 0.6,
-        "politics": 0.3,
-        "charisma": 0.1
-      },
-      "difficulty": 76,
-      "successFame": 24,
-      "failureFame": -12,
-      "basis": "오해를 현물로 풀어 여백사 일가와 진궁 동행을 보전"
-    },
-    {
-      "eventId": "r004-07",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "intelligence": 0.45,
-        "charisma": 0.4,
-        "politics": 0.15
-      },
-      "difficulty": 69,
-      "successFame": 22,
-      "failureFame": -11,
-      "basis": "진궁의 확인을 이끌어 일가 살해 저지"
-    },
-    {
-      "eventId": "r004-08",
-      "nodeId": "affiliated",
-      "choiceId": "a",
-      "weights": {
-        "politics": 0.5,
-        "intelligence": 0.4,
-        "leadership": 0.1
-      },
-      "difficulty": 59,
-      "successFame": 10,
-      "failureFame": -5,
-      "basis": "기부·군량 대조로 누락을 찾아냄"
-    },
-    {
-      "eventId": "r004-08",
-      "nodeId": "affiliated",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
-      },
-      "difficulty": 39,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "기존 소속을 밝히고 공개 격문 사본 요청"
-    },
-    {
-      "eventId": "r004-08",
-      "nodeId": "known",
-      "choiceId": "a",
-      "weights": {
-        "politics": 0.5,
-        "intelligence": 0.4,
-        "leadership": 0.1
-      },
-      "difficulty": 59,
-      "successFame": 10,
-      "failureFame": -5,
-      "basis": "기부·군량 대조로 누락을 찾아냄"
-    },
-    {
-      "eventId": "r004-08",
-      "nodeId": "known",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.8,
-        "politics": 0.2
-      },
-      "difficulty": 61,
-      "successFame": 8,
-      "failureFame": -4,
-      "basis": "접촉한 재야의 조조군 정식 지원"
-    },
-    {
-      "eventId": "r004-08",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "politics": 0.5,
-        "intelligence": 0.4,
-        "leadership": 0.1
-      },
-      "difficulty": 59,
-      "successFame": 10,
-      "failureFame": -5,
-      "basis": "기부·군량 대조로 누락을 찾아냄"
-    },
-    {
-      "eventId": "r004-08",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.7,
-        "intelligence": 0.15,
-        "politics": 0.15
-      },
-      "difficulty": 41,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "모집 서리에게 소개"
-    },
-    {
-      "eventId": "r005-01",
-      "nodeId": "dong",
-      "choiceId": "a",
-      "weights": {
-        "politics": 0.5,
-        "intelligence": 0.4,
-        "leadership": 0.1
-      },
-      "difficulty": 67,
-      "successFame": 10,
-      "failureFame": -5,
-      "basis": "민가 중복 징발을 줄임"
-    },
-    {
-      "eventId": "r005-01",
-      "nodeId": "dong",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
-      },
-      "difficulty": 38,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "아군 연락소에 확인한 격문을 보고"
-    },
-    {
-      "eventId": "r005-01",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "politics": 0.5,
-        "intelligence": 0.4,
-        "leadership": 0.1
-      },
-      "difficulty": 64,
-      "successFame": 10,
-      "failureFame": -5,
-      "basis": "군영 간 인수증을 공유해 보급 단절 증거 확보"
-    },
-    {
-      "eventId": "r005-01",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.7,
-        "intelligence": 0.15,
-        "politics": 0.15
-      },
-      "difficulty": 40,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "조조 측 공개 통행 절차 확인"
-    },
-    {
-      "eventId": "r005-02",
-      "nodeId": "dong",
-      "choiceId": "a",
-      "weights": {
-        "intelligence": 0.7,
-        "politics": 0.2,
-        "charisma": 0.1
-      },
-      "difficulty": 76,
-      "successFame": 18,
-      "failureFame": -9,
-      "basis": "아군에 발각될 위험을 감수하고 포충 출격을 저지"
-    },
-    {
-      "eventId": "r005-02",
-      "nodeId": "dong",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
-      },
-      "difficulty": 40,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "호진 측에 확인한 동선 전달"
-    },
-    {
-      "eventId": "r005-02",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "intelligence": 0.55,
-        "charisma": 0.25,
-        "leadership": 0.2
-      },
-      "difficulty": 69,
-      "successFame": 18,
-      "failureFame": -9,
-      "basis": "포충의 독단 출격을 멈춰 생명을 구함"
-    },
-    {
-      "eventId": "r005-02",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
-      },
-      "difficulty": 44,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "손견 측 수레길 보고"
-    },
-    {
-      "eventId": "r005-03",
-      "nodeId": "dong",
-      "choiceId": "a",
-      "weights": {
-        "leadership": 0.5,
+        "politics": 0.6,
         "intelligence": 0.3,
-        "charisma": 0.2
-      },
-      "difficulty": 79,
-      "successFame": 18,
-      "failureFame": -9,
-      "basis": "야습 전 경계 종으로 손견군과 조무 철수 유도"
-    },
-    {
-      "eventId": "r005-03",
-      "nodeId": "dong",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.7,
-        "intelligence": 0.15,
-        "politics": 0.15
-      },
-      "difficulty": 39,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "아군 연락 임무 후 귀환 확인"
-    },
-    {
-      "eventId": "r005-03",
-      "nodeId": "ledger",
-      "choiceId": "a",
-      "weights": {
-        "politics": 0.5,
-        "intelligence": 0.4,
-        "leadership": 0.1
-      },
-      "difficulty": 57,
-      "successFame": 22,
-      "failureFame": -11,
-      "basis": "공동 인수증으로 입증한 누락을 근거로 우회 배송"
-    },
-    {
-      "eventId": "r005-03",
-      "nodeId": "ledger",
-      "choiceId": "b",
-      "weights": {
-        "intelligence": 0.45,
-        "charisma": 0.4,
-        "politics": 0.15
-      },
-      "difficulty": 64,
-      "successFame": 16,
-      "failureFame": -8,
-      "basis": "미리 철수해 조무의 희생을 피함"
-    },
-    {
-      "eventId": "r005-03",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "politics": 0.5,
-        "intelligence": 0.4,
-        "leadership": 0.1
-      },
-      "difficulty": 77,
-      "successFame": 22,
-      "failureFame": -11,
-      "basis": "군량 독점을 우회해 선봉과 조무를 보전"
-    },
-    {
-      "eventId": "r005-03",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "intelligence": 0.45,
-        "charisma": 0.4,
-        "politics": 0.15
-      },
-      "difficulty": 64,
-      "successFame": 16,
-      "failureFame": -8,
-      "basis": "미리 철수해 조무의 희생을 피함"
-    },
-    {
-      "eventId": "r005-04",
-      "nodeId": "dong",
-      "choiceId": "a",
-      "weights": {
-        "intelligence": 0.45,
-        "charisma": 0.4,
-        "politics": 0.15
-      },
-      "difficulty": 73,
-      "successFame": 20,
-      "failureFame": -10,
-      "basis": "승세에 취한 화웅을 철수시켜 참수 저지"
-    },
-    {
-      "eventId": "r005-04",
-      "nodeId": "dong",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
-      },
-      "difficulty": 39,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "아군 후방 귀환 지점 확인"
-    },
-    {
-      "eventId": "r005-04",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "strength": 1
-      },
-      "difficulty": 50,
-      "successFame": 24,
-      "failureFame": -12,
-      "basis": "화웅 생포로 유섭·반봉 출격과 참수를 취소"
-    },
-    {
-      "eventId": "r005-04",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.55,
-        "politics": 0.35,
-        "intelligence": 0.1
-      },
-      "difficulty": 61,
-      "successFame": 14,
-      "failureFame": -7,
-      "basis": "관우 조기 추천으로 두 장수의 출격을 보류"
-    },
-    {
-      "eventId": "r005-05",
-      "nodeId": "captured",
-      "choiceId": "a",
-      "weights": {
-        "intelligence": 0.6,
-        "politics": 0.3,
-        "charisma": 0.1
-      },
-      "difficulty": 60,
-      "successFame": 8,
-      "failureFame": -4,
-      "basis": "포로 처형 대신 검증된 전선 정보 확보"
-    },
-    {
-      "eventId": "r005-05",
-      "nodeId": "captured",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
-      },
-      "difficulty": 38,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "이미 생포한 경과 보고"
-    },
-    {
-      "eventId": "r005-05",
-      "nodeId": "withdrawn",
-      "choiceId": "a",
-      "weights": {
-        "politics": 0.55,
-        "intelligence": 0.35,
         "charisma": 0.1
       },
       "difficulty": 56,
-      "successFame": 6,
-      "failureFame": -3,
-      "basis": "철수를 전사로 왜곡하지 않고 대조"
+      "fameReward": 8,
+      "fameReason": "진궁에게 신원을 확인받아 실제 동행 유지",
+      "success": "나는 인수 표식과 탈출 때 맡은 연락을 대조해 설명했다. 진궁이 신원을 확인해 조조와 함께 떠나는 행렬에 나도 동행할 수 있게 됐다.",
+      "failure": "나는 이동 경위를 확인받지 못해 동행을 허락받지 못했다. 조조와 진궁이 떠난 뒤 중모의 민간 거점에 남았다.",
+      "successNarrative": "나는 인수 표식과 탈출 때 맡은 연락을 대조해 설명했다. 진궁이 신원을 확인해 조조와 함께 떠나는 행렬에 나도 동행할 수 있게 됐다.",
+      "failureNarrative": "나는 이동 경위를 확인받지 못해 동행을 허락받지 못했다. 조조와 진궁이 떠난 뒤 중모의 민간 거점에 남았다.",
+      "failureFame": -4
     },
     {
-      "eventId": "r005-05",
-      "nodeId": "withdrawn",
-      "choiceId": "b",
+      "eventId": "r004-07",
+      "nodeId": "house-inspect-check",
+      "kind": "strategy",
       "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
+        "intelligence": 0.6,
+        "politics": 0.25,
+        "charisma": 0.15
       },
-      "difficulty": 37,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "철수 경과 보고"
+      "difficulty": 60,
+      "fameReward": 18,
+      "fameReason": "오인을 풀어 여백사 일가 살해와 진궁 결별 저지",
+      "success": "나는 부엌에서 묶인 돼지와 손님상을 확인해 조조와 진궁에게 보여 줬다. 조조가 칼을 거두어 여백사 일가는 살아남았고 진궁도 동행을 이어 갔다.",
+      "failure": "나는 부엌에 닿기 전에 조조의 의심을 풀지 못했다. 일가 살해를 막지 못했고 진궁은 진상을 본 뒤 동행을 포기했다.",
+      "successNarrative": "나는 부엌에서 묶인 돼지와 손님상을 확인해 조조와 진궁에게 보여 줬다. 조조가 칼을 거두어 여백사 일가는 살아남았고 진궁도 동행을 이어 갔다.",
+      "failureNarrative": "나는 부엌에 닿기 전에 조조의 의심을 풀지 못했다. 일가 살해를 막지 못했고 진궁은 진상을 본 뒤 동행을 포기했다.",
+      "failureFame": -9
     },
     {
-      "eventId": "r005-05",
-      "nodeId": "dong",
-      "choiceId": "a",
+      "eventId": "r004-08",
+      "nodeId": "companion-join-check",
+      "kind": "relationship",
       "weights": {
-        "intelligence": 0.45,
-        "charisma": 0.4,
-        "politics": 0.15
+        "charisma": 0.75,
+        "politics": 0.25
       },
-      "difficulty": 80,
-      "successFame": 22,
-      "failureFame": -11,
-      "basis": "아군 장수의 항복·포로 인계를 통한 생존"
+      "difficulty": 54,
+      "fameReward": 10,
+      "fameReason": "조조군 정식 합류",
+      "success": "나는 연락과 인수를 맡겠다고 정식으로 지원했다. 조조가 군적에 이름을 올려 조조 소속 병사가 됐다.",
+      "failure": "나는 지원했지만 정식 군적 인수를 거절당했다. 진류의 민간 거점에 남아 다음 일을 찾았다.",
+      "successNarrative": "나는 연락과 인수를 맡겠다고 정식으로 지원했다. 조조가 군적에 이름을 올려 조조 소속 병사가 됐다.",
+      "failureNarrative": "나는 지원했지만 정식 군적 인수를 거절당했다. 진류의 민간 거점에 남아 다음 일을 찾았다.",
+      "failureFame": -5
     },
     {
-      "eventId": "r005-05",
-      "nodeId": "dong",
-      "choiceId": "b",
+      "eventId": "r005-01",
+      "nodeId": "civil-contract-check",
+      "kind": "relationship",
       "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
-      },
-      "difficulty": 40,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "아군 연락관에 교전 보고"
-    },
-    {
-      "eventId": "r005-05",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "intelligence": 0.45,
-        "charisma": 0.4,
-        "politics": 0.15
-      },
-      "difficulty": 78,
-      "successFame": 22,
-      "failureFame": -11,
-      "basis": "참수 대신 항복·생포를 성사"
-    },
-    {
-      "eventId": "r005-05",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
-      },
-      "difficulty": 42,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "조조 측에 출전 경과 전달"
-    },
-    {
-      "eventId": "r005-06",
-      "nodeId": "dong",
-      "choiceId": "a",
-      "weights": {
-        "intelligence": 0.7,
-        "politics": 0.2,
-        "charisma": 0.1
-      },
-      "difficulty": 79,
-      "successFame": 24,
-      "failureFame": -12,
-      "basis": "보복 명단보다 먼저 경고해 잔류 일족을 구출"
-    },
-    {
-      "eventId": "r005-06",
-      "nodeId": "dong",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
+        "charisma": 0.75,
+        "politics": 0.25
       },
       "difficulty": 46,
-      "successFame": 5,
-      "failureFame": -2.5,
-      "basis": "출병 사실과 공적 다툼을 구분해 보고"
+      "fameReward": 5,
+      "fameReason": "민간 운송의 실제 인수와 작전 접근 허가",
+      "success": "나는 인수 담당과 계약을 확인해 산조행 물자를 맡았다. 민간인 신분으로 연합 작전의 운송에 참가하게 됐다.",
+      "failure": "나는 인수 계약을 확인받지 못해 운송을 맡지 못했다. 현재 거점에 남아 전선으로 이동하지 않았다.",
+      "successNarrative": "나는 인수 담당과 계약을 확인해 산조행 물자를 맡았다. 민간인 신분으로 연합 작전의 운송에 참가하게 됐다.",
+      "failureNarrative": "나는 인수 계약을 확인받지 못해 운송을 맡지 못했다. 현재 거점에 남아 전선으로 이동하지 않았다.",
+      "failureFame": -2.5
     },
     {
-      "eventId": "r005-06",
-      "nodeId": "family-ready",
-      "choiceId": "a",
+      "eventId": "r005-01",
+      "nodeId": "dong-map-check",
+      "kind": "politics",
       "weights": {
-        "intelligence": 0.7,
-        "politics": 0.2,
+        "politics": 0.6,
+        "intelligence": 0.3,
         "charisma": 0.1
+      },
+      "difficulty": 48,
+      "fameReward": 6,
+      "fameReason": "동탁군 전선 군량 인수 경로 확인",
+      "success": "나는 사수관으로 갈 군량의 인수 지점을 대조했다. 전선 보고에 쓸 통행 경로를 확인했다.",
+      "failure": "나는 인수 담당을 맞추지 못해 통행 경로를 확인하지 못했다. 추정으로 보고하지 않고 경계 임무로 돌아갔다.",
+      "successNarrative": "나는 사수관으로 갈 군량의 인수 지점을 대조했다. 전선 보고에 쓸 통행 경로를 확인했다.",
+      "failureNarrative": "나는 인수 담당을 맞추지 못해 통행 경로를 확인하지 못했다. 추정으로 보고하지 않고 경계 임무로 돌아갔다.",
+      "failureFame": -3
+    },
+    {
+      "eventId": "r005-02",
+      "nodeId": "civil-relief-check",
+      "kind": "relationship",
+      "weights": {
+        "charisma": 0.75,
+        "politics": 0.25
+      },
+      "difficulty": 44,
+      "fameReward": 5,
+      "fameReason": "전선에서 돌아온 부상자의 현지 인계",
+      "success": "나는 현지 구호소의 인수를 확인해 돌아온 사람들을 보냈다. 전장에 갔다고 꾸미지 않고 현재 거점의 민간 구호를 맡았다.",
+      "failure": "나는 구호소의 자리를 확인하지 못했다. 수레를 멈추고 다음 인수 담당을 기다렸다.",
+      "successNarrative": "나는 현지 구호소의 인수를 확인해 돌아온 사람들을 보냈다. 전장에 갔다고 꾸미지 않고 현재 거점의 민간 구호를 맡았다.",
+      "failureNarrative": "나는 구호소의 자리를 확인하지 못했다. 수레를 멈추고 다음 인수 담당을 기다렸다.",
+      "failureFame": -2.5
+    },
+    {
+      "eventId": "r005-02",
+      "nodeId": "dong-report-check",
+      "kind": "strategy",
+      "weights": {
+        "intelligence": 0.6,
+        "politics": 0.25,
+        "charisma": 0.15
+      },
+      "difficulty": 52,
+      "fameReward": 6,
+      "fameReason": "화웅군의 실제 교전 보고 접촉",
+      "success": "나는 따로 움직이는 선봉의 간격을 정리해 보고했다. 화웅군 담당이 내 정찰 근거를 확인해 다음 교전 보고에 접근할 자리를 얻었다.",
+      "failure": "나는 서로 다른 보고의 시각을 맞추지 못했다. 확인 못 한 규모를 채우지 않고 인수 담당에게 돌아왔다.",
+      "successNarrative": "나는 따로 움직이는 선봉의 간격을 정리해 보고했다. 화웅군 담당이 내 정찰 근거를 확인해 다음 교전 보고에 접근할 자리를 얻었다.",
+      "failureNarrative": "나는 서로 다른 보고의 시각을 맞추지 못했다. 확인 못 한 규모를 채우지 않고 인수 담당에게 돌아왔다.",
+      "failureFame": -3
+    },
+    {
+      "eventId": "r005-02",
+      "nodeId": "coalition-warn-check",
+      "kind": "strategy",
+      "weights": {
+        "intelligence": 0.6,
+        "politics": 0.25,
+        "charisma": 0.15
       },
       "difficulty": 64,
-      "successFame": 24,
-      "failureFame": -12,
-      "basis": "사전 피신 준비를 활용해 잔류 가족까지 구출"
+      "fameReward": 12,
+      "fameReason": "포충의 독단 선공 보류와 생존",
+      "success": "나는 공동 작전의 인수가 끝나지 않았다는 사실을 전달했다. 포충 측이 선공을 보류해 손견의 진격과 따로 돌출하는 일을 피했다.",
+      "failure": "나는 별도 출정 명령을 받는 담당에게 닿지 못했다. 포충의 선공을 막지 못하고 후방 인수 지점으로 돌아왔다.",
+      "successNarrative": "나는 공동 작전의 인수가 끝나지 않았다는 사실을 전달했다. 포충 측이 선공을 보류해 손견의 진격과 따로 돌출하는 일을 피했다.",
+      "failureNarrative": "나는 별도 출정 명령을 받는 담당에게 닿지 못했다. 포충의 선공을 막지 못하고 후방 인수 지점으로 돌아왔다.",
+      "failureFame": -6
     },
     {
-      "eventId": "r005-06",
-      "nodeId": "family-ready",
-      "choiceId": "b",
+      "eventId": "r005-02",
+      "nodeId": "coalition-enlist-check",
+      "kind": "relationship",
       "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
+        "charisma": 0.75,
+        "politics": 0.25
       },
-      "difficulty": 46,
-      "successFame": 5,
-      "failureFame": -2.5,
-      "basis": "출병 사실과 공적 다툼을 구분해 보고"
+      "difficulty": 58,
+      "fameReward": 8,
+      "fameReason": "운송 접촉 뒤 조조군 정식 합류",
+      "success": "나는 실제 인수 담당에게 정식 지원을 청했다. 조조군이 연락병으로 받아들여 군적과 소속이 생겼다.",
+      "failure": "나는 지원했지만 정식 군적 인수를 거절당했다. 민간 운송 계약만 유지하며 원래 맡은 짐으로 돌아왔다.",
+      "successNarrative": "나는 실제 인수 담당에게 정식 지원을 청했다. 조조군이 연락병으로 받아들여 군적과 소속이 생겼다.",
+      "failureNarrative": "나는 지원했지만 정식 군적 인수를 거절당했다. 민간 운송 계약만 유지하며 원래 맡은 짐으로 돌아왔다.",
+      "failureFame": -4
     },
     {
-      "eventId": "r005-06",
-      "nodeId": "scene",
-      "choiceId": "a",
+      "eventId": "r005-03",
+      "nodeId": "dong-caution-check",
+      "kind": "strategy",
       "weights": {
-        "intelligence": 0.7,
-        "politics": 0.2,
-        "charisma": 0.1
+        "intelligence": 0.6,
+        "politics": 0.25,
+        "charisma": 0.15
       },
-      "difficulty": 79,
-      "successFame": 24,
-      "failureFame": -12,
-      "basis": "보복 명단보다 먼저 경고해 잔류 일족을 구출"
+      "difficulty": 66,
+      "fameReward": 12,
+      "fameReason": "화웅의 무리한 단독 교전 보류",
+      "success": "나는 선봉의 보급 지연과 뒤의 장수 보고를 나눠 전달했다. 화웅이 보고를 받아들여 야습 뒤 무리한 단독 도전을 보류했다.",
+      "failure": "나는 교전 보고의 근거를 충분히 설명하지 못했다. 화웅이 도전 계획을 바꾸지 않아 일반 연락 지점으로 돌아왔다.",
+      "successNarrative": "나는 선봉의 보급 지연과 뒤의 장수 보고를 나눠 전달했다. 화웅이 보고를 받아들여 야습 뒤 무리한 단독 도전을 보류했다.",
+      "failureNarrative": "나는 교전 보고의 근거를 충분히 설명하지 못했다. 화웅이 도전 계획을 바꾸지 않아 일반 연락 지점으로 돌아왔다.",
+      "failureFame": -6
     },
     {
-      "eventId": "r005-06",
-      "nodeId": "scene",
-      "choiceId": "b",
+      "eventId": "r005-03",
+      "nodeId": "dong-prepared-caution-check",
+      "kind": "strategy",
       "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
+        "intelligence": 0.6,
+        "politics": 0.25,
+        "charisma": 0.15
       },
-      "difficulty": 46,
-      "successFame": 5,
-      "failureFame": -2.5,
-      "basis": "출병 사실과 공적 다툼을 구분해 보고"
+      "difficulty": 56,
+      "fameReward": 12,
+      "fameReason": "화웅의 무리한 단독 교전 보류",
+      "success": "나는 선봉의 보급 지연과 뒤의 장수 보고를 나눠 전달했다. 화웅이 보고를 받아들여 야습 뒤 무리한 단독 도전을 보류했다.",
+      "failure": "나는 교전 보고의 근거를 충분히 설명하지 못했다. 화웅이 도전 계획을 바꾸지 않아 일반 연락 지점으로 돌아왔다.",
+      "successNarrative": "나는 선봉의 보급 지연과 뒤의 장수 보고를 나눠 전달했다. 화웅이 보고를 받아들여 야습 뒤 무리한 단독 도전을 보류했다.",
+      "failureNarrative": "나는 교전 보고의 근거를 충분히 설명하지 못했다. 화웅이 도전 계획을 바꾸지 않아 일반 연락 지점으로 돌아왔다.",
+      "failureFame": -6
     },
     {
-      "eventId": "r005-07",
-      "nodeId": "dong",
-      "choiceId": "a",
+      "eventId": "r005-03",
+      "nodeId": "coalition-supply-check",
+      "kind": "politics",
       "weights": {
-        "intelligence": 0.7,
-        "politics": 0.2,
-        "charisma": 0.1
-      },
-      "difficulty": 80,
-      "successFame": 18,
-      "failureFame": -9,
-      "basis": "교섭 틈에 적장의 철수 길을 흘림"
-    },
-    {
-      "eventId": "r005-07",
-      "nodeId": "dong",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.7,
-        "intelligence": 0.15,
-        "politics": 0.15
-      },
-      "difficulty": 40,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "여포 측 후방 복귀 지점 확인"
-    },
-    {
-      "eventId": "r005-07",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "leadership": 0.5,
+        "politics": 0.6,
         "intelligence": 0.3,
-        "charisma": 0.2
+        "charisma": 0.1
       },
       "difficulty": 72,
-      "successFame": 18,
-      "failureFame": -9,
-      "basis": "예비 말과 퇴로로 공손찬을 미리 구출"
+      "fameReward": 18,
+      "fameReason": "손견군의 실제 군량 수령과 조무 생존",
+      "success": "나는 선봉의 요청과 창고 인수 책임을 대조해 군량 수레를 출발시켰다. 손견군이 물자를 받아 야습 때 대열을 유지했고 조무도 목숨을 잃지 않았다.",
+      "failure": "나는 원술 측의 출고 결정을 얻지 못했다. 군량이 도착했다고 보고하지 않고 선봉에 지연을 알렸다.",
+      "successNarrative": "나는 선봉의 요청과 창고 인수 책임을 대조해 군량 수레를 출발시켰다. 손견군이 물자를 받아 야습 때 대열을 유지했고 조무도 목숨을 잃지 않았다.",
+      "failureNarrative": "나는 원술 측의 출고 결정을 얻지 못했다. 군량이 도착했다고 보고하지 않고 선봉에 지연을 알렸다.",
+      "failureFame": -9
+    },
+    {
+      "eventId": "r005-03",
+      "nodeId": "coalition-retreat-check",
+      "kind": "strategy",
+      "weights": {
+        "intelligence": 0.6,
+        "politics": 0.25,
+        "charisma": 0.15
+      },
+      "difficulty": 64,
+      "fameReward": 14,
+      "fameReason": "손견군 조기 철수와 조무 생존",
+      "success": "나는 군량 지연을 확인해 선봉의 연락 담당에게 조기 철수를 권했다. 손견군이 야습 전에 물러나 조무가 붉은 두건으로 적을 유인할 필요가 없어졌다.",
+      "failure": "나는 조기 철수의 근거를 제때 전달하지 못했다. 선봉이 야습에 대비하지 못한 채 후방으로 물러났다.",
+      "successNarrative": "나는 군량 지연을 확인해 선봉의 연락 담당에게 조기 철수를 권했다. 손견군이 야습 전에 물러나 조무가 붉은 두건으로 적을 유인할 필요가 없어졌다.",
+      "failureNarrative": "나는 조기 철수의 근거를 제때 전달하지 못했다. 선봉이 야습에 대비하지 못한 채 후방으로 물러났다.",
+      "failureFame": -7
+    },
+    {
+      "eventId": "r005-03",
+      "nodeId": "supply-ready-supply-check",
+      "kind": "politics",
+      "weights": {
+        "politics": 0.6,
+        "intelligence": 0.3,
+        "charisma": 0.1
+      },
+      "difficulty": 58,
+      "fameReward": 18,
+      "fameReason": "손견군의 실제 군량 수령과 조무 생존",
+      "success": "나는 선봉의 요청과 창고 인수 책임을 대조해 군량 수레를 출발시켰다. 손견군이 물자를 받아 야습 때 대열을 유지했고 조무도 목숨을 잃지 않았다.",
+      "failure": "나는 원술 측의 출고 결정을 얻지 못했다. 군량이 도착했다고 보고하지 않고 선봉에 지연을 알렸다.",
+      "successNarrative": "나는 선봉의 요청과 창고 인수 책임을 대조해 군량 수레를 출발시켰다. 손견군이 물자를 받아 야습 때 대열을 유지했고 조무도 목숨을 잃지 않았다.",
+      "failureNarrative": "나는 원술 측의 출고 결정을 얻지 못했다. 군량이 도착했다고 보고하지 않고 선봉에 지연을 알렸다.",
+      "failureFame": -9
+    },
+    {
+      "eventId": "r005-03",
+      "nodeId": "supply-ready-retreat-check",
+      "kind": "strategy",
+      "weights": {
+        "intelligence": 0.6,
+        "politics": 0.25,
+        "charisma": 0.15
+      },
+      "difficulty": 64,
+      "fameReward": 14,
+      "fameReason": "손견군 조기 철수와 조무 생존",
+      "success": "나는 군량 지연을 확인해 선봉의 연락 담당에게 조기 철수를 권했다. 손견군이 야습 전에 물러나 조무가 붉은 두건으로 적을 유인할 필요가 없어졌다.",
+      "failure": "나는 조기 철수의 근거를 제때 전달하지 못했다. 선봉이 야습에 대비하지 못한 채 후방으로 물러났다.",
+      "successNarrative": "나는 군량 지연을 확인해 선봉의 연락 담당에게 조기 철수를 권했다. 손견군이 야습 전에 물러나 조무가 붉은 두건으로 적을 유인할 필요가 없어졌다.",
+      "failureNarrative": "나는 조기 철수의 근거를 제때 전달하지 못했다. 선봉이 야습에 대비하지 못한 채 후방으로 물러났다.",
+      "failureFame": -7
+    },
+    {
+      "eventId": "r005-04",
+      "nodeId": "dong-withdraw-check",
+      "kind": "strategy",
+      "weights": {
+        "intelligence": 0.6,
+        "politics": 0.25,
+        "charisma": 0.15
+      },
+      "difficulty": 68,
+      "fameReward": 16,
+      "fameReason": "화웅의 단독 도전 중단과 생존",
+      "success": "나는 새 적장의 보고와 관문 경계를 근거로 단독 도전 중단을 청했다. 화웅이 물러나 연합군의 출전 장수들과 일기토를 벌이지 않았다.",
+      "failure": "나는 경고를 받아들이게 하지 못했다. 화웅이 출전한 뒤 관문 연락 지점에 남았다.",
+      "successNarrative": "나는 새 적장의 보고와 관문 경계를 근거로 단독 도전 중단을 청했다. 화웅이 물러나 연합군의 출전 장수들과 일기토를 벌이지 않았다.",
+      "failureNarrative": "나는 경고를 받아들이게 하지 못했다. 화웅이 출전한 뒤 관문 연락 지점에 남았다.",
+      "failureFame": -8
+    },
+    {
+      "eventId": "r005-04",
+      "nodeId": "front-duel-check",
+      "kind": "duel",
+      "weights": {
+        "strength": 1
+      },
+      "difficulty": 50,
+      "fameReward": 24,
+      "fameReason": "실제 무력92 화웅과의 직접 일기토",
+      "opponentId": "rtk14-0144",
+      "success": "나는 출전 인수를 받은 뒤 화웅과 맞붙어 무기를 떨구게 했다. 뒤따른 병사들과 그를 생포해 살해되지 않은 포로로 인계했다.",
+      "failure": "나는 화웅의 힘을 버티지 못하고 출전 대열 뒤로 물러났다. 그를 생포하거나 제압했다고 주장하지 않았다.",
+      "successNarrative": "나는 출전 인수를 받은 뒤 화웅과 맞붙어 무기를 떨구게 했다. 뒤따른 병사들과 그를 생포해 살해되지 않은 포로로 인계했다.",
+      "failureNarrative": "나는 화웅의 힘을 버티지 못하고 출전 대열 뒤로 물러났다. 그를 생포하거나 제압했다고 주장하지 않았다.",
+      "failureFame": -12
+    },
+    {
+      "eventId": "r005-04",
+      "nodeId": "front-recommend-check",
+      "kind": "relationship",
+      "weights": {
+        "charisma": 0.75,
+        "politics": 0.25
+      },
+      "difficulty": 58,
+      "fameReward": 12,
+      "fameReason": "실제 유비 접촉을 바탕으로 관우 조기 출전과 두 장수 생존",
+      "success": "나는 유비 측 연락을 통해 관우의 출전을 먼저 검토해 달라고 건의했다. 인수가 받아들여져 유섭과 반봉의 선출전을 보류했다.",
+      "failure": "나는 추천을 받아들이게 하지 못했다. 관우를 먼저 내보내지 못한 채 후방 연락으로 돌아왔다.",
+      "successNarrative": "나는 유비 측 연락을 통해 관우의 출전을 먼저 검토해 달라고 건의했다. 인수가 받아들여져 유섭과 반봉의 선출전을 보류했다.",
+      "failureNarrative": "나는 추천을 받아들이게 하지 못했다. 관우를 먼저 내보내지 못한 채 후방 연락으로 돌아왔다.",
+      "failureFame": -6
+    },
+    {
+      "eventId": "r005-05",
+      "nodeId": "dong-recall-check",
+      "kind": "strategy",
+      "weights": {
+        "intelligence": 0.6,
+        "politics": 0.25,
+        "charisma": 0.15
+      },
+      "difficulty": 76,
+      "fameReward": 18,
+      "fameReason": "새 출전 정보로 화웅의 마지막 귀환 확보",
+      "success": "나는 관우의 실제 출전 보고를 근거로 귀환 신호를 보냈다. 화웅이 맞붙기 전에 관문으로 돌아와 살아남았다.",
+      "failure": "나는 귀환 신호를 제때 닿게 하지 못했다. 화웅의 일기토를 멈추지 못하고 실제 결과를 기다렸다.",
+      "successNarrative": "나는 관우의 실제 출전 보고를 근거로 귀환 신호를 보냈다. 화웅이 맞붙기 전에 관문으로 돌아와 살아남았다.",
+      "failureNarrative": "나는 귀환 신호를 제때 닿게 하지 못했다. 화웅의 일기토를 멈추지 못하고 실제 결과를 기다렸다.",
+      "failureFame": -9
+    },
+    {
+      "eventId": "r005-06",
+      "nodeId": "dong-family-check",
+      "kind": "politics",
+      "weights": {
+        "politics": 0.6,
+        "intelligence": 0.3,
+        "charisma": 0.1
+      },
+      "difficulty": 76,
+      "fameReward": 18,
+      "fameReason": "동탁군 인수 절차에서 원씨 일부 구출",
+      "success": "나는 신원 인수의 모순을 대조하고 일부를 민간 인수처로 넘겼다. 그 사람들이 보복에서 빠져나갈 틈을 만들었지만 동탁군 소속은 유지됐다.",
+      "failure": "나는 신원 인수의 근거를 확인받지 못했다. 보복을 막지 못한 채 명령의 담당자만 남겼다.",
+      "successNarrative": "나는 신원 인수의 모순을 대조하고 일부를 민간 인수처로 넘겼다. 그 사람들이 보복에서 빠져나갈 틈을 만들었지만 동탁군 소속은 유지됐다.",
+      "failureNarrative": "나는 신원 인수의 근거를 확인받지 못했다. 보복을 막지 못한 채 명령의 담당자만 남겼다.",
+      "failureFame": -9
+    },
+    {
+      "eventId": "r005-06",
+      "nodeId": "coalition-family-check",
+      "kind": "politics",
+      "weights": {
+        "politics": 0.6,
+        "intelligence": 0.3,
+        "charisma": 0.1
+      },
+      "difficulty": 70,
+      "fameReward": 18,
+      "fameReason": "기존 피신 준비를 실제 남은 일족 구출로 연결",
+      "success": "나는 앞서 확인한 민간 인수처에 새 경고를 보내 남은 일부를 움직이게 했다. 준비만 해 둔 길이 실제 구출로 이어져 일부 일족이 보복을 피했다.",
+      "failure": "나는 확인된 인수처에 경고를 제때 닿게 하지 못했다. 남은 일족을 안전하게 빼냈다고 보고하지 않았다.",
+      "successNarrative": "나는 앞서 확인한 민간 인수처에 새 경고를 보내 남은 일부를 움직이게 했다. 준비만 해 둔 길이 실제 구출로 이어져 일부 일족이 보복을 피했다.",
+      "failureNarrative": "나는 확인된 인수처에 경고를 제때 닿게 하지 못했다. 남은 일족을 안전하게 빼냈다고 보고하지 않았다.",
+      "failureFame": -9
+    },
+    {
+      "eventId": "r005-06",
+      "nodeId": "coalition-bridge-check",
+      "kind": "relationship",
+      "weights": {
+        "charisma": 0.75,
+        "politics": 0.25
+      },
+      "difficulty": 54,
+      "fameReward": 7,
+      "fameReason": "유비·조조 측의 실제 연락 창구 연결",
+      "success": "나는 유비 측과 조조 측의 연락 담당을 맞춰 다음 출전 보고 창구를 남겼다. 형제들의 군적을 바꾸지 않고 협력할 통로를 만들었다.",
+      "failure": "나는 연락 담당의 확인을 받지 못했다. 다툼을 중재했다고 주장하지 않고 원래 인수 임무로 돌아왔다.",
+      "successNarrative": "나는 유비 측과 조조 측의 연락 담당을 맞춰 다음 출전 보고 창구를 남겼다. 형제들의 군적을 바꾸지 않고 협력할 통로를 만들었다.",
+      "failureNarrative": "나는 연락 담당의 확인을 받지 못했다. 다툼을 중재했다고 주장하지 않고 원래 인수 임무로 돌아왔다.",
+      "failureFame": -3.5
     },
     {
       "eventId": "r005-07",
-      "nodeId": "scene",
-      "choiceId": "b",
+      "nodeId": "dong-recall-check",
+      "kind": "strategy",
       "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
+        "intelligence": 0.6,
+        "politics": 0.25,
+        "charisma": 0.15
       },
-      "difficulty": 53,
-      "successFame": 8,
-      "failureFame": -4,
-      "basis": "장비의 원군 연락을 앞당김"
+      "difficulty": 70,
+      "fameReward": 16,
+      "fameReason": "여포의 과도한 추격 중단",
+      "success": "나는 아군 대열과 벌어진 거리를 보고하고 복귀 신호를 전했다. 여포가 추격을 멈춰 공손찬을 노린 협공 계기가 사라졌다.",
+      "failure": "나는 복귀 신호를 닿게 하지 못했다. 여포가 계속 추격해 뒤의 관문 연락을 준비했다.",
+      "successNarrative": "나는 아군 대열과 벌어진 거리를 보고하고 복귀 신호를 전했다. 여포가 추격을 멈춰 공손찬을 노린 협공 계기가 사라졌다.",
+      "failureNarrative": "나는 복귀 신호를 닿게 하지 못했다. 여포가 계속 추격해 뒤의 관문 연락을 준비했다.",
+      "failureFame": -8
+    },
+    {
+      "eventId": "r005-07",
+      "nodeId": "coalition-rescue-check",
+      "kind": "strategy",
+      "weights": {
+        "intelligence": 0.6,
+        "politics": 0.25,
+        "charisma": 0.15
+      },
+      "difficulty": 68,
+      "fameReward": 18,
+      "fameReason": "공손찬 조기 구출과 협공 계기 변경",
+      "success": "나는 공손찬의 후미와 퇴로 신호를 맞춰 추격선 밖으로 안내했다. 그가 먼저 살아나면서 장비가 몸으로 여포를 막아야 할 직접 계기가 사라졌다.",
+      "failure": "나는 퇴로의 연락을 제때 잇지 못했다. 공손찬이 추격을 받는 동안 뒤의 병사들에게 위험을 알렸다.",
+      "successNarrative": "나는 공손찬의 후미와 퇴로 신호를 맞춰 추격선 밖으로 안내했다. 그가 먼저 살아나면서 장비가 몸으로 여포를 막아야 할 직접 계기가 사라졌다.",
+      "failureNarrative": "나는 퇴로의 연락을 제때 잇지 못했다. 공손찬이 추격을 받는 동안 뒤의 병사들에게 위험을 알렸다.",
+      "failureFame": -9
+    },
+    {
+      "eventId": "r005-07",
+      "nodeId": "coordinated-rescue-check",
+      "kind": "strategy",
+      "weights": {
+        "intelligence": 0.6,
+        "politics": 0.25,
+        "charisma": 0.15
+      },
+      "difficulty": 54,
+      "fameReward": 18,
+      "fameReason": "공손찬 조기 구출과 협공 계기 변경",
+      "success": "나는 공손찬의 후미와 퇴로 신호를 맞춰 추격선 밖으로 안내했다. 그가 먼저 살아나면서 장비가 몸으로 여포를 막아야 할 직접 계기가 사라졌다.",
+      "failure": "나는 퇴로의 연락을 제때 잇지 못했다. 공손찬이 추격을 받는 동안 뒤의 병사들에게 위험을 알렸다.",
+      "successNarrative": "나는 공손찬의 후미와 퇴로 신호를 맞춰 추격선 밖으로 안내했다. 그가 먼저 살아나면서 장비가 몸으로 여포를 막아야 할 직접 계기가 사라졌다.",
+      "failureNarrative": "나는 퇴로의 연락을 제때 잇지 못했다. 공손찬이 추격을 받는 동안 뒤의 병사들에게 위험을 알렸다.",
+      "failureFame": -9
     },
     {
       "eventId": "r005-08",
-      "nodeId": "dong",
-      "choiceId": "a",
+      "nodeId": "dong-route-check",
+      "kind": "battle",
       "weights": {
-        "intelligence": 0.7,
-        "politics": 0.2,
-        "charisma": 0.1
+        "leadership": 0.65,
+        "strength": 0.35
       },
-      "difficulty": 87,
-      "successFame": 30,
-      "failureFame": -15,
-      "basis": "발각을 감수한 돌파 방향 유출로 여포 생포"
+      "difficulty": 58,
+      "fameReward": 8,
+      "fameReason": "여포 복귀 통로와 후미 인수",
+      "success": "나는 복귀 통로의 수레를 비우고 인수 신호를 맞췄다. 여포가 포위를 뚫고 돌아올 때 아군 대열과 뒤엉키지 않게 받았다.",
+      "failure": "나는 복귀 통로의 혼선을 제때 풀지 못했다. 여포가 돌아온 뒤 흩어진 군장을 다시 인수했다.",
+      "successNarrative": "나는 복귀 통로의 수레를 비우고 인수 신호를 맞췄다. 여포가 포위를 뚫고 돌아올 때 아군 대열과 뒤엉키지 않게 받았다.",
+      "failureNarrative": "나는 복귀 통로의 혼선을 제때 풀지 못했다. 여포가 돌아온 뒤 흩어진 군장을 다시 인수했다.",
+      "failureFame": -4
     },
     {
       "eventId": "r005-08",
-      "nodeId": "dong",
-      "choiceId": "b",
+      "nodeId": "coalition-capture-check",
+      "kind": "battle",
       "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
+        "leadership": 0.65,
+        "strength": 0.35
       },
-      "difficulty": 49,
-      "successFame": 6,
-      "failureFame": -3,
-      "basis": "아군의 열린 관문과 복귀 신호 전달"
-    },
-    {
-      "eventId": "r005-08",
-      "nodeId": "rescued",
-      "choiceId": "a",
-      "weights": {
-        "leadership": 0.45,
-        "intelligence": 0.35,
-        "charisma": 0.2
-      },
-      "difficulty": 82,
-      "successFame": 30,
-      "failureFame": -15,
-      "basis": "세 형제와 예비 병력을 연결해 여포를 생포"
-    },
-    {
-      "eventId": "r005-08",
-      "nodeId": "rescued",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
-      },
-      "difficulty": 49,
-      "successFame": 6,
-      "failureFame": -3,
-      "basis": "유비 측 후방 복귀 지원"
-    },
-    {
-      "eventId": "r005-08",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "leadership": 0.45,
-        "intelligence": 0.35,
-        "charisma": 0.2
-      },
-      "difficulty": 82,
-      "successFame": 30,
-      "failureFame": -15,
-      "basis": "세 형제와 예비 병력을 연결해 여포를 생포"
-    },
-    {
-      "eventId": "r005-08",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.4,
-        "intelligence": 0.35,
-        "leadership": 0.25
-      },
-      "difficulty": 49,
-      "successFame": 6,
-      "failureFame": -3,
-      "basis": "유비 측 후방 복귀 지원"
+      "difficulty": 35,
+      "fameReward": 30,
+      "fameReason": "세 형제가 만든 협공 틈에서 포위 대열을 맞춰 여포 생포: 동료 지원으로 상황 난도35",
+      "opponentId": "rtk14-0987",
+      "success": "나는 세 형제가 만든 틈 뒤에서 포위 대열을 맞췄다. 여포의 돌파를 막아 무장을 거두고 포로 인수 지점으로 넘겼다.",
+      "failure": "나는 돌파하는 여포의 기세를 막지 못했다. 그가 포위 틈으로 빠져나가자 뒤의 부상자 통로로 물러났다.",
+      "successNarrative": "나는 세 형제가 만든 틈 뒤에서 포위 대열을 맞췄다. 여포의 돌파를 막아 무장을 거두고 포로 인수 지점으로 넘겼다.",
+      "failureNarrative": "나는 돌파하는 여포의 기세를 막지 못했다. 그가 포위 틈으로 빠져나가자 뒤의 부상자 통로로 물러났다.",
+      "failureFame": -15
     },
     {
       "eventId": "r005-09",
-      "nodeId": "dong",
-      "choiceId": "a",
+      "nodeId": "dong-hold-check",
+      "kind": "battle",
       "weights": {
-        "leadership": 1.5,
-        "strength": 1
+        "leadership": 0.65,
+        "strength": 0.35
       },
       "difficulty": 62,
-      "successFame": 12,
-      "failureFame": -6,
-      "basis": "후퇴 혼잡에서 민간 통로를 지휘"
+      "fameReward": 10,
+      "fameReason": "관문 후퇴 뒤 수비 인수 유지",
+      "success": "나는 관문 수비의 교대와 물자를 맞췄다. 동탁군 소속으로 현재 방어를 이어 갈 인수를 남겼다.",
+      "failure": "나는 혼란 속 교대를 제때 맞추지 못했다. 뒤의 수비선으로 물러나 남은 물자를 인수했다.",
+      "successNarrative": "나는 관문 수비의 교대와 물자를 맞췄다. 동탁군 소속으로 현재 방어를 이어 갈 인수를 남겼다.",
+      "failureNarrative": "나는 혼란 속 교대를 제때 맞추지 못했다. 뒤의 수비선으로 물러나 남은 물자를 인수했다.",
+      "failureFame": -5
     },
     {
       "eventId": "r005-09",
-      "nodeId": "dong",
-      "choiceId": "b",
+      "nodeId": "coalition-advance-check",
+      "kind": "strategy",
       "weights": {
-        "charisma": 0.55,
-        "politics": 0.35,
-        "intelligence": 0.1
+        "intelligence": 0.6,
+        "politics": 0.25,
+        "charisma": 0.15
       },
-      "difficulty": 42,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "현재 군영의 교대 경계 담당"
-    },
-    {
-      "eventId": "r005-09",
-      "nodeId": "captive",
-      "choiceId": "a",
-      "weights": {
-        "leadership": 1.5,
-        "strength": 1
-      },
-      "difficulty": 67,
-      "successFame": 12,
-      "failureFame": -6,
-      "basis": "관문 앞 추격을 통제해 병력 피해 감소"
-    },
-    {
-      "eventId": "r005-09",
-      "nodeId": "captive",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.55,
-        "politics": 0.35,
-        "intelligence": 0.1
-      },
-      "difficulty": 42,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "현재 군영의 교대 경계 담당"
-    },
-    {
-      "eventId": "r005-09",
-      "nodeId": "scene",
-      "choiceId": "a",
-      "weights": {
-        "leadership": 1.5,
-        "strength": 1
-      },
-      "difficulty": 67,
-      "successFame": 12,
-      "failureFame": -6,
-      "basis": "관문 앞 추격을 통제해 병력 피해 감소"
-    },
-    {
-      "eventId": "r005-09",
-      "nodeId": "scene",
-      "choiceId": "b",
-      "weights": {
-        "charisma": 0.55,
-        "politics": 0.35,
-        "intelligence": 0.1
-      },
-      "difficulty": 42,
-      "successFame": 4,
-      "failureFame": -2,
-      "basis": "현재 군영의 교대 경계 담당"
+      "difficulty": 70,
+      "fameReward": 14,
+      "fameReason": "호뢰관 바깥 통행로 확보",
+      "success": "나는 관문 바깥 통행로를 정찰하고 대열을 붙여 확보했다. 동탁이나 황제의 신병을 얻지는 못했지만 후방 인수를 안전하게 이을 발판을 남겼다.",
+      "failure": "나는 관문의 경계를 확인하지 못해 더 전진하지 못했다. 동탁을 잡았다고 보고하지 않고 맡은 대열로 돌아왔다.",
+      "successNarrative": "나는 관문 바깥 통행로를 정찰하고 대열을 붙여 확보했다. 동탁이나 황제의 신병을 얻지는 못했지만 후방 인수를 안전하게 이을 발판을 남겼다.",
+      "failureNarrative": "나는 관문의 경계를 확인하지 못해 더 전진하지 못했다. 동탁을 잡았다고 보고하지 않고 맡은 대열로 돌아왔다.",
+      "failureFame": -7
     }
   ]
 }

@@ -69,10 +69,11 @@ describe('A·B 능력 비교 판정', () => {
     let game = makeGame();
     const catalog=historicalEvents.filter(e=>e.id==='r001-05');
     game.stats.strength = 96;
+    game.world.flags.peachOath = true;game.world.flags.liuTravel = true;
     const random = vi.fn(() => .1);
     const current = getCurrentEvent(game,catalog)!;
-    expect(current.choices.find(choice => choice.id === 'scene:a')!.check?.successRate).toBe(80);
-    const key = choiceKey(current, 'scene:a');
+    expect(current.choices.find(choice => choice.id === 'liu:duel')!.check?.successRate).toBe(80);
+    const key = choiceKey(current, 'liu:duel');
     const next = resolveChoice(game, key, catalog, random);
     expect(random).toHaveBeenCalledTimes(1);
     expect(next.decisions.at(-1)?.check).toMatchObject({ opponentId: 'rtk14-0746', chance: 80, roll: 10, success: true });

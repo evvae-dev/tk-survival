@@ -1,5 +1,5 @@
 import type { HistoricalEvent } from './game';
-import { supportedChapter } from './chapter';
+import { CATALOG_EDITION, supportedChapter } from './chapter';
 import { historicalEvents } from './history';
 import { checkWeights } from './ability-check';
 const defaults = new Map(historicalEvents.map(event => [event.id, event]));
@@ -27,5 +27,5 @@ export function upgradeLegacyEvent(event: HistoricalEvent): HistoricalEvent {
  return changed?{...event,flow:{...event.flow,nodes}}:event;
 }
 export function upgradeLegacyCatalog(events: HistoricalEvent[], deletedIds: string[] = []): HistoricalEvent[] {
- return events.filter(event => supportedChapter(event.chapterId) && !deletedIds.includes(event.id)).map(upgradeLegacyEvent);
+ return events.filter(event => event.edition === CATALOG_EDITION && supportedChapter(event.chapterId) && !deletedIds.includes(event.id)).map(upgradeLegacyEvent);
 }

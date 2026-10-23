@@ -47,4 +47,4 @@ export const useGameStore = create<GameStore>()(persist((set) => ({
     return next?.automatic ? { game: next.state } : {};
   }),
   resetGame: () => set({ game: null }),
-}), { name: "tk-survival-game-romance-v1", version: 1, migrate: migrateGame, partialize: ({ game }) => ({ game }), skipHydration: true }));
+}), { name: "tk-survival-game-participation-v2", version: 1, migrate: migrateGame, partialize: ({ game }) => ({ game }), skipHydration: true }));
